@@ -1,0 +1,58 @@
+name: copy-trade backtest
+
+on:
+  push:
+    branches: [claude/polymarket-copy-backtest]
+    paths: ["copybt/**", ".github/workflows/backtest.yml", "backtest.args"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: backtest
+  cancel-in-progress: true
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/cache@v4
+        with:
+          path: .cache
+          key: polymarket-${{ github.run_id }}
+          restore-keys: polymarket-
+
+      - name: Unit tests
+        run: python -m unittest discover -s tests
+
+      - name: Probe API response shapes
+        run: |
+          mkdir -p results/probe
+          probe() { curl -sS -m 30 "$2" -o "results/probe/$1.json" -w "$1 %{http_code}\n" || true; }
+          probe leaderboard "https://data-api.polymarket.com/v1/leaderboard?category=OVERALL&timePeriod=MONTH&orderBy=PNL&limit=3&offset=0"
+          W=$(python -c "import json;d=json.load(open('results/probe/leaderboard.json'));d=d if isinstance(d,list) else d.get('data',[]);print(d[0].get('proxyWallet',''))" 2>/dev/null || true)
+          echo "sample wallet: $W"
+          probe activity "https://data-api.polymarket.com/activity?user=$W&type=TRADE&limit=3&offset=0&sortBy=TIMESTAMP&sortDirection=DESC"
+          C=$(python -c "import json;d=json.load(open('results/probe/activity.json'));print(d[0]['conditionId'])" 2>/dev/null || true)
+          probe gamma "https://gamma-api.polymarket.com/markets?condition_ids=$C&limit=1"
+          probe gamma_closed "https://gamma-api.polymarket.com/markets?condition_ids=$C&closed=true&limit=1"
+          probe clob "https://clob.polymarket.com/markets/$C"
+          for f in results/probe/*.json; do echo "== $f"; head -c 1500 "$f"; echo; done
+
+      - name: Run backtest
+        run: python -m copybt $(cat backtest.args 2>/dev/null) 2>&1 | tee results/run.log
+
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f results
+          git commit -m "Backtest results ($(date -u +%Y-%m-%dT%H:%MZ))" || exit 0
+          git pull --rebase origin "$GITHUB_REF_NAME" && git push origin HEAD:"$GITHUB_REF_NAME"
