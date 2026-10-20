@@ -1,0 +1,331 @@
+"""Fetch wallets, trade histories and market resolutions from Polymarket.
+
+Response shapes vary between API versions, so every parser here reads fields
+defensively and drops records it cannot interpret instead of guessing.
+"""
+
+from __future__ import annotations
+
+import json
+import logging
+from bisect import bisect_left
+from datetime import datetime, timezone
+
+from .api import CLOB_API, DATA_API, GAMMA_API, LB_API, Client, HTTPError
+from .models import Market, Trade
+
+log = logging.getLogger(__name__)
+
+LEADERBOARD_PERIODS = ("DAY", "WEEK", "MONTH", "ALL")
+LEADERBOARD_ORDERS = ("PNL", "VOL")
+
+
+def _as_list(payload) -> list:
+    if isinstance(payload, list):
+        return payload
+    if isinstance(payload, dict):
+        for key in ("data", "results", "items", "leaderboard", "history"):
+            if isinstance(payload.get(key), list):
+                return payload[key]
+    return []
+
+
+def _json_list(value) -> list:
+    if isinstance(value, list):
+        return value
+    if isinstance(value, str) and value.strip().startswith("["):
+        try:
+            return json.loads(value)
+        except json.JSONDecodeError:
+            return []
+    return []
+
+
+def _parse_ts(value) -> int | None:
+    if value is None or value == "":
+        return None
+    if isinstance(value, (int, float)):
+        v = float(value)
+        return int(v / 1000) if v > 1e12 else int(v)
+    s = str(value).strip()
+    if s.isdigit():
+        return _parse_ts(int(s))
+    s = s.replace("Z", "+00:00")
+    if s.endswith("+00"):
+        s += ":00"
+    for candidate in (s, s.replace(" ", "T", 1)):
+        try:
+            dt = datetime.fromisoformat(candidate)
+        except ValueError:
+            continue
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return int(dt.timestamp())
+    return None
+
+
+# --------------------------------------------------------------------------
+# Wallet discovery
+# --------------------------------------------------------------------------
+
+def fetch_leaderboard(client: Client, periods=LEADERBOARD_PERIODS,
+                      orders=LEADERBOARD_ORDERS, categories=("OVERALL",),
+                      per_board: int = 500) -> dict[str, dict]:
+    """Union of leaderboard wallets -> {wallet: {name, best_rank, boards}}."""
+    wallets: dict[str, dict] = {}
+
+    def add(addr, name, rank, board):
+        if not addr or not isinstance(addr, str) or not addr.startswith("0x"):
+            return
+        addr = addr.lower()
+        w = wallets.setdefault(addr, {"name": name or "", "best_rank": rank,
+                                      "boards": []})
+        w["best_rank"] = min(w["best_rank"], rank)
+        w["boards"].append(board)
+        if name and not w["name"]:
+            w["name"] = name
+
+    for cat in categories:
+        for period in periods:
+            for order in orders:
+                board = f"{cat}/{period}/{order}"
+                got = 0
+                for offset in range(0, per_board, 50):
+                    try:
+                        page = _as_list(client.get(DATA_API, "/v1/leaderboard", {
+                            "category": cat, "timePeriod": period,
+                            "orderBy": order, "limit": 50, "offset": offset}))
+                    except HTTPError as e:
+                        log.warning("leaderboard %s offset %d: %s", board, offset, e)
+                        break
+                    if not page:
+                        break
+                    for i, row in enumerate(page):
+                        add(row.get("proxyWallet") or row.get("address"),
+                            row.get("userName") or row.get("name"),
+                            int(row.get("rank") or offset + i + 1), board)
+                    got += len(page)
+                    if len(page) < 50:
+                        break
+                log.info("leaderboard %s: %d wallets", board, got)
+
+    if not wallets:
+        # Older leaderboard service, kept as a fallback.
+        log.warning("v1 leaderboard returned nothing; trying lb-api fallback")
+        for window in ("1d", "7d", "1m", "all"):
+            for kind in ("profit", "volume"):
+                try:
+                    rows = _as_list(client.get(LB_API, f"/{kind}", {
+                        "window": window, "limit": per_board}))
+                except HTTPError as e:
+                    log.warning("lb-api %s/%s: %s", kind, window, e)
+                    continue
+                for i, row in enumerate(rows):
+                    add(row.get("proxyWallet"), row.get("name") or row.get("pseudonym"),
+                        i + 1, f"lb/{window}/{kind}")
+    return wallets
+
+
+# --------------------------------------------------------------------------
+# Trade history
+# --------------------------------------------------------------------------
+
+def _parse_trade(row: dict) -> Trade | None:
+    try:
+        side = str(row.get("side", "")).upper()
+        if side not in ("BUY", "SELL"):
+            return None
+        price = float(row["price"])
+        size = float(row["size"])
+        ts = _parse_ts(row.get("timestamp"))
+        asset = str(row.get("asset") or row.get("asset_id") or "")
+        cond = str(row.get("conditionId") or row.get("market") or "").lower()
+    except (KeyError, TypeError, ValueError):
+        return None
+    if ts is None or not asset or not cond or size <= 0 or not 0 < price < 1:
+        return None
+    return Trade(ts=ts, asset=asset, condition_id=cond, side=side, price=price,
+                 size=size, title=str(row.get("title") or ""),
+                 outcome=str(row.get("outcome") or ""),
+                 tx=str(row.get("transactionHash") or ""))
+
+
+def fetch_trades(client: Client, wallet: str, start_ts: int, end_ts: int,
+                 max_trades: int = 20000, page_size: int = 500,
+                 max_offset: int = 3000) -> tuple[list[Trade], bool]:
+    """All TRADE activity for ``wallet`` in [start_ts, end_ts], oldest first.
+
+    Pages newest-to-oldest by offset, and re-anchors ``end`` on the oldest
+    timestamp seen whenever the API's offset cap is reached. Returns
+    (trades, truncated) where truncated means ``max_trades`` was hit.
+    """
+    seen: set[tuple] = set()
+    out: list[Trade] = []
+    cursor_end = end_ts
+    while True:
+        offset = 0
+        oldest = cursor_end
+        progressed = False
+        exhausted = False
+        while offset <= max_offset:
+            try:
+                page = _as_list(client.get(DATA_API, "/activity", {
+                    "user": wallet, "type": "TRADE", "limit": page_size,
+                    "offset": offset, "start": start_ts, "end": cursor_end,
+                    "sortBy": "TIMESTAMP", "sortDirection": "DESC"}))
+            except HTTPError as e:
+                if e.status == 400 and offset > 0:
+                    break  # offset cap reached; re-anchor below
+                raise
+            for row in page:
+                t = _parse_trade(row)
+                if t is None or t.ts < start_ts:
+                    continue
+                key = (t.tx, t.asset, t.side, t.size, t.price, t.ts)
+                if key in seen:
+                    continue
+                seen.add(key)
+                out.append(t)
+                progressed = True
+                oldest = min(oldest, t.ts)
+            if len(out) >= max_trades:
+                out.sort(key=lambda t: t.ts)
+                return out, True
+            if len(page) < page_size:
+                exhausted = True
+                break
+            offset += page_size
+        if exhausted or not progressed or oldest <= start_ts:
+            break
+        # Re-anchor on the oldest second seen; dedupe handles the overlap.
+        cursor_end = oldest
+    out.sort(key=lambda t: t.ts)
+    return out, False
+
+
+# --------------------------------------------------------------------------
+# Market resolutions
+# --------------------------------------------------------------------------
+
+def _market_from_gamma(row: dict) -> Market | None:
+    cond = row.get("conditionId")
+    tokens = [str(t) for t in _json_list(row.get("clobTokenIds"))]
+    prices = _json_list(row.get("outcomePrices"))
+    if not cond or not tokens or len(tokens) != len(prices):
+        return None
+    try:
+        prices = [float(p) for p in prices]
+    except (TypeError, ValueError):
+        return None
+    uma = str(row.get("umaResolutionStatus") or "").lower()
+    closed = bool(row.get("closed"))
+    decisive = max(prices) >= 0.98 and sum(prices) <= 1.02
+    resolved = uma == "resolved" or (closed and decisive)
+    resolve_ts = None
+    if resolved:
+        resolve_ts = (_parse_ts(row.get("closedTime"))
+                      or _parse_ts(row.get("umaEndDate"))
+                      or _parse_ts(row.get("endDate")))
+    return Market(condition_id=cond.lower(), resolved=resolved,
+                  resolve_ts=resolve_ts, prices=dict(zip(tokens, prices)),
+                  question=str(row.get("question") or ""))
+
+
+def _market_from_clob(row: dict) -> Market | None:
+    cond = row.get("condition_id")
+    tokens = row.get("tokens") or []
+    if not cond or not tokens:
+        return None
+    prices: dict[str, float] = {}
+    any_winner = False
+    for tok in tokens:
+        tid = str(tok.get("token_id") or "")
+        if not tid:
+            continue
+        if tok.get("winner") is True:
+            any_winner = True
+        try:
+            prices[tid] = float(tok.get("price") or 0)
+        except (TypeError, ValueError):
+            prices[tid] = 0.0
+    resolved = bool(row.get("closed")) and any_winner
+    if resolved:
+        prices = {str(t.get("token_id")): 1.0 if t.get("winner") else 0.0
+                  for t in tokens if t.get("token_id")}
+    return Market(condition_id=cond.lower(), resolved=resolved,
+                  resolve_ts=_parse_ts(row.get("end_date_iso")) if resolved else None,
+                  prices=prices, question=str(row.get("question") or ""))
+
+
+def fetch_markets(client: Client, condition_ids: set[str],
+                  batch: int = 50) -> dict[str, Market]:
+    ids = sorted({c.lower() for c in condition_ids if c})
+    out: dict[str, Market] = {}
+    for closed in (None, "true"):
+        todo = [c for c in ids if c not in out]
+        for i in range(0, len(todo), batch):
+            chunk = todo[i:i + batch]
+            params: list[tuple] = [("condition_ids", c) for c in chunk]
+            params.append(("limit", len(chunk)))
+            if closed:
+                params.append(("closed", closed))
+            try:
+                rows = _as_list(client.get(GAMMA_API, "/markets", params))
+            except HTTPError as e:
+                log.warning("gamma markets batch failed: %s", e)
+                continue
+            for row in rows:
+                m = _market_from_gamma(row)
+                if m:
+                    out[m.condition_id] = m
+    for cond in [c for c in ids if c not in out]:
+        try:
+            m = _market_from_clob(client.get(CLOB_API, f"/markets/{cond}"))
+        except HTTPError as e:
+            log.debug("clob market %s: %s", cond, e)
+            continue
+        if m:
+            out[m.condition_id] = m
+    missing = len(ids) - len(out)
+    if missing:
+        log.warning("%d of %d markets could not be resolved", missing, len(ids))
+    return out
+
+
+# --------------------------------------------------------------------------
+# Price history (only used when a copy delay is simulated)
+# --------------------------------------------------------------------------
+
+class PriceHistory:
+    """Lazy per-token price lookup from the CLOB prices-history endpoint."""
+
+    def __init__(self, client: Client, start_ts: int, end_ts: int):
+        self.client = client
+        self.start_ts = start_ts
+        self.end_ts = end_ts
+        self._series: dict[str, tuple[list[int], list[float]]] = {}
+
+    def _load(self, token: str) -> tuple[list[int], list[float]]:
+        if token not in self._series:
+            ts: list[int] = []
+            ps: list[float] = []
+            try:
+                rows = _as_list(self.client.get(CLOB_API, "/prices-history", {
+                    "market": token, "startTs": self.start_ts,
+                    "endTs": self.end_ts, "fidelity": 1}))
+                for r in rows:
+                    t, p = _parse_ts(r.get("t")), r.get("p")
+                    if t is not None and p is not None:
+                        ts.append(t)
+                        ps.append(float(p))
+            except (HTTPError, ValueError, TypeError) as e:
+                log.debug("price history %s: %s", token, e)
+            order = sorted(range(len(ts)), key=ts.__getitem__)
+            self._series[token] = ([ts[i] for i in order], [ps[i] for i in order])
+        return self._series[token]
+
+    def price_at(self, token: str, ts: int) -> float | None:
+        """First recorded price at or after ``ts`` (None if there is none)."""
+        times, prices = self._load(token)
+        i = bisect_left(times, ts)
+        return prices[i] if i < len(times) else None
