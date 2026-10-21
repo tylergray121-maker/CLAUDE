@@ -53,7 +53,10 @@ def _day(ts_or_iso) -> int | None:
     if not m:
         return None
     from datetime import date
-    return date(int(m[1]), int(m[2]), int(m[3])).toordinal() - date(1970, 1, 1).toordinal()
+    try:  # slugs contain things like "2026-27-12" that only look like dates
+        return date(int(m[1]), int(m[2]), int(m[3])).toordinal() - date(1970, 1, 1).toordinal()
+    except ValueError:
+        return None
 
 
 class USMarkets:

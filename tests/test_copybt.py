@@ -240,6 +240,7 @@ class USTest(unittest.TestCase):
         self.assertTrue(m.lists("76ers vs. Knicks", "", 1792540800))  # same day
         self.assertFalse(m.lists("76ers vs. Knicks", "nba-phi-nyk-2026-11-20"))
         self.assertTrue(m.lists("Will Como win on 2026-10-20?"))
+        self.assertFalse(m.lists("76ers vs. Knicks", "nba-2026-27-12-final"))
 
 
 class ProfileTest(unittest.TestCase):

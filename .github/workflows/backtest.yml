@@ -56,6 +56,7 @@ jobs:
 
       - name: Download trades and markets
         timeout-minutes: 150
+        shell: bash -o pipefail {0}
         run: python -u -m copybt --fetch-only $(cat backtest.args 2>/dev/null) 2>&1 | tee results/fetch.log
 
       - uses: actions/cache/save@v4
@@ -69,6 +70,7 @@ jobs:
         run: |
           # Log disk and memory every 2 minutes so a runner death is diagnosable.
           (while true; do echo "[res] disk $(df -h / | awk 'NR==2{print $3" used/"$4" free"}'), ram $(free -m | awk '/Mem/{print $3"MB used"}'), cache $(du -sh .cache 2>/dev/null | cut -f1)"; sleep 120; done) &
+          set -o pipefail
           python -u -m copybt $(cat backtest.args 2>/dev/null) 2>&1 | tee results/run.log
 
       - uses: actions/cache/save@v4
