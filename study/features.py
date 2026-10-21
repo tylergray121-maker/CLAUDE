@@ -182,15 +182,19 @@ def profile(d: dict, lb: dict | None = None, alltime_pnl: float | None = None) -
 def archetype(p: dict) -> tuple[str, str]:
     mk = p.get("maker_usd_share") if p.get("maker_usd_share") is not None \
         else (p.get("maker_share") or 0.0)
-    # Count transactions, not fills: one big order can fill against hundreds
-    # of counterparties.
-    if p.get("trades_sampled", 0) >= 300 and (p.get("tx_per_day", 0) >= 100
-                                              or p["short_crypto_share"] >= 0.5):
-        return "bot / high-frequency", (f"{p.get('tx_per_day', 0):.0f} transactions/day, "
-                                        f"{p['short_crypto_share']:.0%} in short crypto markets")
-    if p["top5_share"] >= 0.8 and p["closed_positions"] <= 200:
-        return "concentrated conviction", (f"top 5 markets = {p['top5_share']:.0%} of gains "
-                                           f"over {p['closed_positions']} positions")
+    n = p["closed_positions"] + p.get("open_positions", 0)
+    if p.get("trades_sampled", 0) >= 300 and p["short_crypto_share"] >= 0.5:
+        return "crypto short-term bot", f"{p['short_crypto_share']:.0%} of trades in 5-15 minute crypto markets"
+    # Breadth, not transaction counts, separates operations from whales: a
+    # whale's few huge orders fill against hundreds of counterparties.
+    if n <= 50 or (p["top5_share"] >= 0.8 and n <= 200):
+        return "whale / concentrated bets", (f"{n} positions, top 5 = {p['top5_share']:.0%} of gains, "
+                                             f"median position ${p['median_position_usd']:,.0f}")
+    if n >= 1000:
+        kind = "market making" if mk >= 0.6 else "taker flow"
+        main = p["main_category"]
+        return f"high-volume {main} operation ({kind})", (
+            f"{n}+ positions, {mk:.0%} of $ as maker, median position ${p['median_position_usd']:,.0f}")
     # Directional traders who use limit orders also get maker fills and a few
     # dollars of rewards; a market maker quotes both sides or earns real
     # money from rewards.

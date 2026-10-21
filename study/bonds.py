@@ -38,7 +38,8 @@ def resolved_markets(client: Client, days: int, min_volume: float, cap: int) -> 
     keep = ("conditionId", "question", "slug", "clobTokenIds", "outcomes",
             "outcomePrices", "closedTime", "endDate", "volumeNum", "events")
     out = []
-    for offset in range(0, 100000, 500):
+    offset = 0
+    while offset < 100000:
         try:
             rows = client.get(GAMMA_API, "/markets", {
                 "closed": "true", "end_date_min": start.isoformat(),
@@ -62,8 +63,9 @@ def resolved_markets(client: Client, days: int, min_volume: float, cap: int) -> 
                         "yes_won": prices[0] > 0.5, "closed": closed,
                         "volume": float(r.get("volumeNum") or 0),
                         "eventSlug": (ev[0] or {}).get("slug", "") if ev else ""})
-        if len(rows) < 500 or len(out) >= cap:
+        if not rows or len(out) >= cap:
             break
+        offset += len(rows)  # the API caps pages below the requested limit
     log.info("%d resolved binary markets", len(out))
     return out[:cap]
 

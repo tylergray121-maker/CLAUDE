@@ -30,7 +30,7 @@ class ProfileTest(unittest.TestCase):
         # missing from the taker-only list: resting limit orders that filled.
         self.assertEqual(p["maker_share"], 0.6)
         self.assertGreater(p["maker_usd_share"], 0.9)  # the maker fills were the big ones
-        self.assertIn(p["archetype"], ("concentrated conviction", "politics / macro trader"))
+        self.assertEqual(p["archetype"], "whale / concentrated bets")
 
     def test_cost_and_pnl_from_closed_position(self):
         d, lb = theo4()
@@ -46,7 +46,7 @@ def synthetic(**kw):
             "price_>=95c": 0, "top5_share": 0.3, "closed_positions": 500,
             "cat_sports": 0, "same_day_share": 0, "cat_politics": 0,
             "cat_geopolitics": 0, "cat_economics": 0, "main_category": "other",
-            "realized_pnl": 1000}
+            "realized_pnl": 1000, "median_position_usd": 50, "open_positions": 0}
     return {**base, **kw}
 
 
@@ -70,17 +70,19 @@ class ArchetypeTest(unittest.TestCase):
         self.assertEqual(features.archetype(synthetic(**kw))[0], expect)
 
     def test_rules(self):
-        self.check("bot / high-frequency", tx_per_day=500)
-        self.check("generalist", trades_per_day=1000, tx_per_day=20)  # big orders, many fills
-        self.check("bot / high-frequency", short_crypto_share=0.8)
-        self.check("generalist", tx_per_day=500, trades_sampled=12)  # one burst
+        self.check("crypto short-term bot", short_crypto_share=0.8)
+        self.check("whale / concentrated bets", closed_positions=6, tx_per_day=1000)
+        self.check("whale / concentrated bets", top5_share=0.9, closed_positions=150)
+        self.check("high-volume other operation (market making)", closed_positions=5000,
+                   maker_usd_share=0.9)
+        self.check("high-volume other operation (taker flow)", closed_positions=5000,
+                   maker_usd_share=0.2)
         self.check("market maker", maker_share=0.8, both_sides_share=0.5)
         self.check("market maker", maker_share=0.8, rewards_usd=200)
         # limit-order whale: maker fills, pocket-change rewards, one side only
         self.check("generalist", maker_share=0.8, rewards_usd=50)
         self.check("arbitrage / merger", n_merge=40, both_sides_share=0.5, maker_share=0.1)
         self.check("bonder (near-certain outcomes)", **{"price_>=95c": 0.7})
-        self.check("concentrated conviction", top5_share=0.9, closed_positions=40)
         self.check("sports bettor (same-day/in-play)", cat_sports=0.9, same_day_share=0.8)
         self.check("sports bettor (pre-game/futures)", cat_sports=0.9, same_day_share=0.2)
         self.check("politics / macro trader", cat_politics=0.5, cat_economics=0.2)
