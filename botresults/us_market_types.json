@@ -1,0 +1,845 @@
+{
+ "counts": {
+  "props/sports": 27932,
+  "totals/sports": 14327,
+  "futures/sports": 11800,
+  "spreads/sports": 10653,
+  "futures/politics": 6785,
+  "drawable_outcome/sports": 2140,
+  "futures/culture": 1661,
+  "moneyline/sports": 1643,
+  "/crypto": 1468,
+  "futures/macro": 229,
+  "futures/climate": 119,
+  "futures/technology": 66,
+  "futures/finance": 65,
+  "futures/crypto": 59,
+  "futures/science": 11,
+  "futures/geopolitics": 10,
+  "election/politics": 4
+ },
+ "samples": {
+  "moneyline/sports": [
+   {
+    "slug": "aec-boxing-canalv-chrmbi-2026-10-31-canalv-chrmbi",
+    "question": "Canelo Alvarez vs Christian Mbilli",
+    "title": "",
+    "game_start": 1793502000.0,
+    "end": 1794715200.0,
+    "bid": 0.71,
+    "ask": 0.72
+   },
+   {
+    "slug": "aec-vtb-mba-eni-2026-10-10",
+    "question": "Who will win in the upcoming basketball event MBA Moscow vs Enisey Krasnoyarsk scheduled for October 10, 2026 at 10:00 AM UTC?",
+    "title": "",
+    "game_start": 1791626400.0,
+    "end": 1792850400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "aec-nba-mil-was-2026-10-21",
+    "question": "Who will win in the upcoming basketball event MIL Bucks vs WAS Wizards scheduled for October 21, 2026 at 11:00 PM UTC?",
+    "title": "",
+    "game_start": 1792623600.0,
+    "end": 1793833200.0,
+    "bid": 0.36,
+    "ask": 0.37
+   },
+   {
+    "slug": "aec-nba-atl-orl-2026-10-21",
+    "question": "Who will win in the upcoming basketball event ATL Hawks vs ORL Magic scheduled for October 21, 2026 at 11:00 PM UTC?",
+    "title": "",
+    "game_start": 1792623600.0,
+    "end": 1793833200.0,
+    "bid": 0.44,
+    "ask": 0.45
+   },
+   {
+    "slug": "aec-nba-cha-bkn-2026-10-21",
+    "question": "Who will win in the upcoming basketball event CHA Hornets vs BKN Nets scheduled for October 21, 2026 at 11:30 PM UTC?",
+    "title": "",
+    "game_start": 1792625400.0,
+    "end": 1793835000.0,
+    "bid": 0.51,
+    "ask": 0.52
+   },
+   {
+    "slug": "aec-nba-chi-tor-2026-10-21",
+    "question": "Who will win in the upcoming basketball event CHI Bulls vs TOR Raptors scheduled for October 21, 2026 at 11:30 PM UTC?",
+    "title": "",
+    "game_start": 1792625400.0,
+    "end": 1793835000.0,
+    "bid": 0.21,
+    "ask": 0.22
+   },
+   {
+    "slug": "aec-nba-min-mia-2026-10-21",
+    "question": "Who will win in the upcoming basketball event MIN Timberwolves vs MIA Heat scheduled for October 21, 2026 at 11:30 PM UTC?",
+    "title": "",
+    "game_start": 1792625400.0,
+    "end": 1793835000.0,
+    "bid": 0.48,
+    "ask": 0.49
+   },
+   {
+    "slug": "aec-nba-ind-no-2026-10-21",
+    "question": "Who will win in the upcoming basketball event IND Pacers vs NO Pelicans scheduled for October 22, 2026 at 12:00 AM UTC?",
+    "title": "",
+    "game_start": 1792627200.0,
+    "end": 1793836800.0,
+    "bid": 0.58,
+    "ask": 0.59
+   },
+   {
+    "slug": "aec-nba-uta-mem-2026-10-21",
+    "question": "Who will win in the upcoming basketball event UTA Jazz vs MEM Grizzlies scheduled for October 22, 2026 at 12:00 AM UTC?",
+    "title": "",
+    "game_start": 1792627200.0,
+    "end": 1793836800.0,
+    "bid": 0.48,
+    "ask": 0.49
+   },
+   {
+    "slug": "aec-nba-dal-hou-2026-10-21",
+    "question": "Who will win in the upcoming basketball event DAL Mavericks vs HOU Rockets scheduled for October 22, 2026 at 12:30 AM UTC?",
+    "title": "",
+    "game_start": 1792629000.0,
+    "end": 1793838600.0,
+    "bid": 0.22,
+    "ask": 0.23
+   },
+   {
+    "slug": "aec-nba-pho-por-2026-10-21",
+    "question": "Who will win in the upcoming basketball event PHO Suns vs POR Trail Blazers scheduled for October 22, 2026 at 2:00 AM UTC?",
+    "title": "",
+    "game_start": 1792634400.0,
+    "end": 1793844000.0,
+    "bid": 0.42,
+    "ask": 0.43
+   },
+   {
+    "slug": "aec-nba-gs-lal-2026-10-21",
+    "question": "Who will win in the upcoming basketball event GS Warriors vs LA Lakers scheduled for October 22, 2026 at 2:00 AM UTC?",
+    "title": "",
+    "game_start": 1792634400.0,
+    "end": 1793844000.0,
+    "bid": 0.33,
+    "ask": 0.34
+   },
+   {
+    "slug": "aec-nba-sac-lac-2026-10-21",
+    "question": "Who will win in the upcoming basketball event SAC Kings vs LA Clippers scheduled for October 22, 2026 at 2:30 AM UTC?",
+    "title": "",
+    "game_start": 1792636200.0,
+    "end": 1793845800.0,
+    "bid": 0.34,
+    "ask": 0.35
+   },
+   {
+    "slug": "aec-nfl-ne-chi-2026-10-22",
+    "question": "Who will win in the upcoming football event New England Patriots vs Chicago Bears scheduled for October 23, 2026 at 12:15 AM UTC?",
+    "title": "",
+    "game_start": 1792714500.0,
+    "end": 1793942100.0,
+    "bid": 0.4025,
+    "ask": 0.405
+   },
+   {
+    "slug": "aec-cfb-nmxst-smho-2026-10-21",
+    "question": "Who will win in the upcoming football event NM State vs Sam Houston scheduled for October 22, 2026 at 12:00 AM UTC?",
+    "title": "",
+    "game_start": 1792627200.0,
+    "end": 1793854800.0,
+    "bid": 0.555,
+    "ask": 0.56
+   }
+  ],
+  "drawable_outcome/sports": [
+   {
+    "slug": "atc-uecl-ggk-zil-2026-07-30-ggk",
+    "question": "Will GKS GieKSa Katowice win against MSK Zilina in the UECL match scheduled for Jul 30, 2026?",
+    "title": "",
+    "game_start": 1785436200.0,
+    "end": 1786645800.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "atc-lal-ray-ath-2026-10-10-ray",
+    "question": "Will Rayo Vallecano de Madrid win against Athletic Club in the La Liga match scheduled for Oct 10, 2026?",
+    "title": "",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": 0.17,
+    "ask": 0.18
+   },
+   {
+    "slug": "atc-lal-ray-ath-2026-10-10-draw",
+    "question": "Will the La Liga match Rayo Vallecano de Madrid vs Athletic Club scheduled for Oct 10, 2026 end in a draw?",
+    "title": "",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": 0.18,
+    "ask": 0.19
+   },
+   {
+    "slug": "atc-lal-ray-ath-2026-10-10-ath",
+    "question": "Will Athletic Club win against Rayo Vallecano de Madrid in the La Liga match scheduled for Oct 10, 2026?",
+    "title": "",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": 0.19,
+    "ask": 0.31
+   },
+   {
+    "slug": "atc-lco-atl-adp-2026-10-10-atl",
+    "question": "Will Atletico Nacional win against AD Pasto in the Liga Colombia match scheduled for Oct 10, 2026?",
+    "title": "",
+    "game_start": 1792717200.0,
+    "end": 1792905300.0,
+    "bid": 0.74,
+    "ask": 0.77
+   },
+   {
+    "slug": "atc-lco-atl-adp-2026-10-10-draw",
+    "question": "Will the Liga Colombia match Atletico Nacional vs AD Pasto scheduled for Oct 10, 2026 end in a draw?",
+    "title": "",
+    "game_start": 1792717200.0,
+    "end": 1792905300.0,
+    "bid": 0.16,
+    "ask": 0.17
+   },
+   {
+    "slug": "atc-lco-atl-adp-2026-10-10-adp",
+    "question": "Will AD Pasto win against Atletico Nacional in the Liga Colombia match scheduled for Oct 10, 2026?",
+    "title": "",
+    "game_start": 1792717200.0,
+    "end": 1792905300.0,
+    "bid": 0.06,
+    "ask": 0.08
+   },
+   {
+    "slug": "atc-tff1-umr-bol-2026-10-14-umr",
+    "question": "Will Umraniyespor win against Boluspor in the TFF 1. Lig match scheduled for Oct 14, 2026?",
+    "title": "",
+    "game_start": 1791986400.0,
+    "end": 1793210400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "atc-tff1-umr-bol-2026-10-14-draw",
+    "question": "Will the TFF 1. Lig match Umraniyespor vs Boluspor scheduled for Oct 14, 2026 end in a draw?",
+    "title": "",
+    "game_start": 1791986400.0,
+    "end": 1793210400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "atc-tff1-umr-bol-2026-10-14-bol",
+    "question": "Will Boluspor win against Umraniyespor in the TFF 1. Lig match scheduled for Oct 14, 2026?",
+    "title": "",
+    "game_start": 1791986400.0,
+    "end": 1793210400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "atc-ncaaws-fls-nct-2026-10-09-fls",
+    "question": "Will Florida State Seminoles win against North Carolina Tar Heels in the NCAA Women's Soccer match scheduled for Oct 9, 2026?",
+    "title": "",
+    "game_start": 1791583200.0,
+    "end": 1792807200.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "atc-ncaaws-fls-nct-2026-10-09-draw",
+    "question": "Will the NCAA Women's Soccer match Florida State Seminoles vs North Carolina Tar Heels scheduled for Oct 9, 2026 end in a draw?",
+    "title": "",
+    "game_start": 1791583200.0,
+    "end": 1792807200.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "atc-ncaaws-fls-nct-2026-10-09-nct",
+    "question": "Will North Carolina Tar Heels win against Florida State Seminoles in the NCAA Women's Soccer match scheduled for Oct 9, 2026?",
+    "title": "",
+    "game_start": 1791583200.0,
+    "end": 1792807200.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "atc-ncaaws-wfa-bke-2026-10-11-wfa",
+    "question": "Will West Florida Argonauts win against Bellarmine Knights in the NCAA Women's Soccer match scheduled for Oct 11, 2026?",
+    "title": "",
+    "game_start": 1791741600.0,
+    "end": 1792965600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "atc-ncaaws-wfa-bke-2026-10-11-draw",
+    "question": "Will the NCAA Women's Soccer match West Florida Argonauts vs Bellarmine Knights scheduled for Oct 11, 2026 end in a draw?",
+    "title": "",
+    "game_start": 1791741600.0,
+    "end": 1792965600.0,
+    "bid": null,
+    "ask": null
+   }
+  ],
+  "props/sports": [
+   {
+    "slug": "astatc-r6-kz-lgd-2026-09-24-map2",
+    "question": "Will KINGZERO eSports win Map 2 vs LGD Gaming?",
+    "title": "Map 2 Winner",
+    "game_start": 1790240400.0,
+    "end": 1791464400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "astatc-lal-ray-ath-2026-10-10-btts",
+    "question": "Will both teams score in the match between Rayo Vallecano de Madrid and Athletic Club on 2026-10-10 8:00AM ET?",
+    "title": "Both Teams To Score",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "astatc-lal-ray-ath-2026-10-10-ftts-ray",
+    "question": "Will Rayo Vallecano de Madrid be the first to score a goal on 2026-10-10 8:00AM ET?",
+    "title": "Rayo Vallecano de Madrid",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "astatc-lal-ray-ath-2026-10-10-ftts-ath",
+    "question": "Will Athletic Club be the first to score a goal on 2026-10-10 8:00AM ET?",
+    "title": "Athletic Club",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "astatc-lal-ray-ath-2026-10-10-ftts-none",
+    "question": "Will None be the first to score a goal on 2026-10-10 8:00AM ET?",
+    "title": "None",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "atc-lal-ray-ath-2026-10-10-exact-score-0-0",
+    "question": "Will RAY vs ATH finish Draw 0-0?",
+    "title": "Draw 0-0",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "atc-lal-ray-ath-2026-10-10-exact-score-1-0",
+    "question": "Will RAY vs ATH finish RAY wins 1-0?",
+    "title": "RAY wins 1-0",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "atc-lal-ray-ath-2026-10-10-exact-score-0-1",
+    "question": "Will RAY vs ATH finish ATH wins 1-0?",
+    "title": "ATH wins 1-0",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "atc-lal-ray-ath-2026-10-10-exact-score-1-1",
+    "question": "Will RAY vs ATH finish Draw 1-1?",
+    "title": "Draw 1-1",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "atc-lal-ray-ath-2026-10-10-exact-score-2-0",
+    "question": "Will RAY vs ATH finish RAY wins 2-0?",
+    "title": "RAY wins 2-0",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "atc-lal-ray-ath-2026-10-10-exact-score-0-2",
+    "question": "Will RAY vs ATH finish ATH wins 2-0?",
+    "title": "ATH wins 2-0",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "atc-lal-ray-ath-2026-10-10-exact-score-2-1",
+    "question": "Will RAY vs ATH finish RAY wins 2-1?",
+    "title": "RAY wins 2-1",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "atc-lal-ray-ath-2026-10-10-exact-score-1-2",
+    "question": "Will RAY vs ATH finish ATH wins 2-1?",
+    "title": "ATH wins 2-1",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "atc-lal-ray-ath-2026-10-10-exact-score-2-2",
+    "question": "Will RAY vs ATH finish Draw 2-2?",
+    "title": "Draw 2-2",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "atc-lal-ray-ath-2026-10-10-exact-score-3-0",
+    "question": "Will RAY vs ATH finish RAY wins 3-0?",
+    "title": "RAY wins 3-0",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   }
+  ],
+  "spreads/sports": [
+   {
+    "slug": "asc-cs2-re-nem-2026-09-24-hcap-pos-1pt5",
+    "question": "Will the Rune Eaters cover 1.5 vs the Team Nemesis in Rune Eaters vs. Team Nemesis?",
+    "title": "",
+    "game_start": 1790240400.0,
+    "end": 1791464400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "asc-cs2-re-nem-2026-09-24-m2rh-pos-4pt5",
+    "question": "Will the Rune Eaters cover 4.5 vs the Team Nemesis in Rune Eaters vs. Team Nemesis - Map 2?",
+    "title": "",
+    "game_start": 1790240400.0,
+    "end": 1791464400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "asc-r6-kz-lgd-2026-09-24-hcap-neg-1pt5",
+    "question": "Will the KINGZERO eSports cover -1.5 vs the LGD Gaming in KINGZERO eSports vs. LGD Gaming?",
+    "title": "",
+    "game_start": 1790240400.0,
+    "end": 1791464400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "asc-cs2-mandl-aer-2026-09-24-hcap-pos-1pt5",
+    "question": "Will the MARKandLARRY cover 1.5 vs the Arcade Esports in MARKandLARRY vs. Arcade Esports?",
+    "title": "",
+    "game_start": 1790240400.0,
+    "end": 1791464400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "asc-cs2-mandl-aer-2026-09-24-m2rh-pos-2pt5",
+    "question": "Will the MARKandLARRY cover 2.5 vs the Arcade Esports in MARKandLARRY vs. Arcade Esports - Map 2?",
+    "title": "",
+    "game_start": 1790240400.0,
+    "end": 1791464400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "asc-cs2-org-fruju-2026-09-24-hcap-neg-1pt5",
+    "question": "Will the Orgless cover -1.5 vs the Fruju in Orgless vs. Fruju?",
+    "title": "",
+    "game_start": 1790240400.0,
+    "end": 1791464400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "asc-cs2-org-fruju-2026-09-24-m2rh-neg-3pt5",
+    "question": "Will the Orgless cover -3.5 vs the Fruju in Orgless vs. Fruju - Map 2?",
+    "title": "",
+    "game_start": 1790240400.0,
+    "end": 1791464400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "asc-cs2-re-nem-2026-09-24-m2rh-pos-5pt5",
+    "question": "Will the Rune Eaters cover 5.5 vs the Team Nemesis in Rune Eaters vs. Team Nemesis - Map 2?",
+    "title": "",
+    "game_start": 1790240400.0,
+    "end": 1791464400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "asc-lal-ray-ath-2026-10-10-neg-2pt5",
+    "question": "Will the Rayo Vallecano de Madrid cover -2.5 vs the Athletic Club in RAY vs ATH?",
+    "title": "",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "asc-lal-ray-ath-2026-10-10-neg-1pt5",
+    "question": "Will the Rayo Vallecano de Madrid cover -1.5 vs the Athletic Club in RAY vs ATH?",
+    "title": "",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "asc-lal-ray-ath-2026-10-10-pos-1pt5",
+    "question": "Will the Rayo Vallecano de Madrid cover 1.5 vs the Athletic Club in RAY vs ATH?",
+    "title": "",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "asc-lal-ray-ath-2026-10-10-pos-2pt5",
+    "question": "Will the Rayo Vallecano de Madrid cover 2.5 vs the Athletic Club in RAY vs ATH?",
+    "title": "",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "asc-lal-ray-ath-2026-10-10-fh-neg-2pt5",
+    "question": "Will the Rayo Vallecano de Madrid cover -2.5 vs the Athletic Club in RAY vs ATH?",
+    "title": "",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": 0.02
+   },
+   {
+    "slug": "asc-lal-ray-ath-2026-10-10-fh-neg-1pt5",
+    "question": "Will the Rayo Vallecano de Madrid cover -1.5 vs the Athletic Club in RAY vs ATH?",
+    "title": "",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "asc-lal-ray-ath-2026-10-10-fh-pos-1pt5",
+    "question": "Will the Rayo Vallecano de Madrid cover 1.5 vs the Athletic Club in RAY vs ATH?",
+    "title": "",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   }
+  ],
+  "totals/sports": [
+   {
+    "slug": "tsc-cs2-re-nem-2026-09-24-tot-2pt5",
+    "question": "Will the total in Rune Eaters vs. Team Nemesis be more than 2.5?",
+    "title": "",
+    "game_start": 1790240400.0,
+    "end": 1791464400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "tsc-cs2-re-nem-2026-09-24-m2tr-20pt5",
+    "question": "Will the total in Rune Eaters vs. Team Nemesis - Map 2 be more than 20.5?",
+    "title": "",
+    "game_start": 1790240400.0,
+    "end": 1791464400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "tsc-lol-sgw-9g-2026-09-24-tot-2pt5",
+    "question": "Will the total in Saigon Warriors vs. 9Gaming be more than 2.5?",
+    "title": "",
+    "game_start": 1790240400.0,
+    "end": 1791464400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "tsc-r6-kz-lgd-2026-09-24-tot-2pt5",
+    "question": "Will the total in KINGZERO eSports vs. LGD Gaming be more than 2.5?",
+    "title": "",
+    "game_start": 1790240400.0,
+    "end": 1791464400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "tsc-cs2-org-fruju-2026-09-24-tot-2pt5",
+    "question": "Will the total in Orgless vs. Fruju be more than 2.5?",
+    "title": "",
+    "game_start": 1790240400.0,
+    "end": 1791464400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "tsc-cs2-mandl-aer-2026-09-24-tot-2pt5",
+    "question": "Will the total in MARKandLARRY vs. Arcade Esports be more than 2.5?",
+    "title": "",
+    "game_start": 1790240400.0,
+    "end": 1791464400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "tsc-cs2-mandl-aer-2026-09-24-m2tr-21pt5",
+    "question": "Will the total in MARKandLARRY vs. Arcade Esports - Map 2 be more than 21.5?",
+    "title": "",
+    "game_start": 1790240400.0,
+    "end": 1791464400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "tsc-cs2-org-fruju-2026-09-24-m2tr-21pt5",
+    "question": "Will the total in Orgless vs. Fruju - Map 2 be more than 21.5?",
+    "title": "",
+    "game_start": 1790240400.0,
+    "end": 1791464400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "tsc-cs2-org-fruju-2026-09-24-m2tr-20pt5",
+    "question": "Will the total in Orgless vs. Fruju - Map 2 be more than 20.5?",
+    "title": "",
+    "game_start": 1790240400.0,
+    "end": 1791464400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "tsc-cs2-re-nem-2026-09-24-m2tr-19pt5",
+    "question": "Will the total in Rune Eaters vs. Team Nemesis - Map 2 be more than 19.5?",
+    "title": "",
+    "game_start": 1790240400.0,
+    "end": 1791464400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "tsc-lal-ray-ath-2026-10-10-0pt5",
+    "question": "Will the total in RAY vs ATH be more than 0.5?",
+    "title": "",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "tsc-lal-ray-ath-2026-10-10-1pt5",
+    "question": "Will the total in RAY vs ATH be more than 1.5?",
+    "title": "",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "tsc-lal-ray-ath-2026-10-10-2pt5",
+    "question": "Will the total in RAY vs ATH be more than 2.5?",
+    "title": "",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "tsc-lal-ray-ath-2026-10-10-3pt5",
+    "question": "Will the total in RAY vs ATH be more than 3.5?",
+    "title": "",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "tsc-lal-ray-ath-2026-10-10-fh-0pt5",
+    "question": "Will the total in RAY vs ATH be more than 0.5?",
+    "title": "",
+    "game_start": 1791633600.0,
+    "end": 1792857600.0,
+    "bid": null,
+    "ask": null
+   }
+  ],
+  "/crypto": [
+   {
+    "slug": "cpc-btc-hit-h-m-2026-10-90000",
+    "question": "How high will BTC get in October?",
+    "title": "Reaches $90,000",
+    "game_start": 1790827200.0,
+    "end": 1793507400.0,
+    "bid": 0.16,
+    "ask": 0.23
+   },
+   {
+    "slug": "cpc-btc-hit-h-m-2026-10-92500",
+    "question": "How high will BTC get in October?",
+    "title": "Reaches $92,500",
+    "game_start": 1790827200.0,
+    "end": 1793507400.0,
+    "bid": 0.08,
+    "ask": 0.13
+   },
+   {
+    "slug": "cpc-btc-hit-h-m-2026-10-95000",
+    "question": "How high will BTC get in October?",
+    "title": "Reaches $95,000",
+    "game_start": 1790827200.0,
+    "end": 1793507400.0,
+    "bid": 0.02,
+    "ask": 0.07
+   },
+   {
+    "slug": "cpc-btc-hit-h-m-2026-10-97500",
+    "question": "How high will BTC get in October?",
+    "title": "Reaches $97,500",
+    "game_start": 1790827200.0,
+    "end": 1793507400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "cpc-btc-hit-h-m-2026-10-100000",
+    "question": "How high will BTC get in October?",
+    "title": "Reaches $100,000",
+    "game_start": 1790827200.0,
+    "end": 1793507400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "cpc-btc-hit-h-m-2026-10-102500",
+    "question": "How high will BTC get in October?",
+    "title": "Reaches $102,500",
+    "game_start": 1790827200.0,
+    "end": 1793507400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "cpc-btc-hit-h-m-2026-10-105000",
+    "question": "How high will BTC get in October?",
+    "title": "Reaches $105,000",
+    "game_start": 1790827200.0,
+    "end": 1793507400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "cpc-btc-hit-h-m-2026-10-107500",
+    "question": "How high will BTC get in October?",
+    "title": "Reaches $107,500",
+    "game_start": 1790827200.0,
+    "end": 1793507400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "cpc-btc-hit-l-m-2026-10-65000",
+    "question": "How low will BTC get in October?",
+    "title": "Dips to $65,000",
+    "game_start": 1790827200.0,
+    "end": 1793507400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "cpc-btc-hit-l-m-2026-10-67500",
+    "question": "How low will BTC get in October?",
+    "title": "Dips to $67,500",
+    "game_start": 1790827200.0,
+    "end": 1793507400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "cpc-btc-hit-l-m-2026-10-70000",
+    "question": "How low will BTC get in October?",
+    "title": "Dips to $70,000",
+    "game_start": 1790827200.0,
+    "end": 1793507400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "cpc-btc-hit-l-m-2026-10-72500",
+    "question": "How low will BTC get in October?",
+    "title": "Dips to $72,500",
+    "game_start": 1790827200.0,
+    "end": 1793507400.0,
+    "bid": 0.02,
+    "ask": 0.08
+   },
+   {
+    "slug": "cpc-btc-hit-l-m-2026-10-75000",
+    "question": "How low will BTC get in October?",
+    "title": "Dips to $75,000",
+    "game_start": 1790827200.0,
+    "end": 1793507400.0,
+    "bid": 0.06,
+    "ask": 0.14
+   },
+   {
+    "slug": "cpc-btc-hit-l-m-2026-10-77500",
+    "question": "How low will BTC get in October?",
+    "title": "Dips to $77,500",
+    "game_start": 1790827200.0,
+    "end": 1793507400.0,
+    "bid": 0.16,
+    "ask": 0.23
+   },
+   {
+    "slug": "cpc-btc-hit-l-m-2026-10-62500",
+    "question": "How low will BTC get in October?",
+    "title": "Dips to $62,500",
+    "game_start": 1790827200.0,
+    "end": 1793507400.0,
+    "bid": null,
+    "ask": null
+   }
+  ]
+ }
+}

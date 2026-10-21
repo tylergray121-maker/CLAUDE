@@ -8,44 +8,12 @@
   "tick": 0.01
  },
  {
-  "us_slug": "aqc-ucl-2027-06-05-finalq-shd",
-  "intl_token": "33339798372916037220786136133406478491116150628220441951753426683441228279665",
-  "score": 0.533,
-  "us_label": "Champions League Final Qualifiers: FK Shakhtar Donetsk",
-  "intl_label": "Will Shakhtar Donetsk win the 2026-27 UEFA Champions League Championship? [Shakhtar Donetsk]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aqc-ucl-2027-06-05-finalq-psg",
-  "intl_token": "42217322941028479596443192387253851340512855886718995311794210900077539715203",
-  "score": 0.625,
-  "us_label": "Champions League Final Qualifiers: Paris Saint-Germain",
-  "intl_label": "Will Paris Saint-Germain win the 2026-27 UEFA Champions League Championship? [Paris Saint-Germain]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-ucl-final-2026-06-05-w-bru",
   "intl_token": "42934023876900744469315825151054686737366748717421206370305908868326441586868",
   "score": 0.5,
   "us_label": "UEFA Champions League Winner: Club Brugge KV",
   "intl_label": "Will Club Brugge win the 2026-27 UEFA Champions League Championship? [Club Brugge]",
   "tick": 0.01
- },
- {
-  "us_slug": "aqc-ucl-2027-06-05-finalq-bru",
-  "intl_token": "42934023876900744469315825151054686737366748717421206370305908868326441586868",
-  "score": 0.533,
-  "us_label": "Champions League Final Qualifiers: Club Brugge KV",
-  "intl_label": "Will Club Brugge win the 2026-27 UEFA Champions League Championship? [Club Brugge]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-mls-winner-2026-11-07-por",
-  "intl_token": "76578478031149931955253532632469941778395228075447577152401418956564345303011",
-  "score": 0.6,
-  "us_label": "Major League Soccer Champion: Portland Timbers",
-  "intl_label": "Will Portland Timbers win the 2026 MLS Cup? [Portland Timbers]",
-  "tick": 0.001
  },
  {
   "us_slug": "tec-mls-winner-2026-11-07-dcu",
@@ -56,18 +24,18 @@
   "tick": 0.001
  },
  {
+  "us_slug": "tec-mls-winner-2026-11-07-por",
+  "intl_token": "76578478031149931955253532632469941778395228075447577152401418956564345303011",
+  "score": 0.6,
+  "us_label": "Major League Soccer Champion: Portland Timbers",
+  "intl_label": "Will Portland Timbers win the 2026 MLS Cup? [Portland Timbers]",
+  "tick": 0.001
+ },
+ {
   "us_slug": "tec-ucl-final-2026-06-05-w-por",
   "intl_token": "32497984693549591537443927130974395826708445848901982435855158355666016896406",
   "score": 0.5,
   "us_label": "UEFA Champions League Winner: FC Porto",
-  "intl_label": "Will Porto win the 2026-27 UEFA Champions League Championship? [Porto]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aqc-ucl-2027-06-05-finalq-por",
-  "intl_token": "32497984693549591537443927130974395826708445848901982435855158355666016896406",
-  "score": 0.533,
-  "us_label": "Champions League Final Qualifiers: FC Porto",
   "intl_label": "Will Porto win the 2026-27 UEFA Champions League Championship? [Porto]",
   "tick": 0.01
  },
@@ -88,26 +56,10 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nba-eastconf-2027-05-19-w-chi",
-  "intl_token": "113337721579381277908305465082782938267003233130740276938288846926133472308523",
-  "score": 0.607,
-  "us_label": "NBA Eastern Conference Champion: Chicago Bulls",
-  "intl_label": "Will Chicago Bulls win the 2027 NBA Finals? [Chicago Bulls]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-champ-2027-06-18-w-orl",
   "intl_token": "14149364091939747141050835064176645591010128057901149232938423620327933135956",
   "score": 0.625,
   "us_label": "2027 NBA Champion: Orlando Magic",
-  "intl_label": "Will Orlando Magic win the 2027 NBA Finals? [Orlando Magic]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-eastconf-2027-05-19-w-orl",
-  "intl_token": "14149364091939747141050835064176645591010128057901149232938423620327933135956",
-  "score": 0.607,
-  "us_label": "NBA Eastern Conference Champion: Orlando Magic",
   "intl_label": "Will Orlando Magic win the 2027 NBA Finals? [Orlando Magic]",
   "tick": 0.01
  },
@@ -120,26 +72,10 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nba-westconf-2027-05-29-w-den",
-  "intl_token": "338436322259062069756479235974559743523378455152932470985493948167186891368",
-  "score": 0.607,
-  "us_label": "NBA Western Conference Champion: Denver Nuggets",
-  "intl_label": "Will Denver Nuggets win the 2027 NBA Finals? [Denver Nuggets]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-champ-2027-06-18-w-gsw",
   "intl_token": "50057479075318947359707260741622203277536030001654353875522545719934423335906",
   "score": 0.625,
   "us_label": "2027 NBA Champion: Golden State Warriors",
-  "intl_label": "Will Golden State Warriors win the 2027 NBA Finals? [Golden State Warriors]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-westconf-2027-05-29-w-gsw",
-  "intl_token": "50057479075318947359707260741622203277536030001654353875522545719934423335906",
-  "score": 0.607,
-  "us_label": "NBA Western Conference Champion: Golden State Warriors",
   "intl_label": "Will Golden State Warriors win the 2027 NBA Finals? [Golden State Warriors]",
   "tick": 0.01
  },
@@ -168,26 +104,10 @@
   "tick": 0.01
  },
  {
-  "us_slug": "aqc-ucl-2027-06-05-finalq-fey",
-  "intl_token": "79251350383985738544500653399425152839442117797590609656142904853188277265233",
-  "score": 0.533,
-  "us_label": "Champions League Final Qualifiers: Feyenoord Rotterdam",
-  "intl_label": "Will Feyenoord win the 2026-27 UEFA Champions League Championship? [Feyenoord]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-champ-2027-06-18-w-cle",
   "intl_token": "7103927316928557651756293615464760318461267087970415244972136093676271405674",
   "score": 0.625,
   "us_label": "2027 NBA Champion: Cleveland Cavaliers",
-  "intl_label": "Will Cleveland Cavaliers win the 2027 NBA Finals? [Cleveland Cavaliers]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-eastconf-2027-05-19-w-cle",
-  "intl_token": "7103927316928557651756293615464760318461267087970415244972136093676271405674",
-  "score": 0.607,
-  "us_label": "NBA Eastern Conference Champion: Cleveland Cavaliers",
   "intl_label": "Will Cleveland Cavaliers win the 2027 NBA Finals? [Cleveland Cavaliers]",
   "tick": 0.01
  },
@@ -216,35 +136,11 @@
   "tick": 0.01
  },
  {
-  "us_slug": "aqc-ucl-2027-06-05-finalq-nap",
-  "intl_token": "93045961894175676546838541868635025573328846663951470971342071027086180788730",
-  "score": 0.533,
-  "us_label": "Champions League Final Qualifiers: SSC Napoli",
-  "intl_label": "Will Napoli win the 2026-27 UEFA Champions League Championship? [Napoli]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-champ-2027-06-18-w-por",
   "intl_token": "79620428735680913350265023427447805792163805641954526434518305561708056954117",
   "score": 0.625,
   "us_label": "2027 NBA Champion: Portland Trail Blazers",
   "intl_label": "Will Portland Trail Blazers win the 2027 NBA Finals? [Portland Trail Blazers]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-westconf-2027-05-29-w-por",
-  "intl_token": "79620428735680913350265023427447805792163805641954526434518305561708056954117",
-  "score": 0.607,
-  "us_label": "NBA Western Conference Champion: Portland Trail Blazers",
-  "intl_label": "Will Portland Trail Blazers win the 2027 NBA Finals? [Portland Trail Blazers]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aqc-ucl-2027-06-05-finalq-fen",
-  "intl_token": "105987988627088062917900078472998990392914885926056840667798015309483025020431",
-  "score": 0.525,
-  "us_label": "Champions League Final Qualifiers: Fenerbah\u00e7e SK",
-  "intl_label": "Will Fenerbah\u00e7e win the 2026-27 UEFA Champions League Championship? [Fenerbah\u00e7e]",
   "tick": 0.01
  },
  {
@@ -256,19 +152,11 @@
   "tick": 0.01
  },
  {
-  "us_slug": "aqc-ucl-2027-06-05-finalq-spo",
-  "intl_token": "51852859144588408353883434057387376016222865952172946996183559003223391693129",
-  "score": 0.633,
-  "us_label": "Champions League Final Qualifiers: Sporting CP",
-  "intl_label": "Will Sporting CP win the 2026-27 UEFA Champions League Championship? [Sporting CP]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ewc-usgub-ca-2026-11-03-stehil",
-  "intl_token": "82742036522262670996662794097029680950132682539859985097974842241612036171395",
-  "score": 0.625,
-  "us_label": "California Governor Election Winner: Steve Hilton",
-  "intl_label": "Will Steve Hilton win the California Governor Election in 2026? [Steve Hilton]",
+  "us_slug": "tec-ucl-final-2026-06-05-w-fcb",
+  "intl_token": "105424657244554511014150825202397702180419919286931996082717264149902476600628",
+  "score": 0.5,
+  "us_label": "UEFA Champions League Winner: FC Barcelona",
+  "intl_label": "Will Barcelona win the 2026-27 UEFA Champions League Championship? [Barcelona]",
   "tick": 0.01
  },
  {
@@ -280,22 +168,6 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nba-eastconf-2027-05-19-w-cha",
-  "intl_token": "104764677445041735405004295087562978678692922058505365615073838332507558341437",
-  "score": 0.607,
-  "us_label": "NBA Eastern Conference Champion: Charlotte Hornets",
-  "intl_label": "Will Charlotte Hornets win the 2027 NBA Finals? [Charlotte Hornets]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-ucl-final-2026-06-05-w-fcb",
-  "intl_token": "105424657244554511014150825202397702180419919286931996082717264149902476600628",
-  "score": 0.5,
-  "us_label": "UEFA Champions League Winner: FC Barcelona",
-  "intl_label": "Will Barcelona win the 2026-27 UEFA Champions League Championship? [Barcelona]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-mlb-champ-2026-09-27-tb",
   "intl_token": "47619537154464827225570738666275423513741144464229940374555699932743034295206",
   "score": 0.75,
@@ -304,26 +176,10 @@
   "tick": 0.001
  },
  {
-  "us_slug": "aqc-ucl-2027-06-05-finalq-mnc",
-  "intl_token": "42855735319370639870004203630851865013257400213298023821027601629428227024195",
-  "score": 0.625,
-  "us_label": "Champions League Final Qualifiers: Manchester City",
-  "intl_label": "Will Manchester City win the 2026-27 UEFA Champions League Championship? [Manchester City]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-ucl-final-2026-06-05-w-lil",
   "intl_token": "51219560941253926310527787555655915098295613243716378166305588949602532793247",
   "score": 0.5,
   "us_label": "UEFA Champions League Winner: Lille OSC",
-  "intl_label": "Will Lille win the 2026-27 UEFA Champions League Championship? [Lille]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aqc-ucl-2027-06-05-finalq-lil",
-  "intl_token": "51219560941253926310527787555655915098295613243716378166305588949602532793247",
-  "score": 0.533,
-  "us_label": "Champions League Final Qualifiers: Lille OSC",
   "intl_label": "Will Lille win the 2026-27 UEFA Champions League Championship? [Lille]",
   "tick": 0.01
  },
@@ -344,26 +200,10 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nba-eastconf-2027-05-19-w-tor",
-  "intl_token": "60150478766427655464939988524322736170735963119451703309436561797949171579582",
-  "score": 0.607,
-  "us_label": "NBA Eastern Conference Champion: Toronto Raptors",
-  "intl_label": "Will Toronto Raptors win the 2027 NBA Finals? [Toronto Raptors]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-champ-2027-06-18-w-mia",
   "intl_token": "1002605241037566897075427941760276379638292422424020000466947342214004056028",
   "score": 0.625,
   "us_label": "2027 NBA Champion: Miami Heat",
-  "intl_label": "Will Miami Heat win the 2027 NBA Finals? [Miami Heat]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-eastconf-2027-05-19-w-mia",
-  "intl_token": "1002605241037566897075427941760276379638292422424020000466947342214004056028",
-  "score": 0.607,
-  "us_label": "NBA Eastern Conference Champion: Miami Heat",
   "intl_label": "Will Miami Heat win the 2027 NBA Finals? [Miami Heat]",
   "tick": 0.01
  },
@@ -384,26 +224,10 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nba-eastconf-2027-05-19-w-ind",
-  "intl_token": "33980098202566160742933998883875104660267284431086844431645851751245806675098",
-  "score": 0.607,
-  "us_label": "NBA Eastern Conference Champion: Indiana Pacers",
-  "intl_label": "Will Indiana Pacers win the 2027 NBA Finals? [Indiana Pacers]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-champ-2027-06-18-w-lac",
   "intl_token": "76232322569898589749413822670406290301746839185124132406151011054116796849360",
   "score": 0.625,
   "us_label": "2027 NBA Champion: Los Angeles Clippers",
-  "intl_label": "Will Los Angeles Clippers win the 2027 NBA Finals? [Los Angeles Clippers]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-westconf-2027-05-29-w-lac",
-  "intl_token": "76232322569898589749413822670406290301746839185124132406151011054116796849360",
-  "score": 0.607,
-  "us_label": "NBA Western Conference Champion: Los Angeles Clippers",
   "intl_label": "Will Los Angeles Clippers win the 2027 NBA Finals? [Los Angeles Clippers]",
   "tick": 0.01
  },
@@ -416,11 +240,19 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nba-westconf-2027-05-29-w-min",
-  "intl_token": "70393266426571575127884261634092459667577738304718921911204715531748407428131",
-  "score": 0.607,
-  "us_label": "NBA Western Conference Champion: Minnesota Timberwolves",
-  "intl_label": "Will Minnesota Timberwolves win the 2027 NBA Finals? [Minnesota Timberwolves]",
+  "us_slug": "tec-nba-champ-2027-06-18-w-lal",
+  "intl_token": "26571480884168216649675719735797492426851959149575524589012193881222415382420",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Los Angeles Lakers",
+  "intl_label": "Will Los Angeles Lakers win the 2027 NBA Finals? [Los Angeles Lakers]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "ewc-usgub-ca-2026-11-03-stehil",
+  "intl_token": "82742036522262670996662794097029680950132682539859985097974842241612036171395",
+  "score": 0.625,
+  "us_label": "California Governor Election Winner: Steve Hilton",
+  "intl_label": "Will Steve Hilton win the California Governor Election in 2026? [Steve Hilton]",
   "tick": 0.01
  },
  {
@@ -428,14 +260,6 @@
   "intl_token": "66978283296201729156011778181685232128845704002364165961550702560777069065938",
   "score": 0.625,
   "us_label": "2027 NBA Champion: Atlanta Hawks",
-  "intl_label": "Will Atlanta Hawks win the 2027 NBA Finals? [Atlanta Hawks]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-eastconf-2027-05-19-w-atl",
-  "intl_token": "66978283296201729156011778181685232128845704002364165961550702560777069065938",
-  "score": 0.607,
-  "us_label": "NBA Eastern Conference Champion: Atlanta Hawks",
   "intl_label": "Will Atlanta Hawks win the 2027 NBA Finals? [Atlanta Hawks]",
   "tick": 0.01
  },
@@ -448,54 +272,6 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nba-westconf-2027-05-29-w-hou",
-  "intl_token": "54389136151618785952849043856295459748131034150210702007482093675046699037784",
-  "score": 0.607,
-  "us_label": "NBA Western Conference Champion: Houston Rockets",
-  "intl_label": "Will Houston Rockets win the 2027 NBA Finals? [Houston Rockets]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-ar-02-2026-11-03-dem",
-  "intl_token": "29650291346984170969493238115060993121675031711316455275308282949665273399467",
-  "score": 0.613,
-  "us_label": "AR-02 House Election Winner: Chris Jones (D)",
-  "intl_label": "Will the Democratic Party win the AR-02 House seat? [Chris Jones (D)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-lal",
-  "intl_token": "26571480884168216649675719735797492426851959149575524589012193881222415382420",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Los Angeles Lakers",
-  "intl_label": "Will Los Angeles Lakers win the 2027 NBA Finals? [Los Angeles Lakers]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-westconf-2027-05-29-w-lal",
-  "intl_token": "26571480884168216649675719735797492426851959149575524589012193881222415382420",
-  "score": 0.607,
-  "us_label": "NBA Western Conference Champion: Los Angeles Lakers",
-  "intl_label": "Will Los Angeles Lakers win the 2027 NBA Finals? [Los Angeles Lakers]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-pa-01-2026-11-03-dem",
-  "intl_token": "90438836256571410927299008367228796312209722771624666597034907143954367060240",
-  "score": 0.613,
-  "us_label": "PA-01 House Election Winner: Bob Harvie (D)",
-  "intl_label": "Will the Democratic Party win the PA-01 House seat? [Bob Harvie (D)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-va-05-2026-11-03-dem",
-  "intl_token": "30424541292784877350495001354252975055952568624850695789713995653053526735723",
-  "score": 0.613,
-  "us_label": "VA-05 House Election Winner: Tom Perriello (D)",
-  "intl_label": "Will the Democratic Party win the VA-05 House seat? [Tom Perriello (D)]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-champ-2027-06-18-w-pho",
   "intl_token": "56511509919728347181497845289403940666044398339205720854450061222431419409255",
   "score": 0.625,
@@ -504,26 +280,10 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nba-westconf-2027-05-29-w-pho",
-  "intl_token": "56511509919728347181497845289403940666044398339205720854450061222431419409255",
-  "score": 0.607,
-  "us_label": "NBA Western Conference Champion: Phoenix Suns",
-  "intl_label": "Will Phoenix Suns win the 2027 NBA Finals? [Phoenix Suns]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-champ-2027-06-18-w-mil",
   "intl_token": "95591695216171451248134018784429977920892345198186404402775566795817315978257",
   "score": 0.625,
   "us_label": "2027 NBA Champion: Milwaukee Bucks",
-  "intl_label": "Will Milwaukee Bucks win the 2027 NBA Finals? [Milwaukee Bucks]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-eastconf-2027-05-19-w-mil",
-  "intl_token": "95591695216171451248134018784429977920892345198186404402775566795817315978257",
-  "score": 0.607,
-  "us_label": "NBA Eastern Conference Champion: Milwaukee Bucks",
   "intl_label": "Will Milwaukee Bucks win the 2027 NBA Finals? [Milwaukee Bucks]",
   "tick": 0.01
  },
@@ -544,26 +304,10 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nba-eastconf-2027-05-19-w-det",
-  "intl_token": "22589862545502642463701340320964032988974740564891659118937148977135855914254",
-  "score": 0.607,
-  "us_label": "NBA Eastern Conference Champion: Detroit Pistons",
-  "intl_label": "Will Detroit Pistons win the 2027 NBA Finals? [Detroit Pistons]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-champ-2027-06-18-w-sac",
   "intl_token": "57732863988930661516951373762180729621826532679525881570777417952859748544005",
   "score": 0.625,
   "us_label": "2027 NBA Champion: Sacramento Kings",
-  "intl_label": "Will Sacramento Kings win the 2027 NBA Finals? [Sacramento Kings]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-westconf-2027-05-29-w-sac",
-  "intl_token": "57732863988930661516951373762180729621826532679525881570777417952859748544005",
-  "score": 0.607,
-  "us_label": "NBA Western Conference Champion: Sacramento Kings",
   "intl_label": "Will Sacramento Kings win the 2027 NBA Finals? [Sacramento Kings]",
   "tick": 0.01
  },
@@ -576,35 +320,11 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nba-eastconf-2027-05-19-w-was",
-  "intl_token": "18698383041475028586441882955848696846459130548949943300472083017789362131208",
-  "score": 0.607,
-  "us_label": "NBA Eastern Conference Champion: Washington Wizards",
-  "intl_label": "Will Washington Wizards win the 2027 NBA Finals? [Washington Wizards]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-ucl-final-2026-06-05-w-bog",
   "intl_token": "113565046539594615041447428525881640706571978077687360683724924262092204991483",
   "score": 0.5,
   "us_label": "UEFA Champions League Winner: FK Bod\u00f8/Glimt",
   "intl_label": "Will Bod\u00f8/Glimt win the 2026-27 UEFA Champions League Championship? [Bod\u00f8/Glimt]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aqc-ucl-2027-06-05-finalq-bog",
-  "intl_token": "113565046539594615041447428525881640706571978077687360683724924262092204991483",
-  "score": 0.533,
-  "us_label": "Champions League Final Qualifiers: FK Bod\u00f8/Glimt",
-  "intl_label": "Will Bod\u00f8/Glimt win the 2026-27 UEFA Champions League Championship? [Bod\u00f8/Glimt]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-va-05-2026-11-03-rep",
-  "intl_token": "83253007588985953900662535978265304048199216427463571583210985764316132662845",
-  "score": 0.613,
-  "us_label": "VA-05 House Election Winner: John McGuire (R)",
-  "intl_label": "Will the Republican Party win the VA-05 House seat? [John McGuire (R)]",
   "tick": 0.01
  },
  {
@@ -616,22 +336,6 @@
   "tick": 0.001
  },
  {
-  "us_slug": "ushrewc-ushr-al-02-2026-11-03-dem",
-  "intl_token": "13189761649035136014216228195645475511361901020555722779072382901094466765019",
-  "score": 0.613,
-  "us_label": "AL-02 House Election Winner: Shomari Figures (D)",
-  "intl_label": "Will the Democratic Party win the AL-02 House seat? [Shomari Figures (D)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-pa-01-2026-11-03-rep",
-  "intl_token": "108230243496498344855407302843123554399616537057761543327780472018667198839068",
-  "score": 0.613,
-  "us_label": "PA-01 House Election Winner: Brian Fitzpatrick (R)",
-  "intl_label": "Will the Republican Party win the PA-01 House seat? [Brian Fitzpatrick (R)]",
-  "tick": 0.01
- },
- {
   "us_slug": "rdc-boc-2026-10-28-nochng",
   "intl_token": "20709109032245341219796036781437500675609769308849791852341195403369410462976",
   "score": 0.602,
@@ -640,26 +344,10 @@
   "tick": 0.01
  },
  {
-  "us_slug": "ushrewc-ushr-in-05-2026-11-03-dem",
-  "intl_token": "108361235100175615834197260073509874529620842534476319914175075380891440992948",
-  "score": 0.6,
-  "us_label": "IN-05 House Election Winner: J. D. Ford (D)",
-  "intl_label": "Will the Democratic Party win the IN-05 House seat? [J. D. Ford (D)]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-champ-2027-06-18-w-dal",
   "intl_token": "4349233229896137644074586999216265233007467186235435871733698369103355405028",
   "score": 0.625,
   "us_label": "2027 NBA Champion: Dallas Mavericks",
-  "intl_label": "Will Dallas Mavericks win the 2027 NBA Finals? [Dallas Mavericks]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-westconf-2027-05-29-w-dal",
-  "intl_token": "4349233229896137644074586999216265233007467186235435871733698369103355405028",
-  "score": 0.607,
-  "us_label": "NBA Western Conference Champion: Dallas Mavericks",
   "intl_label": "Will Dallas Mavericks win the 2027 NBA Finals? [Dallas Mavericks]",
   "tick": 0.01
  },
@@ -672,42 +360,10 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nba-westconf-2027-05-29-w-nop",
-  "intl_token": "38556205473470072936293737937663401559968429300207925799805811020804034073896",
-  "score": 0.607,
-  "us_label": "NBA Western Conference Champion: New Orleans Pelicans",
-  "intl_label": "Will New Orleans Pelicans win the 2027 NBA Finals? [New Orleans Pelicans]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aqc-ucl-2027-06-05-finalq-liv",
-  "intl_token": "8193681255314680130463293913377900791697724543108576171134288378615851319182",
-  "score": 0.625,
-  "us_label": "Champions League Final Qualifiers: Liverpool",
-  "intl_label": "Will Liverpool win the 2026-27 UEFA Champions League Championship? [Liverpool]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aqc-ucl-2027-06-05-finalq-atm",
-  "intl_token": "107520367305540889943280471715091928582033112430783246731747368361457994661182",
-  "score": 0.525,
-  "us_label": "Champions League Final Qualifiers: Club Atl\u00e9tico de Madrid",
-  "intl_label": "Will Atl\u00e9tico Madrid win the 2026-27 UEFA Champions League Championship? [Atl\u00e9tico Madrid]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-champ-2027-06-18-w-uta",
   "intl_token": "54923277874826862014634962138109909033857317405603301955984300475658750663515",
   "score": 0.625,
   "us_label": "2027 NBA Champion: Utah Jazz",
-  "intl_label": "Will Utah Jazz win the 2027 NBA Finals? [Utah Jazz]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-westconf-2027-05-29-w-uta",
-  "intl_token": "54923277874826862014634962138109909033857317405603301955984300475658750663515",
-  "score": 0.607,
-  "us_label": "NBA Western Conference Champion: Utah Jazz",
   "intl_label": "Will Utah Jazz win the 2027 NBA Finals? [Utah Jazz]",
   "tick": 0.01
  },
@@ -720,67 +376,11 @@
   "tick": 0.01
  },
  {
-  "us_slug": "arankc-epl-2027-05-30-lastplace-hul",
-  "intl_token": "19129084106918074389743466444184546964159320576683957544376689640092328831272",
-  "score": 0.605,
-  "us_label": "English Premier League Last Place Finisher: Hull City",
-  "intl_label": "Will Hull City win the 2026-27 English Premier League (EPL) Championship? [Hull City]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-ar-02-2026-11-03-rep",
-  "intl_token": "71060712959989403325198445315306760478168572748780398734441832275934823452851",
-  "score": 0.613,
-  "us_label": "AR-02 House Election Winner: French Hill (R)",
-  "intl_label": "Will the Republican Party win the AR-02 House seat? [French Hill (R)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-ky-06-2026-11-03-dem",
-  "intl_token": "104016466807639341701608261715632276876240791833604199728805689230977328148822",
-  "score": 0.613,
-  "us_label": "KY-06 House Election Winner: Zach Dembo (D)",
-  "intl_label": "Will the Democratic Party win the KY-06 House seat? [Zach Dembo (D)]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-ucl-final-2026-06-05-w-bvb",
   "intl_token": "69844945401965968137843459827213978335475795917124102723974229169126962183486",
   "score": 0.5,
   "us_label": "UEFA Champions League Winner: BV Borussia 09 Dortmund",
   "intl_label": "Will Borussia Dortmund win the 2026-27 UEFA Champions League Championship? [Borussia Dortmund]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aqc-ucl-2027-06-05-finalq-bvb",
-  "intl_token": "69844945401965968137843459827213978335475795917124102723974229169126962183486",
-  "score": 0.533,
-  "us_label": "Champions League Final Qualifiers: BV Borussia 09 Dortmund",
-  "intl_label": "Will Borussia Dortmund win the 2026-27 UEFA Champions League Championship? [Borussia Dortmund]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-grammys-aoty-2027-02-07-artlov",
-  "intl_token": "115038513749123323356108768879054424621968703965081397630027954404380369699982",
-  "score": 0.7,
-  "us_label": "Grammy Winner: Album of the Year: The Art of Loving - Olivia Dean",
-  "intl_label": "Will The Art of Loving (Olivia Dean) win Album of the Year at the 69th Annual GRAMMY Awards? [The Art of Loving - Olivia Dean]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-grammys-nom-aoty-2026-11-16-artlov",
-  "intl_token": "115038513749123323356108768879054424621968703965081397630027954404380369699982",
-  "score": 0.667,
-  "us_label": "Grammy Nominees: Album of the Year: The Art of Loving - Olivia Dean",
-  "intl_label": "Will The Art of Loving (Olivia Dean) win Album of the Year at the 69th Annual GRAMMY Awards? [The Art of Loving - Olivia Dean]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-grammys-nom-bpva-2026-11-16-artlov",
-  "intl_token": "115038513749123323356108768879054424621968703965081397630027954404380369699982",
-  "score": 0.619,
-  "us_label": "Grammy Nominees: Best Pop Vocal Album: The Art of Loving - Olivia Dean",
-  "intl_label": "Will The Art of Loving (Olivia Dean) win Album of the Year at the 69th Annual GRAMMY Awards? [The Art of Loving - Olivia Dean]",
   "tick": 0.01
  },
  {
@@ -792,11 +392,11 @@
   "tick": 0.01
  },
  {
-  "us_slug": "ushrewc-ushr-me-02-2026-11-03-dem",
-  "intl_token": "96914958250546616618098909674490573266030506817741031776466109480920768219053",
-  "score": 0.613,
-  "us_label": "ME-02 House Election Winner: Matthew Dunlap (D)",
-  "intl_label": "Will the Democratic Party win the ME-02 House seat? [Matthew Dunlap (D)]",
+  "us_slug": "tac-grammys-aoty-2027-02-07-artlov",
+  "intl_token": "115038513749123323356108768879054424621968703965081397630027954404380369699982",
+  "score": 0.7,
+  "us_label": "Grammy Winner: Album of the Year: The Art of Loving - Olivia Dean",
+  "intl_label": "Will The Art of Loving (Olivia Dean) win Album of the Year at the 69th Annual GRAMMY Awards? [The Art of Loving - Olivia Dean]",
   "tick": 0.01
  },
  {
@@ -808,30 +408,6 @@
   "tick": 0.01
  },
  {
-  "us_slug": "aqc-ucl-2027-06-05-finalq-stu",
-  "intl_token": "22319423712664250000966446349436436521608203218255612444397107110591820588150",
-  "score": 0.633,
-  "us_label": "Champions League Final Qualifiers: VfB Stuttgart",
-  "intl_label": "Will VfB Stuttgart win the 2026-27 UEFA Champions League Championship? [VfB Stuttgart]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-al-02-2026-11-03-rep",
-  "intl_token": "110498646838643141699770234895735915394620065036723874056548571888067488950164",
-  "score": 0.613,
-  "us_label": "AL-02 House Election Winner: Rhett Marques (R)",
-  "intl_label": "Will the Republican Party win the AL-02 House seat? [Rhett Marques (R)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-tx-15-2026-11-03-rep",
-  "intl_token": "288881405005644701938669382130096221659404307173045178355284864479406728774",
-  "score": 0.613,
-  "us_label": "TX-15 House Election Winner: Monica De La Cruz (R)",
-  "intl_label": "Will the Republican Party win the TX-15 House seat? [Monica De La Cruz (R)]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nhl-champ-2027-06-18-w-chi",
   "intl_token": "96355032671434623447281013008042336345369258093158846703642495151280210419235",
   "score": 0.667,
@@ -840,42 +416,10 @@
   "tick": 0.01
  },
  {
-  "us_slug": "ushrewc-ushr-tx-15-2026-11-03-dem",
-  "intl_token": "6584875983046678011286869107197719818123093254495444235544680527373303971994",
-  "score": 0.613,
-  "us_label": "TX-15 House Election Winner: Bobby Pulido (D)",
-  "intl_label": "Will the Democratic Party win the TX-15 House seat? [Bobby Pulido (D)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-tx-26-2026-11-03-rep",
-  "intl_token": "6313430895120244401027950861472377480960423973541524975676914054183454931999",
-  "score": 0.613,
-  "us_label": "TX-26 House Election Winner: Brandon Gill (R)",
-  "intl_label": "Will the Republican Party win the TX-26 House seat? [Brandon Gill (R)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-ia-02-2026-11-03-rep",
-  "intl_token": "106183024660666533834062502031813793169247762855988914383541855843680035368680",
-  "score": 0.613,
-  "us_label": "IA-02 House Election Winner: Joe Mitchell (R)",
-  "intl_label": "Will the Republican Party win the IA-02 House seat? [Joe Mitchell (R)]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-epl-title-2027-05-30-w-bha",
   "intl_token": "9221383556608449303835174806846320148935846556873035382860978740383478459961",
   "score": 0.533,
   "us_label": "English Premier League Champion: Brighton & Hove Albion",
-  "intl_label": "Will Brighton win the 2026-27 English Premier League (EPL) Championship? [Brighton]",
-  "tick": 0.01
- },
- {
-  "us_slug": "arankc-epl-2027-05-30-lastplace-bha",
-  "intl_token": "9221383556608449303835174806846320148935846556873035382860978740383478459961",
-  "score": 0.505,
-  "us_label": "English Premier League Last Place Finisher: Brighton & Hove Albion",
   "intl_label": "Will Brighton win the 2026-27 English Premier League (EPL) Championship? [Brighton]",
   "tick": 0.01
  },
@@ -888,30 +432,6 @@
   "tick": 0.01
  },
  {
-  "us_slug": "ushrewc-ushr-sc-01-2026-11-03-dem",
-  "intl_token": "85565449085981219626125045806096417728054675797071084365546294832037886206869",
-  "score": 0.613,
-  "us_label": "SC-01 House Election Winner: Nancy Lacore (D)",
-  "intl_label": "Will the Democratic Party win the SC-01 House seat? [Nancy Lacore (D)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-nj-02-2026-11-03-rep",
-  "intl_token": "72031226882952572855241396122565026703500608310774558318640094170360212508111",
-  "score": 0.613,
-  "us_label": "NJ-02 House Election Winner: Jeff Van Drew (R)",
-  "intl_label": "Will the Republican Party win the NJ-02 House seat? [Jeff Van Drew (R)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-mo-02-2026-11-03-dem",
-  "intl_token": "88848058547666616739103287803590501509467481820772923821669512190352449566302",
-  "score": 0.613,
-  "us_label": "MO-02 House Election Winner: Fred Wellman (D)",
-  "intl_label": "Will the Democratic Party win the MO-02 House seat? [Fred Wellman (D)]",
-  "tick": 0.01
- },
- {
   "us_slug": "ushrewc-ushr-wa-05-2026-11-03-dem",
   "intl_token": "112862321997345954305895476178540142507721821891401811454362607325211739158646",
   "score": 0.613,
@@ -920,34 +440,10 @@
   "tick": 0.01
  },
  {
-  "us_slug": "ewc-usag-ny-2026-11-03-rep",
-  "intl_token": "53715103272316281416642325163255941813570899348567294819245277374329791152915",
-  "score": 0.621,
-  "us_label": "New York Attorney General Election Winner: Saritha Komatireddy (R)",
-  "intl_label": "Will the Republican Party candidate win the 2026 New York Attorney General election? [Saritha Komatireddy (R)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-me-02-2026-11-03-rep",
-  "intl_token": "58199720710299853890561431207407462985075458766612922964054758657487509750362",
-  "score": 0.613,
-  "us_label": "ME-02 House Election Winner: Paul LePage (R)",
-  "intl_label": "Will the Republican Party win the ME-02 House seat? [Paul LePage (R)]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-champ-2027-06-18-w-bkn",
   "intl_token": "41805770286435404453332692039198335167650368122849257466127399723685932816889",
   "score": 0.625,
   "us_label": "2027 NBA Champion: Brooklyn Nets",
-  "intl_label": "Will Brooklyn Nets win the 2027 NBA Finals? [Brooklyn Nets]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-eastconf-2027-05-19-w-bkn",
-  "intl_token": "41805770286435404453332692039198335167650368122849257466127399723685932816889",
-  "score": 0.607,
-  "us_label": "NBA Eastern Conference Champion: Brooklyn Nets",
   "intl_label": "Will Brooklyn Nets win the 2027 NBA Finals? [Brooklyn Nets]",
   "tick": 0.01
  },
@@ -960,35 +456,11 @@
   "tick": 0.01
  },
  {
-  "us_slug": "ushrewc-ushr-fl-21-2026-11-03-dem",
-  "intl_token": "52289278658852357070074055114030917175362909425778773997096870068440775068459",
-  "score": 0.613,
-  "us_label": "FL-21 House Election Winner: James Martin (D)",
-  "intl_label": "Will the Democratic Party win the FL-21 House seat? [James Martin (D)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ewc-usag-ny-2026-11-03-dem",
-  "intl_token": "86348547908923530397565819657918725968746854715290951374207347575771503072877",
-  "score": 0.621,
-  "us_label": "New York Attorney General Election Winner: Letitia James (D)",
-  "intl_label": "Will the Democratic Party candidate win the 2026 New York Attorney General election? [Letitia James (D)]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nhl-champ-2027-06-18-w-nyi",
   "intl_token": "83081689133006045314491866034714225482578653923182172223753817150781124169661",
   "score": 0.667,
   "us_label": "2027 Stanley Cup Champion: New York Islanders",
   "intl_label": "Will the New York Islanders be named the 2026-27 NHL Stanley Cup Champion? [New York Islanders]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-sc-01-2026-11-03-rep",
-  "intl_token": "9923678446010680223075564519648906123468834936314053947915034634742964733395",
-  "score": 0.613,
-  "us_label": "SC-01 House Election Winner: Jenny Costa Honeycutt (R)",
-  "intl_label": "Will the Republican Party win the SC-01 House seat? [Jenny Costa Honeycutt (R)]",
   "tick": 0.01
  },
  {
@@ -1000,123 +472,11 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tac-oscars-nom-bstedit-2027-01-21-blabal",
-  "intl_token": "62397893540133481134576372469712294626598085634043638899086119569453850189433",
-  "score": 0.609,
-  "us_label": "Oscar Nominees: Best Film Editing: The Black Ball",
-  "intl_label": "Will The Black Ball win Best International Feature Film at the 99th Academy Awards? [The Black Ball]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aqc-ucl-2027-06-05-finalq-mnu",
-  "intl_token": "87252766259519856422994169914054020804868753874182829100656427465105204187650",
-  "score": 0.625,
-  "us_label": "Champions League Final Qualifiers: Manchester United",
-  "intl_label": "Will Manchester United win the 2026-27 UEFA Champions League Championship? [Manchester United]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-in-05-2026-11-03-rep",
-  "intl_token": "105101479335882057780888879627103629767537416253130101200307917408703291324956",
-  "score": 0.6,
-  "us_label": "IN-05 House Election Winner: Victoria Spartz (R)",
-  "intl_label": "Will the Republican Party win the IN-05 House seat? [Victoria Spartz (R)]",
-  "tick": 0.01
- },
- {
   "us_slug": "ushrewc-ushr-ca-23-2026-11-03-dem",
   "intl_token": "49056167266735883072571397929140933122755707874985754004430652519006754715180",
   "score": 0.613,
   "us_label": "CA-23 House Election Winner: Tessa Lynn Hodge (D)",
   "intl_label": "Will the Democratic Party win the CA-23 House seat? [Tessa Lynn Hodge (D)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-ny-01-2026-11-03-dem",
-  "intl_token": "1309236961796814213282116190073921143698457854457840407101156157351932472760",
-  "score": 0.613,
-  "us_label": "NY-01 House Election Winner: Chris Gallant (D)",
-  "intl_label": "Will the Democratic Party win the NY-01 House seat? [Chris Gallant (D)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-fl-21-2026-11-03-rep",
-  "intl_token": "7460473200203500049888783719604614089184190030851720364867764732498211690017",
-  "score": 0.613,
-  "us_label": "FL-21 House Election Winner: Brian Mast (R)",
-  "intl_label": "Will the Republican Party win the FL-21 House seat? [Brian Mast (R)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aachc-nfl-2027-01-10-1000recyds-chrgod",
-  "intl_token": "29455956507878475117931847639472344085267281774274934351341836033963888955609",
-  "score": 0.517,
-  "us_label": "Chris Godwin Jr.: Chris Godwin Jr.",
-  "intl_label": "Will Chris Godwin have 1,000+ receiving yards in the 2026-27 NFL regular season? [Chris Godwin]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-ky-06-2026-11-03-rep",
-  "intl_token": "56771676163430478773881005949042515277768418511854177181926714856722452821545",
-  "score": 0.613,
-  "us_label": "KY-06 House Election Winner: Ralph Alvarado (R)",
-  "intl_label": "Will the Republican Party win the KY-06 House seat? [Ralph Alvarado (R)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-sc-02-2026-11-03-rep",
-  "intl_token": "97525976675402940189470832322454420895114464208433105121803095649567175712802",
-  "score": 0.613,
-  "us_label": "SC-02 House Election Winner: Joe Wilson (R)",
-  "intl_label": "Will the Republican Party win the SC-02 House seat? [Joe Wilson (R)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-fl-12-2026-11-03-dem",
-  "intl_token": "32640993452562469811384870498493041930158769559803970678048099545457759727118",
-  "score": 0.613,
-  "us_label": "FL-12 House Election Winner: Kimberly Overman (D)",
-  "intl_label": "Will the Democratic Party win the FL-12 House seat? [Kimberly Overman (D)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-ks-02-2026-11-03-dem",
-  "intl_token": "15494129434796243745990671838718986978306151897517784573299392700464420316627",
-  "score": 0.613,
-  "us_label": "KS-02 House Election Winner: Don Coover (D)",
-  "intl_label": "Will the Democratic Party win the KS-02 House seat? [Don Coover (D)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-mo-02-2026-11-03-rep",
-  "intl_token": "37844267521180399365016683379126328380814655827954668922004534127429450845295",
-  "score": 0.613,
-  "us_label": "MO-02 House Election Winner: Ann Wagner (R)",
-  "intl_label": "Will the Republican Party win the MO-02 House seat? [Ann Wagner (R)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "arankc-ucl-2027-01-27-lgphasetop-fcb",
-  "intl_token": "94769109576173913172373765385317232135198722806241842004151297442604035564494",
-  "score": 0.539,
-  "us_label": "Champions League League Phase Top Finisher: FC Barcelona",
-  "intl_label": "Will Barcelona finish first in UCL league phase? [Barcelona]",
-  "tick": 0.01
- },
- {
-  "us_slug": "arankc-ucl-2027-01-27-9to24-fcb",
-  "intl_token": "94769109576173913172373765385317232135198722806241842004151297442604035564494",
-  "score": 0.505,
-  "us_label": "Champions League League Phase 9-24 Place Finishers: FC Barcelona",
-  "intl_label": "Will Barcelona finish first in UCL league phase? [Barcelona]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-ia-02-2026-11-03-dem",
-  "intl_token": "24808423328362642269928339618535398875519836942812329525201323299850907438220",
-  "score": 0.613,
-  "us_label": "IA-02 House Election Winner: Lindsay James (D)",
-  "intl_label": "Will the Democratic Party win the IA-02 House seat? [Lindsay James (D)]",
   "tick": 0.01
  },
  {
@@ -1133,14 +493,6 @@
   "score": 0.633,
   "us_label": "English Premier League Champion: Arsenal",
   "intl_label": "Will Arsenal win the 2026-27 English Premier League (EPL) Championship? [Arsenal]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-sc-02-2026-11-03-dem",
-  "intl_token": "98877200572721303777487863413665999592444033296149291765725536320760395147618",
-  "score": 0.613,
-  "us_label": "SC-02 House Election Winner: Zyon Khalifa (D)",
-  "intl_label": "Will the Democratic Party win the SC-02 House seat? [Zyon Khalifa (D)]",
   "tick": 0.01
  },
  {
@@ -1165,14 +517,6 @@
   "score": 0.625,
   "us_label": "Oscar Nominees: Best Film Editing: You Can See Everything",
   "intl_label": "Will \"You Can See Everything\" be nominated for Best Documentary Feature Film at the 99th Academy Awards? [You Can See Everything]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aqc-ucl-2027-06-05-finalq-ast",
-  "intl_token": "105101529642262379899123504787232852588886281907211376994534705472966938868733",
-  "score": 0.625,
-  "us_label": "Champions League Final Qualifiers: Aston Villa",
-  "intl_label": "Will Aston Villa win the 2026-27 UEFA Champions League Championship? [Aston Villa]",
   "tick": 0.01
  },
  {
@@ -1224,27 +568,11 @@
   "tick": 0.01
  },
  {
-  "us_slug": "ushrewc-ushr-tx-23-2026-11-03-rep",
-  "intl_token": "55410211684588113064622608223269234944992958173935625527924582089831994856267",
-  "score": 0.613,
-  "us_label": "TX-23 House Election Winner: Brandon Herrera (R)",
-  "intl_label": "Will the Republican Party win the TX-23 House seat? [Brandon Herrera (R)]",
-  "tick": 0.01
- },
- {
   "us_slug": "tac-oscars-nom-bstanimshort-2027-01-21-elcue",
   "intl_token": "66897649130983653467996752725405404079877340036736916099145023066179838873624",
   "score": 0.674,
   "us_label": "Oscar Nominees: Best Animated Short Film: El Cuerpo de Cristo",
   "intl_label": "Will \"El Cuerpo de Cristo\" be nominated for Best Animated Short Film at the 99th Academy Awards? [El Cuerpo de Cristo]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-ks-02-2026-11-03-rep",
-  "intl_token": "107579523837693009966510082147335435602688448341921829583988771464894280746502",
-  "score": 0.613,
-  "us_label": "KS-02 House Election Winner: Derek Schmidt (R)",
-  "intl_label": "Will the Republican Party win the KS-02 House seat? [Derek Schmidt (R)]",
   "tick": 0.01
  },
  {
@@ -1256,35 +584,11 @@
   "tick": 0.01
  },
  {
-  "us_slug": "ushrewc-ushr-ny-22-2026-11-03-rep",
-  "intl_token": "99954050818316029074141496529251210816734262436243397950398929095884946008780",
-  "score": 0.613,
-  "us_label": "NY-22 House Election Winner: Kailee Buller (R)",
-  "intl_label": "Will the Republican Party win the NY-22 House seat? [Kailee Buller (R)]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nhl-champ-2027-06-18-w-tor",
   "intl_token": "46508043123782944529826321768335000732818290307137256432200064397942767638900",
   "score": 0.667,
   "us_label": "2027 Stanley Cup Champion: Toronto Maple Leafs",
   "intl_label": "Will the Toronto Maple Leafs be named the 2026-27 NHL Stanley Cup Champion? [Toronto Maple Leafs]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-fl-11-2026-11-03-dem",
-  "intl_token": "57595511401001951405669372555419629091897524458564721628661835129821765206024",
-  "score": 0.613,
-  "us_label": "FL-11 House Election Winner: James Pericola (D)",
-  "intl_label": "Will the Democratic Party win the FL-11 House seat? [James Pericola (D)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-tx-06-2026-11-03-rep",
-  "intl_token": "35261608398567039616389973621725744491134249343354691383590559293801288808916",
-  "score": 0.613,
-  "us_label": "TX-06 House Election Winner: Jake Ellzey (R)",
-  "intl_label": "Will the Republican Party win the TX-06 House seat? [Jake Ellzey (R)]",
   "tick": 0.01
  },
  {
@@ -1296,35 +600,11 @@
   "tick": 0.01
  },
  {
-  "us_slug": "ushrewc-ushr-nj-02-2026-11-03-dem",
-  "intl_token": "15521879710873621909709210320390039297241736614976125246978099422573797123005",
-  "score": 0.613,
-  "us_label": "NJ-02 House Election Winner: Zack Mullock (D)",
-  "intl_label": "Will the Democratic Party win the NJ-02 House seat? [Zack Mullock (D)]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-westconf-2027-05-29-w-okc",
   "intl_token": "115316238635919931406930709880032745257848005608498550698464796135072238626100",
   "score": 0.643,
   "us_label": "NBA Western Conference Champion: Oklahoma City Thunder",
   "intl_label": "Will the Oklahoma City Thunder be the 2027 NBA Western Conference Champion? [Oklahoma City Thunder]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-fl-04-2026-11-03-dem",
-  "intl_token": "115111302427103622140874299431096589885862157437891348930667476605085911680250",
-  "score": 0.613,
-  "us_label": "FL-04 House Election Winner: LaShonda Holloway (D)",
-  "intl_label": "Will the Democratic Party win the FL-04 House seat? [LaShonda Holloway (D)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-tx-23-2026-11-03-dem",
-  "intl_token": "61226688777298855109760287075145560866932162430262148603800321887784593630496",
-  "score": 0.613,
-  "us_label": "TX-23 House Election Winner: Katy Padilla Stout (D)",
-  "intl_label": "Will the Democratic Party win the TX-23 House seat? [Katy Padilla Stout (D)]",
   "tick": 0.01
  },
  {
@@ -1336,34 +616,10 @@
   "tick": 0.01
  },
  {
-  "us_slug": "arankc-epl-2027-05-30-lastplace-bor",
-  "intl_token": "91726864593742693140356430310829013967102600293867040357906510030347902441142",
-  "score": 0.605,
-  "us_label": "English Premier League Last Place Finisher: Bournemouth",
-  "intl_label": "Will Bournemouth win the 2026-27 English Premier League (EPL) Championship? [Bournemouth]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-fl-12-2026-11-03-rep",
-  "intl_token": "84924910307186948562034240958854945947300241299245569417835287756091908628372",
-  "score": 0.613,
-  "us_label": "FL-12 House Election Winner: Gus Bilirakis (R)",
-  "intl_label": "Will the Republican Party win the FL-12 House seat? [Gus Bilirakis (R)]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-epl-title-2027-05-30-w-ast",
   "intl_token": "95126052608609363478306594089235169822133598679009177544767568245943920599687",
   "score": 0.633,
   "us_label": "English Premier League Champion: Aston Villa",
-  "intl_label": "Will Aston Villa win the 2026-27 English Premier League (EPL) Championship? [Aston Villa]",
-  "tick": 0.01
- },
- {
-  "us_slug": "arankc-epl-2027-05-30-lastplace-ast",
-  "intl_token": "95126052608609363478306594089235169822133598679009177544767568245943920599687",
-  "score": 0.605,
-  "us_label": "English Premier League Last Place Finisher: Aston Villa",
   "intl_label": "Will Aston Villa win the 2026-27 English Premier League (EPL) Championship? [Aston Villa]",
   "tick": 0.01
  },
@@ -1373,30 +629,6 @@
   "score": 0.613,
   "us_label": "CA-01 House Election Winner: Mike McGuire (D)",
   "intl_label": "Will the Democratic Party win the CA-01 House seat? [Mike McGuire (D)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-fl-25-2026-11-03-dem",
-  "intl_token": "84319454573662085210770106575059573110977726805918419997163222348941856635019",
-  "score": 0.613,
-  "us_label": "FL-25 House Election Winner: Jared Moskowitz (D)",
-  "intl_label": "Will the Democratic Party win the FL-25 House seat? [Jared Moskowitz (D)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-03-14-2027-bestpic-elsino",
-  "intl_token": "49947883690893321668605904280941329019506708400369927735110598916726348018121",
-  "score": 0.6,
-  "us_label": "Oscar Winner: Best Picture: Elsinore",
-  "intl_label": "Will \"Elsinore\" be nominated for Best Film Editing at the 99th Academy Awards? [Elsinore]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-03-14-2027-bestedit-elsino",
-  "intl_token": "49947883690893321668605904280941329019506708400369927735110598916726348018121",
-  "score": 0.65,
-  "us_label": "Oscar Winner: Best Film Editing: Elsinore",
-  "intl_label": "Will \"Elsinore\" be nominated for Best Film Editing at the 99th Academy Awards? [Elsinore]",
   "tick": 0.01
  },
  {
@@ -1416,50 +648,10 @@
   "tick": 0.01
  },
  {
-  "us_slug": "ushrewc-ushr-fl-27-2026-11-03-rep",
-  "intl_token": "13657829570112686942772887073735938550189108105291149479452313740274785506604",
-  "score": 0.613,
-  "us_label": "FL-27 House Election Winner: Mar\u00eda Elvira Salazar (R)",
-  "intl_label": "Will the Republican Party win the FL-27 House seat? [Mar\u00eda Elvira Salazar (R)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-tx-35-2026-11-03-rep",
-  "intl_token": "96980372047003520505526503615842060406979095885695228562228782836801789185916",
-  "score": 0.613,
-  "us_label": "TX-35 House Election Winner: Carlos De La Cruz (R)",
-  "intl_label": "Will the Republican Party win the TX-35 House seat? [Carlos De La Cruz (R)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-va-01-2026-11-03-dem",
-  "intl_token": "88628412725357801969852238315853152041907755032296775468463465337049299853893",
-  "score": 0.613,
-  "us_label": "VA-01 House Election Winner: Shannon Taylor (D)",
-  "intl_label": "Will the Democratic Party win the VA-01 House seat? [Shannon Taylor (D)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-va-02-2026-11-03-rep",
-  "intl_token": "10986108013063722112541718847525294234187960385441756998469502203421948473299",
-  "score": 0.613,
-  "us_label": "VA-02 House Election Winner: Jen Kiggans (R)",
-  "intl_label": "Will the Republican Party win the VA-02 House seat? [Jen Kiggans (R)]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-epl-title-2027-05-30-w-tot",
   "intl_token": "77697374688933463558435808435207573631234398437151747716737073005939751357574",
   "score": 0.533,
   "us_label": "English Premier League Champion: Tottenham Hotspur",
-  "intl_label": "Will Tottenham win the 2026-27 English Premier League (EPL) Championship? [Tottenham]",
-  "tick": 0.01
- },
- {
-  "us_slug": "arankc-epl-2027-05-30-lastplace-tot",
-  "intl_token": "77697374688933463558435808435207573631234398437151747716737073005939751357574",
-  "score": 0.505,
-  "us_label": "English Premier League Last Place Finisher: Tottenham Hotspur",
   "intl_label": "Will Tottenham win the 2026-27 English Premier League (EPL) Championship? [Tottenham]",
   "tick": 0.01
  },
@@ -1472,35 +664,11 @@
   "tick": 0.01
  },
  {
-  "us_slug": "ushrewc-ushr-mt-01-2026-11-03-rep",
-  "intl_token": "70720420928389492978842914190430712299346582376255109200751838945374631181994",
-  "score": 0.613,
-  "us_label": "MT-01 House Election Winner: Aaron Flint (R)",
-  "intl_label": "Will the Republican Party win the MT-01 House seat? [Aaron Flint (R)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ushrewc-ushr-tn-09-2026-11-03-dem",
-  "intl_token": "110315180828839119568681109852775440808821625501685406974354981262557695389627",
-  "score": 0.613,
-  "us_label": "TN-09 House Election Winner: Justin Pearson (D)",
-  "intl_label": "Will the Democratic Party win the TN-09 House seat? [Justin Pearson (D)]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nhl-champ-2027-06-18-w-mon",
   "intl_token": "101075383399790518260771222164963904576747335934335904011626511256957817201781",
   "score": 0.667,
   "us_label": "2027 Stanley Cup Champion: Montreal Canadiens",
   "intl_label": "Will the Montreal Canadiens be named the 2026-27 NHL Stanley Cup Champion? [Montreal Canadiens]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstanimshort-2027-01-21-paptra",
-  "intl_token": "91369145225713603213960556580981821571369651080195990083161250784852466560514",
-  "score": 0.659,
-  "us_label": "Oscar Nominees: Best Animated Short Film: Paper Trail",
-  "intl_label": "Will Paper Trail win Best Animated Short Film at the 99th Academy Awards? [Paper Trail]",
   "tick": 0.01
  },
  {
