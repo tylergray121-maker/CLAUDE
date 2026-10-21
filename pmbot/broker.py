@@ -98,7 +98,15 @@ class PaperBroker:
     def sync(self) -> None:
         pass
 
+    checker: "PreviewChecker | None" = None
+
     def place(self, slug: str, order: Order, quote: Quote | None = None) -> str | None:
+        if self.checker is not None:
+            ok, why = self.checker.check(slug, order)
+            if not ok:
+                log.info("exchange preview rejected %s %s %d @ %.3f: %s", order.side, slug,
+                         order.qty, order.price, why)
+                return None
         if order.post_only:
             oid = f"paper-{self._next_id}"
             self._next_id += 1
@@ -255,19 +263,7 @@ class LiveBroker:
             self._save()
 
     def place(self, slug: str, order: Order, quote: Quote | None = None) -> str | None:
-        params = {
-            "marketSlug": slug,
-            "intent": "ORDER_INTENT_BUY_LONG" if order.side == "BUY"
-                      else "ORDER_INTENT_SELL_LONG",
-            "type": "ORDER_TYPE_LIMIT",
-            "price": {"value": f"{order.price:.3f}", "currency": "USD"},
-            "quantity": int(order.qty),
-            "tif": "TIME_IN_FORCE_GOOD_TILL_CANCEL" if order.post_only
-                   else "TIME_IN_FORCE_IMMEDIATE_OR_CANCEL",
-            "participateDontInitiate": bool(order.post_only),
-            "manualOrderIndicator": "MANUAL_ORDER_INDICATOR_AUTOMATIC",
-        }
-        resp = self.client.orders.create(params)
+        resp = self.client.orders.create(order_params(slug, order))
         log.info("live %s %s %d @ %.3f -> %s", order.side, slug, order.qty,
                  order.price, resp.get("id"))
         oid = resp.get("id")
@@ -301,6 +297,76 @@ class LiveBroker:
     def equity(self, marks: dict[str, float]) -> float:
         return self.cash + sum(p.qty * marks.get(s, p.cost / p.qty if p.qty else 0)
                                for s, p in self.positions.items())
+
+
+def order_params(slug: str, order: Order) -> dict:
+    """The exact Polymarket US order the bot sends (live) or previews (paper):
+    a limit order, post-only GTC for quotes, IOC for takes, flagged automatic."""
+    return {
+        "marketSlug": slug,
+        "intent": "ORDER_INTENT_BUY_LONG" if order.side == "BUY" else "ORDER_INTENT_SELL_LONG",
+        "type": "ORDER_TYPE_LIMIT",
+        "price": {"value": f"{order.price:.3f}", "currency": "USD"},
+        "quantity": int(order.qty),
+        "tif": "TIME_IN_FORCE_GOOD_TILL_CANCEL" if order.post_only
+               else "TIME_IN_FORCE_IMMEDIATE_OR_CANCEL",
+        "participateDontInitiate": bool(order.post_only),
+        "manualOrderIndicator": "MANUAL_ORDER_INDICATOR_AUTOMATIC",
+    }
+
+
+class PreviewChecker:
+    """Checks paper orders with Polymarket US's order preview endpoint.
+
+    Preview validates an order exactly as the exchange would and prices its
+    fee, without placing it, so a paper order the exchange would reject is
+    rejected on paper too. Needs the account's API keys; never trades.
+    Capped per minute so it stays well inside API rate limits; orders over
+    the cap go through unchecked and are counted as such.
+    """
+
+    def __init__(self, key_id: str, secret_key: str, per_minute: int = 20, client=None):
+        if client is None:
+            try:
+                from polymarket_us import PolymarketUS
+            except ImportError as e:  # pragma: no cover
+                raise SystemExit("order previews need: pip install polymarket-us") from e
+            client = PolymarketUS(key_id=key_id, secret_key=secret_key)
+        self.client = client
+        self.per_minute = per_minute
+        self._times: list[float] = []
+        self.stats = {"accepted": 0, "rejected": 0, "unchecked": 0, "errors": 0}
+        self.last_reject = ""
+
+    def verify_keys(self) -> None:
+        """Fails fast if the keys don't authenticate (reads balances, shows nothing)."""
+        self.client.account.balances()
+
+    def check(self, slug: str, order: Order) -> tuple[bool, str]:
+        now = time.monotonic()
+        self._times = [t for t in self._times if now - t < 60]
+        if len(self._times) >= self.per_minute:
+            self.stats["unchecked"] += 1
+            return True, "unchecked"
+        self._times.append(now)
+        try:
+            resp = self.client.orders.preview({"request": order_params(slug, order)})
+        except Exception as e:
+            status = getattr(e, "status_code", None) or getattr(getattr(e, "response", None),
+                                                               "status_code", None)
+            if status and 400 <= int(status) < 500 and int(status) not in (401, 403, 429):
+                self.stats["rejected"] += 1
+                self.last_reject = str(e)[:200]
+                return False, self.last_reject
+            self.stats["errors"] += 1  # auth, rate limit or outage: don't block paper trading
+            return True, f"preview unavailable: {str(e)[:120]}"
+        state = str(((resp or {}).get("order") or {}).get("state") or "")
+        if state == "ORDER_STATE_REJECTED":
+            self.stats["rejected"] += 1
+            self.last_reject = state
+            return False, state
+        self.stats["accepted"] += 1
+        return True, "accepted"
 
 
 def _amount(a) -> float:

@@ -55,6 +55,9 @@ def parse_args(argv=None):
     g.add_argument("--max-total-usd", type=float, default=r.max_total_usd)
     g.add_argument("--daily-loss-limit", type=float, default=r.daily_loss_limit)
     g.add_argument("--kill-file", default=r.kill_file)
+    p.add_argument("--no-preview", action="store_true",
+                   help="paper: don't check orders with the exchange's order preview "
+                   "even when API keys are set")
     p.add_argument("--yes", action="store_true",
                    help=f"live only: skip typing the confirmation ({CONFIRM!r})")
     p.add_argument("-v", "--verbose", action="store_true")
@@ -94,7 +97,20 @@ def main(argv=None) -> int:
         broker.sync()
         broker.cancel_all()  # start clean: drop this bot's own leftovers
     from .strategies import build
-    Engine(ecfg, scfg, RiskManager(rcfg), broker, build(a.strategies, scfg)).run()
+    engine = Engine(ecfg, scfg, RiskManager(rcfg), broker, build(a.strategies, scfg))
+    if a.mode == "paper" and not a.no_preview and os.environ.get("PMUS_KEY_ID") \
+            and os.environ.get("PMUS_SECRET_KEY"):
+        from .broker import PreviewChecker
+        checker = PreviewChecker(os.environ["PMUS_KEY_ID"], os.environ["PMUS_SECRET_KEY"])
+        try:
+            checker.verify_keys()
+        except Exception as e:
+            print(f"Polymarket US API keys didn't authenticate ({type(e).__name__}); "
+                  "check PMUS_KEY_ID / PMUS_SECRET_KEY. Not trading.", file=sys.stderr)
+            return 2
+        engine.broker.checker = checker
+        print("Paper orders are checked with Polymarket US order previews (nothing is placed).")
+    engine.run()
     print(open(os.path.join(ecfg.out_dir, "report.md")).read())
     return 0
 

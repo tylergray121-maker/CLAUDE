@@ -14,9 +14,11 @@ on:
 permissions:
   contents: write
 
+# A newer run replaces a running one; the account carries over from the
+# last snapshot (at most 10 minutes old).
 concurrency:
   group: paper
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   segment:
@@ -29,11 +31,18 @@ jobs:
         segment: [1, 2, 3, 4]
     env:
       REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+      # Optional: with these repository secrets set, every paper order is
+      # checked with Polymarket US's order preview (nothing is placed).
+      PMUS_KEY_ID: ${{ secrets.PMUS_KEY_ID }}
+      PMUS_SECRET_KEY: ${{ secrets.PMUS_SECRET_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
+      - name: Install the Polymarket US SDK
+        run: pip install -q polymarket-us==2.4.1
 
       - name: Restore the paper account
         id: restore

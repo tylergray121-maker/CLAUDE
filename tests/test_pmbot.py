@@ -296,6 +296,54 @@ class MappingTest(unittest.TestCase):
         self.assertLess(mapping.name_similarity("Kyle Busch", "Kyle Larson"), 0.8)
 
 
+class PreviewCheckerTest(unittest.TestCase):
+    def checker(self, behaviour, per_minute=20):
+        from pmbot.broker import PreviewChecker
+
+        class Err(Exception):
+            def __init__(self, code):
+                super().__init__(f"HTTP {code}: price outside allowed range")
+                self.status_code = code
+
+        class Orders:
+            def preview(self, params):
+                b = behaviour(params)
+                if isinstance(b, int):
+                    raise Err(b)
+                return b
+
+        class Client:
+            orders = Orders()
+        return PreviewChecker("k", "s", per_minute=per_minute, client=Client())
+
+    def test_rejections_block_the_paper_order(self):
+        c = self.checker(lambda p: 400)
+        b = PaperBroker(100)
+        b.checker = c
+        self.assertIsNone(b.place("m", Order("BUY", 0.48, 10, True)))
+        self.assertEqual(b.open_orders, {})
+        self.assertEqual(c.stats["rejected"], 1)
+        self.assertIn("price outside", c.last_reject)
+
+    def test_rejected_state_in_a_200_answer(self):
+        c = self.checker(lambda p: {"order": {"state": "ORDER_STATE_REJECTED"}})
+        self.assertEqual(c.check("m", Order("BUY", 0.48, 10, True))[0], False)
+
+    def test_outages_and_auth_errors_dont_stop_paper_trading(self):
+        for code in (401, 429, 500):
+            c = self.checker(lambda p, code=code: code)
+            b = PaperBroker(100)
+            b.checker = c
+            self.assertIsNotNone(b.place("m", Order("BUY", 0.48, 10, True)))
+            self.assertEqual(c.stats["errors"], 1)
+
+    def test_rate_cap(self):
+        c = self.checker(lambda p: {"order": {"state": "ORDER_STATE_NEW"}}, per_minute=2)
+        for _ in range(3):
+            c.check("m", Order("BUY", 0.48, 10, True))
+        self.assertEqual((c.stats["accepted"], c.stats["unchecked"]), (2, 1))
+
+
 class StrategyPluginTest(unittest.TestCase):
     def engine_with(self, markets):
         e = Engine.__new__(Engine)
@@ -505,6 +553,8 @@ class LiveBrokerTest(unittest.TestCase):
                 return httpx.Response(200, json={"orders": self.open})
             if p == "/v1/orders":
                 return httpx.Response(200, json={"id": "bot-1", "executions": []})
+            if p == "/v1/order/preview":
+                return httpx.Response(200, json={"order": {"state": "ORDER_STATE_NEW"}})
             if p.endswith("/cancel"):
                 return httpx.Response(200, text="")
             return httpx.Response(404, json={"message": p})
@@ -545,6 +595,17 @@ class LiveBrokerTest(unittest.TestCase):
         again.cancel_all()
         cancels = [p for m, p, _, _ in self.requests if p.endswith("/cancel")]
         self.assertEqual(cancels, ["/v1/order/bot-1/cancel"])   # never manual-1
+
+    def test_order_preview_through_the_sdk(self):
+        from pmbot.broker import PreviewChecker
+        c = PreviewChecker("key-id", "", client=self.b.client)
+        ok, why = c.check("brewers", Order("BUY", 0.6, 8, True))
+        _, path, body, headers = self.requests[-1]
+        self.assertEqual(path, "/v1/order/preview")
+        self.assertEqual(body["request"]["participateDontInitiate"], True)
+        self.assertEqual(body["request"]["marketSlug"], "brewers")
+        self.assertIn("x-pm-signature", headers)
+        self.assertEqual((ok, c.stats["accepted"]), (True, 1))
 
     def test_take_is_ioc_and_sell_closes_long(self):
         self.b.place("brewers", Order("SELL", 0.7, 3, False))

@@ -383,6 +383,16 @@ class Engine:
                  self.broker.cash, len(self.broker.positions), len(self.broker.fills),
                  time.strftime("%Y-%m-%d %H:%M", time.gmtime(self.started)))
 
+    def _preview_summary(self) -> dict:
+        c = getattr(self.broker, "checker", None)
+        if c is None:
+            return {"preview": "off", "preview_accepted": 0, "preview_rejected": 0,
+                    "preview_unchecked": 0, "preview_errors": 0, "preview_last_reject": ""}
+        return {"preview": "on", "preview_accepted": c.stats["accepted"],
+                "preview_rejected": c.stats["rejected"],
+                "preview_unchecked": c.stats["unchecked"],
+                "preview_errors": c.stats["errors"], "preview_last_reject": c.last_reject}
+
     def write_dashboard(self, equity: float) -> None:
         """paper.json: every row the dashboard shows, tagged by `kind`."""
         b, s = self.broker, self.stats
@@ -408,7 +418,8 @@ class Engine:
             "us_markets": self.map_stats.get("us_markets", 0),
             "pairs": self.map_stats.get("pairs", 0), "tracked": len(self.pairs),
             "observations": s.observations, "gap_median_c": pct(.5), "gap_p90_c": pct(.9),
-            "buy_opps": s.buy_opps, "sell_opps": s.sell_opps}]
+            "buy_opps": s.buy_opps, "sell_opps": s.sell_opps,
+            **self._preview_summary()}]
         # Equity: every point for the last 2 days, hourly before that.
         cut = time.time() - 2 * 86400
         last_hour = None
