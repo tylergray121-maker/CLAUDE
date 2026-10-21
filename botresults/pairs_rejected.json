@@ -1,12 +1,12 @@
 [
  {
-  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-elsino",
-  "intl_token": "49947883690893321668605904280941329019506708400369927735110598916726348018121",
-  "score": 0.614,
-  "us_label": "Oscar Nominees: Best Picture: Elsinore",
-  "intl_label": "Will \"Elsinore\" be nominated for Best Film Editing at the 99th Academy Awards? [Elsinore]",
+  "us_slug": "astatc-nfl-rushyds-ou-2027-01-10-javwil",
+  "intl_token": "94698499970724143169901676300597928083757051289865555016809967958722849440452",
+  "score": 0.515,
+  "us_label": "Regular Season Rushing Yards O/U: Javonte Williams 949.5+",
+  "intl_label": "Will Javonte Williams have 1,000+ rushing yards in the 2026-27 NFL regular season? [Javonte Williams]",
   "tick": 0.01,
-  "price_gap": 0.085
+  "price_gap": 0.08
  },
  {
   "us_slug": "tac-oscars-nom-2027-01-31-bestpic-debut",
@@ -15,7 +15,7 @@
   "us_label": "Oscar Nominees: Best Picture: The Debut",
   "intl_label": "Will \"The Debut\" be nominated for Best Film Editing at the 99th Academy Awards? [The Debut]",
   "tick": 0.01,
-  "price_gap": 0.38
+  "price_gap": 0.39
  },
  {
   "us_slug": "tac-grammys-aoty-2027-02-07-artlov",
@@ -24,7 +24,7 @@
   "us_label": "Grammy Winner: Album of the Year: The Art of Loving - Olivia Dean",
   "intl_label": "Will The Art of Loving (Olivia Dean) win Album of the Year at the 69th Annual GRAMMY Awards? [The Art of Loving - Olivia Dean]",
   "tick": 0.01,
-  "price_gap": 0.09
+  "price_gap": 0.089
  },
  {
   "us_slug": "tac-oscars-nom-bstact-2027-01-21-samroc",
@@ -33,7 +33,7 @@
   "us_label": "Oscar Nominees: Best Actor: Sam Rockwell",
   "intl_label": "Will Sam Rockwell be nominated for Best Actor at the 99th Academy Awards? [Sam Rockwell]",
   "tick": 0.01,
-  "price_gap": 0.076
+  "price_gap": 0.07
  },
  {
   "us_slug": "tac-oscars-nom-bstact-2027-01-21-sebsta",
@@ -42,7 +42,7 @@
   "us_label": "Oscar Nominees: Best Actor: Sebastian Stan",
   "intl_label": "Will Sebastian Stan be nominated for Best Actor at the 99th Academy Awards? [Sebastian Stan]",
   "tick": 0.01,
-  "price_gap": 0.135
+  "price_gap": 0.13
  },
  {
   "us_slug": "tac-oscars-03-14-2027-bestdoc-youcan",
@@ -51,7 +51,7 @@
   "us_label": "Oscar Winner: Best Documentary Feature Film: You Can See Everything",
   "intl_label": "Will You Can See Everything win Best Picture at the 99th Academy Awards? [You Can See Everything]",
   "tick": 0.01,
-  "price_gap": 0.559
+  "price_gap": 0.562
  },
  {
   "us_slug": "tac-oscars-nom-bstsupact-2027-01-21-samroc",
@@ -60,7 +60,7 @@
   "us_label": "Oscar Nominees: Best Supporting Actor: Sam Rockwell",
   "intl_label": "Will Sam Rockwell be nominated for Best Actor at the 99th Academy Awards? [Sam Rockwell]",
   "tick": 0.01,
-  "price_gap": 0.733
+  "price_gap": 0.74
  },
  {
   "us_slug": "tac-oscars-nom-bstmakeup-2027-01-21-digger",
@@ -87,7 +87,7 @@
   "us_label": "Oscar Winner: Best Film Editing: You Can See Everything",
   "intl_label": "Will You Can See Everything win Best Picture at the 99th Academy Awards? [You Can See Everything]",
   "tick": 0.01,
-  "price_gap": 0.174
+  "price_gap": 0.182
  },
  {
   "us_slug": "tac-oscars-nom-bstorigscr-2027-01-21-debut",
@@ -99,13 +99,22 @@
   "price_gap": 0.475
  },
  {
+  "us_slug": "tac-oscars-nom-bstcast-2027-01-21-digger",
+  "intl_token": "113986052500172357426560421744159670111789534136168517241878927501016027675541",
+  "score": 0.609,
+  "us_label": "Oscar Nominees: Best Casting: Digger",
+  "intl_label": "Will \"Digger\" be nominated for Best Costume Design at the 99th Academy Awards? [Digger]",
+  "tick": 0.01,
+  "price_gap": 0.09
+ },
+ {
   "us_slug": "tac-oscars-nom-bstedit-2027-01-21-debut",
   "intl_token": "19923169701743169913996740974284918934040175461548398956507868440350127057374",
   "score": 0.659,
   "us_label": "Oscar Nominees: Best Film Editing: The Debut",
   "intl_label": "Will \"The Debut\" be nominated for Best Film Editing at the 99th Academy Awards? [The Debut]",
   "tick": 0.01,
-  "price_gap": 0.185
+  "price_gap": 0.19
  },
  {
   "us_slug": "tac-oscars-nom-bstlashort-2027-01-21-32b",
@@ -114,6 +123,6 @@
   "us_label": "Oscar Nominees: Best Live Action Short Film: 32B",
   "intl_label": "Will \"32B\" be nominated for Best Live Action Short Film at the 99th Academy Awards? [32B]",
   "tick": 0.01,
-  "price_gap": 0.12
+  "price_gap": 0.125
  }
 ]

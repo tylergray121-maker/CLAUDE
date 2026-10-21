@@ -5727,3 +5727,4 @@
 {"ts": 1792618794.316, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Spread: Magic (-3.5)", "intl_slug": "nba-atl-orl-2026-10-21-spread-home-3pt5", "outcome": "Magic"}
 {"ts": 1792618794.316, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Spread: Magic (-3.5)", "intl_slug": "nba-atl-orl-2026-10-21-spread-home-3pt5", "outcome": "Magic"}
 {"ts": 1792619002.863, "kind": "cancel_all", "reason": "shutdown"}
+{"ts": 1792620243.317, "kind": "cancel_all", "reason": "shutdown"}

@@ -1,5 +1,5 @@
 {
- "ts": 1792619002.8627298,
+ "ts": 1792620243.3175592,
  "mode": "paper",
  "pairs": 20,
  "equity": 200.0,
@@ -11,7 +11,7 @@
  "rebates": 0.0,
  "halted": "",
  "scan": {
-  "observations": 620,
+  "observations": 360,
   "buy_opps": 0,
   "sell_opps": 0
  }

@@ -1568,22 +1568,6 @@
   "tick": 0.01
  },
  {
-  "us_slug": "aec-cs2-pain-fxw7-2026-10-21",
-  "intl_token": "101565517690675973155207307378316824051646031955065973217999990325018623203723",
-  "score": 1.0,
-  "us_label": "Counter-Strike: paiN vs Fluxo W7M (BO3) - Circuit X Curitiba Group A: paiN",
-  "intl_label": "Counter-Strike: paiN vs Fluxo W7M (BO3) - Circuit X Curitiba Group A [paiN]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-cs2-pain-fxw7-2026-10-21:short",
-  "intl_token": "10502061950686192977116685509240892117969408582850432373281127393748506652429",
-  "score": 1.0,
-  "us_label": "Counter-Strike: paiN vs Fluxo W7M (BO3) - Circuit X Curitiba Group A: Fluxo W7M",
-  "intl_label": "Counter-Strike: paiN vs Fluxo W7M (BO3) - Circuit X Curitiba Group A [Fluxo W7M]",
-  "tick": 0.01
- },
- {
   "us_slug": "aec-cs2-faze-hero-2026-10-21",
   "intl_token": "14949913367601155682026690116125011345865562073714033308806437276146551030140",
   "score": 1.0,
@@ -1872,19 +1856,19 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-ucl-final-2026-06-05-w-fcb",
-  "intl_token": "105424657244554511014150825202397702180419919286931996082717264149902476600628",
-  "score": 0.5,
-  "us_label": "UEFA Champions League Winner: FC Barcelona",
-  "intl_label": "Will Barcelona win the 2026-27 UEFA Champions League Championship? [Barcelona]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-champ-2027-06-18-w-gsw",
   "intl_token": "50057479075318947359707260741622203277536030001654353875522545719934423335906",
   "score": 0.625,
   "us_label": "2027 NBA Champion: Golden State Warriors",
   "intl_label": "Will Golden State Warriors win the 2027 NBA Finals? [Golden State Warriors]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-ucl-final-2026-06-05-w-fcb",
+  "intl_token": "105424657244554511014150825202397702180419919286931996082717264149902476600628",
+  "score": 0.5,
+  "us_label": "UEFA Champions League Winner: FC Barcelona",
+  "intl_label": "Will Barcelona win the 2026-27 UEFA Champions League Championship? [Barcelona]",
   "tick": 0.01
  },
  {
@@ -1928,14 +1912,6 @@
   "tick": 0.01
  },
  {
-  "us_slug": "ewc-usgub-ca-2026-11-03-xavbec",
-  "intl_token": "60977129292396881848833910361112107174416489010090570432106122538120602786646",
-  "score": 0.625,
-  "us_label": "California Governor Election Winner: Xavier Becerra",
-  "intl_label": "Will Xavier Becerra win the California Governor Election in 2026? [Xavier Becerra]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-ucl-final-2026-06-05-w-bvb",
   "intl_token": "69844945401965968137843459827213978335475795917124102723974229169126962183486",
   "score": 0.5,
@@ -1944,11 +1920,27 @@
   "tick": 0.01
  },
  {
+  "us_slug": "ewc-usgub-ca-2026-11-03-xavbec",
+  "intl_token": "60977129292396881848833910361112107174416489010090570432106122538120602786646",
+  "score": 0.625,
+  "us_label": "California Governor Election Winner: Xavier Becerra",
+  "intl_label": "Will Xavier Becerra win the California Governor Election in 2026? [Xavier Becerra]",
+  "tick": 0.01
+ },
+ {
   "us_slug": "tec-ucl-final-2026-06-05-w-bog",
   "intl_token": "113565046539594615041447428525881640706571978077687360683724924262092204991483",
   "score": 0.5,
   "us_label": "UEFA Champions League Winner: FK Bod\u00f8/Glimt",
   "intl_label": "Will Bod\u00f8/Glimt win the 2026-27 UEFA Champions League Championship? [Bod\u00f8/Glimt]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-epl-title-2027-05-30-w-mnc",
+  "intl_token": "19864216715488298679276291756659013279877343825699353033505020208765688353462",
+  "score": 0.633,
+  "us_label": "English Premier League Champion: Manchester City",
+  "intl_label": "Will Manchester City win the 2026-27 English Premier League (EPL) Championship? [Manchester City]",
   "tick": 0.01
  },
  {
@@ -1965,6 +1957,14 @@
   "score": 0.5,
   "us_label": "UEFA Champions League Winner: SSC Napoli",
   "intl_label": "Will Napoli win the 2026-27 UEFA Champions League Championship? [Napoli]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstlashort-2027-01-21-mantha",
+  "intl_token": "75068590989881543142201250189129417696604178031919811215234403859185238427136",
+  "score": 0.688,
+  "us_label": "Oscar Nominees: Best Live Action Short Film: The Man That I Wave At",
+  "intl_label": "Will \"The Man That I Wave At\" be nominated for Best Live Action Short Film at the 99th Academy Awards? [The Man That I Wave At]",
   "tick": 0.01
  },
  {
@@ -1989,22 +1989,6 @@
   "score": 0.625,
   "us_label": "2027 NBA Champion: Brooklyn Nets",
   "intl_label": "Will Brooklyn Nets win the 2027 NBA Finals? [Brooklyn Nets]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstlashort-2027-01-21-mantha",
-  "intl_token": "75068590989881543142201250189129417696604178031919811215234403859185238427136",
-  "score": 0.688,
-  "us_label": "Oscar Nominees: Best Live Action Short Film: The Man That I Wave At",
-  "intl_label": "Will \"The Man That I Wave At\" be nominated for Best Live Action Short Film at the 99th Academy Awards? [The Man That I Wave At]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-epl-title-2027-05-30-w-mnc",
-  "intl_token": "19864216715488298679276291756659013279877343825699353033505020208765688353462",
-  "score": 0.633,
-  "us_label": "English Premier League Champion: Manchester City",
-  "intl_label": "Will Manchester City win the 2026-27 English Premier League (EPL) Championship? [Manchester City]",
   "tick": 0.01
  },
  {
@@ -2044,14 +2028,6 @@
   "intl_token": "113986052500172357426560421744159670111789534136168517241878927501016027675541",
   "score": 0.604,
   "us_label": "Oscar Nominees: Best Original Screenplay: Digger",
-  "intl_label": "Will \"Digger\" be nominated for Best Costume Design at the 99th Academy Awards? [Digger]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstcast-2027-01-21-digger",
-  "intl_token": "113986052500172357426560421744159670111789534136168517241878927501016027675541",
-  "score": 0.609,
-  "us_label": "Oscar Nominees: Best Casting: Digger",
   "intl_label": "Will \"Digger\" be nominated for Best Costume Design at the 99th Academy Awards? [Digger]",
   "tick": 0.01
  },
@@ -2232,6 +2208,14 @@
   "tick": 0.01
  },
  {
+  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-elsino",
+  "intl_token": "49947883690893321668605904280941329019506708400369927735110598916726348018121",
+  "score": 0.614,
+  "us_label": "Oscar Nominees: Best Picture: Elsinore",
+  "intl_label": "Will \"Elsinore\" be nominated for Best Film Editing at the 99th Academy Awards? [Elsinore]",
+  "tick": 0.01
+ },
+ {
   "us_slug": "tac-oscars-nom-bstorigscr-2027-01-21-elsino",
   "intl_token": "49947883690893321668605904280941329019506708400369927735110598916726348018121",
   "score": 0.604,
@@ -2296,22 +2280,6 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nhl-champ-2027-06-18-w-tor",
-  "intl_token": "46508043123782944529826321768335000732818290307137256432200064397942767638900",
-  "score": 0.667,
-  "us_label": "2027 Stanley Cup Champion: Toronto Maple Leafs",
-  "intl_label": "Will the Toronto Maple Leafs be named the 2026-27 NHL Stanley Cup Champion? [Toronto Maple Leafs]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-03-14-2027-bestanimshort-please",
-  "intl_token": "40043803944260984718787095418347867514565836398435093197260629245561467110665",
-  "score": 0.684,
-  "us_label": "Oscar Winner: Best Animated Short Film: Please",
-  "intl_label": "Will Please win Best Animated Short Film at the 99th Academy Awards? [Please]",
-  "tick": 0.01
- },
- {
   "us_slug": "tac-oscars-nom-2027-01-31-bestpic-cliboo",
   "intl_token": "69978029033927804876184970314689596834972223213944181031344773375170282495465",
   "score": 0.514,
@@ -2368,11 +2336,35 @@
   "tick": 0.01
  },
  {
+  "us_slug": "tec-nhl-champ-2027-06-18-w-tor",
+  "intl_token": "46508043123782944529826321768335000732818290307137256432200064397942767638900",
+  "score": 0.667,
+  "us_label": "2027 Stanley Cup Champion: Toronto Maple Leafs",
+  "intl_label": "Will the Toronto Maple Leafs be named the 2026-27 NHL Stanley Cup Champion? [Toronto Maple Leafs]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestanimshort-please",
+  "intl_token": "40043803944260984718787095418347867514565836398435093197260629245561467110665",
+  "score": 0.684,
+  "us_label": "Oscar Winner: Best Animated Short Film: Please",
+  "intl_label": "Will Please win Best Animated Short Film at the 99th Academy Awards? [Please]",
+  "tick": 0.01
+ },
+ {
   "us_slug": "tec-epl-title-2027-05-30-w-eve",
   "intl_token": "80367005308757874454920246636237476898466725678692332165499458085317111212451",
   "score": 0.633,
   "us_label": "English Premier League Champion: Everton",
   "intl_label": "Will Everton win the 2026-27 English Premier League (EPL) Championship? [Everton]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nhl-champ-2027-06-18-w-mon",
+  "intl_token": "101075383399790518260771222164963904576747335934335904011626511256957817201781",
+  "score": 0.667,
+  "us_label": "2027 Stanley Cup Champion: Montreal Canadiens",
+  "intl_label": "Will the Montreal Canadiens be named the 2026-27 NHL Stanley Cup Champion? [Montreal Canadiens]",
   "tick": 0.01
  }
 ]

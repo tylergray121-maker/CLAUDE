@@ -1,10 +1,10 @@
-21:37:52 INFO Polymarket US: 80528 open markets
-21:38:00 INFO international: 2464 active outcome tokens
-21:38:13 INFO games: 1572 US game markets in the next 48h, 108 international matches, 200 pairs
-21:38:13 INFO pairs: 297 kept, 13 rejected on price
+22:00:32 INFO Polymarket US: 80636 open markets
+22:00:41 INFO international: 2430 active outcome tokens
+22:00:59 INFO games: 1606 US game markets in the next 48h, 107 international matches, 198 pairs
+22:00:59 INFO pairs: 296 kept, 14 rejected on price
 # Polymarket US bot — paper run
 
-Mapping: 80528 open US markets, 2464 international outcomes, 297 pairs (20 tracked after live price checks); observations with a trustworthy reference price: 620.
+Mapping: 80636 open US markets, 2430 international outcomes, 296 pairs (20 tracked after live price checks); observations with a trustworthy reference price: 360.
 
 ## Is there an edge to take?
 
