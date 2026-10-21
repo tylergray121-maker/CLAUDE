@@ -180,6 +180,22 @@ class DataTest(unittest.TestCase):
         self.assertLess(bid, ask)
         self.assertAlmostEqual(spread, ask - bid)
 
+    def test_listing_stops_cleanly_at_the_offset_limit(self):
+        from copybt.api import HTTPError
+        rows = fixture("pmbot_intl_markets.json")
+
+        class C:
+            calls = []
+            def get(self, base, path, params=None, use_cache=True, keep=None):
+                self.calls.append(params)
+                if params["offset"] >= 4:
+                    raise HTTPError(422, path, "offset too large")
+                return rows
+        c = C()
+        opts = data.intl_options(c)
+        self.assertEqual(len(opts), 2 * len([o for m in rows for o in data.parse_intl_market(m)]))
+        self.assertEqual(c.calls[0]["order"], "volume24hr")
+
     def test_intl_market_from_real_response(self):
         opts = [o for m in fixture("pmbot_intl_markets.json") for o in data.parse_intl_market(m)]
         self.assertTrue(opts)

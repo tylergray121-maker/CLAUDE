@@ -1,1 +1,1 @@
---minutes 60 --cycle-seconds 15 --max-markets 80 --max-rps 10
+--minutes 10 --cycle-seconds 15 --max-markets 80 --max-rps 10

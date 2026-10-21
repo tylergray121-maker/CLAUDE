@@ -108,7 +108,7 @@ def us_markets(client: Client, page: int = 100, max_pages: int = 1000) -> list[U
                 "active": "true", "closed": "false", "limit": page,
                 "offset": offset}, use_cache=False) or {}).get("markets", [])
         except HTTPError as e:
-            log.warning("US markets page %d: %s", i, e)
+            log.warning("US markets at offset %d: %s", offset, e)
             break
         new = 0
         for r in rows:
@@ -201,19 +201,24 @@ def intl_options(client: Client, page: int = 500, max_pages: int = 200,
     keep = ("question", "groupItemTitle", "clobTokenIds", "outcomes", "endDate",
             "events", "bestBid", "bestAsk", "volume24hr", "closed", "active",
             "enableOrderBook")
+    # Most active first: offset paging stops at ~2,100 rows (the API wants
+    # keyset paging beyond that), and only active markets have reference
+    # prices worth trusting anyway.
     out = []
     offset = 0
     for _ in range(max_pages):
         try:
             rows = client.get(GAMMA, "/markets", {
-                "active": "true", "closed": "false", "limit": page,
-                "offset": offset}, use_cache=False, keep=keep) or []
+                "active": "true", "closed": "false", "order": "volume24hr",
+                "ascending": "false", "limit": page, "offset": offset},
+                use_cache=False, keep=keep) or []
         except HTTPError as e:
-            log.warning("intl markets page %d: %s", i, e)
+            if e.status != 422:  # 422 = past the offset limit: we have enough
+                log.warning("intl markets at offset %d: %s", offset, e)
             break
         for r in rows:
             if isinstance(r.get("events"), list):  # keep only the event title
-                r["events"] = [{"title": (e or {}).get("title")} for e in r["events"][:1]]
+                r["events"] = [{"title": (ev or {}).get("title")} for ev in r["events"][:1]]
             out += [o for o in parse_intl_market(r) if o.volume24h >= min_volume24h]
         if not rows:
             break

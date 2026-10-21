@@ -296,7 +296,6 @@ class Engine:
             self._events.close()
 
     def _write_report(self) -> None:
-        from statistics import median
         s, b = self.stats, self.broker
         gaps = sorted(abs(g) for g in s.gaps)
         pct = lambda q: gaps[min(len(gaps) - 1, int(q * len(gaps)))] if gaps else 0
