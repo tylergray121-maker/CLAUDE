@@ -29,7 +29,8 @@ class SimConfig:
     max_trade_pct: float = 0.20   # cap on any single copied buy
     max_market_pct: float = 0.35  # cap on exposure to one market
     slippage: float = 0.01        # absolute price penalty per fill (1 cent)
-    fee_bps: float = 0.0
+    fee_bps: float = 0.0          # flat extra fee on top of market fees
+    market_fees: bool = True      # charge each market's taker fee schedule
     min_order_usd: float = 1.0    # Polymarket marketable order minimum
     max_fill_price: float = 0.99  # don't buy when nothing is left to win
     delay_seconds: int = 0        # only used with a price lookup
@@ -70,6 +71,10 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
     buy_sizes: list[float] = []
     skipped: dict[str, int] = defaultdict(int)
     buys = sells = 0
+
+    def taker_fee(cond: str, price: float, shares: float) -> float:
+        m = markets.get(cond)
+        return m.taker_fee(price, shares) if (m and cfg.market_fees) else 0.0
 
     def equity() -> float:
         return cash + sum(s * last_px.get(a, 0.0) for a, s in pos.items() if s > 0)
@@ -137,6 +142,10 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
                            for a in assets_of[t.condition_id])
             usd = min(usd, eq * cfg.max_market_pct - exposure)
             usd = min(usd, cash / (1 + fee))
+            # Market taker fee is charged on the shares bought; shrink the
+            # order so price + fees still fits in the budget.
+            fee_per_share = taker_fee(t.condition_id, fill, 1.0)
+            shares = usd / (fill + fee_per_share)
             if usd < cfg.min_order_usd:
                 reason = ("no_cash" if cash / (1 + fee) < cfg.min_order_usd
                           else "market_cap" if eq * cfg.max_market_pct - exposure
@@ -144,8 +153,8 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
                 skipped[reason] += 1
                 continue
             cash -= usd * (1 + fee)
-            pos[t.asset] += usd / fill
-            cost[t.asset] += usd
+            pos[t.asset] += shares
+            cost[t.asset] += usd * (1 + fee)
             buys += 1
         else:
             before = leader[t.asset]
@@ -156,7 +165,8 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
             base = min(t.price, delayed) if delayed is not None else t.price
             fill = max(0.0, base - cfg.slippage)
             shares = pos[t.asset] * frac
-            proceeds = shares * fill * (1 - fee)
+            proceeds = (shares * fill * (1 - fee)
+                        - taker_fee(t.condition_id, fill, shares))
             if proceeds < cfg.min_order_usd:
                 skipped["sell_below_min"] += 1
                 continue

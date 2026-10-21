@@ -1,1 +1,1 @@
---days 90 --max-wallets 1500 --workers 8
+--days 90 --max-wallets 1500 --workers 12 --max-rps 12

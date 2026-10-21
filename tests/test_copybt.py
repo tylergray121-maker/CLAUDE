@@ -110,6 +110,17 @@ class SimulateTest(unittest.TestCase):
         self.assertAlmostEqual(r.train_return_pct, 10.0)
         self.assertAlmostEqual(r.test_return_pct, -10.0)
 
+    def test_market_taker_fee_on_buy(self):
+        m = resolved(YES)
+        m[COND].fee_rate, m[COND].fee_exponent = 0.03, 1.0
+        r = self.run_sim([trade(T0 + 60, "BUY", 0.5, 100)], m)
+        # $20 buys shares at 0.5 + 0.03*0.25 per share.
+        self.assertAlmostEqual(r.final_equity, 180 + 20 / 0.5075)
+        off = simulate([trade(T0 + 60, "BUY", 0.5, 100)], m,
+                       SimConfig(slippage=0.0, base_pct=0.10, market_fees=False),
+                       T0, T0 + 10 * DAY, T0 + 3 * DAY)
+        self.assertAlmostEqual(off.final_equity, 220.0)
+
     def test_delay_uses_worse_of_leader_and_delayed_price(self):
         cfg = SimConfig(slippage=0.0, base_pct=0.10, delay_seconds=5)
         r = simulate([trade(T0 + 60, "BUY", 0.5, 100)], resolved(YES), cfg,
@@ -146,7 +157,9 @@ class ParserTest(unittest.TestCase):
     def test_gamma_market(self):
         m = data._market_from_gamma({
             "conditionId": "0xC", "closed": True, "clobTokenIds": '["1","2"]',
-            "outcomePrices": '["0","1"]', "closedTime": "2024-11-06 12:00:00+00"})
+            "outcomePrices": '["0","1"]', "closedTime": "2024-11-06 12:00:00+00",
+            "feesEnabled": True, "feeSchedule": {"exponent": 1, "rate": 0.03}})
+        self.assertEqual((m.fee_rate, m.fee_exponent), (0.03, 1.0))
         self.assertTrue(m.resolved)
         self.assertEqual(m.prices, {"1": 0.0, "2": 1.0})
         self.assertEqual(m.resolve_ts, 1730894400)

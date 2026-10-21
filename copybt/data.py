@@ -9,6 +9,7 @@ from __future__ import annotations
 import json
 import logging
 from bisect import bisect_left
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 
 from .api import CLOB_API, DATA_API, GAMMA_API, LB_API, Client, HTTPError
@@ -226,9 +227,18 @@ def _market_from_gamma(row: dict) -> Market | None:
         resolve_ts = (_parse_ts(row.get("closedTime"))
                       or _parse_ts(row.get("umaEndDate"))
                       or _parse_ts(row.get("endDate")))
+    fee_rate, fee_exp = 0.0, 1.0
+    sched = row.get("feeSchedule")
+    if row.get("feesEnabled") and isinstance(sched, dict):
+        try:
+            fee_rate = float(sched.get("rate") or 0)
+            fee_exp = float(sched.get("exponent") or 1)
+        except (TypeError, ValueError):
+            pass
     return Market(condition_id=cond.lower(), resolved=resolved,
                   resolve_ts=resolve_ts, prices=dict(zip(tokens, prices)),
-                  question=str(row.get("question") or ""))
+                  question=str(row.get("question") or ""),
+                  fee_rate=fee_rate, fee_exponent=fee_exp)
 
 
 def _market_from_clob(row: dict) -> Market | None:
@@ -257,39 +267,58 @@ def _market_from_clob(row: dict) -> Market | None:
                   prices=prices, question=str(row.get("question") or ""))
 
 
-def fetch_markets(client: Client, condition_ids: set[str],
-                  batch: int = 50) -> dict[str, Market]:
+def fetch_markets(client: Client, condition_ids: set[str], batch: int = 50,
+                  workers: int = 8) -> dict[str, Market]:
+    """Resolve markets via gamma in parallel batches, CLOB per market as fallback."""
     ids = sorted({c.lower() for c in condition_ids if c})
     out: dict[str, Market] = {}
-    for closed in (None, "true"):
-        todo = [c for c in ids if c not in out]
-        for i in range(0, len(todo), batch):
-            chunk = todo[i:i + batch]
-            params: list[tuple] = [("condition_ids", c) for c in chunk]
-            params.append(("limit", len(chunk)))
-            if closed:
-                params.append(("closed", closed))
-            try:
-                rows = _as_list(client.get(GAMMA_API, "/markets", params))
-            except HTTPError as e:
-                log.warning("gamma markets batch failed: %s", e)
-                continue
-            for row in rows:
-                m = _market_from_gamma(row)
-                if m:
-                    out[m.condition_id] = m
-    for cond in [c for c in ids if c not in out]:
+
+    def gamma_batch(chunk: list[str], closed: str | None) -> list[Market]:
+        params: list[tuple] = [("condition_ids", c) for c in chunk]
+        params.append(("limit", len(chunk)))
+        if closed:
+            params.append(("closed", closed))
+        try:
+            rows = _as_list(client.get(GAMMA_API, "/markets", params))
+        except HTTPError as e:
+            log.warning("gamma markets batch failed: %s", e)
+            return []
+        return [m for m in map(_market_from_gamma, rows) if m]
+
+    def clob_one(cond: str) -> list[Market]:
         try:
             m = _market_from_clob(client.get(CLOB_API, f"/markets/{cond}"))
         except HTTPError as e:
             log.debug("clob market %s: %s", cond, e)
-            continue
-        if m:
-            out[m.condition_id] = m
+            return []
+        return [m] if m else []
+
+    # Most markets a 90-day backtest touches have closed, so ask for those first.
+    for label, closed in (("closed", "true"), ("open", None)):
+        todo = [c for c in ids if c not in out]
+        chunks = [todo[i:i + batch] for i in range(0, len(todo), batch)]
+        _run_parallel(f"gamma {label}", chunks, lambda ch: gamma_batch(ch, closed),
+                      out, workers)
+    todo = [c for c in ids if c not in out]
+    if todo:
+        _run_parallel("clob fallback", todo, clob_one, out, workers)
     missing = len(ids) - len(out)
     if missing:
         log.warning("%d of %d markets could not be resolved", missing, len(ids))
     return out
+
+
+def _run_parallel(label, jobs, fn, out: dict, workers: int) -> None:
+    if not jobs:
+        return
+    step = max(1, len(jobs) // 20)
+    with ThreadPoolExecutor(workers) as pool:
+        for i, markets in enumerate(pool.map(fn, jobs), 1):
+            for m in markets:
+                out[m.condition_id] = m
+            if i % step == 0 or i == len(jobs):
+                log.info("%s: %d/%d requests, %d markets known", label, i,
+                         len(jobs), len(out))
 
 
 # --------------------------------------------------------------------------

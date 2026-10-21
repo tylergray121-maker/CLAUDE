@@ -51,7 +51,10 @@ def parse_args(argv=None) -> argparse.Namespace:
     g.add_argument("--max-market-pct", type=float, default=d.max_market_pct)
     g.add_argument("--slippage", type=float, default=d.slippage,
                    help="absolute price penalty per fill, e.g. 0.01 = 1 cent")
-    g.add_argument("--fee-bps", type=float, default=d.fee_bps)
+    g.add_argument("--fee-bps", type=float, default=d.fee_bps,
+                   help="flat fee on top of each market's own taker fees")
+    g.add_argument("--no-market-fees", action="store_true",
+                   help="ignore Polymarket's per-market taker fees")
     g.add_argument("--min-order", type=float, default=d.min_order_usd)
     g.add_argument("--delay-seconds", type=int, default=0,
                    help="copy latency; fetches CLOB price history per token (slow)")
@@ -100,7 +103,8 @@ def main(argv=None) -> int:
     cfg = SimConfig(start_cash=args.bankroll, base_pct=args.base_pct,
                     max_trade_pct=args.max_trade_pct,
                     max_market_pct=args.max_market_pct, slippage=args.slippage,
-                    fee_bps=args.fee_bps, min_order_usd=args.min_order,
+                    fee_bps=args.fee_bps, market_fees=not args.no_market_fees,
+                    min_order_usd=args.min_order,
                     delay_seconds=args.delay_seconds)
 
     # 1. Wallet universe ---------------------------------------------------
@@ -133,10 +137,17 @@ def main(argv=None) -> int:
                          client.requests_made)
 
     # 3. Market resolutions ------------------------------------------------
-    conds = {t.condition_id for trades, trunc in histories.values() if not trunc
-             for t in trades}
-    log.info("resolving %d markets", len(conds))
-    markets = fetch_markets(client, conds)
+    # Only wallets that can be ranked need their markets resolved; flagged
+    # wallets (bots, 5-minute markets, bonders) are most of the market count.
+    profiles = {w: profile(trades, start_ts, end_ts, trunc)
+                for w, (trades, trunc) in histories.items()}
+    to_run = {w for w, (trades, trunc) in histories.items()
+              if trades and not trunc
+              and (args.include_flagged or not profiles[w].flags)}
+    conds = {t.condition_id for w in to_run for t in histories[w][0]}
+    log.info("%d wallets to simulate (%d flagged as hard to copy); resolving %d markets",
+             len(to_run), sum(1 for p in profiles.values() if p.flags), len(conds))
+    markets = fetch_markets(client, conds, workers=args.workers)
 
     prices = (PriceHistory(client, start_ts, end_ts + 86400)
               if args.delay_seconds > 0 else None)
@@ -148,13 +159,13 @@ def main(argv=None) -> int:
     for w in wallets:
         if w not in histories:
             continue
-        trades, truncated = histories[w]
-        prof = profile(trades, start_ts, end_ts, truncated)
+        trades, _ = histories[w]
+        prof = profiles[w]
         row = {"wallet": w, "name": meta[w].get("name", ""),
                "best_leaderboard_rank": meta[w].get("best_rank"),
                "flags": ";".join(prof.flags), **_prefix(asdict(prof), "lead_")}
         row.pop("lead_flags")
-        if trades and not truncated:
+        if w in to_run:
             res = simulate(trades, markets, cfg, start_ts, end_ts, split_ts, price_at)
             curves[w] = res.daily_equity
             r = asdict(res)
@@ -237,7 +248,8 @@ def _report(args, cfg, start_ts, end_ts, split_ts, rows, ran, eligible) -> str:
         f"leader buy (scaled by leader conviction {cfg.conviction_min}–"
         f"{cfg.conviction_max}x), max {cfg.max_trade_pct:.0%} per trade, "
         f"{cfg.max_market_pct:.0%} per market; slippage {cfg.slippage*100:.1f}¢/fill, "
-        f"fee {cfg.fee_bps:g} bps, min order ${cfg.min_order_usd:g}, "
+        f"{'market taker fees' if cfg.market_fees else 'no market fees'} "
+        f"+ {cfg.fee_bps:g} bps, min order ${cfg.min_order_usd:g}, "
         f"copy delay {cfg.delay_seconds}s.",
         "",
         f"Wallets examined: {len(rows)}; simulated: {len(ran)}; "
