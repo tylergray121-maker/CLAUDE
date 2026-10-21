@@ -24,7 +24,7 @@
   "us_label": "Regular Season Receiving Yards O/U: Chris Godwin 699.5+",
   "intl_label": "Will Chris Godwin have 1,000+ receiving yards in the 2026-27 NFL regular season? [Chris Godwin]",
   "tick": 0.01,
-  "price_gap": 0.424
+  "price_gap": 0.364
  },
  {
   "us_slug": "tac-oscars-nom-2027-01-31-bestpic-elsino",
@@ -33,7 +33,7 @@
   "us_label": "Oscar Nominees: Best Picture: Elsinore",
   "intl_label": "Will \"Elsinore\" be nominated for Best Film Editing at the 99th Academy Awards? [Elsinore]",
   "tick": 0.01,
-  "price_gap": 0.09
+  "price_gap": 0.085
  },
  {
   "us_slug": "arankc-ucl-2027-01-27-9to24-fcb",
@@ -45,13 +45,22 @@
   "price_gap": 0.08
  },
  {
+  "us_slug": "tac-grammys-aoty-2027-02-07-artlov",
+  "intl_token": "115038513749123323356108768879054424621968703965081397630027954404380369699982",
+  "score": 0.7,
+  "us_label": "Grammy Winner: Album of the Year: The Art of Loving - Olivia Dean",
+  "intl_label": "Will The Art of Loving (Olivia Dean) win Album of the Year at the 69th Annual GRAMMY Awards? [The Art of Loving - Olivia Dean]",
+  "tick": 0.01,
+  "price_gap": 0.2
+ },
+ {
   "us_slug": "tac-oscars-nom-bstdoc-2027-01-21-youcan",
   "intl_token": "53610167052119594539943260017737712674154626353449223102231029322515421519907",
   "score": 0.674,
   "us_label": "Oscar Nominees: Best Documentary Feature Film: You Can See Everything",
   "intl_label": "Will \"You Can See Everything\" be nominated for Best Documentary Feature Film at the 99th Academy Awards? [You Can See Everything]",
   "tick": 0.01,
-  "price_gap": 0.085
+  "price_gap": 0.09
  },
  {
   "us_slug": "tac-oscars-nom-bstmakeup-2027-01-21-digger",
@@ -69,7 +78,7 @@
   "us_label": "Oscar Winner: Best Film Editing: You Can See Everything",
   "intl_label": "Will You Can See Everything win Best Documentary Feature Film at the 99th Academy Awards? [You Can See Everything]",
   "tick": 0.01,
-  "price_gap": 0.345
+  "price_gap": 0.34
  },
  {
   "us_slug": "tac-oscars-nom-bstcast-2027-01-21-digger",
@@ -87,7 +96,7 @@
   "us_label": "Oscar Winner: Best Picture: You Can See Everything",
   "intl_label": "Will You Can See Everything win Best Documentary Feature Film at the 99th Academy Awards? [You Can See Everything]",
   "tick": 0.01,
-  "price_gap": 0.505
+  "price_gap": 0.5
  },
  {
   "us_slug": "tac-oscars-nom-bstedit-2027-01-21-digger",

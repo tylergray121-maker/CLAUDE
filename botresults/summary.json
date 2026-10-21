@@ -1,7 +1,7 @@
 {
- "ts": 1792589012.4951022,
+ "ts": 1792591004.6108987,
  "mode": "paper",
- "pairs": 75,
+ "pairs": 100,
  "equity": 200.0,
  "cash": 200.0,
  "positions": {},
@@ -11,8 +11,8 @@
  "rebates": 0.0,
  "halted": "",
  "scan": {
-  "observations": 1353,
+  "observations": 6684,
   "buy_opps": 0,
-  "sell_opps": 60
+  "sell_opps": 0
  }
 }

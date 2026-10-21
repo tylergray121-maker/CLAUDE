@@ -1,5 +1,661 @@
 [
  {
+  "us_slug": "aec-nba-mil-was-2026-10-21",
+  "intl_token": "1599101620680797671383335695906161815959476547649246036701380628339498427273",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming basketball event MIL Bucks vs WAS Wizards scheduled: Bucks",
+  "intl_label": "Bucks vs. Wizards [Bucks]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-nba-atl-orl-2026-10-21",
+  "intl_token": "44887259505946660799050523095589383516895296837192507586209222338540683060118",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming basketball event ATL Hawks vs ORL Magic scheduled f: Hawks",
+  "intl_label": "Hawks vs. Magic [Hawks]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-nba-cha-bkn-2026-10-21",
+  "intl_token": "58802458597374928740225519735423162012398763515664846118442539672822667668833",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming basketball event CHA Hornets vs BKN Nets scheduled : Hornets",
+  "intl_label": "Hornets vs. Nets [Hornets]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-nba-chi-tor-2026-10-21",
+  "intl_token": "8478232975053021656102481848967329190182250864822625630950559616369952555004",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming basketball event CHI Bulls vs TOR Raptors scheduled: Bulls",
+  "intl_label": "Bulls vs. Raptors [Bulls]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-nba-min-mia-2026-10-21",
+  "intl_token": "107102793637680157985081124002726182334464514298802794132890893773707404215371",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming basketball event MIN Timberwolves vs MIA Heat sched: Timberwolves",
+  "intl_label": "Timberwolves vs. Heat [Timberwolves]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-nba-uta-mem-2026-10-21",
+  "intl_token": "7685158848984498977390071784341171138992058973607044422044852725107513658437",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming basketball event UTA Jazz vs MEM Grizzlies schedule: Jazz",
+  "intl_label": "Jazz vs. Grizzlies [Jazz]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-nba-dal-hou-2026-10-21",
+  "intl_token": "70448374113237600852894674614824159045901244794984612914777108422734736077371",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming basketball event DAL Mavericks vs HOU Rockets sched: Mavericks",
+  "intl_label": "Mavericks vs. Rockets [Mavericks]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-nba-sac-lac-2026-10-21",
+  "intl_token": "112910648330465833413877547232231876252900072314935588375523944706456051504208",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming basketball event SAC Kings vs LA Clippers scheduled: Kings",
+  "intl_label": "Kings vs. Clippers [Kings]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-nba-cle-phi-2026-10-22",
+  "intl_token": "68906769519502637492115594002417079303175599749654495063253171949172492456742",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming basketball event CLE Cavaliers vs PHI 76ers schedul: Cavaliers",
+  "intl_label": "Cavaliers vs. 76ers [Cavaliers]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-nba-den-okc-2026-10-22",
+  "intl_token": "47446421240768926934890827865171577918529637807197465430999956414697351785538",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming basketball event DEN Nuggets vs OKC Thunder schedul: Nuggets",
+  "intl_label": "Nuggets vs. Thunder [Nuggets]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-ucl-com-mnu-2026-10-21-com",
+  "intl_token": "21547411149225201408999552136008292726389103403378181868630108215268270101911",
+  "score": 1.0,
+  "us_label": "Will Como 1907 win against Manchester United FC in the UEFA Champions League mat: Yes",
+  "intl_label": "Will Como 1907 win on 2026-10-21? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-ucl-com-mnu-2026-10-21-draw",
+  "intl_token": "110153294433837932005230895592096208757474937979869020284169927017513250774639",
+  "score": 1.0,
+  "us_label": "Will the UEFA Champions League match Como 1907 vs Manchester United FC scheduled: Yes",
+  "intl_label": "Will Como 1907 vs. Manchester United FC end in a draw? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-ucl-com-mnu-2026-10-21-mnu",
+  "intl_token": "92550237320664152543752854662781858843571683418255807727579120518019778847474",
+  "score": 1.0,
+  "us_label": "Will Manchester United FC win against Como 1907 in the UEFA Champions League mat: Yes",
+  "intl_label": "Will Manchester United FC win on 2026-10-21? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-ucl-lil-gal-2026-10-21-lil",
+  "intl_token": "10028779326641281968055176850070653320537251496014930596037239858485715812405",
+  "score": 1.0,
+  "us_label": "Will Lille OSC win against Galatasaray SK in the UEFA Champions League match sch: Yes",
+  "intl_label": "Will Lille OSC win on 2026-10-21? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-ucl-lil-gal-2026-10-21-draw",
+  "intl_token": "23337278293440157961906050926695521253102225633110641660750373725230304517248",
+  "score": 1.0,
+  "us_label": "Will the UEFA Champions League match Lille OSC vs Galatasaray SK scheduled for O: Yes",
+  "intl_label": "Will Lille OSC vs. Galatasaray SK end in a draw? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-ucl-lil-gal-2026-10-21-gal",
+  "intl_token": "26348690834911265834605122007336963497405744169677124650283354579690261782117",
+  "score": 1.0,
+  "us_label": "Will Galatasaray SK win against Lille OSC in the UEFA Champions League match sch: Yes",
+  "intl_label": "Will Galatasaray SK win on 2026-10-21? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-ucl-bru-rcl-2026-10-21-bru",
+  "intl_token": "73334681687017267281978243024565364539693346675250911432016457151014889727575",
+  "score": 1.0,
+  "us_label": "Will Club Brugge KV win against Racing Club de Lens in the UEFA Champions League: Yes",
+  "intl_label": "Will Club Brugge KV win on 2026-10-21? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-ucl-bru-rcl-2026-10-21-draw",
+  "intl_token": "11214652145182488689654834889231812934751777765813419675656633329707135507158",
+  "score": 1.0,
+  "us_label": "Will the UEFA Champions League match Club Brugge KV vs Racing Club de Lens sched: Yes",
+  "intl_label": "Will Club Brugge KV vs. Racing Club de Lens end in a draw? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-ucl-bru-rcl-2026-10-21-rcl",
+  "intl_token": "71951644359115813284567294610921548991261353243381463607021987185416061574908",
+  "score": 1.0,
+  "us_label": "Will Racing Club de Lens win against Club Brugge KV in the UEFA Champions League: Yes",
+  "intl_label": "Will Racing Club de Lens win on 2026-10-21? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-ucl-bay-ars-2026-10-21-bay",
+  "intl_token": "82853722658173342238781948595880114932844211419294037056959735369523146454820",
+  "score": 1.0,
+  "us_label": "Will FC Bayern Munchen win against Arsenal FC in the UEFA Champions League match: Yes",
+  "intl_label": "Will FC Bayern M\u00fcnchen win on 2026-10-21? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-ucl-bay-ars-2026-10-21-draw",
+  "intl_token": "11011844377313658791637238439980746281515251980331115205502276812973901198557",
+  "score": 1.0,
+  "us_label": "Will the UEFA Champions League match FC Bayern Munchen vs Arsenal FC scheduled f: Yes",
+  "intl_label": "Will FC Bayern M\u00fcnchen vs. Arsenal FC end in a draw? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-ucl-bay-ars-2026-10-21-ars",
+  "intl_token": "64479457833656173997570935422675377381802369658632636714002811001320587515495",
+  "score": 1.0,
+  "us_label": "Will Arsenal FC win against FC Bayern Munchen in the UEFA Champions League match: Yes",
+  "intl_label": "Will Arsenal FC win on 2026-10-21? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-ucl-rma-rbl-2026-10-21-rma",
+  "intl_token": "15885560241097622535264338144890047731133154375347138376456109346405645834931",
+  "score": 1.0,
+  "us_label": "Will Real Madrid CF win against RB Leipzig in the UEFA Champions League match sc: Yes",
+  "intl_label": "Will Real Madrid CF win on 2026-10-21? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-ucl-rma-rbl-2026-10-21-draw",
+  "intl_token": "54084464675000603923798167821003132201023475977360684325966220390524486128316",
+  "score": 1.0,
+  "us_label": "Will the UEFA Champions League match Real Madrid CF vs RB Leipzig scheduled for : Yes",
+  "intl_label": "Will Real Madrid CF vs. RB Leipzig end in a draw? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-ucl-rma-rbl-2026-10-21-rbl",
+  "intl_token": "63254047641534267563152650080414457952376530011441502677822848952272639492055",
+  "score": 1.0,
+  "us_label": "Will RB Leipzig win against Real Madrid CF in the UEFA Champions League match sc: Yes",
+  "intl_label": "Will RB Leipzig win on 2026-10-21? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-uel-lep-sun-2026-10-22-lep",
+  "intl_token": "103803211293560184518552506956658059835664497128770654962344197315006213664405",
+  "score": 1.0,
+  "us_label": "Will KKS Lech Poznan win against Sunderland AFC in the UEL match scheduled for O: Yes",
+  "intl_label": "Will KKS Lech Pozna\u0144 win on 2026-10-22? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-uel-lep-sun-2026-10-22-draw",
+  "intl_token": "68726573611929338751725318901788825291748856384576936153548342652892159840265",
+  "score": 1.0,
+  "us_label": "Will the UEL match KKS Lech Poznan vs Sunderland AFC scheduled for Oct 22, 2026 : Yes",
+  "intl_label": "Will KKS Lech Pozna\u0144 vs. Sunderland AFC end in a draw? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-uel-lep-sun-2026-10-22-sun",
+  "intl_token": "108615990369248080770724428847418148931076935228936760625487034522140815820756",
+  "score": 1.0,
+  "us_label": "Will Sunderland AFC win against KKS Lech Poznan in the UEL match scheduled for O: Yes",
+  "intl_label": "Will Sunderland AFC win on 2026-10-22? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-uel-jag-and-2026-10-22-jag",
+  "intl_token": "75442804455356846581849808453098673339693494636717773126980629505252464987013",
+  "score": 1.0,
+  "us_label": "Will Jagiellonia Bialystok win against RSC Anderlecht in the UEL match scheduled: Yes",
+  "intl_label": "Will Jagiellonia Bia\u0142ystok win on 2026-10-22? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-uel-jag-and-2026-10-22-draw",
+  "intl_token": "9967251869495325058421469694719805813281232856896221639413417252137102946083",
+  "score": 1.0,
+  "us_label": "Will the UEL match Jagiellonia Bialystok vs RSC Anderlecht scheduled for Oct 22,: Yes",
+  "intl_label": "Will Jagiellonia Bia\u0142ystok vs. RSC Anderlecht end in a draw? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-uel-jag-and-2026-10-22-and",
+  "intl_token": "33985788118195108827559814432398693511534871661791051525167993942194892717384",
+  "score": 1.0,
+  "us_label": "Will RSC Anderlecht win against Jagiellonia Bialystok in the UEL match scheduled: Yes",
+  "intl_label": "Will RSC Anderlecht win on 2026-10-22? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-usoc-clb-stl-2026-10-21-clb",
+  "intl_token": "99877984630083211861400208855457688480184244208793439522383031192771443928007",
+  "score": 1.0,
+  "us_label": "Will Columbus Crew win against Saint Louis City SC in the US Open Cup match sche: Yes",
+  "intl_label": "Will Columbus Crew win on 2026-10-21? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-usoc-clb-stl-2026-10-21-draw",
+  "intl_token": "31067484367503764667627942373562894485924595316337329873909714536366528480373",
+  "score": 1.0,
+  "us_label": "Will the US Open Cup match Columbus Crew vs Saint Louis City SC scheduled for Oc: Yes",
+  "intl_label": "Will Columbus Crew vs. Saint Louis City SC end in a draw? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-usoc-clb-stl-2026-10-21-stl",
+  "intl_token": "63720481534788449509993920481738197925388732237801831001507198472490638348291",
+  "score": 1.0,
+  "us_label": "Will Saint Louis City SC win against Columbus Crew in the US Open Cup match sche: Yes",
+  "intl_label": "Will Saint Louis City SC win on 2026-10-21? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-sud-tor-cam-2026-10-21-tor",
+  "intl_token": "46686653428393017929481598629741876889214654195351287437691999013048017068742",
+  "score": 1.0,
+  "us_label": "Will Montevideo City Torque win against CA Mineiro in the Sudamericana match sch: Yes",
+  "intl_label": "Will Montevideo City Torque win on 2026-10-21? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-sud-tor-cam-2026-10-21-draw",
+  "intl_token": "19851734127864743642843230700583482328765476535567386928776604111069618123906",
+  "score": 1.0,
+  "us_label": "Will the Sudamericana match Montevideo City Torque vs CA Mineiro scheduled for O: Yes",
+  "intl_label": "Will Montevideo City Torque vs. CA Mineiro end in a draw? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-sud-tor-cam-2026-10-21-cam",
+  "intl_token": "24140694044932534079183839379951862851405597501076277415001518226175348549810",
+  "score": 1.0,
+  "us_label": "Will CA Mineiro win against Montevideo City Torque in the Sudamericana match sch: Yes",
+  "intl_label": "Will CA Mineiro win on 2026-10-21? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-lib-pal-flu-2026-10-21-pal",
+  "intl_token": "2790086222828231518900888914941526306743862027163195238386140530469013546872",
+  "score": 1.0,
+  "us_label": "Will SE Palmeiras win against Fluminense FC in the Copa Libertadores match sched: Yes",
+  "intl_label": "Will SE Palmeiras win on 2026-10-21? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-lib-pal-flu-2026-10-21-draw",
+  "intl_token": "70862620757603204945975215545281191541277553511948823972509178541798630497945",
+  "score": 1.0,
+  "us_label": "Will the Copa Libertadores match SE Palmeiras vs Fluminense FC scheduled for Oct: Yes",
+  "intl_label": "Will SE Palmeiras vs. Fluminense FC end in a draw? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-lib-pal-flu-2026-10-21-flu",
+  "intl_token": "106880379793252910179523666422089999201038728070757526201080937231393548187866",
+  "score": 1.0,
+  "us_label": "Will Fluminense FC win against SE Palmeiras in the Copa Libertadores match sched: Yes",
+  "intl_label": "Will Fluminense FC win on 2026-10-21? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-haz-fay-2026-10-22-haz",
+  "intl_token": "55820637656080051236779553744171718550430743317298849483643993923931369327674",
+  "score": 1.0,
+  "us_label": "Will Al Hazem SC win against Al Fayha Saudi Club in the Saudi Pro League match s: Yes",
+  "intl_label": "Will Al Hazem SC win on 2026-10-22? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-haz-fay-2026-10-22-draw",
+  "intl_token": "45724549326613598249462400116700482919332896353917976499269550515147661134216",
+  "score": 1.0,
+  "us_label": "Will the Saudi Pro League match Al Hazem SC vs Al Fayha Saudi Club scheduled for: Yes",
+  "intl_label": "Will Al Hazem SC vs. Al Fayha Saudi Club end in a draw? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-haz-fay-2026-10-22-fay",
+  "intl_token": "89021557173236511193207323280147232960197796554895843150971900545567946374202",
+  "score": 1.0,
+  "us_label": "Will Al Fayha Saudi Club win against Al Hazem SC in the Saudi Pro League match s: Yes",
+  "intl_label": "Will Al Fayha Saudi Club win on 2026-10-22? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-fat-sha-2026-10-22-fat",
+  "intl_token": "63935094500005443433665945974123658985237267887093628886135536463550651673771",
+  "score": 1.0,
+  "us_label": "Will Al Fateh Saudi Club win against Al Shabab Saudi Club in the Saudi Pro Leagu: Yes",
+  "intl_label": "Will Al Fateh Saudi Club win on 2026-10-22? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-fat-sha-2026-10-22-draw",
+  "intl_token": "84454835772393953050013747326792274794982099887915701877699566268780054881644",
+  "score": 1.0,
+  "us_label": "Will the Saudi Pro League match Al Fateh Saudi Club vs Al Shabab Saudi Club sche: Yes",
+  "intl_label": "Will Al Fateh Saudi Club vs. Al Shabab Saudi Club end in a draw? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-fat-sha-2026-10-22-sha",
+  "intl_token": "35399380262330683138658397669082436466798490436998286275444903732338747978111",
+  "score": 1.0,
+  "us_label": "Will Al Shabab Saudi Club win against Al Fateh Saudi Club in the Saudi Pro Leagu: Yes",
+  "intl_label": "Will Al Shabab Saudi Club win on 2026-10-22? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-liiga-kie-koo-2026-10-21",
+  "intl_token": "44945187939587079409443060532037473800906090832632222037922226055349703104568",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming hockey event Kiekko-Espoo vs KooKoo scheduled for O: Kiekko-Espoo",
+  "intl_label": "Kiekko-Espoo vs. KooKoo [Kiekko-Espoo]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-liiga-tap-asp-2026-10-21",
+  "intl_token": "66469055449975821051290125150186999248316640187764209469139499684321867845379",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming hockey event Tappara Tampere vs Assat Pori schedule: Tappara Tampere",
+  "intl_label": "Tappara Tampere vs. Assat Pori [Tappara Tampere]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-nhl-phi-buf-2026-10-21",
+  "intl_token": "27931492123723515904936894792099954551071108138035835518364062014443625648926",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming hockey event PHI Flyers vs BUF Sabres scheduled for: Flyers",
+  "intl_label": "Flyers vs. Sabres [Flyers]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-nhl-fla-ott-2026-10-21",
+  "intl_token": "51577654098216909438598446353000359057088537083281122752275219430752362831666",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming hockey event FLA Panthers vs OTT Senators scheduled: Panthers",
+  "intl_label": "Panthers vs. Senators [Panthers]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-nhl-ana-nj-2026-10-22",
+  "intl_token": "99091263339295281295227559438182958210652196207238478412914918340056112860604",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming hockey event ANA Ducks vs NJD Devils scheduled for : Ducks",
+  "intl_label": "Ducks vs. Devils [Ducks]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-nhl-sj-ott-2026-10-22",
+  "intl_token": "87089375485381723460641414175490636086121159589397744140083830797185875409933",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming hockey event SJS Sharks vs OTT Senators scheduled f: Sharks",
+  "intl_label": "Sharks vs. Senators [Sharks]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-nhl-fla-pit-2026-10-22",
+  "intl_token": "72386514084630545057345115003050338762320107754205433891853595471588079935138",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming hockey event FLA Panthers vs PIT Penguins scheduled: Panthers",
+  "intl_label": "Panthers vs. Penguins [Panthers]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-nhl-nyr-tor-2026-10-22",
+  "intl_token": "54404339534221266523033694816618802447711687014740646641384524325834534810286",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming hockey event NYR Rangers vs TOR Maple Leafs schedul: Rangers",
+  "intl_label": "Rangers vs. Maple Leafs [Rangers]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-nhl-wpg-dal-2026-10-22",
+  "intl_token": "17665717223383909280192039290679404111020311671161773451610548060438606165090",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming hockey event WPG Jets vs DAL Stars scheduled for Oc: Jets",
+  "intl_label": "Jets vs. Stars [Jets]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-nhl-car-edm-2026-10-22",
+  "intl_token": "50670219903221008271360464911418703516624724591687900451676601324173889520373",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming hockey event CAR Hurricanes vs EDM Oilers scheduled: Hurricanes",
+  "intl_label": "Hurricanes vs. Oilers [Hurricanes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-nhl-det-van-2026-10-22",
+  "intl_token": "48456058132529851495528307735995542205018783041965459356002071896381093322130",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming hockey event DET Red Wings vs VAN Canucks scheduled: Red Wings",
+  "intl_label": "Red Wings vs. Canucks [Red Wings]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-khl-akb-tor-2026-10-21",
+  "intl_token": "101978087322516899332124704219051014498113812911170865667813566712810438483072",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming hockey event Ak Bars Kazan vs Torpedo scheduled for: Ak Bars Kazan",
+  "intl_label": "KHL: Ak Bars Kazan vs. Torpedo [Ak Bars Kazan]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-biga-ducks-2026-10-21",
+  "intl_token": "33216319371235850246305509554380333988644189924051126484957319130709767714678",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming esports event BIG Academy vs Playing Ducks schedule: BIG Academy",
+  "intl_label": "Counter-Strike: BIG Academy vs Playing Ducks (BO3) - DACH CS Masters Regular Season [BIG Academy]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-ahl-kha-2026-10-22-ahl",
+  "intl_token": "19137115609443372051199358038614215492856346320210773730688838511079564203172",
+  "score": 1.0,
+  "us_label": "Will Al Ahli Saudi Club win against Al Khaleej Saudi Club in the Saudi Pro Leagu: Yes",
+  "intl_label": "Will Al Ahli Saudi Club win on 2026-10-22? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-ahl-kha-2026-10-22-draw",
+  "intl_token": "90473526538385380832581139657459747040801835983197605413795515707742480449899",
+  "score": 1.0,
+  "us_label": "Will the Saudi Pro League match Al Ahli Saudi Club vs Al Khaleej Saudi Club sche: Yes",
+  "intl_label": "Will Al Ahli Saudi Club vs. Al Khaleej Saudi Club end in a draw? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-ahl-kha-2026-10-22-kha",
+  "intl_token": "93089078762192150476559736524928767314808373789032580651922308123595593566114",
+  "score": 1.0,
+  "us_label": "Will Al Khaleej Saudi Club win against Al Ahli Saudi Club in the Saudi Pro Leagu: Yes",
+  "intl_label": "Will Al Khaleej Saudi Club win on 2026-10-22? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-lib-fla-est-2026-10-22-fla",
+  "intl_token": "36124564667204557052467256799661287540465767027629567866396486551538386785996",
+  "score": 1.0,
+  "us_label": "Will CR Flamengo win against Estudiantes de La Plata in the Copa Libertadores ma: Yes",
+  "intl_label": "Will CR Flamengo win on 2026-10-22? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-lib-fla-est-2026-10-22-draw",
+  "intl_token": "48128133264675319509382658929514359256687868702117599141114248381503662997414",
+  "score": 1.0,
+  "us_label": "Will the Copa Libertadores match CR Flamengo vs Estudiantes de La Plata schedule: Yes",
+  "intl_label": "Will CR Flamengo vs. Estudiantes de La Plata end in a draw? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-lib-fla-est-2026-10-22-est",
+  "intl_token": "48417595493346572251710218755413393726709032837019799150131377709622446519182",
+  "score": 1.0,
+  "us_label": "Will Estudiantes de La Plata win against CR Flamengo in the Copa Libertadores ma: Yes",
+  "intl_label": "Will Estudiantes de La Plata win on 2026-10-22? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-ahl-ham-tor-2026-10-21",
+  "intl_token": "41590551604841738389889426952786332792070308872600130433268509391063083446286",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming hockey event Hamilton Hammers vs Toronto Marlies sc: Hamilton Hammers",
+  "intl_label": "AHL: Hamilton Hammers vs. Toronto Marlies [Hamilton Hammers]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-ahl-syr-lav-2026-10-21",
+  "intl_token": "18878066752949098810412262253853366128128670865985705373718148231572722156785",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming hockey event Syracuse Crunch vs Laval Rocket schedu: Syracuse Crunch",
+  "intl_label": "AHL: Syracuse Crunch vs. Laval Rocket [Syracuse Crunch]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-psna-won-2026-10-22",
+  "intl_token": "79459931062115274828217396074206248301801252636878644558869939341977222213915",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming esports event Passion Academy vs WonderKids schedul: Passion Academy",
+  "intl_label": "Counter-Strike: Passion Academy vs WonderKids (BO3) - United21 Group D [Passion Academy]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-dota2-ty-gl-2026-10-22",
+  "intl_token": "78235041455242089445456277150875615390671831694489905073634805658168132747284",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming esports event Team Yandex vs GamerLegion scheduled : Team Yandex",
+  "intl_label": "Dota 2: Team Yandex vs GamerLegion (BO3) - PARI Universe Group A [Team Yandex]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-pain-ldp-2026-10-21",
+  "intl_token": "33910195602811277459502637852041997568664691812258771743679024609522574676526",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming esports event paiN vs largadosypelados scheduled fo: paiN",
+  "intl_label": "Counter-Strike: paiN vs largadosypelados (BO3) - Circuit X Curitiba Group A [paiN]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-bst-shin-2026-10-22",
+  "intl_token": "35219436109546058981281720140519046553463727383771952043083282661737597552050",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming esports event BESTIA vs ShindeN scheduled for Octob: BESTIA",
+  "intl_label": "Counter-Strike: BESTIA vs ShindeN (BO3) - Circuit X Curitiba Group B [BESTIA]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-fai-nsr-2026-10-23-fai",
+  "intl_token": "56762140239131505170788564306276000584747329136549573873420243487619567632214",
+  "score": 1.0,
+  "us_label": "Will Al Faisaly Saudi Club win against Al Nassr Saudi Club in the Saudi Pro Leag: Yes",
+  "intl_label": "Will Al Faisaly Saudi Club win on 2026-10-23? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-fai-nsr-2026-10-23-draw",
+  "intl_token": "11590845860091427473290615100327628899692572224447343526887968085934003350294",
+  "score": 1.0,
+  "us_label": "Will the Saudi Pro League match Al Faisaly Saudi Club vs Al Nassr Saudi Club sch: Yes",
+  "intl_label": "Will Al Faisaly Saudi Club vs. Al Nassr Saudi Club end in a draw? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-dota2-liquid-1win-2026-10-22",
+  "intl_token": "17211135514295940868801288667118721440611265373912079970846086772604829548418",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming esports event Team Liquid vs 1win scheduled for Oct: Team Liquid",
+  "intl_label": "Dota 2: Team Liquid vs 1win (BO3) - PARI Universe Group A [Team Liquid]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-fai-nsr-2026-10-23-nsr",
+  "intl_token": "93834660886022232032749757734282190163899265156785465020480845325826770706079",
+  "score": 1.0,
+  "us_label": "Will Al Nassr Saudi Club win against Al Faisaly Saudi Club in the Saudi Pro Leag: Yes",
+  "intl_label": "Will Al Nassr Saudi Club win on 2026-10-23? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-khl-ska-sib-2026-10-22",
+  "intl_token": "70490563224465575126766296461054241632390704458839074385221315495824091280269",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming hockey event SKA St. Petersburg vs Sibir Novosibirs: SKA St. Petersburg",
+  "intl_label": "KHL: SKA St. Petersburg vs. Sibir Novosibirsk [SKA St. Petersburg]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-btf-33-2026-10-21",
+  "intl_token": "61096550280184330849944057794898500988004321368722529917899124338163384783900",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming esports event Butterfly vs BET-M 33 scheduled for O: Butterfly",
+  "intl_label": "Counter-Strike: Butterfly vs BET-M 33 (BO3) - NODWIN Clutch Series Group Stage [Butterfly]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-dota2-1win-og-2026-10-23",
+  "intl_token": "100646726385997972970438627253559729573908590614836297427083884294051257833232",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming esports event 1win vs OG scheduled for October 23, : 1win",
+  "intl_label": "Dota 2: 1win vs OG (BO3) - PARI Universe Group A [1win]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-ow-cb-o2b-2026-10-23",
+  "intl_token": "84435101202126398841449713207718623658403787569037109687404084311667419695689",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming esports event Cheeseburger vs O2 Blast scheduled fo: Cheeseburger",
+  "intl_label": "Overwatch: Cheeseburger vs O2 Blast (BO5) - OCS Korea Stage 3 Regular Season [Cheeseburger]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-ow-fal-zsg-2026-10-23",
+  "intl_token": "36519902018447490124479483849602641583712514494694301338673158928819739172808",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming esports event Falcons vs ZANSIDE GAMING scheduled f: Falcons",
+  "intl_label": "Overwatch: Falcons vs ZANSIDE GAMING (BO5) - OCS Korea Stage 3 Regular Season [Falcons]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-g1-mzp-2026-10-21",
+  "intl_token": "3432451193007184964537228906783521630864845293818643922488935159495294149338",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming esports event GenOne vs Metizport scheduled for Oct: GenOne",
+  "intl_label": "Counter-Strike: GenOne vs Metizport (BO3) - Stake Ranked Episode 6: Closed Qualifier Playoffs [GenOne]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-dota2-liquid-gl-2026-10-23",
+  "intl_token": "110194243609494814904962395146675094617677891456045775335756670377733757480197",
+  "score": 1.0,
+  "us_label": "Who will win in the upcoming esports event Team Liquid vs GamerLegion scheduled : Team Liquid",
+  "intl_label": "Dota 2: Team Liquid vs GamerLegion (BO3) - PARI Universe Group A [Team Liquid]",
+  "tick": 0.01
+ },
+ {
   "us_slug": "tec-ucl-final-2026-06-05-w-shd",
   "intl_token": "33339798372916037220786136133406478491116150628220441951753426683441228279665",
   "score": 0.5,
@@ -208,6 +864,14 @@
   "tick": 0.01
  },
  {
+  "us_slug": "ewc-usgub-ca-2026-11-03-xavbec",
+  "intl_token": "60977129292396881848833910361112107174416489010090570432106122538120602786646",
+  "score": 0.625,
+  "us_label": "California Governor Election Winner: Xavier Becerra",
+  "intl_label": "Will Xavier Becerra win the California Governor Election in 2026? [Xavier Becerra]",
+  "tick": 0.01
+ },
+ {
   "us_slug": "tec-nba-champ-2027-06-18-w-nyk",
   "intl_token": "96579693508177199966070611400410853026298967531032544674689952043367008918098",
   "score": 0.625,
@@ -216,11 +880,11 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nba-champ-2027-06-18-w-ind",
-  "intl_token": "33980098202566160742933998883875104660267284431086844431645851751245806675098",
+  "us_slug": "ewc-usgub-ca-2026-11-03-stehil",
+  "intl_token": "82742036522262670996662794097029680950132682539859985097974842241612036171395",
   "score": 0.625,
-  "us_label": "2027 NBA Champion: Indiana Pacers",
-  "intl_label": "Will Indiana Pacers win the 2027 NBA Finals? [Indiana Pacers]",
+  "us_label": "California Governor Election Winner: Steve Hilton",
+  "intl_label": "Will Steve Hilton win the California Governor Election in 2026? [Steve Hilton]",
   "tick": 0.01
  },
  {
@@ -229,6 +893,14 @@
   "score": 0.625,
   "us_label": "2027 NBA Champion: Los Angeles Clippers",
   "intl_label": "Will Los Angeles Clippers win the 2027 NBA Finals? [Los Angeles Clippers]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-ind",
+  "intl_token": "33980098202566160742933998883875104660267284431086844431645851751245806675098",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Indiana Pacers",
+  "intl_label": "Will Indiana Pacers win the 2027 NBA Finals? [Indiana Pacers]",
   "tick": 0.01
  },
  {
@@ -248,27 +920,11 @@
   "tick": 0.01
  },
  {
-  "us_slug": "ewc-usgub-ca-2026-11-03-stehil",
-  "intl_token": "82742036522262670996662794097029680950132682539859985097974842241612036171395",
-  "score": 0.625,
-  "us_label": "California Governor Election Winner: Steve Hilton",
-  "intl_label": "Will Steve Hilton win the California Governor Election in 2026? [Steve Hilton]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-champ-2027-06-18-w-atl",
   "intl_token": "66978283296201729156011778181685232128845704002364165961550702560777069065938",
   "score": 0.625,
   "us_label": "2027 NBA Champion: Atlanta Hawks",
   "intl_label": "Will Atlanta Hawks win the 2027 NBA Finals? [Atlanta Hawks]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-hou",
-  "intl_token": "54389136151618785952849043856295459748131034150210702007482093675046699037784",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Houston Rockets",
-  "intl_label": "Will Houston Rockets win the 2027 NBA Finals? [Houston Rockets]",
   "tick": 0.01
  },
  {
@@ -288,14 +944,6 @@
   "tick": 0.01
  },
  {
-  "us_slug": "ewc-usgub-ca-2026-11-03-xavbec",
-  "intl_token": "60977129292396881848833910361112107174416489010090570432106122538120602786646",
-  "score": 0.625,
-  "us_label": "California Governor Election Winner: Xavier Becerra",
-  "intl_label": "Will Xavier Becerra win the California Governor Election in 2026? [Xavier Becerra]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-champ-2027-06-18-w-det",
   "intl_token": "22589862545502642463701340320964032988974740564891659118937148977135855914254",
   "score": 0.625,
@@ -309,6 +957,14 @@
   "score": 0.625,
   "us_label": "2027 NBA Champion: Sacramento Kings",
   "intl_label": "Will Sacramento Kings win the 2027 NBA Finals? [Sacramento Kings]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-hou",
+  "intl_token": "54389136151618785952849043856295459748131034150210702007482093675046699037784",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Houston Rockets",
+  "intl_label": "Will Houston Rockets win the 2027 NBA Finals? [Houston Rockets]",
   "tick": 0.01
  },
  {
@@ -334,14 +990,6 @@
   "us_label": "Major League Soccer Champion: FC Cincinnati",
   "intl_label": "Will FC Cincinnati win the 2026 MLS Cup? [FC Cincinnati]",
   "tick": 0.001
- },
- {
-  "us_slug": "rdc-boc-2026-10-28-nochng",
-  "intl_token": "20709109032245341219796036781437500675609769308849791852341195403369410462976",
-  "score": 0.602,
-  "us_label": "Bank of Canada Decision in October?: No Change",
-  "intl_label": "Will the Bank of Canada make no change to the target for the overnight rate at the October interest rate announcement? [No Change]",
-  "tick": 0.01
  },
  {
   "us_slug": "tec-nba-champ-2027-06-18-w-dal",
@@ -381,22 +1029,6 @@
   "score": 0.5,
   "us_label": "UEFA Champions League Winner: BV Borussia 09 Dortmund",
   "intl_label": "Will Borussia Dortmund win the 2026-27 UEFA Champions League Championship? [Borussia Dortmund]",
-  "tick": 0.01
- },
- {
-  "us_slug": "rdc-ecb-2026-10-29-nochng",
-  "intl_token": "115266208373288609879793136711666121514709064773369783631158287479347444590447",
-  "score": 0.609,
-  "us_label": "European Central Bank Decision in October?: No Change",
-  "intl_label": "Will the Bank of Russia make no change to the key rate after the October Meeting? [No Change]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-grammys-aoty-2027-02-07-artlov",
-  "intl_token": "115038513749123323356108768879054424621968703965081397630027954404380369699982",
-  "score": 0.7,
-  "us_label": "Grammy Winner: Album of the Year: The Art of Loving - Olivia Dean",
-  "intl_label": "Will The Art of Loving (Olivia Dean) win Album of the Year at the 69th Annual GRAMMY Awards? [The Art of Loving - Olivia Dean]",
   "tick": 0.01
  },
  {
