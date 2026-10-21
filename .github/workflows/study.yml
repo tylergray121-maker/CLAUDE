@@ -23,7 +23,30 @@ jobs:
         with:
           python-version: "3.12"
 
+      - uses: actions/cache/restore@v4
+        with:
+          path: .cache-study
+          key: study-${{ github.run_id }}
+          restore-keys: study-
+
+      - name: Tests
+        run: python -m unittest tests.test_study
+
+      - name: Study top wallets
+        timeout-minutes: 150
+        shell: bash -o pipefail {0}
+        run: |
+          mkdir -p studyresults
+          python -u -m study $(cat study.args 2>/dev/null) 2>&1 | tee studyresults/run.log | tail -120
+
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: .cache-study
+          key: study-${{ github.run_id }}
+
       - name: Probe data-api endpoints
+        if: false
         run: |
           mkdir -p studyresults/probe && cd studyresults/probe
           D=https://data-api.polymarket.com
