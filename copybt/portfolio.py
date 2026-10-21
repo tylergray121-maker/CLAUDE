@@ -1,48 +1,74 @@
-"""Pick a set of wallets to copy together, and check the picking method works.
+"""Pick wallets to copy, and check the picking method works out of sample.
 
-1. Validation: rank wallets on the qualifying period only, copy the top K
-   together with one bankroll, and measure the result on the later test
-   period that played no part in the choice. Compare with the typical
-   eligible wallet, i.e. what picking at random would have given.
-2. Live pick: apply the same ranking to the most recent stretch of the same
-   length, and choose the K that held up best in validation.
+Wallets are judged on per-bet edge at a flat stake, which doesn't depend on
+how a compounding bankroll happened to grow:
+
+1. Every copied position ("bet") is replayed with a fixed $ stake, with the
+   copy delay, slippage, fees and order minimums applied.
+2. Ranking uses only bets that had *settled* before the cutoff, i.e. what
+   you could actually have known then. The score is a lower confidence
+   bound on return per bet, so a few lucky bets don't top the list.
+3. Validation: the top K wallets by that score are scored on bets they
+   opened after the cutoff, pooled, against the typical qualified wallet.
+4. The same ranking on the most recent window gives the current picks, and
+   a $200 compounding replay of the test period shows what that would have
+   meant for your account.
 """
 
 from __future__ import annotations
 
 import math
 from dataclasses import dataclass, field, replace
-from statistics import median
+from statistics import mean, median, stdev
 
 from .models import Market, Trade
 from .sim import SimConfig, SimResult, simulate
 
 DEFAULT_KS = (1, 2, 3, 5, 8)
+MIN_BETS = 20      # settled bets needed to rank a wallet
+T_EDGE = 1.65      # one-sided ~95%
+
+
+@dataclass
+class BetStats:
+    n: int = 0
+    roi: float = 0.0     # mean return per bet (0.05 = +5% of stake)
+    t: float = 0.0
+    lcb: float = -math.inf  # roi - one standard error
+
+    @classmethod
+    def of(cls, rois: list[float]) -> "BetStats":
+        if not rois:
+            return cls()
+        m = mean(rois)
+        if len(rois) < 2:
+            return cls(len(rois), m, 0.0, -math.inf)
+        se = stdev(rois) / math.sqrt(len(rois))
+        return cls(len(rois), m, m / se if se else 0.0, m - se)
 
 
 @dataclass
 class Validation:
     k: int
     wallets: list[str]
-    test_return_pct: float
-    test_max_drawdown_pct: float
-    buys_copied: int
+    test: BetStats
 
 
 @dataclass
 class Plan:
     label: str
-    candidates: int
-    baseline_median_test_pct: float = 0.0
+    min_bets: int = MIN_BETS
+    candidates: int = 0
+    baseline_median_roi: float = 0.0
     baseline_share_positive: float = 0.0
     validations: list[Validation] = field(default_factory=list)
+    median_roi_over_k: float = 0.0
     best_k: int = 0
-    median_over_k: float = 0.0
     edge: bool = False
+    test_200: SimResult | None = None      # $200 compounding, test period
     picks: list[dict] = field(default_factory=list)
-    recent: SimResult | None = None
+    recent: SimResult | None = None        # $200 compounding, recent window
     recent_start: int = 0
-    recent_top: list[dict] = field(default_factory=list)
     note: str = ""
 
 
@@ -51,151 +77,131 @@ def portfolio_cfg(cfg: SimConfig, k: int) -> SimConfig:
     return replace(cfg, base_pct=cfg.base_pct / math.sqrt(k))
 
 
-def _score(ret: float, dd: float) -> float:
-    return ret - 0.5 * dd
-
-
-def _test_drawdown(res: SimResult, split_ts: int) -> float:
-    peak, dd = -math.inf, 0.0
-    for ts, e in res.daily_equity:
-        if ts < split_ts:
-            continue
-        peak = max(peak, e)
-        if peak > 0:
-            dd = max(dd, (peak - e) / peak)
-    return 100 * dd
+def _rois(lots, keep) -> list[float]:
+    return [pnl / inv for (entry, settle, inv, pnl) in lots if inv > 0 and keep(entry, settle)]
 
 
 def build_plan(label: str, histories: dict[str, list[Trade]],
                markets: dict[str, Market], cfg: SimConfig, start_ts: int,
-               end_ts: int, split_ts: int, min_buys: int,
+               end_ts: int, split_ts: int, min_buys: int = MIN_BETS,
                ks=DEFAULT_KS, price_at=None) -> Plan:
-    singles = {w: simulate(t, markets, cfg, start_ts, end_ts, split_ts, price_at)
-               for w, t in histories.items() if t}
-    qualified = {w: r for w, r in singles.items()
-                 if r.buys_copied >= min_buys and r.train_return_pct > 0}
-    plan = Plan(label=label, candidates=len(qualified))
+    plan = Plan(label=label)
+    flat = replace(cfg, fixed_stake=cfg.start_cash * cfg.base_pct, start_cash=1e12)
+    span = split_ts - start_ts
+    recent_start = end_ts - span
+    plan.recent_start = recent_start
+    min_bets = plan.min_bets = max(min_buys, 1)
+
+    lots = {}
+    for w, t in histories.items():
+        if t:
+            lots[w] = simulate(t, markets, flat, start_ts, end_ts, split_ts,
+                               price_at).lots
+
+    # Known at the cutoff: bets opened and settled before it.
+    train = {w: BetStats.of(_rois(l, lambda e, s: e < split_ts and s is not None
+                                  and s <= split_ts)) for w, l in lots.items()}
+    test = {w: _rois(l, lambda e, s: e >= split_ts) for w, l in lots.items()}
+    qualified = [w for w, st in train.items() if st.n >= min_bets and st.roi > 0]
+    plan.candidates = len(qualified)
     if not qualified:
-        plan.note = "No wallet was profitable in the qualifying period with enough copyable buys."
+        plan.note = (f"No wallet had {min_bets}+ settled, profitable copyable bets "
+                     "in the qualifying period.")
         return plan
 
-    tests = [r.test_return_pct for r in qualified.values()]
-    plan.baseline_median_test_pct = median(tests)
-    plan.baseline_share_positive = sum(1 for x in tests if x > 0) / len(tests)
+    tested = [mean(test[w]) for w in qualified if len(test[w]) >= 5]
+    if tested:
+        plan.baseline_median_roi = median(tested)
+        plan.baseline_share_positive = sum(1 for x in tested if x > 0) / len(tested)
 
-    ranked = sorted(qualified, key=lambda w: _score(
-        qualified[w].train_return_pct, qualified[w].train_max_drawdown_pct),
-        reverse=True)
+    ranked = sorted(qualified, key=lambda w: train[w].lcb, reverse=True)
     for k in ks:
         if k > len(ranked):
             break
         chosen = ranked[:k]
-        merged = [t for w in chosen for t in histories[w]]
-        res = simulate(merged, markets, portfolio_cfg(cfg, k), start_ts, end_ts,
-                       split_ts, price_at)
-        plan.validations.append(Validation(k, chosen, res.test_return_pct,
-                                           _test_drawdown(res, split_ts),
-                                           res.buys_copied))
+        pooled = [r for w in chosen for r in test[w]]
+        plan.validations.append(Validation(k, chosen, BetStats.of(pooled)))
     if not plan.validations:
         return plan
 
-    best = max(plan.validations,
-               key=lambda v: (_score(v.test_return_pct, v.test_max_drawdown_pct), v.k))
+    vals = [v for v in plan.validations if v.test.n]
+    plan.median_roi_over_k = median(v.test.roi for v in vals) if vals else 0.0
+    significant = sum(1 for v in vals if v.test.t >= T_EDGE)
+    # Works only if typical (median over K) out-of-sample edge per bet is
+    # positive, beats a random qualified wallet, and is statistically clear
+    # for at least half of the portfolio sizes.
+    plan.edge = (plan.median_roi_over_k > max(0.0, plan.baseline_median_roi)
+                 and significant * 2 >= len(vals) and len(vals) > 0)
+    best = max(vals, key=lambda v: (v.test.lcb, v.k)) if vals else plan.validations[0]
     plan.best_k = best.k
-    # The method only counts as working if, across portfolio sizes (so the
-    # verdict doesn't hinge on picking the luckiest K after the fact), the
-    # median out-of-sample result is positive and beats a random qualified
-    # wallet.
-    typical = median(v.test_return_pct for v in plan.validations)
-    plan.edge = typical > 0 and typical > plan.baseline_median_test_pct
-    plan.median_over_k = typical
 
-    # Live pick: same ranking rule on the most recent window of equal length.
-    span = split_ts - start_ts
-    recent_start = end_ts - span
-    recent_split = recent_start + span // 2
-    plan.recent_start = recent_start
-    recent = {}
-    for w, t in histories.items():
-        if not t:
-            continue
-        r = simulate(t, markets, cfg, recent_start, end_ts, recent_split, price_at)
-        if r.buys_copied >= min_buys and r.return_pct > 0:
-            recent[w] = r
-    order = sorted(recent, key=lambda w: _score(recent[w].return_pct,
-                                                recent[w].max_drawdown_pct),
-                   reverse=True)
-    plan.recent_top = [{"wallet": w, "return_pct": recent[w].return_pct,
-                        "max_drawdown_pct": recent[w].max_drawdown_pct,
-                        "buys_copied": recent[w].buys_copied} for w in order[:10]]
-    picks = order[:plan.best_k]
-    plan.picks = [{"wallet": w, "return_pct": recent[w].return_pct,
-                   "max_drawdown_pct": recent[w].max_drawdown_pct,
-                   "buys_copied": recent[w].buys_copied,
-                   "markets_traded": recent[w].markets_traded,
-                   "win_rate": recent[w].win_rate} for w in picks]
-    if picks:
-        merged = [t for w in picks for t in histories[w]]
-        plan.recent = simulate(merged, markets, portfolio_cfg(cfg, len(picks)),
-                               recent_start, end_ts, recent_split, price_at,
-                               log_fills=True)
+    # What $200 would have done copying the validated picks in the test period.
+    merged = [t for w in best.wallets for t in histories[w]]
+    plan.test_200 = simulate(merged, markets, portfolio_cfg(cfg, best.k), split_ts,
+                             end_ts, split_ts + (end_ts - split_ts) // 2, price_at)
+
+    # Current picks: same rule on the most recent window of equal length.
+    recent = {w: BetStats.of(_rois(l, lambda e, s: e >= recent_start and s is not None))
+              for w, l in lots.items()}
+    order = sorted([w for w, st in recent.items() if st.n >= min_bets and st.roi > 0],
+                   key=lambda w: recent[w].lcb, reverse=True)
+    plan.picks = [{"wallet": w, "bets": recent[w].n, "roi": recent[w].roi,
+                   "t": recent[w].t} for w in order[:plan.best_k]]
+    if plan.picks:
+        merged = [t for p in plan.picks for t in histories[p["wallet"]]]
+        plan.recent = simulate(merged, markets, portfolio_cfg(cfg, len(plan.picks)),
+                               recent_start, end_ts, recent_start + span // 2,
+                               price_at, log_fills=True)
     return plan
 
 
 def render(plan: Plan, cfg: SimConfig, fmt_date) -> list[str]:
+    stake = cfg.start_cash * cfg.base_pct
     out = [f"## {plan.label}", ""]
     if plan.note:
         return out + [plan.note, ""]
     out += [
-        f"{plan.candidates} wallets qualified (profitable in the qualifying "
-        f"period, enough copyable buys). Typical qualified wallet in the test "
-        f"period: {plan.baseline_median_test_pct:+.1f}% (median); "
-        f"{plan.baseline_share_positive:.0%} of them made money.",
+        f"{plan.candidates} wallets qualified ({plan.min_bets}+ settled copyable bets, "
+        f"profitable at a flat ${stake:.0f} stake before the cutoff). In the test "
+        f"period the typical one returned {plan.baseline_median_roi:+.1%} per bet "
+        f"(median); {plan.baseline_share_positive:.0%} were profitable.",
         "",
-        "**Validation — wallets chosen using the qualifying period only, "
-        "scored on the test period:**",
+        "**Validation — top K wallets chosen before the cutoff, scored on bets "
+        "they opened after it:**",
         "",
-        "| copy top K together | test return | test max DD | buys copied |",
+        "| copy top K | bets | return per bet | t-stat |",
         "|---|---|---|---|",
     ]
     for v in plan.validations:
-        out.append(f"| {v.k} | {v.test_return_pct:+.1f}% | "
-                   f"{v.test_max_drawdown_pct:.1f}% | {v.buys_copied} |")
-    out += ["", f"Median across portfolio sizes: {plan.median_over_k:+.1f}% vs "
-            f"{plan.baseline_median_test_pct:+.1f}% for a random qualified wallet.", ""]
+        out.append(f"| {v.k} | {v.test.n} | {v.test.roi:+.1%} | {v.test.t:.1f} |")
+    out += ["", f"Median across K: {plan.median_roi_over_k:+.1%} per bet vs "
+            f"{plan.baseline_median_roi:+.1%} for a random qualified wallet. "
+            f"(t ≥ {T_EDGE} is roughly 95% confidence the edge isn't luck.)", ""]
+    if plan.test_200:
+        r = plan.test_200
+        out += [f"$200 copying the top {plan.best_k} through the test period: "
+                f"${r.final_equity:.2f} ({r.return_pct:+.1f}%), worst drawdown "
+                f"{r.max_drawdown_pct:.1f}%, {r.buys_copied} buys copied.", ""]
     if not plan.edge:
-        out += [
-            "**Verdict: no edge.** Picking wallets by past results did not beat "
-            "chance out of sample after fees and slippage, so this backtest "
-            "gives no reason to copy any of these wallets.",
-            ""]
+        out += ["**Verdict: no reliable edge.** Wallets that looked good before "
+                "the cutoff did not keep a clear, statistically solid edge "
+                "afterwards once delay, slippage and fees were paid.", ""]
     else:
-        out += [f"**Verdict: the method held up out of sample; best with "
-                f"K = {plan.best_k}.**", ""]
+        out += [f"**Verdict: the edge held up out of sample (best with K = "
+                f"{plan.best_k}).**", ""]
     if plan.picks:
-        r = plan.recent
-        out += [
-            ("**Picks for now**" if plan.edge else
-             "**What the method would pick now (not recommended — see verdict)**")
-            + f" — ranked on {fmt_date(plan.recent_start)} onward, each copy "
-            f"sized {portfolio_cfg(cfg, len(plan.picks)).base_pct:.1%} of equity "
-            "per typical leader buy:",
-            "",
-            "| wallet | recent return | max DD | buys | markets | win rate |",
-            "|---|---|---|---|---|---|",
-        ]
+        out += [("**Current picks**" if plan.edge else
+                 "**What the method would pick now (not recommended — see verdict)**")
+                + f" — bets opened from {fmt_date(plan.recent_start)} and settled:",
+                "", "| wallet | settled bets | return per bet | t-stat |",
+                "|---|---|---|---|"]
         for p in plan.picks:
-            out.append(f"| `{p['wallet']}` | {p['return_pct']:+.1f}% | "
-                       f"{p['max_drawdown_pct']:.1f}% | {p['buys_copied']} | "
-                       f"{p['markets_traded']} | {p['win_rate']:.0%} |")
-        if plan.recent_top:
-            out += ["", "Top of the current ranking: " + ", ".join(
-                f"`{p['wallet'][:10]}…` {p['return_pct']:+.0f}% (DD {p['max_drawdown_pct']:.0f}%)"
-                for p in plan.recent_top)]
-        if r:
-            out += ["", f"Copied together over that window: ${cfg.start_cash:.0f} → "
-                    f"${r.final_equity:.2f} ({r.return_pct:+.1f}%), max drawdown "
-                    f"{r.max_drawdown_pct:.1f}%. This is in-sample — the "
-                    "validation table is the honest estimate."]
+            out.append(f"| `{p['wallet']}` | {p['bets']} | {p['roi']:+.1%} | "
+                       f"{p['t']:.1f} |")
+        if plan.recent:
+            r = plan.recent
+            out += ["", f"$200 copying them over that window: ${r.final_equity:.2f} "
+                    f"({r.return_pct:+.1f}%), worst drawdown {r.max_drawdown_pct:.1f}% "
+                    "(in-sample; the validation above is the honest estimate)."]
         out.append("")
     return out

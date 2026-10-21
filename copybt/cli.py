@@ -71,7 +71,8 @@ def parse_args(argv=None) -> argparse.Namespace:
                    help="wallets re-simulated with the copy delay")
 
     g = p.add_argument_group("ranking")
-    g.add_argument("--min-buys", type=int, default=15)
+    g.add_argument("--min-buys", type=int, default=20,
+                   help="settled copyable bets needed to rank a wallet")
     g.add_argument("--include-flagged", action="store_true",
                    help="rank HFT / bonder / 5-minute-market wallets too")
     g.add_argument("--stress-top", type=int, default=25,
@@ -342,7 +343,10 @@ def main(argv=None) -> int:
     for plan in plans:
         portfolio_md += render(plan, cfg, _date)
     report = (head + "\n".join(portfolio_md) + "\n"
-              + ("## Best single wallets (ranked with hindsight)" + rest.replace(
+              + ("## Appendix: single wallets, compounding, ranked with hindsight\n\n"
+                 "Percentages here compound a bankroll that grows into the "
+                 "leader's own bet sizes, so they are not comparable between "
+                 "wallets or achievable from $200. Use the plans above.\n" + rest.replace(
                   "## Top 15", "### Top 15") if rest else ""))
     with open(os.path.join(args.out_dir, "report.md"), "w") as f:
         f.write(report)

@@ -33,6 +33,10 @@ class SimConfig:
     market_fees: bool = True      # charge each market's taker fee schedule
     min_order_usd: float = 1.0    # Polymarket marketable order minimum
     max_leader_multiple: float = 1.0  # never take more than the leader did
+    # Flat-stake mode: every copied buy is this many dollars (capped at the
+    # leader's size), with no equity-based caps. Used to measure per-bet edge
+    # independently of how a compounding bankroll happened to grow.
+    fixed_stake: float | None = None
     max_fill_price: float = 0.99  # don't buy when nothing is left to win
     delay_seconds: int = 0        # only used with a price lookup
 
@@ -53,6 +57,9 @@ class SimResult:
     skipped: dict[str, int] = field(default_factory=dict)
     daily_equity: list[tuple[int, float]] = field(default_factory=list)
     fills: list[dict] = field(default_factory=list)
+    # One entry per (leader, token) lot: (first buy ts, settle ts or None,
+    # dollars invested, PnL incl. realized sells and final mark/payout).
+    lots: list[tuple] = field(default_factory=list)
 
 
 PriceLookup = Callable[[str, int], "float | None"]
@@ -79,6 +86,9 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
     lots_of: dict[str, set] = defaultdict(set)       # market -> lots
     settled: set[str] = set()
     buy_sizes: dict[str, list[float]] = defaultdict(list)  # per leader
+    invested: dict[Lot, float] = defaultdict(float)
+    entry: dict[Lot, int] = {}
+    settled_at: dict[str, int] = {}
     skipped: dict[str, int] = defaultdict(int)
     buys = sells = 0
     fills: list[dict] = []
@@ -105,6 +115,7 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
         nonlocal cash
         m = markets[cond]
         settled.add(cond)
+        settled_at[cond] = m.resolve_ts if m.resolve_ts is not None else end_ts
         for k in lots_of[cond]:
             payout = m.prices.get(k[1], last_px.get(k[1], 0.0))
             if pos[k] > 0:
@@ -162,14 +173,19 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
                 skipped["price_too_high"] += 1
                 continue
             eq = equity()
-            conviction = t.notional / prior if prior > 0 else 1.0
-            conviction = min(cfg.conviction_max, max(cfg.conviction_min, conviction))
-            usd = eq * cfg.base_pct * conviction
-            usd = min(usd, eq * cfg.max_trade_pct)
-            usd = min(usd, t.notional * cfg.max_leader_multiple)
-            exposure = sum(pos[x] * last_px.get(x[1], 0.0)
-                           for x in lots_of[t.condition_id])
-            usd = min(usd, eq * cfg.max_market_pct - exposure)
+            if cfg.fixed_stake:
+                exposure = 0.0
+                usd = min(cfg.fixed_stake, t.notional * cfg.max_leader_multiple)
+                eq = math.inf
+            else:
+                conviction = t.notional / prior if prior > 0 else 1.0
+                conviction = min(cfg.conviction_max, max(cfg.conviction_min, conviction))
+                usd = eq * cfg.base_pct * conviction
+                usd = min(usd, eq * cfg.max_trade_pct)
+                usd = min(usd, t.notional * cfg.max_leader_multiple)
+                exposure = sum(pos[x] * last_px.get(x[1], 0.0)
+                               for x in lots_of[t.condition_id])
+                usd = min(usd, eq * cfg.max_market_pct - exposure)
             usd = min(usd, cash / (1 + fee))
             if usd < cfg.min_order_usd:
                 reason = ("no_cash" if cash / (1 + fee) < cfg.min_order_usd
@@ -186,6 +202,8 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
             cash -= usd * (1 + fee)
             pos[k] += shares
             cost[k] += usd * (1 + fee)
+            invested[k] += usd * (1 + fee)
+            entry.setdefault(k, t.ts)
             buys += 1
             record(t, "BUY", fill, shares, usd * (1 + fee))
         else:
@@ -228,6 +246,8 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
     traded = [k for k in pos if cost[k] > 0 or realized[k] != 0 or pos[k] > 0]
     pnl = {k: realized[k] + pos[k] * last_px.get(k[1], 0.0) - cost[k] for k in traded}
     wins = sum(1 for v in pnl.values() if v > 0)
+    lots = [(entry[k], settled_at.get(cond_of[k[1]]), invested[k], pnl[k])
+            for k in traded if invested[k] > 0]
 
     daily = _daily(curve, start_ts, end_ts)
     at_split = _value_at(curve, split_ts)
@@ -246,6 +266,7 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
         skipped=dict(skipped),
         daily_equity=daily,
         fills=fills,
+        lots=lots,
     )
 
 

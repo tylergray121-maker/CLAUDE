@@ -159,40 +159,43 @@ class PortfolioTest(unittest.TestCase):
         self.assertAlmostEqual(r.final_equity, 200 - 20 - 20 + 32 + 40, places=6)
         self.assertEqual(r.sells_copied, 1)
 
-    def _wallet(self, name, win_train, win_test):
+    def _wallet(self, name, p_train, p_test, n=30):
+        """n bets at 50c per period; wins on a fixed pattern at rate p."""
         out, markets = [], {}
-        for i in range(10):
-            ts = T0 + i * DAY if i < 5 else T0 + (6 + i) * DAY
-            cond, tok = f"0x{name}{i}", f"{name}{i}"
-            win = win_train if i < 5 else win_test
-            out.append(trade(ts, "BUY", 0.5, 100, asset=tok, cond=cond, wallet=name))
-            markets[cond] = Market(cond, True, ts + 3600, {tok: 1.0 if win else 0.0})
+        for period, p in ((0, p_train), (1, p_test)):
+            for i in range(n):
+                ts = T0 + period * 10 * DAY + i * 8 * 3600
+                cond, tok = f"0x{name}{period}_{i}", f"{name}{period}_{i}"
+                win = (i % 10) < round(p * 10)
+                out.append(trade(ts, "BUY", 0.5, 100, asset=tok, cond=cond, wallet=name))
+                markets[cond] = Market(cond, True, ts + 3600, {tok: 1.0 if win else 0.0})
         return out, markets
 
     def test_validation_detects_persistent_vs_lucky_wallets(self):
         hist, markets = {}, {}
-        for name, a, b in (("good", True, True), ("luck", True, False),
-                           ("bad", False, False)):
+        for name, a, b in (("good", .8, .8), ("luck", .8, .2), ("bad", .2, .2)):
             hist[name], m = self._wallet(name, a, b)
             markets.update(m)
         end, split = T0 + 20 * DAY, T0 + 10 * DAY
         plan = portfolio.build_plan("t", hist, markets, NOFRICTION, T0, end,
-                                    split, min_buys=3, ks=(1, 2))
+                                    split, min_buys=10, ks=(1, 2))
         self.assertEqual(plan.candidates, 2)          # good and luck qualify
         self.assertTrue(plan.edge)
         self.assertEqual(plan.best_k, 1)
+        self.assertEqual(plan.validations[0].wallets, ["good"])
+        self.assertAlmostEqual(plan.validations[0].test.roi, 0.6)
         self.assertEqual(plan.picks[0]["wallet"], "good")
 
     def test_no_edge_verdict(self):
         hist, markets = {}, {}
         for name in ("l1", "l2"):
-            hist[name], m = self._wallet(name, True, False)
+            hist[name], m = self._wallet(name, .8, .3)
             markets.update(m)
         plan = portfolio.build_plan("t", hist, markets, NOFRICTION, T0,
-                                    T0 + 20 * DAY, T0 + 10 * DAY, min_buys=3)
+                                    T0 + 20 * DAY, T0 + 10 * DAY, min_buys=10)
         self.assertFalse(plan.edge)
         text = "\n".join(portfolio.render(plan, NOFRICTION, str))
-        self.assertIn("no edge", text)
+        self.assertIn("no reliable edge", text)
 
 
 class CacheTest(unittest.TestCase):
