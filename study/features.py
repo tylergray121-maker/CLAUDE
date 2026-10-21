@@ -118,7 +118,7 @@ def profile(d: dict, lb: dict | None = None) -> dict:
     ts = [int(_f(t.get("timestamp"))) for t in ta if t.get("timestamp")]
     if ts:
         lo, hi = min(ts), max(ts)
-        span_days = max((hi - lo) / 86400, 1 / 24)
+        span_days = max((hi - lo) / 86400, 1.0)  # a short burst isn't a daily rate
         n_taker = sum(1 for t in tt if int(_f(t.get("timestamp"))) >= lo)
         sizes = [_f(t.get("size")) * _f(t.get("price")) for t in ta]
         end_day = {r.get("conditionId"): _day(r.get("endDate")) for r in closed}
@@ -158,10 +158,18 @@ def profile(d: dict, lb: dict | None = None) -> dict:
 
 def archetype(p: dict) -> tuple[str, str]:
     mk = p.get("maker_share") or 0.0
-    if p["trades_per_day"] >= 100 or p["short_crypto_share"] >= 0.5:
+    if p.get("trades_sampled", 0) >= 300 and (p["trades_per_day"] >= 100
+                                              or p["short_crypto_share"] >= 0.5):
         return "bot / high-frequency", (f"{p['trades_per_day']:.0f} trades/day, "
                                         f"{p['short_crypto_share']:.0%} in short crypto markets")
-    if mk >= 0.6 and (p["rewards_usd"] > 0 or p["both_sides_share"] >= 0.3):
+    if p["top5_share"] >= 0.8 and p["closed_positions"] <= 200:
+        return "concentrated conviction", (f"top 5 markets = {p['top5_share']:.0%} of gains "
+                                           f"over {p['closed_positions']} positions")
+    # Directional traders who use limit orders also get maker fills and a few
+    # dollars of rewards; a market maker quotes both sides or earns real
+    # money from rewards.
+    rewards_matter = p["rewards_usd"] >= 0.1 * max(p.get("realized_pnl") or 0, 1)
+    if mk >= 0.6 and (p["both_sides_share"] >= 0.3 or rewards_matter):
         return "market maker", (f"{mk:.0%} maker fills, ${p['rewards_usd']:,.0f} rewards, "
                                 f"{p['both_sides_share']:.0%} of markets on both sides")
     if (p["n_merge"] + p["n_conversion"]) >= 20 and p["both_sides_share"] >= 0.3:
@@ -169,9 +177,6 @@ def archetype(p: dict) -> tuple[str, str]:
                                       f"{p['both_sides_share']:.0%} both sides")
     if p["price_>=95c"] >= 0.5:
         return "bonder (near-certain outcomes)", f"{p['price_>=95c']:.0%} of spend at >=95c"
-    if p["top5_share"] >= 0.8 and p["closed_positions"] <= 200:
-        return "concentrated conviction", (f"top 5 markets = {p['top5_share']:.0%} of gains "
-                                           f"over {p['closed_positions']} positions")
     if p["cat_sports"] >= 0.6:
         late = p.get("same_day_share")
         style = "same-day/in-play" if late is not None and late >= 0.6 else "pre-game/futures"
