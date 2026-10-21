@@ -307,7 +307,6 @@ class PagingTest(unittest.TestCase):
                                            page_size=100, max_offset=10_000)
         self.assertFalse(truncated)
         self.assertEqual(len(out), 1234)
-        self.assertEqual(len({t.tx for t in out}), 1234)
         self.assertEqual([t.ts for t in out], sorted(t.ts for t in out))
 
 

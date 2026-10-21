@@ -80,6 +80,8 @@ def parse_args(argv=None) -> argparse.Namespace:
     g.add_argument("--max-rps", type=float, default=8.0)
     g.add_argument("--cache-dir", default=".cache")
     g.add_argument("--out-dir", default="results")
+    g.add_argument("--fetch-only", action="store_true",
+                   help="download trades and markets into the cache, then stop")
     g.add_argument("-v", "--verbose", action="store_true")
     return p.parse_args(argv)
 
@@ -156,10 +158,17 @@ def main(argv=None) -> int:
     to_run = {w for w, (trades, trunc) in histories.items()
               if trades and not trunc
               and (args.include_flagged or not profiles[w].flags)}
+    # Free the trades of wallets that won't be simulated (bots are the bulk).
+    for w in histories:
+        if w not in to_run:
+            histories[w] = ([], histories[w][1])
     conds = {t.condition_id for w in to_run for t in histories[w][0]}
     log.info("%d wallets to simulate (%d flagged as hard to copy); resolving %d markets",
              len(to_run), sum(1 for p in profiles.values() if p.flags), len(conds))
     markets = fetch_markets(client, conds, workers=args.workers)
+    if args.fetch_only:
+        log.info("fetch-only: %d wallets, %d markets cached", len(histories), len(markets))
+        return 0
 
     prices = PriceHistory(client) if args.delay_seconds > 0 else None
     price_at = prices.price_at if prices else None

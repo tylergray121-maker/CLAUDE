@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 import logging
+import sys
 from bisect import bisect_left
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
@@ -153,6 +154,15 @@ def _parse_trade(row: dict, wallet: str = "") -> Trade | None:
                  slug=str(row.get("slug") or ""))
 
 
+def _compact(t: Trade) -> Trade:
+    """Share repeated strings across trades and drop the tx hash (only needed
+    for de-duplication while paging). Cuts memory several-fold."""
+    i = sys.intern
+    return Trade(ts=t.ts, asset=i(t.asset), condition_id=i(t.condition_id),
+                 side=i(t.side), price=t.price, size=t.size, title=i(t.title),
+                 outcome=i(t.outcome), tx="", wallet=i(t.wallet), slug=i(t.slug))
+
+
 _TRADE_FIELDS = ("ts", "asset", "condition_id", "side", "price", "size", "title",
                  "outcome", "tx", "wallet", "slug")
 
@@ -164,9 +174,11 @@ def fetch_trades(client: Client, wallet: str, start_ts: int, end_ts: int,
     key = f"trades:{wallet.lower()}:{start_ts}:{end_ts}:{max_trades}"
     blob = client.load_blob(key)
     if blob is not None:
-        return [Trade(**dict(zip(_TRADE_FIELDS, row))) for row in blob["t"]], blob["x"]
+        return [_compact(Trade(**dict(zip(_TRADE_FIELDS, row))))
+                for row in blob["t"]], blob["x"]
     trades, truncated = _fetch_trades(client, wallet, start_ts, end_ts, max_trades,
                                       page_size, max_offset)
+    trades = [_compact(t) for t in trades]
     client.save_blob(key, {"x": truncated, "t": [
         [getattr(t, f) for f in _TRADE_FIELDS] for t in trades]})
     return trades, truncated
