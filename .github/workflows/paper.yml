@@ -1,0 +1,76 @@
+name: paper trading
+
+# A long paper-trading session on Polymarket US: one run made of segments
+# that execute one after another (GitHub caps a job at 6 hours). Each segment
+# resumes the account from the paper-live branch and publishes a snapshot
+# there every 10 minutes. Add a file named STOP to paper-live to end early.
+
+on:
+  push:
+    branches: [claude/polymarket-copy-backtest]
+    paths: [".github/workflows/paper.yml", "paper.args"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: paper
+  cancel-in-progress: false
+
+jobs:
+  segment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 358
+    strategy:
+      max-parallel: 1
+      fail-fast: false
+      matrix:
+        segment: [1, 2, 3, 4]
+    env:
+      REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Restore the paper account
+        id: restore
+        run: |
+          mkdir -p live
+          if git fetch -q origin paper-live 2>/dev/null; then
+            git show origin/paper-live:state.json > live/state.json 2>/dev/null || rm -f live/state.json
+            if git show origin/paper-live:STOP >/dev/null 2>&1; then echo "stop=1" >> "$GITHUB_OUTPUT"; fi
+          fi
+          ls -la live
+
+      - name: Paper trade and publish snapshots
+        if: steps.restore.outputs.stop != '1'
+        timeout-minutes: 352
+        shell: bash
+        run: |
+          publish() {
+            rm -rf /tmp/pl && mkdir -p /tmp/pl
+            for f in state.json paper.json report.md summary.json; do
+              [ -f "live/$f" ] && cp "live/$f" /tmp/pl/
+            done
+            (cd /tmp/pl && git init -q && git checkout -q -b paper-live && git add -A &&
+             git -c user.name="github-actions[bot]" \
+                 -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+                 commit -qm "Paper snapshot $(date -u +%Y-%m-%dT%H:%MZ) [skip ci]" &&
+             git push -qf "$REPO_URL" paper-live) || echo "publish failed"
+          }
+          python -u -m pmbot paper --resume --out-dir live --minutes 345 $(cat paper.args) \
+            > live/run.log 2>&1 &
+          BOT=$!
+          while kill -0 $BOT 2>/dev/null; do
+            sleep 600
+            publish
+            grep -v " paper " live/run.log | tail -3 || true
+          done
+          STATUS=0
+          wait $BOT || STATUS=$?   # under bash -e a bare failing wait would skip the publish
+          publish
+          tail -20 live/run.log || true
+          exit $STATUS
