@@ -393,9 +393,12 @@ class FakeVenues:
         self.us_bid, self.us_ask, self.traded = 0.60, 0.61, 0.0
         self.ref_bid, self.ref_ask = 0.62, 0.63
         self.state, self.settlement, self.listed = "MARKET_STATE_OPEN", 0.84, True
+        self.leader_trades: list[dict] = []
 
     def get(self, base, path, params=None, use_cache=True, keep=None):
         px = lambda v: {"value": f"{v:.4f}", "currency": "USD"}
+        if path == "/trades":
+            return [t for t in self.leader_trades if t["proxyWallet"] == params["user"]][::-1]
         if path == "/v1/markets/brewers/settlement":
             return {"slug": "brewers", "settlement": self.settlement}
         if path == "/v1/markets":
@@ -424,6 +427,93 @@ class FakeVenues:
             return {"bids": [{"price": str(self.ref_bid), "size": "500"}],
                     "asks": [{"price": str(self.ref_ask), "size": "500"}]}
         raise AssertionError(path)
+
+
+class CopyTopTest(unittest.TestCase):
+    LEADER = "0x" + "1" * 40
+
+    def setUp(self):
+        from pmbot.copy import CopyTop
+        self.d = tempfile.mkdtemp()
+        self.copy = CopyTop(StrategyConfig(order_usd=10), {self.LEADER: "primm"})
+        self.e = Engine(EngineConfig(mode="paper", out_dir=self.d, minutes=0), StrategyConfig(),
+                        RiskManager(RiskConfig(kill_file=os.path.join(self.d, "STOP"))),
+                        strategies=[self.copy])
+        self.v = self.e.client = FakeVenues()
+        self.e.refresh_pairs()
+        self.n = 0
+
+    def tearDown(self):
+        self.e.shutdown()
+
+    def trade(self, side, price, size=100, asset="tokY", tx=None):
+        self.n += 1
+        self.v.leader_trades.append({"proxyWallet": self.LEADER, "side": side, "asset": asset,
+                                     "price": price, "size": size, "timestamp": 1_000 + self.n,
+                                     "title": "Brewers", "transactionHash": tx or f"0x{self.n}"})
+
+    def test_copies_new_buys_only_at_or_near_the_leaders_price(self):
+        self.trade("BUY", 0.40)                     # made before the bot started watching
+        self.e.cycle()
+        self.assertEqual(self.e.broker.fills, [])
+        self.trade("BUY", 0.62)                     # US ask is 0.61: copy it
+        self.e.cycle()
+        f = self.e.broker.fills[-1]
+        self.assertEqual((f.side, f.price, f.qty, f.maker, f.tag), ("BUY", 0.61, 16, False, "copytop"))
+        self.assertGreater(f.fee, 0)                # taker fee paid
+        self.assertEqual(self.e.owner["brewers"], "copytop")
+
+    def test_does_not_chase_a_moved_price_or_copy_fills_twice(self):
+        self.e.cycle()
+        self.trade("BUY", 0.55)                     # US ask 0.61 > 0.56: wait, then give up
+        self.e.cycle()
+        self.assertEqual(self.e.broker.fills, [])
+        self.copy.pending["brewers"]["at"] -= 1000
+        self.e.cycle()
+        self.assertEqual(self.copy.stats["expired_price_moved"], 1)
+        self.trade("BUY", 0.62, tx="0xsame")
+        self.trade("BUY", 0.62, tx="0xsame")        # same order, second fill
+        self.e.cycle()
+        self.assertEqual(len(self.e.broker.fills), 1)
+        self.assertEqual(self.copy.stats["skip_repeat"], 1)
+
+    def test_leader_sell_closes_the_copy(self):
+        self.e.cycle()
+        self.trade("BUY", 0.62)
+        self.e.cycle()
+        self.trade("SELL", 0.61)                    # US bid 0.60 >= 0.61 - 1c
+        self.e.cycle()
+        self.assertNotIn("brewers", self.e.broker.positions)
+        self.assertEqual(self.e.broker.fills[-1].side, "SELL")
+
+    def test_one_copy_per_market_per_leader_within_ten_minutes(self):
+        self.e.cycle()
+        self.trade("BUY", 0.62)
+        self.e.cycle()
+        self.trade("BUY", 0.62)                     # a separate order, minutes later
+        self.e.cycle()
+        self.assertEqual(sum(f.side == "BUY" for f in self.e.broker.fills), 1)
+        self.assertEqual(self.copy.stats["skip_recently_copied"], 1)
+
+    def test_counters_survive_a_restart(self):
+        from pmbot.copy import CopyTop
+        self.e.cycle()
+        self.trade("BUY", 0.62)
+        self.e.cycle()
+        self.e.save_state()
+        again = CopyTop(StrategyConfig(), {self.LEADER: "primm"})
+        e2 = Engine(EngineConfig(mode="paper", out_dir=self.d, minutes=0, resume=True),
+                    StrategyConfig(), RiskManager(RiskConfig(kill_file=os.path.join(self.d, "STOP"))),
+                    strategies=[again])
+        self.assertEqual(again.stats["copied_buys"], 1)
+        e2._events.close()
+
+    def test_unmapped_trades_are_counted_not_copied(self):
+        self.e.cycle()
+        self.trade("BUY", 0.5, asset="not-on-us")
+        self.e.cycle()
+        self.assertEqual(self.copy.stats["not_on_polymarket_us"], 1)
+        self.assertEqual(self.e.broker.fills, [])
 
 
 class EngineTest(unittest.TestCase):

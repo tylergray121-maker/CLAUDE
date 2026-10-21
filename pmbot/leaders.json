@@ -1,0 +1,150 @@
+{
+ "chosen": "2026-10-21",
+ "rule": "Top-wallet study: sports wallets active in the last week whose sampled positions reconcile with their all-time leaderboard profit, 150+ positions (no whales), edge per dollar above 4%; top 16 by edge.",
+ "leaders": [
+  {
+   "wallet": "0x006cc834cc092684f1b56626e23bedb3835c16ea",
+   "name": "0x006cc834Cc092684F1B56626E23BEdB3835c16ea-1729683673397",
+   "edge_per_dollar": 0.1712,
+   "win_rate": 0.475,
+   "positions": 600,
+   "maker_usd_share": 0.755,
+   "style": "sports bettor (pre-game/futures)"
+  },
+  {
+   "wallet": "0xd38b71f3e8ed1af71983e5c309eac3dfa9b35029",
+   "name": "primm",
+   "edge_per_dollar": 0.1639,
+   "win_rate": 0.465,
+   "positions": 2959,
+   "maker_usd_share": 0.585,
+   "style": "high-volume sports operation (taker flow)"
+  },
+  {
+   "wallet": "0x676c1bb692c76b57b06f1b93817515acfa5ce139",
+   "name": "para-Vision",
+   "edge_per_dollar": 0.1581,
+   "win_rate": 0.573,
+   "positions": 309,
+   "maker_usd_share": 0.543,
+   "style": "sports bettor (same-day/in-play)"
+  },
+  {
+   "wallet": "0x924379a79c64b77ad5816ad362122a5f6228658e",
+   "name": "Kch-Temp",
+   "edge_per_dollar": 0.141,
+   "win_rate": 0.539,
+   "positions": 406,
+   "maker_usd_share": 0.089,
+   "style": "sports bettor (pre-game/futures)"
+  },
+  {
+   "wallet": "0xe5b70fd855af9258d9463992e4f1ed7987905ee3",
+   "name": "EdZachary",
+   "edge_per_dollar": 0.1283,
+   "win_rate": 0.44,
+   "positions": 232,
+   "maker_usd_share": 0.688,
+   "style": "sports bettor (same-day/in-play)"
+  },
+  {
+   "wallet": "0xbcc321b6336117432f4e9d2d28b20d8b6795ac9c",
+   "name": "ColdBlooded",
+   "edge_per_dollar": 0.0944,
+   "win_rate": 0.693,
+   "positions": 254,
+   "maker_usd_share": 0.667,
+   "style": "sports bettor (pre-game/futures)"
+  },
+  {
+   "wallet": "0x7e3a1f95c558f39a51ff334d789e3e039b553246",
+   "name": "KaneAnalytics",
+   "edge_per_dollar": 0.0849,
+   "win_rate": 0.518,
+   "positions": 730,
+   "maker_usd_share": 0.049,
+   "style": "sports bettor (same-day/in-play)"
+  },
+  {
+   "wallet": "0x83720820a8aa6c3f20ad71850e7a1a17d16c5223",
+   "name": "Jsram",
+   "edge_per_dollar": 0.0809,
+   "win_rate": 0.545,
+   "positions": 299,
+   "maker_usd_share": 0.792,
+   "style": "sports bettor (pre-game/futures)"
+  },
+  {
+   "wallet": "0xe7870d0e1bfc65a23e3d66caf00ca1b9129e5034",
+   "name": "Kkunn",
+   "edge_per_dollar": 0.0772,
+   "win_rate": 0.419,
+   "positions": 506,
+   "maker_usd_share": 0.235,
+   "style": "sports bettor (pre-game/futures)"
+  },
+  {
+   "wallet": "0xf3ce7f04dde4f8c5aed19a20e5ecd8520e5ca57a",
+   "name": "Sisyphus-",
+   "edge_per_dollar": 0.0772,
+   "win_rate": 0.577,
+   "positions": 1891,
+   "maker_usd_share": 0.0,
+   "style": "high-volume sports operation (taker flow)"
+  },
+  {
+   "wallet": "0xdaef2be2a19ad331737d06545f85615b094554e9",
+   "name": "PEYZ-BIGGEST-FAN",
+   "edge_per_dollar": 0.0693,
+   "win_rate": 0.506,
+   "positions": 2547,
+   "maker_usd_share": 0.502,
+   "style": "high-volume sports operation (taker flow)"
+  },
+  {
+   "wallet": "0x7ad71d79a3bb90d0a87a06500fa0fe11663842aa",
+   "name": "theowalcott",
+   "edge_per_dollar": 0.0664,
+   "win_rate": 0.538,
+   "positions": 212,
+   "maker_usd_share": 0.533,
+   "style": "sports bettor (same-day/in-play)"
+  },
+  {
+   "wallet": "0x8546a601f7c7cc3dae7141f20b0e09e42bbf35b8",
+   "name": "HVAB",
+   "edge_per_dollar": 0.0605,
+   "win_rate": 0.69,
+   "positions": 1137,
+   "maker_usd_share": 0.663,
+   "style": "high-volume sports operation (market making)"
+  },
+  {
+   "wallet": "0xf0318c32136c2db7fec88b84869aee6a1106c80c",
+   "name": "BreakTheBank",
+   "edge_per_dollar": 0.0582,
+   "win_rate": 0.424,
+   "positions": 1260,
+   "maker_usd_share": 0.628,
+   "style": "high-volume sports operation (market making)"
+  },
+  {
+   "wallet": "0x7c37b52eb226bcb9411375ec48b0169663fb6aeb",
+   "name": "Diabolical-Prize",
+   "edge_per_dollar": 0.0455,
+   "win_rate": 0.49,
+   "positions": 418,
+   "maker_usd_share": 0.307,
+   "style": "sports bettor (pre-game/futures)"
+  },
+  {
+   "wallet": "0xa71093cafc0c099b4ccab24c3cb8018d817923c4",
+   "name": "Talvez10",
+   "edge_per_dollar": 0.0437,
+   "win_rate": 0.503,
+   "positions": 1601,
+   "maker_usd_share": 0.455,
+   "style": "high-volume sports operation (taker flow)"
+  }
+ ]
+}

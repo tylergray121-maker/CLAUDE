@@ -129,7 +129,7 @@ def match_games(us: list[USMarket], intl_rows: dict[str, dict]) -> list[Pair]:
         idx = next((i for i, o in enumerate(outcomes) if o.strip().lower() == want), None)
         if idx is None:
             continue
-        pairs.append(Pair(m.slug, tokens[idx], 1.0, f"{m.question[:80]}: {m.long_label}",
+        pairs.append(Pair(m.slug, tokens[idx], 1.0, f"{r.get('question')}: {outcomes[idx]}",
                           f"{r.get('question')} [{outcomes[idx]}]", m.tick))
     return pairs
 

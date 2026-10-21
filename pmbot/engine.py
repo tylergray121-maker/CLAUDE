@@ -58,6 +58,7 @@ class Engine:
         self.broker = broker or PaperBroker(risk.cfg.bankroll)
         self.client = Client(cache_dir=None, max_rps=ecfg.max_rps, retries=2, timeout=15)
         self.pairs: list[mapping.Pair] = []
+        self.all_pairs: list[mapping.Pair] = []
         self.markets: dict[str, data.USMarket] = {}
         self.stats = ScanStats()
         self.marks: dict[str, float] = {}
@@ -88,8 +89,9 @@ class Engine:
             pairs = mapping.match(us, intl)
             # Games: exact slug matches for games starting within two days.
             now = time.time()
+            # Games from 6 hours ago (in play) to 2 days ahead.
             games = [m for m in us if m.market_type in mapping.GAME_TYPES
-                     and m.game_start and 0 < m.game_start - now <= 2 * 86400]
+                     and m.game_start and -6 * 3600 < m.game_start - now <= 2 * 86400]
             rows = data.intl_by_slugs(self.client, sorted({mapping.intl_slug(m.slug)
                                                            for m in games}))
             game_pairs = mapping.match_games(games, rows)
@@ -116,6 +118,7 @@ class Engine:
             with open(os.path.join(self.ecfg.out_dir, "pairs_rejected.json"), "w") as f:
                 json.dump(rejected, f, indent=1)
             log.info("pairs: %d kept, %d rejected on price", len(pairs), len(rejected))
+        self.all_pairs = pairs
         self.pairs = pairs[:self.ecfg.max_markets]
         for p in pairs:
             self.labels[p.us_slug] = p.us_label
@@ -237,6 +240,10 @@ class Engine:
         p = self.broker.positions.get(slug)
         return p.qty if p else 0
 
+    def token_index(self) -> dict[str, str]:
+        """International outcome token -> the US market that prices the same thing."""
+        return {p.intl_token: p.us_slug for p in self.all_pairs}
+
     def room(self, slug: str) -> float:
         b = self.broker
         return self.risk.room(slug, b.positions, b.open_orders, b.cash)
@@ -348,6 +355,8 @@ class Engine:
                  "equity": self.equity_hist[-20000:],
                  "risk": {"day": r._day, "day_start_equity": r._day_start_equity,
                           "halted": r.halted},
+                 "strategy_stats": {x.name: dict(x.stats) for x in self.strategies
+                                    if getattr(x, "stats", None) is not None},
                  "scan": {"observations": self.stats.observations,
                           "buy_opps": self.stats.buy_opps, "sell_opps": self.stats.sell_opps,
                           "gaps": self.stats.gaps[-5000:]}}
@@ -375,6 +384,11 @@ class Engine:
         if rk.get("day") == today:  # a daily-loss halt lasts until the UTC day ends
             self.risk._day, self.risk._day_start_equity = rk["day"], rk["day_start_equity"]
             self.risk.halted = rk.get("halted", "")
+        for x in self.strategies:
+            saved = st.get("strategy_stats", {}).get(x.name)
+            if saved and getattr(x, "stats", None) is not None:
+                # Counters are fresh (zero) here; Counter.update adds, so this restores them.
+                x.stats.update(saved)
         sc = st.get("scan", {})
         self.stats.observations = sc.get("observations", 0)
         self.stats.buy_opps, self.stats.sell_opps = sc.get("buy_opps", 0), sc.get("sell_opps", 0)
@@ -382,6 +396,18 @@ class Engine:
         log.info("resumed paper account: cash $%.2f, %d positions, %d fills, started %s",
                  self.broker.cash, len(self.broker.positions), len(self.broker.fills),
                  time.strftime("%Y-%m-%d %H:%M", time.gmtime(self.started)))
+
+    def _strategy_stats(self) -> dict:
+        out = {}
+        for strat in self.strategies:
+            for k, v in (getattr(strat, "stats", None) or {}).items():
+                out[f"{strat.name}_{k}"] = v
+        for strat in self.strategies:
+            if strat.name == "copytop":
+                out["copytop_leaders"] = len(strat.leaders)
+                out["copytop_filled"] = sum(1 for f in self.broker.fills if f.tag == "copytop"
+                                            and f.side in ("BUY", "SELL"))
+        return out
 
     def _preview_summary(self) -> dict:
         c = getattr(self.broker, "checker", None)
@@ -419,7 +445,7 @@ class Engine:
             "pairs": self.map_stats.get("pairs", 0), "tracked": len(self.pairs),
             "observations": s.observations, "gap_median_c": pct(.5), "gap_p90_c": pct(.9),
             "buy_opps": s.buy_opps, "sell_opps": s.sell_opps,
-            **self._preview_summary()}]
+            **self._preview_summary(), **self._strategy_stats()}]
         # Equity: every point for the last 2 days, hourly before that.
         cut = time.time() - 2 * 86400
         last_hour = None

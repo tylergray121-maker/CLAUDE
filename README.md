@@ -100,6 +100,18 @@ CFTC-regulated exchange open to New York residents.
   pair is only traded once their live prices agree within 8¢; anything
   further apart is assumed to be a mismatch, not an opportunity.
 
+## Copying the top wallets (`--strategies copytop`)
+
+`pmbot/leaders.json` lists 16 sports wallets from the top-wallet study:
+active in the last week, profit that reconciles with their leaderboard
+figure, 150+ positions, edge above 4% per dollar. Each cycle the bot polls
+their newest public trades. A buy of an outcome that is also on Polymarket
+US (through the verified market pairs, live games included) becomes a taker
+buy there, at no more than 1¢ above the leader's price and only when the two
+prices agree; a leader's sell closes the copy. One order printing as many
+fills is copied once, and each leader is copied at most once per market per
+10 minutes. Copies pay the Polymarket US taker fee.
+
 ## Modes
 
 ```bash

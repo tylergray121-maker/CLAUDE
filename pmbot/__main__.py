@@ -42,7 +42,9 @@ def parse_args(argv=None):
     g.add_argument("--equity-seconds", type=float, default=e.equity_seconds)
     g = p.add_argument_group("strategy")
     g.add_argument("--strategies", default="sportsgameday,fairvalue",
-                   help="comma list, in priority order: sportsgameday, fairvalue")
+                   help="comma list, in priority order: copytop, sportsgameday, fairvalue")
+    g.add_argument("--leaders-file", default=os.path.join(os.path.dirname(__file__), "leaders.json"),
+                   help="copytop: wallets to copy")
     g.add_argument("--maker-edge", type=float, default=s.maker_edge)
     g.add_argument("--taker-edge", type=float, default=s.taker_edge)
     g.add_argument("--order-usd", type=float, default=s.order_usd)
@@ -97,7 +99,8 @@ def main(argv=None) -> int:
         broker.sync()
         broker.cancel_all()  # start clean: drop this bot's own leftovers
     from .strategies import build
-    engine = Engine(ecfg, scfg, RiskManager(rcfg), broker, build(a.strategies, scfg))
+    engine = Engine(ecfg, scfg, RiskManager(rcfg), broker,
+                    build(a.strategies, scfg, a.leaders_file))
     if a.mode == "paper" and not a.no_preview and os.environ.get("PMUS_KEY_ID") \
             and os.environ.get("PMUS_SECRET_KEY"):
         from .broker import PreviewChecker
