@@ -1,0 +1,58 @@
+name: polymarket-us bot
+
+on:
+  push:
+    branches: [claude/polymarket-copy-backtest]
+    paths: ["pmbot/**", "tests/test_pmbot.py", ".github/workflows/bot.yml", "bot.args"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bot
+  cancel-in-progress: true
+
+jobs:
+  paper:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Probe API shapes
+        run: |
+          mkdir -p botresults/probe
+          cd botresults/probe
+          G=https://gateway.polymarket.us
+          get() { curl -sS -m 30 "$2" -o "$1.json" -w "$1 %{http_code}\n" || true; }
+          get us_markets_open "$G/v1/markets?active=true&closed=false&limit=100&offset=0"
+          get us_markets_sports "$G/v1/markets?active=true&closed=false&categories=sports&limit=100&offset=300"
+          get us_markets_sports2 "$G/v1/markets?active=true&closed=false&categories=sports&limit=100&offset=1500"
+          get us_events "$G/v1/events?active=true&closed=false&limit=5"
+          get us_sports "$G/v1/sports"
+          S=$(python -c "
+          import json
+          ms=[m for f in ('us_markets_sports.json','us_markets_sports2.json','us_markets_open.json') for m in json.load(open(f)).get('markets',[])]
+          games=[m for m in ms if (m.get('marketType') or '')!='futures']
+          print((games or ms)[0]['slug'])" 2>/dev/null || true)
+          echo "sample slug: $S"
+          get us_book "$G/v1/markets/$S/book"
+          get us_bbo "$G/v1/markets/$S/bbo"
+          get us_market "$G/v1/market/slug/$S"
+          get intl_markets "https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=5&order=volume24hr&ascending=false"
+          T=$(python -c "import json;print(json.loads(json.load(open('intl_markets.json'))[0]['clobTokenIds'])[0])" 2>/dev/null || true)
+          get intl_book "https://clob.polymarket.com/book?token_id=$T"
+          for f in *.json; do echo "== $f $(wc -c < $f) bytes"; head -c 600 "$f"; echo; done
+
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f botresults
+          git commit -m "Bot run results ($(date -u +%Y-%m-%dT%H:%MZ)) [skip ci]" || exit 0
+          git pull --rebase origin "$GITHUB_REF_NAME" && git push origin HEAD:"$GITHUB_REF_NAME"
