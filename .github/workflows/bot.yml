@@ -30,37 +30,26 @@ jobs:
           python -m unittest tests.test_pmbot
 
       - name: Paper trade against live quotes
+        if: ${{ !contains(github.event.head_commit.message, '[probe only]') }}
         timeout-minutes: 100
         shell: bash -o pipefail {0}
         run: |
           mkdir -p botresults
           python -u -m pmbot paper --out-dir botresults $(cat bot.args 2>/dev/null) 2>&1 | tee botresults/run.log | grep -v " paper " | tail -40
 
-      - name: Probe API shapes
-        if: false
+      - name: Probe game market slugs
         run: |
-          mkdir -p botresults/probe
-          cd botresults/probe
-          G=https://gateway.polymarket.us
+          mkdir -p botresults/probe && cd botresults/probe
+          G=https://gateway.polymarket.us; M=https://gamma-api.polymarket.com
           get() { curl -sS -m 30 "$2" -o "$1.json" -w "$1 %{http_code}\n" || true; }
-          get us_markets_open "$G/v1/markets?active=true&closed=false&limit=100&offset=0"
-          get us_markets_sports "$G/v1/markets?active=true&closed=false&categories=sports&limit=100&offset=300"
-          get us_markets_sports2 "$G/v1/markets?active=true&closed=false&categories=sports&limit=100&offset=1500"
-          get us_events "$G/v1/events?active=true&closed=false&limit=5"
-          get us_sports "$G/v1/sports"
-          S=$(python -c "
-          import json
-          ms=[m for f in ('us_markets_sports.json','us_markets_sports2.json','us_markets_open.json') for m in json.load(open(f)).get('markets',[])]
-          games=[m for m in ms if (m.get('marketType') or '')!='futures']
-          print((games or ms)[0]['slug'])" 2>/dev/null || true)
-          echo "sample slug: $S"
-          get us_book "$G/v1/markets/$S/book"
-          get us_bbo "$G/v1/markets/$S/bbo"
-          get us_market "$G/v1/market/slug/$S"
-          get intl_markets "https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=5&order=volume24hr&ascending=false"
-          T=$(python -c "import json;print(json.loads(json.load(open('intl_markets.json'))[0]['clobTokenIds'])[0])" 2>/dev/null || true)
-          get intl_book "https://clob.polymarket.com/book?token_id=$T"
-          for f in *.json; do echo "== $f $(wc -c < $f) bytes"; head -c 600 "$f"; echo; done
+          get us_ml "$G/v1/market/slug/aec-nba-mil-was-2026-10-21"
+          get us_soccer "$G/v1/market/slug/atc-lal-ray-ath-2026-10-10-ray"
+          get us_spread "$G/v1/markets?active=true&closed=false&limit=5&offset=0&slug=asc-cs2-re-nem-2026-09-24-hcap-pos-1pt5"
+          get intl_ml_market "$M/markets?slug=nba-mil-was-2026-10-21"
+          get intl_ml_event "$M/events?slug=nba-mil-was-2026-10-21"
+          get intl_soccer_event "$M/events?slug=lal-ray-ath-2026-10-10"
+          get intl_soccer_market "$M/markets?slug=lal-ray-ath-2026-10-10-ray"
+          for f in *.json; do echo "== $f $(wc -c < $f)"; head -c 1200 "$f"; echo; done
 
       - name: Commit results
         if: always()
