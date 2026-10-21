@@ -3,6 +3,7 @@ import os
 import tempfile
 import time
 import unittest
+from collections import deque
 
 from pmbot import data, mapping
 from pmbot.broker import PaperBroker, Position, Quote
@@ -603,7 +604,26 @@ class CopyTopTest(unittest.TestCase):
         self.assertEqual(len(self.e.broker.fills), 1)
         self.assertEqual(self.copy.stats["skip_repeat"], 1)
 
+    def test_held_to_settlement_unless_sells_are_copied(self):
+        self.e.cycle()
+        self.trade("BUY", 0.62)
+        self.e.cycle()
+        self.trade("SELL", 0.61)                    # ignored by default
+        self.e.cycle()
+        self.assertEqual(self.e.held("brewers"), 16)
+
+    def test_bigger_bets_get_bigger_copies_with_conviction_sizing(self):
+        self.copy.conviction_sizing = True
+        self.copy.sizes[self.LEADER] = deque([20.0] * 20)
+        self.e.cycle()
+        self.copy.sizes[self.LEADER] = deque([20.0] * 20)
+        self.trade("BUY", 0.62, size=100)             # $62: 3x their usual $20
+        self.e.cycle()
+        self.assertEqual(self.e.broker.fills[-1].qty, 24)   # $15 at 0.61
+        self.assertIn("conviction:2x+", self.copy.card.keys_for("brewers"))
+
     def test_leader_sell_closes_the_copy(self):
+        self.copy.copy_sells = True
         self.e.cycle()
         self.trade("BUY", 0.62)
         self.e.cycle()
@@ -703,6 +723,7 @@ class CopyTopTest(unittest.TestCase):
         self.assertIn("league:nba", [r["id"] for r in rows if r["kind"] == "pattern"])
 
     def test_a_wallet_that_falls_off_is_benched_but_its_exits_are_copied(self):
+        self.copy.copy_sells = True
         self.e.cycle()
         self.trade("BUY", 0.62)                      # copied while in form
         self.e.cycle()
@@ -770,6 +791,7 @@ class CopyTopTest(unittest.TestCase):
         e2._events.close()
 
     def test_a_wallets_sell_only_closes_the_copies_of_that_wallet(self):
+        self.copy.copy_sells = True
         other = "0x" + "2" * 40
         self.copy.leaders[other] = "theowalcott"
         self.e.cycle()

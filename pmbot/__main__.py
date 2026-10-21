@@ -45,6 +45,11 @@ def parse_args(argv=None):
                    help="comma list, in priority order: copytop, sportsgameday, fairvalue")
     g.add_argument("--leaders-file", default=os.path.join(os.path.dirname(__file__), "leaders.json"),
                    help="copytop: wallets to copy")
+    g.add_argument("--copy-sells", action="store_true",
+                   help="copytop: also copy the leaders' sells (default: hold to settlement)")
+    g.add_argument("--conviction-sizing", action="store_true",
+                   help="copytop: stake x0.5 when a leader bets under half their usual size, "
+                   "x1.5 at twice it or more")
     g.add_argument("--maker-edge", type=float, default=s.maker_edge)
     g.add_argument("--taker-edge", type=float, default=s.taker_edge)
     g.add_argument("--order-usd", type=float, default=s.order_usd)
@@ -100,7 +105,8 @@ def main(argv=None) -> int:
         broker.cancel_all()  # start clean: drop this bot's own leftovers
     from .strategies import build
     engine = Engine(ecfg, scfg, RiskManager(rcfg), broker,
-                    build(a.strategies, scfg, a.leaders_file))
+                    build(a.strategies, scfg, a.leaders_file, copy_sells=a.copy_sells,
+                          conviction_sizing=a.conviction_sizing))
     if a.mode == "paper" and not a.no_preview and os.environ.get("PMUS_KEY_ID") \
             and os.environ.get("PMUS_SECRET_KEY"):
         from .broker import PreviewChecker

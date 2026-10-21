@@ -6,8 +6,10 @@ their newest trades; a buy of an outcome that maps to a Polymarket US
 market (a verified pair, or the same game/spread/total market by slug, on
 either side) becomes a taker buy on US, at
 no more than the leader's price plus a small allowance, so the bot never
-chases a price that has moved. A leader's sell closes the copy; otherwise
-copies are held to settlement.
+chases a price that has moved. Copies are held to settlement: in the
+backtest (pmbot/select.py) copying the leaders' sells did worse in both
+windows, so that is off by default (``copy_sells``). With
+``conviction_sizing`` the stake follows how big the bet is for that leader.
 
 Every copy is scored (pmbot/track.py) against the wallet it copied and the
 kind of bet it was. A wallet is benched (its buys no longer copied; its
@@ -72,7 +74,8 @@ class CopyTop(Strategy):
 
     def __init__(self, cfg: StrategyConfig, leaders: dict[str, str], max_slip: float = 0.01,
                  signal_ttl_s: float = 180, dedupe_s: float = 600, min_leader_usd: float = 5.0,
-                 form_every_s: float = 7200, min_wallet_n: int = 10, min_pattern_n: int = 15):
+                 form_every_s: float = 7200, min_wallet_n: int = 10, min_pattern_n: int = 15,
+                 copy_sells: bool = False, conviction_sizing: bool = False):
         self.cfg = cfg
         self.leaders = leaders
         self.max_slip = max_slip
@@ -94,6 +97,8 @@ class CopyTop(Strategy):
         self._selling: dict[str, str] = {}         # slug -> wallet key whose copies are being sold
         self._next_form = 0.0
         self.lags: deque = deque(maxlen=500)       # seconds from their trade to our order
+        self.copy_sells, self.conviction_sizing = copy_sells, conviction_sizing
+        self.sizes: dict[str, deque] = {}          # leader -> their recent buy sizes ($)
 
     # -- signals ------------------------------------------------------------
     def _fetch(self, eng, wallet: str) -> list[dict] | None:
@@ -114,10 +119,22 @@ class CopyTop(Strategy):
         first = wallet not in self.last_ts
         since = self.last_ts.get(wallet, newest)
         self.last_ts[wallet] = max(since, newest)
-        if first:
-            return []  # baseline: never copy trades made before the bot was watching
-        return sorted((r for r in rows if int(r["timestamp"]) > since),
-                      key=lambda r: int(r["timestamp"]))
+        fresh = sorted((r for r in rows if first or int(r["timestamp"]) > since),
+                       key=lambda r: int(r["timestamp"]))
+        sizes = self.sizes.setdefault(wallet, deque(maxlen=200))
+        for r in fresh:  # their usual bet size, for conviction
+            try:
+                if str(r.get("side", "")).upper() == "BUY":
+                    sizes.append(float(r["price"]) * float(r["size"]))
+            except (KeyError, TypeError, ValueError):
+                pass
+        return [] if first else fresh  # baseline: never copy trades from before we watched
+
+    def conviction(self, wallet: str, usd: float) -> float:
+        """This bet's size relative to the leader's usual (median recent) buy."""
+        sizes = self.sizes.get(wallet)
+        usual = median(sizes) if sizes else 0.0
+        return usd / usual if usual > 0 else 1.0
 
     def watch(self, eng, now):
         if now >= self._next_form:
@@ -152,6 +169,8 @@ class CopyTop(Strategy):
                 if side == "BUY" and price * size < self.min_leader_usd:
                     self.stats["skip_tiny"] += 1
                     continue
+                if side == "SELL" and not self.copy_sells:
+                    continue  # held to settlement
                 if side == "BUY" and self.status.get(wallet, ["copying"])[0] == "benched":
                     self.stats["skip_benched_wallet"] += 1
                     continue
@@ -168,6 +187,7 @@ class CopyTop(Strategy):
                                       "wallet": wallet, "at": now,
                                       "trade_ts": int(t["timestamp"]),
                                       "leader_usd": round(price * size, 2),
+                                      "conviction": round(self.conviction(wallet, price * size), 2),
                                       "league": league(str(t.get("slug") or ""))}
                 eng._log("copy_signal", slug=slug, side=side, leader=name, price=price,
                          leader_usd=round(price * size, 2), market=t.get("title"))
@@ -205,14 +225,19 @@ class CopyTop(Strategy):
                     self.stats["skip_prices_disagree"] += 1  # likely not the same bet
                     del self.pending[slug]
                     continue
+                c = sig.get("conviction", 1.0)
                 keys = [f"w:{sig['wallet']}", f"league:{sig.get('league', 'other')}",
                         f"kind:{v.market_type or 'other'}", f"price:{price_band(ask)}",
-                        f"timing:{'in-play' if v.note == 'in-play' else 'pre-game'}"]
+                        f"timing:{'in-play' if v.note == 'in-play' else 'pre-game'}",
+                        "conviction:" + ("under 0.5x" if c < 0.5 else "0.5-2x" if c < 2 else "2x+")]
                 if any(k in self.skipped for k in keys):
                     self.stats["skip_losing_pattern"] += 1
                     del self.pending[slug]
                     continue
-                qty = min(int(min(self.cfg.order_usd, eng.room(slug)) // ask), int(v.us_ask_qty))
+                stake = self.cfg.order_usd
+                if self.conviction_sizing:
+                    stake *= 0.5 if c < 0.5 else 1.5 if c >= 2 else 1.0
+                qty = min(int(min(stake, eng.room(slug)) // ask), int(v.us_ask_qty))
                 del self.pending[slug]
                 if qty < 1:
                     self.stats["skip_no_room_or_size"] += 1

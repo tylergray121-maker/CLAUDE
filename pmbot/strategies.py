@@ -71,12 +71,12 @@ class SportsGameDay(FairValue):
 REGISTRY = {"fairvalue": FairValue, "sportsgameday": SportsGameDay}
 
 
-def build(names: str, cfg: StrategyConfig, leaders_file: str = "") -> list[Strategy]:
+def build(names: str, cfg: StrategyConfig, leaders_file: str = "", **copy_opts) -> list[Strategy]:
     out = []
     for n in [x.strip() for x in names.split(",") if x.strip()]:
         if n == "copytop":
             from .copy import CopyTop, load_leaders
-            out.append(CopyTop(cfg, load_leaders(leaders_file)))
+            out.append(CopyTop(cfg, load_leaders(leaders_file), **copy_opts))
             continue
         if n not in REGISTRY:
             raise SystemExit(f"unknown strategy {n!r}; choose from "
