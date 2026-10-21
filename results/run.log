@@ -1,0 +1,40 @@
+22:58:07 INFO leaderboard OVERALL/DAY/PNL: 500 wallets
+22:58:08 INFO leaderboard OVERALL/DAY/VOL: 500 wallets
+22:58:09 INFO leaderboard OVERALL/WEEK/PNL: 500 wallets
+22:58:11 INFO leaderboard OVERALL/WEEK/VOL: 500 wallets
+22:58:12 INFO leaderboard OVERALL/MONTH/PNL: 500 wallets
+22:58:13 INFO leaderboard OVERALL/MONTH/VOL: 500 wallets
+22:58:15 INFO leaderboard OVERALL/ALL/PNL: 500 wallets
+22:58:16 INFO leaderboard OVERALL/ALL/VOL: 500 wallets
+22:58:16 INFO backtesting 1500 wallets over 90 days
+23:00:27 INFO fetched 50/1500 wallets (1115 requests)
+23:02:36 INFO fetched 100/1500 wallets (2090 requests)
+23:04:18 INFO fetched 150/1500 wallets (2882 requests)
+23:06:12 INFO fetched 200/1500 wallets (3752 requests)
+23:07:56 INFO fetched 250/1500 wallets (4561 requests)
+23:10:05 INFO fetched 300/1500 wallets (5543 requests)
+23:12:03 INFO fetched 350/1500 wallets (6425 requests)
+23:13:55 INFO fetched 400/1500 wallets (7295 requests)
+23:15:43 INFO fetched 450/1500 wallets (8130 requests)
+23:17:07 INFO fetched 500/1500 wallets (8791 requests)
+23:18:35 INFO fetched 550/1500 wallets (9476 requests)
+23:20:19 INFO fetched 600/1500 wallets (10302 requests)
+23:21:45 INFO fetched 650/1500 wallets (10988 requests)
+23:23:16 INFO fetched 700/1500 wallets (11693 requests)
+23:24:47 INFO fetched 750/1500 wallets (12418 requests)
+23:26:06 INFO fetched 800/1500 wallets (13049 requests)
+23:27:22 INFO fetched 850/1500 wallets (13650 requests)
+23:28:47 INFO fetched 900/1500 wallets (14313 requests)
+23:30:10 INFO fetched 950/1500 wallets (14972 requests)
+23:31:21 INFO fetched 1000/1500 wallets (15523 requests)
+23:32:26 INFO fetched 1050/1500 wallets (16045 requests)
+23:33:48 INFO fetched 1100/1500 wallets (16693 requests)
+23:34:49 INFO fetched 1150/1500 wallets (17183 requests)
+23:36:41 INFO fetched 1200/1500 wallets (18052 requests)
+23:38:04 INFO fetched 1250/1500 wallets (18713 requests)
+23:39:16 INFO fetched 1300/1500 wallets (19289 requests)
+23:40:21 INFO fetched 1350/1500 wallets (19800 requests)
+23:41:54 INFO fetched 1400/1500 wallets (20542 requests)
+23:43:04 INFO fetched 1450/1500 wallets (21089 requests)
+23:44:34 INFO fetched 1500/1500 wallets (21764 requests)
+23:44:48 INFO resolving 197660 markets
