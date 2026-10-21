@@ -1,0 +1,56 @@
+US: 79413 open markets, 58397 game/spread/total/prop slugs, 279 verified pairs
+
+age                    long side              short side  listed, outcome names     not on Polymarket US  copyable
+<3h                          139                     146                       0                     100       74%
+3-12h                         91                       1                       0                     130       41%
+12-48h                        24                       0                       0                    1134        2%
+older                          0                       4                       0                    1431        0%
+
+by league (all ages): copyable / total
+  nfl              0 / 422
+  nba            346 / 354
+  nhl             17 / 291
+  lol             15 / 285
+  atp              0 / 276
+  futures         27 / 212
+  dota2            0 / 206
+  ucl              0 / 185
+  cfb              0 / 177
+  mlb              0 / 152
+  fifwc            0 / 140
+  val              0 / 137
+  wta              0 / 125
+  bra2             0 / 64
+  por              0 / 61
+  arg              0 / 57
+  itf              0 / 28
+  mex              0 / 16
+  egy1             0 / 6
+  fl1              0 / 4
+
+recent trades not on Polymarket US (international slug | outcome | US lists for the same matchup):
+   44   |  | -
+   23  will-the-democratic-party-control-the-house-after-the-2026-midterm-elections | No | -
+   16  mex-tol-tij-2026-10-21-spread-home-1pt5 | Deportivo Toluca FC | -
+   14  atp-damm-cerundo-2026-10-21 | Martin Damm | -
+   12  itf-zeltin1-olmo1-2026-10-21 | Beatrise Zeltina | -
+   11  wta-boulter-golubic-2026-10-21 | Katie Boulter | -
+   10  dota2-dawnbu-z10-2026-10-21-game2 | Dawn Bulls | -
+    8  atp-moutet-balshaw-2026-10-21 | Felix Balshaw | -
+    8  dota2-pr1-ic-2026-10-21-game2 | Inner Circle | -
+    7  atp-chidekh-fearnle-2026-10-21 | Clement Chidekh | -
+    6  will-the-republican-party-hold-exactly-48-senate-seats-after-the-2026-midterm-elections-971 | Yes | -
+    5  itf-palico1-rapolu1-2026-10-21 | Malaika Rapolu | -
+    5  nba-min-mia-2026-10-21-spread-home-1pt5 | Heat | nba-min-mia-2026-10-21, nba-min-mia-2026-10-21-229pt5, nba-min-mia-2026-10-21-232pt5, nba-min-mia-2026-10-21-235pt5
+    5  will-the-republican-party-control-the-house-after-the-2026-midterm-elections | Yes | -
+    5  will-the-republican-party-hold-47-or-fewer-senate-seats-after-the-2026-midterm-elections | Yes | -
+    4  ucl-com-mnu-2026-10-21-total-2pt5 | Under | ucl-com-mnu-2026-10-21-1pt5, ucl-com-mnu-2026-10-21-2pt5, ucl-com-mnu-2026-10-21-3pt5, ucl-com-mnu-2026-10-21-4pt5
+    4  atp-wong-samrej-2026-10-21 | Coleman Wong | -
+    4  dota2-salami-huliga-2026-10-21-game1 | salamit | -
+    3  wta-alexand-kostyuk-2026-10-21 | Ekaterina Alexandrova | -
+    3  dota2-pr1-ic-2026-10-21 | Power Rangers | -
+    3  itf-palico1-rapolu1-2026-10-21 | Barbora Palicova | -
+    3  atp-goffin-bertola-2026-10-20 | Remy Bertola | -
+    3  will-mary-peltola-win-the-alaska-senate-race-in-2026 | No | -
+    2  atp-mannari-rublev-2026-10-21 | Andrey Rublev | -
+    2  wta-fernand-sasnovi-2026-10-20 | Leylah Fernandez | -

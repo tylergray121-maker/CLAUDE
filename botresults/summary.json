@@ -1,17 +1,26 @@
 {
- "ts": 1792591004.6108987,
+ "ts": 1792605711.0953135,
  "mode": "paper",
- "pairs": 100,
- "equity": 200.0,
- "cash": 200.0,
- "positions": {},
+ "pairs": 20,
+ "equity": 199.56,
+ "cash": 189.91,
+ "positions": {
+  "aec-nba-uta-mem-2026-10-21": {
+   "qty": 10,
+   "cost": 4.9799999999999995
+  },
+  "aec-nba-atl-orl-2026-10-21:short": {
+   "qty": 9,
+   "cost": 5.11
+  }
+ },
  "open_orders": 0,
- "fills": 0,
- "fees_paid": 0.0,
+ "fills": 2,
+ "fees_paid": 0.34,
  "rebates": 0.0,
  "halted": "",
  "scan": {
-  "observations": 6684,
+  "observations": 720,
   "buy_opps": 0,
   "sell_opps": 0
  }

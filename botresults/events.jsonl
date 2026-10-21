@@ -5694,3 +5694,24 @@
 {"ts": 1792591004.61, "kind": "throttled", "slug": "tec-nba-champ-2027-06-18-w-phi"}
 {"ts": 1792591004.61, "kind": "throttled", "slug": "tec-nba-champ-2027-06-18-w-sas"}
 {"ts": 1792591004.611, "kind": "cancel_all", "reason": "shutdown"}
+{"ts": 1792605451.634, "kind": "copy_signal", "slug": "aec-nba-uta-mem-2026-10-21", "side": "BUY", "leader": "EdZachary", "price": 0.47, "leader_usd": 67.21, "market": "Jazz vs. Grizzlies"}
+{"ts": 1792605451.634, "kind": "copy_signal", "slug": "aec-nba-uta-mem-2026-10-21", "side": "BUY", "leader": "EdZachary", "price": 0.470000003, "leader_usd": 18.83, "market": "Jazz vs. Grizzlies"}
+{"ts": 1792605451.634, "kind": "copy_signal", "slug": "aec-nba-uta-mem-2026-10-21", "side": "BUY", "leader": "EdZachary", "price": 0.4700000012, "leader_usd": 99.11, "market": "Jazz vs. Grizzlies"}
+{"ts": 1792605451.634, "kind": "copy_signal", "slug": "aec-nba-uta-mem-2026-10-21", "side": "BUY", "leader": "EdZachary", "price": 0.4700000002, "leader_usd": 1238.91, "market": "Jazz vs. Grizzlies"}
+{"ts": 1792605451.634, "kind": "copy_signal", "slug": "aec-nba-uta-mem-2026-10-21", "side": "BUY", "leader": "EdZachary", "price": 0.47, "leader_usd": 991.12, "market": "Jazz vs. Grizzlies"}
+{"ts": 1792605451.634, "kind": "copy_signal", "slug": "aec-nba-uta-mem-2026-10-21", "side": "BUY", "leader": "EdZachary", "price": 0.47, "leader_usd": 67.21, "market": "Jazz vs. Grizzlies"}
+{"ts": 1792605456.9, "kind": "order", "slug": "aec-nba-uta-mem-2026-10-21", "side": "BUY", "price": 0.48, "qty": 10, "post_only": false, "fair": 0.475, "strategy": "copytop", "id": null}
+{"ts": 1792605542.429, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Will the Democratic Party control the House after the 2026 Midterm elections?", "intl_slug": "will-the-democratic-party-control-the-house-after-the-2026-midterm-elections", "outcome": "No"}
+{"ts": 1792605542.429, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Will the Republican Party control the House after the 2026 Midterm elections?", "intl_slug": "will-the-republican-party-control-the-house-after-the-2026-midterm-elections", "outcome": "Yes"}
+{"ts": 1792605542.429, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Will the Republican Party control the House after the 2026 Midterm elections?", "intl_slug": "will-the-republican-party-control-the-house-after-the-2026-midterm-elections", "outcome": "Yes"}
+{"ts": 1792605542.429, "kind": "copy_signal", "slug": "aec-nba-atl-orl-2026-10-21:short", "side": "BUY", "leader": "BreakTheBank", "price": 0.54, "leader_usd": 5.4, "market": "Hawks vs. Magic"}
+{"ts": 1792605542.429, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Will the Democratic Party control the House after the 2026 Midterm elections?", "intl_slug": "will-the-democratic-party-control-the-house-after-the-2026-midterm-elections", "outcome": "No"}
+{"ts": 1792605542.429, "kind": "copy_signal", "slug": "aec-nba-atl-orl-2026-10-21:short", "side": "BUY", "leader": "BreakTheBank", "price": 0.54, "leader_usd": 8.64, "market": "Hawks vs. Magic"}
+{"ts": 1792605542.429, "kind": "copy_signal", "slug": "aec-nba-atl-orl-2026-10-21:short", "side": "BUY", "leader": "BreakTheBank", "price": 0.54, "leader_usd": 48.6, "market": "Hawks vs. Magic"}
+{"ts": 1792605542.429, "kind": "copy_signal", "slug": "aec-nba-atl-orl-2026-10-21:short", "side": "BUY", "leader": "BreakTheBank", "price": 0.5400000331, "leader_usd": 5.87, "market": "Hawks vs. Magic"}
+{"ts": 1792605542.429, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Will the Democratic Party control the House after the 2026 Midterm elections?", "intl_slug": "will-the-democratic-party-control-the-house-after-the-2026-midterm-elections", "outcome": "No"}
+{"ts": 1792605542.429, "kind": "copy_signal", "slug": "aec-nba-atl-orl-2026-10-21:short", "side": "BUY", "leader": "BreakTheBank", "price": 0.54, "leader_usd": 28.08, "market": "Hawks vs. Magic"}
+{"ts": 1792605542.429, "kind": "copy_signal", "slug": "aec-nba-atl-orl-2026-10-21:short", "side": "BUY", "leader": "BreakTheBank", "price": 0.54, "leader_usd": 314.82, "market": "Hawks vs. Magic"}
+{"ts": 1792605542.429, "kind": "copy_signal", "slug": "aec-nba-atl-orl-2026-10-21:short", "side": "BUY", "leader": "BreakTheBank", "price": 0.54, "leader_usd": 7.56, "market": "Hawks vs. Magic"}
+{"ts": 1792605546.714, "kind": "order", "slug": "aec-nba-atl-orl-2026-10-21:short", "side": "BUY", "price": 0.55, "qty": 9, "post_only": false, "fair": 0.545, "strategy": "copytop", "id": null}
+{"ts": 1792605711.095, "kind": "cancel_all", "reason": "shutdown"}
