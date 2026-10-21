@@ -272,7 +272,8 @@ def _market_from_gamma(row: dict) -> Market | None:
     return Market(condition_id=cond.lower(), resolved=resolved,
                   resolve_ts=resolve_ts, prices=dict(zip(tokens, prices)),
                   question=str(row.get("question") or ""),
-                  fee_rate=fee_rate, fee_exponent=fee_exp)
+                  fee_rate=fee_rate, fee_exponent=fee_exp,
+                  start_ts=_parse_ts(row.get("gameStartTime")))
 
 
 def _market_from_clob(row: dict) -> Market | None:
@@ -303,7 +304,7 @@ def _market_from_clob(row: dict) -> Market | None:
 
 GAMMA_KEYS = ("conditionId", "clobTokenIds", "outcomePrices", "closed",
               "umaResolutionStatus", "closedTime", "umaEndDate", "endDate",
-              "question", "feesEnabled", "feeSchedule")
+              "question", "feesEnabled", "feeSchedule", "gameStartTime")
 CLOB_KEYS = ("condition_id", "tokens", "closed", "end_date_iso", "question")
 
 

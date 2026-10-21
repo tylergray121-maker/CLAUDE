@@ -51,6 +51,69 @@ class ScorecardTest(unittest.TestCase):
         self.assertFalse(clearly_losing(bad, 15))      # not enough bets yet
 
 
+class SelectTest(unittest.TestCase):
+    """The leader-selection backtest copies the way copytop does."""
+
+    def setUp(self):
+        from copybt.models import Market, Trade
+        self.Trade = Trade
+        self.m = {"c1": Market("c1", True, 2_000_000, {"A": 1.0, "B": 0.0}, start_ts=1_500_000)}
+        self.pairs = {("nba", "moneyline")}
+
+    def t(self, ts, side, price, size=100, asset="A", slug="nba-mil-was-2026-10-21"):
+        return self.Trade(ts, asset, "c1", side, price, size, "Bucks vs. Wizards", "Bucks",
+                          "", "0xw", slug)
+
+    def test_market_kinds(self):
+        from pmbot.select import kind_of
+        self.assertEqual(kind_of("nba-mil-was-2026-10-21"), "moneyline")
+        self.assertEqual(kind_of("nba-mil-was-2026-10-21-total-229pt5"), "totals")
+        self.assertEqual(kind_of("nba-mil-was-2026-10-21-229pt5"), "totals")   # US naming
+        self.assertEqual(kind_of("lal-ray-ath-2026-10-10-ray"), "result")
+        self.assertEqual(kind_of("nba-mil-was-2026-10-21-spread-home-6pt5"), "")
+        self.assertEqual(kind_of("will-x-win-the-2026-world-series"), "")
+
+    def test_copies_like_copytop(self):
+        from pmbot.select import Rules, copies, stats
+        trades = [self.t(1_000_000, "BUY", 0.40),
+                  self.t(1_000_100, "BUY", 0.41),            # same outcome within 10 min
+                  self.t(1_000_700, "BUY", 0.42),
+                  self.t(1_001_400, "BUY", 0.43, size=5),    # leader bet under $5
+                  self.t(1_002_000, "BUY", 0.40, slug="nba-mil-was-2026-10-21-odd-even")]
+        lots = copies(trades, self.m, self.pairs, Rules())
+        self.assertEqual([(x["price"], x["qty"]) for x in lots], [(0.405, 24), (0.425, 23)])
+        s = stats(lots)                                       # both settle at 1.0
+        self.assertEqual((s["n"], s["won"]), (2, 2))
+        self.assertAlmostEqual(s["pnl"], (24 + 23) - lots[0]["cost"] - lots[1]["cost"], delta=0.01)
+        self.assertEqual(lots[0]["timing"], "pre-game")
+
+    def test_never_chases_and_caps_a_market(self):
+        from pmbot.select import Rules, copies
+        moved = lambda tok, ts: 0.43                           # price 3c higher at our delay
+        lots = copies([self.t(1_000_000, "BUY", 0.40)], self.m, self.pairs, Rules(), moved)
+        self.assertEqual(lots, [{"wallet": "0xw", "ts": 1_000_000, "skipped": "price_moved"}])
+        many = [self.t(1_000_000 + 700 * i, "BUY", 0.50) for i in range(8)]
+        lots = copies(many, self.m, self.pairs, Rules())
+        self.assertLessEqual(sum(x["qty"] * x["price"] for x in lots), 50)
+        self.assertEqual(len(lots), 6)               # five $10 copies, then the last $2
+
+    def test_their_sell_closes_ours_if_the_price_holds(self):
+        from pmbot.select import Rules, copies
+        trades = [self.t(1_000_000, "BUY", 0.40), self.t(1_100_000, "SELL", 0.60)]
+        lots = copies(trades, self.m, self.pairs, Rules())
+        self.assertEqual(lots[0]["exit"], "sell")
+        self.assertGreater(lots[0]["pnl"], 0)
+        held = copies(trades, self.m, self.pairs, Rules(copy_sells=False))
+        self.assertEqual(held[0]["exit"], "settle")
+
+    def test_pick_needs_enough_copies_and_a_positive_bound(self):
+        from pmbot.select import pick
+        win = {"pnl": 5.0, "cost": 5.0, "ts": 1, "price": 0.5}
+        lose = {"pnl": -5.0, "cost": 5.0, "ts": 1, "price": 0.5}
+        d = {"good": [win] * 12 + [lose] * 4, "few": [win] * 5, "bad": [win] * 8 + [lose] * 8}
+        self.assertEqual(pick(d, 10, 5), ["good"])
+
+
 class ShortSideTest(unittest.TestCase):
     def test_short_book_is_the_long_book_flipped(self):
         q = Quote(0.36, 0.37, 40, 100, 0.36, 5, 1.0).flipped()

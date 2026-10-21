@@ -32,6 +32,7 @@ class Market:
     # Taker fee per share = fee_rate * (p * (1 - p)) ** fee_exponent
     fee_rate: float = 0.0
     fee_exponent: float = 1.0
+    start_ts: int | None = None   # scheduled game start, for sports markets
 
     def taker_fee(self, price: float, shares: float) -> float:
         if self.fee_rate <= 0:
