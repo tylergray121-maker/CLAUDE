@@ -84,7 +84,10 @@ def _rois(lots, keep) -> list[float]:
 def build_plan(label: str, histories: dict[str, list[Trade]],
                markets: dict[str, Market], cfg: SimConfig, start_ts: int,
                end_ts: int, split_ts: int, min_buys: int = MIN_BETS,
-               ks=DEFAULT_KS, price_at=None) -> Plan:
+               ks=DEFAULT_KS, price_at=None,
+               validate_on: set[str] | None = None) -> Plan:
+    """``validate_on``: wallets eligible for validation (chosen without test
+    period data); defaults to all."""
     plan = Plan(label=label)
     flat = replace(cfg, fixed_stake=cfg.start_cash * cfg.base_pct, start_cash=1e12)
     span = split_ts - start_ts
@@ -102,7 +105,8 @@ def build_plan(label: str, histories: dict[str, list[Trade]],
     train = {w: BetStats.of(_rois(l, lambda e, s: e < split_ts and s is not None
                                   and s <= split_ts)) for w, l in lots.items()}
     test = {w: _rois(l, lambda e, s: e >= split_ts) for w, l in lots.items()}
-    qualified = [w for w, st in train.items() if st.n >= min_bets and st.roi > 0]
+    qualified = [w for w, st in train.items() if st.n >= min_bets and st.roi > 0
+                 and (validate_on is None or w in validate_on)]
     plan.candidates = len(qualified)
     if not qualified:
         plan.note = (f"No wallet had {min_bets}+ settled, profitable copyable bets "

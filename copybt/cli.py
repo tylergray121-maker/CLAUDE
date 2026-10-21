@@ -208,16 +208,25 @@ def main(argv=None) -> int:
         quick_recent[w] = simulate(trades, markets, cfg, end_ts - span, end_ts,
                                    end_ts - span // 2)
 
-    def promise(w):
-        a, b = quick[w], quick_recent[w]
-        sa = (a.train_return_pct - 0.5 * a.train_max_drawdown_pct
-              if a.buys_copied >= args.min_buys else -1e9)
-        sb = (b.return_pct - 0.5 * b.max_drawdown_pct
-              if b.buys_copied >= args.min_buys else -1e9)
-        return max(sa, sb)
+    # Two shortlists: one from the qualifying period only (the validation
+    # pool must not be chosen using the test period), one from the most
+    # recent window (for current picks).
+    def train_score(w):
+        a = quick[w]
+        return (a.train_return_pct - 0.5 * a.train_max_drawdown_pct
+                if a.buys_copied >= args.min_buys else -1e9)
 
-    shortlist = {w for w in sorted(to_run, key=promise, reverse=True)[:args.shortlist]
-                 if promise(w) > 0}
+    def recent_score(w):
+        b = quick_recent[w]
+        return (b.return_pct - 0.5 * b.max_drawdown_pct
+                if b.buys_copied >= args.min_buys else -1e9)
+
+    half = max(1, args.shortlist // 2)
+    shortlist_train = {w for w in sorted(to_run, key=train_score, reverse=True)[:half]
+                       if train_score(w) > 0}
+    shortlist_recent = {w for w in sorted(to_run, key=recent_score, reverse=True)[:half]
+                        if recent_score(w) > 0}
+    shortlist = shortlist_train | shortlist_recent
     if prices:
         log.info("re-simulating %d shortlisted wallets with a %ds copy delay",
                  len(shortlist), args.delay_seconds)
@@ -270,7 +279,8 @@ def main(argv=None) -> int:
     os.makedirs(args.out_dir, exist_ok=True)
     run_hist = {w: histories[w][0] for w in shortlist}
     plans = [build_plan("Plan A — all Polymarket markets", run_hist, markets, cfg,
-                        start_ts, end_ts, split_ts, args.min_buys, price_at=price_at)]
+                        start_ts, end_ts, split_ts, args.min_buys, price_at=price_at,
+                        validate_on=shortlist_train)]
     us_note = ""
     if not args.no_us:
         us_sample: list = []
@@ -293,7 +303,7 @@ def main(argv=None) -> int:
             plans.append(build_plan(
                 "Plan B — only markets also listed on Polymarket US (usable from New York)",
                 us_hist, markets, cfg, start_ts, end_ts, split_ts, args.min_buys,
-                price_at=price_at))
+                price_at=price_at, validate_on=shortlist_train))
         else:
             us_note = ("Could not load the Polymarket US market list, so no "
                        "New York-usable plan was produced.")
