@@ -23,11 +23,13 @@ from __future__ import annotations
 import json
 import logging
 import re
-from collections import Counter
+from collections import Counter, deque
+from statistics import median
 
 from copybt.api import DATA_API, HTTPError
 
 from .broker import SHORT, split_side
+from .data import fetch_parallel
 from .mapping import prices_agree
 from .strategies import Strategy
 from .strategy import MarketView, Order, StrategyConfig
@@ -89,17 +91,23 @@ class CopyTop(Strategy):
         self.status: dict[str, list] = {}          # leader -> [copying|cooling|benched, why]
         self.skipped: dict[str, str] = {}          # pattern key -> why it is skipped
         self._placing: dict[str, list[str]] = {}   # slug -> scorecard keys of the copy just sent
+        self._selling: dict[str, str] = {}         # slug -> wallet key whose copies are being sold
         self._next_form = 0.0
+        self.lags: deque = deque(maxlen=500)       # seconds from their trade to our order
 
     # -- signals ------------------------------------------------------------
-    def _new_trades(self, eng, wallet: str) -> list[dict]:
+    def _fetch(self, eng, wallet: str) -> list[dict] | None:
         try:
-            rows = eng.client.get(DATA_API, "/trades", {"user": wallet, "limit": 50,
+            return eng.client.get(DATA_API, "/trades", {"user": wallet, "limit": 50,
                                                         "takerOnly": "false"},
                                   use_cache=False) or []
         except HTTPError as e:
-            self.stats["poll_errors"] += 1
             log.debug("leader %s trades: %s", wallet, e)
+            return None
+
+    def _new_trades(self, wallet: str, rows: list[dict] | None) -> list[dict]:
+        if rows is None:
+            self.stats["poll_errors"] += 1
             return []
         rows = [r for r in rows if isinstance(r, dict) and r.get("timestamp")]
         newest = max((int(r["timestamp"]) for r in rows), default=0)
@@ -117,8 +125,11 @@ class CopyTop(Strategy):
             self._judge(eng)
             self._next_form = now + self.form_every_s
         index = eng.token_index()
-        for wallet, name in self.leaders.items():
-            for t in self._new_trades(eng, wallet):
+        wallets = list(self.leaders)
+        polled = fetch_parallel(lambda w: self._fetch(eng, w), wallets, workers=8)
+        for wallet, rows in zip(wallets, polled):
+            name = self.leaders[wallet]
+            for t in self._new_trades(wallet, rows):
                 self.stats["leader_trades"] += 1
                 slug = eng.us_for_trade(t, index)
                 if not slug:
@@ -155,6 +166,7 @@ class CopyTop(Strategy):
                     continue
                 self.pending[slug] = {"side": side, "price": price, "leader": name,
                                       "wallet": wallet, "at": now,
+                                      "trade_ts": int(t["timestamp"]),
                                       "leader_usd": round(price * size, 2),
                                       "league": league(str(t.get("slug") or ""))}
                 eng._log("copy_signal", slug=slug, side=side, leader=name, price=price,
@@ -208,18 +220,26 @@ class CopyTop(Strategy):
                 self.stats["copied_buys"] += 1
                 self.recent[(sig["wallet"], slug, "BUY")] = now
                 self._placing[slug] = keys
+                self.lags.append(now - sig.get("trade_ts", now))
                 out[slug] = [Order("BUY", limit, qty, post_only=False)]
             else:
                 held = eng.held(slug)
                 del self.pending[slug]
-                if held < 1 or v.us_bid is None:
+                # Only the contracts bought copying this wallet (all of them for a
+                # position from before the scorecard existed).
+                who = f"w:{sig['wallet']}"
+                mine = self.card.qty_for(slug, who) if self.card.lots.get(slug) else held
+                qty = min(held, mine, int(v.us_bid_qty or 0))
+                if qty < 1 or v.us_bid is None:
                     continue
                 floor = round(max(sig["price"] - self.max_slip, 0.01), 4)
                 if v.us_bid < floor:
                     self.stats["skip_exit_price"] += 1
                     continue
                 self.stats["copied_sells"] += 1
-                out[slug] = [Order("SELL", floor, min(held, int(v.us_bid_qty)), post_only=False)]
+                if self.card.lots.get(slug):
+                    self._selling[slug] = who
+                out[slug] = [Order("SELL", floor, qty, post_only=False)]
         return out
 
     # -- scoring ----------------------------------------------------------------
@@ -231,11 +251,15 @@ class CopyTop(Strategy):
                 continue
             if f.side == "BUY" and f.slug in self._placing:
                 self.card.open(f.slug, self._placing[f.slug], f.qty, f.price * f.qty + f.fee)
+            elif f.side == "SELL" and f.slug in self._selling:
+                self.card.close(f.slug, f.qty, f.price * f.qty - f.fee, self._selling[f.slug])
+                closed = True
             elif f.side in ("SELL", "SETTLE"):
                 fee = f.fee if f.side == "SELL" else 0.0
                 self.card.close(f.slug, f.qty, f.price * f.qty - fee)
                 closed = True
         self._placing.clear()
+        self._selling.clear()
         if closed:
             self._judge(eng)
 
@@ -312,7 +336,8 @@ class CopyTop(Strategy):
         by = lambda st: ", ".join(self.leaders[w] for w, (x, _) in self.status.items()
                                   if x == st and w in self.leaders)
         return {"copytop_benched": by("benched"), "copytop_cooling": by("cooling"),
-                "copytop_patterns_skipped": ", ".join(sorted(self.skipped))}
+                "copytop_patterns_skipped": ", ".join(sorted(self.skipped)),
+                "copytop_lag_median_s": round(median(self.lags), 1) if self.lags else None}
 
     def dashboard_rows(self) -> list[dict]:
         rows = []

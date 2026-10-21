@@ -221,20 +221,28 @@ class LiveBroker:
 
     Every order is a limit order: post-only GTC for quotes, IOC for takes,
     flagged as automatic. Positions, cash and open orders are re-read from
-    the exchange on every ``sync()``.
+    the exchange on every ``sync()``. Takes execute synchronously and their
+    executions are recorded as fills, like the paper broker's, so strategies
+    can score them. A position that disappears without the bot selling it
+    is listed in ``vanished`` until the engine records its settlement.
     """
 
-    def __init__(self, key_id: str, secret_key: str, state_file: str = "live_orders.json"):
-        try:
-            from polymarket_us import PolymarketUS
-        except ImportError as e:  # pragma: no cover
-            raise SystemExit("live trading needs: pip install polymarket-us") from e
-        self.client = PolymarketUS(key_id=key_id, secret_key=secret_key)
+    def __init__(self, key_id: str, secret_key: str, state_file: str = "live_orders.json",
+                 client=None):
+        if client is None:
+            try:
+                from polymarket_us import PolymarketUS
+            except ImportError as e:  # pragma: no cover
+                raise SystemExit("live trading needs: pip install polymarket-us") from e
+            client = PolymarketUS(key_id=key_id, secret_key=secret_key)
+        self.client = client
         self.cash = 0.0
         self.positions: dict[str, Position] = {}
         self.open_orders: dict[str, OpenOrder] = {}
         self.fills: list[Fill] = []
-        self.fees_paid = self.rebates = 0.0
+        self.fees_paid = self.rebates = self.realized = 0.0
+        self.vanished: dict[str, Position] = {}
+        self._held: dict[str, Position] | None = None  # positions as of the last sync
         # Only orders this bot created are ever managed or cancelled; manual
         # orders on the account are left alone. Persisted across restarts.
         self.state_file = state_file
@@ -268,6 +276,11 @@ class LiveBroker:
             cursor = resp.get("nextCursor")
             if resp.get("eof", True) or not cursor:
                 break
+        if self._held is not None:
+            for slug, p in self._held.items():
+                if slug not in self.positions:
+                    self.vanished[slug] = p
+        self._remember()
         self.open_orders = {}
         live_ids = set()
         for o in self.client.orders.list().get("orders", []):
@@ -287,10 +300,31 @@ class LiveBroker:
             self.mine &= live_ids
             self._save()
 
+    def _remember(self) -> None:
+        self._held = {k: Position(v.qty, v.cost) for k, v in self.positions.items()}
+
+    def to_state(self, keep_fills: int = 2000) -> dict:
+        return {"fills": [asdict(f) for f in self.fills[-keep_fills:]],
+                "fees_paid": self.fees_paid, "realized": self.realized,
+                "held": {k: asdict(v) for k, v in (self._held or {}).items()},
+                "vanished": {k: asdict(v) for k, v in self.vanished.items()}}
+
+    def load_state(self, d: dict) -> None:
+        self.fills = [Fill(**f) for f in d.get("fills", [])]
+        self.fees_paid = float(d.get("fees_paid", 0))
+        self.realized = float(d.get("realized", 0))
+        self._held = {k: Position(**v) for k, v in d.get("held", {}).items()}
+        self.vanished = {k: Position(**v) for k, v in d.get("vanished", {}).items()}
+
     def place(self, slug: str, order: Order, quote: Quote | None = None) -> str | None:
-        resp = self.client.orders.create(order_params(slug, order))
+        params = order_params(slug, order)
+        if not order.post_only:
+            params["synchronousExecution"] = True  # executions come back in the response
+        resp = self.client.orders.create(params) or {}
         log.info("live %s %s %d @ %.3f -> %s", order.side, slug, order.qty,
                  order.price, resp.get("id"))
+        if not order.post_only:
+            self._record(slug, order, resp.get("executions") or [])
         oid = resp.get("id")
         if order.post_only and oid:
             self.mine.add(oid)
@@ -316,8 +350,59 @@ class LiveBroker:
     def observe(self, slug: str, q: Quote) -> None:
         pass
 
-    def settle(self, slug: str, value: float) -> None:
-        pass  # the exchange settles; sync() picks it up
+    def _record(self, slug: str, order: Order, executions: list) -> None:
+        """Book an IOC take's executions as one fill at their average price."""
+        short = split_side(slug)[1]
+        qty = notional = fee = 0.0
+        for x in executions:
+            try:
+                q = float(x.get("lastShares") or 0)
+            except (TypeError, ValueError):
+                q = 0.0
+            if q <= 0:
+                continue
+            px = _amount(x.get("lastPx"))
+            if short:
+                # Prices are quoted for the long side; read it whichever way
+                # respects our limit, in case the exchange reports the short's.
+                flipped = 1.0 - px
+                ok = flipped <= order.price + 1e-6 if order.side == "BUY" \
+                    else flipped >= order.price - 1e-6
+                px = flipped if ok else px
+            qty += q
+            notional += q * px
+            fee += _amount(x.get("commissionNotionalCollected"))
+        n = int(round(qty))
+        if n <= 0:
+            return
+        avg = notional / qty
+        p = self.positions.setdefault(slug, Position())
+        pnl = 0.0
+        if order.side == "BUY":
+            p.qty += n
+            p.cost += avg * n + fee
+        else:
+            sold = min(n, p.qty)
+            basis = p.cost / p.qty * sold if p.qty else 0.0
+            pnl = avg * n - fee - basis
+            p.qty -= sold
+            p.cost -= basis
+            self.realized += pnl
+        if p.qty <= 0:
+            self.positions.pop(slug, None)
+        self._remember()  # the bot's own sale is not a vanished position
+        self.fees_paid += fee
+        self.fills.append(Fill(time.time(), slug, order.side, round(avg, 4), n, False,
+                               round(fee, 4), order.tag, round(pnl, 4)))
+
+    def settle(self, slug: str, value: float, tag: str = "") -> None:
+        """Record the payout of a position the exchange settled (``vanished``)."""
+        p = self.vanished.pop(slug, None)
+        if p and p.qty:
+            pnl = p.qty * value - p.cost
+            self.realized += pnl
+            self.fills.append(Fill(time.time(), slug, "SETTLE", value, p.qty, False, 0.0,
+                                   tag, round(pnl, 4)))
 
     def equity(self, marks: dict[str, float]) -> float:
         return self.cash + sum(p.qty * marks.get(s, p.cost / p.qty if p.qty else 0)

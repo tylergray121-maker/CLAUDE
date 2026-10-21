@@ -80,8 +80,10 @@ class Engine:
         self._stop = False
         os.makedirs(ecfg.out_dir, exist_ok=True)
         self._events = open(os.path.join(ecfg.out_dir, "events.jsonl"), "a")
-        if ecfg.resume and ecfg.mode == "paper":
+        if ecfg.resume and ecfg.mode in ("paper", "live"):
             self._load_state()
+        if ecfg.mode == "live" and not self.equity_hist:
+            self.start_cash = self.broker.equity({})  # the real account's value at the start
 
     # -- setup --------------------------------------------------------------
     def refresh_pairs(self) -> None:
@@ -185,7 +187,8 @@ class Engine:
         now = time.time()
         n_fills = len(self.broker.fills)
         by_slug = {p.us_slug: p for p in self.pairs}
-        slugs = set(by_slug) | set(self.broker.positions)  # always watch holdings
+        # Always watch holdings, and (live) positions that just disappeared.
+        slugs = set(by_slug) | set(self.broker.positions) | set(getattr(self.broker, "vanished", {}))
         for strat in self.strategies:
             slugs |= strat.watch(self, now)
         slugs = sorted(slugs)
@@ -247,7 +250,7 @@ class Engine:
         if now >= self._next_equity:
             self.equity_hist.append([int(now), round(eq, 2), round(self.broker.cash, 2)])
             self._next_equity = now + self.ecfg.equity_seconds
-        if self.ecfg.mode == "paper" and now >= self._next_snapshot:
+        if self.ecfg.mode in ("paper", "live") and now >= self._next_snapshot:
             self.save_state()
             self.write_dashboard(eq)
             self._next_snapshot = now + self.ecfg.snapshot_seconds
@@ -369,9 +372,9 @@ class Engine:
         list after its scheduled end) is settled, at a final value of 0..1:
         the book's daily `settlementPx` mark is not a payout.
         """
-        if not isinstance(self.broker, PaperBroker):
-            return
-        for slug in list(self.broker.positions):
+        live = not isinstance(self.broker, PaperBroker)
+        # Live, the exchange pays out; positions it settled show up as vanished.
+        for slug in list(getattr(self.broker, "vanished", {}) if live else self.broker.positions):
             m = self.markets.get(split_side(slug)[0])
             end = m.end if m else self.ends.get(slug)
             closed = (self.states.get(slug) in self.CLOSED_STATES
@@ -389,10 +392,8 @@ class Engine:
         return os.path.join(self.ecfg.out_dir, "state.json")
 
     def save_state(self) -> None:
-        if not isinstance(self.broker, PaperBroker):
-            return
         r = self.risk
-        state = {"version": 1, "saved": time.time(), "started": self.started,
+        state = {"version": 1, "saved": time.time(), "started": self.started, "mode": self.ecfg.mode,
                  "start_cash": self.start_cash, "broker": self.broker.to_state(),
                  "owner": self.owner, "labels": {k: v for k, v in self.labels.items()
                                                  if k in self.broker.positions or k in self.owner
@@ -420,7 +421,14 @@ class Engine:
         except (OSError, ValueError):
             log.info("no saved paper account: starting with $%.2f", self.risk.cfg.bankroll)
             return
-        self.broker = PaperBroker.from_state(st["broker"])
+        if st.get("mode", "paper") != self.ecfg.mode:
+            log.warning("saved state is from a %s run; not resuming it in %s mode",
+                        st.get("mode", "paper"), self.ecfg.mode)
+            return
+        if isinstance(self.broker, PaperBroker):
+            self.broker = PaperBroker.from_state(st["broker"])
+        else:
+            self.broker.load_state(st["broker"])
         self.started = st.get("started", self.started)
         self.start_cash = st.get("start_cash", self.start_cash)
         self.owner = st.get("owner", {})
@@ -481,7 +489,8 @@ class Engine:
         gaps = sorted(abs(g) for g in s.gaps)
         pct = lambda q: round(100 * gaps[min(len(gaps) - 1, int(q * len(gaps)))], 2) if gaps else None
         rows = [{
-            "kind": "summary", "updated": iso(time.time()), "started": iso(self.started),
+            "kind": "summary", "mode": self.ecfg.mode, "updated": iso(time.time()),
+            "started": iso(self.started),
             "start_cash": round(self.start_cash, 2), "equity": round(equity, 2),
             "pnl": round(equity - self.start_cash, 2),
             "pnl_pct": round((equity / self.start_cash - 1), 5) if self.start_cash else 0,
@@ -566,7 +575,7 @@ class Engine:
         finally:
             eq = self.broker.equity(self.marks)
             self._summary(eq)
-            if self.ecfg.mode == "paper":
+            if self.ecfg.mode in ("paper", "live"):
                 self.save_state()
                 self.write_dashboard(eq)
             self._write_report()

@@ -769,6 +769,26 @@ class CopyTopTest(unittest.TestCase):
         self.assertEqual(again.status[self.LEADER], ["cooling", "x"])
         e2._events.close()
 
+    def test_a_wallets_sell_only_closes_the_copies_of_that_wallet(self):
+        other = "0x" + "2" * 40
+        self.copy.leaders[other] = "theowalcott"
+        self.e.cycle()
+        self.trade("BUY", 0.62)                      # primm: 16 contracts
+        self.e.cycle()
+        self.n += 1
+        self.v.leader_trades.append({"proxyWallet": other, "side": "BUY", "asset": "tokY",
+                                     "price": 0.62, "size": 100, "timestamp": 1_000 + self.n,
+                                     "title": "Brewers", "transactionHash": "0xother"})
+        self.e.cycle()                               # theowalcott: 16 more
+        self.assertEqual(self.e.held("brewers"), 32)
+        self.trade("SELL", 0.61)                     # primm exits
+        self.e.cycle()
+        self.assertEqual(self.e.held("brewers"), 16)
+        self.assertEqual(self.copy.copied_from("brewers"), "theowalcott")
+        self.assertEqual(self.copy.card.summary(f"w:{self.LEADER}")["settled"], 1)
+        self.assertEqual(self.copy.card.summary(f"w:{other}")["settled"], 0)
+        self.assertIsNotNone(self.copy.summary()["copytop_lag_median_s"])
+
     def test_unmapped_trades_are_counted_not_copied(self):
         self.e.cycle()
         self.trade("BUY", 0.5, asset="not-on-us")
@@ -888,6 +908,8 @@ class LiveBrokerTest(unittest.TestCase):
         self.requests = []
         self.open = [{"id": "manual-1", "marketSlug": "brewers", "side": "ORDER_SIDE_BUY",
                       "price": {"value": "0.40", "currency": "USD"}, "leavesQuantity": 5}]
+        self.pos = {"brewers": {"netPosition": "8", "cost": {"value": "4.80", "currency": "USD"}}}
+        self.execs = []
 
         def handler(req):
             body = json.loads(req.content) if req.content else None
@@ -897,13 +919,11 @@ class LiveBrokerTest(unittest.TestCase):
                 return httpx.Response(200, json={"balances": [
                     {"currentBalance": 200.0, "buyingPower": 150.0, "currency": "USD"}]})
             if p == "/v1/portfolio/positions":
-                return httpx.Response(200, json={"positions": {"brewers": {
-                    "netPosition": "8", "cost": {"value": "4.80", "currency": "USD"}}},
-                    "eof": True})
+                return httpx.Response(200, json={"positions": self.pos, "eof": True})
             if p == "/v1/orders/open":
                 return httpx.Response(200, json={"orders": self.open})
             if p == "/v1/orders":
-                return httpx.Response(200, json={"id": "bot-1", "executions": []})
+                return httpx.Response(200, json={"id": "bot-1", "executions": self.execs})
             if p == "/v1/order/preview":
                 return httpx.Response(200, json={"order": {"state": "ORDER_STATE_NEW"}})
             if p.endswith("/cancel"):
@@ -957,6 +977,47 @@ class LiveBrokerTest(unittest.TestCase):
         self.assertEqual(body["request"]["marketSlug"], "brewers")
         self.assertIn("x-pm-signature", headers)
         self.assertEqual((ok, c.stats["accepted"]), (True, 1))
+
+    def test_a_short_side_take_is_booked_from_its_executions(self):
+        self.execs = [{"lastShares": "10", "lastPx": {"value": "0.37", "currency": "USD"},
+                       "commissionNotionalCollected": {"value": "0.17", "currency": "USD"}},
+                      {"lastShares": "5", "lastPx": {"value": "0.36", "currency": "USD"},
+                       "commissionNotionalCollected": {"value": "0.08", "currency": "USD"}}]
+        self.b.place("aec-nba-mil-was-2026-10-21:short", Order("BUY", 0.65, 15, False, tag="copytop"))
+        body = self.requests[-1][2]
+        self.assertEqual((body["marketSlug"], body["intent"], body["price"]["value"],
+                          body["synchronousExecution"]),
+                         ("aec-nba-mil-was-2026-10-21", "ORDER_INTENT_BUY_SHORT", "0.350", True))
+        f = self.b.fills[-1]
+        self.assertEqual((f.side, f.qty, f.tag, f.fee), ("BUY", 15, "copytop", 0.25))
+        self.assertAlmostEqual(f.price, (10 * 0.63 + 5 * 0.64) / 15, places=4)   # Wizards' price
+        self.assertEqual(self.b.positions["aec-nba-mil-was-2026-10-21:short"].qty, 15)
+
+    def test_a_settled_position_is_paid_once_and_our_own_sale_is_not_a_settlement(self):
+        self.b.sync()
+        self.pos = {}                                  # the exchange settled it
+        self.b.sync()
+        self.assertEqual(list(self.b.vanished), ["brewers"])
+        self.b.settle("brewers", 1.0, "copytop")
+        f = self.b.fills[-1]
+        self.assertEqual((f.side, f.qty, f.price, f.pnl), ("SETTLE", 8, 1.0, 3.2))
+        self.assertEqual(self.b.vanished, {})
+        # Sold by the bot: gone from the exchange too, but not "vanished".
+        self.pos = {"brewers": {"netPosition": "8", "cost": {"value": "4.80", "currency": "USD"}}}
+        self.b.sync()
+        self.execs = [{"lastShares": "8", "lastPx": {"value": "0.70", "currency": "USD"},
+                       "commissionNotionalCollected": {"value": "0.12", "currency": "USD"}}]
+        self.b.place("brewers", Order("SELL", 0.69, 8, False))
+        self.assertAlmostEqual(self.b.fills[-1].pnl, 0.7 * 8 - 0.12 - 4.80, places=4)
+        self.pos = {}
+        self.b.sync()
+        self.assertEqual(self.b.vanished, {})
+        st = self.b.to_state()
+        from pmbot.broker import LiveBroker
+        again = LiveBroker("key-id", self.b.client.secret_key, os.path.join(self.dir, "o.json"),
+                           client=self.b.client)
+        again.load_state(st)
+        self.assertEqual(len(again.fills), len(self.b.fills))
 
     def test_take_is_ioc_and_sell_closes_long(self):
         self.b.place("brewers", Order("SELL", 0.7, 3, False))

@@ -48,13 +48,16 @@ class Scorecard:
         for k in keys:
             self.copies[k] += 1
 
-    def close(self, slug: str, qty: int, proceeds: float) -> None:
-        """``qty`` contracts of ``slug`` sold or settled for ``proceeds`` in total."""
+    def close(self, slug: str, qty: int, proceeds: float, key: str | None = None) -> None:
+        """``qty`` contracts of ``slug`` sold or settled for ``proceeds`` in total,
+        out of the lots carrying ``key`` (any lot if None), oldest first."""
         lots = self.lots.get(slug, [])
         per = proceeds / qty if qty else 0.0
         left = qty
-        while left > 0 and lots:
-            lot = lots[0]
+        while left > 0:
+            lot = next((l for l in lots if key is None or key in l["keys"]), None)
+            if lot is None:
+                break
             take = min(left, lot["qty"])
             cost = lot["cost"] * take / lot["qty"]
             for k in lot["keys"]:
@@ -65,7 +68,7 @@ class Scorecard:
             lot["cost"] -= cost
             left -= take
             if lot["qty"] <= 0:
-                lots.pop(0)
+                lots.remove(lot)
         if not lots:
             self.lots.pop(slug, None)
 
@@ -73,6 +76,9 @@ class Scorecard:
         return {**summarize(self.results.get(key, [])), "copies": self.copies[key],
                 "open_usd": round(sum(l["cost"] for ls in self.lots.values() for l in ls
                                       if key in l["keys"]), 2)}
+
+    def qty_for(self, slug: str, key: str) -> int:
+        return sum(l["qty"] for l in self.lots.get(slug, []) if key in l["keys"])
 
     def keys_for(self, slug: str) -> list[str]:
         return [k for l in self.lots.get(slug, []) for k in l["keys"]]
