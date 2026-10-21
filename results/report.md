@@ -3,25 +3,27 @@
 Window 2026-07-23 → 2026-10-21 (90 days); qualify until 2026-09-21, test after.
 Bankroll $200; 5% of equity per typical leader buy (scaled by leader conviction 0.25–3.0x), max 20% per trade, 35% per market; slippage 1.0¢/fill, market taker fees + 0 bps, min order $1, copy delay 30s (shortlist), never more than the leader's own trade size.
 
-Wallets examined: 1500; simulated: 666; flagged as hard to copy: 558; eligible for ranking: 23.
+Universe: volume leaderboards only. Wallets examined: 1218; simulated: 439; flagged as hard to copy: 603; eligible for ranking: 28.
 
-Polymarket US lists 36697 markets; 494 of 96677 copyable trades (1%) were in markets matched to it (65 distinct markets).
+Polymarket US: 37000 market questions, 24711 game-days; 719 of 115219 copyable trades (1%) were in markets matched to it (37 distinct markets).
 
-Copy delay: 332175 of 332175 simulated fills (100%) were priced from market history 30s after the leader; the rest fell back to the leader's price.
+Copy delay: 380407 of 380407 simulated fills (100%) were priced from market history 30s after the leader; the rest fell back to the leader's price.
 
 ## Plan A — all Polymarket markets
 
-23 wallets qualified (profitable in the qualifying period, enough copyable buys). Typical qualified wallet in the test period: +43.1% (median); 61% of them made money.
+28 wallets qualified (profitable in the qualifying period, enough copyable buys). Typical qualified wallet in the test period: -6.2% (median); 36% of them made money.
 
 **Validation — wallets chosen using the qualifying period only, scored on the test period:**
 
 | copy top K together | test return | test max DD | buys copied |
 |---|---|---|---|
-| 1 | +78.2% | 31.9% | 812 |
-| 2 | -22.9% | 57.9% | 1405 |
-| 3 | +65.3% | 48.0% | 3320 |
-| 5 | +23.1% | 36.9% | 5363 |
-| 8 | +17.2% | 20.4% | 6225 |
+| 1 | +4250.8% | 27.5% | 1338 |
+| 2 | +1880.3% | 37.7% | 1592 |
+| 3 | +1140.5% | 34.2% | 1929 |
+| 5 | +1015.6% | 39.8% | 2368 |
+| 8 | +303.3% | 31.4% | 5993 |
+
+Median across portfolio sizes: +1140.5% vs -6.2% for a random qualified wallet.
 
 **Verdict: the method held up out of sample; best with K = 1.**
 
@@ -29,37 +31,21 @@ Copy delay: 332175 of 332175 simulated fills (100%) were priced from market hist
 
 | wallet | recent return | max DD | buys | markets | win rate |
 |---|---|---|---|---|---|
-| `0xe5241830e8876c115d7dc8311ad9f43d85fdd34f` | +7005.8% | 79.2% | 1326 | 258 | 63% |
+| `0x91e67d77b45558ce69238bf8a79e2e902b1ee9c5` | +849.9% | 51.8% | 92 | 40 | 78% |
 
-Copied together over that window: $200 → $14211.52 (+7005.8%), max drawdown 79.2%. This is in-sample — the validation table is the honest estimate.
+Copied together over that window: $200 → $1899.84 (+849.9%), max drawdown 51.8%. This is in-sample — the validation table is the honest estimate.
 
 ## Plan B — only markets also listed on Polymarket US (usable from New York)
 
-1 wallets qualified (profitable in the qualifying period, enough copyable buys). Typical qualified wallet in the test period: -10.5% (median); 0% of them made money.
-
-**Validation — wallets chosen using the qualifying period only, scored on the test period:**
-
-| copy top K together | test return | test max DD | buys copied |
-|---|---|---|---|
-| 1 | -10.5% | 71.5% | 88 |
-
-**Verdict: no edge.** Picking wallets by past results did not beat chance out of sample after fees and slippage, so this backtest gives no reason to copy any of these wallets.
-
-**What the method would pick now (not recommended — see verdict)** — ranked on 2026-08-21 onward, each copy sized 5.0% of equity per typical leader buy:
-
-| wallet | recent return | max DD | buys | markets | win rate |
-|---|---|---|---|---|---|
-| `0x20d6436849f930584892730c7f96ebb2ac763856` | +466.5% | 17.1% | 49 | 14 | 56% |
-
-Copied together over that window: $200 → $1132.94 (+466.5%), max drawdown 17.1%. This is in-sample — the validation table is the honest estimate.
+No wallet was profitable in the qualifying period with enough copyable buys.
 
 ## Best single wallets (ranked with hindsight)
 
 **0x20d6436849f930584892730c7f96ebb2ac763856** (0x20D6436849F930584892730C7F96eBB2Ac763856-1768642056357)
 
-- $200 → $190408.59 over the window (+95104.3%), max drawdown 63.2%
-- Qualifying period +2088.0%, out-of-sample test +4251.2%
-- At double slippage: +55785.3%
+- $200 → $190393.26 over the window (+95096.6%), max drawdown 63.2%
+- Qualifying period +2088.0%, out-of-sample test +4250.8%
+- At double slippage: +55777.9%
 - 1338 buys / 112 sells copied across 186 markets, win rate 49%
 - Leader: 22.3 trades/day, median trade $22, avg buy price 37¢
 
@@ -67,21 +53,21 @@ Copied together over that window: $200 → $1132.94 (+466.5%), max drawdown 17.1
 
 | # | wallet | name | return | test | max DD | 2x slip | buys | win |
 |---|---|---|---|---|---|---|---|---|
-| 1 | `0x20d6436849f930584892730c7f96ebb2ac763856` | 0x20D6436849F9305848 | +95104.3% | +4251.2% | 63.2% | +55785.3% | 1338 | 49% |
-| 2 | `0x73e35ce0b7e36ef3ce29ebd12b30b28007383239` | Stonktrader | +661.8% | +645.8% | 73.4% | +325.9% | 116 | 61% |
-| 3 | `0x1a80db0b051af4c1a10cbaad4d35df5d71ea6b2b` | arshobing | +1551.4% | +357.1% | 72.0% | +637.0% | 128 | 43% |
-| 4 | `0x0d23fc6838433dbff11e4667ef5991e9dd9d2d56` | tiger105 | +171.9% | +150.8% | 37.6% | +114.1% | 146 | 63% |
-| 5 | `0xd8860bbbdf24d02b74d875b2d987986f62b96f88` | btystu | +376.7% | +92.3% | 2.1% | +350.4% | 31 | 100% |
-| 6 | `0x80d5aebbe7a714879177e4dae0014195beb3987e` | 0x80d5aebbE7a7148791 | +274.3% | +78.3% | 6.2% | +261.3% | 27 | 100% |
-| 7 | `0xbc1dacd4b84582fc310e4213421bca24e82da53c` | Fvalp | +117.9% | +102.5% | 65.7% | +130.6% | 317 | 57% |
-| 8 | `0xe5d29f2276769fd3574bbaa846a563b6c8a0776e` | Koliniko | +821.1% | +76.1% | 29.5% | +767.0% | 42 | 100% |
-| 9 | `0x95c6c9a6727ed203e97230dda61ab19a020e1508` | DelidelaDele | +151.9% | +99.8% | 94.6% | +123.8% | 297 | 58% |
-| 10 | `0xc49fe658479db29e1a2fefebf0735f657dca9e05` | jizzbucket57 | +31837.8% | +78.2% | 55.4% | +23584.4% | 812 | 66% |
-| 11 | `0x03e8a544e97eeff5753bc1e90d46e5ef22af1697` | weflyhigh | +216.3% | +53.0% | 11.2% | +203.7% | 44 | 67% |
-| 12 | `0x1ee9a5fc09665909c0cce297c581703bfbb9197f` | vinii | +121.3% | +32.7% | 23.6% | +97.1% | 111 | 51% |
-| 13 | `0x14494e6733e86a05888610dfabf3c98eeffea618` | SadSquid54333 | +909.0% | +43.1% | 44.7% | +557.2% | 182 | 64% |
-| 14 | `0xadaf1c42e0a88e2942e7adfe559e30c1796bf9f2` | gesst | +46.5% | +13.9% | 14.8% | +16.3% | 70 | 44% |
-| 15 | `0xc9a24fa249cf907c598544a4d46c077c1edf77d3` | 0x7A3f9C2D8b41E6a570 | +663.9% | +0.0% | 36.5% | +584.4% | 90 | 77% |
+| 1 | `0x20d6436849f930584892730c7f96ebb2ac763856` | 0x20D6436849F9305848 | +95096.6% | +4250.8% | 63.2% | +55777.9% | 1338 | 49% |
+| 2 | `0x03e8a544e97eeff5753bc1e90d46e5ef22af1697` | weflyhigh | +216.3% | +53.0% | 11.2% | +203.7% | 44 | 67% |
+| 3 | `0x7cf93583951552553bc0d243a8582a3410ed2798` | MysticFind | +64.6% | +47.7% | 30.8% | +21.6% | 85 | 44% |
+| 4 | `0xf2f6af4f27ec2dcf4072095ab804016e14cd5817` | gopfan2 | +42.4% | +33.3% | 4.0% | +25.9% | 35 | 55% |
+| 5 | `0x14494e6733e86a05888610dfabf3c98eeffea618` | SadSquid54333 | +909.0% | +43.1% | 44.7% | +557.2% | 182 | 64% |
+| 6 | `0x88c4919de76e526d55a32c1f8afb439dd1f1129a` | Votei14Voude22 | +67.1% | +9.3% | 7.9% | +49.6% | 173 | 73% |
+| 7 | `0x16da8936832021a431a3df43d77721b5a8e981b7` | 534312 | +67.5% | +25.9% | 45.5% | +131.2% | 110 | 82% |
+| 8 | `0x9106cf79b02f85d8f1e546802ed916648f44afcb` | su281 | +44.4% | +17.1% | 33.5% | +86.5% | 147 | 82% |
+| 9 | `0x07046535ff9a910d7343a2c319a3e62234621858` | HH168 | +15.8% | +0.8% | 1.6% | +13.9% | 37 | 75% |
+| 10 | `0xc6dd722558dbfbd8fa780efcbe819ed8c6604b9f` | tourists | +20.8% | -5.7% | 15.3% | +6.6% | 76 | 67% |
+| 11 | `0xfea31bc088000ff909be1dfd8d0e3f2c7ef2d227` | ndb1 | +9.9% | -6.6% | 13.7% | -0.6% | 85 | 40% |
+| 12 | `0x986aaa6c11a36f1ddc0deefbd4ab52279be3e7c7` | SGBEER | +19.1% | -7.1% | 24.5% | +5.0% | 64 | 50% |
+| 13 | `0x944e0472b99926f4f712fc97dc0a846a8c5d8c94` | mountaindewd | +30.6% | +1.6% | 45.1% | +15.8% | 65 | 55% |
+| 14 | `0xf1236fe4389007cd730d2eaff0d7df90917972e4` | Artimis | -7.1% | -13.7% | 18.0% | -18.1% | 66 | 65% |
+| 15 | `0xca8f0374e3fc79b485499cc0b038d4f7e783d963` | ScottVan | +75.8% | -0.2% | 48.4% | +42.1% | 218 | 48% |
 
 Score = out-of-sample return − 0.5 × max drawdown. Full table in `ranking.csv`; daily equity for the top 10 in `top_equity_curves.csv`.
 
