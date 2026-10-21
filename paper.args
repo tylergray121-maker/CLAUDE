@@ -1,1 +1,1 @@
---bankroll 500 --order-usd 10 --max-market-usd 50 --max-total-usd 375 --daily-loss-limit 75 --maker-edge 0.01 --taker-edge 0.03 --strategies sportsgameday,fairvalue --cycle-seconds 20 --max-markets 120 --max-rps 10
+--bankroll 500 --order-usd 10 --max-market-usd 50 --max-total-usd 375 --daily-loss-limit 75 --strategies copytop --cycle-seconds 20 --max-markets 120 --max-rps 10
