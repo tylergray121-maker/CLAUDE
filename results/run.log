@@ -1,40 +1,145 @@
-22:58:07 INFO leaderboard OVERALL/DAY/PNL: 500 wallets
-22:58:08 INFO leaderboard OVERALL/DAY/VOL: 500 wallets
-22:58:09 INFO leaderboard OVERALL/WEEK/PNL: 500 wallets
-22:58:11 INFO leaderboard OVERALL/WEEK/VOL: 500 wallets
-22:58:12 INFO leaderboard OVERALL/MONTH/PNL: 500 wallets
-22:58:13 INFO leaderboard OVERALL/MONTH/VOL: 500 wallets
-22:58:15 INFO leaderboard OVERALL/ALL/PNL: 500 wallets
-22:58:16 INFO leaderboard OVERALL/ALL/VOL: 500 wallets
-22:58:16 INFO backtesting 1500 wallets over 90 days
-23:00:27 INFO fetched 50/1500 wallets (1115 requests)
-23:02:36 INFO fetched 100/1500 wallets (2090 requests)
-23:04:18 INFO fetched 150/1500 wallets (2882 requests)
-23:06:12 INFO fetched 200/1500 wallets (3752 requests)
-23:07:56 INFO fetched 250/1500 wallets (4561 requests)
-23:10:05 INFO fetched 300/1500 wallets (5543 requests)
-23:12:03 INFO fetched 350/1500 wallets (6425 requests)
-23:13:55 INFO fetched 400/1500 wallets (7295 requests)
-23:15:43 INFO fetched 450/1500 wallets (8130 requests)
-23:17:07 INFO fetched 500/1500 wallets (8791 requests)
-23:18:35 INFO fetched 550/1500 wallets (9476 requests)
-23:20:19 INFO fetched 600/1500 wallets (10302 requests)
-23:21:45 INFO fetched 650/1500 wallets (10988 requests)
-23:23:16 INFO fetched 700/1500 wallets (11693 requests)
-23:24:47 INFO fetched 750/1500 wallets (12418 requests)
-23:26:06 INFO fetched 800/1500 wallets (13049 requests)
-23:27:22 INFO fetched 850/1500 wallets (13650 requests)
-23:28:47 INFO fetched 900/1500 wallets (14313 requests)
-23:30:10 INFO fetched 950/1500 wallets (14972 requests)
-23:31:21 INFO fetched 1000/1500 wallets (15523 requests)
-23:32:26 INFO fetched 1050/1500 wallets (16045 requests)
-23:33:48 INFO fetched 1100/1500 wallets (16693 requests)
-23:34:49 INFO fetched 1150/1500 wallets (17183 requests)
-23:36:41 INFO fetched 1200/1500 wallets (18052 requests)
-23:38:04 INFO fetched 1250/1500 wallets (18713 requests)
-23:39:16 INFO fetched 1300/1500 wallets (19289 requests)
-23:40:21 INFO fetched 1350/1500 wallets (19800 requests)
-23:41:54 INFO fetched 1400/1500 wallets (20542 requests)
-23:43:04 INFO fetched 1450/1500 wallets (21089 requests)
-23:44:34 INFO fetched 1500/1500 wallets (21764 requests)
-23:44:48 INFO resolving 197660 markets
+01:00:29 INFO leaderboard OVERALL/DAY/PNL: 500 wallets
+01:00:29 INFO leaderboard OVERALL/DAY/VOL: 0 wallets
+01:00:30 INFO leaderboard OVERALL/WEEK/PNL: 500 wallets
+01:00:31 INFO leaderboard OVERALL/WEEK/VOL: 500 wallets
+01:00:32 INFO leaderboard OVERALL/MONTH/PNL: 500 wallets
+01:00:33 INFO leaderboard OVERALL/MONTH/VOL: 500 wallets
+01:00:34 INFO leaderboard OVERALL/ALL/PNL: 500 wallets
+01:00:34 INFO leaderboard OVERALL/ALL/VOL: 500 wallets
+01:00:34 INFO backtesting 1500 wallets over 90 days
+01:01:57 INFO fetched 50/1500 wallets (1062 requests)
+01:03:22 INFO fetched 100/1500 wallets (2076 requests)
+01:04:23 INFO fetched 150/1500 wallets (2808 requests)
+01:05:25 INFO fetched 200/1500 wallets (3549 requests)
+01:06:52 INFO fetched 250/1500 wallets (4583 requests)
+01:08:09 INFO fetched 300/1500 wallets (5504 requests)
+01:09:24 INFO fetched 350/1500 wallets (6397 requests)
+01:10:22 INFO fetched 400/1500 wallets (7098 requests)
+01:11:33 INFO fetched 450/1500 wallets (7937 requests)
+01:12:21 INFO fetched 500/1500 wallets (8506 requests)
+01:13:34 INFO fetched 550/1500 wallets (9357 requests)
+01:14:42 INFO fetched 600/1500 wallets (10179 requests)
+01:15:43 INFO fetched 650/1500 wallets (10914 requests)
+01:16:46 INFO fetched 700/1500 wallets (11650 requests)
+01:17:34 INFO fetched 750/1500 wallets (12221 requests)
+01:18:21 INFO fetched 800/1500 wallets (12781 requests)
+01:19:18 INFO fetched 850/1500 wallets (13462 requests)
+01:20:06 INFO fetched 900/1500 wallets (14017 requests)
+01:20:55 INFO fetched 950/1500 wallets (14600 requests)
+01:21:37 INFO fetched 1000/1500 wallets (15111 requests)
+01:22:40 INFO fetched 1050/1500 wallets (15856 requests)
+01:23:33 INFO fetched 1100/1500 wallets (16500 requests)
+01:24:40 INFO fetched 1150/1500 wallets (17307 requests)
+01:25:43 INFO fetched 1200/1500 wallets (18016 requests)
+01:26:37 INFO fetched 1250/1500 wallets (18668 requests)
+01:27:17 INFO fetched 1300/1500 wallets (19150 requests)
+01:28:17 INFO fetched 1350/1500 wallets (19872 requests)
+01:29:25 INFO fetched 1400/1500 wallets (20680 requests)
+01:29:52 INFO fetched 1450/1500 wallets (21011 requests)
+01:35:47 INFO fetched 1500/1500 wallets (21624 requests)
+01:38:04 INFO 666 wallets to simulate (536 flagged as hard to copy); resolving 75851 markets
+01:38:11 INFO gamma closed: 75/1518 requests, 834 markets known
+01:38:17 INFO gamma closed: 150/1518 requests, 1431 markets known
+01:38:23 INFO gamma closed: 225/1518 requests, 4711 markets known
+01:38:30 INFO gamma closed: 300/1518 requests, 7986 markets known
+01:38:36 INFO gamma closed: 375/1518 requests, 11261 markets known
+01:38:42 INFO gamma closed: 450/1518 requests, 14559 markets known
+01:38:48 INFO gamma closed: 525/1518 requests, 17830 markets known
+01:38:55 INFO gamma closed: 600/1518 requests, 21091 markets known
+01:39:01 INFO gamma closed: 675/1518 requests, 24383 markets known
+01:39:07 INFO gamma closed: 750/1518 requests, 27661 markets known
+01:39:13 INFO gamma closed: 825/1518 requests, 30951 markets known
+01:39:20 INFO gamma closed: 900/1518 requests, 34209 markets known
+01:39:26 INFO gamma closed: 975/1518 requests, 37476 markets known
+01:39:32 INFO gamma closed: 1050/1518 requests, 40736 markets known
+01:39:38 INFO gamma closed: 1125/1518 requests, 44015 markets known
+01:39:45 INFO gamma closed: 1200/1518 requests, 47303 markets known
+01:39:51 INFO gamma closed: 1275/1518 requests, 50588 markets known
+01:39:57 INFO gamma closed: 1350/1518 requests, 53892 markets known
+01:40:03 INFO gamma closed: 1425/1518 requests, 57187 markets known
+01:40:10 INFO gamma closed: 1500/1518 requests, 60502 markets known
+01:40:11 INFO gamma closed: 1518/1518 requests, 61254 markets known
+01:40:12 INFO gamma open: 14/292 requests, 61347 markets known
+01:40:14 INFO gamma open: 28/292 requests, 61354 markets known
+01:40:15 INFO gamma open: 42/292 requests, 61354 markets known
+01:40:16 INFO gamma open: 56/292 requests, 61356 markets known
+01:40:17 INFO gamma open: 70/292 requests, 61358 markets known
+01:40:18 INFO gamma open: 84/292 requests, 61360 markets known
+01:40:19 INFO gamma open: 98/292 requests, 61362 markets known
+01:40:21 INFO gamma open: 112/292 requests, 61364 markets known
+01:40:22 INFO gamma open: 126/292 requests, 61660 markets known
+01:40:23 INFO gamma open: 140/292 requests, 62358 markets known
+01:40:24 INFO gamma open: 154/292 requests, 63054 markets known
+01:40:25 INFO gamma open: 168/292 requests, 63750 markets known
+01:40:27 INFO gamma open: 182/292 requests, 64448 markets known
+01:40:28 INFO gamma open: 196/292 requests, 65146 markets known
+01:40:29 INFO gamma open: 210/292 requests, 65844 markets known
+01:40:30 INFO gamma open: 224/292 requests, 66542 markets known
+01:40:31 INFO gamma open: 238/292 requests, 67238 markets known
+01:40:32 INFO gamma open: 252/292 requests, 67936 markets known
+01:40:33 INFO gamma open: 266/292 requests, 68633 markets known
+01:40:35 INFO gamma open: 280/292 requests, 69331 markets known
+01:40:36 INFO gamma open: 292/292 requests, 69928 markets known
+01:41:00 INFO clob fallback: 296/5923 requests, 69928 markets known
+01:41:25 INFO clob fallback: 592/5923 requests, 69928 markets known
+01:41:50 INFO clob fallback: 888/5923 requests, 69928 markets known
+01:42:14 INFO clob fallback: 1184/5923 requests, 69928 markets known
+01:42:39 INFO clob fallback: 1480/5923 requests, 69928 markets known
+01:43:04 INFO clob fallback: 1776/5923 requests, 69928 markets known
+01:43:28 INFO clob fallback: 2072/5923 requests, 69928 markets known
+01:43:53 INFO clob fallback: 2368/5923 requests, 69928 markets known
+01:44:18 INFO clob fallback: 2664/5923 requests, 69928 markets known
+01:44:42 INFO clob fallback: 2960/5923 requests, 69928 markets known
+01:45:07 INFO clob fallback: 3256/5923 requests, 69928 markets known
+01:45:32 INFO clob fallback: 3552/5923 requests, 69928 markets known
+01:45:56 INFO clob fallback: 3848/5923 requests, 69928 markets known
+01:46:21 INFO clob fallback: 4144/5923 requests, 69928 markets known
+01:46:46 INFO clob fallback: 4440/5923 requests, 69928 markets known
+01:47:10 INFO clob fallback: 4736/5923 requests, 69928 markets known
+01:47:35 INFO clob fallback: 5032/5923 requests, 69928 markets known
+01:48:00 INFO clob fallback: 5328/5923 requests, 69928 markets known
+01:48:24 INFO clob fallback: 5624/5923 requests, 69928 markets known
+01:48:49 INFO clob fallback: 5920/5923 requests, 69956 markets known
+01:48:49 INFO clob fallback: 5923/5923 requests, 69959 markets known
+01:48:49 WARNING 5892 of 75851 markets could not be resolved
+# Polymarket copy-trade backtest
+
+Window 2026-07-23 → 2026-10-21 (90 days); qualify until 2026-09-21, test after.
+Bankroll $200; 5% of equity per typical leader buy (scaled by leader conviction 0.25–3.0x), max 20% per trade, 35% per market; slippage 1.0¢/fill, market taker fees + 0 bps, min order $1, copy delay 0s.
+
+Wallets examined: 1500; simulated: 666; flagged as hard to copy: 536; eligible for ranking: 95.
+
+## Recommendation
+
+**0xb851db7fd9c13a5794f4e38c615295ec1c1e0dfe** (kupoz)
+
+- $200 → $264196.00 over the window (+131998.0%), max drawdown 58.5%
+- Qualifying period +20.7%, out-of-sample test +109350.1%
+- At double slippage: +21472.5%
+- 144 buys / 96 sells copied across 28 markets, win rate 61%
+- Leader: 5.5 trades/day, median trade $2, avg buy price 20¢
+
+## Top 15
+
+| # | wallet | name | return | test | max DD | 2x slip | buys | win |
+|---|---|---|---|---|---|---|---|---|
+| 1 | `0xb851db7fd9c13a5794f4e38c615295ec1c1e0dfe` | kupoz | +131998.0% | +109350.1% | 58.5% | +21472.5% | 144 | 61% |
+| 2 | `0x7576e41bc6fce96d7bc4e9eb0c9d046d4c2654b6` | Starlord2 | +46521.3% | +1140.4% | 70.5% | +6007.7% | 525 | 65% |
+| 3 | `0x73e35ce0b7e36ef3ce29ebd12b30b28007383239` | Stonktrader | +18156.7% | +1011.3% | 58.5% | +6480.0% | 132 | 67% |
+| 4 | `0x95c6c9a6727ed203e97230dda61ab19a020e1508` | DelidelaDele | +1044.9% | +818.7% | 78.7% | +729.9% | 209 | 59% |
+| 5 | `0xfc0847fe2ea938d6e2624650eb29ef8d8142a137` | 0xfC0847fe2Ea938D6e2 | +861.1% | +620.3% | 56.1% | -82.1% | 1594 | 53% |
+| 6 | `0x2c41d0ca2b4b2344912eead711f28cd4dcff133e` | lineth | +3031.1% | +540.9% | 10.2% | +1733.8% | 85 | 55% |
+| 7 | `0xaaad37f3bbb45af95818e20e554f8b21371f29e0` | swiftFoxx | +3075.8% | +377.1% | 71.0% | +1984.9% | 278 | 72% |
+| 8 | `0x2f9da73ca8430dc4bdbd75f9c76d91592ca5deb3` | themain | +165.8% | +146.1% | 4.6% | +151.2% | 25 | 62% |
+| 9 | `0xadaf1c42e0a88e2942e7adfe559e30c1796bf9f2` | gesst | +617.6% | +150.9% | 15.6% | +235.9% | 81 | 62% |
+| 10 | `0xbc1dacd4b84582fc310e4213421bca24e82da53c` | Fvalp | +191.7% | +170.1% | 63.5% | +202.5% | 317 | 61% |
+| 11 | `0x34142c0027cccc7a9156a280ef3edd1dd67451a1` | ORI- | +143.1% | +133.7% | 56.5% | +61.1% | 155 | 44% |
+| 12 | `0xd8860bbbdf24d02b74d875b2d987986f62b96f88` | btystu | +421.1% | +98.0% | 2.0% | +388.2% | 31 | 100% |
+| 13 | `0x85af4296fec14602804a6fac8db79cc87042a6eb` | wugds | +135.1% | +83.1% | 5.6% | +127.8% | 18 | 88% |
+| 14 | `0x80d5aebbe7a714879177e4dae0014195beb3987e` | 0x80d5aebbE7a7148791 | +275.7% | +78.5% | 6.0% | +263.1% | 26 | 100% |
+| 15 | `0xe5d29f2276769fd3574bbaa846a563b6c8a0776e` | Koliniko | +939.4% | +85.6% | 29.4% | +864.7% | 36 | 100% |
+
+Score = out-of-sample return − 0.5 × max drawdown. Full table in `ranking.csv`; daily equity for the top 10 in `top_equity_curves.csv`.
+
+Caveats: past results don't predict future ones; fills assume you get the leader's price plus slippage; open positions are marked at the current market price; wallets that started positions before the window are only copied from their first in-window buy.
+
