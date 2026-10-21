@@ -27,6 +27,22 @@ def quote(bid, ask, last=None, traded=0.0, ts=None, qty=100):
     return Quote(bid, ask, qty, qty, last, traded, ts if ts is not None else time.time() + 1)
 
 
+class ShortSideTest(unittest.TestCase):
+    def test_short_book_is_the_long_book_flipped(self):
+        q = Quote(0.36, 0.37, 40, 100, 0.36, 5, 1.0).flipped()
+        self.assertEqual((q.bid, q.ask, q.bid_qty, q.ask_qty, q.last_px),
+                         (0.63, 0.64, 100, 40, 0.64))
+
+    def test_short_orders_use_short_intents_priced_on_the_long_side(self):
+        from pmbot.broker import order_params
+        p = order_params("g:short", Order("BUY", 0.63, 5, post_only=False))
+        self.assertEqual((p["marketSlug"], p["intent"], p["price"]["value"]),
+                         ("g", "ORDER_INTENT_BUY_SHORT", "0.370"))
+        p = order_params("g", Order("SELL", 0.4, 5, post_only=False))
+        self.assertEqual((p["marketSlug"], p["intent"], p["price"]["value"]),
+                         ("g", "ORDER_INTENT_SELL_LONG", "0.400"))
+
+
 class FeesTest(unittest.TestCase):
     def test_taker_fee_curve(self):
         self.assertAlmostEqual(taker_fee_per_contract(0.5), 0.017375)
@@ -236,10 +252,11 @@ class MappingTest(unittest.TestCase):
         m = data.parse_us_market(fx["us"])
         self.assertEqual((m.market_type, m.long_label), ("moneyline", "Bucks"))
         self.assertEqual(mapping.intl_slug(m.slug), fx["intl"]["slug"])
+        self.assertEqual(m.short_label, "Wizards")
         pairs = mapping.match_games([m], {fx["intl"]["slug"]: fx["intl"]})
-        self.assertEqual(len(pairs), 1)
         tokens = json.loads(fx["intl"]["clobTokenIds"])
-        self.assertEqual(pairs[0].intl_token, tokens[0])        # Bucks, not Wizards
+        self.assertEqual([(p.us_slug, p.intl_token) for p in pairs],
+                         [(m.slug, tokens[0]), (m.slug + ":short", tokens[1])])  # Bucks, Wizards
         m.long_label = "Wizards"
         self.assertEqual(mapping.match_games([m], {fx["intl"]["slug"]: fx["intl"]})[0].intl_token,
                          tokens[1])
@@ -386,6 +403,9 @@ class StrategyPluginTest(unittest.TestCase):
         e.shutdown()
 
 
+GAME = "aec-nba-mil-was-2099-01-01"
+
+
 class FakeVenues:
     """Gateway, gamma and CLOB responses for one futures market."""
 
@@ -394,6 +414,9 @@ class FakeVenues:
         self.ref_bid, self.ref_ask = 0.62, 0.63
         self.state, self.settlement, self.listed = "MARKET_STATE_OPEN", 0.84, True
         self.leader_trades: list[dict] = []
+        # A US game market (long side Bucks, short side Wizards), listed when set.
+        self.game, self.game_bid, self.game_ask, self.game_settlement = False, 0.36, 0.37, 0.0
+        self.game_state = "MARKET_STATE_OPEN"
 
     def get(self, base, path, params=None, use_cache=True, keep=None):
         px = lambda v: {"value": f"{v:.4f}", "currency": "USD"}
@@ -401,10 +424,22 @@ class FakeVenues:
             return [t for t in self.leader_trades if t["proxyWallet"] == params["user"]][::-1]
         if path == "/v1/markets/brewers/settlement":
             return {"slug": "brewers", "settlement": self.settlement}
+        if path == f"/v1/markets/{GAME}/settlement":
+            return {"slug": GAME, "settlement": self.game_settlement}
+        if path == f"/v1/markets/{GAME}/book":
+            return {"marketData": {"marketSlug": GAME, "state": self.game_state,
+                    "bids": [{"px": px(self.game_bid), "qty": "40"}],
+                    "offers": [{"px": px(self.game_ask), "qty": "100"}], "stats": {}}}
         if path == "/v1/markets":
             if params["offset"] > 0 or not self.listed:
                 return {"markets": []}
-            return {"markets": [{
+            game = [{"slug": GAME, "question": "Bucks vs Wizards", "marketType": "moneyline",
+                     "gameStartTime": "2099-01-01T00:00:00Z", "endDate": "2099-01-15T00:00:00Z",
+                     "status": "MARKET_STATUS_OPEN", "orderPriceMinTickSize": 0.01,
+                     "marketSides": [{"description": "Bucks", "long": True},
+                                     {"description": "Wizards", "long": False}]}] \
+                if self.game else []
+            return {"markets": game + [{
                 "slug": "brewers", "question": "World Series Champion",
                 "title": "Milwaukee Brewers", "marketType": "futures",
                 "description": "Will Milwaukee Brewers win the 2026 MLB World Series?",
@@ -507,6 +542,45 @@ class CopyTopTest(unittest.TestCase):
                     strategies=[again])
         self.assertEqual(again.stats["copied_buys"], 1)
         e2._events.close()
+
+    def game_trade(self, side, price, outcome, slug="nba-mil-was-2099-01-01", size=100):
+        self.n += 1
+        self.v.leader_trades.append({"proxyWallet": self.LEADER, "side": side,
+                                     "asset": f"tok-{outcome}", "price": price, "size": size,
+                                     "timestamp": 1_000 + self.n, "title": "Bucks vs. Wizards",
+                                     "slug": slug, "outcome": outcome,
+                                     "transactionHash": f"0x{self.n}"})
+
+    def test_copies_either_side_of_a_game_found_by_its_slug(self):
+        self.v.game = True
+        self.e.refresh_pairs()
+        self.e.cycle()
+        self.game_trade("BUY", 0.64, "Wizards")     # the US market's short side
+        self.e.cycle()
+        f = self.e.broker.fills[-1]
+        # Wizards cost 1 - the Bucks bid (0.36); size is the Bucks bid's 40.
+        self.assertEqual((f.slug, f.side, f.price, f.qty), (GAME + ":short", "BUY", 0.64, 15))
+        self.assertEqual(self.copy.stats["mapped_short_side"], 1)
+        self.assertIn("Wizards", self.e.labels[GAME + ":short"])
+        self.game_trade("BUY", 0.37, "Bucks")       # other side of a game we hold: skip
+        self.e.cycle()
+        self.assertEqual(self.copy.stats["skip_holding_other_side"], 1)
+        cash = self.e.broker.cash
+        self.v.game_state = "MARKET_STATE_CLOSED"    # Bucks lost: Wizards pay 1
+        self.e.cycle()
+        self.assertNotIn(GAME + ":short", self.e.broker.positions)
+        self.assertAlmostEqual(self.e.broker.cash, cash + 15)
+
+    def test_counts_why_a_trade_was_not_copied(self):
+        self.v.game = True
+        self.e.refresh_pairs()
+        self.e.cycle()
+        self.game_trade("BUY", 0.5, "Over")          # listed game, outcome names differ
+        self.game_trade("BUY", 0.5, "Yankees", slug="mlb-nyy-bos-2099-01-02")
+        self.e.cycle()
+        self.assertEqual(self.copy.stats["listed_side_unknown"], 1)
+        self.assertEqual(self.copy.stats["missed_mlb"], 1)
+        self.assertEqual(self.e.broker.fills, [])
 
     def test_unmapped_trades_are_counted_not_copied(self):
         self.e.cycle()

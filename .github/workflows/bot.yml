@@ -29,6 +29,13 @@ jobs:
           python -m pyflakes pmbot study copybt
           python -m unittest tests.test_pmbot
 
+      - name: Copy coverage of the leaders' recent trades
+        timeout-minutes: 20
+        shell: bash -o pipefail {0}
+        run: |
+          mkdir -p botresults
+          python -u -m pmbot.coverage | tee botresults/coverage.txt
+
       - name: Paper trade against live quotes
         if: ${{ !contains(github.event.head_commit.message, '[probe only]') }}
         timeout-minutes: 100

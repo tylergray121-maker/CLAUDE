@@ -13,7 +13,7 @@ from dataclasses import asdict, dataclass, field, replace
 from copybt.api import Client
 
 from . import data, mapping
-from .broker import PaperBroker, Quote
+from .broker import SHORT, PaperBroker, Quote, split_side
 from .fees import taker_fee_per_contract
 from .risk import RiskManager
 from .strategies import FairValue, Strategy
@@ -60,6 +60,7 @@ class Engine:
         self.pairs: list[mapping.Pair] = []
         self.all_pairs: list[mapping.Pair] = []
         self.markets: dict[str, data.USMarket] = {}
+        self.by_intl_slug: dict[str, data.USMarket] = {}  # international slug -> US game market
         self.stats = ScanStats()
         self.marks: dict[str, float] = {}
         self.verified: set[str] = set()   # pairs whose live prices agree
@@ -81,6 +82,13 @@ class Engine:
     def refresh_pairs(self) -> None:
         us = data.us_markets(self.client)
         self.markets = {m.slug: m for m in us}
+        # Game, spread, total and prop markets: the US slug is the international
+        # one plus a venue prefix. Ambiguous ones (two US markets) are dropped.
+        seen: dict[str, list] = defaultdict(list)
+        for m in us:
+            if m.market_type not in data.LONG_RUNNING:
+                seen[mapping.intl_slug(m.slug)].append(m)
+        self.by_intl_slug = {k: v[0] for k, v in seen.items() if len(v) == 1}
         self._dump_market_types(us)
         if self.ecfg.pairs_file:
             pairs = [p for p in mapping.load(self.ecfg.pairs_file) if p.us_slug in self.markets]
@@ -125,7 +133,7 @@ class Engine:
         self.map_stats = {"us_markets": len(us), "pairs": len(pairs),
                           "tracked": len(self.pairs),
                           "intl_options": len(intl) if not self.ecfg.pairs_file else None}
-        if not self.pairs:
+        if not self.all_pairs:
             log.error("no US market could be paired with a reference price; "
                       "check pairs.json / the mapping before trusting this run")
 
@@ -185,7 +193,7 @@ class Engine:
             if uq is None:
                 continue
             q, state = uq
-            m = self.markets.get(slug)
+            m = self.markets.get(split_side(slug)[0])
             ok, why = m.tradable(now) if m else (False, "unknown")
             if state:
                 self.states[slug] = state
@@ -243,6 +251,30 @@ class Engine:
     def token_index(self) -> dict[str, str]:
         """International outcome token -> the US market that prices the same thing."""
         return {p.intl_token: p.us_slug for p in self.all_pairs}
+
+    def us_for_trade(self, t: dict, index: dict[str, str] | None = None) -> str | None:
+        """The US market, or its short side, for an international trade.
+
+        Paired tokens first; otherwise the trade's own market slug and
+        outcome name, so any game, spread, total or prop Polymarket US also
+        lists is found, whichever side the trade was on.
+        """
+        index = self.token_index() if index is None else index
+        slug = index.get(str(t.get("asset")))
+        if slug:
+            return slug
+        m = self.by_intl_slug.get(str(t.get("slug") or ""))
+        outcome = str(t.get("outcome") or "").strip().lower()
+        if m is None or not outcome:
+            return None
+        if m.long_label and m.long_label.strip().lower() == outcome:
+            slug = m.slug
+        elif m.short_label and m.short_label.strip().lower() == outcome:
+            slug = m.slug + SHORT
+        else:
+            return None
+        self.labels.setdefault(slug, f"{t.get('title') or m.question}: {t.get('outcome')}")
+        return slug
 
     def room(self, slug: str) -> float:
         b = self.broker
@@ -326,7 +358,7 @@ class Engine:
         if not isinstance(self.broker, PaperBroker):
             return
         for slug in list(self.broker.positions):
-            m = self.markets.get(slug)
+            m = self.markets.get(split_side(slug)[0])
             end = m.end if m else self.ends.get(slug)
             closed = (self.states.get(slug) in self.CLOSED_STATES
                       or (m is None and end is not None and now > end))

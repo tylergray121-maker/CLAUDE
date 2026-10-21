@@ -16,6 +16,7 @@ import re
 from collections import defaultdict
 from dataclasses import asdict, dataclass
 
+from .broker import SHORT
 from .data import LONG_RUNNING, IntlOption, USMarket, _json_list
 
 STOP = set("""a an and the of to in on at for by will be is are win wins winner
@@ -131,6 +132,13 @@ def match_games(us: list[USMarket], intl_rows: dict[str, dict]) -> list[Pair]:
             continue
         pairs.append(Pair(m.slug, tokens[idx], 1.0, f"{r.get('question')}: {outcomes[idx]}",
                           f"{r.get('question')} [{outcomes[idx]}]", m.tick))
+        # The other outcome of a two-way market is the US market's short side.
+        other = 1 - idx
+        if len(outcomes) == 2 and m.short_label and \
+                outcomes[other].strip().lower() == m.short_label.strip().lower():
+            pairs.append(Pair(m.slug + SHORT, tokens[other], 1.0,
+                              f"{r.get('question')}: {outcomes[other]}",
+                              f"{r.get('question')} [{outcomes[other]}]", m.tick))
     return pairs
 
 

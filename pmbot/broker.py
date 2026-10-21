@@ -55,6 +55,24 @@ class Quote:
     traded: float          # cumulative shares traded (for detecting prints)
     ts: float
 
+    def flipped(self) -> "Quote":
+        """The same book seen from the short side: its bid is 1 - the long ask."""
+        inv = lambda x: round(1.0 - x, 6) if x is not None else None
+        return Quote(inv(self.ask), inv(self.bid), self.ask_qty, self.bid_qty,
+                     inv(self.last_px), self.traded, self.ts)
+
+
+# A US game market prices one outcome, its long side ("Bucks", or "Yes" in
+# soccer). The other outcome ("Wizards", "No") is the market's short side; the
+# bot trades it as its own instrument, the market slug plus this suffix, with
+# prices quoted for the short side itself.
+SHORT = ":short"
+
+
+def split_side(slug: str) -> tuple[str, bool]:
+    """'aec-nba-mil-was-2026-10-21:short' -> ('aec-nba-mil-was-2026-10-21', True)"""
+    return (slug[:-len(SHORT)], True) if slug.endswith(SHORT) else (slug, False)
+
 
 class PaperBroker:
     """Simulates fills against real Polymarket US quotes, conservatively.
@@ -245,6 +263,8 @@ class LiveBroker:
                 qty = int(float(p.get("netPosition") or 0))
                 if qty > 0:
                     self.positions[slug] = Position(qty, _amount(p.get("cost")))
+                elif qty < 0:
+                    self.positions[slug + SHORT] = Position(-qty, abs(_amount(p.get("cost"))))
             cursor = resp.get("nextCursor")
             if resp.get("eof", True) or not cursor:
                 break
@@ -254,9 +274,14 @@ class LiveBroker:
             live_ids.add(o.get("id"))
             if o.get("id") not in self.mine:
                 continue
-            side = "BUY" if o.get("side") == "ORDER_SIDE_BUY" else "SELL"
+            intent = str(o.get("intent") or "")
+            short = intent.endswith("_SHORT")
+            side = ("BUY" if intent.startswith("ORDER_INTENT_BUY") else "SELL") if intent \
+                else ("BUY" if o.get("side") == "ORDER_SIDE_BUY" else "SELL")
+            px = _amount(o.get("price"))
             self.open_orders[o["id"]] = OpenOrder(
-                o["id"], o.get("marketSlug", ""), side, _amount(o.get("price")),
+                o["id"], o.get("marketSlug", "") + (SHORT if short else ""), side,
+                round(1 - px, 6) if short else px,
                 int(o.get("leavesQuantity") or o.get("quantity") or 0), True)
         if self.mine - live_ids:  # filled or cancelled since last sync
             self.mine &= live_ids
@@ -277,13 +302,13 @@ class LiveBroker:
     def cancel(self, oid: str) -> None:
         o = self.open_orders.pop(oid, None)
         if o:
-            self.client.orders.cancel(oid, {"marketSlug": o.slug})
+            self.client.orders.cancel(oid, {"marketSlug": split_side(o.slug)[0]})
 
     def cancel_all(self) -> None:
         """Cancel this bot's orders only (never the account's manual ones)."""
         for oid, o in list(self.open_orders.items()):
             try:
-                self.client.orders.cancel(oid, {"marketSlug": o.slug})
+                self.client.orders.cancel(oid, {"marketSlug": split_side(o.slug)[0]})
             except Exception as e:  # keep cancelling the rest
                 log.error("cancel %s failed: %s", oid, e)
         self.open_orders.clear()
@@ -301,12 +326,19 @@ class LiveBroker:
 
 def order_params(slug: str, order: Order) -> dict:
     """The exact Polymarket US order the bot sends (live) or previews (paper):
-    a limit order, post-only GTC for quotes, IOC for takes, flagged automatic."""
+    a limit order, post-only GTC for quotes, IOC for takes, flagged automatic.
+
+    Short-side orders use the SHORT intents, and their price is sent as the
+    long side's price (Polymarket US always quotes the long side): buying
+    "Wizards" at 0.63 is BUY_SHORT at 0.37."""
+    base, short = split_side(slug)
+    side = "BUY" if order.side == "BUY" else "SELL"
     return {
-        "marketSlug": slug,
-        "intent": "ORDER_INTENT_BUY_LONG" if order.side == "BUY" else "ORDER_INTENT_SELL_LONG",
+        "marketSlug": base,
+        "intent": f"ORDER_INTENT_{side}_{'SHORT' if short else 'LONG'}",
         "type": "ORDER_TYPE_LIMIT",
-        "price": {"value": f"{order.price:.3f}", "currency": "USD"},
+        "price": {"value": f"{(1 - order.price) if short else order.price:.3f}",
+                  "currency": "USD"},
         "quantity": int(order.qty),
         "tif": "TIME_IN_FORCE_GOOD_TILL_CANCEL" if order.post_only
                else "TIME_IN_FORCE_IMMEDIATE_OR_CANCEL",

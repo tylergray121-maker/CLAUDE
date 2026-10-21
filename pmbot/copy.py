@@ -3,7 +3,8 @@
 The leaders (pmbot/leaders.json, chosen from the top-wallet study) trade on
 international Polymarket, whose trades are public. Each cycle this polls
 their newest trades; a buy of an outcome that maps to a Polymarket US
-market (through the engine's verified pairs) becomes a taker buy on US, at
+market (a verified pair, or the same game/spread/total market by slug, on
+either side) becomes a taker buy on US, at
 no more than the leader's price plus a small allowance, so the bot never
 chases a price that has moved. A leader's sell closes the copy; otherwise
 copies are held to settlement.
@@ -13,10 +14,12 @@ from __future__ import annotations
 
 import json
 import logging
+import re
 from collections import Counter
 
 from copybt.api import DATA_API, HTTPError
 
+from .broker import SHORT, split_side
 from .mapping import prices_agree
 from .strategies import Strategy
 from .strategy import MarketView, Order, StrategyConfig
@@ -30,10 +33,18 @@ def load_leaders(path: str) -> dict[str, str]:
     return {x["wallet"].lower(): x.get("name") or x["wallet"][:10] for x in d["leaders"]}
 
 
-STAT_KEYS = ("leader_trades", "mapped", "not_on_polymarket_us", "copied_buys",
-             "copied_sells", "expired_price_moved", "skip_repeat", "skip_recently_copied",
-             "skip_tiny", "skip_not_open", "skip_price_band", "skip_prices_disagree",
-             "skip_no_room_or_size", "skip_exit_price", "poll_errors")
+STAT_KEYS = ("leader_trades", "mapped", "mapped_short_side", "not_on_polymarket_us",
+             "listed_side_unknown", "copied_buys", "copied_sells", "expired_price_moved",
+             "skip_repeat", "skip_recently_copied", "skip_tiny", "skip_not_open",
+             "skip_price_band", "skip_prices_disagree", "skip_no_room_or_size",
+             "skip_holding_other_side", "skip_exit_price", "poll_errors")
+_GAME = re.compile(r"^([a-z0-9]+)-.*\d{4}-\d{2}-\d{2}")
+
+
+def league(intl_slug: str) -> str:
+    """'mlb-nyy-bos-2026-10-21-total-8pt5' -> 'mlb'; season-long markets -> 'futures'."""
+    m = _GAME.match(intl_slug)
+    return m.group(1) if m else "futures"
 
 
 class CopyTop(Strategy):
@@ -78,11 +89,19 @@ class CopyTop(Strategy):
         for wallet, name in self.leaders.items():
             for t in self._new_trades(eng, wallet):
                 self.stats["leader_trades"] += 1
-                slug = index.get(str(t.get("asset")))
+                slug = eng.us_for_trade(t, index)
                 if not slug:
-                    self.stats["not_on_polymarket_us"] += 1
+                    if str(t.get("slug") or "") in eng.by_intl_slug:
+                        self.stats["listed_side_unknown"] += 1  # outcome names differ
+                    else:
+                        self.stats["not_on_polymarket_us"] += 1
+                        self.stats[f"missed_{league(str(t.get('slug') or ''))}"] += 1
+                    eng._log("copy_unmapped", leader=name, market=t.get("title"),
+                             intl_slug=t.get("slug"), outcome=t.get("outcome"))
                     continue
                 self.stats["mapped"] += 1
+                if slug.endswith(SHORT):
+                    self.stats["mapped_short_side"] += 1
                 side = str(t.get("side", "")).upper()
                 try:
                     price, size = float(t["price"]), float(t["size"])
@@ -122,6 +141,11 @@ class CopyTop(Strategy):
                 del self.pending[slug]
                 continue
             if sig["side"] == "BUY":
+                base, short = split_side(slug)
+                if eng.held(base if short else base + SHORT) > 0:
+                    self.stats["skip_holding_other_side"] += 1  # would only lock in a loss
+                    del self.pending[slug]
+                    continue
                 limit = round(min(sig["price"] + self.max_slip, self.cfg.max_price), 4)
                 ask = v.us_ask
                 if ask is None or ask > limit:

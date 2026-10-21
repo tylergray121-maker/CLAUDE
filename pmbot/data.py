@@ -16,7 +16,7 @@ from datetime import datetime
 
 from copybt.api import Client, HTTPError
 
-from .broker import Quote
+from .broker import Quote, split_side
 
 log = logging.getLogger(__name__)
 
@@ -71,6 +71,7 @@ class USMarket:
     bid: float | None
     ask: float | None
     long_label: str = ""   # which outcome the market's price is for ("Bucks", "Yes")
+    short_label: str = ""  # the other outcome ("Wizards", "No"), traded as the short side
 
     def tradable(self, now: float, pre_game_s: float = 600,
                  min_to_end_s: float = 3600) -> tuple[bool, str]:
@@ -98,8 +99,12 @@ def parse_us_market(m: dict) -> USMarket | None:
         tick=float(m.get("orderPriceMinTickSize") or 0.01),
         status=str(m.get("status") or ""),
         bid=amount(m.get("bestBidQuote")), ask=amount(m.get("bestAskQuote")),
-        long_label=next((str(sd.get("description") or "") for sd in m.get("marketSides") or []
-                         if isinstance(sd, dict) and sd.get("long") is True), ""))
+        long_label=_side_label(m, True), short_label=_side_label(m, False))
+
+
+def _side_label(m: dict, long: bool) -> str:
+    return next((str(sd.get("description") or "") for sd in m.get("marketSides") or []
+                 if isinstance(sd, dict) and sd.get("long") is long), "")
 
 
 def us_markets(client: Client, page: int = 100, max_pages: int = 1000) -> list[USMarket]:
@@ -128,7 +133,9 @@ def us_markets(client: Client, page: int = 100, max_pages: int = 1000) -> list[U
 
 
 def us_quote(client: Client, slug: str) -> tuple[Quote, str] | None:
-    """Best bid/ask with sizes from the order book, plus market state."""
+    """Best bid/ask with sizes from the order book, plus market state.
+    For a short side (slug + SHORT) the book is read from the short side."""
+    slug, short = split_side(slug)
     try:
         md = (client.get(US_GATEWAY, f"/v1/markets/{slug}/book", use_cache=False)
               or {}).get("marketData") or {}
@@ -145,15 +152,17 @@ def us_quote(client: Client, slug: str) -> tuple[Quote, str] | None:
     q = Quote(bid=bb[0], ask=ba[0], bid_qty=bb[1], ask_qty=ba[1],
               last_px=amount(stats.get("lastTradePx")),
               traded=float(stats.get("sharesTraded") or 0), ts=time.time())
-    return q, str(md.get("state") or "")
+    return (q.flipped() if short else q), str(md.get("state") or "")
 
 
 def us_settlement(client: Client, slug: str) -> float | None:
+    slug, short = split_side(slug)
     try:
-        return amount((client.get(US_GATEWAY, f"/v1/markets/{slug}/settlement",
-                                  use_cache=False) or {}).get("settlement"))
+        v = amount((client.get(US_GATEWAY, f"/v1/markets/{slug}/settlement",
+                               use_cache=False) or {}).get("settlement"))
     except HTTPError:
         return None
+    return round(1.0 - v, 6) if short and v is not None else v
 
 
 @dataclass
