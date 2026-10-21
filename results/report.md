@@ -7,7 +7,7 @@ Universe: volume leaderboards only. Wallets examined: 1218; simulated: 439; flag
 
 Polymarket US: 37000 market questions, 24711 game-days; 719 of 115219 copyable trades (1%) were in markets matched to it (37 distinct markets).
 
-Copy delay: 380407 of 380407 simulated fills (100%) were priced from market history 30s after the leader; the rest fell back to the leader's price.
+Copy delay: 384218 of 384218 simulated fills (100%) were priced from market history 30s after the leader; the rest fell back to the leader's price.
 
 ## Plan A — all Polymarket markets
 
@@ -32,6 +32,8 @@ Median across portfolio sizes: +1140.5% vs -6.2% for a random qualified wallet.
 | wallet | recent return | max DD | buys | markets | win rate |
 |---|---|---|---|---|---|
 | `0x91e67d77b45558ce69238bf8a79e2e902b1ee9c5` | +849.9% | 51.8% | 92 | 40 | 78% |
+
+Top of the current ranking: `0x91e67d77…` +850% (DD 52%), `0x543f6fdd…` +286% (DD 37%), `0xc2e7800b…` +268% (DD 39%), `0x20d64368…` +254% (DD 85%), `0x93683d55…` +230% (DD 88%), `0xdef6f7b1…` +192% (DD 27%), `0xc88eb9ab…` +136% (DD 22%), `0x03e8a544…` +112% (DD 11%), `0x7523cafc…` +109% (DD 27%), `0x2dfa4e79…` +124% (DD 73%)
 
 Copied together over that window: $200 → $1899.84 (+849.9%), max drawdown 51.8%. This is in-sample — the validation table is the honest estimate.
 
