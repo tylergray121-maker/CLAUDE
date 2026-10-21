@@ -231,6 +231,28 @@ class MappingTest(unittest.TestCase):
             "Milwaukee Brewers", "Will the Milwaukee Brewers win the 2026 World Series?",
             end=1.8e9 + 200 * 86400)]), [])
 
+    def test_game_matched_exactly_by_slug_and_long_side(self):
+        fx = fixture("pmbot_game.json")
+        m = data.parse_us_market(fx["us"])
+        self.assertEqual((m.market_type, m.long_label), ("moneyline", "Bucks"))
+        self.assertEqual(mapping.intl_slug(m.slug), fx["intl"]["slug"])
+        pairs = mapping.match_games([m], {fx["intl"]["slug"]: fx["intl"]})
+        self.assertEqual(len(pairs), 1)
+        tokens = json.loads(fx["intl"]["clobTokenIds"])
+        self.assertEqual(pairs[0].intl_token, tokens[0])        # Bucks, not Wizards
+        m.long_label = "Wizards"
+        self.assertEqual(mapping.match_games([m], {fx["intl"]["slug"]: fx["intl"]})[0].intl_token,
+                         tokens[1])
+        self.assertEqual(mapping.intl_slug("atc-lal-ray-ath-2026-10-10-ray"),
+                         "lal-ray-ath-2026-10-10-ray")
+
+    def test_generic_outcome_needs_the_same_event(self):
+        ecb = us_market("No Change", "European Central Bank Decision in October?",
+                        "Will the ECB make no change to rates in October?")
+        russia = intl_opt("No change", "Will the Bank of Russia make no change to the key rate "
+                          "after the October meeting?", "Bank of Russia decision in October?")
+        self.assertEqual(mapping.match([ecb], [russia]), [])
+
     def test_games_must_be_the_same_meeting(self):
         day = 86400
         def game(end):

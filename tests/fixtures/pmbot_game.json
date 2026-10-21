@@ -1,0 +1,102 @@
+{
+ "us": {
+  "id": "1274691",
+  "question": "Who will win in the upcoming basketball event MIL Bucks vs WAS Wizards scheduled for October 21, 2026 at 11:00 PM UTC?",
+  "slug": "aec-nba-mil-was-2026-10-21",
+  "endDate": "2026-11-04T23:00:00Z",
+  "category": "sports",
+  "startDate": "2026-10-07T14:22:08Z",
+  "active": true,
+  "marketType": "moneyline",
+  "closed": false,
+  "createdAt": "2026-10-07T14:22:08Z",
+  "updatedAt": "2026-10-21T13:12:22Z",
+  "archived": false,
+  "orderPriceMinTickSize": 0.01,
+  "gameStartTime": "2026-10-21T23:00:00Z",
+  "manualActivation": false,
+  "sportsMarketType": "basketball_team_full_game_winner",
+  "marketSides": [
+   {
+    "id": "2548860",
+    "marketSideType": "MARKET_SIDE_TYPE_INSTRUMENT",
+    "identifier": "aec-nba-mil-was-2026-10-21",
+    "createdAt": "2026-10-07T14:22:08Z",
+    "updatedAt": "2026-10-07T14:22:08Z",
+    "description": "Bucks",
+    "price": "0.3700",
+    "marketId": 1274691,
+    "long": true,
+    "teamId": 41,
+    "team": {
+     "id": 41,
+     "name": "Bucks",
+     "abbreviation": "mil",
+     "league": "nba"
+    },
+    "quote": {
+     "value": "0.3700",
+     "currency": "USD"
+    },
+    "tradable": true
+   },
+   {
+    "id": "2548861",
+    "marketSideType": "MARKET_SIDE_TYPE_INSTRUMENT",
+    "identifier": "aec-nba-mil-was-2026-10-21",
+    "createdAt": "2026-10-07T14:22:08Z",
+    "updatedAt": "2026-10-07T14:22:08Z",
+    "description": "Wizards",
+    "price": "0.64",
+    "marketId": 1274691,
+    "long": false,
+    "teamId": 36,
+    "team": {
+     "id": 36,
+     "name": "Wizards",
+     "abbreviation": "was",
+     "league": "nba"
+    },
+    "quote": {
+     "value": "0.64",
+     "currency": "USD"
+    },
+    "tradable": true
+   }
+  ],
+  "outcomes": "[\"Bucks\",\"Wizards\"]",
+  "outcomePrices": "[\"0.3700\",\"0.64\"]",
+  "ep3Status": "OPEN",
+  "status": "MARKET_STATUS_OPEN",
+  "assetPriceTerms": null,
+  "sportsMarketTypeV2": "SPORTS_MARKET_TYPE_MONEYLINE",
+  "hidden": false,
+  "tags": [],
+  "feeCoefficient": 0.0695,
+  "bestBidQuote": {
+   "value": "0.3600",
+   "currency": "USD"
+  },
+  "bestAskQuote": {
+   "value": "0.3700",
+   "currency": "USD"
+  },
+  "ep3SyncedAt": "2026-10-15T11:37:44Z",
+  "minimumTradeQty": 0.01,
+  "comboEnabled": true,
+  "politics": null
+ },
+ "intl": {
+  "slug": "nba-mil-was-2026-10-21",
+  "question": "Bucks vs. Wizards",
+  "clobTokenIds": "[\"1599101620680797671383335695906161815959476547649246036701380628339498427273\", \"10307919734785835536852019134434226434969834839440074442822746127189529151426\"]",
+  "outcomes": "[\"Bucks\", \"Wizards\"]",
+  "endDate": "2026-10-21T23:00:00Z",
+  "closed": false,
+  "active": true,
+  "enableOrderBook": true,
+  "bestBid": 0.37,
+  "bestAsk": 0.38,
+  "volume24hr": 6480.165199000001
+ }
+}

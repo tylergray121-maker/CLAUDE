@@ -16,7 +16,7 @@ import re
 from collections import defaultdict
 from dataclasses import asdict, dataclass
 
-from .data import LONG_RUNNING, IntlOption, USMarket
+from .data import LONG_RUNNING, IntlOption, USMarket, _json_list
 
 STOP = set("""a an and the of to in on at for by will be is are win wins winner
 winning who which what vs v or with from as this that 2026 2027 2028 de la""".split())
@@ -99,6 +99,41 @@ def name_similarity(a: str, b: str) -> float:
     return jaccard(wa, wb)
 
 
+GAME_TYPES = ("moneyline", "drawable_outcome")
+_US_PREFIX = re.compile(r"^[a-z]{2,8}-(?=[a-z0-9]+-)")
+# Outcome names that say nothing about which event they belong to.
+GENERIC = {"yes", "no", "other", "none", "draw", "tie", "over", "under", "up", "down",
+           "change", "increase", "decrease", "cut", "hike", "hold", "pause", "bps"}
+
+
+def intl_slug(us_slug: str) -> str:
+    """aec-nba-mil-was-2026-10-21 -> nba-mil-was-2026-10-21"""
+    return _US_PREFIX.sub("", us_slug, count=1)
+
+
+def match_games(us: list[USMarket], intl_rows: dict[str, dict]) -> list[Pair]:
+    """Exact game pairs: the US slug is the international slug plus a venue
+    prefix, and the US market's long side names the outcome it prices."""
+    pairs = []
+    for m in us:
+        if m.market_type not in GAME_TYPES:
+            continue
+        r = intl_rows.get(intl_slug(m.slug))
+        if not r:
+            continue
+        outcomes = [str(o) for o in _json_list(r.get("outcomes"))]
+        tokens = [str(t) for t in _json_list(r.get("clobTokenIds"))]
+        if len(outcomes) != len(tokens) or not m.long_label:
+            continue
+        want = m.long_label.strip().lower()
+        idx = next((i for i, o in enumerate(outcomes) if o.strip().lower() == want), None)
+        if idx is None:
+            continue
+        pairs.append(Pair(m.slug, tokens[idx], 1.0, f"{m.question[:80]}: {m.long_label}",
+                          f"{r.get('question')} [{outcomes[idx]}]", m.tick))
+    return pairs
+
+
 def match(us: list[USMarket], intl: list[IntlOption], min_name: float = 0.8,
           min_context: float = 0.2, max_end_gap_days: float = 75) -> list[Pair]:
     by_word: dict[str, list[IntlOption]] = defaultdict(list)
@@ -126,7 +161,10 @@ def match(us: list[USMarket], intl: list[IntlOption], min_name: float = 0.8,
             if concepts(us_ctx_text, names) != concepts(intl_text, names):
                 continue  # different kind of bet on the same team
             cs = jaccard(us_ctx, content(intl_text, name_words | set(words(o.label))))
-            if cs < min_context:
+            # "No change" or "Yes" says nothing about the event, so the event
+            # wording must carry the match (ECB vs Bank of Russia).
+            generic = set(words(o.label)) <= GENERIC
+            if cs < (0.6 if generic else min_context):
                 continue
             # Teams meet several times a season, so a game must end within a
             # day of its counterpart; futures and elections get more slack.

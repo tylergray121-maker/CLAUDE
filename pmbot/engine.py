@@ -74,6 +74,15 @@ class Engine:
         else:
             intl = data.intl_options(self.client)
             pairs = mapping.match(us, intl)
+            # Games: exact slug matches for games starting within two days.
+            now = time.time()
+            games = [m for m in us if m.market_type in mapping.GAME_TYPES
+                     and m.game_start and 0 < m.game_start - now <= 2 * 86400]
+            rows = data.intl_by_slugs(self.client, sorted({mapping.intl_slug(m.slug)
+                                                           for m in games}))
+            game_pairs = mapping.match_games(games, rows)
+            log.info("games: %d US game markets in the next 48h, %d international "
+                     "matches, %d pairs", len(games), len(rows), len(game_pairs))
             intl_by_token = {o.token: o for o in intl}
             kept, rejected = [], []
             for p in pairs:
@@ -88,7 +97,9 @@ class Engine:
                 else:
                     rejected.append({**p.to_json(), "price_gap": round(gap, 3)})
             kept.sort(key=lambda x: -x[1])  # most active reference markets first
-            pairs = [p for p, _ in kept]
+            # Game pairs first: they are what sportsgameday trades.
+            pairs = game_pairs + [p for p, _ in kept if p.us_slug not in
+                                  {g.us_slug for g in game_pairs}]
             mapping.save(pairs, os.path.join(self.ecfg.out_dir, "pairs.json"))
             with open(os.path.join(self.ecfg.out_dir, "pairs_rejected.json"), "w") as f:
                 json.dump(rejected, f, indent=1)

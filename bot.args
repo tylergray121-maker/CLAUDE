@@ -1,1 +1,1 @@
---minutes 10 --cycle-seconds 15 --max-markets 80 --max-rps 10
+--minutes 30 --cycle-seconds 15 --max-markets 100 --max-rps 10 --strategies sportsgameday,fairvalue

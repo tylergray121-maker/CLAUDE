@@ -70,6 +70,7 @@ class USMarket:
     status: str
     bid: float | None
     ask: float | None
+    long_label: str = ""   # which outcome the market's price is for ("Bucks", "Yes")
 
     def tradable(self, now: float, pre_game_s: float = 600,
                  min_to_end_s: float = 3600) -> tuple[bool, str]:
@@ -96,7 +97,9 @@ def parse_us_market(m: dict) -> USMarket | None:
         game_start=parse_time(m.get("gameStartTime")), end=parse_time(m.get("endDate")),
         tick=float(m.get("orderPriceMinTickSize") or 0.01),
         status=str(m.get("status") or ""),
-        bid=amount(m.get("bestBidQuote")), ask=amount(m.get("bestAskQuote")))
+        bid=amount(m.get("bestBidQuote")), ask=amount(m.get("bestAskQuote")),
+        long_label=next((str(sd.get("description") or "") for sd in m.get("marketSides") or []
+                         if isinstance(sd, dict) and sd.get("long") is True), ""))
 
 
 def us_markets(client: Client, page: int = 100, max_pages: int = 1000) -> list[USMarket]:
@@ -224,6 +227,24 @@ def intl_options(client: Client, page: int = 500, max_pages: int = 200,
             break
         offset += len(rows)  # gamma returns at most 100 rows whatever the limit
     log.info("international: %d active outcome tokens", len(out))
+    return out
+
+
+def intl_by_slugs(client: Client, slugs: list[str], batch: int = 40) -> dict[str, dict]:
+    """International markets keyed by slug (active ones only)."""
+    keep = ("slug", "question", "clobTokenIds", "outcomes", "endDate", "closed",
+            "active", "enableOrderBook", "bestBid", "bestAsk", "volume24hr")
+    out: dict[str, dict] = {}
+    for i in range(0, len(slugs), batch):
+        params = [("slug", x) for x in slugs[i:i + batch]] + [("limit", batch)]
+        try:
+            rows = client.get(GAMMA, "/markets", params, use_cache=False, keep=keep) or []
+        except HTTPError as e:
+            log.warning("intl markets by slug: %s", e)
+            continue
+        for r in rows:
+            if r.get("slug") and not r.get("closed"):
+                out[r["slug"]] = r
     return out
 
 
