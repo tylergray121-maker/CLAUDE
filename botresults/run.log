@@ -1,21 +1,54 @@
-11:39:05 INFO Polymarket US: 30000 open markets
-11:39:06 INFO international: 100 active outcome tokens
-11:39:07 INFO pairs: 0 kept, 0 rejected on price
-12:39:11 INFO Polymarket US: 30000 open markets
-12:39:12 INFO international: 100 active outcome tokens
-12:39:13 INFO pairs: 0 kept, 0 rejected on price
-# Polymarket US bot — paper run
+12:58:17 INFO Polymarket US: 78936 open markets
+Traceback (most recent call last):
+  File "/home/runner/work/CLAUDE/CLAUDE/copybt/api.py", line 114, in get
+    with urllib.request.urlopen(req, timeout=self.timeout) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py", line 521, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py", line 630, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py", line 559, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/urllib/request.py", line 639, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 422: Unknown
 
-Pairs tracked: 0; observations with a trustworthy reference price: 0.
+During handling of the above exception, another exception occurred:
 
-## Is there an edge to take?
-
-US mid vs international mid, absolute gap: median 0.00¢, 90th pct 0.00¢, 99th pct 0.00¢.
-Times a US price was through fair value by ≥ 3¢ after the taker fee: 0 to buy, 0 to sell (see `events.jsonl`, kind=opportunity).
-
-## Trading
-
-Equity $200.00 from $200.00 (+0.00), cash $200.00; 0 fills; taker fees $0.00; maker rebates $0.00; open positions 0.
-Halted: no.
+Traceback (most recent call last):
+  File "/home/runner/work/CLAUDE/CLAUDE/pmbot/data.py", line 208, in intl_options
+    rows = client.get(GAMMA, "/markets", {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/CLAUDE/CLAUDE/copybt/api.py", line 125, in get
+    raise last_err
+copybt.api.HTTPError: HTTP 422 for https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=500&offset=2100: {"type":"validation error","error":"offset too large, use /markets/keyset for deeper pagination"}
 
 
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/CLAUDE/CLAUDE/pmbot/__main__.py", line 94, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/runner/work/CLAUDE/CLAUDE/pmbot/__main__.py", line 88, in main
+    Engine(ecfg, scfg, RiskManager(rcfg), broker).run()
+  File "/home/runner/work/CLAUDE/CLAUDE/pmbot/engine.py", line 112, in run
+    self.refresh_pairs()
+  File "/home/runner/work/CLAUDE/CLAUDE/pmbot/engine.py", line 74, in refresh_pairs
+    intl = data.intl_options(self.client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/CLAUDE/CLAUDE/pmbot/data.py", line 212, in intl_options
+    log.warning("intl markets page %d: %s", i, e)
+                                            ^
+NameError: name 'i' is not defined. Did you mean: 'id'?

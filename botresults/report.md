@@ -1,6 +1,6 @@
 # Polymarket US bot — paper run
 
-Pairs tracked: 0; observations with a trustworthy reference price: 0.
+Mapping: 0 open US markets, 0 international outcomes, 0 pairs (0 tracked after live price checks); observations with a trustworthy reference price: 0.
 
 ## Is there an edge to take?
 
