@@ -16,13 +16,13 @@ concurrency:
 jobs:
   backtest:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 300
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - uses: actions/cache@v4
+      - uses: actions/cache/restore@v4
         with:
           path: .cache
           key: polymarket-${{ github.run_id }}
@@ -46,7 +46,15 @@ jobs:
           for f in results/probe/*.json; do echo "== $f"; head -c 1500 "$f"; echo; done
 
       - name: Run backtest
-        run: python -m copybt $(cat backtest.args 2>/dev/null) 2>&1 | tee results/run.log
+        # Stop well before the job limit so the cache and results still get saved.
+        timeout-minutes: 270
+        run: python -u -m copybt $(cat backtest.args 2>/dev/null) 2>&1 | tee results/run.log
+
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: .cache
+          key: polymarket-${{ github.run_id }}
 
       - name: Commit results
         if: always()
