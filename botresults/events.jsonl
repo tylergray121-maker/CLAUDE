@@ -5715,3 +5715,15 @@
 {"ts": 1792605542.429, "kind": "copy_signal", "slug": "aec-nba-atl-orl-2026-10-21:short", "side": "BUY", "leader": "BreakTheBank", "price": 0.54, "leader_usd": 7.56, "market": "Hawks vs. Magic"}
 {"ts": 1792605546.714, "kind": "order", "slug": "aec-nba-atl-orl-2026-10-21:short", "side": "BUY", "price": 0.55, "qty": 9, "post_only": false, "fair": 0.545, "strategy": "copytop", "id": null}
 {"ts": 1792605711.095, "kind": "cancel_all", "reason": "shutdown"}
+{"ts": 1792618773.624, "kind": "copy_unmapped", "leader": "Jsram", "market": "Will FC Red Bull Salzburg win on 2026-10-22? AND Will Real Sociedad de F\u00fatbol win on 2026-10-22? AND Will Bayer 04 Leverkusen win on 2026-10-22? AND Will RU Saint-Gilloise win on 2026-10-22?", "intl_slug": "", "outcome": ""}
+{"ts": 1792618793.422, "kind": "copy_signal", "slug": "aec-nba-cha-bkn-2026-10-21:short", "side": "BUY", "leader": "EdZachary", "price": 0.4700000008, "leader_usd": 77.46, "market": "Hornets vs. Nets"}
+{"ts": 1792618793.422, "kind": "copy_signal", "slug": "aec-nba-cha-bkn-2026-10-21:short", "side": "BUY", "leader": "EdZachary", "price": 0.4700000132, "leader_usd": 10.64, "market": "Hornets vs. Nets"}
+{"ts": 1792618793.422, "kind": "copy_signal", "slug": "aec-nba-cha-bkn-2026-10-21:short", "side": "BUY", "leader": "EdZachary", "price": 0.4700000039, "leader_usd": 26.6, "market": "Hornets vs. Nets"}
+{"ts": 1792618793.422, "kind": "copy_signal", "slug": "aec-nba-cha-bkn-2026-10-21:short", "side": "BUY", "leader": "EdZachary", "price": 0.47, "leader_usd": 9.75, "market": "Hornets vs. Nets"}
+{"ts": 1792618794.316, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Spread: Magic (-3.5)", "intl_slug": "nba-atl-orl-2026-10-21-spread-home-3pt5", "outcome": "Magic"}
+{"ts": 1792618794.316, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Spread: Magic (-3.5)", "intl_slug": "nba-atl-orl-2026-10-21-spread-home-3pt5", "outcome": "Magic"}
+{"ts": 1792618794.316, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Spread: Magic (-3.5)", "intl_slug": "nba-atl-orl-2026-10-21-spread-home-3pt5", "outcome": "Magic"}
+{"ts": 1792618794.316, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "2026 Balance of Power: D Senate, R House", "intl_slug": "2026-balance-of-power-d-senate-r-house-692", "outcome": "Yes"}
+{"ts": 1792618794.316, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Spread: Magic (-3.5)", "intl_slug": "nba-atl-orl-2026-10-21-spread-home-3pt5", "outcome": "Magic"}
+{"ts": 1792618794.316, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Spread: Magic (-3.5)", "intl_slug": "nba-atl-orl-2026-10-21-spread-home-3pt5", "outcome": "Magic"}
+{"ts": 1792619002.863, "kind": "cancel_all", "reason": "shutdown"}

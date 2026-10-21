@@ -1,12 +1,12 @@
 [
  {
-  "us_slug": "astatc-nfl-recyds-ou-2027-01-10-chrgod",
-  "intl_token": "29455956507878475117931847639472344085267281774274934351341836033963888955609",
-  "score": 0.515,
-  "us_label": "Regular Season Receiving Yards O/U: Chris Godwin 699.5+",
-  "intl_label": "Will Chris Godwin have 1,000+ receiving yards in the 2026-27 NFL regular season? [Chris Godwin]",
+  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-elsino",
+  "intl_token": "49947883690893321668605904280941329019506708400369927735110598916726348018121",
+  "score": 0.614,
+  "us_label": "Oscar Nominees: Best Picture: Elsinore",
+  "intl_label": "Will \"Elsinore\" be nominated for Best Film Editing at the 99th Academy Awards? [Elsinore]",
   "tick": 0.01,
-  "price_gap": 0.424
+  "price_gap": 0.085
  },
  {
   "us_slug": "tac-oscars-nom-2027-01-31-bestpic-debut",
@@ -18,22 +18,22 @@
   "price_gap": 0.38
  },
  {
-  "us_slug": "arankc-ucl-2027-01-27-9to24-fcb",
-  "intl_token": "94769109576173913172373765385317232135198722806241842004151297442604035564494",
-  "score": 0.505,
-  "us_label": "Champions League League Phase 9-24 Place Finishers: FC Barcelona",
-  "intl_label": "Will Barcelona finish first in UCL league phase? [Barcelona]",
-  "tick": 0.01,
-  "price_gap": 0.08
- },
- {
   "us_slug": "tac-grammys-aoty-2027-02-07-artlov",
   "intl_token": "115038513749123323356108768879054424621968703965081397630027954404380369699982",
   "score": 0.7,
   "us_label": "Grammy Winner: Album of the Year: The Art of Loving - Olivia Dean",
   "intl_label": "Will The Art of Loving (Olivia Dean) win Album of the Year at the 69th Annual GRAMMY Awards? [The Art of Loving - Olivia Dean]",
   "tick": 0.01,
-  "price_gap": 0.226
+  "price_gap": 0.09
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstact-2027-01-21-samroc",
+  "intl_token": "108285250004806143512903340445429431007464603507420637790462951090711050338491",
+  "score": 0.643,
+  "us_label": "Oscar Nominees: Best Actor: Sam Rockwell",
+  "intl_label": "Will Sam Rockwell be nominated for Best Actor at the 99th Academy Awards? [Sam Rockwell]",
+  "tick": 0.01,
+  "price_gap": 0.076
  },
  {
   "us_slug": "tac-oscars-nom-bstact-2027-01-21-sebsta",
@@ -42,7 +42,16 @@
   "us_label": "Oscar Nominees: Best Actor: Sebastian Stan",
   "intl_label": "Will Sebastian Stan be nominated for Best Actor at the 99th Academy Awards? [Sebastian Stan]",
   "tick": 0.01,
-  "price_gap": 0.15
+  "price_gap": 0.135
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestdoc-youcan",
+  "intl_token": "100757376849492277132821909746555605457515786857395729851351563483016663901152",
+  "score": 0.632,
+  "us_label": "Oscar Winner: Best Documentary Feature Film: You Can See Everything",
+  "intl_label": "Will You Can See Everything win Best Picture at the 99th Academy Awards? [You Can See Everything]",
+  "tick": 0.01,
+  "price_gap": 0.559
  },
  {
   "us_slug": "tac-oscars-nom-bstsupact-2027-01-21-samroc",
@@ -51,7 +60,7 @@
   "us_label": "Oscar Nominees: Best Supporting Actor: Sam Rockwell",
   "intl_label": "Will Sam Rockwell be nominated for Best Actor at the 99th Academy Awards? [Sam Rockwell]",
   "tick": 0.01,
-  "price_gap": 0.741
+  "price_gap": 0.733
  },
  {
   "us_slug": "tac-oscars-nom-bstmakeup-2027-01-21-digger",
@@ -60,7 +69,7 @@
   "us_label": "Oscar Nominees: Best Makeup and Hairstyling: Digger",
   "intl_label": "Will \"Digger\" be nominated for Best Costume Design at the 99th Academy Awards? [Digger]",
   "tick": 0.01,
-  "price_gap": 0.67
+  "price_gap": 0.68
  },
  {
   "us_slug": "tac-oscars-nom-bstcine-2027-01-21-digger",
@@ -69,7 +78,16 @@
   "us_label": "Oscar Nominees: Best Cinematography: Digger",
   "intl_label": "Will \"Digger\" be nominated for Best Costume Design at the 99th Academy Awards? [Digger]",
   "tick": 0.01,
-  "price_gap": 0.1
+  "price_gap": 0.095
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestedit-youcan",
+  "intl_token": "100757376849492277132821909746555605457515786857395729851351563483016663901152",
+  "score": 0.639,
+  "us_label": "Oscar Winner: Best Film Editing: You Can See Everything",
+  "intl_label": "Will You Can See Everything win Best Picture at the 99th Academy Awards? [You Can See Everything]",
+  "tick": 0.01,
+  "price_gap": 0.174
  },
  {
   "us_slug": "tac-oscars-nom-bstorigscr-2027-01-21-debut",
@@ -90,12 +108,12 @@
   "price_gap": 0.185
  },
  {
-  "us_slug": "tac-oscars-nom-bstlashort-2027-01-21-magfar",
-  "intl_token": "106275410328675521388600759401750528011427557505521383833315851749192947532907",
+  "us_slug": "tac-oscars-nom-bstlashort-2027-01-21-32b",
+  "intl_token": "21907984520995959944533899676569769585658871812948425812678533694128857792510",
   "score": 0.688,
-  "us_label": "Oscar Nominees: Best Live Action Short Film: Magan's Fare",
-  "intl_label": "Will \"Magan's Fare\" be nominated for Best Live Action Short Film at the 99th Academy Awards? [Magan's Fare]",
+  "us_label": "Oscar Nominees: Best Live Action Short Film: 32B",
+  "intl_label": "Will \"32B\" be nominated for Best Live Action Short Film at the 99th Academy Awards? [32B]",
   "tick": 0.01,
-  "price_gap": 0.155
+  "price_gap": 0.12
  }
 ]
