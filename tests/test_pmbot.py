@@ -215,6 +215,17 @@ class MappingTest(unittest.TestCase):
             "Milwaukee Brewers", "Will the Milwaukee Brewers win the 2026 World Series?",
             end=1.8e9 + 200 * 86400)]), [])
 
+    def test_games_must_be_the_same_meeting(self):
+        day = 86400
+        def game(end):
+            return data.USMarket("us-g", "Avalanche vs. Flyers", "Avalanche", "", "moneyline",
+                                 "sports", end - 3 * 3600, end, 0.01, "MARKET_STATUS_OPEN",
+                                 0.55, 0.56)
+        opt = intl_opt("Avalanche", "Avalanche vs. Flyers", "NHL: Avalanche vs. Flyers",
+                       end=1.8e9 + 3600)
+        self.assertEqual(len(mapping.match([game(1.8e9)], [opt])), 1)
+        self.assertEqual(mapping.match([game(1.8e9 + 20 * day)], [opt]), [])  # rematch
+
     def test_name_containment(self):
         self.assertEqual(mapping.name_similarity("Kyle Larson", "Kyle Larson"), 1.0)
         self.assertLess(mapping.name_similarity("Los Angeles Rams", "Rams"), 0.8)  # too short

@@ -101,11 +101,12 @@ def parse_us_market(m: dict) -> USMarket | None:
 
 def us_markets(client: Client, page: int = 100, max_pages: int = 300) -> list[USMarket]:
     out, seen = [], set()
-    for i in range(max_pages):
+    offset = 0
+    for _ in range(max_pages):
         try:
             rows = (client.get(US_GATEWAY, "/v1/markets", {
                 "active": "true", "closed": "false", "limit": page,
-                "offset": i * page}, use_cache=False) or {}).get("markets", [])
+                "offset": offset}, use_cache=False) or {}).get("markets", [])
         except HTTPError as e:
             log.warning("US markets page %d: %s", i, e)
             break
@@ -116,8 +117,9 @@ def us_markets(client: Client, page: int = 100, max_pages: int = 300) -> list[US
                 seen.add(m.slug)
                 out.append(m)
                 new += 1
-        if len(rows) < page or not new:
+        if not rows or not new:
             break
+        offset += len(rows)
     log.info("Polymarket US: %d open markets", len(out))
     return out
 
@@ -200,11 +202,12 @@ def intl_options(client: Client, page: int = 500, max_pages: int = 200,
             "events", "bestBid", "bestAsk", "volume24hr", "closed", "active",
             "enableOrderBook")
     out = []
-    for i in range(max_pages):
+    offset = 0
+    for _ in range(max_pages):
         try:
             rows = client.get(GAMMA, "/markets", {
                 "active": "true", "closed": "false", "limit": page,
-                "offset": i * page}, use_cache=False, keep=keep) or []
+                "offset": offset}, use_cache=False, keep=keep) or []
         except HTTPError as e:
             log.warning("intl markets page %d: %s", i, e)
             break
@@ -212,8 +215,9 @@ def intl_options(client: Client, page: int = 500, max_pages: int = 200,
             if isinstance(r.get("events"), list):  # keep only the event title
                 r["events"] = [{"title": (e or {}).get("title")} for e in r["events"][:1]]
             out += [o for o in parse_intl_market(r) if o.volume24h >= min_volume24h]
-        if len(rows) < page:
+        if not rows:
             break
+        offset += len(rows)  # gamma returns at most 100 rows whatever the limit
     log.info("international: %d active outcome tokens", len(out))
     return out
 

@@ -16,7 +16,7 @@ import re
 from collections import defaultdict
 from dataclasses import asdict, dataclass
 
-from .data import IntlOption, USMarket
+from .data import LONG_RUNNING, IntlOption, USMarket
 
 STOP = set("""a an and the of to in on at for by will be is are win wins winner
 winning who which what vs v or with from as this that 2026 2027 2028 de la""".split())
@@ -91,8 +91,13 @@ def match(us: list[USMarket], intl: list[IntlOption], min_name: float = 0.8,
             cs = jaccard(us_ctx, content(intl_text, name_words | set(words(o.label))))
             if cs < min_context:
                 continue
-            if m.end and o.end and abs(m.end - o.end) > max_end_gap_days * 86400:
+            # Teams meet several times a season, so a game must end within a
+            # day of its counterpart; futures and elections get more slack.
+            gap_days = max_end_gap_days if m.market_type in LONG_RUNNING else 1.5
+            if m.end and o.end and abs(m.end - o.end) > gap_days * 86400:
                 continue
+            if m.market_type not in LONG_RUNNING and not (m.end and o.end):
+                continue  # a game without dates can't be matched safely
             score = 0.5 * ns + 0.5 * cs
             if score > best_score:
                 best, best_score = o, score
