@@ -43,6 +43,8 @@ jobs:
           probe gamma "https://gamma-api.polymarket.com/markets?condition_ids=$C&limit=1"
           probe gamma_closed "https://gamma-api.polymarket.com/markets?condition_ids=$C&closed=true&limit=1"
           probe clob "https://clob.polymarket.com/markets/$C"
+          A=$(python -c "import json;d=json.load(open('results/probe/activity.json'));print(d[0]['asset'])" 2>/dev/null || true)
+          probe prices_history "https://clob.polymarket.com/prices-history?market=$A&startTs=$(( $(date +%s) - 90*86400 ))&endTs=$(date +%s)&fidelity=1"
           probe us_markets "https://gateway.polymarket.us/v1/markets?closed=false&limit=3&offset=0"
           for f in results/probe/*.json; do echo "== $f"; head -c 1500 "$f"; echo; done
 

@@ -42,6 +42,8 @@ def parse_args(argv=None) -> argparse.Namespace:
 
     g = p.add_argument_group("window")
     g.add_argument("--days", type=int, default=90)
+    g.add_argument("--end", help="window end, ISO time (default: now, hour-aligned); "
+                   "pin it to reuse a previous run's cache")
     g.add_argument("--split", type=float, default=0.67,
                    help="fraction of the window used to qualify; the rest is the test")
 
@@ -58,8 +60,11 @@ def parse_args(argv=None) -> argparse.Namespace:
     g.add_argument("--no-market-fees", action="store_true",
                    help="ignore Polymarket's per-market taker fees")
     g.add_argument("--min-order", type=float, default=d.min_order_usd)
-    g.add_argument("--delay-seconds", type=int, default=0,
-                   help="copy latency; fetches CLOB price history per token (slow)")
+    g.add_argument("--delay-seconds", type=int, default=30,
+                   help="copy latency, priced from CLOB price history; applied to "
+                   "the shortlist (0 = fill at the leader's price)")
+    g.add_argument("--shortlist", type=int, default=150,
+                   help="wallets re-simulated with the copy delay")
 
     g = p.add_argument_group("ranking")
     g.add_argument("--min-buys", type=int, default=15)
@@ -102,6 +107,9 @@ def main(argv=None) -> int:
     client = Client(cache_dir=args.cache_dir, max_rps=args.max_rps)
 
     end_ts = int(time.time()) // 3600 * 3600  # hour-aligned so caches are reusable
+    if args.end:
+        end_ts = int(datetime.fromisoformat(args.end.replace("Z", "+00:00"))
+                     .timestamp())
     start_ts = end_ts - args.days * 86400
     split_ts = start_ts + int((end_ts - start_ts) * args.split)
     cfg = SimConfig(start_cash=args.bankroll, base_pct=args.base_pct,
@@ -158,6 +166,31 @@ def main(argv=None) -> int:
     price_at = prices.price_at if prices else None
 
     # 4. Simulate ----------------------------------------------------------
+    # Pass 1 fills at the leader's price for every wallet (cheap). Wallets
+    # that look promising in either the qualifying or the most recent window
+    # are then re-run with the copy delay priced from market history.
+    span = split_ts - start_ts
+    quick, quick_recent = {}, {}
+    for w in to_run:
+        trades = histories[w][0]
+        quick[w] = simulate(trades, markets, cfg, start_ts, end_ts, split_ts)
+        quick_recent[w] = simulate(trades, markets, cfg, end_ts - span, end_ts,
+                                   end_ts - span // 2)
+
+    def promise(w):
+        a, b = quick[w], quick_recent[w]
+        sa = (a.train_return_pct - 0.5 * a.train_max_drawdown_pct
+              if a.buys_copied >= args.min_buys else -1e9)
+        sb = (b.return_pct - 0.5 * b.max_drawdown_pct
+              if b.buys_copied >= args.min_buys else -1e9)
+        return max(sa, sb)
+
+    shortlist = {w for w in sorted(to_run, key=promise, reverse=True)[:args.shortlist]
+                 if promise(w) > 0}
+    if price_at:
+        log.info("re-simulating %d shortlisted wallets with a %ds copy delay",
+                 len(shortlist), args.delay_seconds)
+
     rows: list[dict] = []
     curves: dict[str, list] = {}
     for w in wallets:
@@ -170,7 +203,9 @@ def main(argv=None) -> int:
                "flags": ";".join(prof.flags), **_prefix(asdict(prof), "lead_")}
         row.pop("lead_flags")
         if w in to_run:
-            res = simulate(trades, markets, cfg, start_ts, end_ts, split_ts, price_at)
+            res = (simulate(trades, markets, cfg, start_ts, end_ts, split_ts, price_at)
+                   if w in shortlist and price_at else quick[w])
+            row["shortlisted"] = w in shortlist
             curves[w] = res.daily_equity
             r = asdict(res)
             r.pop("daily_equity")
@@ -181,7 +216,8 @@ def main(argv=None) -> int:
 
     ran = [r for r in rows if "final_equity" in r]
     eligible = [r for r in ran
-                if r["buys_copied"] >= args.min_buys and r["train_return_pct"] > 0
+                if r["shortlisted"]
+                and r["buys_copied"] >= args.min_buys and r["train_return_pct"] > 0
                 and (args.include_flagged or not r["flags"])]
     eligible_ids = {r["wallet"] for r in eligible}
     for r in ran:
@@ -198,7 +234,7 @@ def main(argv=None) -> int:
 
     # 6. Portfolios: all markets, and only markets also on Polymarket US ----
     os.makedirs(args.out_dir, exist_ok=True)
-    run_hist = {w: histories[w][0] for w in to_run}
+    run_hist = {w: histories[w][0] for w in shortlist}
     plans = [build_plan("Plan A — all Polymarket markets", run_hist, markets, cfg,
                         start_ts, end_ts, split_ts, args.min_buys, price_at=price_at)]
     us_note = ""
@@ -224,6 +260,13 @@ def main(argv=None) -> int:
             us_note = ("Could not load the Polymarket US market list, so no "
                        "New York-usable plan was produced.")
         log.info(us_note)
+
+    for i, plan in enumerate(plans):
+        if plan.recent and plan.recent.fills:
+            name = "picks_trades_" + ("all" if i == 0 else "us") + ".csv"
+            _write_csv(os.path.join(args.out_dir, name), [
+                {**f, "date": datetime.fromtimestamp(f["ts"], timezone.utc)
+                 .strftime("%Y-%m-%d %H:%M")} for f in plan.recent.fills])
 
     # 7. Output ------------------------------------------------------------
     ranked = eligible + sorted([r for r in rows if r["wallet"] not in eligible_ids],
@@ -289,7 +332,8 @@ def _report(args, cfg, start_ts, end_ts, split_ts, rows, ran, eligible) -> str:
         f"{cfg.max_market_pct:.0%} per market; slippage {cfg.slippage*100:.1f}¢/fill, "
         f"{'market taker fees' if cfg.market_fees else 'no market fees'} "
         f"+ {cfg.fee_bps:g} bps, min order ${cfg.min_order_usd:g}, "
-        f"copy delay {cfg.delay_seconds}s.",
+        f"copy delay {cfg.delay_seconds}s (shortlist), never more than the "
+        f"leader's own trade size.",
         "",
         f"Wallets examined: {len(rows)}; simulated: {len(ran)}; "
         f"flagged as hard to copy: {flagged}; eligible for ranking: {len(eligible)}.",

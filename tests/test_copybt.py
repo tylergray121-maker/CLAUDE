@@ -86,6 +86,25 @@ class SimulateTest(unittest.TestCase):
         self.assertEqual(r.skipped, {"market_cap": 1})
         self.assertAlmostEqual(r.final_equity, 140 + 120)
 
+    def test_never_copies_more_than_the_leader_traded(self):
+        # 10% of $200 would be $20, but the leader only spent $5.
+        r = self.run_sim([trade(T0 + 60, "BUY", 0.5, 10)], resolved(YES))
+        self.assertAlmostEqual(r.final_equity, 195 + 10)
+        tiny = self.run_sim([trade(T0 + 60, "BUY", 0.5, 1)], resolved(YES))
+        self.assertEqual(tiny.skipped, {"leader_too_small": 1})
+
+    def test_unknown_market_is_skipped(self):
+        r = self.run_sim([trade(T0 + 60, "BUY", 0.5, 100, cond="0xnope")],
+                         resolved(YES))
+        self.assertEqual(r.skipped, {"unknown_market": 1})
+        self.assertAlmostEqual(r.final_equity, 200.0)
+
+    def test_fill_log(self):
+        r = simulate([trade(T0 + 60, "BUY", 0.5, 100)], resolved(YES), NOFRICTION,
+                     T0, T0 + 10 * DAY, T0 + 3 * DAY, log_fills=True)
+        self.assertEqual(len(r.fills), 1)
+        self.assertEqual((r.fills[0]["action"], r.fills[0]["payout"]), ("BUY", 1.0))
+
     def test_skips_buys_with_nothing_left_to_win(self):
         r = self.run_sim([trade(T0 + 60, "BUY", 0.995, 100)], resolved(YES))
         self.assertEqual(r.skipped, {"price_too_high": 1})
@@ -293,6 +312,12 @@ class FakeClient:
                                 "outcomePrices": '["1","0"]',
                                 "closedTime": self.now - (79 - i * 3) * DAY})
             return out
+        if path == "/prices-history":
+            # Long ranges come back empty, forcing the one-hour fallback.
+            if params["endTs"] - params["startTs"] > 3 * 3600:
+                return {"history": []}
+            return {"history": [{"t": params["startTs"] + 60 * i, "p": 0.52}
+                                for i in range(120)]}
         if path == "/v1/markets":
             if params["offset"] > 0 or params["closed"] == "true":
                 return {"markets": []}

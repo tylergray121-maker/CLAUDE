@@ -335,28 +335,45 @@ class PriceHistory:
         self.start_ts = start_ts
         self.end_ts = end_ts
         self._series: dict[str, tuple[list[int], list[float]]] = {}
+        self._windows: dict[tuple[str, int], list[tuple[int, float]]] = {}
+
+    def _fetch(self, token: str, start: int, end: int) -> list[tuple[int, float]]:
+        try:
+            rows = _as_list(self.client.get(CLOB_API, "/prices-history", {
+                "market": token, "startTs": start, "endTs": end, "fidelity": 1}))
+        except (HTTPError, ValueError, TypeError) as e:
+            log.debug("price history %s: %s", token, e)
+            return []
+        out = []
+        for r in rows:
+            t, p = _parse_ts(r.get("t")), r.get("p")
+            if t is not None and p is not None:
+                out.append((t, float(p)))
+        return out
 
     def _load(self, token: str) -> tuple[list[int], list[float]]:
         if token not in self._series:
-            ts: list[int] = []
-            ps: list[float] = []
-            try:
-                rows = _as_list(self.client.get(CLOB_API, "/prices-history", {
-                    "market": token, "startTs": self.start_ts,
-                    "endTs": self.end_ts, "fidelity": 1}))
-                for r in rows:
-                    t, p = _parse_ts(r.get("t")), r.get("p")
-                    if t is not None and p is not None:
-                        ts.append(t)
-                        ps.append(float(p))
-            except (HTTPError, ValueError, TypeError) as e:
-                log.debug("price history %s: %s", token, e)
-            order = sorted(range(len(ts)), key=ts.__getitem__)
-            self._series[token] = ([ts[i] for i in order], [ps[i] for i in order])
+            pts = sorted(self._fetch(token, self.start_ts, self.end_ts))
+            self._series[token] = ([t for t, _ in pts], [p for _, p in pts])
         return self._series[token]
 
     def price_at(self, token: str, ts: int) -> float | None:
-        """First recorded price at or after ``ts`` (None if there is none)."""
+        """First recorded price at or after ``ts`` (within an hour), else None.
+
+        Falls back to a one-hour query around ``ts`` when the full-range
+        series is empty or has no point near ``ts`` (long ranges may be
+        returned at coarser resolution).
+        """
         times, prices = self._load(token)
         i = bisect_left(times, ts)
-        return prices[i] if i < len(times) else None
+        if i < len(times) and times[i] - ts <= 3600:
+            return prices[i]
+        key = (token, ts // 3600)
+        if key not in self._windows:
+            self._windows[key] = sorted(self._fetch(token, ts // 3600 * 3600,
+                                                    ts // 3600 * 3600 + 7200))
+        pts = self._windows[key]
+        j = bisect_left(pts, (ts, -1.0))
+        if j < len(pts) and pts[j][0] - ts <= 3600:
+            return pts[j][1]
+        return None

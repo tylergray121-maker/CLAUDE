@@ -128,7 +128,8 @@ def build_plan(label: str, histories: dict[str, list[Trade]],
     if picks:
         merged = [t for w in picks for t in histories[w]]
         plan.recent = simulate(merged, markets, portfolio_cfg(cfg, len(picks)),
-                               recent_start, end_ts, recent_split, price_at)
+                               recent_start, end_ts, recent_split, price_at,
+                               log_fills=True)
     return plan
 
 

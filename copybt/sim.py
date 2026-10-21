@@ -32,6 +32,7 @@ class SimConfig:
     fee_bps: float = 0.0          # flat extra fee on top of market fees
     market_fees: bool = True      # charge each market's taker fee schedule
     min_order_usd: float = 1.0    # Polymarket marketable order minimum
+    max_leader_multiple: float = 1.0  # never take more than the leader did
     max_fill_price: float = 0.99  # don't buy when nothing is left to win
     delay_seconds: int = 0        # only used with a price lookup
 
@@ -51,6 +52,7 @@ class SimResult:
     win_rate: float
     skipped: dict[str, int] = field(default_factory=dict)
     daily_equity: list[tuple[int, float]] = field(default_factory=list)
+    fills: list[dict] = field(default_factory=list)
 
 
 PriceLookup = Callable[[str, int], "float | None"]
@@ -58,7 +60,8 @@ PriceLookup = Callable[[str, int], "float | None"]
 
 def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
              start_ts: int, end_ts: int, split_ts: int,
-             price_at: PriceLookup | None = None) -> SimResult:
+             price_at: PriceLookup | None = None,
+             log_fills: bool = False) -> SimResult:
     """Copy ``trades`` (one or several leaders) with a single bankroll.
 
     Positions are kept per (leader wallet, token) lot, so one leader's exit
@@ -78,6 +81,18 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
     buy_sizes: dict[str, list[float]] = defaultdict(list)  # per leader
     skipped: dict[str, int] = defaultdict(int)
     buys = sells = 0
+    fills: list[dict] = []
+
+    def record(t: Trade, kind: str, price: float, shares: float, usd: float) -> None:
+        if log_fills:
+            m = markets[t.condition_id]
+            fills.append({"ts": t.ts, "wallet": t.wallet, "market": t.title,
+                          "outcome": t.outcome, "action": kind,
+                          "leader_price": t.price, "fill_price": price,
+                          "shares": shares, "usd": usd,
+                          "leader_usd": t.notional,
+                          "resolves": m.resolve_ts if m.resolved else None,
+                          "payout": m.prices.get(t.asset) if m.resolved else None})
 
     def taker_fee(cond: str, price: float, shares: float) -> float:
         m = markets.get(cond)
@@ -120,6 +135,9 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
             settle(resolutions[ri][1])
             curve.append((resolutions[ri][0], equity()))
             ri += 1
+        if t.condition_id not in markets:
+            skipped["unknown_market"] += 1
+            continue
         k = (t.wallet, t.asset)
         cond_of[t.asset] = t.condition_id
         lots_of[t.condition_id].add(k)
@@ -130,6 +148,8 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
         delayed = None
         if price_at and cfg.delay_seconds > 0:
             delayed = price_at(t.asset, t.ts + cfg.delay_seconds)
+            if delayed is None:
+                skipped["info_no_delay_price"] += 1  # filled at leader price
 
         if t.side == "BUY":
             leader[k] += t.size
@@ -146,6 +166,7 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
             conviction = min(cfg.conviction_max, max(cfg.conviction_min, conviction))
             usd = eq * cfg.base_pct * conviction
             usd = min(usd, eq * cfg.max_trade_pct)
+            usd = min(usd, t.notional * cfg.max_leader_multiple)
             exposure = sum(pos[x] * last_px.get(x[1], 0.0)
                            for x in lots_of[t.condition_id])
             usd = min(usd, eq * cfg.max_market_pct - exposure)
@@ -153,7 +174,10 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
             if usd < cfg.min_order_usd:
                 reason = ("no_cash" if cash / (1 + fee) < cfg.min_order_usd
                           else "market_cap" if eq * cfg.max_market_pct - exposure
-                          < cfg.min_order_usd else "below_min_order")
+                          < cfg.min_order_usd
+                          else "leader_too_small" if t.notional
+                          * cfg.max_leader_multiple < cfg.min_order_usd
+                          else "below_min_order")
                 skipped[reason] += 1
                 continue
             # Market taker fee is charged on the shares bought; shrink the
@@ -163,6 +187,7 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
             pos[k] += shares
             cost[k] += usd * (1 + fee)
             buys += 1
+            record(t, "BUY", fill, shares, usd * (1 + fee))
         else:
             before = leader[k]
             leader[k] = max(0.0, before - t.size)
@@ -183,6 +208,7 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
             pos[k] -= shares
             cost[k] -= basis
             sells += 1
+            record(t, "SELL", fill, shares, proceeds)
         curve.append((t.ts, equity()))
 
     while ri < len(resolutions):
@@ -219,6 +245,7 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
         win_rate=wins / len(pnl) if pnl else 0.0,
         skipped=dict(skipped),
         daily_equity=daily,
+        fills=fills,
     )
 
 
