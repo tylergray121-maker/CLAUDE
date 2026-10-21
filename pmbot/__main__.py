@@ -37,6 +37,8 @@ def parse_args(argv=None):
     g.add_argument("--out-dir", default=e.out_dir)
     g.add_argument("--max-rps", type=float, default=e.max_rps)
     g = p.add_argument_group("strategy")
+    g.add_argument("--strategies", default="sportsgameday,fairvalue",
+                   help="comma list, in priority order: sportsgameday, fairvalue")
     g.add_argument("--maker-edge", type=float, default=s.maker_edge)
     g.add_argument("--taker-edge", type=float, default=s.taker_edge)
     g.add_argument("--order-usd", type=float, default=s.order_usd)
@@ -85,7 +87,8 @@ def main(argv=None) -> int:
         os.makedirs(ecfg.out_dir, exist_ok=True)
         broker.sync()
         broker.cancel_all()  # start clean: drop this bot's own leftovers
-    Engine(ecfg, scfg, RiskManager(rcfg), broker).run()
+    from .strategies import build
+    Engine(ecfg, scfg, RiskManager(rcfg), broker, build(a.strategies, scfg)).run()
     print(open(os.path.join(ecfg.out_dir, "report.md")).read())
     return 0
 

@@ -233,6 +233,48 @@ class MappingTest(unittest.TestCase):
         self.assertLess(mapping.name_similarity("Kyle Busch", "Kyle Larson"), 0.8)
 
 
+class StrategyPluginTest(unittest.TestCase):
+    def engine_with(self, markets):
+        e = Engine.__new__(Engine)
+        e.markets = {m.slug: m for m in markets}
+        e.broker = PaperBroker(200)
+        e.risk = RiskManager(RiskConfig(kill_file="/nonexistent/STOP"))
+        return e
+
+    def test_sports_game_day_window_and_band(self):
+        from pmbot.strategies import SportsGameDay
+        now = 1.8e9
+        def game(slug, start, kind="moneyline"):
+            return data.USMarket(slug, "A vs. B", "A", "", kind, "sports", start,
+                                 start + 3 * 3600, 0.01, "MARKET_STATUS_OPEN", 0.49, 0.51)
+        ms = [game("soon", now + 3600), game("next-week", now + 7 * 86400),
+              game("started", now - 60), game("future", now + 3600, "futures")]
+        e = self.engine_with(ms)
+        views = {m.slug: view(fair=0.50) for m in ms}
+        views["soon-longshot"] = view(fair=0.10, bid=0.09, ask=0.11)
+        e.markets["soon-longshot"] = game("soon-longshot", now + 3600)
+        got = SportsGameDay(StrategyConfig()).orders(e, views, now)
+        self.assertEqual(sorted(k for k, v in got.items() if v), ["soon"])
+
+    def test_one_strategy_per_market(self):
+        from pmbot.strategies import Strategy
+        class Grab(Strategy):
+            def __init__(self, name, side):
+                self.name, self.side = name, side
+            def orders(self, eng, views, now):
+                return {s: [Order(self.side, 0.4, 1, True)] for s in views}
+        d = tempfile.mkdtemp()
+        e = Engine(EngineConfig(mode="paper", out_dir=d, minutes=0), StrategyConfig(),
+                   RiskManager(RiskConfig(kill_file=os.path.join(d, "STOP"))),
+                   strategies=[Grab("first", "BUY"), Grab("second", "BUY")])
+        v = view(); q = quote(0.49, 0.51)
+        e._trade_all({"m": (v, q)}, time.time())
+        tags = {o.slug: e.owner["m"] for o in e.broker.open_orders.values()}
+        self.assertEqual(tags, {"m": "first"})
+        self.assertEqual(len(e.broker.open_orders), 1)
+        e.shutdown()
+
+
 class FakeVenues:
     """Gateway, gamma and CLOB responses for one futures market."""
 

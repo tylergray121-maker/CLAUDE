@@ -9,6 +9,9 @@ orders there are gone, so strategies never trade against each other.
 
 from __future__ import annotations
 
+from dataclasses import replace
+
+from .data import LONG_RUNNING
 from .strategy import MarketView, Order, StrategyConfig, decide
 
 
@@ -36,4 +39,42 @@ class FairValue(Strategy):
                 for slug, v in views.items() if v.fair is not None}
 
 
-REGISTRY = {"fairvalue": FairValue}
+class SportsGameDay(FairValue):
+    """Modelled on the high-volume sports wallets in the top-wallet study.
+
+    The ones active now trade game markets (not futures), mostly on game
+    day, mostly at 20-80c, with about half their volume as resting orders
+    around a sharp price. This quotes the same way, around the
+    international Polymarket price, but stops before kick-off: in-play
+    trading needs faster data than a polling bot has.
+    """
+
+    name = "sportsgameday"
+
+    def __init__(self, cfg: StrategyConfig, window_hours: float = 24.0):
+        super().__init__(replace(cfg, min_price=max(cfg.min_price, 0.15),
+                                 max_price=min(cfg.max_price, 0.85)))
+        self.window_s = window_hours * 3600
+
+    def orders(self, eng, views, now):
+        game_day = {}
+        for slug, v in views.items():
+            m = eng.markets.get(slug)
+            if m is None or m.market_type in LONG_RUNNING or not m.game_start:
+                continue
+            if not (0 < m.game_start - now <= self.window_s):
+                continue
+            game_day[slug] = v
+        return super().orders(eng, game_day, now)
+
+
+REGISTRY = {"fairvalue": FairValue, "sportsgameday": SportsGameDay}
+
+
+def build(names: str, cfg: StrategyConfig) -> list[Strategy]:
+    out = []
+    for n in [x.strip() for x in names.split(",") if x.strip()]:
+        if n not in REGISTRY:
+            raise SystemExit(f"unknown strategy {n!r}; choose from {', '.join(REGISTRY)}")
+        out.append(REGISTRY[n](cfg))
+    return out
