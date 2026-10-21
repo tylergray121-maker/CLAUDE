@@ -1,1 +1,1 @@
---bankroll 500 --order-usd 10 --max-market-usd 50 --max-total-usd 375 --daily-loss-limit 75 --strategies copytop --conviction-sizing --cycle-seconds 10 --max-markets 20 --max-rps 10 --snapshot-seconds 60
+--bankroll 500 --order-usd 10 --max-market-usd 50 --max-total-usd 375 --daily-loss-limit 75 --strategies copytop --conviction-sizing --cycle-seconds 10 --max-markets 20 --max-rps 10 --snapshot-seconds 60 --equity-seconds 300
