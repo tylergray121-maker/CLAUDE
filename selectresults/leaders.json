@@ -1,0 +1,96 @@
+{
+ "chosen": "2026-10-21",
+ "rule": "Backtest of copytop itself over 45 days on markets Polymarket US lists (30s copy delay, $10 a signal, US taker fee, never more than 1c over the leader): wallets with 20+ closed copies, copied in the last week, ranked by the lower bound of their per-copy return.",
+ "leaders": [
+  {
+   "wallet": "0xb52e8b3afd9f0f0d502a5a76494b42816d67285c",
+   "name": "1l2ihj34li12u34",
+   "copy_return": 0.4797,
+   "copy_t": 3.7,
+   "copies": 47,
+   "won": 35,
+   "copy_pnl_per_10usd": 5.01
+  },
+  {
+   "wallet": "0xe5b70fd855af9258d9463992e4f1ed7987905ee3",
+   "name": "EdZachary",
+   "copy_return": 0.3812,
+   "copy_t": 3.36,
+   "copies": 74,
+   "won": 50,
+   "copy_pnl_per_10usd": 3.95
+  },
+  {
+   "wallet": "0x7ad71d79a3bb90d0a87a06500fa0fe11663842aa",
+   "name": "theowalcott",
+   "copy_return": 0.2929,
+   "copy_t": 2.79,
+   "copies": 78,
+   "won": 52,
+   "copy_pnl_per_10usd": 3.07
+  },
+  {
+   "wallet": "0x709e8dcb133555794decc598e07f2c923b8366f5",
+   "name": "0xd4aa6f8e91cfea29b66a48ebff52814",
+   "copy_return": 0.3341,
+   "copy_t": 2.08,
+   "copies": 56,
+   "won": 33,
+   "copy_pnl_per_10usd": 3.74
+  },
+  {
+   "wallet": "0x0f6f76ced62a911bccef92f50faaff143854d977",
+   "name": "totoro3miyazaki",
+   "copy_return": 0.2812,
+   "copy_t": 2.08,
+   "copies": 51,
+   "won": 36,
+   "copy_pnl_per_10usd": 2.75
+  },
+  {
+   "wallet": "0x83720820a8aa6c3f20ad71850e7a1a17d16c5223",
+   "name": "Jsram",
+   "copy_return": 0.1439,
+   "copy_t": 2.21,
+   "copies": 161,
+   "won": 107,
+   "copy_pnl_per_10usd": 1.45
+  },
+  {
+   "wallet": "0x924379a79c64b77ad5816ad362122a5f6228658e",
+   "name": "Kch-Temp",
+   "copy_return": 0.1211,
+   "copy_t": 1.6,
+   "copies": 175,
+   "won": 100,
+   "copy_pnl_per_10usd": 1.32
+  },
+  {
+   "wallet": "0x684baa57c338c2549aec0aa3f034f695d72a8409",
+   "name": "monkeymashingkeyboard",
+   "copy_return": 0.0604,
+   "copy_t": 1.78,
+   "copies": 1020,
+   "won": 553,
+   "copy_pnl_per_10usd": 0.62
+  },
+  {
+   "wallet": "0x84dbb7103982e3617704a2ed7d5b39691952aeeb",
+   "name": "Soarin22",
+   "copy_return": 0.0702,
+   "copy_t": 1.16,
+   "copies": 181,
+   "won": 84,
+   "copy_pnl_per_10usd": 1.23
+  },
+  {
+   "wallet": "0x93683d55f0ea67212bc179e9802f00e271c9f390",
+   "name": "www511zwin",
+   "copy_return": 0.2358,
+   "copy_t": 1.06,
+   "copies": 24,
+   "won": 14,
+   "copy_pnl_per_10usd": 2.42
+  }
+ ]
+}
