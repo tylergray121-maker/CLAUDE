@@ -1000,6 +1000,13 @@ class LiveBrokerTest(unittest.TestCase):
         self.assertIn("x-pm-signature", headers)
         self.assertEqual((ok, c.stats["accepted"]), (True, 1))
 
+    def test_promotional_bonus_is_not_spendable_cash(self):
+        from pmbot.broker import spendable
+        self.assertEqual(spendable({"currentBalance": 41.0, "displayedBonus": 10.0}), 31.0)
+        self.assertEqual(spendable({"currentBalance": 41.0, "displayedCash": 24.5,
+                                    "displayedBonus": 10.0}), 24.5)
+        self.assertEqual(spendable({"currentBalance": 200.0}), 200.0)
+
     def test_a_short_side_take_is_booked_from_its_executions(self):
         self.execs = [{"lastShares": "10", "lastPx": {"value": "0.37", "currency": "USD"},
                        "commissionNotionalCollected": {"value": "0.17", "currency": "USD"}},

@@ -243,6 +243,7 @@ class LiveBroker:
         self.fees_paid = self.rebates = self.realized = 0.0
         self.vanished: dict[str, Position] = {}
         self._held: dict[str, Position] | None = None  # positions as of the last sync
+        self._logged_balance = False
         # Only orders this bot created are ever managed or cancelled; manual
         # orders on the account are left alone. Persisted across restarts.
         self.state_file = state_file
@@ -257,11 +258,14 @@ class LiveBroker:
             json.dump(sorted(self.mine), f)
 
     def sync(self) -> None:
-        bal = self.client.account.balances().get("balances", [])
-        # currentBalance, not buyingPower: the risk manager subtracts open bids
-        # itself, and buyingPower already has them taken out.
-        self.cash = sum(_amount(b.get("currentBalance")) for b in bal
-                        if b.get("currency", "USD") == "USD")
+        bal = [b for b in self.client.account.balances().get("balances", [])
+               if b.get("currency", "USD") == "USD"]
+        self.cash = sum(spendable(b) for b in bal)
+        if not self._logged_balance:
+            self._logged_balance = True
+            for b in bal:  # amounts only, once, to check what the account reports
+                log.info("balance fields: %s", {k: v for k, v in b.items()
+                                                if isinstance(v, (int, float))})
         self.positions = {}
         cursor = None
         while True:
@@ -484,6 +488,16 @@ class PreviewChecker:
             return False, state
         self.stats["accepted"] += 1
         return True, "accepted"
+
+
+def spendable(b: dict) -> float:
+    """Real cash in a balance row: the account's own money, not promotional
+    bonus credit (``currentBalance`` includes it; the app's balance doesn't).
+    Open bids are not subtracted here; the risk manager does that itself."""
+    if b.get("displayedCash") is not None:
+        return _amount(b.get("displayedCash"))
+    bonus = sum(_amount(b.get(k)) for k in ("displayedBonus", "bonusHold", "bonusReservation"))
+    return max(0.0, _amount(b.get("currentBalance")) - bonus)
 
 
 def _amount(a) -> float:
