@@ -23,7 +23,20 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Tests
+        run: |
+          pip install -q polymarket-us==2.4.1
+          python -m unittest tests.test_pmbot
+
+      - name: Paper trade against live quotes
+        timeout-minutes: 100
+        shell: bash -o pipefail {0}
+        run: |
+          mkdir -p botresults
+          python -u -m pmbot paper --out-dir botresults $(cat bot.args 2>/dev/null) 2>&1 | tee botresults/run.log | grep -v " paper " | tail -40
+
       - name: Probe API shapes
+        if: false
         run: |
           mkdir -p botresults/probe
           cd botresults/probe

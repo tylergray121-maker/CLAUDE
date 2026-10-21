@@ -1,0 +1,38 @@
+[
+ {
+  "question": "Will FC Bayern M\u00fcnchen win on 2026-10-21?",
+  "groupItemTitle": "FC Bayern M\u00fcnchen",
+  "clobTokenIds": "[\"82853722658173342238781948595880114932844211419294037056959735369523146454820\", \"5261741566386136630503430790123537544925969719805425529373566539868070168195\"]",
+  "outcomes": "[\"Yes\", \"No\"]",
+  "endDate": "2026-10-21T19:00:00Z",
+  "events": [
+   {
+    "title": "FC Bayern M\u00fcnchen vs. Arsenal FC"
+   }
+  ],
+  "bestBid": 0.43,
+  "bestAsk": 0.44,
+  "volume24hr": 918857.3280890001,
+  "closed": false,
+  "active": true,
+  "enableOrderBook": true
+ },
+ {
+  "question": "2026 Balance of Power: R Senate, R House",
+  "groupItemTitle": "Republicans Sweep",
+  "clobTokenIds": "[\"103704141773947678931823410030956181918562062788486034785782641603149828893320\", \"25869296386911654049715489068824757745174681288397238521780118949553760488529\"]",
+  "outcomes": "[\"Yes\", \"No\"]",
+  "endDate": "2026-11-04T04:59:00Z",
+  "events": [
+   {
+    "title": "Balance of Power: 2026 Midterms"
+   }
+  ],
+  "bestBid": 0.08,
+  "bestAsk": 0.09,
+  "volume24hr": 805865.759145,
+  "closed": false,
+  "active": true,
+  "enableOrderBook": true
+ }
+]
