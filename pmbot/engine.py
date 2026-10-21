@@ -34,6 +34,9 @@ class EngineConfig:
     pairs_file: str = ""             # use a reviewed mapping instead of auto-matching
     workers: int = 8
     max_rps: float = 10.0
+    resume: bool = False             # continue the paper account in out_dir/state.json
+    snapshot_seconds: float = 60.0   # how often state.json and paper.json are written
+    equity_seconds: float = 300.0    # how often an equity point is recorded
 
 
 @dataclass
@@ -60,9 +63,18 @@ class Engine:
         self.marks: dict[str, float] = {}
         self.verified: set[str] = set()   # pairs whose live prices agree
         self.map_stats: dict = {}
+        self.labels: dict[str, str] = {}   # slug -> readable market name
+        self.ends: dict[str, float] = {}   # slug -> scheduled close, for held markets
+        self.states: dict[str, str] = {}   # slug -> last US book state
+        self.equity_hist: list[list] = []  # [ts, equity, cash]
+        self.started = time.time()
+        self.start_cash = risk.cfg.bankroll
+        self._next_snapshot = self._next_equity = 0.0
         self._stop = False
         os.makedirs(ecfg.out_dir, exist_ok=True)
         self._events = open(os.path.join(ecfg.out_dir, "events.jsonl"), "a")
+        if ecfg.resume and ecfg.mode == "paper":
+            self._load_state()
 
     # -- setup --------------------------------------------------------------
     def refresh_pairs(self) -> None:
@@ -105,6 +117,8 @@ class Engine:
                 json.dump(rejected, f, indent=1)
             log.info("pairs: %d kept, %d rejected on price", len(pairs), len(rejected))
         self.pairs = pairs[:self.ecfg.max_markets]
+        for p in pairs:
+            self.labels[p.us_slug] = p.us_label
         self.map_stats = {"us_markets": len(us), "pairs": len(pairs),
                           "tracked": len(self.pairs),
                           "intl_options": len(intl) if not self.ecfg.pairs_file else None}
@@ -170,8 +184,12 @@ class Engine:
             q, state = uq
             m = self.markets.get(slug)
             ok, why = m.tradable(now) if m else (False, "unknown")
+            if state:
+                self.states[slug] = state
             if state and state != "MARKET_STATE_OPEN":
                 ok, why = False, state.lower()
+            if m and m.end:
+                self.ends[slug] = m.end
             if q.bid is not None and q.ask is not None:
                 self.marks[slug] = (q.bid + q.ask) / 2
             fair = rs = None
@@ -206,6 +224,13 @@ class Engine:
         if self.ecfg.mode != "scan" and self.risk.check(eq):
             self.broker.cancel_all()
         self._summary(eq)
+        if now >= self._next_equity:
+            self.equity_hist.append([int(now), round(eq, 2), round(self.broker.cash, 2)])
+            self._next_equity = now + self.ecfg.equity_seconds
+        if self.ecfg.mode == "paper" and now >= self._next_snapshot:
+            self.save_state()
+            self.write_dashboard(eq)
+            self._next_snapshot = now + self.ecfg.snapshot_seconds
 
     # -- helpers strategies use -------------------------------------------------
     def held(self, slug: str) -> int:
@@ -282,17 +307,142 @@ class Engine:
             self._log("order", slug=v.slug, side=w.side, price=w.price, qty=w.qty,
                       post_only=w.post_only, fair=v.fair, strategy=w.tag, id=oid)
 
+    CLOSED_STATES = {"MARKET_STATE_CLOSED", "MARKET_STATE_EXPIRED", "MARKET_STATE_TERMINATED"}
+
     def _settle_closed(self, now: float) -> None:
+        """Pay out paper positions in markets that have finished.
+
+        Only a market that is closed (by its book state, or gone from the open
+        list after its scheduled end) is settled, at a final value of 0..1:
+        the book's daily `settlementPx` mark is not a payout.
+        """
         if not isinstance(self.broker, PaperBroker):
             return
         for slug in list(self.broker.positions):
             m = self.markets.get(slug)
-            if m and m.tradable(now)[0]:
+            end = m.end if m else self.ends.get(slug)
+            closed = (self.states.get(slug) in self.CLOSED_STATES
+                      or (m is None and end is not None and now > end))
+            if not closed:
                 continue
             value = data.us_settlement(self.client, slug)
-            if value is not None and m is not None and (m.end or 0) <= now:
-                self.broker.settle(slug, value)
-                self._log("settle", slug=slug, value=value)
+            if value is None or not 0.0 <= value <= 1.0:
+                continue
+            self.broker.settle(slug, value, self.owner.get(slug, ""))
+            self._log("settle", slug=slug, value=value)
+
+    # -- persistence and dashboard ------------------------------------------------
+    def _state_path(self) -> str:
+        return os.path.join(self.ecfg.out_dir, "state.json")
+
+    def save_state(self) -> None:
+        if not isinstance(self.broker, PaperBroker):
+            return
+        r = self.risk
+        state = {"version": 1, "saved": time.time(), "started": self.started,
+                 "start_cash": self.start_cash, "broker": self.broker.to_state(),
+                 "owner": self.owner, "labels": {k: v for k, v in self.labels.items()
+                                                 if k in self.broker.positions or k in self.owner
+                                                 or any(f.slug == k for f in self.broker.fills[-200:])},
+                 "ends": {k: v for k, v in self.ends.items() if k in self.broker.positions},
+                 "equity": self.equity_hist[-20000:],
+                 "risk": {"day": r._day, "day_start_equity": r._day_start_equity,
+                          "halted": r.halted},
+                 "scan": {"observations": self.stats.observations,
+                          "buy_opps": self.stats.buy_opps, "sell_opps": self.stats.sell_opps,
+                          "gaps": self.stats.gaps[-5000:]}}
+        tmp = self._state_path() + ".tmp"
+        with open(tmp, "w") as f:
+            json.dump(state, f)
+        os.replace(tmp, self._state_path())
+
+    def _load_state(self) -> None:
+        try:
+            with open(self._state_path()) as f:
+                st = json.load(f)
+        except (OSError, ValueError):
+            log.info("no saved paper account: starting with $%.2f", self.risk.cfg.bankroll)
+            return
+        self.broker = PaperBroker.from_state(st["broker"])
+        self.started = st.get("started", self.started)
+        self.start_cash = st.get("start_cash", self.start_cash)
+        self.owner = st.get("owner", {})
+        self.labels.update(st.get("labels", {}))
+        self.ends.update(st.get("ends", {}))
+        self.equity_hist = st.get("equity", [])
+        rk = st.get("risk", {})
+        today = int(time.time() // 86400)
+        if rk.get("day") == today:  # a daily-loss halt lasts until the UTC day ends
+            self.risk._day, self.risk._day_start_equity = rk["day"], rk["day_start_equity"]
+            self.risk.halted = rk.get("halted", "")
+        sc = st.get("scan", {})
+        self.stats.observations = sc.get("observations", 0)
+        self.stats.buy_opps, self.stats.sell_opps = sc.get("buy_opps", 0), sc.get("sell_opps", 0)
+        self.stats.gaps = sc.get("gaps", [])
+        log.info("resumed paper account: cash $%.2f, %d positions, %d fills, started %s",
+                 self.broker.cash, len(self.broker.positions), len(self.broker.fills),
+                 time.strftime("%Y-%m-%d %H:%M", time.gmtime(self.started)))
+
+    def write_dashboard(self, equity: float) -> None:
+        """paper.json: every row the dashboard shows, tagged by `kind`."""
+        b, s = self.broker, self.stats
+        iso = lambda t: time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(t)) if t else None
+        name = lambda slug: self.labels.get(slug) or slug
+        held_value = sum(p.qty * self.marks.get(k, p.cost / p.qty) for k, p in b.positions.items())
+        at_cost = sum(p.cost for p in b.positions.values())
+        gaps = sorted(abs(g) for g in s.gaps)
+        pct = lambda q: round(100 * gaps[min(len(gaps) - 1, int(q * len(gaps)))], 2) if gaps else None
+        rows = [{
+            "kind": "summary", "updated": iso(time.time()), "started": iso(self.started),
+            "start_cash": round(self.start_cash, 2), "equity": round(equity, 2),
+            "pnl": round(equity - self.start_cash, 2),
+            "pnl_pct": round((equity / self.start_cash - 1), 5) if self.start_cash else 0,
+            "cash": round(b.cash, 2), "positions_value": round(held_value, 2),
+            "positions_cost": round(at_cost, 2), "unrealized": round(held_value - at_cost, 2),
+            "realized": round(b.realized, 2), "fees_paid": round(b.fees_paid, 2),
+            "rebates": round(b.rebates, 2), "fills": len(b.fills),
+            "open_orders": len(b.open_orders), "positions": len(b.positions),
+            "halted": self.risk.halted or "", "strategies": ",".join(x.name for x in self.strategies),
+            "maker_edge_c": round(100 * self.scfg.maker_edge, 2),
+            "taker_edge_c": round(100 * self.scfg.taker_edge, 2),
+            "us_markets": self.map_stats.get("us_markets", 0),
+            "pairs": self.map_stats.get("pairs", 0), "tracked": len(self.pairs),
+            "observations": s.observations, "gap_median_c": pct(.5), "gap_p90_c": pct(.9),
+            "buy_opps": s.buy_opps, "sell_opps": s.sell_opps}]
+        # Equity: every point for the last 2 days, hourly before that.
+        cut = time.time() - 2 * 86400
+        last_hour = None
+        for t, e, c in self.equity_hist:
+            if t < cut:
+                h = t // 3600
+                if h == last_hour:
+                    continue
+                last_hour = h
+            rows.append({"kind": "equity", "ts": iso(t), "equity": e, "cash": c})
+        for slug, p in sorted(b.positions.items(), key=lambda kv: -kv[1].cost):
+            mark = self.marks.get(slug)
+            value = p.qty * (mark if mark is not None else p.cost / p.qty)
+            rows.append({"kind": "position", "slug": slug, "market": name(slug),
+                         "qty": p.qty, "avg_price": round(p.cost / p.qty, 4),
+                         "mark": round(mark, 4) if mark is not None else None,
+                         "value": round(value, 2), "pnl": round(value - p.cost, 2),
+                         "strategy": self.owner.get(slug, ""),
+                         "closes": iso(self.ends.get(slug))})
+        for i, f in enumerate(b.fills[-100:][::-1]):
+            rows.append({"kind": "fill", "id": f"f{len(b.fills) - i}", "ts": iso(f.ts),
+                         "slug": f.slug, "market": name(f.slug),
+                         "side": f.side, "price": f.price, "qty": f.qty,
+                         "liquidity": "settlement" if f.side == "SETTLE" else
+                                      ("maker" if f.maker else "taker"),
+                         "fee": round(f.fee, 2), "pnl": round(f.pnl, 2), "strategy": f.tag})
+        for o in sorted(b.open_orders.values(), key=lambda o: o.slug):
+            rows.append({"kind": "order", "id": o.id, "slug": o.slug, "market": name(o.slug),
+                         "side": o.side, "price": o.price, "qty": o.qty,
+                         "strategy": o.tag, "placed": iso(o.placed)})
+        tmp = os.path.join(self.ecfg.out_dir, "paper.json.tmp")
+        with open(tmp, "w") as fh:
+            json.dump(rows, fh, separators=(",", ":"))
+        os.replace(tmp, os.path.join(self.ecfg.out_dir, "paper.json"))
 
     # -- output ---------------------------------------------------------------
     def _log(self, kind: str, **kw) -> None:
@@ -320,7 +470,11 @@ class Engine:
                 self.broker.cancel_all()
                 self._log("cancel_all", reason="shutdown")
         finally:
-            self._summary(self.broker.equity(self.marks))
+            eq = self.broker.equity(self.marks)
+            self._summary(eq)
+            if self.ecfg.mode == "paper":
+                self.save_state()
+                self.write_dashboard(eq)
             self._write_report()
             self._events.close()
 

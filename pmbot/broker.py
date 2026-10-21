@@ -2,11 +2,10 @@
 
 from __future__ import annotations
 
-import itertools
 import json
 import logging
 import time
-from dataclasses import dataclass, field
+from dataclasses import asdict, dataclass, field
 
 from .fees import maker_rebate, taker_fee
 from .strategy import Order
@@ -29,6 +28,7 @@ class OpenOrder:
     qty: int
     post_only: bool
     placed: float = field(default_factory=time.time)
+    tag: str = ""
 
 
 @dataclass
@@ -40,6 +40,8 @@ class Fill:
     qty: int
     maker: bool
     fee: float     # positive = paid, negative = rebate
+    tag: str = ""  # strategy
+    pnl: float = 0.0  # realized on this fill (sells and settlements)
 
 
 @dataclass
@@ -71,8 +73,26 @@ class PaperBroker:
         self.fills: list[Fill] = []
         self.fees_paid = 0.0
         self.rebates = 0.0
-        self._ids = itertools.count(1)
+        self.realized = 0.0
+        self._next_id = 1
         self._last: dict[str, Quote] = {}
+
+    # -- persistence (paper accounts survive restarts) ----------------------
+    def to_state(self, keep_fills: int = 2000) -> dict:
+        return {"cash": self.cash, "fees_paid": self.fees_paid, "rebates": self.rebates,
+                "realized": self.realized, "next_id": self._next_id,
+                "positions": {k: asdict(v) for k, v in self.positions.items()},
+                "fills": [asdict(f) for f in self.fills[-keep_fills:]]}
+
+    @classmethod
+    def from_state(cls, d: dict) -> "PaperBroker":
+        b = cls(float(d["cash"]))
+        b.fees_paid, b.rebates = float(d.get("fees_paid", 0)), float(d.get("rebates", 0))
+        b.realized = float(d.get("realized", 0))
+        b._next_id = int(d.get("next_id", 1))
+        b.positions = {k: Position(**v) for k, v in d.get("positions", {}).items()}
+        b.fills = [Fill(**f) for f in d.get("fills", [])]
+        return b
 
     # -- broker interface -------------------------------------------------
     def sync(self) -> None:
@@ -80,17 +100,18 @@ class PaperBroker:
 
     def place(self, slug: str, order: Order, quote: Quote | None = None) -> str | None:
         if order.post_only:
-            oid = f"paper-{next(self._ids)}"
+            oid = f"paper-{self._next_id}"
+            self._next_id += 1
             self.open_orders[oid] = OpenOrder(oid, slug, order.side, order.price,
-                                              order.qty, True)
+                                              order.qty, True, tag=order.tag)
             return oid
         q = quote or self._last.get(slug)
         if q is None:
             return None
         if order.side == "BUY" and q.ask is not None and q.ask <= order.price:
-            self._fill(slug, "BUY", q.ask, min(order.qty, int(q.ask_qty)), maker=False)
+            self._fill(slug, "BUY", q.ask, min(order.qty, int(q.ask_qty)), False, order.tag)
         elif order.side == "SELL" and q.bid is not None and q.bid >= order.price:
-            self._fill(slug, "SELL", q.bid, min(order.qty, int(q.bid_qty)), maker=False)
+            self._fill(slug, "SELL", q.bid, min(order.qty, int(q.bid_qty)), False, order.tag)
         return None
 
     def cancel(self, oid: str) -> None:
@@ -117,18 +138,21 @@ class PaperBroker:
                                      or (printed and q.last_px > o.price + 1e-9))
             if hit:
                 del self.open_orders[oid]
-                self._fill(slug, o.side, o.price, o.qty, maker=True)
+                self._fill(slug, o.side, o.price, o.qty, True, o.tag)
 
-    def settle(self, slug: str, value: float) -> None:
+    def settle(self, slug: str, value: float, tag: str = "") -> None:
         """Market resolved: each contract pays ``value`` (1 or 0)."""
         p = self.positions.pop(slug, None)
         for oid in [k for k, o in self.open_orders.items() if o.slug == slug]:
             del self.open_orders[oid]
         if p and p.qty:
             self.cash += p.qty * value
-            self.fills.append(Fill(time.time(), slug, "SETTLE", value, p.qty, False, 0.0))
+            pnl = p.qty * value - p.cost
+            self.realized += pnl
+            self.fills.append(Fill(time.time(), slug, "SETTLE", value, p.qty, False, 0.0,
+                                   tag, round(pnl, 4)))
 
-    def _fill(self, slug, side, price, qty, maker):
+    def _fill(self, slug, side, price, qty, maker, tag=""):
         if qty <= 0:
             return
         fee = -maker_rebate(price, qty) if maker else taker_fee(price, qty)
@@ -146,6 +170,8 @@ class PaperBroker:
                 return
             avg = p.cost / p.qty
             self.cash += price * qty - fee
+            pnl = price * qty - fee - avg * qty
+            self.realized += pnl
             p.qty -= qty
             p.cost -= avg * qty
             if p.qty == 0:
@@ -154,7 +180,8 @@ class PaperBroker:
             self.fees_paid += fee
         else:
             self.rebates -= fee
-        self.fills.append(Fill(time.time(), slug, side, price, qty, maker, fee))
+        self.fills.append(Fill(time.time(), slug, side, price, qty, maker, fee, tag,
+                               round(pnl, 4) if side == "SELL" else 0.0))
         log.info("paper %s %s %d @ %.3f (%s, fee %+.2f)", side, slug, qty, price,
                  "maker" if maker else "taker", fee)
 

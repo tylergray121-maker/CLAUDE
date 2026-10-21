@@ -36,6 +36,10 @@ def parse_args(argv=None):
     g.add_argument("--pairs-file", default="", help="reviewed pairs.json to trade")
     g.add_argument("--out-dir", default=e.out_dir)
     g.add_argument("--max-rps", type=float, default=e.max_rps)
+    g.add_argument("--resume", action="store_true",
+                   help="paper: continue the account saved in OUT_DIR/state.json")
+    g.add_argument("--snapshot-seconds", type=float, default=e.snapshot_seconds)
+    g.add_argument("--equity-seconds", type=float, default=e.equity_seconds)
     g = p.add_argument_group("strategy")
     g.add_argument("--strategies", default="sportsgameday,fairvalue",
                    help="comma list, in priority order: sportsgameday, fairvalue")
@@ -63,7 +67,9 @@ def main(argv=None) -> int:
                         format="%(asctime)s %(levelname)s %(message)s", datefmt="%H:%M:%S")
     ecfg = EngineConfig(mode=a.mode, out_dir=a.out_dir, minutes=a.minutes,
                         cycle_seconds=a.cycle_seconds, max_markets=a.max_markets,
-                        pairs_file=a.pairs_file, max_rps=a.max_rps)
+                        pairs_file=a.pairs_file, max_rps=a.max_rps, resume=a.resume,
+                        snapshot_seconds=a.snapshot_seconds,
+                        equity_seconds=a.equity_seconds)
     scfg = StrategyConfig(maker_edge=a.maker_edge, taker_edge=a.taker_edge,
                           order_usd=a.order_usd, max_fair_spread=a.max_fair_spread,
                           taker_enabled=not a.no_taker, maker_enabled=not a.no_maker)

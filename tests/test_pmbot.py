@@ -344,11 +344,14 @@ class FakeVenues:
     def __init__(self):
         self.us_bid, self.us_ask, self.traded = 0.60, 0.61, 0.0
         self.ref_bid, self.ref_ask = 0.62, 0.63
+        self.state, self.settlement, self.listed = "MARKET_STATE_OPEN", 0.84, True
 
     def get(self, base, path, params=None, use_cache=True, keep=None):
         px = lambda v: {"value": f"{v:.4f}", "currency": "USD"}
+        if path == "/v1/markets/brewers/settlement":
+            return {"slug": "brewers", "settlement": self.settlement}
         if path == "/v1/markets":
-            if params["offset"] > 0:
+            if params["offset"] > 0 or not self.listed:
                 return {"markets": []}
             return {"markets": [{
                 "slug": "brewers", "question": "World Series Champion",
@@ -365,7 +368,7 @@ class FakeVenues:
                 "events": [{"title": "World Series Champion 2026"}], "bestBid": self.ref_bid,
                 "bestAsk": self.ref_ask, "volume24hr": 5000, "active": True, "closed": False}]
         if path == "/v1/markets/brewers/book":
-            return {"marketData": {"marketSlug": "brewers", "state": "MARKET_STATE_OPEN",
+            return {"marketData": {"marketSlug": "brewers", "state": self.state,
                     "bids": [{"px": px(self.us_bid), "qty": "100"}],
                     "offers": [{"px": px(self.us_ask), "qty": "100"}],
                     "stats": {"lastTradePx": px(self.us_bid), "sharesTraded": str(self.traded)}}}
@@ -400,6 +403,49 @@ class EngineTest(unittest.TestCase):
         e.shutdown()
         with open(os.path.join(d, "report.md")) as f:
             self.assertIn("Equity", f.read())
+
+    def test_account_survives_restart_and_feeds_the_dashboard(self):
+        e, d = self.run_engine("paper")
+        e.cycle()
+        time.sleep(0.01)
+        e.client.us_bid, e.client.us_ask = 0.58, 0.59
+        e.cycle()
+        e.shutdown()
+        cash, qty = e.broker.cash, e.broker.positions["brewers"].qty
+        e2 = Engine(EngineConfig(mode="paper", out_dir=d, minutes=0, resume=True),
+                    StrategyConfig(), RiskManager(RiskConfig(kill_file=os.path.join(d, "STOP"))))
+        self.assertAlmostEqual(e2.broker.cash, cash)
+        self.assertEqual(e2.broker.positions["brewers"].qty, qty)
+        self.assertEqual(e2.owner, {"brewers": "fairvalue"})
+        self.assertTrue(e2.equity_hist)
+        with open(os.path.join(d, "paper.json")) as f:
+            rows = json.load(f)
+        kinds = {r["kind"] for r in rows}
+        self.assertTrue({"summary", "equity", "position", "fill"} <= kinds)
+        summary = next(r for r in rows if r["kind"] == "summary")
+        self.assertEqual(summary["start_cash"], 200)
+        self.assertEqual(summary["fills"], 1)
+        fill = next(r for r in rows if r["kind"] == "fill")
+        self.assertEqual((fill["liquidity"], fill["strategy"]), ("maker", "fairvalue"))
+        e2._events.close()
+
+    def test_settles_only_closed_markets(self):
+        e, d = self.run_engine("paper")
+        e.cycle()
+        time.sleep(0.01)
+        e.client.us_bid, e.client.us_ask = 0.58, 0.59
+        e.cycle()
+        self.assertIn("brewers", e.broker.positions)
+        e.cycle()                                  # open market: daily mark 0.84 ignored
+        self.assertIn("brewers", e.broker.positions)
+        e.client.state, e.client.settlement = "MARKET_STATE_EXPIRED", 1.0
+        cash = e.broker.cash
+        e.cycle()
+        self.assertNotIn("brewers", e.broker.positions)
+        self.assertAlmostEqual(e.broker.cash, cash + 8)
+        self.assertEqual(e.broker.fills[-1].side, "SETTLE")
+        self.assertGreater(e.broker.realized, 0)
+        e.shutdown()
 
     def test_scan_logs_opportunities_without_trading(self):
         e, d = self.run_engine("scan")
