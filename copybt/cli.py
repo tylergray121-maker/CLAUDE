@@ -37,6 +37,10 @@ def parse_args(argv=None) -> argparse.Namespace:
     g.add_argument("--per-board", type=int, default=500,
                    help="wallets per leaderboard (period x order x category)")
     g.add_argument("--max-wallets", type=int, default=1500)
+    g.add_argument("--universe", choices=("vol", "all"), default="vol",
+                   help="vol: only wallets from volume leaderboards. PnL "
+                   "leaderboards pick wallets for having just won, which "
+                   "overlaps the test period and inflates results")
     g.add_argument("--max-trades", type=int, default=20000,
                    help="wallets with more trades in the window are flagged, not run")
 
@@ -129,6 +133,9 @@ def main(argv=None) -> int:
     if args.wallets_file:
         for w in load_wallet_file(args.wallets_file):
             meta.setdefault(w, {"name": "", "best_rank": 0, "boards": ["file"]})
+    if args.universe == "vol":
+        meta = {w: m for w, m in meta.items()
+                if any("VOL" in b or "volume" in b or b == "file" for b in m["boards"])}
     wallets = sorted(meta, key=lambda w: meta[w]["best_rank"])[:args.max_wallets]
     if not wallets:
         log.error("no wallets found: check network access to data-api.polymarket.com")
@@ -166,6 +173,18 @@ def main(argv=None) -> int:
     log.info("%d wallets to simulate (%d flagged as hard to copy); resolving %d markets",
              len(to_run), sum(1 for p in profiles.values() if p.flags), len(conds))
     markets = fetch_markets(client, conds, workers=args.workers)
+    missing = conds - set(markets)
+    if missing:
+        titles: dict[str, list] = {}
+        for w in to_run:
+            for t in histories[w][0]:
+                if t.condition_id in missing:
+                    e = titles.setdefault(t.condition_id, [t.title, t.slug, 0])
+                    e[2] += 1
+        os.makedirs(args.out_dir, exist_ok=True)
+        _write_csv(os.path.join(args.out_dir, "unresolved_markets.csv"),
+                   [{"condition_id": c, "title": v[0], "slug": v[1], "trades": v[2]}
+                    for c, v in sorted(titles.items(), key=lambda x: -x[1][2])[:500]])
     if args.fetch_only:
         log.info("fetch-only: %d wallets, %d markets cached", len(histories), len(markets))
         return 0
@@ -250,14 +269,18 @@ def main(argv=None) -> int:
                         start_ts, end_ts, split_ts, args.min_buys, price_at=price_at)]
     us_note = ""
     if not args.no_us:
-        us = fetch_us_markets(client)
+        us_sample: list = []
+        us = fetch_us_markets(client, sample=us_sample)
+        if us_sample:
+            _write_csv(os.path.join(args.out_dir, "us_markets_sample.csv"), us_sample)
         if len(us):
-            us_hist = {w: [t for t in tr if us.lists(t.title, t.slug)]
+            us_hist = {w: [t for t in tr if us.lists(t.title, t.slug, t.ts)]
                        for w, tr in run_hist.items()}
             n_all = sum(len(t) for t in run_hist.values())
             n_us = sum(len(t) for t in us_hist.values())
             titles = {t.title for tr in us_hist.values() for t in tr}
-            us_note = (f"Polymarket US lists {len(us.questions)} markets; "
+            us_note = (f"Polymarket US: {len(us.questions)} market questions, "
+                       f"{len(us.games) // 3} game-days; "
                        f"{n_us} of {n_all} copyable trades "
                        f"({(n_us / n_all if n_all else 0):.0%}) were in markets "
                        f"matched to it ({len(titles)} distinct markets).")
@@ -353,6 +376,7 @@ def _report(args, cfg, start_ts, end_ts, split_ts, rows, ran, eligible) -> str:
         f"copy delay {args.delay_seconds}s (shortlist), never more than the "
         f"leader's own trade size.",
         "",
+        f"Universe: {'volume leaderboards only' if args.universe == 'vol' else 'PnL and volume leaderboards'}. "
         f"Wallets examined: {len(rows)}; simulated: {len(ran)}; "
         f"flagged as hard to copy: {flagged}; eligible for ranking: {len(eligible)}.",
         "",

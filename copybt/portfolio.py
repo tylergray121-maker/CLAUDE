@@ -37,6 +37,7 @@ class Plan:
     baseline_share_positive: float = 0.0
     validations: list[Validation] = field(default_factory=list)
     best_k: int = 0
+    median_over_k: float = 0.0
     edge: bool = False
     picks: list[dict] = field(default_factory=list)
     recent: SimResult | None = None
@@ -100,10 +101,13 @@ def build_plan(label: str, histories: dict[str, list[Trade]],
     best = max(plan.validations,
                key=lambda v: (_score(v.test_return_pct, v.test_max_drawdown_pct), v.k))
     plan.best_k = best.k
-    # The method only counts as working if its out-of-sample result is
-    # positive and better than picking a qualified wallet at random.
-    plan.edge = (best.test_return_pct > 0
-                 and best.test_return_pct > plan.baseline_median_test_pct)
+    # The method only counts as working if, across portfolio sizes (so the
+    # verdict doesn't hinge on picking the luckiest K after the fact), the
+    # median out-of-sample result is positive and beats a random qualified
+    # wallet.
+    typical = median(v.test_return_pct for v in plan.validations)
+    plan.edge = typical > 0 and typical > plan.baseline_median_test_pct
+    plan.median_over_k = typical
 
     # Live pick: same ranking rule on the most recent window of equal length.
     span = split_ts - start_ts
@@ -152,7 +156,8 @@ def render(plan: Plan, cfg: SimConfig, fmt_date) -> list[str]:
     for v in plan.validations:
         out.append(f"| {v.k} | {v.test_return_pct:+.1f}% | "
                    f"{v.test_max_drawdown_pct:.1f}% | {v.buys_copied} |")
-    out.append("")
+    out += ["", f"Median across portfolio sizes: {plan.median_over_k:+.1f}% vs "
+            f"{plan.baseline_median_test_pct:+.1f}% for a random qualified wallet.", ""]
     if not plan.edge:
         out += [
             "**Verdict: no edge.** Picking wallets by past results did not beat "

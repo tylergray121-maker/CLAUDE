@@ -230,6 +230,17 @@ class USTest(unittest.TestCase):
         self.assertTrue(m.lists("Other", "PSG-UCL"))
         self.assertFalse(m.lists("Will Bitcoin hit $200k?"))
 
+    def test_game_matching_ignores_order_and_market_type(self):
+        day = us._day("2026-10-20")
+        g = us.game_teams("Knicks vs. 76ers")
+        days = (day - 1, day, day + 1)  # as fetch_us_markets stores them
+        m = us.USMarkets(set(), set(), {(g, d) for d in days},
+                         {(t, d) for t in g | {"como"} for d in days})
+        self.assertTrue(m.lists("76ers vs. Knicks: O/U 230.5", "nba-phi-nyk-2026-10-20"))
+        self.assertTrue(m.lists("76ers vs. Knicks", "", 1792540800))  # same day
+        self.assertFalse(m.lists("76ers vs. Knicks", "nba-phi-nyk-2026-11-20"))
+        self.assertTrue(m.lists("Will Como win on 2026-10-20?"))
+
 
 class ProfileTest(unittest.TestCase):
     def test_flags(self):
