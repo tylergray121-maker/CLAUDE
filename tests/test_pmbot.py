@@ -27,6 +27,30 @@ def quote(bid, ask, last=None, traded=0.0, ts=None, qty=100):
     return Quote(bid, ask, qty, qty, last, traded, ts if ts is not None else time.time() + 1)
 
 
+class ScorecardTest(unittest.TestCase):
+    def test_lots_close_oldest_first_and_credit_every_key(self):
+        from pmbot.track import Scorecard
+        c = Scorecard()
+        c.open("m", ["w:a", "league:nba"], 10, 5.0)
+        c.open("m", ["w:b", "league:nba"], 10, 6.0)
+        c.close("m", 15, 15.0)                       # sold 15 at $1: all of a's lot, half of b's
+        self.assertEqual(c.summary("w:a")["pnl"], 5.0)
+        self.assertEqual(c.summary("w:b")["pnl"], 2.0)
+        self.assertEqual(c.summary("w:b")["open_usd"], 3.0)
+        self.assertEqual(c.summary("league:nba")["settled"], 2)
+        c.close("m", 5, 0.0)                         # the rest settles worthless
+        self.assertEqual(c.summary("w:b")["pnl"], -1.0)
+        self.assertEqual(c.lots, {})
+
+    def test_only_clear_losses_count_as_losing(self):
+        from pmbot.track import clearly_losing, summarize
+        mixed = summarize([[-5, 5]] * 6 + [[5, 5]] * 4)
+        self.assertFalse(clearly_losing(mixed, 10))    # 4 of 10 at even money: could be luck
+        bad = summarize([[-5, 5]] * 9 + [[5, 5]])
+        self.assertTrue(clearly_losing(bad, 10))
+        self.assertFalse(clearly_losing(bad, 15))      # not enough bets yet
+
+
 class ShortSideTest(unittest.TestCase):
     def test_short_book_is_the_long_book_flipped(self):
         q = Quote(0.36, 0.37, 40, 100, 0.36, 5, 1.0).flipped()
@@ -417,9 +441,13 @@ class FakeVenues:
         # A US game market (long side Bucks, short side Wizards), listed when set.
         self.game, self.game_bid, self.game_ask, self.game_settlement = False, 0.36, 0.37, 0.0
         self.game_state = "MARKET_STATE_OPEN"
+        self.form: dict = {}   # (wallet, period) -> (pnl, vol) on the leaderboard
 
     def get(self, base, path, params=None, use_cache=True, keep=None):
         px = lambda v: {"value": f"{v:.4f}", "currency": "USD"}
+        if path == "/v1/leaderboard":
+            f = self.form.get((params["user"], params["timePeriod"]))
+            return [{"proxyWallet": params["user"], "pnl": f[0], "vol": f[1]}] if f else []
         if path == "/trades":
             return [t for t in self.leader_trades if t["proxyWallet"] == params["user"]][::-1]
         if path == "/v1/markets/brewers/settlement":
@@ -590,6 +618,93 @@ class CopyTopTest(unittest.TestCase):
         t = {"slug": "nba-mil-was-2099-01-01-total-229pt5", "outcome": "Bucks", "asset": "x"}
         self.assertEqual(self.e.us_for_trade(t), GAME)
         self.assertTrue(self.e.lists("nba-mil-was-2099-01-01-total-229pt5"))
+
+    def test_each_copy_is_scored_against_its_wallet_and_patterns(self):
+        self.v.game = True
+        self.e.refresh_pairs()
+        self.e.cycle()
+        self.game_trade("BUY", 0.64, "Wizards")
+        self.e.cycle()
+        self.assertEqual(self.copy.copied_from(GAME + ":short"), "primm")
+        self.v.game_state = "MARKET_STATE_CLOSED"    # Wizards win
+        self.e.cycle()
+        s = self.copy.card.summary(f"w:{self.LEADER}")
+        self.assertEqual((s["settled"], s["won"], s["copies"], s["open_usd"]), (1, 1, 1, 0))
+        self.assertAlmostEqual(s["pnl"], 15 - s["staked"], places=2)
+        self.assertEqual(self.copy.card.summary("league:nba")["settled"], 1)
+        self.assertEqual(self.copy.card.summary("kind:moneyline")["settled"], 1)
+        self.assertEqual(self.copy.card.summary("timing:pre-game")["settled"], 1)
+        self.assertEqual(self.copy.card.summary("price:30-70c")["settled"], 1)
+        rows = self.copy.dashboard_rows()
+        self.assertEqual([r["name"] for r in rows if r["kind"] == "leader"], ["primm"])
+        self.assertIn("league:nba", [r["id"] for r in rows if r["kind"] == "pattern"])
+
+    def test_a_wallet_that_falls_off_is_benched_but_its_exits_are_copied(self):
+        self.e.cycle()
+        self.trade("BUY", 0.62)                      # copied while in form
+        self.e.cycle()
+        self.v.form = {(self.LEADER, "WEEK"): (-900, 20000), (self.LEADER, "MONTH"): (-1500, 50000)}
+        self.copy._next_form = 0
+        self.e.cycle()
+        self.assertEqual(self.copy.status[self.LEADER][0], "benched")
+        self.assertIn("this week", self.copy.status[self.LEADER][1])
+        self.assertEqual(self.copy.summary()["copytop_benched"], "primm")
+        self.copy.recent.clear()
+        self.trade("BUY", 0.62)                      # no new copies...
+        self.e.cycle()
+        self.assertEqual(self.copy.stats["skip_benched_wallet"], 1)
+        self.trade("SELL", 0.61)                     # ...but their exit still closes ours
+        self.e.cycle()
+        self.assertNotIn("brewers", self.e.broker.positions)
+        self.v.form = {(self.LEADER, "WEEK"): (400, 20000), (self.LEADER, "MONTH"): (-200, 50000)}
+        self.copy._next_form = 0
+        self.e.cycle()
+        self.assertEqual(self.copy.status[self.LEADER][0], "copying")   # back in form
+
+    def test_a_losing_week_alone_only_flags_cooling_off(self):
+        self.v.form = {(self.LEADER, "WEEK"): (-300, 20000), (self.LEADER, "MONTH"): (2500, 60000)}
+        self.e.cycle()
+        self.assertEqual(self.copy.status[self.LEADER][0], "cooling")
+        self.trade("BUY", 0.62)
+        self.e.cycle()
+        self.assertEqual(len(self.e.broker.fills), 1)
+
+    def test_clearly_losing_copies_bench_a_wallet_a_few_losses_do_not(self):
+        key = f"w:{self.LEADER}"
+        self.copy.card.results[key] = [[-5.0, 5.0]] * 4 + [[4.0, 5.0]]
+        self.copy._judge(self.e)
+        self.assertEqual(self.copy.status[self.LEADER][0], "copying")   # 5 bets: too few
+        self.copy.card.results[key] = [[-5.0, 5.0]] * 9 + [[4.0, 5.0]]
+        self.copy._judge(self.e)
+        self.assertEqual(self.copy.status[self.LEADER][0], "benched")
+        self.assertIn("10 settled", self.copy.status[self.LEADER][1])
+
+    def test_a_clearly_losing_pattern_is_skipped(self):
+        self.v.game = True
+        self.e.refresh_pairs()
+        self.copy.card.results["league:nba"] = [[-5.0, 5.0]] * 13 + [[4.0, 5.0]] * 2
+        self.copy._judge(self.e)
+        self.assertIn("league:nba", self.copy.skipped)
+        self.e.cycle()
+        self.game_trade("BUY", 0.64, "Wizards")
+        self.e.cycle()
+        self.assertEqual(self.copy.stats["skip_losing_pattern"], 1)
+        self.assertEqual(self.e.broker.fills, [])
+
+    def test_scorecard_survives_a_restart(self):
+        from pmbot.copy import CopyTop
+        self.e.cycle()
+        self.trade("BUY", 0.62)
+        self.e.cycle()
+        self.copy.status[self.LEADER] = ["cooling", "x"]
+        self.e.save_state()
+        again = CopyTop(StrategyConfig(), {self.LEADER: "primm"})
+        e2 = Engine(EngineConfig(mode="paper", out_dir=self.d, minutes=0, resume=True),
+                    StrategyConfig(), RiskManager(RiskConfig(kill_file=os.path.join(self.d, "STOP"))),
+                    strategies=[again])
+        self.assertEqual(again.copied_from("brewers"), "primm")
+        self.assertEqual(again.status[self.LEADER], ["cooling", "x"])
+        e2._events.close()
 
     def test_unmapped_trades_are_counted_not_copied(self):
         self.e.cycle()

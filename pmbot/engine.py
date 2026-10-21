@@ -183,6 +183,7 @@ class Engine:
     def cycle(self) -> None:
         self.broker.sync()
         now = time.time()
+        n_fills = len(self.broker.fills)
         by_slug = {p.us_slug: p for p in self.pairs}
         slugs = set(by_slug) | set(self.broker.positions)  # always watch holdings
         for strat in self.strategies:
@@ -236,6 +237,9 @@ class Engine:
         if self.ecfg.mode != "scan" and not self.risk.halted:
             self._trade_all(views, now)
         self._settle_closed(now)
+        for strat in self.strategies:
+            if hasattr(strat, "on_fills"):
+                strat.on_fills(self, self.broker.fills[n_fills:])
         eq = self.broker.equity(self.marks)
         if self.ecfg.mode != "scan" and self.risk.check(eq):
             self.broker.cancel_all()
@@ -399,6 +403,8 @@ class Engine:
                           "halted": r.halted},
                  "strategy_stats": {x.name: dict(x.stats) for x in self.strategies
                                     if getattr(x, "stats", None) is not None},
+                 "strategy_state": {x.name: x.to_state() for x in self.strategies
+                                    if hasattr(x, "to_state")},
                  "scan": {"observations": self.stats.observations,
                           "buy_opps": self.stats.buy_opps, "sell_opps": self.stats.sell_opps,
                           "gaps": self.stats.gaps[-5000:]}}
@@ -431,6 +437,8 @@ class Engine:
             if saved and getattr(x, "stats", None) is not None:
                 # Counters are fresh (zero) here; Counter.update adds, so this restores them.
                 x.stats.update(saved)
+            if hasattr(x, "load_state") and x.name in st.get("strategy_state", {}):
+                x.load_state(st["strategy_state"][x.name])
         sc = st.get("scan", {})
         self.stats.observations = sc.get("observations", 0)
         self.stats.buy_opps, self.stats.sell_opps = sc.get("buy_opps", 0), sc.get("sell_opps", 0)
@@ -449,6 +457,8 @@ class Engine:
                 out["copytop_leaders"] = len(strat.leaders)
                 out["copytop_filled"] = sum(1 for f in self.broker.fills if f.tag == "copytop"
                                             and f.side in ("BUY", "SELL"))
+            if hasattr(strat, "summary"):
+                out.update(strat.summary())
         return out
 
     def _preview_summary(self) -> dict:
@@ -506,6 +516,8 @@ class Engine:
                          "mark": round(mark, 4) if mark is not None else None,
                          "value": round(value, 2), "pnl": round(value - p.cost, 2),
                          "strategy": self.owner.get(slug, ""),
+                         "copied": next((x.copied_from(slug) for x in self.strategies
+                                         if hasattr(x, "copied_from")), ""),
                          "closes": iso(self.ends.get(slug))})
         for i, f in enumerate(b.fills[-100:][::-1]):
             rows.append({"kind": "fill", "id": f"f{len(b.fills) - i}", "ts": iso(f.ts),
@@ -518,6 +530,9 @@ class Engine:
             rows.append({"kind": "order", "id": o.id, "slug": o.slug, "market": name(o.slug),
                          "side": o.side, "price": o.price, "qty": o.qty,
                          "strategy": o.tag, "placed": iso(o.placed)})
+        for strat in self.strategies:
+            if hasattr(strat, "dashboard_rows"):
+                rows += strat.dashboard_rows()
         tmp = os.path.join(self.ecfg.out_dir, "paper.json.tmp")
         with open(tmp, "w") as fh:
             json.dump(rows, fh, separators=(",", ":"))
