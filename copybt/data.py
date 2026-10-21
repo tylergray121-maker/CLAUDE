@@ -131,7 +131,7 @@ def fetch_leaderboard(client: Client, periods=LEADERBOARD_PERIODS,
 # Trade history
 # --------------------------------------------------------------------------
 
-def _parse_trade(row: dict) -> Trade | None:
+def _parse_trade(row: dict, wallet: str = "") -> Trade | None:
     try:
         side = str(row.get("side", "")).upper()
         if side not in ("BUY", "SELL"):
@@ -148,7 +148,9 @@ def _parse_trade(row: dict) -> Trade | None:
     return Trade(ts=ts, asset=asset, condition_id=cond, side=side, price=price,
                  size=size, title=str(row.get("title") or ""),
                  outcome=str(row.get("outcome") or ""),
-                 tx=str(row.get("transactionHash") or ""))
+                 tx=str(row.get("transactionHash") or ""),
+                 wallet=wallet or str(row.get("proxyWallet") or "").lower(),
+                 slug=str(row.get("slug") or ""))
 
 
 def fetch_trades(client: Client, wallet: str, start_ts: int, end_ts: int,
@@ -179,7 +181,7 @@ def fetch_trades(client: Client, wallet: str, start_ts: int, end_ts: int,
                     break  # offset cap reached; re-anchor below
                 raise
             for row in page:
-                t = _parse_trade(row)
+                t = _parse_trade(row, wallet.lower())
                 if t is None or t.ts < start_ts:
                     continue
                 key = (t.tx, t.asset, t.side, t.size, t.price, t.ts)

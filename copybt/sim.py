@@ -43,6 +43,7 @@ class SimResult:
     max_drawdown_pct: float
     train_return_pct: float
     test_return_pct: float
+    train_max_drawdown_pct: float
     sharpe: float
     buys_copied: int
     sells_copied: int
@@ -58,17 +59,23 @@ PriceLookup = Callable[[str, int], "float | None"]
 def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
              start_ts: int, end_ts: int, split_ts: int,
              price_at: PriceLookup | None = None) -> SimResult:
+    """Copy ``trades`` (one or several leaders) with a single bankroll.
+
+    Positions are kept per (leader wallet, token) lot, so one leader's exit
+    only closes the shares bought when copying that leader.
+    """
     fee = cfg.fee_bps / 10000.0
     cash = cfg.start_cash
-    pos: dict[str, float] = defaultdict(float)       # our shares per token
-    cost: dict[str, float] = defaultdict(float)      # our open cost basis
-    realized: dict[str, float] = defaultdict(float)  # our realized PnL per token
-    leader: dict[str, float] = defaultdict(float)    # leader shares per token
-    last_px: dict[str, float] = {}
+    Lot = tuple  # (wallet, token)
+    pos: dict[Lot, float] = defaultdict(float)       # our shares per lot
+    cost: dict[Lot, float] = defaultdict(float)      # our open cost basis
+    realized: dict[Lot, float] = defaultdict(float)  # our realized PnL
+    leader: dict[Lot, float] = defaultdict(float)    # leader's shares
+    last_px: dict[str, float] = {}                   # token -> last price
     cond_of: dict[str, str] = {}
-    assets_of: dict[str, set[str]] = defaultdict(set)
+    lots_of: dict[str, set] = defaultdict(set)       # market -> lots
     settled: set[str] = set()
-    buy_sizes: list[float] = []
+    buy_sizes: dict[str, list[float]] = defaultdict(list)  # per leader
     skipped: dict[str, int] = defaultdict(int)
     buys = sells = 0
 
@@ -77,27 +84,26 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
         return m.taker_fee(price, shares) if (m and cfg.market_fees) else 0.0
 
     def equity() -> float:
-        return cash + sum(s * last_px.get(a, 0.0) for a, s in pos.items() if s > 0)
+        return cash + sum(s * last_px.get(k[1], 0.0) for k, s in pos.items() if s > 0)
 
     def settle(cond: str) -> None:
         nonlocal cash
         m = markets[cond]
         settled.add(cond)
-        for a in assets_of[cond]:
-            payout = m.prices.get(a, last_px.get(a, 0.0))
-            if pos[a] > 0:
-                proceeds = pos[a] * payout
+        for k in lots_of[cond]:
+            payout = m.prices.get(k[1], last_px.get(k[1], 0.0))
+            if pos[k] > 0:
+                proceeds = pos[k] * payout
                 cash += proceeds
-                realized[a] += proceeds - cost[a]
-                pos[a] = cost[a] = 0.0
-            leader[a] = 0.0
-            last_px[a] = payout
+                realized[k] += proceeds - cost[k]
+                pos[k] = cost[k] = 0.0
+            leader[k] = 0.0
+            last_px[k[1]] = payout
 
     # Resolution events inside the window. A resolved market with no timestamp
     # settles at the end of the window.
     resolutions: list[tuple[int, str]] = []
-    traded_conds = {t.condition_id for t in trades}
-    for cond in traded_conds:
+    for cond in {t.condition_id for t in trades}:
         m = markets.get(cond)
         if m and m.resolved:
             rts = m.resolve_ts if m.resolve_ts is not None else end_ts
@@ -112,10 +118,11 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
             continue
         while ri < len(resolutions) and resolutions[ri][0] <= t.ts:
             settle(resolutions[ri][1])
+            curve.append((resolutions[ri][0], equity()))
             ri += 1
-            curve.append((resolutions[ri - 1][0], equity()))
+        k = (t.wallet, t.asset)
         cond_of[t.asset] = t.condition_id
-        assets_of[t.condition_id].add(t.asset)
+        lots_of[t.condition_id].add(k)
         if t.condition_id in settled:
             continue  # trade after resolution: bad data, ignore
         last_px[t.asset] = t.price
@@ -125,9 +132,10 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
             delayed = price_at(t.asset, t.ts + cfg.delay_seconds)
 
         if t.side == "BUY":
-            leader[t.asset] += t.size
-            prior = median(buy_sizes) if buy_sizes else t.notional
-            insort(buy_sizes, t.notional)
+            leader[k] += t.size
+            sizes = buy_sizes[t.wallet]
+            prior = median(sizes) if sizes else t.notional
+            insort(sizes, t.notional)
             base = max(t.price, delayed) if delayed is not None else t.price
             fill = base + cfg.slippage
             if fill > cfg.max_fill_price:
@@ -138,43 +146,42 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
             conviction = min(cfg.conviction_max, max(cfg.conviction_min, conviction))
             usd = eq * cfg.base_pct * conviction
             usd = min(usd, eq * cfg.max_trade_pct)
-            exposure = sum(pos[a] * last_px.get(a, 0.0)
-                           for a in assets_of[t.condition_id])
+            exposure = sum(pos[x] * last_px.get(x[1], 0.0)
+                           for x in lots_of[t.condition_id])
             usd = min(usd, eq * cfg.max_market_pct - exposure)
             usd = min(usd, cash / (1 + fee))
-            # Market taker fee is charged on the shares bought; shrink the
-            # order so price + fees still fits in the budget.
-            fee_per_share = taker_fee(t.condition_id, fill, 1.0)
-            shares = usd / (fill + fee_per_share)
             if usd < cfg.min_order_usd:
                 reason = ("no_cash" if cash / (1 + fee) < cfg.min_order_usd
                           else "market_cap" if eq * cfg.max_market_pct - exposure
                           < cfg.min_order_usd else "below_min_order")
                 skipped[reason] += 1
                 continue
+            # Market taker fee is charged on the shares bought; shrink the
+            # order so price + fees still fits in the budget.
+            shares = usd / (fill + taker_fee(t.condition_id, fill, 1.0))
             cash -= usd * (1 + fee)
-            pos[t.asset] += shares
-            cost[t.asset] += usd * (1 + fee)
+            pos[k] += shares
+            cost[k] += usd * (1 + fee)
             buys += 1
         else:
-            before = leader[t.asset]
-            leader[t.asset] = max(0.0, before - t.size)
-            if pos[t.asset] <= 0:
+            before = leader[k]
+            leader[k] = max(0.0, before - t.size)
+            if pos[k] <= 0:
                 continue
             frac = 1.0 if before <= 0 else min(1.0, t.size / before)
             base = min(t.price, delayed) if delayed is not None else t.price
             fill = max(0.0, base - cfg.slippage)
-            shares = pos[t.asset] * frac
+            shares = pos[k] * frac
             proceeds = (shares * fill * (1 - fee)
                         - taker_fee(t.condition_id, fill, shares))
             if proceeds < cfg.min_order_usd:
                 skipped["sell_below_min"] += 1
                 continue
-            basis = cost[t.asset] * frac
+            basis = cost[k] * frac
             cash += proceeds
-            realized[t.asset] += proceeds - basis
-            pos[t.asset] -= shares
-            cost[t.asset] -= basis
+            realized[k] += proceeds - basis
+            pos[k] -= shares
+            cost[k] -= basis
             sells += 1
         curve.append((t.ts, equity()))
 
@@ -184,16 +191,16 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
         ri += 1
 
     # Mark whatever is still open at the market's current price.
-    for a, s in pos.items():
+    for k, s in pos.items():
         if s > 0:
-            m = markets.get(cond_of.get(a, ""))
-            if m and a in m.prices:
-                last_px[a] = m.prices[a]
+            m = markets.get(cond_of.get(k[1], ""))
+            if m and k[1] in m.prices:
+                last_px[k[1]] = m.prices[k[1]]
     final = equity()
     curve.append((end_ts, final))
 
-    traded = [a for a in cond_of if cost[a] > 0 or realized[a] != 0 or pos[a] > 0]
-    pnl = {a: realized[a] + pos[a] * last_px.get(a, 0.0) - cost[a] for a in traded}
+    traded = [k for k in pos if cost[k] > 0 or realized[k] != 0 or pos[k] > 0]
+    pnl = {k: realized[k] + pos[k] * last_px.get(k[1], 0.0) - cost[k] for k in traded}
     wins = sum(1 for v in pnl.values() if v > 0)
 
     daily = _daily(curve, start_ts, end_ts)
@@ -204,10 +211,11 @@ def simulate(trades: list[Trade], markets: dict[str, Market], cfg: SimConfig,
         max_drawdown_pct=_max_drawdown(curve),
         train_return_pct=100 * (at_split / cfg.start_cash - 1),
         test_return_pct=100 * (final / at_split - 1) if at_split > 0 else -100.0,
+        train_max_drawdown_pct=_max_drawdown([p for p in curve if p[0] <= split_ts]),
         sharpe=_sharpe(daily),
         buys_copied=buys,
         sells_copied=sells,
-        markets_traded=len({cond_of[a] for a in traded}),
+        markets_traded=len({cond_of[k[1]] for k in traded}),
         win_rate=wins / len(pnl) if pnl else 0.0,
         skipped=dict(skipped),
         daily_equity=daily,

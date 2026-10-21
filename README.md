@@ -38,7 +38,27 @@ and `clob.polymarket.com`.
 - **No lookahead:** sizing uses only past trades; the window is split into a
   qualifying period (first 67%) and an out-of-sample test period.
 
-## Ranking
+## Portfolios and New York
+
+The report's main section builds a portfolio of wallets copied together with
+one bankroll, two ways:
+
+- **Plan A:** all Polymarket markets.
+- **Plan B:** only markets also listed on Polymarket US, the CFTC-regulated
+  exchange New York residents can use. The international exchange the
+  wallets trade on is closed to US persons.
+
+Each plan first **validates the picking method**. It ranks wallets on the
+qualifying period only, copies the top K together, and scores the result on
+the later test period. That is compared with the typical qualified wallet,
+i.e. what picking at random would give. If the method doesn't beat that and
+make money out of sample, the report says **no edge**. Only then does it
+apply the same ranking to the most recent period to give current picks.
+
+Plan B still uses international prices as a stand-in for Polymarket US
+prices, which can differ.
+
+## Single-wallet ranking
 
 A wallet is eligible when it made money in the qualifying period, gave at
 least 15 copyable buys, and isn't flagged as impractical to copy:

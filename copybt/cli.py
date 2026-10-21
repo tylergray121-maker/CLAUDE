@@ -17,7 +17,9 @@ from datetime import datetime, timezone
 
 from .api import Client
 from .data import PriceHistory, fetch_leaderboard, fetch_markets, fetch_trades
+from .portfolio import build_plan, render
 from .sim import SimConfig, profile, simulate
+from .us import fetch_us_markets
 
 log = logging.getLogger("copybt")
 
@@ -65,6 +67,8 @@ def parse_args(argv=None) -> argparse.Namespace:
                    help="rank HFT / bonder / 5-minute-market wallets too")
     g.add_argument("--stress-top", type=int, default=25,
                    help="re-run the top N at double slippage")
+    g.add_argument("--no-us", action="store_true",
+                   help="skip the Polymarket US (New York) market filter")
 
     g = p.add_argument_group("runtime")
     g.add_argument("--workers", type=int, default=8)
@@ -192,14 +196,49 @@ def main(argv=None) -> int:
         s = simulate(trades, markets, stress_cfg, start_ts, end_ts, split_ts, price_at)
         r["return_pct_2x_slippage"] = s.return_pct
 
-    # 6. Output ------------------------------------------------------------
+    # 6. Portfolios: all markets, and only markets also on Polymarket US ----
     os.makedirs(args.out_dir, exist_ok=True)
+    run_hist = {w: histories[w][0] for w in to_run}
+    plans = [build_plan("Plan A — all Polymarket markets", run_hist, markets, cfg,
+                        start_ts, end_ts, split_ts, args.min_buys, price_at=price_at)]
+    us_note = ""
+    if not args.no_us:
+        us = fetch_us_markets(client)
+        if len(us):
+            us_hist = {w: [t for t in tr if us.lists(t.title, t.slug)]
+                       for w, tr in run_hist.items()}
+            n_all = sum(len(t) for t in run_hist.values())
+            n_us = sum(len(t) for t in us_hist.values())
+            titles = {t.title for tr in us_hist.values() for t in tr}
+            us_note = (f"Polymarket US lists {len(us.questions)} markets; "
+                       f"{n_us} of {n_all} copyable trades "
+                       f"({(n_us / n_all if n_all else 0):.0%}) were in markets "
+                       f"matched to it ({len(titles)} distinct markets).")
+            with open(os.path.join(args.out_dir, "us_matched_markets.txt"), "w") as f:
+                f.write("\n".join(sorted(titles)))
+            plans.append(build_plan(
+                "Plan B — only markets also listed on Polymarket US (usable from New York)",
+                us_hist, markets, cfg, start_ts, end_ts, split_ts, args.min_buys,
+                price_at=price_at))
+        else:
+            us_note = ("Could not load the Polymarket US market list, so no "
+                       "New York-usable plan was produced.")
+        log.info(us_note)
+
+    # 7. Output ------------------------------------------------------------
     ranked = eligible + sorted([r for r in rows if r["wallet"] not in eligible_ids],
                                key=lambda r: r.get("score", -1e9), reverse=True)
     _write_csv(os.path.join(args.out_dir, "ranking.csv"), ranked)
     _write_curves(os.path.join(args.out_dir, "top_equity_curves.csv"),
                   [r["wallet"] for r in eligible[:10]], curves)
     report = _report(args, cfg, start_ts, end_ts, split_ts, rows, ran, eligible)
+    head, _, rest = report.partition("## Recommendation")
+    portfolio_md = [us_note, ""] if us_note else []
+    for plan in plans:
+        portfolio_md += render(plan, cfg, _date)
+    report = (head + "\n".join(portfolio_md) + "\n"
+              + ("## Best single wallets (ranked with hindsight)" + rest.replace(
+                  "## Top 15", "### Top 15") if rest else ""))
     with open(os.path.join(args.out_dir, "report.md"), "w") as f:
         f.write(report)
     print(report)

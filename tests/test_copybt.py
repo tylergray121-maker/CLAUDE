@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from unittest import mock
 
-from copybt import cli, data
+from copybt import cli, data, portfolio, us
 from copybt.models import Market, Trade
 from copybt.sim import SimConfig, profile, simulate
 
@@ -13,9 +13,10 @@ COND = "0xc1"
 YES, NO = "111", "222"
 
 
-def trade(ts, side, price, size, asset=YES, cond=COND, title="Will X happen?"):
+def trade(ts, side, price, size, asset=YES, cond=COND, title="Will X happen?",
+          wallet=""):
     return Trade(ts=ts, asset=asset, condition_id=cond, side=side, price=price,
-                 size=size, title=title, tx=f"0x{ts}{side}")
+                 size=size, title=title, tx=f"0x{ts}{side}", wallet=wallet)
 
 
 def resolved(winner=YES, ts=T0 + 5 * DAY, cond=COND):
@@ -128,6 +129,61 @@ class SimulateTest(unittest.TestCase):
         self.assertAlmostEqual(r.final_equity, 180 + 20 / 0.8)
 
 
+class PortfolioTest(unittest.TestCase):
+    def test_one_leaders_exit_only_closes_its_own_lot(self):
+        trades = [trade(T0 + 60, "BUY", 0.5, 100, wallet="a"),
+                  trade(T0 + 61, "BUY", 0.5, 100, wallet="b"),
+                  trade(T0 + 120, "SELL", 0.8, 100, wallet="a")]
+        r = simulate(trades, resolved(YES), NOFRICTION, T0, T0 + 10 * DAY,
+                     T0 + 3 * DAY)
+        # Each lot is $20 -> 40 shares. a's 40 sell at 0.8 = $32; b's 40 pay $1.
+        self.assertAlmostEqual(r.final_equity, 200 - 20 - 20 + 32 + 40, places=6)
+        self.assertEqual(r.sells_copied, 1)
+
+    def _wallet(self, name, win_train, win_test):
+        out, markets = [], {}
+        for i in range(10):
+            ts = T0 + i * DAY if i < 5 else T0 + (6 + i) * DAY
+            cond, tok = f"0x{name}{i}", f"{name}{i}"
+            win = win_train if i < 5 else win_test
+            out.append(trade(ts, "BUY", 0.5, 100, asset=tok, cond=cond, wallet=name))
+            markets[cond] = Market(cond, True, ts + 3600, {tok: 1.0 if win else 0.0})
+        return out, markets
+
+    def test_validation_detects_persistent_vs_lucky_wallets(self):
+        hist, markets = {}, {}
+        for name, a, b in (("good", True, True), ("luck", True, False),
+                           ("bad", False, False)):
+            hist[name], m = self._wallet(name, a, b)
+            markets.update(m)
+        end, split = T0 + 20 * DAY, T0 + 10 * DAY
+        plan = portfolio.build_plan("t", hist, markets, NOFRICTION, T0, end,
+                                    split, min_buys=3, ks=(1, 2))
+        self.assertEqual(plan.candidates, 2)          # good and luck qualify
+        self.assertTrue(plan.edge)
+        self.assertEqual(plan.best_k, 1)
+        self.assertEqual(plan.picks[0]["wallet"], "good")
+
+    def test_no_edge_verdict(self):
+        hist, markets = {}, {}
+        for name in ("l1", "l2"):
+            hist[name], m = self._wallet(name, True, False)
+            markets.update(m)
+        plan = portfolio.build_plan("t", hist, markets, NOFRICTION, T0,
+                                    T0 + 20 * DAY, T0 + 10 * DAY, min_buys=3)
+        self.assertFalse(plan.edge)
+        text = "\n".join(portfolio.render(plan, NOFRICTION, str))
+        self.assertIn("no edge", text)
+
+
+class USTest(unittest.TestCase):
+    def test_matching(self):
+        m = us.USMarkets({"psg-ucl"}, {us.normalize("Will PSG win the UCL?")})
+        self.assertTrue(m.lists("will psg win the ucl"))
+        self.assertTrue(m.lists("Other", "PSG-UCL"))
+        self.assertFalse(m.lists("Will Bitcoin hit $200k?"))
+
+
 class ProfileTest(unittest.TestCase):
     def test_flags(self):
         ts = [trade(T0 + i, "BUY", 0.97, 10,
@@ -237,6 +293,10 @@ class FakeClient:
                                 "outcomePrices": '["1","0"]',
                                 "closedTime": self.now - (79 - i * 3) * DAY})
             return out
+        if path == "/v1/markets":
+            if params["offset"] > 0 or params["closed"] == "true":
+                return {"markets": []}
+            return {"markets": [{"slug": "x", "question": "Will X?"}]}
         raise AssertionError(f"unexpected request {path}")
 
 
@@ -252,6 +312,8 @@ class EndToEndTest(unittest.TestCase):
             with open(os.path.join(out, "report.md")) as f:
                 report = f.read()
             self.assertIn("**0x" + "a" * 40 + "**", report)
+            self.assertIn("Plan B", report)
+            self.assertIn("100%) were in markets matched", report)
             with open(os.path.join(out, "ranking.csv")) as f:
                 ranking = f.read().splitlines()
             self.assertEqual(len(ranking), 3)

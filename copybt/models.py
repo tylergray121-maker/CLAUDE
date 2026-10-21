@@ -14,6 +14,8 @@ class Trade:
     title: str = ""
     outcome: str = ""
     tx: str = ""
+    wallet: str = ""   # leader who made the trade
+    slug: str = ""     # market slug
 
     @property
     def notional(self) -> float:

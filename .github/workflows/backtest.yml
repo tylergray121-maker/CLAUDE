@@ -43,6 +43,7 @@ jobs:
           probe gamma "https://gamma-api.polymarket.com/markets?condition_ids=$C&limit=1"
           probe gamma_closed "https://gamma-api.polymarket.com/markets?condition_ids=$C&closed=true&limit=1"
           probe clob "https://clob.polymarket.com/markets/$C"
+          probe us_markets "https://gateway.polymarket.us/v1/markets?closed=false&limit=3&offset=0"
           for f in results/probe/*.json; do echo "== $f"; head -c 1500 "$f"; echo; done
 
       - name: Run backtest
