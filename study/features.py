@@ -62,10 +62,26 @@ def _day(s) -> int | None:
         return None
 
 
-def profile(d: dict, lb: dict | None = None) -> dict:
-    """Strategy profile from collect.wallet_data() output."""
+def _cost_pnl(r: dict, is_open: bool) -> tuple[float, float]:
+    """(dollars put in, profit) for one position row."""
+    if is_open:
+        # Unredeemed losers live here at $0: pnl = unrealized + realized.
+        pnl = _f(r.get("cashPnl")) + _f(r.get("realizedPnl"))
+        cost = (_f(r.get("avgPrice")) * _f(r.get("totalBought"))
+                or _f(r.get("initialValue")))
+        return cost, pnl
+    return _f(r.get("avgPrice")) * _f(r.get("totalBought")), _f(r.get("realizedPnl"))
+
+
+def profile(d: dict, lb: dict | None = None, alltime_pnl: float | None = None) -> dict:
+    """Strategy profile from collect.wallet_data() output.
+
+    ``alltime_pnl`` (from the all-time leaderboard) is used to check how much
+    of the wallet's profit the sampled positions account for.
+    """
     lb = lb or {}
     closed = d["closed"]
+    opened = d.get("open") or []
     p: dict = {"wallet": d["wallet"], "name": lb.get("userName") or "",
                "lb_pnl": _f(lb.get("pnl")), "lb_volume": _f(lb.get("vol")),
                "closed_positions": len(closed),
@@ -77,9 +93,8 @@ def profile(d: dict, lb: dict | None = None) -> dict:
     cat_cost, cat_pnl = Counter(), Counter()
     price_cost = Counter()
     sides = defaultdict(set)
-    for r in closed:
-        cost = _f(r.get("avgPrice")) * _f(r.get("totalBought"))
-        pnl = _f(r.get("realizedPnl"))
+    for r, is_open in [(r, False) for r in closed] + [(r, True) for r in opened]:
+        cost, pnl = _cost_pnl(r, is_open)
         costs.append(cost)
         pnls.append(pnl)
         c = category(r)
@@ -90,11 +105,13 @@ def profile(d: dict, lb: dict | None = None) -> dict:
                   else "80-95c" if ap < 0.95 else ">=95c")
         price_cost[bucket] += cost
         sides[r.get("conditionId")].add(r.get("outcomeIndex"))
-    for r in d.get("open") or []:
-        sides[r.get("conditionId")].add(r.get("outcomeIndex"))
     total_cost, total_pnl = sum(costs), sum(pnls)
     pos_pnl = sorted((x for x in pnls if x > 0), reverse=True)
+    coverage = (total_pnl / alltime_pnl) if alltime_pnl else None
     p.update({
+        "coverage": round(coverage, 3) if coverage is not None else None,
+        "reconciled": coverage is not None and 0.7 <= coverage <= 1.3
+                      and not d.get("closed_truncated") and not d.get("open_truncated"),
         "realized_pnl": round(total_pnl, 2),
         "cost": round(total_cost, 2),
         "roi": round(total_pnl / total_cost, 4) if total_cost else 0.0,
@@ -119,8 +136,12 @@ def profile(d: dict, lb: dict | None = None) -> dict:
     if ts:
         lo, hi = min(ts), max(ts)
         span_days = max((hi - lo) / 86400, 1.0)  # a short burst isn't a daily rate
-        n_taker = sum(1 for t in tt if int(_f(t.get("timestamp"))) >= lo)
-        sizes = [_f(t.get("size")) * _f(t.get("price")) for t in ta]
+        in_win = [t for t in tt if int(_f(t.get("timestamp"))) >= lo]
+        n_taker = len(in_win)
+        usd = lambda t: _f(t.get("size")) * _f(t.get("price"))
+        all_usd, taker_usd = sum(map(usd, ta)), sum(map(usd, in_win))
+        txs = {t.get("transactionHash") for t in ta if t.get("transactionHash")}
+        sizes = [usd(t) for t in ta]
         end_day = {r.get("conditionId"): _day(r.get("endDate")) for r in closed}
         lead = []
         for t in ta:
@@ -130,7 +151,9 @@ def profile(d: dict, lb: dict | None = None) -> dict:
                 lead.append(e - td.toordinal())
         p.update({
             "trades_sampled": len(ta),
-            "trades_per_day": round(len(ta) / span_days, 2),
+            "trades_per_day": round(len(ta) / span_days, 2),   # fills
+            "tx_per_day": round(len(txs) / span_days, 2),      # distinct transactions
+            "maker_usd_share": round(max(0.0, 1 - taker_usd / all_usd), 3) if all_usd else None,
             "median_trade_usd": round(median(sizes), 2) if sizes else 0.0,
             "maker_share": round(max(0.0, 1 - n_taker / len(ta)), 3),
             "sell_share": round(sum(1 for t in ta if t.get("side") == "SELL") / len(ta), 3),
@@ -141,8 +164,8 @@ def profile(d: dict, lb: dict | None = None) -> dict:
             "last_trade": datetime.fromtimestamp(hi, timezone.utc).strftime("%Y-%m-%d"),
         })
     else:
-        p.update({"trades_sampled": 0, "trades_per_day": 0.0, "median_trade_usd": 0.0,
-                  "maker_share": None, "sell_share": None, "short_crypto_share": 0.0,
+        p.update({"trades_sampled": 0, "trades_per_day": 0.0, "tx_per_day": 0.0,
+                  "maker_usd_share": None, "median_trade_usd": 0.0, "maker_share": None, "sell_share": None, "short_crypto_share": 0.0,
                   "same_day_share": None, "median_days_before_end": None, "last_trade": ""})
 
     # -- activity: rewards, merges, splits, conversions ------------------------
@@ -157,10 +180,13 @@ def profile(d: dict, lb: dict | None = None) -> dict:
 
 
 def archetype(p: dict) -> tuple[str, str]:
-    mk = p.get("maker_share") or 0.0
-    if p.get("trades_sampled", 0) >= 300 and (p["trades_per_day"] >= 100
+    mk = p.get("maker_usd_share") if p.get("maker_usd_share") is not None \
+        else (p.get("maker_share") or 0.0)
+    # Count transactions, not fills: one big order can fill against hundreds
+    # of counterparties.
+    if p.get("trades_sampled", 0) >= 300 and (p.get("tx_per_day", 0) >= 100
                                               or p["short_crypto_share"] >= 0.5):
-        return "bot / high-frequency", (f"{p['trades_per_day']:.0f} trades/day, "
+        return "bot / high-frequency", (f"{p.get('tx_per_day', 0):.0f} transactions/day, "
                                         f"{p['short_crypto_share']:.0%} in short crypto markets")
     if p["top5_share"] >= 0.8 and p["closed_positions"] <= 200:
         return "concentrated conviction", (f"top 5 markets = {p['top5_share']:.0%} of gains "

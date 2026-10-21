@@ -29,6 +29,7 @@ class ProfileTest(unittest.TestCase):
         # 3 of the 5 newest fills (the Harris popular-vote buys at 0.262) are
         # missing from the taker-only list: resting limit orders that filled.
         self.assertEqual(p["maker_share"], 0.6)
+        self.assertGreater(p["maker_usd_share"], 0.9)  # the maker fills were the big ones
         self.assertIn(p["archetype"], ("concentrated conviction", "politics / macro trader"))
 
     def test_cost_and_pnl_from_closed_position(self):
@@ -40,7 +41,7 @@ class ProfileTest(unittest.TestCase):
 
 
 def synthetic(**kw):
-    base = {"trades_per_day": 2, "trades_sampled": 1000, "short_crypto_share": 0, "maker_share": 0.1,
+    base = {"trades_per_day": 2, "tx_per_day": 2, "trades_sampled": 1000, "short_crypto_share": 0, "maker_share": 0.1,
             "rewards_usd": 0, "both_sides_share": 0, "n_merge": 0, "n_conversion": 0,
             "price_>=95c": 0, "top5_share": 0.3, "closed_positions": 500,
             "cat_sports": 0, "same_day_share": 0, "cat_politics": 0,
@@ -49,14 +50,30 @@ def synthetic(**kw):
     return {**base, **kw}
 
 
+class OpenLosersTest(unittest.TestCase):
+    def test_unredeemed_losers_count_and_reconcile(self):
+        d, lb = theo4()
+        d["closed"] = d["closed"][:1]          # +8.30M winner
+        d["open"] = [{"conditionId": "x", "outcomeIndex": 0, "avgPrice": 0.5,
+                      "totalBought": 2_000_000, "initialValue": 1_000_000,
+                      "currentValue": 0, "cashPnl": -1_000_000, "realizedPnl": 0,
+                      "title": "Lost bet", "slug": "", "eventSlug": ""}]
+        p = features.profile(d, lb, alltime_pnl=7.3e6)
+        self.assertAlmostEqual(p["realized_pnl"], 8303171.2313 - 1e6, places=0)
+        self.assertEqual(p["win_rate"], 0.5)
+        self.assertTrue(p["reconciled"])
+        self.assertFalse(features.profile(d, lb, alltime_pnl=20e6)["reconciled"])
+
+
 class ArchetypeTest(unittest.TestCase):
     def check(self, expect, **kw):
         self.assertEqual(features.archetype(synthetic(**kw))[0], expect)
 
     def test_rules(self):
-        self.check("bot / high-frequency", trades_per_day=500)
+        self.check("bot / high-frequency", tx_per_day=500)
+        self.check("generalist", trades_per_day=1000, tx_per_day=20)  # big orders, many fills
         self.check("bot / high-frequency", short_crypto_share=0.8)
-        self.check("generalist", trades_per_day=500, trades_sampled=12)  # one burst
+        self.check("generalist", tx_per_day=500, trades_sampled=12)  # one burst
         self.check("market maker", maker_share=0.8, both_sides_share=0.5)
         self.check("market maker", maker_share=0.8, rewards_usd=200)
         # limit-order whale: maker fills, pocket-change rewards, one side only

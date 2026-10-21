@@ -17,7 +17,7 @@ from statistics import median
 
 from copybt.api import Client
 
-from .collect import CATEGORIES, leaderboard, wallet_data
+from .collect import CATEGORIES, alltime_pnl, leaderboard, wallet_data
 from .features import _f, profile
 
 log = logging.getLogger("study")
@@ -62,7 +62,9 @@ def main(argv=None) -> int:
                 log.warning("%s failed: %s", w, e)
                 continue
             first = lb[w].get("all-time top") or next(iter(lb[w].values()))
-            p = profile(d, first)
+            at = lb[w].get("all-time top")
+            ref = _f(at.get("pnl")) if at else alltime_pnl(client, w)
+            p = profile(d, first, alltime_pnl=ref)
             p["groups"] = ";".join(k for k in groups if w in groups[k])
             p["top_markets"] = sorted(
                 ({"title": r.get("title"), "outcome": r.get("outcome"),
@@ -112,21 +114,27 @@ def render(groups, lb, profiles) -> str:
         by = defaultdict(list)
         for p in ps:
             by[p["archetype"]].append(p)
+        rec = sum(1 for p in ps if p["reconciled"])
         out += [f"## {key.capitalize()} ({len(ps)} wallets, {_usd(total)} profit)", "",
-                "| strategy | wallets | share of profit | median edge per $ | median win rate "
-                "| median maker share | median trades/day |", "|---|---|---|---|---|---|---|"]
+                f"{rec} of {len(ps)} wallets reconcile (sampled positions within 30% of "
+                "their all-time leaderboard profit); edge and win rate use only those.", "",
+                "| strategy | wallets | share of profit | reconciled | median edge per $ "
+                "| median win rate | maker share of $ | median transactions/day |",
+                "|---|---|---|---|---|---|---|---|"]
         for arch, xs in sorted(by.items(), key=lambda kv: -sum(pnl_of[p["wallet"]] for p in kv[1])):
             share = sum(max(pnl_of[p["wallet"]], 0) for p in xs) / total
-            out.append(f"| {arch} | {len(xs)} | {share:.0%} | {_pct(_med(p['roi'] for p in xs))} "
-                       f"| {_pct(_med(p['win_rate'] for p in xs))} "
-                       f"| {_pct(_med(p['maker_share'] for p in xs))} "
-                       f"| {_med(p['trades_per_day'] for p in xs) or 0:.1f} |")
+            ok = [p for p in xs if p["reconciled"]]
+            out.append(f"| {arch} | {len(xs)} | {share:.0%} | {len(ok)} "
+                       f"| {_pct(_med(p['roi'] for p in ok))} "
+                       f"| {_pct(_med(p['win_rate'] for p in ok))} "
+                       f"| {_pct(_med(p.get('maker_usd_share') for p in xs))} "
+                       f"| {_med(p.get('tx_per_day') for p in xs) or 0:.1f} |")
         out.append("")
 
     top = [profiles[w] for w in groups.get("all-time top", []) if w in profiles]
     if top:
         cats = defaultdict(float)
-        for p in top:
+        for p in [p for p in top if p["reconciled"]]:
             for k, v in p.items():
                 if k.startswith("pnl_"):
                     cats[k[4:]] += v
@@ -135,7 +143,7 @@ def render(groups, lb, profiles) -> str:
                  ("<20c", "20-50c", "50-80c", "80-95c", ">=95c")}
         ptot = sum(price.values()) or 1
         out += ["## All-time top: where the money came from", "",
-                "Realized profit by market category: " + ", ".join(
+                "Profit by market category (reconciled wallets): " + ", ".join(
                     f"{c} {_usd(v)} ({v / tot:.0%})" for c, v in
                     sorted(cats.items(), key=lambda kv: -kv[1]) if v > 0) + ".", "",
                 "Money spent by entry price: " + ", ".join(
@@ -151,12 +159,14 @@ def render(groups, lb, profiles) -> str:
                 f"{sum(1 for p in top if p['last_trade'] >= '2026-09-21')} of {len(top)}.", ""]
 
         out += ["## All-time top 30", "",
-                "| # | wallet | name | profit | strategy | why | edge per $ | win rate | best category |",
-                "|---|---|---|---|---|---|---|---|---|"]
+                "| # | wallet | name | profit | strategy | why | edge per $ | win rate "
+                "| best category | last trade |", "|---|---|---|---|---|---|---|---|---|---|"]
         for i, p in enumerate(top[:30], 1):
+            r = p["reconciled"]
             out.append(f"| {i} | `{p['wallet'][:10]}…` | {p['name'][:18]} | {_usd(p['lb_pnl'])} "
-                       f"| {p['archetype']} | {p['why']} | {_pct(p['roi'])} | {_pct(p['win_rate'])} "
-                       f"| {p['best_category']} |")
+                       f"| {p['archetype']} | {p['why']} | {_pct(p['roi']) if r else '?'} "
+                       f"| {_pct(p['win_rate']) if r else '?'} | {p['best_category']} "
+                       f"| {p['last_trade']} |")
         out += ["", "## Examples by strategy (best markets of the top wallets)", ""]
         seen = defaultdict(int)
         for p in top:

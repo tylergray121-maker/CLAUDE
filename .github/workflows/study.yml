@@ -39,6 +39,11 @@ jobs:
           mkdir -p studyresults
           python -u -m study $(cat study.args 2>/dev/null) 2>&1 | tee studyresults/run.log | tail -120
 
+      - name: Bonding backtest
+        timeout-minutes: 60
+        shell: bash -o pipefail {0}
+        run: python -u -m study.bonds --days 90 --min-volume 20000 2>&1 | tee studyresults/bonds.log | tail -60
+
       - uses: actions/cache/save@v4
         if: always()
         with:
