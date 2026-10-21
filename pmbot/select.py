@@ -3,8 +3,9 @@
     python -m pmbot.select --days 45 --out-dir selectresults
 
 Each candidate sports wallet's buys are replayed the way copytop copies them
-on Polymarket US: only kinds of market US lists (game winners, soccer
-results, totals) in leagues it lists; priced at our copy delay from CLOB
+on Polymarket US: only markets US listed (each one looked up on the US
+gateway under the prefix US uses for that league and kind of market: game
+winners, soccer results, totals); priced at our copy delay from CLOB
 minute bars plus half a cent of spread; skipped when that is more than 1c
 above the leader's price (copytop never chases); $10 a signal, one signal
 per wallet and outcome per 10 minutes, at most $50 in an outcome; the US
@@ -33,7 +34,9 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, replace
 from statistics import median
 
-from copybt.api import Client
+from collections import Counter
+
+from copybt.api import Client, HTTPError
 from copybt.data import PriceHistory, fetch_leaderboard, fetch_markets, fetch_trades
 
 from . import data as pmdata
@@ -47,6 +50,14 @@ _DATE = r"[a-z0-9]+-[a-z0-9]+-[a-z0-9]+-\d{4}-\d{2}-\d{2}"
 _KINDS = ((re.compile(rf"^{_DATE}$"), "moneyline"),
           (re.compile(rf"^{_DATE}-(?:total-)?\d+pt\d+$"), "totals"),
           (re.compile(rf"^{_DATE}-[a-z0-9]+$"), "result"))
+
+
+_TOTAL = re.compile(r"-total-(?=\d+pt\d+$)")
+
+
+def us_name(intl: str) -> str:
+    """The international slug as US names it (totals drop '-total-')."""
+    return _TOTAL.sub("-", intl)
 
 
 def kind_of(slug: str) -> str:
@@ -70,6 +81,9 @@ class Rules:
     min_price: float = 0.05
     max_price: float = 0.95
     copy_sells: bool = True
+    conviction_sizing: bool = False  # stake x0.5 under 0.5x their usual bet, x1.5 at 2x+
+    min_conviction: float = 0.0      # skip bets smaller than this multiple of their usual
+    pregame_only: bool = False
 
 
 def copies(trades, markets, pairs, rules: Rules, price_at=None) -> list[dict]:
@@ -90,19 +104,25 @@ def copies(trades, markets, pairs, rules: Rules, price_at=None) -> list[dict]:
             sizes.append(notional)
             if notional < rules.min_leader_usd or t.ts - last.get(t.asset, -10**12) < rules.dedupe_s:
                 continue
+            conviction = notional / prior if prior > 0 else 1.0
+            if conviction < rules.min_conviction:
+                continue
+            m = markets.get(t.condition_id)
+            start = m.start_ts if m else None
+            if rules.pregame_only and (not start or t.ts >= start):
+                continue
             ask = round((p if p is not None else t.price) + rules.half_spread, 4)
             if ask > t.price + rules.max_slip + 1e-9:
                 out.append({"wallet": t.wallet, "ts": t.ts, "skipped": "price_moved"})
                 continue
             if not rules.min_price <= ask <= rules.max_price:
                 continue
-            qty = int(min(rules.stake, rules.market_cap - spent[t.asset]) // ask)
+            stake = rules.stake * (stake_multiple(conviction) if rules.conviction_sizing else 1.0)
+            qty = int(min(stake, rules.market_cap - spent[t.asset]) // ask)
             if qty < 1:
                 continue
             last[t.asset] = t.ts
             spent[t.asset] += ask * qty
-            m = markets.get(t.condition_id)
-            start = m.start_ts if m else None
             lot = {"wallet": t.wallet, "ts": t.ts, "slug": t.slug, "title": t.title,
                    "outcome": t.outcome, "asset": t.asset, "cond": t.condition_id,
                    "league": lg, "kind": k, "leader_price": t.price, "price": ask,
@@ -111,7 +131,7 @@ def copies(trades, markets, pairs, rules: Rules, price_at=None) -> list[dict]:
                    "timing": ("unknown" if not start else
                               "in-play" if t.ts >= start else "pre-game"),
                    "hours_to_start": round((start - t.ts) / 3600, 2) if start else None,
-                   "conviction": round(notional / prior, 3) if prior > 0 else 1.0,
+                   "conviction": round(conviction, 3),
                    "delay_move": round(p - t.price, 4) if p is not None else None,
                    "leader_usd": round(notional, 2), "exit": None, "pnl": None}
             held[t.asset].append(lot)
@@ -131,6 +151,30 @@ def copies(trades, markets, pairs, rules: Rules, price_at=None) -> list[dict]:
                 lot.update(exit="settle", exit_ts=m.resolve_ts,
                            pnl=round(lot["qty"] * m.prices[asset] - lot["cost"], 4))
     return out
+
+
+def stake_multiple(conviction: float) -> float:
+    """Bet more when they bet big relative to their usual size."""
+    return 0.5 if conviction < 0.5 else 1.5 if conviction >= 2 else 1.0
+
+
+def us_prefixes(us) -> dict[tuple, str]:
+    """The slug prefix US uses for each (league, kind), e.g. ('nba', 'totals') -> 'tsc'."""
+    seen: dict[tuple, Counter] = defaultdict(Counter)
+    for m in us:
+        intl = intl_slug(m.slug)
+        k = kind_of(intl)
+        if k:
+            seen[(league(intl), k)][m.slug.split("-", 1)[0]] += 1
+    return {key: c.most_common(1)[0][0] for key, c in seen.items()}
+
+
+def listed_on_us(client: Client, intl: str, prefix: str) -> bool:
+    try:
+        r = client.get(pmdata.US_GATEWAY, f"/v1/market/slug/{prefix}-{us_name(intl)}")
+    except HTTPError:
+        return False
+    return bool(isinstance(r, dict) and (r.get("market") or r.get("slug")))
 
 
 def stats(lots: list[dict]) -> dict:
@@ -263,18 +307,42 @@ def main(argv=None) -> int:
             if i % 50 == 0 or i == len(futs):
                 log.info("trades: %d/%d wallets", i, len(futs))
     hist = {w: t for w, t in hist.items() if t and w not in truncated}
+    # Exactly which of these markets US listed (open now, or looked up by slug).
+    open_now = {us_name(intl_slug(m.slug)) for m in us}
+    prefix = us_prefixes(us)
+    slugs = sorted({t.slug for ts in hist.values() for t in ts})
+    todo = [x for x in slugs if us_name(x) not in open_now]
+    found = {x for x in slugs if us_name(x) in open_now}
+    with ThreadPoolExecutor(a.workers) as pool:
+        for x, ok in zip(todo, pool.map(lambda x: listed_on_us(
+                client, x, prefix[(league(x), kind_of(x))]), todo)):
+            if ok:
+                found.add(x)
+    by_pair: dict[tuple, list] = defaultdict(lambda: [0, 0])
+    for x in slugs:
+        e = by_pair[(league(x), kind_of(x))]
+        e[0] += x in found
+        e[1] += 1
+    log.info("listed on Polymarket US: %d of %d markets the candidates traded; by league: %s",
+             len(found), len(slugs), ", ".join(f"{lg}/{k} {a}/{b}" for (lg, k), (a, b) in
+                                                 sorted(by_pair.items(), key=lambda kv: -kv[1][1])[:30]))
+    hist = {w: [t for t in ts if t.slug in found] for w, ts in hist.items()}
+    hist = {w: t for w, t in hist.items() if t}
     conds = {t.condition_id for ts in hist.values() for t in ts}
     log.info("%d wallets with copyable trades (%d skipped as too high-frequency); "
              "resolving %d markets", len(hist), len(truncated), len(conds))
     markets = fetch_markets(client, conds, workers=a.workers)
 
-    rules = replace(Rules(), delay_s=a.delay)
+    # Holding to settlement beat copying their sells in both windows of the
+    # first run (their exits lose the spread and the fee twice); it is the base.
+    rules = replace(Rules(), delay_s=a.delay, copy_sells=False)
     # Pass 1: at the leader's price plus spread, every wallet.
     quick = {w: copies(t, markets, pairs, rules) for w, t in hist.items()}
     train_q = {w: [x for x in lots if x["ts"] < split_ts] for w, lots in quick.items()}
-    short = set(pick(train_q, a.min_copies, a.shortlist // 2))
-    short |= set(pick(quick, a.min_copies, a.shortlist // 2))
-    short |= {w for w in current if w in hist}
+    # The validation pool is chosen on the first part only; final candidates
+    # on the whole window (they never feed the validation numbers).
+    pool_val = set(pick(train_q, a.min_copies, a.shortlist))
+    short = pool_val | set(pick(quick, a.min_copies, a.shortlist)) | {w for w in current if w in hist}
     log.info("re-pricing %d wallets at a %ds copy delay", len(short), a.delay)
     prices = PriceHistory(client)
     prices.prefetch({(t.asset, t.ts + d) for w in short for t in hist[w]
@@ -288,10 +356,11 @@ def main(argv=None) -> int:
     test = {w: [x for x in v if x["ts"] >= split_ts] for w, v in lots.items()}
 
     # Validation: choose on the first part, score on the rest.
-    chosen = pick(train, a.min_copies, a.leaders)
+    chosen = pick({w: v for w, v in train.items() if w in pool_val}, a.min_copies, a.leaders)
     flat = lambda d, ws: [x for w in ws for x in d.get(w, [])]
     v_rows = [("chosen on the first part (test window)", stats(flat(test, chosen))),
-              ("all re-priced wallets (test window)", stats(flat(test, short))),
+              ("every wallet that qualified on the first part (test window)",
+               stats(flat(test, pool_val))),
               ("currently copied (test window)", stats(flat(test, [w for w in current if w in short])))]
 
     # Patterns, chosen on train and checked on test, across the chosen wallets.
@@ -299,8 +368,11 @@ def main(argv=None) -> int:
 
     # Variants on the chosen wallets.
     variants = []
-    for label, r in (("as copytop runs (30s delay, copy sells)", rules),
-                     ("hold to settlement (ignore their sells)", replace(rules, copy_sells=False)),
+    for label, r in ((f"base: {a.delay}s delay, 1c limit, hold to settlement", rules),
+                     ("copy their sells too", replace(rules, copy_sells=True)),
+                     ("size by conviction (x0.5 / x1 / x1.5)", replace(rules, conviction_sizing=True)),
+                     ("skip bets under 0.5x their usual", replace(rules, min_conviction=0.5)),
+                     ("pre-game only", replace(rules, pregame_only=True)),
                      ("15s delay", replace(rules, delay_s=15)),
                      ("60s delay", replace(rules, delay_s=60)),
                      ("allow 2c over their price", replace(rules, max_slip=0.02))):
@@ -346,8 +418,9 @@ def main(argv=None) -> int:
     with open(os.path.join(a.out_dir, "leaders.json"), "w") as f:
         json.dump({"chosen": time.strftime("%Y-%m-%d", time.gmtime(end_ts)),
                    "rule": (f"Backtest of copytop itself over {a.days} days on markets "
-                            f"Polymarket US lists ({a.delay}s copy delay, $10 a signal, US "
-                            f"taker fee, never more than 1c over the leader): wallets with "
+                            f"Polymarket US listed ({a.delay}s copy delay, $10 a signal, US "
+                            f"taker fee, never more than 1c over the leader, held to "
+                            f"settlement): wallets with "
                             f"{a.min_copies + 5}+ closed copies, copied in the last week, "
                             f"ranked by the lower bound of their per-copy return."),
                    "leaders": picks}, f, indent=1)
