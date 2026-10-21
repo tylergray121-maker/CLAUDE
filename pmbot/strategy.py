@@ -41,6 +41,8 @@ class MarketView:
     fair_spread: float | None
     tradable: bool = True     # open, not in-play, not about to close
     note: str = ""
+    end: float | None = None  # scheduled close (unix seconds)
+    market_type: str = ""
 
 
 @dataclass
@@ -49,6 +51,7 @@ class Order:
     price: float
     qty: int
     post_only: bool    # True: maker quote (GTC); False: IOC take
+    tag: str = ""      # strategy that wants it
 
 
 def floor_tick(x: float, tick: float) -> float:

@@ -7,7 +7,8 @@ import logging
 import os
 import signal
 import time
-from dataclasses import asdict, dataclass, field
+from collections import defaultdict
+from dataclasses import asdict, dataclass, field, replace
 
 from copybt.api import Client
 
@@ -15,7 +16,8 @@ from . import data, mapping
 from .broker import PaperBroker, Quote
 from .fees import taker_fee_per_contract
 from .risk import RiskManager
-from .strategy import MarketView, Order, StrategyConfig, decide
+from .strategies import FairValue, Strategy
+from .strategy import MarketView, Order, StrategyConfig
 
 log = logging.getLogger(__name__)
 
@@ -46,8 +48,10 @@ class ScanStats:
 
 class Engine:
     def __init__(self, ecfg: EngineConfig, scfg: StrategyConfig, risk: RiskManager,
-                 broker=None):
+                 broker=None, strategies: list[Strategy] | None = None):
         self.ecfg, self.scfg, self.risk = ecfg, scfg, risk
+        self.strategies = strategies if strategies is not None else [FairValue(scfg)]
+        self.owner: dict[str, str] = {}   # market slug -> strategy that trades it
         self.broker = broker or PaperBroker(risk.cfg.bankroll)
         self.client = Client(cache_dir=None, max_rps=ecfg.max_rps, retries=2, timeout=15)
         self.pairs: list[mapping.Pair] = []
@@ -113,45 +117,68 @@ class Engine:
 
     def cycle(self) -> None:
         self.broker.sync()
-        pairs = self.pairs
-        us_q = data.fetch_parallel(lambda p: data.us_quote(self.client, p.us_slug),
-                                   pairs, self.ecfg.workers)
-        ref = data.fetch_parallel(lambda p: data.intl_book(self.client, p.intl_token),
-                                  pairs, self.ecfg.workers)
         now = time.time()
-        for p, uq, (rb, ra, rs) in zip(pairs, us_q, ref):
+        by_slug = {p.us_slug: p for p in self.pairs}
+        slugs = set(by_slug) | set(self.broker.positions)  # always watch holdings
+        for strat in self.strategies:
+            slugs |= strat.watch(self, now)
+        slugs = sorted(slugs)
+        us_q = data.fetch_parallel(lambda s: data.us_quote(self.client, s), slugs,
+                                   self.ecfg.workers)
+        paired = [by_slug[s] for s in slugs if s in by_slug]
+        ref = dict(zip([p.us_slug for p in paired], data.fetch_parallel(
+            lambda p: data.intl_book(self.client, p.intl_token), paired, self.ecfg.workers)))
+        views: dict[str, tuple[MarketView, Quote]] = {}
+        for slug, uq in zip(slugs, us_q):
             if uq is None:
                 continue
             q, state = uq
-            m = self.markets.get(p.us_slug)
+            m = self.markets.get(slug)
             ok, why = m.tradable(now) if m else (False, "unknown")
             if state and state != "MARKET_STATE_OPEN":
                 ok, why = False, state.lower()
-            fair = (rb + ra) / 2 if rb is not None and ra is not None else None
             if q.bid is not None and q.ask is not None:
-                self.marks[p.us_slug] = (q.bid + q.ask) / 2
-            if p.us_slug not in self.verified and fair is not None and \
-                    q.bid is not None and q.ask is not None:
-                gap = abs((q.bid + q.ask) / 2 - fair)
-                if gap > self.ecfg.max_price_gap:
-                    self._log("pair_rejected", slug=p.us_slug, token=p.intl_token,
-                              gap=round(gap, 3), us=p.us_label, intl=p.intl_label)
-                    self.pairs = [x for x in self.pairs if x is not p]
-                    continue
-                self.verified.add(p.us_slug)
-            if p.us_slug not in self.verified:
-                ok, why = False, "unverified pair"
-            v = MarketView(p.us_slug, p.tick, q.bid, q.ask, q.bid_qty, q.ask_qty,
-                           fair, rs, ok, why)
-            self.broker.observe(p.us_slug, q)
-            self._scan(v)
-            if self.ecfg.mode != "scan":
-                self._trade(v, q)
+                self.marks[slug] = (q.bid + q.ask) / 2
+            fair = rs = None
+            if slug in ref:
+                rb, ra, rs = ref[slug]
+                fair = (rb + ra) / 2 if rb is not None and ra is not None else None
+                p = by_slug[slug]
+                if slug not in self.verified and fair is not None and \
+                        q.bid is not None and q.ask is not None:
+                    gap = abs((q.bid + q.ask) / 2 - fair)
+                    if gap > self.ecfg.max_price_gap:
+                        self._log("pair_rejected", slug=slug, token=p.intl_token,
+                                  gap=round(gap, 3), us=p.us_label, intl=p.intl_label)
+                        self.pairs = [x for x in self.pairs if x is not p]
+                        fair = rs = None
+                    else:
+                        self.verified.add(slug)
+                if slug not in self.verified:
+                    fair = rs = None  # never trade on an unverified reference
+            v = MarketView(slug, m.tick if m else 0.01, q.bid, q.ask, q.bid_qty,
+                           q.ask_qty, fair, rs, ok, why,
+                           end=m.end if m else None, market_type=m.market_type if m else "")
+            views[slug] = (v, q)
+            self.broker.observe(slug, q)
+            if fair is not None:
+                self._scan(v)
+        if self.ecfg.mode != "scan" and not self.risk.halted:
+            self._trade_all(views, now)
         self._settle_closed(now)
         eq = self.broker.equity(self.marks)
         if self.ecfg.mode != "scan" and self.risk.check(eq):
             self.broker.cancel_all()
         self._summary(eq)
+
+    # -- helpers strategies use -------------------------------------------------
+    def held(self, slug: str) -> int:
+        p = self.broker.positions.get(slug)
+        return p.qty if p else 0
+
+    def room(self, slug: str) -> float:
+        b = self.broker
+        return self.risk.room(slug, b.positions, b.open_orders, b.cash)
 
     def _scan(self, v: MarketView) -> None:
         if v.fair is None or v.fair_spread is None or v.fair_spread > self.scfg.max_fair_spread:
@@ -175,11 +202,28 @@ class Engine:
                           us_bid=v.us_bid, bid_qty=v.us_bid_qty, fair=v.fair,
                           fair_spread=v.fair_spread, tradable=v.tradable, note=v.note)
 
-    def _trade(self, v: MarketView, q: Quote) -> None:
+    def _trade_all(self, views: dict, now: float) -> None:
         b = self.broker
-        held = b.positions.get(v.slug).qty if v.slug in b.positions else 0
-        room = self.risk.room(v.slug, b.positions, b.open_orders, b.cash)
-        want = decide(v, held, room, self.scfg) if not self.risk.halted else []
+        # Release markets a strategy no longer has anything in.
+        for slug in list(self.owner):
+            if not self.held(slug) and not any(o.slug == slug for o in b.open_orders.values()):
+                del self.owner[slug]
+        plain = {s: v for s, (v, _) in views.items()}
+        want: dict[str, list[Order]] = defaultdict(list)
+        claimed = dict(self.owner)
+        for strat in self.strategies:
+            for slug, orders in strat.orders(self, plain, now).items():
+                if not orders or slug not in views:
+                    continue
+                if claimed.setdefault(slug, strat.name) != strat.name:
+                    continue  # another strategy trades this market
+                want[slug] += [replace(o, tag=strat.name) for o in orders]
+        for slug, (v, q) in views.items():
+            self._reconcile(v, q, want.get(slug, []))
+
+    def _reconcile(self, v: MarketView, q: Quote, want: list[Order]) -> None:
+        b = self.broker
+        want = list(want)
         mine = [o for o in b.open_orders.values() if o.slug == v.slug]
         # Keep resting orders that still match a desired quote; cancel the rest.
         for o in mine:
@@ -192,15 +236,15 @@ class Engine:
                 b.cancel(o.id)
                 self._log("cancel", slug=v.slug, side=o.side, price=o.price, qty=o.qty)
         for w in want:
-            if w.side == "BUY" and w.price * w.qty > self.risk.room(
-                    v.slug, b.positions, b.open_orders, b.cash) + 1e-9:
+            if w.side == "BUY" and w.price * w.qty > self.room(v.slug) + 1e-9:
                 continue
             if not self.risk.allow_order():
                 self._log("throttled", slug=v.slug)
                 break
             oid = b.place(v.slug, w, q)
+            self.owner.setdefault(v.slug, w.tag)
             self._log("order", slug=v.slug, side=w.side, price=w.price, qty=w.qty,
-                      post_only=w.post_only, fair=v.fair, id=oid)
+                      post_only=w.post_only, fair=v.fair, strategy=w.tag, id=oid)
 
     def _settle_closed(self, now: float) -> None:
         if not isinstance(self.broker, PaperBroker):

@@ -100,3 +100,27 @@ class RenderTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class BondsTest(unittest.TestCase):
+    def test_favorite_side_band_fee_and_payout(self):
+        from study import bonds
+        close = 10_000_000
+        mk = lambda i, p, yes_won: {"id": f"m{i}", "closed": close, "yes_won": yes_won,
+                                     "question": "Will X win on 2026-10-18?", "slug": "",
+                                     "eventSlug": ""}
+        ms = [mk(1, 0.96, True),    # YES favorite at 96c, wins
+              mk(2, 0.03, False),   # NO is the favorite at 97c, wins
+              mk(3, 0.96, False),   # favorite loses
+              mk(4, 0.50, True)]    # no favorite in any band
+        paths = {m["id"]: [(close - 30 * 3600, p), (close - 3000, p)]
+                 for m, p in zip(ms, (0.96, 0.03, 0.96, 0.50))}
+        res, _ = bonds.backtest(ms, paths, slippage=0.0, maker=True)
+        r = res[(24, (0.95, 0.98))]
+        self.assertEqual(len(r), 3)
+        self.assertAlmostEqual(r[0], 1 / 0.96 - 1)
+        self.assertAlmostEqual(r[1], 1 / 0.97 - 1)
+        self.assertAlmostEqual(r[2], -1.0)
+        taker, _ = bonds.backtest(ms, paths, slippage=0.0, maker=False)
+        self.assertLess(taker[(24, (0.95, 0.98))][0], r[0])   # fee costs something
+        self.assertNotIn((168, (0.95, 0.98)), res)             # no price that early
