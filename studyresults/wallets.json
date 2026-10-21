@@ -59,8 +59,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 12,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 99% of gains over 22 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "22 positions, top 5 = 99% of gains, median position $24,216",
   "groups": "all-time top;politics leaders",
   "top_markets": [
    {
@@ -146,8 +146,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "995 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "5009+ positions, 15% of $ as maker, median position $34,507",
   "groups": "all-time top;sports leaders",
   "top_markets": [
    {
@@ -233,8 +233,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 43,
-  "archetype": "bot / high-frequency",
-  "why": "1000 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "66 positions, top 5 = 84% of gains, median position $27,200",
   "groups": "all-time top;politics leaders",
   "top_markets": [
    {
@@ -320,8 +320,8 @@
   "n_split": 0,
   "n_conversion": 1,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "935 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "10000+ positions, 90% of $ as maker, median position $11,366",
   "groups": "all-time top;sports leaders",
   "top_markets": [
    {
@@ -407,8 +407,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "market maker",
-  "why": "70% maker fills, $6,383 rewards, 56% of markets on both sides",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "4072+ positions, 70% of $ as maker, median position $6,817",
   "groups": "all-time top;sports leaders",
   "top_markets": [
    {
@@ -494,8 +494,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 5,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 100% of gains over 5 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "5 positions, top 5 = 100% of gains, median position $667,332",
   "groups": "all-time top;sports leaders",
   "top_markets": [
    {
@@ -581,8 +581,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 2,
-  "archetype": "bot / high-frequency",
-  "why": "999 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "2 positions, top 5 = 100% of gains, median position $2,141,006",
   "groups": "all-time top;sports leaders",
   "top_markets": [
    {
@@ -661,8 +661,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 5,
-  "archetype": "bot / high-frequency",
-  "why": "1000 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "6 positions, top 5 = 100% of gains, median position $1,822,445",
   "groups": "all-time top;sports leaders",
   "top_markets": [
    {
@@ -748,8 +748,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 7,
-  "archetype": "bot / high-frequency",
-  "why": "138 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "8 positions, top 5 = 99% of gains, median position $569,709",
   "groups": "all-time top;politics leaders",
   "top_markets": [
    {
@@ -835,8 +835,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 3,
-  "archetype": "bot / high-frequency",
-  "why": "999 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "4 positions, top 5 = 100% of gains, median position $1,150,678",
   "groups": "all-time top;sports leaders",
   "top_markets": [
    {
@@ -922,8 +922,8 @@
   "n_split": 0,
   "n_conversion": 37,
   "n_redeem": 496,
-  "archetype": "bot / high-frequency",
-  "why": "899 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "1260+ positions, 63% of $ as maker, median position $20,153",
   "groups": "all-time top;this month top;sports leaders",
   "top_markets": [
    {
@@ -1009,8 +1009,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 4,
-  "archetype": "bot / high-frequency",
-  "why": "982 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "8 positions, top 5 = 100% of gains, median position $147",
   "groups": "all-time top;politics leaders",
   "top_markets": [
    {
@@ -1096,8 +1096,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 8,
-  "archetype": "bot / high-frequency",
-  "why": "637 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "8 positions, top 5 = 99% of gains, median position $165,268",
   "groups": "all-time top;politics leaders",
   "top_markets": [
    {
@@ -1183,8 +1183,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 2,
-  "archetype": "bot / high-frequency",
-  "why": "670 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "2 positions, top 5 = 100% of gains, median position $3,045,500",
   "groups": "all-time top;sports leaders",
   "top_markets": [
    {
@@ -1263,8 +1263,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 15,
-  "archetype": "bot / high-frequency",
-  "why": "1000 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "17 positions, top 5 = 82% of gains, median position $1,202,279",
   "groups": "all-time top;sports leaders",
   "top_markets": [
    {
@@ -1350,8 +1350,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 6,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 98% of gains over 6 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "9 positions, top 5 = 98% of gains, median position $849,964",
   "groups": "all-time top;sports leaders",
   "top_markets": [
    {
@@ -1437,8 +1437,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 8,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 84% of gains over 19 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "22 positions, top 5 = 84% of gains, median position $38,643",
   "groups": "all-time top;this month top;sports leaders",
   "top_markets": [
    {
@@ -1524,8 +1524,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 13,
-  "archetype": "bot / high-frequency",
-  "why": "435 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "21 positions, top 5 = 90% of gains, median position $74,049",
   "groups": "all-time top;politics leaders",
   "top_markets": [
    {
@@ -1611,8 +1611,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 0,
-  "archetype": "bot / high-frequency",
-  "why": "862 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "1 positions, top 5 = 100% of gains, median position $9,948,778",
   "groups": "all-time top;politics leaders",
   "top_markets": [
    {
@@ -1771,8 +1771,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 11,
-  "archetype": "bot / high-frequency",
-  "why": "349 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "15 positions, top 5 = 93% of gains, median position $301,277",
   "groups": "all-time top;sports leaders",
   "top_markets": [
    {
@@ -1858,8 +1858,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 7,
-  "archetype": "bot / high-frequency",
-  "why": "977 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "7 positions, top 5 = 99% of gains, median position $474,563",
   "groups": "all-time top;politics leaders",
   "top_markets": [
    {
@@ -1945,8 +1945,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 7,
-  "archetype": "bot / high-frequency",
-  "why": "222 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "7 positions, top 5 = 99% of gains, median position $384,212",
   "groups": "all-time top;politics leaders",
   "top_markets": [
    {
@@ -2032,8 +2032,8 @@
   "n_split": 97,
   "n_conversion": 38,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "998 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "5179+ positions, 37% of $ as maker, median position $18,527",
   "groups": "all-time top;sports leaders",
   "top_markets": [
    {
@@ -2119,8 +2119,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 6,
-  "archetype": "bot / high-frequency",
-  "why": "998 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "6 positions, top 5 = 100% of gains, median position $279,530",
   "groups": "all-time top;politics leaders",
   "top_markets": [
    {
@@ -2293,8 +2293,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "1000 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "6050+ positions, 69% of $ as maker, median position $1,558",
   "groups": "all-time top;sports leaders",
   "top_markets": [
    {
@@ -2380,8 +2380,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 10,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 88% of gains over 10 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "14 positions, top 5 = 88% of gains, median position $227,537",
   "groups": "all-time top;sports leaders",
   "top_markets": [
    {
@@ -2467,8 +2467,8 @@
   "n_split": 157,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "105 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "5004+ positions, 100% of $ as maker, median position $12,206",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -2554,8 +2554,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 82,
-  "archetype": "bot / high-frequency",
-  "why": "115 transactions/day, 0% in short crypto markets",
+  "archetype": "sports bettor (pre-game/futures)",
+  "why": "98% of spend in sports, 22% of trades on settlement day",
   "groups": "all-time top;sports leaders",
   "top_markets": [
    {
@@ -2641,8 +2641,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 11,
-  "archetype": "bot / high-frequency",
-  "why": "998 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "11 positions, top 5 = 100% of gains, median position $13,098",
   "groups": "all-time top;politics leaders",
   "top_markets": [
    {
@@ -2728,8 +2728,8 @@
   "n_split": 0,
   "n_conversion": 4,
   "n_redeem": 784,
-  "archetype": "sports bettor (pre-game/futures)",
-  "why": "99% of spend in sports, 18% of trades on settlement day",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "1734+ positions, 100% of $ as maker, median position $17,105",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -2815,8 +2815,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 11,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 95% of gains over 10 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "15 positions, top 5 = 95% of gains, median position $381,000",
   "groups": "all-time top;sports leaders",
   "top_markets": [
    {
@@ -2902,8 +2902,8 @@
   "n_split": 37,
   "n_conversion": 3,
   "n_redeem": 1000,
-  "archetype": "market maker",
-  "why": "78% maker fills, $427,524 rewards, 43% of markets on both sides",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "5215+ positions, 78% of $ as maker, median position $7,718",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -2989,8 +2989,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 27,
-  "archetype": "sports bettor (pre-game/futures)",
-  "why": "100% of spend in sports, 0% of trades on settlement day",
+  "archetype": "whale / concentrated bets",
+  "why": "31 positions, top 5 = 68% of gains, median position $159,686",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -3076,8 +3076,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 4,
-  "archetype": "bot / high-frequency",
-  "why": "499 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "9 positions, top 5 = 100% of gains, median position $640,278",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -3163,8 +3163,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 3,
-  "archetype": "bot / high-frequency",
-  "why": "809 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "3 positions, top 5 = 100% of gains, median position $1,191,465",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -3250,8 +3250,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "1000 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "7428+ positions, 70% of $ as maker, median position $2,038",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -3337,8 +3337,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "1000 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "10000+ positions, 0% of $ as maker, median position $1,631",
   "groups": "all-time top;this month top",
   "top_markets": [
    {
@@ -3424,8 +3424,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 15,
-  "archetype": "bot / high-frequency",
-  "why": "758 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "16 positions, top 5 = 98% of gains, median position $29,604",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -3511,8 +3511,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 799,
-  "archetype": "sports bettor (same-day/in-play)",
-  "why": "100% of spend in sports, 90% of trades on settlement day",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "1063+ positions, 30% of $ as maker, median position $11,165",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -3598,8 +3598,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1,
-  "archetype": "bot / high-frequency",
-  "why": "140 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "8 positions, top 5 = 94% of gains, median position $991,265",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -3772,8 +3772,8 @@
   "n_split": 88,
   "n_conversion": 38,
   "n_redeem": 1000,
-  "archetype": "sports bettor (same-day/in-play)",
-  "why": "64% of spend in sports, 96% of trades on settlement day",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "5007+ positions, 37% of $ as maker, median position $3,779",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -3859,8 +3859,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "1000 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "5001+ positions, 51% of $ as maker, median position $11,165",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -3946,8 +3946,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 27,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 99% of gains over 35 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "43 positions, top 5 = 99% of gains, median position $30,102",
   "groups": "all-time top;politics leaders",
   "top_markets": [
    {
@@ -4033,8 +4033,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "282 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "2959+ positions, 58% of $ as maker, median position $1,700",
   "groups": "all-time top;this month top",
   "top_markets": [
    {
@@ -4120,8 +4120,8 @@
   "n_split": 17,
   "n_conversion": 79,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "999 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "7012+ positions, 79% of $ as maker, median position $19,499",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -4207,8 +4207,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 229,
-  "archetype": "bot / high-frequency",
-  "why": "169 transactions/day, 0% in short crypto markets",
+  "archetype": "sports bettor (pre-game/futures)",
+  "why": "97% of spend in sports, 48% of trades on settlement day",
   "groups": "all-time top;this month top",
   "top_markets": [
    {
@@ -4294,8 +4294,8 @@
   "n_split": 441,
   "n_conversion": 98,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "149 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume politics operation (market making)",
+  "why": "3378+ positions, 99% of $ as maker, median position $311",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -4381,8 +4381,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1,
-  "archetype": "bot / high-frequency",
-  "why": "253 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "3 positions, top 5 = 100% of gains, median position $258,389",
   "groups": "all-time top;politics leaders",
   "top_markets": [
    {
@@ -4468,8 +4468,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 11,
-  "archetype": "bot / high-frequency",
-  "why": "335 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "16 positions, top 5 = 95% of gains, median position $27,237",
   "groups": "all-time top;politics leaders",
   "top_markets": [
    {
@@ -4642,8 +4642,8 @@
   "n_split": 27,
   "n_conversion": 1000,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "998 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume other operation (taker flow)",
+  "why": "4998+ positions, 13% of $ as maker, median position $426",
   "groups": "this month top",
   "top_markets": [
    {
@@ -4816,8 +4816,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 22,
-  "archetype": "sports bettor (same-day/in-play)",
-  "why": "100% of spend in sports, 92% of trades on settlement day",
+  "archetype": "whale / concentrated bets",
+  "why": "23 positions, top 5 = 71% of gains, median position $366,830",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -4903,8 +4903,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "983 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "6512+ positions, 78% of $ as maker, median position $496",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -4990,8 +4990,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 32,
-  "archetype": "bot / high-frequency",
-  "why": "338 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "34 positions, top 5 = 50% of gains, median position $89,926",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -5077,8 +5077,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 9,
-  "archetype": "bot / high-frequency",
-  "why": "1000 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "9 positions, top 5 = 100% of gains, median position $2,222,091",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -5164,8 +5164,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "952 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "10000+ positions, 58% of $ as maker, median position $17,699",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -5251,8 +5251,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "997 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "10000+ positions, 60% of $ as maker, median position $6,073",
   "groups": "all-time top;this month top",
   "top_markets": [
    {
@@ -5338,8 +5338,8 @@
   "n_split": 1,
   "n_conversion": 0,
   "n_redeem": 40,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 96% of gains over 65 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "72 positions, top 5 = 96% of gains, median position $949",
   "groups": "all-time top;politics leaders",
   "top_markets": [
    {
@@ -5425,8 +5425,8 @@
   "n_split": 96,
   "n_conversion": 585,
   "n_redeem": 1000,
-  "archetype": "bonder (near-certain outcomes)",
-  "why": "69% of spend at >=95c",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "4328+ positions, 46% of $ as maker, median position $1,379",
   "groups": "all-time top;this month top;culture leaders;tech leaders;weather leaders;mentions leaders",
   "top_markets": [
    {
@@ -5512,8 +5512,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 500,
-  "archetype": "market maker",
-  "why": "91% maker fills, $61,565 rewards, 32% of markets on both sides",
+  "archetype": "high-volume geopolitics operation (market making)",
+  "why": "1310+ positions, 91% of $ as maker, median position $3,890",
   "groups": "all-time top;politics leaders",
   "top_markets": [
    {
@@ -5599,8 +5599,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "sports bettor (pre-game/futures)",
-  "why": "100% of spend in sports, 40% of trades on settlement day",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "5000+ positions, 75% of $ as maker, median position $3,255",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -5686,8 +5686,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 5,
-  "archetype": "bot / high-frequency",
-  "why": "303 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "8 positions, top 5 = 100% of gains, median position $464,531",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -5773,8 +5773,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "generalist",
-  "why": "main category ",
+  "archetype": "whale / concentrated bets",
+  "why": "0 positions, top 5 = 0% of gains, median position $0",
   "groups": "all-time top;this month top",
   "top_markets": []
  },
@@ -5925,8 +5925,8 @@
   "n_split": 96,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "sports bettor (pre-game/futures)",
-  "why": "100% of spend in sports, 40% of trades on settlement day",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "3168+ positions, 44% of $ as maker, median position $1,846",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -6012,8 +6012,8 @@
   "n_split": 6,
   "n_conversion": 1000,
   "n_redeem": 1000,
-  "archetype": "market maker",
-  "why": "82% maker fills, $1,235,797 rewards, 53% of markets on both sides",
+  "archetype": "high-volume politics operation (market making)",
+  "why": "6013+ positions, 82% of $ as maker, median position $2,758",
   "groups": "all-time top;culture leaders;economics leaders",
   "top_markets": [
    {
@@ -6099,8 +6099,8 @@
   "n_split": 168,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "117 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume crypto operation (taker flow)",
+  "why": "3635+ positions, 0% of $ as maker, median position $1,804",
   "groups": "all-time top;crypto leaders",
   "top_markets": [
    {
@@ -6186,8 +6186,8 @@
   "n_split": 193,
   "n_conversion": 43,
   "n_redeem": 1000,
-  "archetype": "politics / macro trader",
-  "why": "60% of spend in politics, geopolitics, economics",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "1506+ positions, 20% of $ as maker, median position $849",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -6273,8 +6273,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "955 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "7975+ positions, 84% of $ as maker, median position $278",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -6360,8 +6360,8 @@
   "n_split": 291,
   "n_conversion": 17,
   "n_redeem": 946,
-  "archetype": "politics / macro trader",
-  "why": "69% of spend in politics, geopolitics, economics",
+  "archetype": "high-volume politics operation (market making)",
+  "why": "1130+ positions, 66% of $ as maker, median position $1,657",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -6447,8 +6447,8 @@
   "n_split": 29,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bonder (near-certain outcomes)",
-  "why": "75% of spend at >=95c",
+  "archetype": "high-volume politics operation (market making)",
+  "why": "2232+ positions, 64% of $ as maker, median position $4,429",
   "groups": "all-time top;economics leaders",
   "top_markets": [
    {
@@ -6534,8 +6534,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 7,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 100% of gains over 7 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "9 positions, top 5 = 100% of gains, median position $256,130",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -6621,8 +6621,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 6,
-  "archetype": "bot / high-frequency",
-  "why": "996 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "6 positions, top 5 = 97% of gains, median position $139,901",
   "groups": "all-time top;politics leaders",
   "top_markets": [
    {
@@ -6708,8 +6708,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 37,
-  "archetype": "bot / high-frequency",
-  "why": "236 transactions/day, 0% in short crypto markets",
+  "archetype": "sports bettor (pre-game/futures)",
+  "why": "99% of spend in sports, 0% of trades on settlement day",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -6795,8 +6795,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "173 transactions/day, 0% in short crypto markets",
+  "archetype": "sports bettor (pre-game/futures)",
+  "why": "99% of spend in sports, 46% of trades on settlement day",
   "groups": "all-time top;this month top",
   "top_markets": [
    {
@@ -6882,8 +6882,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "170 transactions/day, 100% in short crypto markets",
+  "archetype": "crypto short-term bot",
+  "why": "100% of trades in 5-15 minute crypto markets",
   "groups": "all-time top;crypto leaders",
   "top_markets": [
    {
@@ -6969,8 +6969,8 @@
   "n_split": 0,
   "n_conversion": 808,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "145 transactions/day, 45% in short crypto markets",
+  "archetype": "high-volume crypto operation (taker flow)",
+  "why": "5213+ positions, 51% of $ as maker, median position $2,670",
   "groups": "all-time top;crypto leaders",
   "top_markets": [
    {
@@ -7143,8 +7143,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 10,
-  "archetype": "bot / high-frequency",
-  "why": "199 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "20 positions, top 5 = 90% of gains, median position $452,018",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -7230,8 +7230,8 @@
   "n_split": 68,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "162 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "5938+ positions, 77% of $ as maker, median position $2,226",
   "groups": "all-time top;this month top",
   "top_markets": [
    {
@@ -7317,8 +7317,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 15,
-  "archetype": "bot / high-frequency",
-  "why": "335 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "21 positions, top 5 = 80% of gains, median position $226,785",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -7404,8 +7404,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 13,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 100% of gains over 19 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "19 positions, top 5 = 100% of gains, median position $3,669",
   "groups": "all-time top;politics leaders",
   "top_markets": [
    {
@@ -7491,8 +7491,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "992 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "6835+ positions, 82% of $ as maker, median position $911",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -7578,8 +7578,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 9,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 100% of gains over 9 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "9 positions, top 5 = 100% of gains, median position $101,966",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -7665,8 +7665,8 @@
   "n_split": 22,
   "n_conversion": 206,
   "n_redeem": 990,
-  "archetype": "politics / macro trader",
-  "why": "63% of spend in politics, geopolitics, economics",
+  "archetype": "high-volume politics operation (market making)",
+  "why": "2214+ positions, 69% of $ as maker, median position $2,952",
   "groups": "all-time top;economics leaders",
   "top_markets": [
    {
@@ -7752,8 +7752,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 21,
-  "archetype": "bot / high-frequency",
-  "why": "1000 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "42 positions, top 5 = 51% of gains, median position $476,271",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -7839,8 +7839,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 12,
-  "archetype": "sports bettor (pre-game/futures)",
-  "why": "100% of spend in sports, 46% of trades on settlement day",
+  "archetype": "whale / concentrated bets",
+  "why": "19 positions, top 5 = 74% of gains, median position $107,977",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -7926,8 +7926,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 5,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 100% of gains over 5 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "9 positions, top 5 = 100% of gains, median position $801,113",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -8013,8 +8013,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "sports bettor (pre-game/futures)",
-  "why": "100% of spend in sports, 50% of trades on settlement day",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "1601+ positions, 46% of $ as maker, median position $14,249",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -8100,8 +8100,8 @@
   "n_split": 0,
   "n_conversion": 29,
   "n_redeem": 557,
-  "archetype": "bot / high-frequency",
-  "why": "113 transactions/day, 0% in short crypto markets",
+  "archetype": "sports bettor (pre-game/futures)",
+  "why": "98% of spend in sports, 34% of trades on settlement day",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -8187,8 +8187,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 7,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 100% of gains over 9 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "9 positions, top 5 = 100% of gains, median position $8,961",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -8274,8 +8274,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "sports bettor (pre-game/futures)",
-  "why": "94% of spend in sports, 34% of trades on settlement day",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "1716+ positions, 100% of $ as maker, median position $5,456",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -8448,8 +8448,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 19,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 98% of gains over 22 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "23 positions, top 5 = 98% of gains, median position $35,989",
   "groups": "all-time top;politics leaders",
   "top_markets": [
    {
@@ -8535,8 +8535,8 @@
   "n_split": 2,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "sports bettor (same-day/in-play)",
-  "why": "98% of spend in sports, 94% of trades on settlement day",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "5003+ positions, 72% of $ as maker, median position $2,485",
   "groups": "all-time top",
   "top_markets": [
    {
@@ -8622,8 +8622,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 192,
-  "archetype": "bot / high-frequency",
-  "why": "687 transactions/day, 0% in short crypto markets",
+  "archetype": "sports bettor (pre-game/futures)",
+  "why": "68% of spend in sports, 31% of trades on settlement day",
   "groups": "all-time top;this month top",
   "top_markets": [
    {
@@ -8796,8 +8796,8 @@
   "n_split": 30,
   "n_conversion": 0,
   "n_redeem": 791,
-  "archetype": "politics / macro trader",
-  "why": "90% of spend in politics, geopolitics, economics",
+  "archetype": "high-volume economics operation (taker flow)",
+  "why": "1263+ positions, 54% of $ as maker, median position $100",
   "groups": "economics leaders",
   "top_markets": [
    {
@@ -8883,8 +8883,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "862 transactions/day, 100% in short crypto markets",
+  "archetype": "crypto short-term bot",
+  "why": "100% of trades in 5-15 minute crypto markets",
   "groups": "this month top",
   "top_markets": [
    {
@@ -8970,8 +8970,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "74 transactions/day, 100% in short crypto markets",
+  "archetype": "crypto short-term bot",
+  "why": "100% of trades in 5-15 minute crypto markets",
   "groups": "crypto leaders",
   "top_markets": [
    {
@@ -9057,8 +9057,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "sports bettor (same-day/in-play)",
-  "why": "98% of spend in sports, 92% of trades on settlement day",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "1847+ positions, 0% of $ as maker, median position $226",
   "groups": "this month top",
   "top_markets": [
    {
@@ -9144,8 +9144,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 80,
-  "archetype": "bot / high-frequency",
-  "why": "394 transactions/day, 0% in short crypto markets",
+  "archetype": "generalist",
+  "why": "main category tech",
   "groups": "tech leaders",
   "top_markets": [
    {
@@ -9231,8 +9231,8 @@
   "n_split": 0,
   "n_conversion": 21,
   "n_redeem": 1000,
-  "archetype": "arbitrage / merger",
-  "why": "1000 merges, 21 conversions, 63% both sides",
+  "archetype": "high-volume crypto operation (taker flow)",
+  "why": "5544+ positions, 57% of $ as maker, median position $2,153",
   "groups": "crypto leaders",
   "top_markets": [
    {
@@ -9318,8 +9318,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "975 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "2027+ positions, 83% of $ as maker, median position $2,079",
   "groups": "this month top",
   "top_markets": [
    {
@@ -9405,8 +9405,8 @@
   "n_split": 0,
   "n_conversion": 1000,
   "n_redeem": 1000,
-  "archetype": "generalist",
-  "why": "main category sports",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "5063+ positions, 0% of $ as maker, median position $0",
   "groups": "this month top",
   "top_markets": [
    {
@@ -9492,8 +9492,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "949 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "10000+ positions, 12% of $ as maker, median position $4,162",
   "groups": "this month top",
   "top_markets": [
    {
@@ -9579,8 +9579,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "971 transactions/day, 100% in short crypto markets",
+  "archetype": "crypto short-term bot",
+  "why": "100% of trades in 5-15 minute crypto markets",
   "groups": "crypto leaders",
   "top_markets": [
    {
@@ -9666,8 +9666,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "200 transactions/day, 72% in short crypto markets",
+  "archetype": "crypto short-term bot",
+  "why": "72% of trades in 5-15 minute crypto markets",
   "groups": "crypto leaders",
   "top_markets": [
    {
@@ -9753,8 +9753,8 @@
   "n_split": 158,
   "n_conversion": 1000,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "509 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume geopolitics operation (market making)",
+  "why": "5415+ positions, 100% of $ as maker, median position $1,953",
   "groups": "economics leaders",
   "top_markets": [
    {
@@ -9840,8 +9840,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 21,
-  "archetype": "generalist",
-  "why": "main category crypto",
+  "archetype": "whale / concentrated bets",
+  "why": "26 positions, top 5 = 46% of gains, median position $16,635",
   "groups": "crypto leaders",
   "top_markets": [
    {
@@ -9927,8 +9927,8 @@
   "n_split": 0,
   "n_conversion": 12,
   "n_redeem": 756,
-  "archetype": "bot / high-frequency",
-  "why": "317 transactions/day, 3% in short crypto markets",
+  "archetype": "high-volume crypto operation (market making)",
+  "why": "1701+ positions, 77% of $ as maker, median position $2,658",
   "groups": "crypto leaders",
   "top_markets": [
    {
@@ -10014,8 +10014,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 51,
-  "archetype": "bot / high-frequency",
-  "why": "447 transactions/day, 0% in short crypto markets",
+  "archetype": "sports bettor (same-day/in-play)",
+  "why": "100% of spend in sports, 88% of trades on settlement day",
   "groups": "this month top",
   "top_markets": [
    {
@@ -10101,8 +10101,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "999 transactions/day, 100% in short crypto markets",
+  "archetype": "crypto short-term bot",
+  "why": "100% of trades in 5-15 minute crypto markets",
   "groups": "crypto leaders",
   "top_markets": [
    {
@@ -10188,8 +10188,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "988 transactions/day, 100% in short crypto markets",
+  "archetype": "crypto short-term bot",
+  "why": "100% of trades in 5-15 minute crypto markets",
   "groups": "crypto leaders",
   "top_markets": [
    {
@@ -10275,8 +10275,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "931 transactions/day, 100% in short crypto markets",
+  "archetype": "crypto short-term bot",
+  "why": "100% of trades in 5-15 minute crypto markets",
   "groups": "crypto leaders",
   "top_markets": [
    {
@@ -10362,8 +10362,8 @@
   "n_split": 3,
   "n_conversion": 1000,
   "n_redeem": 767,
-  "archetype": "bot / high-frequency",
-  "why": "554 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "10000+ positions, 31% of $ as maker, median position $99",
   "groups": "this month top",
   "top_markets": [
    {
@@ -10536,8 +10536,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "970 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "6475+ positions, 22% of $ as maker, median position $1,073",
   "groups": "this month top",
   "top_markets": [
    {
@@ -10623,8 +10623,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "189 transactions/day, 2% in short crypto markets",
+  "archetype": "high-volume crypto operation (taker flow)",
+  "why": "3681+ positions, 4% of $ as maker, median position $2,010",
   "groups": "crypto leaders",
   "top_markets": [
    {
@@ -10710,8 +10710,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 180,
-  "archetype": "bot / high-frequency",
-  "why": "175 transactions/day, 0% in short crypto markets",
+  "archetype": "arbitrage / merger",
+  "why": "1000 merges, 0 conversions, 91% both sides",
   "groups": "crypto leaders",
   "top_markets": [
    {
@@ -10797,8 +10797,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "942 transactions/day, 100% in short crypto markets",
+  "archetype": "crypto short-term bot",
+  "why": "100% of trades in 5-15 minute crypto markets",
   "groups": "crypto leaders",
   "top_markets": [
    {
@@ -10884,8 +10884,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "1000 transactions/day, 2% in short crypto markets",
+  "archetype": "high-volume crypto operation (taker flow)",
+  "why": "2042+ positions, 46% of $ as maker, median position $2,048",
   "groups": "crypto leaders",
   "top_markets": [
    {
@@ -10971,8 +10971,8 @@
   "n_split": 1,
   "n_conversion": 1000,
   "n_redeem": 1000,
-  "archetype": "arbitrage / merger",
-  "why": "1000 merges, 1000 conversions, 44% both sides",
+  "archetype": "high-volume culture operation (taker flow)",
+  "why": "3843+ positions, 17% of $ as maker, median position $506",
   "groups": "culture leaders",
   "top_markets": [
    {
@@ -11058,8 +11058,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "market maker",
-  "why": "61% maker fills, $205 rewards, 55% of markets on both sides",
+  "archetype": "high-volume crypto operation (market making)",
+  "why": "5399+ positions, 61% of $ as maker, median position $419",
   "groups": "crypto leaders",
   "top_markets": [
    {
@@ -11145,8 +11145,8 @@
   "n_split": 0,
   "n_conversion": 14,
   "n_redeem": 498,
-  "archetype": "bot / high-frequency",
-  "why": "214 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume geopolitics operation (market making)",
+  "why": "1883+ positions, 95% of $ as maker, median position $3,531",
   "groups": "this month top;economics leaders",
   "top_markets": [
    {
@@ -11232,8 +11232,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 850,
-  "archetype": "bot / high-frequency",
-  "why": "265 transactions/day, 0% in short crypto markets",
+  "archetype": "sports bettor (same-day/in-play)",
+  "why": "99% of spend in sports, 60% of trades on settlement day",
   "groups": "this month top",
   "top_markets": [
    {
@@ -11319,8 +11319,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "market maker",
-  "why": "70% maker fills, $684 rewards, 57% of markets on both sides",
+  "archetype": "high-volume crypto operation (market making)",
+  "why": "5381+ positions, 70% of $ as maker, median position $1,198",
   "groups": "crypto leaders",
   "top_markets": [
    {
@@ -11406,8 +11406,8 @@
   "n_split": 0,
   "n_conversion": 17,
   "n_redeem": 1000,
-  "archetype": "arbitrage / merger",
-  "why": "1000 merges, 17 conversions, 61% both sides",
+  "archetype": "high-volume crypto operation (taker flow)",
+  "why": "5136+ positions, 41% of $ as maker, median position $991",
   "groups": "crypto leaders",
   "top_markets": [
    {
@@ -11493,8 +11493,8 @@
   "n_split": 323,
   "n_conversion": 689,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "16 transactions/day, 100% in short crypto markets",
+  "archetype": "crypto short-term bot",
+  "why": "100% of trades in 5-15 minute crypto markets",
   "groups": "crypto leaders",
   "top_markets": [
    {
@@ -11667,8 +11667,8 @@
   "n_split": 0,
   "n_conversion": 1000,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "919 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "9583+ positions, 13% of $ as maker, median position $99",
   "groups": "this month top",
   "top_markets": [
    {
@@ -11754,8 +11754,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "621 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "5013+ positions, 78% of $ as maker, median position $1,590",
   "groups": "this month top",
   "top_markets": [
    {
@@ -11841,8 +11841,8 @@
   "n_split": 1000,
   "n_conversion": 1000,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "938 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "5000+ positions, 38% of $ as maker, median position $1,680",
   "groups": "this month top;tech leaders;weather leaders",
   "top_markets": [
    {
@@ -11928,8 +11928,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 92,
-  "archetype": "bot / high-frequency",
-  "why": "116 transactions/day, 0% in short crypto markets",
+  "archetype": "sports bettor (same-day/in-play)",
+  "why": "98% of spend in sports, 79% of trades on settlement day",
   "groups": "this month top",
   "top_markets": [
    {
@@ -12015,8 +12015,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 98% of gains over 160 positions",
+  "archetype": "politics / macro trader",
+  "why": "95% of spend in politics, geopolitics, economics",
   "groups": "economics leaders",
   "top_markets": [
    {
@@ -12102,8 +12102,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 113,
-  "archetype": "bot / high-frequency",
-  "why": "347 transactions/day, 0% in short crypto markets",
+  "archetype": "sports bettor (same-day/in-play)",
+  "why": "100% of spend in sports, 99% of trades on settlement day",
   "groups": "this month top",
   "top_markets": [
    {
@@ -12276,8 +12276,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 7,
-  "archetype": "bot / high-frequency",
-  "why": "313 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "17 positions, top 5 = 100% of gains, median position $78,800",
   "groups": "this month top",
   "top_markets": [
    {
@@ -12363,8 +12363,8 @@
   "n_split": 12,
   "n_conversion": 1,
   "n_redeem": 376,
-  "archetype": "bot / high-frequency",
-  "why": "109 transactions/day, 0% in short crypto markets",
+  "archetype": "politics / macro trader",
+  "why": "80% of spend in politics, geopolitics, economics",
   "groups": "finance leaders",
   "top_markets": [
    {
@@ -12450,8 +12450,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 100% of gains over 1 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "8 positions, top 5 = 100% of gains, median position $92,483",
   "groups": "this month top",
   "top_markets": [
    {
@@ -12523,8 +12523,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 60,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 86% of gains over 71 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "105 positions, top 5 = 86% of gains, median position $1,810",
   "groups": "economics leaders",
   "top_markets": [
    {
@@ -12610,8 +12610,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 20,
-  "archetype": "sports bettor (same-day/in-play)",
-  "why": "100% of spend in sports, 94% of trades on settlement day",
+  "archetype": "whale / concentrated bets",
+  "why": "32 positions, top 5 = 70% of gains, median position $240,241",
   "groups": "this month top",
   "top_markets": [
    {
@@ -12697,8 +12697,8 @@
   "n_split": 16,
   "n_conversion": 11,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "256 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "2547+ positions, 50% of $ as maker, median position $1,843",
   "groups": "this month top",
   "top_markets": [
    {
@@ -12784,8 +12784,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 290,
-  "archetype": "bot / high-frequency",
-  "why": "146 transactions/day, 0% in short crypto markets",
+  "archetype": "sports bettor (same-day/in-play)",
+  "why": "94% of spend in sports, 74% of trades on settlement day",
   "groups": "this month top",
   "top_markets": [
    {
@@ -12871,8 +12871,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 17,
-  "archetype": "bot / high-frequency",
-  "why": "106 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "22 positions, top 5 = 71% of gains, median position $44,841",
   "groups": "this month top",
   "top_markets": [
    {
@@ -13045,8 +13045,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "998 transactions/day, 13% in short crypto markets",
+  "archetype": "high-volume crypto operation (market making)",
+  "why": "6957+ positions, 61% of $ as maker, median position $2,835",
   "groups": "this month top",
   "top_markets": [
    {
@@ -13132,8 +13132,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 9,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 84% of gains over 48 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "65 positions, top 5 = 84% of gains, median position $3,407",
   "groups": "finance leaders",
   "top_markets": [
    {
@@ -13219,8 +13219,8 @@
   "n_split": 10,
   "n_conversion": 1000,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "595 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "9899+ positions, 29% of $ as maker, median position $13",
   "groups": "this month top",
   "top_markets": [
    {
@@ -13480,8 +13480,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 27,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 94% of gains over 33 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "41 positions, top 5 = 94% of gains, median position $915",
   "groups": "economics leaders",
   "top_markets": [
    {
@@ -13567,8 +13567,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "sports bettor (same-day/in-play)",
-  "why": "100% of spend in sports, 67% of trades on settlement day",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "5886+ positions, 2% of $ as maker, median position $820",
   "groups": "this month top",
   "top_markets": [
    {
@@ -13654,8 +13654,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 23,
-  "archetype": "bot / high-frequency",
-  "why": "450 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "40 positions, top 5 = 60% of gains, median position $28,757",
   "groups": "this month top",
   "top_markets": [
    {
@@ -13741,8 +13741,8 @@
   "n_split": 0,
   "n_conversion": 1000,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "1000 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "9999+ positions, 16% of $ as maker, median position $10",
   "groups": "this month top",
   "top_markets": [
    {
@@ -13828,8 +13828,8 @@
   "n_split": 0,
   "n_conversion": 12,
   "n_redeem": 48,
-  "archetype": "bot / high-frequency",
-  "why": "101 transactions/day, 0% in short crypto markets",
+  "archetype": "politics / macro trader",
+  "why": "77% of spend in politics, geopolitics, economics",
   "groups": "economics leaders",
   "top_markets": [
    {
@@ -13915,8 +13915,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 28,
-  "archetype": "sports bettor (pre-game/futures)",
-  "why": "64% of spend in sports, 35% of trades on settlement day",
+  "archetype": "whale / concentrated bets",
+  "why": "28 positions, top 5 = 65% of gains, median position $138,846",
   "groups": "this month top",
   "top_markets": [
    {
@@ -14002,8 +14002,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 160,
-  "archetype": "bot / high-frequency",
-  "why": "311 transactions/day, 0% in short crypto markets",
+  "archetype": "sports bettor (pre-game/futures)",
+  "why": "72% of spend in sports, 24% of trades on settlement day",
   "groups": "this month top",
   "top_markets": [
    {
@@ -14089,8 +14089,8 @@
   "n_split": 210,
   "n_conversion": 239,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "921 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume culture operation (taker flow)",
+  "why": "1604+ positions, 31% of $ as maker, median position $355",
   "groups": "culture leaders",
   "top_markets": [
    {
@@ -14176,8 +14176,8 @@
   "n_split": 6,
   "n_conversion": 63,
   "n_redeem": 0,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 82% of gains over 34 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "70 positions, top 5 = 82% of gains, median position $360",
   "groups": "this month top",
   "top_markets": [
    {
@@ -14263,8 +14263,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 31,
-  "archetype": "bot / high-frequency",
-  "why": "123 transactions/day, 0% in short crypto markets",
+  "archetype": "sports bettor (same-day/in-play)",
+  "why": "100% of spend in sports, 93% of trades on settlement day",
   "groups": "this month top",
   "top_markets": [
    {
@@ -14350,8 +14350,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 31,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 99% of gains over 55 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "70 positions, top 5 = 99% of gains, median position $269",
   "groups": "this month top",
   "top_markets": [
    {
@@ -14437,8 +14437,8 @@
   "n_split": 10,
   "n_conversion": 59,
   "n_redeem": 929,
-  "archetype": "arbitrage / merger",
-  "why": "1000 merges, 59 conversions, 34% both sides",
+  "archetype": "high-volume geopolitics operation (taker flow)",
+  "why": "2577+ positions, 16% of $ as maker, median position $402",
   "groups": "this month top",
   "top_markets": [
    {
@@ -14524,8 +14524,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "market maker",
-  "why": "67% maker fills, $24,365 rewards, 34% of markets on both sides",
+  "archetype": "high-volume crypto operation (market making)",
+  "why": "6805+ positions, 67% of $ as maker, median position $260",
   "groups": "finance leaders",
   "top_markets": [
    {
@@ -14698,8 +14698,8 @@
   "n_split": 13,
   "n_conversion": 274,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "133 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume politics operation (market making)",
+  "why": "2442+ positions, 67% of $ as maker, median position $2,975",
   "groups": "weather leaders",
   "top_markets": [
    {
@@ -14785,8 +14785,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "150 transactions/day, 3% in short crypto markets",
+  "archetype": "high-volume crypto operation (market making)",
+  "why": "2168+ positions, 62% of $ as maker, median position $182",
   "groups": "this month top",
   "top_markets": [
    {
@@ -14959,8 +14959,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 21,
-  "archetype": "bot / high-frequency",
-  "why": "150 transactions/day, 0% in short crypto markets",
+  "archetype": "whale / concentrated bets",
+  "why": "26 positions, top 5 = 74% of gains, median position $7,879",
   "groups": "this month top",
   "top_markets": [
    {
@@ -15046,8 +15046,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 10,
-  "archetype": "bot / high-frequency",
-  "why": "5 transactions/day, 52% in short crypto markets",
+  "archetype": "crypto short-term bot",
+  "why": "52% of trades in 5-15 minute crypto markets",
   "groups": "culture leaders",
   "top_markets": [
    {
@@ -15133,8 +15133,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 5,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 100% of gains over 7 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "7 positions, top 5 = 100% of gains, median position $43,888",
   "groups": "finance leaders",
   "top_markets": [
    {
@@ -15220,8 +15220,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 3,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 100% of gains over 3 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "5 positions, top 5 = 100% of gains, median position $22,285",
   "groups": "finance leaders",
   "top_markets": [
    {
@@ -15307,8 +15307,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 7,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 88% of gains over 10 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "19 positions, top 5 = 88% of gains, median position $12,994",
   "groups": "this month top",
   "top_markets": [
    {
@@ -15394,8 +15394,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 22,
-  "archetype": "sports bettor (pre-game/futures)",
-  "why": "100% of spend in sports, 57% of trades on settlement day",
+  "archetype": "whale / concentrated bets",
+  "why": "40 positions, top 5 = 58% of gains, median position $41,061",
   "groups": "this month top",
   "top_markets": [
    {
@@ -15742,8 +15742,8 @@
   "n_split": 23,
   "n_conversion": 176,
   "n_redeem": 1000,
-  "archetype": "generalist",
-  "why": "main category culture",
+  "archetype": "high-volume culture operation (market making)",
+  "why": "1469+ positions, 78% of $ as maker, median position $386",
   "groups": "culture leaders",
   "top_markets": [
    {
@@ -15829,8 +15829,8 @@
   "n_split": 1000,
   "n_conversion": 1000,
   "n_redeem": 8,
-  "archetype": "bot / high-frequency",
-  "why": "827 transactions/day, 0% in short crypto markets",
+  "archetype": "generalist",
+  "why": "main category sports",
   "groups": "this month top",
   "top_markets": [
    {
@@ -16003,8 +16003,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 874,
-  "archetype": "sports bettor (pre-game/futures)",
-  "why": "99% of spend in sports, 49% of trades on settlement day",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "1693+ positions, 3% of $ as maker, median position $3,785",
   "groups": "this month top",
   "top_markets": [
    {
@@ -16264,8 +16264,8 @@
   "n_split": 0,
   "n_conversion": 11,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "165 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "5299+ positions, 9% of $ as maker, median position $1,777",
   "groups": "this month top",
   "top_markets": [
    {
@@ -16612,8 +16612,8 @@
   "n_split": 0,
   "n_conversion": 1000,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "986 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume politics operation (market making)",
+  "why": "10000+ positions, 72% of $ as maker, median position $106",
   "groups": "this month top",
   "top_markets": [
    {
@@ -16699,8 +16699,8 @@
   "n_split": 0,
   "n_conversion": 16,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "1000 transactions/day, 0% in short crypto markets",
+  "archetype": "generalist",
+  "why": "main category politics",
   "groups": "this month top",
   "top_markets": [
    {
@@ -16786,8 +16786,8 @@
   "n_split": 0,
   "n_conversion": 1000,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "922 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume politics operation (market making)",
+  "why": "6691+ positions, 64% of $ as maker, median position $98",
   "groups": "this month top",
   "top_markets": [
    {
@@ -16873,8 +16873,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 328,
-  "archetype": "bot / high-frequency",
-  "why": "119 transactions/day, 0% in short crypto markets",
+  "archetype": "politics / macro trader",
+  "why": "77% of spend in politics, geopolitics, economics",
   "groups": "this month top",
   "top_markets": [
    {
@@ -16960,8 +16960,8 @@
   "n_split": 1,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "520 transactions/day, 29% in short crypto markets",
+  "archetype": "high-volume crypto operation (taker flow)",
+  "why": "5355+ positions, 47% of $ as maker, median position $320",
   "groups": "finance leaders",
   "top_markets": [
    {
@@ -17047,8 +17047,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 25,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 90% of gains over 28 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "38 positions, top 5 = 90% of gains, median position $7,713",
   "groups": "culture leaders",
   "top_markets": [
    {
@@ -17134,8 +17134,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "427 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "9730+ positions, 0% of $ as maker, median position $808",
   "groups": "this month top",
   "top_markets": [
    {
@@ -17221,8 +17221,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 39,
-  "archetype": "generalist",
-  "why": "main category politics",
+  "archetype": "whale / concentrated bets",
+  "why": "46 positions, top 5 = 64% of gains, median position $20,305",
   "groups": "this month top",
   "top_markets": [
    {
@@ -17308,8 +17308,8 @@
   "n_split": 0,
   "n_conversion": 1000,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "986 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "7353+ positions, 19% of $ as maker, median position $73",
   "groups": "this month top",
   "top_markets": [
    {
@@ -17482,8 +17482,8 @@
   "n_split": 4,
   "n_conversion": 20,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "974 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "7828+ positions, 100% of $ as maker, median position $4,449",
   "groups": "finance leaders",
   "top_markets": [
    {
@@ -17569,8 +17569,8 @@
   "n_split": 0,
   "n_conversion": 21,
   "n_redeem": 95,
-  "archetype": "bot / high-frequency",
-  "why": "853 transactions/day, 0% in short crypto markets",
+  "archetype": "bonder (near-certain outcomes)",
+  "why": "70% of spend at >=95c",
   "groups": "finance leaders",
   "top_markets": [
    {
@@ -17656,8 +17656,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "245 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "4188+ positions, 56% of $ as maker, median position $2,561",
   "groups": "this month top",
   "top_markets": [
    {
@@ -17743,8 +17743,8 @@
   "n_split": 0,
   "n_conversion": 724,
   "n_redeem": 825,
-  "archetype": "bot / high-frequency",
-  "why": "174 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume politics operation (market making)",
+  "why": "1720+ positions, 74% of $ as maker, median position $13",
   "groups": "this month top",
   "top_markets": [
    {
@@ -17830,8 +17830,8 @@
   "n_split": 1,
   "n_conversion": 567,
   "n_redeem": 0,
-  "archetype": "bot / high-frequency",
-  "why": "325 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "2007+ positions, 29% of $ as maker, median position $19",
   "groups": "this month top",
   "top_markets": [
    {
@@ -17917,8 +17917,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bonder (near-certain outcomes)",
-  "why": "92% of spend at >=95c",
+  "archetype": "high-volume economics operation (market making)",
+  "why": "2378+ positions, 62% of $ as maker, median position $870",
   "groups": "finance leaders",
   "top_markets": [
    {
@@ -18004,8 +18004,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 72,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 98% of gains over 156 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "160 positions, top 5 = 98% of gains, median position $561",
   "groups": "culture leaders",
   "top_markets": [
    {
@@ -18178,8 +18178,8 @@
   "n_split": 15,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "351 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "5441+ positions, 22% of $ as maker, median position $6,922",
   "groups": "this month top",
   "top_markets": [
    {
@@ -18265,8 +18265,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 725,
-  "archetype": "bot / high-frequency",
-  "why": "209 transactions/day, 0% in short crypto markets",
+  "archetype": "sports bettor (pre-game/futures)",
+  "why": "100% of spend in sports, 56% of trades on settlement day",
   "groups": "this month top",
   "top_markets": [
    {
@@ -18352,8 +18352,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 121,
-  "archetype": "bot / high-frequency",
-  "why": "129 transactions/day, 0% in short crypto markets",
+  "archetype": "generalist",
+  "why": "main category sports",
   "groups": "this month top",
   "top_markets": [
    {
@@ -18526,8 +18526,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 33,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 94% of gains over 82 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "95 positions, top 5 = 94% of gains, median position $2,000",
   "groups": "finance leaders",
   "top_markets": [
    {
@@ -18700,8 +18700,8 @@
   "n_split": 38,
   "n_conversion": 300,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "127 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume geopolitics operation (market making)",
+  "why": "5290+ positions, 90% of $ as maker, median position $517",
   "groups": "culture leaders",
   "top_markets": [
    {
@@ -18787,8 +18787,8 @@
   "n_split": 3,
   "n_conversion": 1000,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "535 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume geopolitics operation (market making)",
+  "why": "8022+ positions, 76% of $ as maker, median position $136",
   "groups": "this month top",
   "top_markets": [
    {
@@ -18874,8 +18874,8 @@
   "n_split": 150,
   "n_conversion": 1000,
   "n_redeem": 1000,
-  "archetype": "market maker",
-  "why": "67% maker fills, $25,915 rewards, 33% of markets on both sides",
+  "archetype": "high-volume politics operation (market making)",
+  "why": "3688+ positions, 67% of $ as maker, median position $306",
   "groups": "culture leaders",
   "top_markets": [
    {
@@ -18961,8 +18961,8 @@
   "n_split": 1,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "sports bettor (pre-game/futures)",
-  "why": "98% of spend in sports, 47% of trades on settlement day",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "2070+ positions, 75% of $ as maker, median position $2,039",
   "groups": "this month top",
   "top_markets": [
    {
@@ -19135,8 +19135,8 @@
   "n_split": 0,
   "n_conversion": 461,
   "n_redeem": 2,
-  "archetype": "bot / high-frequency",
-  "why": "611 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "1768+ positions, 29% of $ as maker, median position $21",
   "groups": "this month top",
   "top_markets": [
    {
@@ -19222,8 +19222,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 14,
-  "archetype": "sports bettor (pre-game/futures)",
-  "why": "88% of spend in sports, 0% of trades on settlement day",
+  "archetype": "whale / concentrated bets",
+  "why": "40 positions, top 5 = 74% of gains, median position $60,898",
   "groups": "this month top",
   "top_markets": [
    {
@@ -19309,8 +19309,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 100% of gains over 4 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "8 positions, top 5 = 100% of gains, median position $27,533",
   "groups": "culture leaders",
   "top_markets": [
    {
@@ -19483,8 +19483,8 @@
   "n_split": 0,
   "n_conversion": 4,
   "n_redeem": 1000,
-  "archetype": "market maker",
-  "why": "67% maker fills, $1,779 rewards, 56% of markets on both sides",
+  "archetype": "high-volume crypto operation (market making)",
+  "why": "4150+ positions, 67% of $ as maker, median position $630",
   "groups": "this month top",
   "top_markets": [
    {
@@ -19570,8 +19570,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 18,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 91% of gains over 33 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "38 positions, top 5 = 91% of gains, median position $3,302",
   "groups": "culture leaders",
   "top_markets": [
    {
@@ -19657,8 +19657,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 0,
-  "archetype": "generalist",
-  "why": "main category other",
+  "archetype": "whale / concentrated bets",
+  "why": "1 positions, top 5 = 0% of gains, median position $61,188",
   "groups": "this month top",
   "top_markets": [
    {
@@ -19730,8 +19730,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 573,
-  "archetype": "bot / high-frequency",
-  "why": "198 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "1137+ positions, 66% of $ as maker, median position $1,357",
   "groups": "this month top",
   "top_markets": [
    {
@@ -19904,8 +19904,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "sports bettor (pre-game/futures)",
-  "why": "96% of spend in sports, 57% of trades on settlement day",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "5739+ positions, 6% of $ as maker, median position $989",
   "groups": "this month top",
   "top_markets": [
    {
@@ -19991,8 +19991,8 @@
   "n_split": 0,
   "n_conversion": 1000,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "512 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume politics operation (market making)",
+  "why": "7136+ positions, 69% of $ as maker, median position $10",
   "groups": "this month top",
   "top_markets": [
    {
@@ -20078,8 +20078,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 219,
-  "archetype": "bot / high-frequency",
-  "why": "101 transactions/day, 0% in short crypto markets",
+  "archetype": "sports bettor (pre-game/futures)",
+  "why": "100% of spend in sports, 40% of trades on settlement day",
   "groups": "this month top",
   "top_markets": [
    {
@@ -20165,8 +20165,8 @@
   "n_split": 4,
   "n_conversion": 1,
   "n_redeem": 1000,
-  "archetype": "bonder (near-certain outcomes)",
-  "why": "56% of spend at >=95c",
+  "archetype": "high-volume other operation (taker flow)",
+  "why": "1342+ positions, 57% of $ as maker, median position $2,862",
   "groups": "culture leaders",
   "top_markets": [
    {
@@ -20339,8 +20339,8 @@
   "n_split": 117,
   "n_conversion": 143,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "386 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume culture operation (market making)",
+  "why": "1194+ positions, 90% of $ as maker, median position $370",
   "groups": "culture leaders",
   "top_markets": [
    {
@@ -20513,8 +20513,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "generalist",
-  "why": "main category politics",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "4522+ positions, 3% of $ as maker, median position $82",
   "groups": "finance leaders",
   "top_markets": [
    {
@@ -20600,8 +20600,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 32,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 80% of gains over 38 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "74 positions, top 5 = 80% of gains, median position $6,147",
   "groups": "culture leaders",
   "top_markets": [
    {
@@ -20774,8 +20774,8 @@
   "n_split": 0,
   "n_conversion": 510,
   "n_redeem": 0,
-  "archetype": "bot / high-frequency",
-  "why": "554 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "1952+ positions, 27% of $ as maker, median position $20",
   "groups": "this month top",
   "top_markets": [
    {
@@ -20948,8 +20948,8 @@
   "n_split": 0,
   "n_conversion": 466,
   "n_redeem": 0,
-  "archetype": "bot / high-frequency",
-  "why": "671 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "1968+ positions, 26% of $ as maker, median position $20",
   "groups": "this month top",
   "top_markets": [
    {
@@ -21122,8 +21122,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "sports bettor (same-day/in-play)",
-  "why": "100% of spend in sports, 89% of trades on settlement day",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "1891+ positions, 0% of $ as maker, median position $1,451",
   "groups": "this month top",
   "top_markets": [
    {
@@ -21209,8 +21209,8 @@
   "n_split": 0,
   "n_conversion": 396,
   "n_redeem": 0,
-  "archetype": "bot / high-frequency",
-  "why": "284 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "1342+ positions, 26% of $ as maker, median position $22",
   "groups": "this month top",
   "top_markets": [
    {
@@ -21296,8 +21296,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 5,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 100% of gains over 5 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "5 positions, top 5 = 100% of gains, median position $84,476",
   "groups": "this month top",
   "top_markets": [
    {
@@ -21470,8 +21470,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "997 transactions/day, 100% in short crypto markets",
+  "archetype": "crypto short-term bot",
+  "why": "100% of trades in 5-15 minute crypto markets",
   "groups": "this month top",
   "top_markets": [
    {
@@ -21557,8 +21557,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "985 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "8831+ positions, 92% of $ as maker, median position $2,989",
   "groups": "this month top",
   "top_markets": [
    {
@@ -21644,8 +21644,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "248 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume geopolitics operation (market making)",
+  "why": "1633+ positions, 68% of $ as maker, median position $6,589",
   "groups": "this month top",
   "top_markets": [
    {
@@ -21731,8 +21731,8 @@
   "n_split": 0,
   "n_conversion": 1000,
   "n_redeem": 208,
-  "archetype": "bot / high-frequency",
-  "why": "112 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume weather operation (taker flow)",
+  "why": "8667+ positions, 43% of $ as maker, median position $9",
   "groups": "this month top",
   "top_markets": [
    {
@@ -21818,8 +21818,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 2,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 100% of gains over 3 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "3 positions, top 5 = 100% of gains, median position $176,000",
   "groups": "this month top",
   "top_markets": [
    {
@@ -21905,8 +21905,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "999 transactions/day, 99% in short crypto markets",
+  "archetype": "crypto short-term bot",
+  "why": "99% of trades in 5-15 minute crypto markets",
   "groups": "this month top",
   "top_markets": [
    {
@@ -21992,8 +21992,8 @@
   "n_split": 7,
   "n_conversion": 1,
   "n_redeem": 1000,
-  "archetype": "generalist",
-  "why": "main category politics",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "4288+ positions, 50% of $ as maker, median position $241",
   "groups": "mentions leaders",
   "top_markets": [
    {
@@ -22166,8 +22166,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 2,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 100% of gains over 3 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "13 positions, top 5 = 100% of gains, median position $40,941",
   "groups": "this month top",
   "top_markets": [
    {
@@ -22253,8 +22253,8 @@
   "n_split": 0,
   "n_conversion": 392,
   "n_redeem": 0,
-  "archetype": "bot / high-frequency",
-  "why": "283 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "1284+ positions, 29% of $ as maker, median position $21",
   "groups": "this month top",
   "top_markets": [
    {
@@ -22340,8 +22340,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "196 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume sports operation (market making)",
+  "why": "3640+ positions, 93% of $ as maker, median position $922",
   "groups": "this month top",
   "top_markets": [
    {
@@ -22427,8 +22427,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "989 transactions/day, 100% in short crypto markets",
+  "archetype": "crypto short-term bot",
+  "why": "100% of trades in 5-15 minute crypto markets",
   "groups": "this month top",
   "top_markets": [
    {
@@ -22514,8 +22514,8 @@
   "n_split": 1,
   "n_conversion": 2,
   "n_redeem": 1000,
-  "archetype": "bonder (near-certain outcomes)",
-  "why": "55% of spend at >=95c",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "2078+ positions, 33% of $ as maker, median position $189",
   "groups": "mentions leaders",
   "top_markets": [
    {
@@ -22601,8 +22601,8 @@
   "n_split": 0,
   "n_conversion": 181,
   "n_redeem": 766,
-  "archetype": "arbitrage / merger",
-  "why": "1000 merges, 181 conversions, 68% both sides",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "1647+ positions, 54% of $ as maker, median position $291",
   "groups": "tech leaders",
   "top_markets": [
    {
@@ -22688,8 +22688,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 100% of gains over 16 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "19 positions, top 5 = 100% of gains, median position $3,250",
   "groups": "finance leaders",
   "top_markets": [
    {
@@ -22775,8 +22775,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "962 transactions/day, 14% in short crypto markets",
+  "archetype": "high-volume crypto operation (taker flow)",
+  "why": "6557+ positions, 30% of $ as maker, median position $182",
   "groups": "finance leaders",
   "top_markets": [
    {
@@ -22862,8 +22862,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 353,
-  "archetype": "bot / high-frequency",
-  "why": "31 transactions/day, 66% in short crypto markets",
+  "archetype": "crypto short-term bot",
+  "why": "66% of trades in 5-15 minute crypto markets",
   "groups": "finance leaders",
   "top_markets": [
    {
@@ -22949,8 +22949,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 892,
-  "archetype": "bot / high-frequency",
-  "why": "362 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume crypto operation (market making)",
+  "why": "1820+ positions, 95% of $ as maker, median position $663",
   "groups": "finance leaders",
   "top_markets": [
    {
@@ -23036,8 +23036,8 @@
   "n_split": 2,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "278 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume weather operation (taker flow)",
+  "why": "10000+ positions, 30% of $ as maker, median position $130",
   "groups": "weather leaders",
   "top_markets": [
    {
@@ -23123,8 +23123,8 @@
   "n_split": 1,
   "n_conversion": 27,
   "n_redeem": 660,
-  "archetype": "politics / macro trader",
-  "why": "64% of spend in politics, geopolitics, economics",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "1109+ positions, 58% of $ as maker, median position $628",
   "groups": "mentions leaders",
   "top_markets": [
    {
@@ -23210,8 +23210,8 @@
   "n_split": 65,
   "n_conversion": 34,
   "n_redeem": 1000,
-  "archetype": "bonder (near-certain outcomes)",
-  "why": "54% of spend at >=95c",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "2302+ positions, 55% of $ as maker, median position $1,421",
   "groups": "tech leaders;mentions leaders",
   "top_markets": [
    {
@@ -23471,8 +23471,8 @@
   "n_split": 2,
   "n_conversion": 37,
   "n_redeem": 1000,
-  "archetype": "politics / macro trader",
-  "why": "65% of spend in politics, geopolitics, economics",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "2541+ positions, 46% of $ as maker, median position $606",
   "groups": "mentions leaders",
   "top_markets": [
    {
@@ -23558,8 +23558,8 @@
   "n_split": 1,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "arbitrage / merger",
-  "why": "175 merges, 0 conversions, 32% both sides",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "2189+ positions, 53% of $ as maker, median position $304",
   "groups": "mentions leaders",
   "top_markets": [
    {
@@ -23645,8 +23645,8 @@
   "n_split": 143,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "politics / macro trader",
-  "why": "93% of spend in politics, geopolitics, economics",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "3682+ positions, 10% of $ as maker, median position $108",
   "groups": "mentions leaders",
   "top_markets": [
    {
@@ -23732,8 +23732,8 @@
   "n_split": 6,
   "n_conversion": 61,
   "n_redeem": 459,
-  "archetype": "bot / high-frequency",
-  "why": "124 transactions/day, 0% in short crypto markets",
+  "archetype": "arbitrage / merger",
+  "why": "448 merges, 61 conversions, 36% both sides",
   "groups": "tech leaders",
   "top_markets": [
    {
@@ -23819,8 +23819,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "generalist",
-  "why": "main category sports",
+  "archetype": "high-volume sports operation (taker flow)",
+  "why": "1351+ positions, 36% of $ as maker, median position $3,707",
   "groups": "mentions leaders",
   "top_markets": [
    {
@@ -23906,8 +23906,8 @@
   "n_split": 18,
   "n_conversion": 17,
   "n_redeem": 1000,
-  "archetype": "generalist",
-  "why": "main category politics",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "3893+ positions, 49% of $ as maker, median position $248",
   "groups": "mentions leaders",
   "top_markets": [
    {
@@ -23993,8 +23993,8 @@
   "n_split": 0,
   "n_conversion": 2,
   "n_redeem": 652,
-  "archetype": "politics / macro trader",
-  "why": "69% of spend in politics, geopolitics, economics",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "1123+ positions, 58% of $ as maker, median position $2,126",
   "groups": "mentions leaders",
   "top_markets": [
    {
@@ -24080,8 +24080,8 @@
   "n_split": 71,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "market maker",
-  "why": "83% maker fills, $20,005 rewards, 20% of markets on both sides",
+  "archetype": "high-volume politics operation (market making)",
+  "why": "5295+ positions, 83% of $ as maker, median position $35",
   "groups": "mentions leaders",
   "top_markets": [
    {
@@ -24167,8 +24167,8 @@
   "n_split": 10,
   "n_conversion": 38,
   "n_redeem": 1000,
-  "archetype": "market maker",
-  "why": "62% maker fills, $5,818 rewards, 5% of markets on both sides",
+  "archetype": "high-volume politics operation (market making)",
+  "why": "2042+ positions, 62% of $ as maker, median position $1,895",
   "groups": "mentions leaders",
   "top_markets": [
    {
@@ -24254,8 +24254,8 @@
   "n_split": 0,
   "n_conversion": 2,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "985 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume geopolitics operation (market making)",
+  "why": "7535+ positions, 71% of $ as maker, median position $237",
   "groups": "weather leaders",
   "top_markets": [
    {
@@ -24341,8 +24341,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 48,
-  "archetype": "generalist",
-  "why": "main category weather",
+  "archetype": "high-volume weather operation (taker flow)",
+  "why": "4540+ positions, 12% of $ as maker, median position $138",
   "groups": "weather leaders",
   "top_markets": [
    {
@@ -24428,8 +24428,8 @@
   "n_split": 207,
   "n_conversion": 271,
   "n_redeem": 1000,
-  "archetype": "bonder (near-certain outcomes)",
-  "why": "52% of spend at >=95c",
+  "archetype": "high-volume geopolitics operation (market making)",
+  "why": "3546+ positions, 78% of $ as maker, median position $378",
   "groups": "weather leaders",
   "top_markets": [
    {
@@ -24602,8 +24602,8 @@
   "n_split": 754,
   "n_conversion": 617,
   "n_redeem": 1000,
-  "archetype": "generalist",
-  "why": "main category weather",
+  "archetype": "high-volume weather operation (market making)",
+  "why": "5030+ positions, 86% of $ as maker, median position $56",
   "groups": "weather leaders",
   "top_markets": [
    {
@@ -24689,8 +24689,8 @@
   "n_split": 8,
   "n_conversion": 75,
   "n_redeem": 510,
-  "archetype": "arbitrage / merger",
-  "why": "1000 merges, 75 conversions, 58% both sides",
+  "archetype": "high-volume geopolitics operation (taker flow)",
+  "why": "1148+ positions, 42% of $ as maker, median position $268",
   "groups": "tech leaders",
   "top_markets": [
    {
@@ -24863,8 +24863,8 @@
   "n_split": 26,
   "n_conversion": 212,
   "n_redeem": 1000,
-  "archetype": "politics / macro trader",
-  "why": "75% of spend in politics, geopolitics, economics",
+  "archetype": "high-volume geopolitics operation (taker flow)",
+  "why": "3314+ positions, 38% of $ as maker, median position $151",
   "groups": "mentions leaders",
   "top_markets": [
    {
@@ -24950,8 +24950,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "generalist",
-  "why": "main category weather",
+  "archetype": "high-volume weather operation (taker flow)",
+  "why": "2955+ positions, 30% of $ as maker, median position $28",
   "groups": "weather leaders",
   "top_markets": [
    {
@@ -25211,8 +25211,8 @@
   "n_split": 44,
   "n_conversion": 37,
   "n_redeem": 1000,
-  "archetype": "politics / macro trader",
-  "why": "73% of spend in politics, geopolitics, economics",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "5118+ positions, 27% of $ as maker, median position $27",
   "groups": "mentions leaders",
   "top_markets": [
    {
@@ -25298,8 +25298,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 928,
-  "archetype": "market maker",
-  "why": "65% maker fills, $18,668 rewards, 12% of markets on both sides",
+  "archetype": "high-volume politics operation (market making)",
+  "why": "1647+ positions, 65% of $ as maker, median position $3,538",
   "groups": "tech leaders",
   "top_markets": [
    {
@@ -25472,8 +25472,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 25,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 90% of gains over 25 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "47 positions, top 5 = 90% of gains, median position $700",
   "groups": "weather leaders",
   "top_markets": [
    {
@@ -25559,8 +25559,8 @@
   "n_split": 106,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "155 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume weather operation (taker flow)",
+  "why": "5000+ positions, 3% of $ as maker, median position $39",
   "groups": "weather leaders",
   "top_markets": [
    {
@@ -25646,8 +25646,8 @@
   "n_split": 20,
   "n_conversion": 2,
   "n_redeem": 1000,
-  "archetype": "bonder (near-certain outcomes)",
-  "why": "96% of spend at >=95c",
+  "archetype": "high-volume weather operation (taker flow)",
+  "why": "5201+ positions, 44% of $ as maker, median position $633",
   "groups": "weather leaders",
   "top_markets": [
    {
@@ -25733,8 +25733,8 @@
   "n_split": 28,
   "n_conversion": 0,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "779 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume weather operation (market making)",
+  "why": "5500+ positions, 93% of $ as maker, median position $69",
   "groups": "weather leaders",
   "top_markets": [
    {
@@ -25820,8 +25820,8 @@
   "n_split": 582,
   "n_conversion": 824,
   "n_redeem": 1000,
-  "archetype": "generalist",
-  "why": "main category weather",
+  "archetype": "high-volume weather operation (taker flow)",
+  "why": "5348+ positions, 46% of $ as maker, median position $13",
   "groups": "weather leaders",
   "top_markets": [
    {
@@ -25907,8 +25907,8 @@
   "n_split": 277,
   "n_conversion": 15,
   "n_redeem": 1000,
-  "archetype": "generalist",
-  "why": "main category politics",
+  "archetype": "high-volume politics operation (market making)",
+  "why": "2630+ positions, 75% of $ as maker, median position $376",
   "groups": "tech leaders",
   "top_markets": [
    {
@@ -25994,8 +25994,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 28,
-  "archetype": "concentrated conviction",
-  "why": "top 5 markets = 81% of gains over 86 positions",
+  "archetype": "whale / concentrated bets",
+  "why": "86 positions, top 5 = 81% of gains, median position $3,158",
   "groups": "tech leaders",
   "top_markets": [
    {
@@ -26081,8 +26081,8 @@
   "n_split": 7,
   "n_conversion": 442,
   "n_redeem": 599,
-  "archetype": "market maker",
-  "why": "76% maker fills, $125,808 rewards, 35% of markets on both sides",
+  "archetype": "high-volume politics operation (market making)",
+  "why": "1480+ positions, 76% of $ as maker, median position $918",
   "groups": "weather leaders",
   "top_markets": [
    {
@@ -26168,8 +26168,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 26,
-  "archetype": "generalist",
-  "why": "main category tech",
+  "archetype": "whale / concentrated bets",
+  "why": "48 positions, top 5 = 74% of gains, median position $1,776",
   "groups": "tech leaders",
   "top_markets": [
    {
@@ -26255,8 +26255,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 327,
-  "archetype": "bot / high-frequency",
-  "why": "566 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume weather operation (taker flow)",
+  "why": "2208+ positions, 34% of $ as maker, median position $40",
   "groups": "weather leaders",
   "top_markets": [
    {
@@ -26342,8 +26342,8 @@
   "n_split": 0,
   "n_conversion": 0,
   "n_redeem": 339,
-  "archetype": "generalist",
-  "why": "main category tech",
+  "archetype": "high-volume tech operation (taker flow)",
+  "why": "1369+ positions, 34% of $ as maker, median position $152",
   "groups": "tech leaders",
   "top_markets": [
    {
@@ -26429,8 +26429,8 @@
   "n_split": 4,
   "n_conversion": 150,
   "n_redeem": 475,
-  "archetype": "generalist",
-  "why": "main category weather",
+  "archetype": "high-volume weather operation (taker flow)",
+  "why": "5053+ positions, 33% of $ as maker, median position $38",
   "groups": "weather leaders",
   "top_markets": [
    {
@@ -26603,8 +26603,8 @@
   "n_split": 0,
   "n_conversion": 2,
   "n_redeem": 1000,
-  "archetype": "bonder (near-certain outcomes)",
-  "why": "62% of spend at >=95c",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "1369+ positions, 16% of $ as maker, median position $8,200",
   "groups": "tech leaders",
   "top_markets": [
    {
@@ -26690,8 +26690,8 @@
   "n_split": 9,
   "n_conversion": 72,
   "n_redeem": 1000,
-  "archetype": "generalist",
-  "why": "main category politics",
+  "archetype": "high-volume politics operation (taker flow)",
+  "why": "2999+ positions, 57% of $ as maker, median position $1,174",
   "groups": "tech leaders",
   "top_markets": [
    {
@@ -26864,8 +26864,8 @@
   "n_split": 81,
   "n_conversion": 6,
   "n_redeem": 1000,
-  "archetype": "bot / high-frequency",
-  "why": "221 transactions/day, 0% in short crypto markets",
+  "archetype": "high-volume geopolitics operation (market making)",
+  "why": "5373+ positions, 74% of $ as maker, median position $734",
   "groups": "tech leaders",
   "top_markets": [
    {
