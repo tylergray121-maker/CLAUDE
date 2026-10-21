@@ -195,6 +195,34 @@ class PortfolioTest(unittest.TestCase):
         self.assertIn("no edge", text)
 
 
+class CacheTest(unittest.TestCase):
+    def test_trade_blob_round_trip_and_pruning(self):
+        from copybt.api import Client, _prune
+        with tempfile.TemporaryDirectory() as d:
+            c = Client(cache_dir=d)
+            rows = [{"side": "BUY", "price": 0.5, "size": 2, "timestamp": T0 + i,
+                     "asset": "a", "conditionId": "c", "transactionHash": f"0x{i}",
+                     "bio": "x" * 1000} for i in range(3)]
+
+            class Once(NoBlobs):
+                calls = 0
+
+                def get(self, base, path, params=None, use_cache=True, keep=None):
+                    Once.calls += 1
+                    return rows if params["offset"] == 0 else []
+            src = Once()
+            src.load_blob, src.save_blob = c.load_blob, c.save_blob
+            a, _ = data.fetch_trades(src, "0xW", T0, T0 + 100)
+            b, _ = data.fetch_trades(src, "0xW", T0, T0 + 100)
+            self.assertEqual(a, b)
+            self.assertEqual(Once.calls, 1)
+        self.assertEqual(_prune([{"a": 1, "b": 2}], ("a",)), [{"a": 1}])
+        self.assertEqual(_prune({"markets": [{"a": 1, "b": 2}]}, ("a",)),
+                         {"markets": [{"a": 1}]})
+        self.assertEqual(_prune({"a": 1, "tokens": [{"x": 1}], "z": 0},
+                                ("a", "tokens")), {"a": 1, "tokens": [{"x": 1}]})
+
+
 class USTest(unittest.TestCase):
     def test_matching(self):
         m = us.USMarkets({"psg-ucl"}, {us.normalize("Will PSG win the UCL?")})
@@ -252,14 +280,22 @@ class ParserTest(unittest.TestCase):
         self.assertEqual(m.prices, {"1": 0.0, "2": 1.0})
 
 
+class NoBlobs:
+    def load_blob(self, key):
+        return None
+
+    def save_blob(self, key, data):
+        pass
+
+
 class PagingTest(unittest.TestCase):
     def test_reanchors_past_offset_cap_without_duplicates(self):
         rows = [{"side": "BUY", "price": 0.5, "size": 1, "timestamp": T0 + i // 3,
                  "asset": "a", "conditionId": "c", "transactionHash": f"0x{i}"}
                 for i in range(1234)]  # three trades per second
 
-        class Paged:
-            def get(self, base, path, params=None, use_cache=True):
+        class Paged(NoBlobs):
+            def get(self, base, path, params=None, use_cache=True, keep=None):
                 if params["offset"] > 200:
                     raise data.HTTPError(400, path)
                 hits = sorted((r for r in rows
@@ -275,7 +311,7 @@ class PagingTest(unittest.TestCase):
         self.assertEqual([t.ts for t in out], sorted(t.ts for t in out))
 
 
-class FakeClient:
+class FakeClient(NoBlobs):
     """Serves canned API responses keyed on path."""
 
     requests_made = 0
@@ -283,7 +319,7 @@ class FakeClient:
     def __init__(self, now):
         self.now = now
 
-    def get(self, base, path, params=None, use_cache=True):
+    def get(self, base, path, params=None, use_cache=True, keep=None):
         params = dict(params) if isinstance(params, dict) else params
         if path == "/v1/leaderboard":
             if params["offset"] > 0 or params["category"] != "OVERALL":

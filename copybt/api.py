@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import gzip
 import hashlib
 import json
 import os
@@ -25,6 +26,19 @@ class HTTPError(Exception):
         super().__init__(f"HTTP {status} for {url}: {body[:200]}")
         self.status = status
         self.url = url
+
+
+def _prune(data, keep: tuple[str, ...]):
+    if isinstance(data, list):
+        return [{k: r[k] for k in keep if k in r} if isinstance(r, dict) else r
+                for r in data]
+    if isinstance(data, dict):
+        if any(isinstance(v, list) and v and isinstance(v[0], dict)
+               for v in data.values()) and not any(k in data for k in keep):
+            return {k: _prune(v, keep) if isinstance(v, list) else v
+                    for k, v in data.items()}
+        return {k: data[k] for k in keep if k in data}
+    return data
 
 
 class Client:
@@ -58,8 +72,29 @@ class Client:
         if wait > 0:
             time.sleep(wait)
 
+    # Compact per-key storage for derived data (e.g. a wallet's parsed trades).
+    def load_blob(self, key: str):
+        if not self.cache_dir:
+            return None
+        path = self._cache_path("blob:" + key)[:-5] + ".json.gz"
+        if not os.path.exists(path):
+            return None
+        with gzip.open(path, "rt") as f:
+            return json.load(f)
+
+    def save_blob(self, key: str, data) -> None:
+        if not self.cache_dir:
+            return
+        path = self._cache_path("blob:" + key)[:-5] + ".json.gz"
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        tmp = f"{path}.{threading.get_ident()}.tmp"
+        with gzip.open(tmp, "wt") as f:
+            json.dump(data, f, separators=(",", ":"))
+        os.replace(tmp, path)
+
     def get(self, base: str, path: str, params: dict | list | None = None,
-            use_cache: bool = True):
+            use_cache: bool = True, keep: tuple[str, ...] | None = None):
+        """GET JSON. ``keep`` prunes records to those keys before caching."""
         query = urllib.parse.urlencode(params or {}, doseq=True)
         url = f"{base}{path}" + (f"?{query}" if query else "")
         cpath = self._cache_path(url) if use_cache else None
@@ -95,6 +130,8 @@ class Client:
         else:
             raise last_err  # type: ignore[misc]
 
+        if keep:
+            data = _prune(data, keep)
         if cpath:
             self._write(cpath, data)
         return data
@@ -104,5 +141,5 @@ class Client:
         os.makedirs(os.path.dirname(cpath), exist_ok=True)
         tmp = f"{cpath}.{threading.get_ident()}.tmp"
         with open(tmp, "w") as f:
-            json.dump(data, f)
+            json.dump(data, f, separators=(",", ":"))
         os.replace(tmp, cpath)

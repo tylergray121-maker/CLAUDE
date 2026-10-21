@@ -153,9 +153,28 @@ def _parse_trade(row: dict, wallet: str = "") -> Trade | None:
                  slug=str(row.get("slug") or ""))
 
 
+_TRADE_FIELDS = ("ts", "asset", "condition_id", "side", "price", "size", "title",
+                 "outcome", "tx", "wallet", "slug")
+
+
 def fetch_trades(client: Client, wallet: str, start_ts: int, end_ts: int,
                  max_trades: int = 20000, page_size: int = 500,
                  max_offset: int = 3000) -> tuple[list[Trade], bool]:
+    """Cached wrapper: stores only the parsed fields, gzipped, per wallet."""
+    key = f"trades:{wallet.lower()}:{start_ts}:{end_ts}:{max_trades}"
+    blob = client.load_blob(key)
+    if blob is not None:
+        return [Trade(**dict(zip(_TRADE_FIELDS, row))) for row in blob["t"]], blob["x"]
+    trades, truncated = _fetch_trades(client, wallet, start_ts, end_ts, max_trades,
+                                      page_size, max_offset)
+    client.save_blob(key, {"x": truncated, "t": [
+        [getattr(t, f) for f in _TRADE_FIELDS] for t in trades]})
+    return trades, truncated
+
+
+def _fetch_trades(client: Client, wallet: str, start_ts: int, end_ts: int,
+                  max_trades: int, page_size: int,
+                  max_offset: int) -> tuple[list[Trade], bool]:
     """All TRADE activity for ``wallet`` in [start_ts, end_ts], oldest first.
 
     Pages newest-to-oldest by offset, and re-anchors ``end`` on the oldest
@@ -175,7 +194,8 @@ def fetch_trades(client: Client, wallet: str, start_ts: int, end_ts: int,
                 page = _as_list(client.get(DATA_API, "/activity", {
                     "user": wallet, "type": "TRADE", "limit": page_size,
                     "offset": offset, "start": start_ts, "end": cursor_end,
-                    "sortBy": "TIMESTAMP", "sortDirection": "DESC"}))
+                    "sortBy": "TIMESTAMP", "sortDirection": "DESC"},
+                    use_cache=False))
             except HTTPError as e:
                 if e.status == 400 and offset > 0:
                     break  # offset cap reached; re-anchor below
@@ -269,6 +289,12 @@ def _market_from_clob(row: dict) -> Market | None:
                   prices=prices, question=str(row.get("question") or ""))
 
 
+GAMMA_KEYS = ("conditionId", "clobTokenIds", "outcomePrices", "closed",
+              "umaResolutionStatus", "closedTime", "umaEndDate", "endDate",
+              "question", "feesEnabled", "feeSchedule")
+CLOB_KEYS = ("condition_id", "tokens", "closed", "end_date_iso", "question")
+
+
 def fetch_markets(client: Client, condition_ids: set[str], batch: int = 50,
                   workers: int = 8) -> dict[str, Market]:
     """Resolve markets via gamma in parallel batches, CLOB per market as fallback."""
@@ -281,7 +307,7 @@ def fetch_markets(client: Client, condition_ids: set[str], batch: int = 50,
         if closed:
             params.append(("closed", closed))
         try:
-            rows = _as_list(client.get(GAMMA_API, "/markets", params))
+            rows = _as_list(client.get(GAMMA_API, "/markets", params, keep=GAMMA_KEYS))
         except HTTPError as e:
             log.warning("gamma markets batch failed: %s", e)
             return []
@@ -289,7 +315,8 @@ def fetch_markets(client: Client, condition_ids: set[str], batch: int = 50,
 
     def clob_one(cond: str) -> list[Market]:
         try:
-            m = _market_from_clob(client.get(CLOB_API, f"/markets/{cond}"))
+            m = _market_from_clob(client.get(CLOB_API, f"/markets/{cond}",
+                                             keep=CLOB_KEYS))
         except HTTPError as e:
             log.debug("clob market %s: %s", cond, e)
             return []
