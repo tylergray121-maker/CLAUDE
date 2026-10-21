@@ -1,217 +1,138 @@
-05:13:58 INFO leaderboard OVERALL/DAY/PNL: 500 wallets
-05:13:58 INFO leaderboard OVERALL/DAY/VOL: 500 wallets
-05:13:58 INFO leaderboard OVERALL/WEEK/PNL: 500 wallets
-05:13:58 INFO leaderboard OVERALL/WEEK/VOL: 500 wallets
-05:13:58 INFO leaderboard OVERALL/MONTH/PNL: 500 wallets
-05:13:58 INFO leaderboard OVERALL/MONTH/VOL: 500 wallets
-05:13:58 INFO leaderboard OVERALL/ALL/PNL: 500 wallets
-05:13:58 INFO leaderboard OVERALL/ALL/VOL: 500 wallets
-05:13:58 INFO backtesting 1500 wallets over 90 days
-05:14:02 INFO fetched 50/1500 wallets (0 requests)
-05:14:08 INFO fetched 100/1500 wallets (0 requests)
-05:14:12 INFO fetched 150/1500 wallets (0 requests)
-05:14:16 INFO fetched 200/1500 wallets (0 requests)
-05:14:20 INFO fetched 250/1500 wallets (0 requests)
-05:14:25 INFO fetched 300/1500 wallets (0 requests)
-05:14:29 INFO fetched 350/1500 wallets (0 requests)
-05:14:34 INFO fetched 400/1500 wallets (0 requests)
-05:14:38 INFO fetched 450/1500 wallets (0 requests)
-05:14:42 INFO fetched 500/1500 wallets (0 requests)
-05:14:46 INFO fetched 550/1500 wallets (0 requests)
-05:14:49 INFO fetched 600/1500 wallets (0 requests)
-05:14:55 INFO fetched 650/1500 wallets (0 requests)
-05:14:59 INFO fetched 700/1500 wallets (0 requests)
-05:15:02 INFO fetched 750/1500 wallets (0 requests)
-05:15:06 INFO fetched 800/1500 wallets (0 requests)
-05:15:09 INFO fetched 850/1500 wallets (0 requests)
-05:15:12 INFO fetched 900/1500 wallets (0 requests)
-05:15:16 INFO fetched 950/1500 wallets (0 requests)
-05:15:18 INFO fetched 1000/1500 wallets (0 requests)
-05:15:20 INFO fetched 1050/1500 wallets (0 requests)
-05:15:22 INFO fetched 1100/1500 wallets (0 requests)
-05:15:27 INFO fetched 1150/1500 wallets (0 requests)
-05:15:30 INFO fetched 1200/1500 wallets (0 requests)
-05:15:32 INFO fetched 1250/1500 wallets (0 requests)
-05:15:37 INFO fetched 1300/1500 wallets (0 requests)
-05:15:41 INFO fetched 1350/1500 wallets (0 requests)
-05:15:44 INFO fetched 1400/1500 wallets (0 requests)
-05:15:46 INFO fetched 1450/1500 wallets (0 requests)
-05:15:52 INFO fetched 1500/1500 wallets (0 requests)
-05:16:13 INFO 666 wallets to simulate (558 flagged as hard to copy); resolving 89119 markets
-05:16:13 INFO gamma closed: 89/1783 requests, 812 markets known
-05:16:13 INFO gamma closed: 178/1783 requests, 896 markets known
-05:16:13 INFO gamma closed: 267/1783 requests, 967 markets known
-05:16:13 INFO gamma closed: 356/1783 requests, 2711 markets known
-05:16:13 INFO gamma closed: 445/1783 requests, 6677 markets known
-05:16:13 INFO gamma closed: 534/1783 requests, 10622 markets known
-05:16:13 INFO gamma closed: 623/1783 requests, 14617 markets known
-05:16:13 INFO gamma closed: 712/1783 requests, 18554 markets known
-05:16:14 INFO gamma closed: 801/1783 requests, 22529 markets known
-05:16:14 INFO gamma closed: 890/1783 requests, 26514 markets known
-05:16:14 INFO gamma closed: 979/1783 requests, 30476 markets known
-05:16:14 INFO gamma closed: 1068/1783 requests, 34475 markets known
-05:16:14 INFO gamma closed: 1157/1783 requests, 38427 markets known
-05:16:14 INFO gamma closed: 1246/1783 requests, 42398 markets known
-05:16:14 INFO gamma closed: 1335/1783 requests, 46347 markets known
-05:16:14 INFO gamma closed: 1424/1783 requests, 50353 markets known
-05:16:14 INFO gamma closed: 1513/1783 requests, 54304 markets known
-05:16:14 INFO gamma closed: 1602/1783 requests, 58309 markets known
-05:16:14 INFO gamma closed: 1691/1783 requests, 62302 markets known
-05:16:15 INFO gamma closed: 1780/1783 requests, 66309 markets known
-05:16:15 INFO gamma closed: 1783/1783 requests, 66415 markets known
-05:16:15 INFO gamma open: 22/455 requests, 66502 markets known
-05:16:15 INFO gamma open: 44/455 requests, 66505 markets known
-05:16:15 INFO gamma open: 66/455 requests, 66509 markets known
-05:16:15 INFO gamma open: 88/455 requests, 66510 markets known
-05:16:15 INFO gamma open: 110/455 requests, 66512 markets known
-05:16:15 INFO gamma open: 132/455 requests, 66512 markets known
-05:16:15 INFO gamma open: 154/455 requests, 66515 markets known
-05:16:15 INFO gamma open: 176/455 requests, 66516 markets known
-05:16:15 INFO gamma open: 198/455 requests, 66516 markets known
-05:16:15 INFO gamma open: 220/455 requests, 66516 markets known
-05:16:15 INFO gamma open: 242/455 requests, 66518 markets known
-05:16:15 INFO gamma open: 264/455 requests, 66518 markets known
-05:16:15 INFO gamma open: 286/455 requests, 66519 markets known
-05:16:15 INFO gamma open: 308/455 requests, 67028 markets known
-05:16:15 INFO gamma open: 330/455 requests, 68126 markets known
-05:16:15 INFO gamma open: 352/455 requests, 69220 markets known
-05:16:15 INFO gamma open: 374/455 requests, 70317 markets known
-05:16:15 INFO gamma open: 396/455 requests, 71414 markets known
-05:16:15 INFO gamma open: 418/455 requests, 72508 markets known
-05:16:15 INFO gamma open: 440/455 requests, 73604 markets known
-05:16:15 INFO gamma open: 455/455 requests, 74308 markets known
-05:16:15 INFO clob fallback: 740/14811 requests, 74308 markets known
-05:16:15 INFO clob fallback: 1480/14811 requests, 74308 markets known
-05:16:15 INFO clob fallback: 2220/14811 requests, 74308 markets known
-05:16:15 INFO clob fallback: 2960/14811 requests, 74308 markets known
-05:16:16 INFO clob fallback: 3700/14811 requests, 74308 markets known
-05:16:16 INFO clob fallback: 4440/14811 requests, 74308 markets known
-05:16:16 INFO clob fallback: 5180/14811 requests, 74308 markets known
-05:16:16 INFO clob fallback: 5920/14811 requests, 74308 markets known
-05:16:16 INFO clob fallback: 6660/14811 requests, 74308 markets known
-05:16:16 INFO clob fallback: 7400/14811 requests, 74308 markets known
-05:16:16 INFO clob fallback: 8140/14811 requests, 74308 markets known
-05:16:17 INFO clob fallback: 8880/14811 requests, 74308 markets known
-05:16:17 INFO clob fallback: 9620/14811 requests, 74308 markets known
-05:16:17 INFO clob fallback: 10360/14811 requests, 74308 markets known
-05:16:17 INFO clob fallback: 11100/14811 requests, 74308 markets known
-05:16:17 INFO clob fallback: 11840/14811 requests, 74308 markets known
-05:16:17 INFO clob fallback: 12580/14811 requests, 74308 markets known
-05:16:17 INFO clob fallback: 13320/14811 requests, 74308 markets known
-05:16:18 INFO clob fallback: 14060/14811 requests, 74308 markets known
-05:16:18 INFO clob fallback: 14800/14811 requests, 74324 markets known
-05:16:18 INFO clob fallback: 14811/14811 requests, 74335 markets known
-05:16:18 WARNING 14784 of 89119 markets could not be resolved
-05:17:25 INFO re-simulating 60 shortlisted wallets with a 30s copy delay
-05:19:39 INFO price history: 1615/32305 windows
-05:21:54 INFO price history: 3230/32305 windows
-05:24:09 INFO price history: 4845/32305 windows
-05:26:23 INFO price history: 6460/32305 windows
-05:28:38 INFO price history: 8075/32305 windows
-05:30:52 INFO price history: 9690/32305 windows
-05:33:07 INFO price history: 11305/32305 windows
-05:35:22 INFO price history: 12920/32305 windows
-05:37:36 INFO price history: 14535/32305 windows
-05:39:51 INFO price history: 16150/32305 windows
-05:42:05 INFO price history: 17765/32305 windows
-05:44:20 INFO price history: 19380/32305 windows
-05:46:35 INFO price history: 20995/32305 windows
-05:48:49 INFO price history: 22610/32305 windows
-05:51:04 INFO price history: 24225/32305 windows
-05:53:18 INFO price history: 25840/32305 windows
-05:55:33 INFO price history: 27455/32305 windows
-05:57:48 INFO price history: 29070/32305 windows
-06:00:02 INFO price history: 30685/32305 windows
-06:02:17 INFO price history: 32300/32305 windows
-06:02:17 INFO price history: 32305/32305 windows
-06:08:15 INFO Polymarket US: 80865 slugs, 36697 questions
-06:08:16 INFO Polymarket US lists 36697 markets; 494 of 96677 copyable trades (1%) were in markets matched to it (65 distinct markets).
-# Polymarket copy-trade backtest
-
-Window 2026-07-23 → 2026-10-21 (90 days); qualify until 2026-09-21, test after.
-Bankroll $200; 5% of equity per typical leader buy (scaled by leader conviction 0.25–3.0x), max 20% per trade, 35% per market; slippage 1.0¢/fill, market taker fees + 0 bps, min order $1, copy delay 30s (shortlist), never more than the leader's own trade size.
-
-Wallets examined: 1500; simulated: 666; flagged as hard to copy: 558; eligible for ranking: 23.
-
-Polymarket US lists 36697 markets; 494 of 96677 copyable trades (1%) were in markets matched to it (65 distinct markets).
-
-Copy delay: 332175 of 332175 simulated fills (100%) were priced from market history 30s after the leader; the rest fell back to the leader's price.
-
-## Plan A — all Polymarket markets
-
-23 wallets qualified (profitable in the qualifying period, enough copyable buys). Typical qualified wallet in the test period: +43.1% (median); 61% of them made money.
-
-**Validation — wallets chosen using the qualifying period only, scored on the test period:**
-
-| copy top K together | test return | test max DD | buys copied |
-|---|---|---|---|
-| 1 | +78.2% | 31.9% | 812 |
-| 2 | -22.9% | 57.9% | 1405 |
-| 3 | +65.3% | 48.0% | 3320 |
-| 5 | +23.1% | 36.9% | 5363 |
-| 8 | +17.2% | 20.4% | 6225 |
-
-**Verdict: the method held up out of sample; best with K = 1.**
-
-**Picks for now** — ranked on 2026-08-21 onward, each copy sized 5.0% of equity per typical leader buy:
-
-| wallet | recent return | max DD | buys | markets | win rate |
-|---|---|---|---|---|---|
-| `0xe5241830e8876c115d7dc8311ad9f43d85fdd34f` | +7005.8% | 79.2% | 1326 | 258 | 63% |
-
-Copied together over that window: $200 → $14211.52 (+7005.8%), max drawdown 79.2%. This is in-sample — the validation table is the honest estimate.
-
-## Plan B — only markets also listed on Polymarket US (usable from New York)
-
-1 wallets qualified (profitable in the qualifying period, enough copyable buys). Typical qualified wallet in the test period: -10.5% (median); 0% of them made money.
-
-**Validation — wallets chosen using the qualifying period only, scored on the test period:**
-
-| copy top K together | test return | test max DD | buys copied |
-|---|---|---|---|
-| 1 | -10.5% | 71.5% | 88 |
-
-**Verdict: no edge.** Picking wallets by past results did not beat chance out of sample after fees and slippage, so this backtest gives no reason to copy any of these wallets.
-
-**What the method would pick now (not recommended — see verdict)** — ranked on 2026-08-21 onward, each copy sized 5.0% of equity per typical leader buy:
-
-| wallet | recent return | max DD | buys | markets | win rate |
-|---|---|---|---|---|---|
-| `0x20d6436849f930584892730c7f96ebb2ac763856` | +466.5% | 17.1% | 49 | 14 | 56% |
-
-Copied together over that window: $200 → $1132.94 (+466.5%), max drawdown 17.1%. This is in-sample — the validation table is the honest estimate.
-
-## Best single wallets (ranked with hindsight)
-
-**0x20d6436849f930584892730c7f96ebb2ac763856** (0x20D6436849F930584892730C7F96eBB2Ac763856-1768642056357)
-
-- $200 → $190408.59 over the window (+95104.3%), max drawdown 63.2%
-- Qualifying period +2088.0%, out-of-sample test +4251.2%
-- At double slippage: +55785.3%
-- 1338 buys / 112 sells copied across 186 markets, win rate 49%
-- Leader: 22.3 trades/day, median trade $22, avg buy price 37¢
-
-### Top 15
-
-| # | wallet | name | return | test | max DD | 2x slip | buys | win |
-|---|---|---|---|---|---|---|---|---|
-| 1 | `0x20d6436849f930584892730c7f96ebb2ac763856` | 0x20D6436849F9305848 | +95104.3% | +4251.2% | 63.2% | +55785.3% | 1338 | 49% |
-| 2 | `0x73e35ce0b7e36ef3ce29ebd12b30b28007383239` | Stonktrader | +661.8% | +645.8% | 73.4% | +325.9% | 116 | 61% |
-| 3 | `0x1a80db0b051af4c1a10cbaad4d35df5d71ea6b2b` | arshobing | +1551.4% | +357.1% | 72.0% | +637.0% | 128 | 43% |
-| 4 | `0x0d23fc6838433dbff11e4667ef5991e9dd9d2d56` | tiger105 | +171.9% | +150.8% | 37.6% | +114.1% | 146 | 63% |
-| 5 | `0xd8860bbbdf24d02b74d875b2d987986f62b96f88` | btystu | +376.7% | +92.3% | 2.1% | +350.4% | 31 | 100% |
-| 6 | `0x80d5aebbe7a714879177e4dae0014195beb3987e` | 0x80d5aebbE7a7148791 | +274.3% | +78.3% | 6.2% | +261.3% | 27 | 100% |
-| 7 | `0xbc1dacd4b84582fc310e4213421bca24e82da53c` | Fvalp | +117.9% | +102.5% | 65.7% | +130.6% | 317 | 57% |
-| 8 | `0xe5d29f2276769fd3574bbaa846a563b6c8a0776e` | Koliniko | +821.1% | +76.1% | 29.5% | +767.0% | 42 | 100% |
-| 9 | `0x95c6c9a6727ed203e97230dda61ab19a020e1508` | DelidelaDele | +151.9% | +99.8% | 94.6% | +123.8% | 297 | 58% |
-| 10 | `0xc49fe658479db29e1a2fefebf0735f657dca9e05` | jizzbucket57 | +31837.8% | +78.2% | 55.4% | +23584.4% | 812 | 66% |
-| 11 | `0x03e8a544e97eeff5753bc1e90d46e5ef22af1697` | weflyhigh | +216.3% | +53.0% | 11.2% | +203.7% | 44 | 67% |
-| 12 | `0x1ee9a5fc09665909c0cce297c581703bfbb9197f` | vinii | +121.3% | +32.7% | 23.6% | +97.1% | 111 | 51% |
-| 13 | `0x14494e6733e86a05888610dfabf3c98eeffea618` | SadSquid54333 | +909.0% | +43.1% | 44.7% | +557.2% | 182 | 64% |
-| 14 | `0xadaf1c42e0a88e2942e7adfe559e30c1796bf9f2` | gesst | +46.5% | +13.9% | 14.8% | +16.3% | 70 | 44% |
-| 15 | `0xc9a24fa249cf907c598544a4d46c077c1edf77d3` | 0x7A3f9C2D8b41E6a570 | +663.9% | +0.0% | 36.5% | +584.4% | 90 | 77% |
-
-Score = out-of-sample return − 0.5 × max drawdown. Full table in `ranking.csv`; daily equity for the top 10 in `top_equity_curves.csv`.
-
-Caveats: past results don't predict future ones; fills assume you get the leader's price plus slippage; open positions are marked at the current market price; wallets that started positions before the window are only copied from their first in-window buy.
-
+06:26:04 INFO leaderboard OVERALL/DAY/PNL: 500 wallets
+06:26:04 INFO leaderboard OVERALL/DAY/VOL: 500 wallets
+06:26:04 INFO leaderboard OVERALL/WEEK/PNL: 500 wallets
+06:26:04 INFO leaderboard OVERALL/WEEK/VOL: 500 wallets
+06:26:04 INFO leaderboard OVERALL/MONTH/PNL: 500 wallets
+06:26:04 INFO leaderboard OVERALL/MONTH/VOL: 500 wallets
+06:26:04 INFO leaderboard OVERALL/ALL/PNL: 500 wallets
+06:26:04 INFO leaderboard OVERALL/ALL/VOL: 500 wallets
+06:26:04 INFO backtesting 1218 wallets over 90 days
+06:26:08 INFO fetched 50/1218 wallets (0 requests)
+06:26:13 INFO fetched 100/1218 wallets (0 requests)
+06:26:17 INFO fetched 150/1218 wallets (0 requests)
+06:26:21 INFO fetched 200/1218 wallets (0 requests)
+06:26:26 INFO fetched 250/1218 wallets (0 requests)
+06:26:31 INFO fetched 300/1218 wallets (0 requests)
+06:26:35 INFO fetched 350/1218 wallets (0 requests)
+06:26:39 INFO fetched 400/1218 wallets (0 requests)
+06:26:44 INFO fetched 450/1218 wallets (0 requests)
+06:26:49 INFO fetched 500/1218 wallets (0 requests)
+06:26:52 INFO fetched 550/1218 wallets (0 requests)
+06:26:57 INFO fetched 600/1218 wallets (0 requests)
+06:26:59 INFO fetched 650/1218 wallets (0 requests)
+06:27:03 INFO fetched 700/1218 wallets (0 requests)
+06:27:06 INFO fetched 750/1218 wallets (0 requests)
+06:27:10 INFO fetched 800/1218 wallets (0 requests)
+06:27:14 INFO fetched 850/1218 wallets (0 requests)
+06:27:20 INFO fetched 900/1218 wallets (0 requests)
+06:27:23 INFO fetched 950/1218 wallets (0 requests)
+06:27:27 INFO fetched 1000/1218 wallets (0 requests)
+06:27:30 INFO fetched 1050/1218 wallets (0 requests)
+06:27:32 INFO fetched 1100/1218 wallets (0 requests)
+06:27:34 INFO fetched 1150/1218 wallets (0 requests)
+06:27:39 INFO fetched 1200/1218 wallets (0 requests)
+06:27:40 INFO fetched 1218/1218 wallets (0 requests)
+06:27:55 INFO 439 wallets to simulate (603 flagged as hard to copy); resolving 64409 markets
+06:27:55 INFO gamma closed: 64/1289 requests, 565 markets known
+06:27:55 INFO gamma closed: 128/1289 requests, 612 markets known
+06:27:55 INFO gamma closed: 192/1289 requests, 655 markets known
+06:27:55 INFO gamma closed: 256/1289 requests, 698 markets known
+06:27:55 INFO gamma closed: 320/1289 requests, 3301 markets known
+06:27:55 INFO gamma closed: 384/1289 requests, 6164 markets known
+06:27:55 INFO gamma closed: 448/1289 requests, 9023 markets known
+06:27:55 INFO gamma closed: 512/1289 requests, 11870 markets known
+06:27:55 INFO gamma closed: 576/1289 requests, 14750 markets known
+06:27:55 INFO gamma closed: 640/1289 requests, 17623 markets known
+06:27:55 INFO gamma closed: 704/1289 requests, 20498 markets known
+06:27:55 INFO gamma closed: 768/1289 requests, 23379 markets known
+06:27:55 INFO gamma closed: 832/1289 requests, 26266 markets known
+06:27:55 INFO gamma closed: 896/1289 requests, 29140 markets known
+06:27:55 INFO gamma closed: 960/1289 requests, 31998 markets known
+06:27:55 INFO gamma closed: 1024/1289 requests, 34882 markets known
+06:27:56 INFO gamma closed: 1088/1289 requests, 37740 markets known
+06:27:56 INFO gamma closed: 1152/1289 requests, 40625 markets known
+06:27:56 INFO gamma closed: 1216/1289 requests, 43488 markets known
+06:27:56 INFO gamma closed: 1280/1289 requests, 46387 markets known
+06:27:56 INFO gamma closed: 1289/1289 requests, 46753 markets known
+06:27:56 INFO gamma open: 17/354 requests, 46809 markets known
+06:27:56 INFO gamma open: 34/354 requests, 46809 markets known
+06:27:56 INFO gamma open: 51/354 requests, 46811 markets known
+06:27:56 INFO gamma open: 68/354 requests, 46813 markets known
+06:27:56 INFO gamma open: 85/354 requests, 46815 markets known
+06:27:56 INFO gamma open: 102/354 requests, 46816 markets known
+06:27:56 INFO gamma open: 119/354 requests, 46816 markets known
+06:27:56 INFO gamma open: 136/354 requests, 46817 markets known
+06:27:56 INFO gamma open: 153/354 requests, 46818 markets known
+06:27:56 INFO gamma open: 170/354 requests, 46819 markets known
+06:27:56 INFO gamma open: 187/354 requests, 46819 markets known
+06:27:56 INFO gamma open: 204/354 requests, 46820 markets known
+06:27:56 INFO gamma open: 221/354 requests, 46821 markets known
+06:27:56 INFO gamma open: 238/354 requests, 46821 markets known
+06:27:56 INFO gamma open: 255/354 requests, 47177 markets known
+06:27:56 INFO gamma open: 272/354 requests, 48024 markets known
+06:27:56 INFO gamma open: 289/354 requests, 48869 markets known
+06:27:56 INFO gamma open: 306/354 requests, 49718 markets known
+06:27:56 INFO gamma open: 323/354 requests, 50564 markets known
+06:27:56 INFO gamma open: 340/354 requests, 51411 markets known
+06:27:56 INFO gamma open: 354/354 requests, 52066 markets known
+06:27:56 INFO clob fallback: 617/12343 requests, 52066 markets known
+06:27:56 INFO clob fallback: 1234/12343 requests, 52066 markets known
+06:27:56 INFO clob fallback: 1851/12343 requests, 52066 markets known
+06:27:56 INFO clob fallback: 2468/12343 requests, 52066 markets known
+06:27:56 INFO clob fallback: 3085/12343 requests, 52066 markets known
+06:27:56 INFO clob fallback: 3702/12343 requests, 52066 markets known
+06:27:56 INFO clob fallback: 4319/12343 requests, 52066 markets known
+06:27:56 INFO clob fallback: 4936/12343 requests, 52066 markets known
+06:27:56 INFO clob fallback: 5553/12343 requests, 52066 markets known
+06:27:56 INFO clob fallback: 6170/12343 requests, 52066 markets known
+06:27:56 INFO clob fallback: 6787/12343 requests, 52066 markets known
+06:27:56 INFO clob fallback: 7404/12343 requests, 52066 markets known
+06:27:56 INFO clob fallback: 8021/12343 requests, 52066 markets known
+06:27:57 INFO clob fallback: 8638/12343 requests, 52066 markets known
+06:27:57 INFO clob fallback: 9255/12343 requests, 52066 markets known
+06:27:57 INFO clob fallback: 9872/12343 requests, 52066 markets known
+06:27:57 INFO clob fallback: 10489/12343 requests, 52066 markets known
+06:27:57 INFO clob fallback: 11106/12343 requests, 52066 markets known
+06:27:57 INFO clob fallback: 11723/12343 requests, 52066 markets known
+06:27:57 INFO clob fallback: 12340/12343 requests, 52083 markets known
+06:27:57 INFO clob fallback: 12343/12343 requests, 52086 markets known
+06:27:57 WARNING 12323 of 64409 markets could not be resolved
+06:28:27 INFO re-simulating 60 shortlisted wallets with a 30s copy delay
+06:30:11 INFO price history: 1651/33024 windows
+06:31:41 INFO price history: 3302/33024 windows
+06:33:23 INFO price history: 4953/33024 windows
+06:35:07 INFO price history: 6604/33024 windows
+06:36:56 INFO price history: 8255/33024 windows
+06:38:44 INFO price history: 9906/33024 windows
+06:40:27 INFO price history: 11557/33024 windows
+06:42:06 INFO price history: 13208/33024 windows
+06:43:35 INFO price history: 14859/33024 windows
+06:45:18 INFO price history: 16510/33024 windows
+06:46:58 INFO price history: 18161/33024 windows
+06:48:52 INFO price history: 19812/33024 windows
+06:50:39 INFO price history: 21463/33024 windows
+06:52:28 INFO price history: 23114/33024 windows
+06:54:22 INFO price history: 24765/33024 windows
+06:55:46 INFO price history: 26416/33024 windows
+06:57:33 INFO price history: 28067/33024 windows
+06:59:22 INFO price history: 29718/33024 windows
+07:01:05 INFO price history: 31369/33024 windows
+07:02:50 INFO price history: 33020/33024 windows
+07:02:50 INFO price history: 33024/33024 windows
+07:02:59 INFO Polymarket US: 80865 slugs, 37000 questions, 74133 game-days
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/CLAUDE/CLAUDE/copybt/__main__.py", line 5, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/runner/work/CLAUDE/CLAUDE/copybt/cli.py", line 277, in main
+    us_hist = {w: [t for t in tr if us.lists(t.title, t.slug, t.ts)]
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/CLAUDE/CLAUDE/copybt/us.py", line 78, in lists
+    day = _day(slug) or (_day(ts) if ts else None)
+          ^^^^^^^^^^
+  File "/home/runner/work/CLAUDE/CLAUDE/copybt/us.py", line 56, in _day
+    return date(int(m[1]), int(m[2]), int(m[3])).toordinal() - date(1970, 1, 1).toordinal()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: month must be in 1..12
