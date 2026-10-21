@@ -68,6 +68,7 @@ class Engine:
     def refresh_pairs(self) -> None:
         us = data.us_markets(self.client)
         self.markets = {m.slug: m for m in us}
+        self._dump_market_types(us)
         if self.ecfg.pairs_file:
             pairs = [p for p in mapping.load(self.ecfg.pairs_file) if p.us_slug in self.markets]
         else:
@@ -80,8 +81,9 @@ class Engine:
                 if None in (m.bid, m.ask, o.bid, o.ask):
                     kept.append((p, o.volume24h))  # checked against live books later
                     continue
-                gap = abs((m.bid + m.ask) / 2 - (o.bid + o.ask) / 2)
-                if gap <= self.ecfg.max_price_gap:
+                us_mid, ref_mid = (m.bid + m.ask) / 2, (o.bid + o.ask) / 2
+                gap = abs(us_mid - ref_mid)
+                if mapping.prices_agree(us_mid, ref_mid, self.ecfg.max_price_gap):
                     kept.append((p, o.volume24h))
                 else:
                     rejected.append({**p.to_json(), "price_gap": round(gap, 3)})
@@ -98,6 +100,21 @@ class Engine:
         if not self.pairs:
             log.error("no US market could be paired with a reference price; "
                       "check pairs.json / the mapping before trusting this run")
+
+    def _dump_market_types(self, us: list) -> None:
+        """Counts and samples of US market types, for checking the mapping."""
+        from collections import Counter
+        kinds = Counter((m.market_type, m.category) for m in us)
+        samples: dict = {}
+        for m in us:
+            k = f"{m.market_type}/{m.category}"
+            if m.market_type not in data.LONG_RUNNING and len(samples.setdefault(k, [])) < 15:
+                samples[k].append({"slug": m.slug, "question": m.question, "title": m.title,
+                                   "game_start": m.game_start, "end": m.end,
+                                   "bid": m.bid, "ask": m.ask})
+        with open(os.path.join(self.ecfg.out_dir, "us_market_types.json"), "w") as f:
+            json.dump({"counts": {f"{a}/{b}": n for (a, b), n in kinds.most_common()},
+                       "samples": samples}, f, indent=1)
 
     # -- loop ---------------------------------------------------------------
     def run(self) -> None:
@@ -154,7 +171,8 @@ class Engine:
                 if slug not in self.verified and fair is not None and \
                         q.bid is not None and q.ask is not None:
                     gap = abs((q.bid + q.ask) / 2 - fair)
-                    if gap > self.ecfg.max_price_gap:
+                    if not mapping.prices_agree((q.bid + q.ask) / 2, fair,
+                                                self.ecfg.max_price_gap):
                         self._log("pair_rejected", slug=slug, token=p.intl_token,
                                   gap=round(gap, 3), us=p.us_label, intl=p.intl_label)
                         self.pairs = [x for x in self.pairs if x is not p]

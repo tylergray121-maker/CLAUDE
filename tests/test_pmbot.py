@@ -242,6 +242,31 @@ class MappingTest(unittest.TestCase):
         self.assertEqual(len(mapping.match([game(1.8e9)], [opt])), 1)
         self.assertEqual(mapping.match([game(1.8e9 + 20 * day)], [opt]), [])  # rematch
 
+    def test_different_kind_of_bet_on_same_team_rejected(self):
+        intl = [intl_opt("Miami Heat", "Will Miami Heat win the 2027 NBA Finals?",
+                         "2027 NBA Champion")]
+        conf = us_market("Miami Heat", "NBA Eastern Conference Champion", "", )
+        champ = us_market("Miami Heat", "2027 NBA Champion", "")
+        self.assertEqual(mapping.match([conf], intl), [])
+        self.assertEqual(len(mapping.match([champ], intl)), 1)
+        q = us_market("Lille OSC", "Champions League Final Qualifiers", "")
+        self.assertEqual(mapping.match([q], [intl_opt(
+            "Lille", "Will Lille win the 2026-27 UEFA Champions League?")]), [])
+
+    def test_team_names_are_not_bet_types(self):
+        us = [us_market("West Ham United", "English Premier League Champion",
+                        "Will West Ham United win the 2026-27 English Premier League?")]
+        intl = [intl_opt("West Ham", "Will West Ham win the 2026-27 Premier League?",
+                         "English Premier League Winner")]
+        self.assertEqual(len(mapping.match(us, intl)), 1)
+
+    def test_relative_price_agreement(self):
+        self.assertFalse(mapping.prices_agree(0.04, 0.002))     # Lille: 20x apart
+        self.assertFalse(mapping.prices_agree(0.06, 0.021))     # Pacers: ~3x
+        self.assertTrue(mapping.prices_agree(0.021, 0.025))
+        self.assertTrue(mapping.prices_agree(0.62, 0.66))
+        self.assertFalse(mapping.prices_agree(0.50, 0.60))      # >8c
+
     def test_name_containment(self):
         self.assertEqual(mapping.name_similarity("Kyle Larson", "Kyle Larson"), 1.0)
         self.assertLess(mapping.name_similarity("Los Angeles Rams", "Rams"), 0.8)  # too short

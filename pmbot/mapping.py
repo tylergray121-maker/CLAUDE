@@ -52,6 +52,40 @@ class Pair:
         return asdict(self)
 
 
+# Words that change what is being bet on. Both sides of a pair must carry the
+# same set: "NBA Eastern Conference Champion" is not "win the NBA Finals",
+# and "Champions League Final Qualifiers" is not "win the Champions League".
+# (Plain winning - champion, winner, finals, title - carries no tag.)
+_CONCEPTS = {
+    "conference": "conf", "eastern": "east", "east": "east", "western": "west",
+    "west": "west", "division": "div", "divisional": "div",
+    "qualifiers": "qualify", "qualify": "qualify", "qualifies": "qualify",
+    "qualification": "qualify", "reach": "qualify", "advance": "qualify",
+    "semifinal": "round", "semifinals": "round", "quarterfinal": "round",
+    "quarterfinals": "round", "playoffs": "playoff", "playoff": "playoff",
+    "mvp": "mvp", "rookie": "rookie", "coach": "coach", "defensive": "defensive",
+    "nominee": "nominate", "nominees": "nominate", "nomination": "nominate",
+    "nominated": "nominate", "last": "last", "bottom": "last",
+    "relegated": "relegate", "relegation": "relegate", "promoted": "promote",
+    "promotion": "promote", "top": "top", "popular": "popular",
+    "primary": "primary", "runner": "runnerup", "second": "second",
+}
+
+
+def concepts(text: str, drop: set[str] = frozenset()) -> frozenset[str]:
+    """Bet-type tags in ``text``, ignoring the outcome's own name ("West Ham")."""
+    return frozenset(_CONCEPTS[w] for w in words(text) if w in _CONCEPTS and w not in drop)
+
+
+def prices_agree(a: float, b: float, max_gap: float = 0.08) -> bool:
+    """Absolute and, for cheap contracts, relative agreement: 4c vs 0.2c is
+    within 8c but plainly not the same bet."""
+    if abs(a - b) > max_gap:
+        return False
+    lo, hi = min(a, b), max(a, b)
+    return not (lo < 0.25 and hi - lo > 0.02 and hi > 2 * max(lo, 0.001))
+
+
 def name_similarity(a: str, b: str) -> float:
     wa, wb = set(words(a)), set(words(b))
     if not wa or not wb:
@@ -88,6 +122,9 @@ def match(us: list[USMarket], intl: list[IntlOption], min_name: float = 0.8,
             intl_text = f"{o.question} {o.event}"
             if us_years and years(intl_text) and not (us_years & years(intl_text)):
                 continue  # different season
+            names = name_words | set(words(o.label))
+            if concepts(us_ctx_text, names) != concepts(intl_text, names):
+                continue  # different kind of bet on the same team
             cs = jaccard(us_ctx, content(intl_text, name_words | set(words(o.label))))
             if cs < min_context:
                 continue
