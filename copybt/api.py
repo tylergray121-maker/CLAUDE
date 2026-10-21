@@ -65,7 +65,10 @@ class Client:
         cpath = self._cache_path(url) if use_cache else None
         if cpath and os.path.exists(cpath):
             with open(cpath) as f:
-                return json.load(f)
+                data = json.load(f)
+            if isinstance(data, dict) and "__http_error__" in data:
+                raise HTTPError(data["__http_error__"], url, "(cached)")
+            return data
 
         last_err: Exception | None = None
         for attempt in range(self.retries):
@@ -82,6 +85,8 @@ class Client:
                 last_err = HTTPError(e.code, url, body)
                 # 4xx other than 429 won't get better by retrying.
                 if e.code != 429 and 400 <= e.code < 500:
+                    if e.code == 404 and cpath:
+                        self._write(cpath, {"__http_error__": 404})
                     raise last_err
             except (urllib.error.URLError, TimeoutError, json.JSONDecodeError,
                     ConnectionError) as e:
@@ -91,9 +96,13 @@ class Client:
             raise last_err  # type: ignore[misc]
 
         if cpath:
-            os.makedirs(os.path.dirname(cpath), exist_ok=True)
-            tmp = cpath + ".tmp"
-            with open(tmp, "w") as f:
-                json.dump(data, f)
-            os.replace(tmp, cpath)
+            self._write(cpath, data)
         return data
+
+    @staticmethod
+    def _write(cpath: str, data) -> None:
+        os.makedirs(os.path.dirname(cpath), exist_ok=True)
+        tmp = f"{cpath}.{threading.get_ident()}.tmp"
+        with open(tmp, "w") as f:
+            json.dump(data, f)
+        os.replace(tmp, cpath)

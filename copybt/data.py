@@ -328,19 +328,23 @@ def _run_parallel(label, jobs, fn, out: dict, workers: int) -> None:
 # --------------------------------------------------------------------------
 
 class PriceHistory:
-    """Lazy per-token price lookup from the CLOB prices-history endpoint."""
+    """Copy-delay prices from the CLOB prices-history endpoint.
 
-    def __init__(self, client: Client, start_ts: int, end_ts: int):
+    Only small two-hour windows around trades are fetched (minute bars), so
+    memory and disk stay bounded however many tokens are involved.
+    """
+
+    def __init__(self, client: Client):
         self.client = client
-        self.start_ts = start_ts
-        self.end_ts = end_ts
-        self._series: dict[str, tuple[list[int], list[float]]] = {}
         self._windows: dict[tuple[str, int], list[tuple[int, float]]] = {}
+        self.hits = self.misses = 0
 
-    def _fetch(self, token: str, start: int, end: int) -> list[tuple[int, float]]:
+    def _fetch(self, key: tuple[str, int]) -> list[tuple[int, float]]:
+        token, hour = key
         try:
             rows = _as_list(self.client.get(CLOB_API, "/prices-history", {
-                "market": token, "startTs": start, "endTs": end, "fidelity": 1}))
+                "market": token, "startTs": hour * 3600,
+                "endTs": hour * 3600 + 7200, "fidelity": 1}))
         except (HTTPError, ValueError, TypeError) as e:
             log.debug("price history %s: %s", token, e)
             return []
@@ -349,31 +353,28 @@ class PriceHistory:
             t, p = _parse_ts(r.get("t")), r.get("p")
             if t is not None and p is not None:
                 out.append((t, float(p)))
-        return out
+        return sorted(out)
 
-    def _load(self, token: str) -> tuple[list[int], list[float]]:
-        if token not in self._series:
-            pts = sorted(self._fetch(token, self.start_ts, self.end_ts))
-            self._series[token] = ([t for t, _ in pts], [p for _, p in pts])
-        return self._series[token]
+    def prefetch(self, points: set[tuple[str, int]], workers: int = 8) -> None:
+        keys = sorted({(tok, ts // 3600) for tok, ts in points} - set(self._windows))
+        if not keys:
+            return
+        step = max(1, len(keys) // 20)
+        with ThreadPoolExecutor(workers) as pool:
+            for i, (key, pts) in enumerate(zip(keys, pool.map(self._fetch, keys)), 1):
+                self._windows[key] = pts
+                if i % step == 0 or i == len(keys):
+                    log.info("price history: %d/%d windows", i, len(keys))
 
     def price_at(self, token: str, ts: int) -> float | None:
-        """First recorded price at or after ``ts`` (within an hour), else None.
-
-        Falls back to a one-hour query around ``ts`` when the full-range
-        series is empty or has no point near ``ts`` (long ranges may be
-        returned at coarser resolution).
-        """
-        times, prices = self._load(token)
-        i = bisect_left(times, ts)
-        if i < len(times) and times[i] - ts <= 3600:
-            return prices[i]
+        """First minute-bar price within an hour at or after ``ts``, else None."""
         key = (token, ts // 3600)
         if key not in self._windows:
-            self._windows[key] = sorted(self._fetch(token, ts // 3600 * 3600,
-                                                    ts // 3600 * 3600 + 7200))
+            self._windows[key] = self._fetch(key)
         pts = self._windows[key]
         j = bisect_left(pts, (ts, -1.0))
         if j < len(pts) and pts[j][0] - ts <= 3600:
+            self.hits += 1
             return pts[j][1]
+        self.misses += 1
         return None

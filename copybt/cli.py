@@ -63,7 +63,7 @@ def parse_args(argv=None) -> argparse.Namespace:
     g.add_argument("--delay-seconds", type=int, default=30,
                    help="copy latency, priced from CLOB price history; applied to "
                    "the shortlist (0 = fill at the leader's price)")
-    g.add_argument("--shortlist", type=int, default=150,
+    g.add_argument("--shortlist", type=int, default=60,
                    help="wallets re-simulated with the copy delay")
 
     g = p.add_argument_group("ranking")
@@ -161,8 +161,7 @@ def main(argv=None) -> int:
              len(to_run), sum(1 for p in profiles.values() if p.flags), len(conds))
     markets = fetch_markets(client, conds, workers=args.workers)
 
-    prices = (PriceHistory(client, start_ts, end_ts + 86400)
-              if args.delay_seconds > 0 else None)
+    prices = PriceHistory(client) if args.delay_seconds > 0 else None
     price_at = prices.price_at if prices else None
 
     # 4. Simulate ----------------------------------------------------------
@@ -187,9 +186,12 @@ def main(argv=None) -> int:
 
     shortlist = {w for w in sorted(to_run, key=promise, reverse=True)[:args.shortlist]
                  if promise(w) > 0}
-    if price_at:
+    if prices:
         log.info("re-simulating %d shortlisted wallets with a %ds copy delay",
                  len(shortlist), args.delay_seconds)
+        prices.prefetch({(t.asset, t.ts + args.delay_seconds)
+                         for w in shortlist for t in histories[w][0]
+                         if t.condition_id in markets}, workers=args.workers)
 
     rows: list[dict] = []
     curves: dict[str, list] = {}
@@ -277,6 +279,13 @@ def main(argv=None) -> int:
     report = _report(args, cfg, start_ts, end_ts, split_ts, rows, ran, eligible)
     head, _, rest = report.partition("## Recommendation")
     portfolio_md = [us_note, ""] if us_note else []
+    if prices:
+        total = prices.hits + prices.misses
+        portfolio_md += [
+            f"Copy delay: {prices.hits} of {total} simulated fills "
+            f"({(prices.hits / total if total else 0):.0%}) were priced from market "
+            "history 30s after the leader; the rest fell back to the leader's "
+            "price.", ""]
     for plan in plans:
         portfolio_md += render(plan, cfg, _date)
     report = (head + "\n".join(portfolio_md) + "\n"
@@ -332,7 +341,7 @@ def _report(args, cfg, start_ts, end_ts, split_ts, rows, ran, eligible) -> str:
         f"{cfg.max_market_pct:.0%} per market; slippage {cfg.slippage*100:.1f}¢/fill, "
         f"{'market taker fees' if cfg.market_fees else 'no market fees'} "
         f"+ {cfg.fee_bps:g} bps, min order ${cfg.min_order_usd:g}, "
-        f"copy delay {cfg.delay_seconds}s (shortlist), never more than the "
+        f"copy delay {args.delay_seconds}s (shortlist), never more than the "
         f"leader's own trade size.",
         "",
         f"Wallets examined: {len(rows)}; simulated: {len(ran)}; "
