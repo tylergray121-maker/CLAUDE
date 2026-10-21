@@ -42,6 +42,7 @@ class Plan:
     picks: list[dict] = field(default_factory=list)
     recent: SimResult | None = None
     recent_start: int = 0
+    recent_top: list[dict] = field(default_factory=list)
     note: str = ""
 
 
@@ -121,9 +122,13 @@ def build_plan(label: str, histories: dict[str, list[Trade]],
         r = simulate(t, markets, cfg, recent_start, end_ts, recent_split, price_at)
         if r.buys_copied >= min_buys and r.return_pct > 0:
             recent[w] = r
-    picks = sorted(recent, key=lambda w: _score(recent[w].return_pct,
+    order = sorted(recent, key=lambda w: _score(recent[w].return_pct,
                                                 recent[w].max_drawdown_pct),
-                   reverse=True)[:plan.best_k]
+                   reverse=True)
+    plan.recent_top = [{"wallet": w, "return_pct": recent[w].return_pct,
+                        "max_drawdown_pct": recent[w].max_drawdown_pct,
+                        "buys_copied": recent[w].buys_copied} for w in order[:10]]
+    picks = order[:plan.best_k]
     plan.picks = [{"wallet": w, "return_pct": recent[w].return_pct,
                    "max_drawdown_pct": recent[w].max_drawdown_pct,
                    "buys_copied": recent[w].buys_copied,
@@ -183,6 +188,10 @@ def render(plan: Plan, cfg: SimConfig, fmt_date) -> list[str]:
             out.append(f"| `{p['wallet']}` | {p['return_pct']:+.1f}% | "
                        f"{p['max_drawdown_pct']:.1f}% | {p['buys_copied']} | "
                        f"{p['markets_traded']} | {p['win_rate']:.0%} |")
+        if plan.recent_top:
+            out += ["", "Top of the current ranking: " + ", ".join(
+                f"`{p['wallet'][:10]}…` {p['return_pct']:+.0f}% (DD {p['max_drawdown_pct']:.0f}%)"
+                for p in plan.recent_top)]
         if r:
             out += ["", f"Copied together over that window: ${cfg.start_cash:.0f} → "
                     f"${r.final_equity:.2f} ({r.return_pct:+.1f}%), max drawdown "

@@ -84,6 +84,9 @@ def parse_args(argv=None) -> argparse.Namespace:
     g.add_argument("--max-rps", type=float, default=8.0)
     g.add_argument("--cache-dir", default=".cache")
     g.add_argument("--out-dir", default="results")
+    g.add_argument("--audit", default="",
+                   help="comma list of wallets: write every simulated fill "
+                   "(full window and most recent window) to audit_<wallet>.csv")
     g.add_argument("--fetch-only", action="store_true",
                    help="download trades and markets into the cache, then stop")
     g.add_argument("-v", "--verbose", action="store_true")
@@ -301,6 +304,24 @@ def main(argv=None) -> int:
             _write_csv(os.path.join(args.out_dir, name), [
                 {**f, "date": datetime.fromtimestamp(f["ts"], timezone.utc)
                  .strftime("%Y-%m-%d %H:%M")} for f in plan.recent.fills])
+
+    for w in [x.strip().lower() for x in args.audit.split(",") if x.strip()]:
+        if w not in histories:
+            log.warning("audit: %s not in this run", w)
+            continue
+        trades = histories[w][0]
+        full = simulate(trades, markets, cfg, start_ts, end_ts, split_ts, price_at,
+                        log_fills=True)
+        rec = simulate(trades, markets, cfg, end_ts - span, end_ts,
+                       end_ts - span // 2, price_at, log_fills=True)
+        log.info("audit %s: full %+.1f%% (%d buys, skipped %s); recent %+.1f%% "
+                 "(%d buys, DD %.1f%%, skipped %s)", w, full.return_pct,
+                 full.buys_copied, full.skipped, rec.return_pct, rec.buys_copied,
+                 rec.max_drawdown_pct, rec.skipped)
+        _write_csv(os.path.join(args.out_dir, f"audit_{w[:10]}.csv"), [
+            {"window": name, **f, "date": datetime.fromtimestamp(
+                f["ts"], timezone.utc).strftime("%Y-%m-%d %H:%M")}
+            for name, res in (("full", full), ("recent", rec)) for f in res.fills])
 
     # 7. Output ------------------------------------------------------------
     ranked = eligible + sorted([r for r in rows if r["wallet"] not in eligible_ids],

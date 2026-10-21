@@ -1,1 +1,1 @@
---days 90 --end 2026-10-21T01:00:00Z --max-wallets 1500 --workers 12 --max-rps 12 --delay-seconds 30 --shortlist 60
+--days 90 --end 2026-10-21T01:00:00Z --max-wallets 1500 --workers 12 --max-rps 12 --delay-seconds 30 --shortlist 60 --audit 0x20d6436849f930584892730c7f96ebb2ac763856,0x91e67d77b45558ce69238bf8a79e2e902b1ee9c5
