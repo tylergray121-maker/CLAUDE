@@ -59,6 +59,7 @@ class Engine:
         self.stats = ScanStats()
         self.marks: dict[str, float] = {}
         self.verified: set[str] = set()   # pairs whose live prices agree
+        self.map_stats: dict = {}
         self._stop = False
         os.makedirs(ecfg.out_dir, exist_ok=True)
         self._events = open(os.path.join(ecfg.out_dir, "events.jsonl"), "a")
@@ -91,6 +92,12 @@ class Engine:
                 json.dump(rejected, f, indent=1)
             log.info("pairs: %d kept, %d rejected on price", len(pairs), len(rejected))
         self.pairs = pairs[:self.ecfg.max_markets]
+        self.map_stats = {"us_markets": len(us), "pairs": len(pairs),
+                          "tracked": len(self.pairs),
+                          "intl_options": len(intl) if not self.ecfg.pairs_file else None}
+        if not self.pairs:
+            log.error("no US market could be paired with a reference price; "
+                      "check pairs.json / the mapping before trusting this run")
 
     # -- loop ---------------------------------------------------------------
     def run(self) -> None:
@@ -295,8 +302,11 @@ class Engine:
         pct = lambda q: gaps[min(len(gaps) - 1, int(q * len(gaps)))] if gaps else 0
         lines = [
             f"# Polymarket US bot — {self.ecfg.mode} run", "",
-            f"Pairs tracked: {len(self.pairs)}; observations with a trustworthy "
-            f"reference price: {s.observations}.", "",
+            f"Mapping: {self.map_stats.get('us_markets', 0)} open US markets, "
+            f"{self.map_stats.get('intl_options') or 0} international outcomes, "
+            f"{self.map_stats.get('pairs', 0)} pairs ({len(self.pairs)} tracked after "
+            f"live price checks); observations with a trustworthy reference price: "
+            f"{s.observations}.", "",
             "## Is there an edge to take?", "",
             f"US mid vs international mid, absolute gap: median {100 * pct(.5):.2f}¢, "
             f"90th pct {100 * pct(.9):.2f}¢, 99th pct {100 * pct(.99):.2f}¢.",

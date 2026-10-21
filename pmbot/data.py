@@ -99,7 +99,7 @@ def parse_us_market(m: dict) -> USMarket | None:
         bid=amount(m.get("bestBidQuote")), ask=amount(m.get("bestAskQuote")))
 
 
-def us_markets(client: Client, page: int = 100, max_pages: int = 300) -> list[USMarket]:
+def us_markets(client: Client, page: int = 100, max_pages: int = 1000) -> list[USMarket]:
     out, seen = [], set()
     offset = 0
     for _ in range(max_pages):
