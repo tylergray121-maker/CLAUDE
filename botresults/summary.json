@@ -1,0 +1,18 @@
+{
+ "ts": 1792587193.0901124,
+ "mode": "paper",
+ "pairs": 0,
+ "equity": 200.0,
+ "cash": 200.0,
+ "positions": {},
+ "open_orders": 0,
+ "fills": 0,
+ "fees_paid": 0.0,
+ "rebates": 0.0,
+ "halted": "",
+ "scan": {
+  "observations": 0,
+  "buy_opps": 0,
+  "sell_opps": 0
+ }
+}

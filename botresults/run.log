@@ -1,0 +1,21 @@
+11:39:05 INFO Polymarket US: 30000 open markets
+11:39:06 INFO international: 100 active outcome tokens
+11:39:07 INFO pairs: 0 kept, 0 rejected on price
+12:39:11 INFO Polymarket US: 30000 open markets
+12:39:12 INFO international: 100 active outcome tokens
+12:39:13 INFO pairs: 0 kept, 0 rejected on price
+# Polymarket US bot — paper run
+
+Pairs tracked: 0; observations with a trustworthy reference price: 0.
+
+## Is there an edge to take?
+
+US mid vs international mid, absolute gap: median 0.00¢, 90th pct 0.00¢, 99th pct 0.00¢.
+Times a US price was through fair value by ≥ 3¢ after the taker fee: 0 to buy, 0 to sell (see `events.jsonl`, kind=opportunity).
+
+## Trading
+
+Equity $200.00 from $200.00 (+0.00), cash $200.00; 0 fills; taker fees $0.00; maker rebates $0.00; open positions 0.
+Halted: no.
+
+
