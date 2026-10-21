@@ -1,6 +1,6 @@
 # Which wallets to copy on Polymarket US
 
-Backtest of copytop's own rules over 45 days to 2026-10-21 21:00 UTC: 267 candidates, 88 with trades copytop could copy, 21 re-priced at a 30s copy delay. Choosing window: first 67%; test window: the rest (15 days).
+Backtest of copytop's own rules over 45 days to 2026-10-21 21:00 UTC: 630 candidates, 272 with trades copytop could copy, 45 re-priced at a 30s copy delay. Choosing window: first 67%; test window: the rest (15 days).
 
 ## Does choosing this way hold up?
 
@@ -8,88 +8,93 @@ Wallets ranked on the choosing window only (lower bound of per-copy return, 15+ 
 
 | | copies | won | staked | P&L | return | t |
 |---|---|---|---|---|---|---|
-| chosen on the first part (test window) | 379 | 220 | $3,613 | +161.19 | +4.5% | +1.13 |
-| all re-priced wallets (test window) | 2372 | 1239 | $23,165 | +1,531.51 | +6.6% | +2.88 |
-| currently copied (test window) | 1771 | 913 | $17,438 | +367.41 | +2.1% | +1.09 |
+| chosen on the first part (test window) | 609 | 349 | $5,904 | -96.88 | -1.6% | -0.47 |
+| every wallet that qualified on the first part (test window) | 944 | 520 | $9,229 | -51.45 | -0.6% | -0.25 |
+| currently copied (test window) | 635 | 346 | $6,149 | +63.18 | +1.0% | +0.36 |
 
 ## Copy rules, on the chosen wallets
 
 | | test window | | | | | | whole window | | | | | |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| as copytop runs (30s delay, copy sells) | 379 | 220 | $3,613 | +161.19 | +4.5% | 1.13 | 889 | 530 | $8,528 | +1,005.10 | +11.8% | 3.8 |
-| hold to settlement (ignore their sells) | 379 | 223 | $3,613 | +190.71 | +5.3% | 1.29 | 889 | 543 | $8,528 | +1,076.28 | +12.6% | 4.05 |
-| 15s delay | 389 | 226 | $3,714 | +147.22 | +4.0% | 1.06 | 901 | 536 | $8,647 | +968.73 | +11.2% | 3.66 |
-| 60s delay | 379 | 218 | $3,614 | +117.45 | +3.2% | 0.9 | 886 | 527 | $8,499 | +958.64 | +11.3% | 3.65 |
-| allow 2c over their price | 405 | 236 | $3,859 | +128.79 | +3.3% | 0.98 | 937 | 559 | $8,992 | +969.90 | +10.8% | 3.64 |
+| base: 30s delay, 1c limit, hold to settlement | 609 | 349 | $5,904 | -96.88 | -1.6% | -0.47 | 1973 | 1219 | $19,106 | +2,445.55 | +12.8% | 5.6 |
+| copy their sells too | 618 | 310 | $5,995 | -303.74 | -5.1% | -1.48 | 1982 | 1108 | $19,197 | +1,773.86 | +9.2% | 4.61 |
+| size by conviction (x0.5 / x1 / x1.5) | 588 | 341 | $7,388 | +100.51 | +1.4% | -0.18 | 1915 | 1179 | $23,196 | +2,893.94 | +12.5% | 5.12 |
+| skip bets under 0.5x their usual | 585 | 336 | $5,711 | -68.10 | -1.2% | -0.4 | 1830 | 1127 | $17,806 | +2,335.51 | +13.1% | 5.4 |
+| pre-game only | 401 | 220 | $3,856 | -156.62 | -4.1% | -1.04 | 1465 | 875 | $14,092 | +1,980.85 | +14.1% | 5.35 |
+| 15s delay | 618 | 354 | $5,997 | -126.89 | -2.1% | -0.59 | 1988 | 1225 | $19,235 | +2,370.34 | +12.3% | 5.45 |
+| 60s delay | 600 | 345 | $5,813 | -29.89 | -0.5% | -0.22 | 1955 | 1208 | $18,914 | +2,561.86 | +13.5% | 5.76 |
+| allow 2c over their price | 634 | 364 | $6,140 | -133.94 | -2.2% | -0.6 | 2057 | 1273 | $19,883 | +2,402.60 | +12.1% | 5.47 |
 
 ## Patterns, on the chosen wallets (choosing window → test window)
 
 | pattern | copies | return | t | → copies | return | t |
 |---|---|---|---|---|---|---|
-| conviction:0.5-1x | 52 | +28.0% | 2.12 | 48 | +1.2% | 0.35 |
-| conviction:1-2x | 50 | +24.8% | 1.34 | 25 | -0.7% | -0.02 |
-| conviction:2x+ | 318 | +14.8% | 2.73 | 255 | +9.6% | 1.57 |
-| conviction:under 0.5x | 90 | +15.7% | 1.83 | 51 | -17.8% | -0.84 |
-| delay_move:flat | 388 | +19.0% | 3.84 | 306 | +4.0% | 1.03 |
-| delay_move:price fell | 122 | +11.6% | 1.36 | 73 | +6.3% | 0.48 |
-| exit:sell | 15 | -20.3% | -2.37 | 3 | -9.7% | -17.14 |
-| exit:settle | 495 | +18.3% | 4.18 | 376 | +4.6% | 1.15 |
-| kind:moneyline | 207 | +17.6% | 2.38 | 143 | +5.6% | 0.87 |
-| kind:result | 170 | +7.6% | 0.9 | 130 | +19.1% | 2.53 |
-| kind:totals | 133 | +28.9% | 4.19 | 106 | -15.1% | -1.65 |
-| league:atp | 30 | +19.7% | 0.86 | 19 | -39.8% | -1.3 |
-| league:bun | 7 | +26.6% | 1.26 | 4 | -45.2% | -0.87 |
-| league:cfb | 34 | +18.9% | 1.03 | 14 | +6.4% | 0.29 |
-| league:cs2 | 12 | -21.1% | -1.23 | 13 | +23.0% | 0.92 |
-| league:dota2 | 21 | +1.7% | 0.11 | 9 | +7.0% | 0.2 |
-| league:epl | 78 | +8.3% | 0.59 | 75 | +13.2% | 1.42 |
-| league:lal | 22 | +9.9% | 0.53 | 3 | -1.3% | -0.04 |
-| league:lol | 54 | +8.9% | 0.75 | 49 | +12.6% | 0.95 |
-| league:mlb | 7 | +93.2% | 2.4 | 4 | -32.4% | -1.43 |
-| league:mls | 32 | -3.1% | -0.02 | 26 | +22.3% | 1.32 |
-| league:nfl | 75 | +47.2% | 4.53 | 11 | +80.5% | 1.42 |
-| league:nhl | 83 | +17.1% | 1.74 | 113 | -22.1% | -2.32 |
-| league:sea | 25 | +35.9% | 1.83 | 10 | +4.6% | 0.11 |
-| league:uel | 2 | -100.0% | — | 14 | +36.0% | 2.64 |
-| league:wta | 13 | -73.0% | -5.22 | 0 | +0.0% | — |
-| price:30-70c | 476 | +16.8% | 4.03 | 336 | +3.5% | 0.91 |
-| price:over 70c | 18 | -21.0% | -1.72 | 32 | +17.5% | 2.7 |
-| price:under 30c | 16 | +71.0% | 1.45 | 11 | -2.6% | -0.04 |
-| timing:in-play | 74 | -1.6% | -0.13 | 61 | +5.1% | 0.42 |
-| timing:pre-game | 436 | +20.5% | 4.36 | 318 | +4.3% | 1.05 |
+| conviction:0.5-1x | 128 | +15.4% | 2.17 | 57 | -1.6% | -0.05 |
+| conviction:1-2x | 134 | +31.5% | 2.94 | 46 | -6.4% | -0.59 |
+| conviction:2x+ | 868 | +18.2% | 5.13 | 431 | +1.4% | 0.12 |
+| conviction:under 0.5x | 234 | +18.2% | 3.06 | 75 | -16.4% | -1.31 |
+| delay_move:flat | 934 | +23.0% | 6.61 | 413 | -9.6% | -2.14 |
+| delay_move:price fell | 430 | +11.5% | 2.54 | 196 | +14.6% | 1.5 |
+| exit:settle | 1364 | +19.3% | 6.98 | 609 | -1.6% | -0.47 |
+| kind:moneyline | 891 | +22.6% | 6.23 | 317 | -5.2% | -1.06 |
+| kind:result | 240 | +14.9% | 2.69 | 163 | -2.8% | -0.2 |
+| kind:totals | 233 | +11.1% | 1.82 | 129 | +8.5% | 0.76 |
+| league:bra | 8 | +77.6% | 2.99 | 5 | -29.9% | -0.99 |
+| league:cfb | 42 | +0.4% | 0.07 | 26 | +10.6% | 0.4 |
+| league:cs2 | 200 | +16.4% | 2.48 | 85 | -10.8% | -1.6 |
+| league:dota2 | 34 | +5.0% | 0.33 | 2 | +52.9% | 1.49 |
+| league:epl | 17 | +61.3% | 4.82 | 41 | -12.6% | -0.87 |
+| league:lal | 63 | -8.2% | -0.79 | 27 | +18.1% | 0.26 |
+| league:lol | 68 | +6.3% | 0.55 | 29 | -28.1% | -1.61 |
+| league:mlb | 407 | +17.2% | 3.86 | 48 | +1.1% | 0.11 |
+| league:mls | 61 | +1.9% | 0.24 | 66 | +5.1% | 0.54 |
+| league:nfl | 267 | +29.3% | 3.58 | 84 | +11.8% | 1.36 |
+| league:nhl | 125 | +25.9% | 3.32 | 106 | -8.6% | -1.1 |
+| league:sea | 64 | +41.1% | 3.5 | 60 | +15.8% | 1.79 |
+| price:30-70c | 1027 | +17.7% | 6.08 | 415 | -1.2% | -0.33 |
+| price:over 70c | 219 | +4.2% | 1.37 | 145 | +0.5% | 0.29 |
+| price:under 30c | 118 | +59.4% | 3.37 | 49 | -11.6% | -0.49 |
+| timing:in-play | 300 | +13.7% | 2.32 | 208 | +2.9% | 0.43 |
+| timing:pre-game | 1064 | +20.9% | 6.63 | 401 | -4.1% | -1.04 |
 
 ## Final picks (whole window, copied in the last week)
 
 | wallet | copies | won | return | t | per $10 copy |
 |---|---|---|---|---|---|
-| 1l2ihj34li12u34 | 47 | 35 | +48.0% | 3.7 | +5.01 |
-| EdZachary | 74 | 50 | +38.1% | 3.36 | +3.95 |
-| theowalcott | 78 | 52 | +29.3% | 2.79 | +3.07 |
-| 0xd4aa6f8e91cfea29b66a48ebff | 56 | 33 | +33.4% | 2.08 | +3.74 |
-| totoro3miyazaki | 51 | 36 | +28.1% | 2.08 | +2.75 |
-| Jsram | 161 | 107 | +14.4% | 2.21 | +1.45 |
-| Kch-Temp | 175 | 100 | +12.1% | 1.6 | +1.32 |
-| monkeymashingkeyboard | 1020 | 553 | +6.0% | 1.78 | +0.62 |
-| Soarin22 | 181 | 84 | +7.0% | 1.16 | +1.23 |
-| www511zwin | 24 | 14 | +23.6% | 1.06 | +2.42 |
+| BunCaCham | 21 | 20 | +50.1% | 3.88 | +4.94 |
+| 0010001000001100 | 35 | 22 | +69.8% | 1.69 | +6.76 |
+| totoro3miyazaki | 33 | 26 | +41.3% | 2.69 | +4.06 |
+| 1l2ihj34li12u34 | 28 | 20 | +40.6% | 2.34 | +4.27 |
+| BreakTheBank | 130 | 72 | +35.5% | 2.91 | +3.61 |
+| yabanci | 23 | 17 | +34.4% | 2.22 | +4.02 |
+| theowalcott | 67 | 46 | +31.2% | 2.85 | +3.31 |
+| EdZachary | 50 | 33 | +33.2% | 2.4 | +3.38 |
+| 0x20D6436849F930584892730C7F | 130 | 76 | +33.7% | 2.19 | +3.44 |
+| juice-fruit | 30 | 23 | +29.4% | 1.92 | +2.99 |
+| 0x16bb9951a36fce71e2ef57890b | 385 | 227 | +16.6% | 3.22 | +1.68 |
+| Kch-Temp | 50 | 31 | +26.4% | 1.69 | +2.62 |
+| GamblingOdyssey | 57 | 43 | +19.4% | 1.84 | +1.92 |
+| plonker2026 | 34 | 19 | +22.9% | 1.36 | +3.06 |
+| xxyx0xx | 112 | 60 | +23.7% | 1.41 | +2.24 |
+| monkeymashingkeyboard | 606 | 348 | +10.7% | 2.5 | +1.05 |
 
 ## Currently copied wallets
 
 | wallet | copies | won | return | t | in final picks |
 |---|---|---|---|---|---|
 | 0x006cc834Cc092684F1B56626E2 | — | — | — | — | no copyable trades |
-| primm | 1226 | 549 | -7.5% | -2.29 | no |
-| para-Vision | 368 | 202 | +1.0% | 0.3 | no |
-| Kch-Temp | 175 | 100 | +12.1% | 1.6 | yes |
-| EdZachary | 74 | 50 | +38.1% | 3.36 | yes |
-| ColdBlooded | 354 | 266 | +2.5% | 0.6 | no |
-| KaneAnalytics | 156 | 83 | +3.1% | 0.32 | no |
-| Jsram | 161 | 107 | +14.4% | 2.21 | yes |
-| Kkunn | 642 | 264 | +1.2% | 0.52 | no |
-| Sisyphus- | 191 | 114 | -2.6% | -0.4 | no |
-| PEYZ-BIGGEST-FAN | 395 | 197 | -3.6% | -0.64 | no |
-| theowalcott | 78 | 52 | +29.3% | 2.79 | yes |
-| HVAB | 192 | 84 | -7.1% | -1.86 | no |
-| BreakTheBank | — | — | — | — | no copyable trades |
-| Diabolical-Prize | — | — | — | — | no copyable trades |
-| Talvez10 | 402 | 195 | -5.8% | -1.39 | no |
+| primm | 311 | 134 | -6.2% | -0.87 | no |
+| para-Vision | 209 | 105 | -11.7% | -1.72 | no |
+| Kch-Temp | 50 | 31 | +26.4% | 1.69 | yes |
+| EdZachary | 50 | 33 | +33.2% | 2.4 | yes |
+| ColdBlooded | 224 | 162 | -11.0% | -2.53 | no |
+| KaneAnalytics | 93 | 53 | +6.8% | 0.48 | no |
+| Jsram | 49 | 24 | -16.4% | -1.21 | no |
+| Kkunn | 35 | 12 | -30.3% | -1.72 | no |
+| Sisyphus- | 67 | 41 | +1.8% | 0.16 | no |
+| PEYZ-BIGGEST-FAN | 186 | 103 | +6.8% | 1.01 | no |
+| theowalcott | 67 | 46 | +31.2% | 2.85 | yes |
+| HVAB | 1 | 0 | -100.0% | None | no |
+| BreakTheBank | 130 | 72 | +35.5% | 2.91 | yes |
+| Diabolical-Prize | 261 | 133 | +5.8% | 1.07 | no |
+| Talvez10 | 267 | 135 | -2.5% | -0.79 | no |
