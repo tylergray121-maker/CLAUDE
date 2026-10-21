@@ -91,7 +91,7 @@ class CopyTop(Strategy):
                 self.stats["leader_trades"] += 1
                 slug = eng.us_for_trade(t, index)
                 if not slug:
-                    if str(t.get("slug") or "") in eng.by_intl_slug:
+                    if eng.lists(str(t.get("slug") or "")):
                         self.stats["listed_side_unknown"] += 1  # outcome names differ
                     else:
                         self.stats["not_on_polymarket_us"] += 1

@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import logging
 import os
+import re
 import signal
 import time
 from collections import defaultdict
@@ -20,6 +21,10 @@ from .strategies import FairValue, Strategy
 from .strategy import MarketView, Order, StrategyConfig
 
 log = logging.getLogger(__name__)
+
+# Totals are named differently: international "...-2026-10-21-total-2pt5" is
+# US "...-2026-10-21-2pt5".
+_TOTAL = re.compile(r"-total-(?=\d+pt\d+$)")
 
 
 @dataclass
@@ -252,6 +257,10 @@ class Engine:
         """International outcome token -> the US market that prices the same thing."""
         return {p.intl_token: p.us_slug for p in self.all_pairs}
 
+    def lists(self, intl_slug: str) -> bool:
+        """Polymarket US lists this international game/spread/total/prop market."""
+        return intl_slug in self.by_intl_slug or _TOTAL.sub("-", intl_slug) in self.by_intl_slug
+
     def us_for_trade(self, t: dict, index: dict[str, str] | None = None) -> str | None:
         """The US market, or its short side, for an international trade.
 
@@ -263,7 +272,8 @@ class Engine:
         slug = index.get(str(t.get("asset")))
         if slug:
             return slug
-        m = self.by_intl_slug.get(str(t.get("slug") or ""))
+        isl = str(t.get("slug") or "")
+        m = self.by_intl_slug.get(isl) or self.by_intl_slug.get(_TOTAL.sub("-", isl))
         outcome = str(t.get("outcome") or "").strip().lower()
         if m is None or not outcome:
             return None

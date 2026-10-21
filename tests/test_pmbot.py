@@ -582,6 +582,15 @@ class CopyTopTest(unittest.TestCase):
         self.assertEqual(self.copy.stats["missed_mlb"], 1)
         self.assertEqual(self.e.broker.fills, [])
 
+    def test_totals_are_found_under_the_us_name(self):
+        self.v.game = True
+        self.e.refresh_pairs()
+        m = self.e.markets[GAME]
+        self.e.by_intl_slug["nba-mil-was-2099-01-01-229pt5"] = m   # as US names a total
+        t = {"slug": "nba-mil-was-2099-01-01-total-229pt5", "outcome": "Bucks", "asset": "x"}
+        self.assertEqual(self.e.us_for_trade(t), GAME)
+        self.assertTrue(self.e.lists("nba-mil-was-2099-01-01-total-229pt5"))
+
     def test_unmapped_trades_are_counted_not_copied(self):
         self.e.cycle()
         self.trade("BUY", 0.5, asset="not-on-us")

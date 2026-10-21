@@ -69,7 +69,7 @@ def main(argv=None) -> int:
             isl = str(t.get("slug") or "")
             if slug:
                 k = "short side" if slug.endswith(SHORT) else "long side"
-            elif isl in e.by_intl_slug:
+            elif e.lists(isl):
                 k = "listed, outcome names differ"
             else:
                 k = "not on Polymarket US"
