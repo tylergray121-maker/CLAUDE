@@ -145,6 +145,22 @@ class PerformanceTest(unittest.TestCase):
         e.shutdown()
 
 
+class ApplyLeadersTest(unittest.TestCase):
+    def test_keeps_owner_picks_and_refuses_a_thin_selection(self):
+        from pmbot.apply_leaders import merge
+        cur = {"leaders": [{"wallet": "0xAAA", "name": "Tiger105", "source": "owner's pick"},
+                           {"wallet": "0xBBB", "name": "old"}]}
+        sel = {"chosen": "2026-10-23", "method": "m",
+               "leaders": [{"wallet": f"0x{i}", "name": f"w{i}"} for i in range(12)]
+               + [{"wallet": "0xaaa", "name": "dup"}]}
+        new = merge(cur, sel, 10)
+        ws = [x["wallet"].lower() for x in new["leaders"]]
+        self.assertEqual(ws[0], "0xaaa")                     # owner's pick kept, first
+        self.assertNotIn("0xbbb", ws)                         # dropped
+        self.assertEqual(len(ws), 13)                         # 12 picks + Tiger105, no dup
+        self.assertIsNone(merge(cur, {"leaders": sel["leaders"][:3]}, 10))
+
+
 class ScaledLimitsTest(unittest.TestCase):
     def test_limits_follow_the_account_value(self):
         from pmbot.copy import CopyTop
