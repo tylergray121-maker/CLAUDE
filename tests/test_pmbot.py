@@ -989,6 +989,20 @@ class CopyTopTest(unittest.TestCase):
         self.assertEqual(self.copy.stats["skip_losing_pattern"], 1)
         self.assertEqual(self.e.broker.fills, [])
 
+    def test_one_losing_league_does_not_condemn_its_market_type_and_price_band(self):
+        card = self.copy.card
+        lose = lambda slug, keys: (card.open(slug, keys, 5, 2.5), card.close(slug, 5, 0.0))
+        win = lambda slug, keys: (card.open(slug, keys, 5, 2.5), card.close(slug, 5, 5.0))
+        for i in range(16):                          # tennis: 1 win in 16
+            (win if i == 0 else lose)(f"atp{i}", ["league:atp", "kind:moneyline", "price:30-70c"])
+        for i in range(16):                          # the same kinds of bet elsewhere: fine
+            (win if i % 2 else lose)(f"nba{i}", ["league:nba", "kind:moneyline", "price:30-70c"])
+        self.copy._judge(self.e)
+        self.assertEqual(sorted(self.copy.skipped), ["league:atp"])
+        self.assertEqual(card.summary("kind:moneyline")["settled"], 32)  # shown in full
+        # Without the losing league they are judged on their own merits.
+        self.assertEqual(card.summary_without("kind:moneyline", {"league:atp"})["settled"], 16)
+
     def test_scorecard_survives_a_restart(self):
         from pmbot.copy import CopyTop
         self.e.cycle()

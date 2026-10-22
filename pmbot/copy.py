@@ -357,9 +357,21 @@ class CopyTop(Strategy):
                 eng._log("leader_status", leader=name, wallet=wallet, status=new[0],
                          was=old[0], why=new[1])
             self.status[wallet] = new
-        for key in [k for k in self.card.results if not k.startswith("w:")]:
-            s = self.card.summary(key)
-            if clearly_losing(s, self.min_pattern_n, max_roi=-0.10):
+        # Leagues are judged first, on every copy; the other patterns (market
+        # type, price band, timing) only on copies outside skipped leagues, so
+        # one losing league is not read as losing moneylines and 30-70c bets
+        # everywhere (they are mostly the same bets).
+        keys = [k for k in self.card.results if not k.startswith("w:")]
+        bad_leagues: set[str] = set()
+        for key in sorted(keys, key=lambda k: not k.startswith("league:")):
+            if key.startswith("league:"):
+                s = self.card.summary(key)
+            else:
+                s = self.card.summary_without(key, bad_leagues)
+            losing = clearly_losing(s, self.min_pattern_n, max_roi=-0.10)
+            if losing and key.startswith("league:"):
+                bad_leagues.add(key)
+            if losing:
                 if key not in self.skipped:
                     eng._log("pattern_skipped", pattern=key, pnl=s["pnl"], settled=s["settled"])
                 self.skipped[key] = (f"{_usd(s['pnl'])} on {s['settled']} settled bets, "

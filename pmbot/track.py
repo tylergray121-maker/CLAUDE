@@ -42,6 +42,7 @@ class Scorecard:
         self.lots: dict[str, list[dict]] = {}         # slug -> open lots, oldest first
         self.results: dict[str, list[list[float]]] = {}
         self.copies: Counter = Counter()              # key -> copies opened
+        self.closed: list[list] = []                   # [keys, pnl, cost] per closed lot
 
     def open(self, slug: str, keys: list[str], qty: int, cost: float) -> None:
         self.lots.setdefault(slug, []).append({"keys": list(keys), "qty": qty, "cost": cost})
@@ -64,6 +65,8 @@ class Scorecard:
                 r = self.results.setdefault(k, [])
                 r.append([round(per * take - cost, 4), round(cost, 4)])
                 del r[:-self.keep]
+            self.closed.append([list(lot["keys"]), round(per * take - cost, 4), round(cost, 4)])
+            del self.closed[:-5 * self.keep]
             lot["qty"] -= take
             lot["cost"] -= cost
             left -= take
@@ -71,6 +74,13 @@ class Scorecard:
                 lots.remove(lot)
         if not lots:
             self.lots.pop(slug, None)
+
+    def summary_without(self, key: str, excluded: set[str]) -> dict:
+        """Like ``summary`` over the closed lots with ``key`` that carry none of
+        the ``excluded`` keys: a pattern judged on its own, not on bets that a
+        worse pattern (e.g. a losing league) already explains."""
+        return summarize([[p, c] for keys, p, c in self.closed
+                          if key in keys and not excluded.intersection(keys)])
 
     def summary(self, key: str) -> dict:
         return {**summarize(self.results.get(key, [])), "copies": self.copies[key],
@@ -84,9 +94,11 @@ class Scorecard:
         return [k for l in self.lots.get(slug, []) for k in l["keys"]]
 
     def to_state(self) -> dict:
-        return {"lots": self.lots, "results": self.results, "copies": dict(self.copies)}
+        return {"lots": self.lots, "results": self.results, "copies": dict(self.copies),
+                "closed": self.closed}
 
     def load(self, d: dict) -> None:
         self.lots = d.get("lots", {})
         self.results = d.get("results", {})
         self.copies = Counter(d.get("copies", {}))
+        self.closed = d.get("closed", [])
