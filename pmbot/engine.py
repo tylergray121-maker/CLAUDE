@@ -33,6 +33,17 @@ _ALIASES = {"nba": {"gsw": "gs", "nop": "no", "phx": "pho", "sas": "sa", "nyk": 
 _GAME_SLUG = re.compile(r"^([a-z0-9]+)-([a-z0-9]+)-([a-z0-9]+)-(\d{4}-\d{2}-\d{2}.*)$")
 
 
+TENNIS = ("atp", "wta", "itf", "challenger")
+
+
+def _person(name: str) -> str:
+    return " ".join(re.findall(r"[a-z]+", name.lower()))
+
+
+def players_key(league: str, a: str, b: str) -> tuple:
+    return (league, frozenset({_person(a), _person(b)}))
+
+
 def us_spellings(intl_slug: str) -> list[str]:
     """The international slug as US may name it: totals without '-total-',
     and team codes US spells differently."""
@@ -92,6 +103,7 @@ class Engine:
         self.all_pairs: list[mapping.Pair] = []
         self.markets: dict[str, data.USMarket] = {}
         self.by_intl_slug: dict[str, data.USMarket] = {}  # international slug -> US game market
+        self.by_players: dict[tuple, list] = {}   # tennis: (league, {players}) -> US match markets
         self.stats = ScanStats()
         self.marks: dict[str, float] = {}
         self.verified: set[str] = set()   # pairs whose live prices agree
@@ -165,13 +177,22 @@ class Engine:
             with open(os.path.join(self.ecfg.out_dir, "pairs_rejected.json"), "w") as f:
                 json.dump(rejected, f, indent=1)
             log.info("pairs: %d kept, %d rejected on price", len(pairs), len(rejected))
+        # Tennis: US match slugs use other player codes (and sometimes another
+        # date) than the international site, so index matches by player names.
+        by_players: dict[tuple, list] = defaultdict(list)
+        for m in us:
+            lg = m.slug.split("-")[1] if m.slug.count("-") > 2 else ""
+            if lg in TENNIS and m.market_type == "moneyline" and m.long_label and m.short_label:
+                by_players[players_key(lg, m.long_label, m.short_label)].append(m)
         return {"markets": markets, "by_intl_slug": by_intl_slug, "pairs": pairs,
+                "by_players": dict(by_players),
                 "map_stats": {"us_markets": len(us), "pairs": len(pairs),
                               "tracked": min(len(pairs), self.ecfg.max_markets),
                               "intl_options": len(intl) if not self.ecfg.pairs_file else None}}
 
     def _apply_pairs(self, r: dict) -> None:
         self.markets, self.by_intl_slug = r["markets"], r["by_intl_slug"]
+        self.by_players = r.get("by_players", {})
         self.all_pairs = r["pairs"]
         self.pairs = r["pairs"][:self.ecfg.max_markets]
         for p in r["pairs"]:
@@ -344,6 +365,24 @@ class Engine:
         """International outcome token -> the US market that prices the same thing."""
         return {p.intl_token: p.us_slug for p in self.all_pairs}
 
+    def _tennis_match(self, intl_slug: str, title: str, ts) -> "data.USMarket | None":
+        """The US match market for an international tennis match-winner market,
+        found by the two players' names (title 'A vs. B') and the nearest start."""
+        lg = intl_slug.split("-")[0]
+        if lg not in TENNIS or not re.match(r"^[a-z0-9]+-[a-z0-9]+-[a-z0-9]+-\d{4}-\d{2}-\d{2}$",
+                                            intl_slug):
+            return None   # only the match winner, not sets, totals or spreads
+        names = re.split(r"\s+vs\.?\s+", title.split(":")[-1].strip(), flags=re.I)
+        if len(names) != 2:
+            return None
+        cands = self.by_players.get(players_key(lg, *names), [])
+        try:
+            t0 = float(ts)
+        except (TypeError, ValueError):
+            t0 = time.time()
+        cands = [m for m in cands if m.game_start and abs(m.game_start - t0) < 36 * 3600]
+        return min(cands, key=lambda m: abs(m.game_start - t0)) if cands else None
+
     def lists(self, intl_slug: str) -> bool:
         """Polymarket US lists this international game/spread/total/prop market."""
         return any(s in self.by_intl_slug for s in us_spellings(intl_slug))
@@ -361,6 +400,8 @@ class Engine:
             return slug
         isl = str(t.get("slug") or "")
         m = next((self.by_intl_slug[s] for s in us_spellings(isl) if s in self.by_intl_slug), None)
+        if m is None:
+            m = self._tennis_match(isl, str(t.get("title") or ""), t.get("timestamp"))
         outcome = str(t.get("outcome") or "").strip().lower()
         if m is None or not outcome:
             return None

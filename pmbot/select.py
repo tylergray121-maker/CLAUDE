@@ -381,8 +381,13 @@ def main(argv=None) -> int:
     open_now = {us_name(intl_slug(m.slug)) for m in us}
     prefix = us_prefixes(us)
     slugs = sorted({t.slug for ts in hist.values() for t in ts})
-    todo = [x for x in slugs if us_name(x) not in open_now]
-    found = {x for x in slugs if us_name(x) in open_now}
+    # Tennis: US names matches with other player codes, so slugs never match;
+    # the live bot finds them by player names. US lists ATP/WTA/ITF match
+    # winners broadly, so count those as copyable (an approximation).
+    tennis = {x for x in slugs if league(x) in ("atp", "wta", "itf", "challenger")
+              and kind_of(x) == "moneyline"}
+    todo = [x for x in slugs if us_name(x) not in open_now and x not in tennis]
+    found = {x for x in slugs if us_name(x) in open_now} | tennis
     with ThreadPoolExecutor(a.workers) as pool:
         for x, ok in zip(todo, pool.map(lambda x: listed_on_us(
                 client, x, prefix[(league(x), kind_of(x))]), todo)):

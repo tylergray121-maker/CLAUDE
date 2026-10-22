@@ -1004,6 +1004,22 @@ class CopyTopTest(unittest.TestCase):
         self.assertEqual(self.e.us_for_trade(t), GAME + ":short")
         self.assertIsNone(self.e.us_for_trade({**t, "outcome": "Lakers"}))   # wrong side: no bet
 
+    def test_tennis_matches_are_found_by_player_names(self):
+        from pmbot.data import USMarket
+        from pmbot.engine import players_key
+        start = time.time() + 3600
+        m = USMarket("aec-wta-annli-zeyson-2026-10-20", "Who will win", "", "", "moneyline",
+                     "sports", start, start + 86400, 0.01, "MARKET_STATUS_OPEN", 0.4, 0.41,
+                     "Ann Li", "Zeynep Sonmez")
+        self.e.markets[m.slug] = m
+        self.e.by_players = {players_key("wta", "Ann Li", "Zeynep Sonmez"): [m]}
+        t = {"slug": "wta-annli-sonmez-2026-10-21", "title": "WTA Guangzhou: Ann Li vs. Zeynep Sonmez",
+             "outcome": "Zeynep Sonmez", "asset": "x", "timestamp": time.time()}
+        self.assertEqual(self.e.us_for_trade(t), m.slug + ":short")
+        self.assertEqual(self.e.us_for_trade({**t, "outcome": "Ann Li"}), m.slug)
+        self.assertIsNone(self.e.us_for_trade({**t, "slug": "wta-annli-sonmez-2026-10-21-sw1"}))
+        self.assertIsNone(self.e.us_for_trade({**t, "timestamp": time.time() - 5 * 86400}))
+
     def test_stale_trades_are_not_copied_and_a_restart_resumes_the_history(self):
         from pmbot.copy import CopyTop
         self.e.cycle()
