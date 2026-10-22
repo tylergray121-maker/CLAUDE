@@ -16,6 +16,7 @@ import argparse
 import logging
 import os
 import sys
+import time
 
 from .engine import Engine, EngineConfig
 from .risk import RiskConfig, RiskManager
@@ -119,7 +120,15 @@ def main(argv=None) -> int:
         from .broker import LiveBroker
         broker = LiveBroker(key, secret, os.path.join(ecfg.out_dir, "live_orders.json"))
         os.makedirs(ecfg.out_dir, exist_ok=True)
-        broker.sync()
+        for attempt in range(1, 41):  # ride out an exchange outage, up to ~30 min
+            try:
+                broker.sync()
+                break
+            except Exception as e:
+                if attempt == 40:
+                    raise
+                print(f"account sync failed ({type(e).__name__}); retrying in 45s", file=sys.stderr)
+                time.sleep(45)
         broker.cancel_all()  # start clean: drop this bot's own leftovers
     from .strategies import build
     engine = Engine(ecfg, scfg, RiskManager(rcfg), broker,

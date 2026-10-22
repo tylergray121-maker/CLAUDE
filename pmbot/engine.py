@@ -250,10 +250,12 @@ class Engine:
                 except Exception:
                     # A rejected order or a network blip must not end the run:
                     # every cycle starts from a fresh sync, so just go again.
+                    # An exchange outage can last minutes: back off (up to a
+                    # minute between tries) instead of ending the run.
                     failures += 1
                     log.exception("cycle failed (%d in a row)", failures)
-                    if failures >= 30:
-                        raise
+                    if failures >= 10:
+                        time.sleep(min(60.0, 5.0 * (failures - 9)))
                 if self.risk.halted:
                     log.error("HALTED: %s", self.risk.halted)
                     break
