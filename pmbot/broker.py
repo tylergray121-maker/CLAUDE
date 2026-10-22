@@ -243,6 +243,10 @@ class LiveBroker:
         self.fees_paid = self.rebates = self.realized = 0.0
         self.vanished: dict[str, Position] = {}
         self._held: dict[str, Position] | None = None  # positions as of the last sync
+        # The bot's own contracts in each market, apart from any the owner
+        # trades by hand there, so a sale or payout is split between them.
+        self.own: dict[str, Position] = {}
+        self._traded: dict[str, float] = {}            # slug -> time of the bot's last fill
         self._logged_balance = False
         self.account_cash = 0.0                        # the account's own cash, excl. bonus
         self.balance_info: dict[str, float] = {}       # raw balance fields, for the snapshot
@@ -288,9 +292,21 @@ class LiveBroker:
             if resp.get("eof", True) or not cursor:
                 break
         if self._held is not None:
+            now = time.time()
             for slug, p in self._held.items():
-                if slug not in self.positions:
+                if slug in self.positions:
+                    continue
+                if now - self._traded.get(slug, 0.0) < self.LAG_S:
+                    # Just bought: the positions list can lag the fill.
+                    self.positions[slug] = Position(p.qty, p.cost)
+                else:
                     self.vanished[slug] = p
+        for slug, o in list(self.own.items()):   # sold by hand below the bot's count
+            q = self.positions.get(slug, self.vanished.get(slug, Position())).qty
+            if q < o.qty:
+                o.cost, o.qty = (o.cost * q / o.qty if o.qty else 0.0), q
+            if o.qty <= 0:
+                self.own.pop(slug)
         self._remember()
         self.open_orders = {}
         live_ids = set()
@@ -314,6 +330,21 @@ class LiveBroker:
         # subtracts them again, so add them back once.
         self.cash += sum(o.price * o.qty for o in self.open_orders.values() if o.side == "BUY")
 
+    LAG_S = 90.0
+
+    def _split(self, slug: str, p: Position) -> list[tuple[int, float, bool]]:
+        """(qty, cost, the bot's) parts of a closed position: the bot's own
+        contracts, then any the owner holds there by hand."""
+        o = self.own.pop(slug, None)
+        if o is None:          # no record (state from before tracking): all the bot's
+            return [(p.qty, p.cost, True)]
+        mine = min(o.qty, p.qty)
+        cost = o.cost * mine / o.qty if o.qty else 0.0
+        parts = [(mine, cost, True)] if mine else []
+        if p.qty > mine:
+            parts.append((p.qty - mine, max(p.cost - cost, 0.0), False))
+        return parts
+
     def _remember(self) -> None:
         self._held = {k: Position(v.qty, v.cost) for k, v in self.positions.items()}
 
@@ -321,7 +352,8 @@ class LiveBroker:
         return {"fills": [asdict(f) for f in self.fills[-keep_fills:]],
                 "fees_paid": self.fees_paid, "realized": self.realized,
                 "held": {k: asdict(v) for k, v in (self._held or {}).items()},
-                "vanished": {k: asdict(v) for k, v in self.vanished.items()}}
+                "vanished": {k: asdict(v) for k, v in self.vanished.items()},
+                "own": {k: asdict(v) for k, v in self.own.items()}}
 
     def load_state(self, d: dict) -> None:
         self.fills = [Fill(**f) for f in d.get("fills", [])]
@@ -329,6 +361,23 @@ class LiveBroker:
         self.realized = float(d.get("realized", 0))
         self._held = {k: Position(**v) for k, v in d.get("held", {}).items()}
         self.vanished = {k: Position(**v) for k, v in d.get("vanished", {}).items()}
+        if "own" in d:
+            self.own = {k: Position(**v) for k, v in d["own"].items()}
+        else:   # state from before tracking: rebuild from the bot's own fills
+            self.own = {}
+            for f in self.fills:
+                if not f.tag:
+                    continue
+                o = self.own.setdefault(f.slug, Position())
+                if f.side == "BUY":
+                    o.qty += f.qty
+                    o.cost += f.price * f.qty + f.fee
+                else:
+                    take = min(f.qty, o.qty)
+                    o.cost -= o.cost / o.qty * take if o.qty else 0.0
+                    o.qty -= take
+            self.own = {k: o for k, o in self.own.items()
+                        if o.qty > 0 and k in (self._held or {}) | self.vanished}
 
     def place(self, slug: str, order: Order, quote: Quote | None = None) -> str | None:
         params = order_params(slug, order)
@@ -399,9 +448,13 @@ class LiveBroker:
         avg = notional / qty
         p = self.positions.setdefault(slug, Position())
         pnl = 0.0
+        self._traded[slug] = time.time()
+        o = self.own.setdefault(slug, Position())
         if order.side == "BUY":
             p.qty += n
             p.cost += avg * n + fee
+            o.qty += n
+            o.cost += avg * n + fee
         else:
             sold = min(n, p.qty)
             basis = p.cost / p.qty * sold if p.qty else 0.0
@@ -409,6 +462,11 @@ class LiveBroker:
             p.qty -= sold
             p.cost -= basis
             self.realized += pnl
+            take = min(n, o.qty)
+            o.cost -= o.cost / o.qty * take if o.qty else 0.0
+            o.qty -= take
+        if o.qty <= 0:
+            self.own.pop(slug, None)
         if p.qty <= 0:
             self.positions.pop(slug, None)
         self._remember()  # the bot's own sale is not a vanished position
@@ -422,19 +480,21 @@ class LiveBroker:
         and never later mistaken for a settlement."""
         p = self.vanished.pop(slug, None)
         if p and p.qty:
-            pnl = p.qty * price - p.cost
-            self.realized += pnl
-            self.fills.append(Fill(time.time(), slug, "SELL", round(price, 4), p.qty, False, 0.0,
-                                   tag, round(pnl, 4)))
+            for qty, cost, bots in self._split(slug, p):
+                pnl = qty * price - cost
+                self.realized += pnl
+                self.fills.append(Fill(time.time(), slug, "SELL", round(price, 4), qty, False,
+                                       0.0, tag if bots else "", round(pnl, 4)))
 
     def settle(self, slug: str, value: float, tag: str = "") -> None:
         """Record the payout of a position the exchange settled (``vanished``)."""
         p = self.vanished.pop(slug, None)
         if p and p.qty:
-            pnl = p.qty * value - p.cost
-            self.realized += pnl
-            self.fills.append(Fill(time.time(), slug, "SETTLE", value, p.qty, False, 0.0,
-                                   tag, round(pnl, 4)))
+            for qty, cost, bots in self._split(slug, p):
+                pnl = qty * value - cost
+                self.realized += pnl
+                self.fills.append(Fill(time.time(), slug, "SETTLE", value, qty, False, 0.0,
+                                       tag if bots else "", round(pnl, 4)))
 
     def equity(self, marks: dict[str, float]) -> float:
         return self.account_cash + sum(p.qty * marks.get(s, p.cost / p.qty if p.qty else 0)

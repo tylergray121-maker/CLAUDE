@@ -1308,6 +1308,33 @@ class LiveBrokerTest(unittest.TestCase):
         again.load_state(st)
         self.assertEqual(len(again.fills), len(self.b.fills))
 
+    def test_a_hand_sale_is_split_and_a_lagging_positions_list_is_not_a_sale(self):
+        self.pos = {}
+        self.b.sync()
+        self.execs = [{"lastShares": "2", "lastPx": {"value": "0.44", "currency": "USD"},
+                       "commissionNotionalCollected": {"value": "0.02", "currency": "USD"}}]
+        self.b.place("lyon", Order("BUY", 0.45, 2, False, tag="copytop"))
+        self.b.sync()                                  # the list hasn't caught up yet
+        self.assertEqual((self.b.positions["lyon"].qty, self.b.vanished), (2, {}))
+        # The owner buys 43 more by hand, then sells all 45.
+        self.pos = {"lyon": {"netPosition": "45", "cost": {"value": "17.95", "currency": "USD"}}}
+        self.b.sync()
+        self.b._traded["lyon"] -= 600
+        self.pos = {}
+        self.b.sync()
+        self.b.sold_outside("lyon", 0.395, "copytop")
+        sells = [(f.tag, f.qty, round(f.pnl, 2)) for f in self.b.fills if f.side == "SELL"]
+        self.assertEqual(sells, [("copytop", 2, round(2 * 0.395 - 0.90, 2)),
+                                 ("", 43, round(43 * 0.395 - (17.95 - 0.90), 2))])
+        self.assertEqual(self.b.own, {})
+        # Tracking survives a restart.
+        self.b.place("lyon", Order("BUY", 0.45, 2, False, tag="copytop"))
+        from pmbot.broker import LiveBroker
+        again = LiveBroker("key-id", self.b.client.secret_key, os.path.join(self.dir, "o.json"),
+                           client=self.b.client)
+        again.load_state(self.b.to_state())
+        self.assertEqual(again.own["lyon"].qty, 2)
+
     def test_a_rejected_order_books_nothing_and_does_not_raise(self):
         self.reject = True
         self.assertIsNone(self.b.place("brewers", Order("BUY", 0.6, 3, False, tag="copytop")))
@@ -1330,12 +1357,17 @@ class LiveBrokerTest(unittest.TestCase):
         self.b.place("brewers", Order("BUY", 0.61, 3, False, tag="copytop"))
         e.owner["brewers"] = "copytop"
         copy.on_fills(e, self.b.fills[n:])
+        self.b._traded["brewers"] -= 600                # bought a while ago
         self.pos = {}                                  # the exchange settled it
         v.state = "MARKET_STATE_CLOSED"
         v.settlement = 1.0
         e.cycle()
         settle = [f for f in self.b.fills if f.side == "SETTLE"]
-        self.assertEqual([(f.slug, f.tag) for f in settle], [("brewers", "copytop")])
+        # The bot's 3 are copytop's; the 8 already held by hand are the owner's.
+        self.assertEqual([(f.slug, f.tag, f.qty) for f in settle],
+                         [("brewers", "copytop", 3), ("brewers", "", 8)])
+        self.assertAlmostEqual(settle[0].pnl, 3 - (3 * 0.6 + 0.05), places=4)
+        self.assertAlmostEqual(settle[1].pnl, 8 - 4.80, places=4)
         self.assertEqual(copy.card.summary("w:0xabc")["settled"], 1)
         e.shutdown()
 
