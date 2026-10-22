@@ -494,7 +494,8 @@ class Engine:
             "start_cash": round(self.start_cash, 2), "equity": round(equity, 2),
             "pnl": round(equity - self.start_cash, 2),
             "pnl_pct": round((equity / self.start_cash - 1), 5) if self.start_cash else 0,
-            "cash": round(b.cash, 2), "positions_value": round(held_value, 2),
+            "cash": round(getattr(b, "account_cash", b.cash), 2),
+            "spendable": round(b.cash, 2), "positions_value": round(held_value, 2),
             "positions_cost": round(at_cost, 2), "unrealized": round(held_value - at_cost, 2),
             "realized": round(b.realized, 2), "fees_paid": round(b.fees_paid, 2),
             "rebates": round(b.rebates, 2), "fills": len(b.fills),
@@ -506,7 +507,8 @@ class Engine:
             "pairs": self.map_stats.get("pairs", 0), "tracked": len(self.pairs),
             "observations": s.observations, "gap_median_c": pct(.5), "gap_p90_c": pct(.9),
             "buy_opps": s.buy_opps, "sell_opps": s.sell_opps,
-            **self._preview_summary(), **self._strategy_stats()}]
+            **self._preview_summary(), **self._strategy_stats(),
+            **{f"balance_{k}": v for k, v in getattr(b, "balance_info", {}).items()}}]
         # Equity: every point for the last 2 days, hourly before that.
         cut = time.time() - 2 * 86400
         last_hour = None

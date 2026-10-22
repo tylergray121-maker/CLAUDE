@@ -244,6 +244,8 @@ class LiveBroker:
         self.vanished: dict[str, Position] = {}
         self._held: dict[str, Position] | None = None  # positions as of the last sync
         self._logged_balance = False
+        self.account_cash = 0.0                        # the account's own cash, excl. bonus
+        self.balance_info: dict[str, float] = {}       # raw balance fields, for the snapshot
         # Only orders this bot created are ever managed or cancelled; manual
         # orders on the account are left alone. Persisted across restarts.
         self.state_file = state_file
@@ -260,7 +262,12 @@ class LiveBroker:
     def sync(self) -> None:
         bal = [b for b in self.client.account.balances().get("balances", [])
                if b.get("currency", "USD") == "USD"]
+        # Spend what the exchange says we can (it enforces this anyway; the bot
+        # only takes, so it has no resting bids to double-count). Value the
+        # account without promotional bonus credit, as the app does.
         self.cash = sum(spendable(b) for b in bal)
+        self.account_cash = sum(own_cash(b) for b in bal)
+        self.balance_info = {k: round(sum(_amount(b.get(k)) for b in bal), 2) for k in BALANCE_FIELDS}
         if not self._logged_balance:
             self._logged_balance = True
             for b in bal:  # amounts only, once, to check what the account reports
@@ -303,6 +310,9 @@ class LiveBroker:
         if self.mine - live_ids:  # filled or cancelled since last sync
             self.mine &= live_ids
             self._save()
+        # buyingPower already has our open bids taken out and the risk manager
+        # subtracts them again, so add them back once.
+        self.cash += sum(o.price * o.qty for o in self.open_orders.values() if o.side == "BUY")
 
     def _remember(self) -> None:
         self._held = {k: Position(v.qty, v.cost) for k, v in self.positions.items()}
@@ -409,8 +419,8 @@ class LiveBroker:
                                    tag, round(pnl, 4)))
 
     def equity(self, marks: dict[str, float]) -> float:
-        return self.cash + sum(p.qty * marks.get(s, p.cost / p.qty if p.qty else 0)
-                               for s, p in self.positions.items())
+        return self.account_cash + sum(p.qty * marks.get(s, p.cost / p.qty if p.qty else 0)
+                                       for s, p in self.positions.items())
 
 
 def order_params(slug: str, order: Order) -> dict:
@@ -490,13 +500,25 @@ class PreviewChecker:
         return True, "accepted"
 
 
+BALANCE_FIELDS = ("currentBalance", "buyingPower", "displayedCash", "displayedBonus",
+                  "bonusHold", "bonusReservation", "displayedAvailableSoon", "pendingCredit",
+                  "unsettledFunds", "openOrders", "availableToWithdraw", "assetNotional")
+_BONUS = ("displayedBonus", "bonusHold", "bonusReservation")
+
+
 def spendable(b: dict) -> float:
-    """Real cash in a balance row: the account's own money, not promotional
-    bonus credit (``currentBalance`` includes it; the app's balance doesn't).
-    Open bids are not subtracted here; the risk manager does that itself."""
-    if b.get("displayedCash") is not None:
-        return _amount(b.get("displayedCash"))
-    bonus = sum(_amount(b.get(k)) for k in ("displayedBonus", "bonusHold", "bonusReservation"))
+    """What the exchange will let the bot spend now: buyingPower (net of open
+    orders; the bot only places immediate-or-cancel takes, so there are none
+    to double-count). Falls back to currentBalance less bonus credit."""
+    if b.get("buyingPower") is not None:
+        return max(0.0, _amount(b.get("buyingPower")))
+    return own_cash(b)
+
+
+def own_cash(b: dict) -> float:
+    """The account's own cash, as the app shows it: currentBalance without
+    promotional bonus credit."""
+    bonus = sum(_amount(b.get(k)) for k in _BONUS)
     return max(0.0, _amount(b.get("currentBalance")) - bonus)
 
 

@@ -959,7 +959,9 @@ class LiveBrokerTest(unittest.TestCase):
 
     def test_sync_reads_cash_positions_and_ignores_manual_orders(self):
         self.b.sync()
-        self.assertEqual(self.b.cash, 200.0)          # currentBalance, not buyingPower
+        self.assertEqual(self.b.cash, 150.0)          # buyingPower: what we can spend now
+        self.assertEqual(self.b.account_cash, 200.0)  # the account's own cash
+        self.assertEqual(self.b.balance_info["buyingPower"], 150.0)
         self.assertEqual(self.b.positions["brewers"].qty, 8)
         self.assertEqual(self.b.open_orders, {})      # manual-1 isn't ours
         method, path, _, headers = self.requests[0]
@@ -1000,11 +1002,13 @@ class LiveBrokerTest(unittest.TestCase):
         self.assertIn("x-pm-signature", headers)
         self.assertEqual((ok, c.stats["accepted"]), (True, 1))
 
-    def test_promotional_bonus_is_not_spendable_cash(self):
-        from pmbot.broker import spendable
+    def test_spend_buying_power_and_value_the_account_without_bonus(self):
+        from pmbot.broker import own_cash, spendable
+        row = {"currentBalance": 41.0, "buyingPower": 33.5, "displayedCash": 0.0,
+               "displayedBonus": 10.0}
+        self.assertEqual(spendable(row), 33.5)        # what the exchange lets us spend
+        self.assertEqual(own_cash(row), 31.0)         # what the account owns, as the app shows
         self.assertEqual(spendable({"currentBalance": 41.0, "displayedBonus": 10.0}), 31.0)
-        self.assertEqual(spendable({"currentBalance": 41.0, "displayedCash": 24.5,
-                                    "displayedBonus": 10.0}), 24.5)
         self.assertEqual(spendable({"currentBalance": 200.0}), 200.0)
 
     def test_a_short_side_take_is_booked_from_its_executions(self):
