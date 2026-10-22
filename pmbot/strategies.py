@@ -74,9 +74,16 @@ REGISTRY = {"fairvalue": FairValue, "sportsgameday": SportsGameDay}
 def build(names: str, cfg: StrategyConfig, leaders_file: str = "", **copy_opts) -> list[Strategy]:
     out = []
     for n in [x.strip() for x in names.split(",") if x.strip()]:
+        if n == "evsniper":
+            import os
+            from .ev import EVSniper
+            out.append(EVSniper(cfg, os.environ.get("ODDS_API_KEY", ""),
+                                **{k[3:]: v for k, v in copy_opts.items() if k.startswith("ev_")}))
+            continue
         if n == "copytop":
             from .copy import CopyTop, load_leaders
-            out.append(CopyTop(cfg, load_leaders(leaders_file), **copy_opts))
+            out.append(CopyTop(cfg, load_leaders(leaders_file),
+                               **{k: v for k, v in copy_opts.items() if not k.startswith("ev_")}))
             continue
         if n not in REGISTRY:
             raise SystemExit(f"unknown strategy {n!r}; choose from "

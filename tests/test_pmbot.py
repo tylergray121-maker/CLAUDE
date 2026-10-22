@@ -43,6 +43,81 @@ class BackgroundRefreshTest(unittest.TestCase):
         e.shutdown()
 
 
+class EVSniperTest(unittest.TestCase):
+    def setUp(self):
+        from pmbot.ev import EVSniper
+        self.d = tempfile.mkdtemp()
+        self.calls = []
+        self.odds = {"Milwaukee Bucks": 2.2, "Washington Wizards": 1.75}
+
+        def fetch(sport):
+            self.calls.append(sport)
+            start = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(self.start))
+            return [{"commence_time": start, "home_team": "Washington Wizards",
+                     "away_team": "Milwaukee Bucks", "bookmakers": [{"key": "pinnacle", "markets": [
+                         {"key": "h2h", "outcomes": [{"name": n, "price": p}
+                                                     for n, p in self.odds.items()]}]}]}]
+        self.ev = EVSniper(StrategyConfig(order_usd=10), "test-key", fetch=fetch)
+        self.e = Engine(EngineConfig(mode="paper", out_dir=self.d, minutes=0), StrategyConfig(),
+                        RiskManager(RiskConfig(kill_file=os.path.join(self.d, "STOP"))),
+                        strategies=[self.ev])
+        self.v = self.e.client = FakeVenues()
+        self.v.game = True
+        self.e.refresh_pairs()
+        self.start = time.time() + 3 * 3600
+        self.e.markets[GAME].game_start = self.start
+        self.e.markets[GAME].slug = GAME
+
+    def tearDown(self):
+        self.e.shutdown()
+
+    def test_devig_and_team_matching(self):
+        from pmbot.ev import devig, match_events
+        self.assertEqual([round(x, 3) for x in devig([2.2, 1.75])], [0.443, 0.557])
+        fair = match_events(self.ev.fetch("basketball_nba"), [self.e.markets[GAME]])
+        self.assertAlmostEqual(fair[GAME], 0.443, places=3)            # Bucks: the long side
+        self.assertAlmostEqual(fair[GAME + ":short"], 0.557, places=3)  # Wizards: the short side
+
+    def test_buys_only_when_the_edge_beats_fee_and_margin(self):
+        self.e.cycle()                 # Bucks ask 0.37 vs fair 0.443: +5.7c after the fee
+        f = self.e.broker.fills[-1]
+        self.assertEqual((f.slug, f.side, f.price, f.tag), (GAME, "BUY", 0.37, "evsniper"))
+        self.assertEqual(self.calls, ["basketball_nba"])
+        self.e.cycle()                 # no second buy of the same market within the hour
+        self.assertEqual(sum(1 for f in self.e.broker.fills if f.side == "BUY"), 1)
+
+    def test_no_edge_no_bet_and_never_in_play(self):
+        self.odds = {"Milwaukee Bucks": 2.5, "Washington Wizards": 1.6}   # fair 0.39: too thin
+        self.e.cycle()
+        self.assertEqual(self.e.broker.fills, [])
+        self.odds = {"Milwaukee Bucks": 2.2, "Washington Wizards": 1.75}
+        self.ev.next_poll.clear()
+        self.e.markets[GAME].game_start = time.time() + 300   # about to start
+        self.e.cycle()
+        self.assertEqual(self.e.broker.fills, [])
+
+    def test_requests_are_spaced_to_fit_the_monthly_budget(self):
+        now = time.time()
+        gap = self.ev._interval(4, now)
+        days_left = 31 - time.gmtime(now).tm_mday + 1
+        self.assertGreaterEqual(gap, 86400 * 4 / (450 / days_left) - 1)
+        self.ev.used[time.strftime("%Y-%m", time.gmtime(now))] = 450
+        self.assertEqual(self.ev._interval(4, now), float("inf"))
+
+    def test_the_key_is_never_logged(self):
+        from pmbot.ev import EVSniper
+        ev = EVSniper(StrategyConfig(), "SECRET-KEY-123")
+        with self.assertLogs("pmbot.ev", level="WARNING") as logs:
+            import urllib.request
+            orig = urllib.request.urlopen
+            urllib.request.urlopen = lambda *a, **k: (_ for _ in ()).throw(OSError("boom"))
+            try:
+                self.assertIsNone(ev._fetch("basketball_nba"))
+            finally:
+                urllib.request.urlopen = orig
+        self.assertNotIn("SECRET-KEY-123", "\n".join(logs.output))
+
+
 class ScorecardTest(unittest.TestCase):
     def test_lots_close_oldest_first_and_credit_every_key(self):
         from pmbot.track import Scorecard

@@ -42,7 +42,7 @@ def parse_args(argv=None):
     g.add_argument("--equity-seconds", type=float, default=e.equity_seconds)
     g = p.add_argument_group("strategy")
     g.add_argument("--strategies", default="sportsgameday,fairvalue",
-                   help="comma list, in priority order: copytop, sportsgameday, fairvalue")
+                   help="comma list, in priority order: copytop, evsniper, sportsgameday, fairvalue")
     g.add_argument("--leaders-file", default=os.path.join(os.path.dirname(__file__), "leaders.json"),
                    help="copytop: wallets to copy")
     g.add_argument("--copy-sells", action="store_true",
@@ -50,6 +50,11 @@ def parse_args(argv=None):
     g.add_argument("--conviction-sizing", action="store_true",
                    help="copytop: stake x0.5 when a leader bets under half their usual size, "
                    "x1.5 at twice it or more")
+    g.add_argument("--ev-min-edge", type=float, default=0.02,
+                   help="evsniper: buy when Pinnacle's fair probability beats the ask by this "
+                   "much after the taker fee (needs ODDS_API_KEY)")
+    g.add_argument("--ev-budget", type=int, default=450,
+                   help="evsniper: odds requests per month (free key: 500)")
     g.add_argument("--maker-edge", type=float, default=s.maker_edge)
     g.add_argument("--taker-edge", type=float, default=s.taker_edge)
     g.add_argument("--order-usd", type=float, default=s.order_usd)
@@ -106,7 +111,8 @@ def main(argv=None) -> int:
     from .strategies import build
     engine = Engine(ecfg, scfg, RiskManager(rcfg), broker,
                     build(a.strategies, scfg, a.leaders_file, copy_sells=a.copy_sells,
-                          conviction_sizing=a.conviction_sizing))
+                          conviction_sizing=a.conviction_sizing,
+                          ev_min_edge=a.ev_min_edge, ev_monthly_budget=a.ev_budget))
     if a.mode == "paper" and not a.no_preview and os.environ.get("PMUS_KEY_ID") \
             and os.environ.get("PMUS_SECRET_KEY"):
         from .broker import PreviewChecker

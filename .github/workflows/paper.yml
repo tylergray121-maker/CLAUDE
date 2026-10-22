@@ -35,6 +35,8 @@ jobs:
       # checked with Polymarket US's order preview (nothing is placed).
       PMUS_KEY_ID: ${{ secrets.PMUS_KEY_ID }}
       PMUS_SECRET_KEY: ${{ secrets.PMUS_SECRET_KEY }}
+      # Optional: The Odds API key for the evsniper strategy (Pinnacle fair odds).
+      ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
