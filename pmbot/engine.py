@@ -580,7 +580,8 @@ class Engine:
             self.risk._day, self.risk._day_start_equity = rk["day"], rk["day_start_equity"]
             # Only a daily-loss halt carries over: a kill-file halt is
             # re-checked against the file itself on every cycle.
-            if not str(rk.get("halted", "")).startswith("kill file"):
+            if not str(rk.get("halted", "")).startswith("kill file") \
+                    and self.risk.cfg.daily_loss_limit > 0:
                 self.risk.halted = rk.get("halted", "")
         for x in self.strategies:
             saved = st.get("strategy_stats", {}).get(x.name)

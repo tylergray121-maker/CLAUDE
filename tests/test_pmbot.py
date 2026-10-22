@@ -90,6 +90,7 @@ class EVSniperTest(unittest.TestCase):
         self.odds = {"Milwaukee Bucks": 2.5, "Washington Wizards": 1.6}   # fair 0.39: too thin
         self.e.cycle()
         self.assertEqual(self.e.broker.fills, [])
+        self.assertIn(GAME, self.ev.summary()["evsniper_closest"])         # the near miss shows
         self.odds = {"Milwaukee Bucks": 2.2, "Washington Wizards": 1.75}
         self.ev.next_poll.clear()
         self.e.markets[GAME].game_start = time.time() + 300   # about to start

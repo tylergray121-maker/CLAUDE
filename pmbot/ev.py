@@ -105,6 +105,7 @@ class EVSniper(Strategy):
         self.used: dict[str, int] = {}                   # "YYYY-MM" -> requests used
         self.stats: Counter = Counter({k: 0 for k in STAT_KEYS})
         self.last_edges: list[dict] = []
+        self.closest: dict[str, dict] = {}     # slug -> its best edge so far, under the bar too
         self.checked: dict[str, float] = {}              # slug -> last time its book was read
         self.check_s = 30
 
@@ -179,6 +180,11 @@ class EVSniper(Strategy):
                 continue
             ask = v.us_ask
             edge = p - ask - taker_fee_per_contract(ask)
+            if edge > self.closest.get(slug, {}).get("edge", -9):
+                self.closest[slug] = {"slug": slug, "fair": round(p, 4), "ask": ask,
+                                      "edge": round(edge, 4), "ts": int(now)}
+                if len(self.closest) > 200:
+                    del self.closest[min(self.closest, key=lambda k: self.closest[k]["edge"])]
             if edge < self.min_edge:
                 continue
             self.stats["edges_seen"] += 1
@@ -217,4 +223,8 @@ class EVSniper(Strategy):
                 "evsniper_fair_markets": len(self.fair),
                 "evsniper_last_edges": "; ".join(
                     f"{e['slug']} fair {e['fair']:.3f} ask {e['ask']:.2f} edge {e['edge']:+.3f}"
-                    for e in self.last_edges[:5])}
+                    for e in self.last_edges[:5]),
+                # How near it gets: the best edges seen, above or below the bar.
+                "evsniper_closest": "; ".join(
+                    f"{e['slug']} fair {e['fair']:.3f} ask {e['ask']:.2f} edge {e['edge']:+.3f}"
+                    for e in sorted(self.closest.values(), key=lambda e: -e["edge"])[:5])}
