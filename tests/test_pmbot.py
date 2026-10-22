@@ -1048,6 +1048,19 @@ class CopyTopTest(unittest.TestCase):
         self.assertEqual(again.stats["leader_trades"], self.copy.stats["leader_trades"] + 1)
         e2._events.close()
 
+    def test_a_kill_file_halt_does_not_outlive_the_file(self):
+        self.e.cycle()
+        open(os.path.join(self.d, "STOP"), "w").close()
+        self.e.cycle()
+        self.assertTrue(self.e.risk.halted.startswith("kill file"))
+        self.e.save_state()
+        os.remove(os.path.join(self.d, "STOP"))       # restarted without the file
+        e2 = Engine(EngineConfig(mode="paper", out_dir=self.d, minutes=0, resume=True),
+                    StrategyConfig(), RiskManager(RiskConfig(kill_file=os.path.join(self.d, "STOP"))),
+                    strategies=[])
+        self.assertEqual(e2.risk.halted, "")
+        e2._events.close()
+
     def test_one_wallet_cannot_take_more_than_its_cap(self):
         self.copy.max_wallet_usd = 15.0
         self.e.cycle()

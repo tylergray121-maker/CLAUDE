@@ -578,7 +578,10 @@ class Engine:
         today = int(time.time() // 86400)
         if rk.get("day") == today:  # a daily-loss halt lasts until the UTC day ends
             self.risk._day, self.risk._day_start_equity = rk["day"], rk["day_start_equity"]
-            self.risk.halted = rk.get("halted", "")
+            # Only a daily-loss halt carries over: a kill-file halt is
+            # re-checked against the file itself on every cycle.
+            if not str(rk.get("halted", "")).startswith("kill file"):
+                self.risk.halted = rk.get("halted", "")
         for x in self.strategies:
             saved = st.get("strategy_stats", {}).get(x.name)
             if saved and getattr(x, "stats", None) is not None:
