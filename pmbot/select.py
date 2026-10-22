@@ -186,6 +186,18 @@ def copies(trades, markets, pairs, rules: Rules, price_at=None) -> list[dict]:
                    "conviction": round(conviction, 3),
                    "delay_move": round(p - t.price, 4) if p is not None else None,
                    "leader_usd": round(notional, 2), "exit": None, "pnl": None}
+            if price_at:
+                # Markouts: how far the price moved our way 30 minutes and 2
+                # hours after our fill (the payout once the market resolved).
+                # Far less noisy than settlement, so better for ranking.
+                for key, h in (("mo30", 1800), ("mo120", 7200)):
+                    at = t.ts + rules.delay_s + h
+                    if m and m.resolved and m.resolve_ts and m.resolve_ts <= at \
+                            and t.asset in m.prices:
+                        lot[key] = round(m.prices[t.asset] - ask, 4)
+                    else:
+                        q = price_at(t.asset, at)
+                        lot[key] = round(q - ask, 4) if q is not None else None
             held[t.asset].append(lot)
             out.append(lot)
         elif rules.copy_sells and held.get(t.asset):
@@ -281,7 +293,30 @@ def _consistency(lots) -> float | None:
     return sum(v > 0 for v in weeks.values()) / len(weeks) if len(weeks) >= 4 else None
 
 
+def _markout(key: str, lower: bool):
+    """Average markout per copy (in cents of price), or its lower bound."""
+    def f(L):
+        v = [x[key] for x in L if x.get(key) is not None]
+        if len(v) < 10:
+            return None
+        mean = sum(v) / len(v)
+        sd = math.sqrt(sum((r - mean) ** 2 for r in v) / (len(v) - 1))
+        return mean - sd / math.sqrt(len(v)) if lower else mean
+    return f
+
+
+def _shrunk(L, n0: int = 60):
+    """Copy return pulled toward zero by n0 pseudo-copies (empirical-Bayes style):
+    a wallet needs many copies before a high return counts."""
+    s = stats(L)
+    return s["mean"] * s["n"] / (s["n"] + n0) if s["n"] else None
+
+
 METHODS = {
+    "markout 30m, average": _markout("mo30", False),
+    "markout 2h, average": _markout("mo120", False),
+    "markout 2h, lower bound": _markout("mo120", True),
+    "copy return, shrunk": _shrunk,
     "copy return, lower bound": lambda L: stats(L)["lcb"],
     "copy return, average": lambda L: stats(L)["mean"],
     "win rate vs the odds": _beats_odds,
@@ -290,14 +325,16 @@ METHODS = {
 }
 
 
-def rank(by_wallet: dict[str, list[dict]], method: str, min_n: int, k: int | None) -> list[str]:
-    """Wallets with ``min_n`` closed copies, best first by ``method``; all of them if k is None."""
+def rank(by_wallet: dict[str, list[dict]], method: str, min_n: int, k: int | None,
+         positive: bool = False) -> list[str]:
+    """Wallets with ``min_n`` closed copies, best first by ``method``; all of them if k is None
+    (only those scoring above zero if ``positive``)."""
     scored = []
     for w, L in by_wallet.items():
         if len(_closed(L)) < min_n:
             continue
         v = METHODS[method](L) if method in METHODS else 0.0
-        if v is not None:
+        if v is not None and (not positive or v > 0):
             scored.append((v, w))
     out = [w for _, w in sorted(scored, reverse=True)]
     return out if k is None else out[:k]
@@ -491,8 +528,9 @@ def main(argv=None) -> int:
                         key=lambda w: -len(_closed(quick[w])))[:a.shortlist])
     log.info("re-pricing %d wallets at a %ds copy delay", len(short), a.delay)
     prices = PriceHistory(client)
-    prices.prefetch({(t.asset, t.ts + d) for w in short for t in hist[w]
-                     for d in {a.delay, 15, 60}}, workers=a.workers)
+    # Fill prices at each tested delay, and the markouts 30m and 2h after.
+    prices.prefetch({(t.asset, t.ts + d + h) for w in short for t in hist[w]
+                     for d in {a.delay, 15, 60} for h in (0, 1800, 7200)}, workers=a.workers)
 
     def run(r: Rules) -> dict[str, list[dict]]:
         return {w: copies(hist[w], markets, pairs, r, prices.price_at) for w in short}
@@ -519,6 +557,8 @@ def main(argv=None) -> int:
                      ("size by conviction (x0.5 / x1 / x1.5)", replace(rules, conviction_sizing=True)),
                      ("skip bets under 0.5x their usual", replace(rules, min_conviction=0.5)),
                      ("pre-game only", replace(rules, pregame_only=True)),
+                     ("skip prices under 30c", replace(rules, min_price=0.30)),
+                     ("favorites only (50c+)", replace(rules, min_price=0.50)),
                      ("15s delay", replace(rules, delay_s=15)),
                      ("60s delay", replace(rules, delay_s=60)),
                      ("allow 2c over their price", replace(rules, max_slip=0.02))):
@@ -553,7 +593,8 @@ def main(argv=None) -> int:
                                                     for x in v if "price" in x)}
         if best:
             method_used = f"{best[0][0]}, top {a.final_size}"
-            ranked = rank(recent, best[0][0], a.min_copies, None)
+            ranked = rank(recent, best[0][0], a.min_copies, None,
+                          positive=best[0][0] != "most active")
         else:
             method_used = "every qualified wallet (no ranking method beat it out of sample)"
             ranked = sorted((w for w in rank(recent, "all", a.min_copies, None)),

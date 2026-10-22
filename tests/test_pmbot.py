@@ -296,6 +296,19 @@ class SelectTest(unittest.TestCase):
         held = copies(trades, self.m, self.pairs, Rules(copy_sells=False))
         self.assertEqual(held[0]["exit"], "settle")
 
+    def test_markouts_and_the_rankings_built_on_them(self):
+        from pmbot.select import METHODS, Rules, copies
+        drift = lambda tok, ts: 0.40 if ts < 1_000_100 else 0.48    # moves our way after the fill
+        lots = copies([self.t(1_000_000, "BUY", 0.40)], self.m, self.pairs,
+                      Rules(delay_s=30), drift)
+        self.assertEqual((lots[0]["mo30"], lots[0]["mo120"]), (0.075, 0.075))  # 0.48 - 0.405 ask
+        L = [{"mo120": 0.05 + 0.01 * (i % 2), "mo30": 0.02, "pnl": 1.0, "cost": 5.0}
+             for i in range(12)]
+        self.assertAlmostEqual(METHODS["markout 2h, average"](L), 0.055, places=4)
+        self.assertLess(METHODS["markout 2h, lower bound"](L), 0.055)
+        self.assertIsNone(METHODS["markout 30m, average"](L[:5]))         # too few
+        self.assertAlmostEqual(METHODS["copy return, shrunk"](L), 0.2 * 12 / 72, places=4)
+
     def test_walk_forward_scores_methods_only_on_unseen_windows(self):
         from pmbot.select import walk_forward
         day, end = 86400, 100 * 86400
