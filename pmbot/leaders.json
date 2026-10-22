@@ -1,6 +1,6 @@
 {
  "chosen": "2026-10-21",
- "rule": "Top-wallet study: sports wallets active in the last week whose sampled positions reconcile with their all-time leaderboard profit, 150+ positions (no whales), edge per dollar above 4%; top 16 by edge.",
+ "rule": "Top-wallet study: sports wallets active in the last week whose sampled positions reconcile with their all-time leaderboard profit, 150+ positions (no whales), edge per dollar above 4%; top 16 by edge. Plus the copytop backtest's run-2 picks (2026-10-21), for more volume.",
  "leaders": [
   {
    "wallet": "0x006cc834cc092684f1b56626e23bedb3835c16ea",
@@ -145,6 +145,90 @@
    "positions": 1601,
    "maker_usd_share": 0.455,
    "style": "high-volume sports operation (taker flow)"
+  },
+  {
+   "wallet": "0x996ac56c9e72b6ca38a30ae9f6e85152d9afe3cc",
+   "name": "BunCaCham",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.5014,
+   "copies": 21
+  },
+  {
+   "wallet": "0x96020c20842a5175e3e0aeef7843d1dbb7bc4d02",
+   "name": "0010001000001100",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.698,
+   "copies": 35
+  },
+  {
+   "wallet": "0x0f6f76ced62a911bccef92f50faaff143854d977",
+   "name": "totoro3miyazaki",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.4126,
+   "copies": 33
+  },
+  {
+   "wallet": "0xb52e8b3afd9f0f0d502a5a76494b42816d67285c",
+   "name": "1l2ihj34li12u34",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.4057,
+   "copies": 28
+  },
+  {
+   "wallet": "0x285faa3e3d1465cf3ff1bff1e1d14891f5b8495f",
+   "name": "yabanci",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.3441,
+   "copies": 23
+  },
+  {
+   "wallet": "0x20d6436849f930584892730c7f96ebb2ac763856",
+   "name": "0x20D6436849F930584892730C7F96eBB2Ac763856-1768642056357",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.3365,
+   "copies": 130
+  },
+  {
+   "wallet": "0x5fdd66ffd0325d4e8d1d86fbec50caa31770a747",
+   "name": "juice-fruit",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.2939,
+   "copies": 30
+  },
+  {
+   "wallet": "0x16bb9951a36fce71e2ef57890b786145e0ba8492",
+   "name": "0x16bb9951a36fce71e2ef57890b786145e0ba8492",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.1661,
+   "copies": 385
+  },
+  {
+   "wallet": "0xe5241830e8876c115d7dc8311ad9f43d85fdd34f",
+   "name": "GamblingOdyssey",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.1939,
+   "copies": 57
+  },
+  {
+   "wallet": "0x0a39b3b29ab3b7dd753aa96fde4ecab3f2dbb0b9",
+   "name": "plonker2026",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.2286,
+   "copies": 34
+  },
+  {
+   "wallet": "0x56d8d5f6585716a1a900282192dd21a4261e1cce",
+   "name": "xxyx0xx",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.2368,
+   "copies": 112
+  },
+  {
+   "wallet": "0x684baa57c338c2549aec0aa3f034f695d72a8409",
+   "name": "monkeymashingkeyboard",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.1074,
+   "copies": 606
   }
  ]
 }
