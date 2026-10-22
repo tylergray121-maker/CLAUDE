@@ -238,6 +238,17 @@ class SelectTest(unittest.TestCase):
         held = copies(trades, self.m, self.pairs, Rules(copy_sells=False))
         self.assertEqual(held[0]["exit"], "settle")
 
+    def test_walk_forward_scores_methods_only_on_unseen_windows(self):
+        from pmbot.select import walk_forward
+        day, end = 86400, 100 * 86400
+        lot = lambda ts, pnl, price=0.5: {"ts": ts, "pnl": pnl, "cost": 5.0, "price": price}
+        good = [lot(end - d * day, 5.0 if d % 3 else -5.0) for d in range(1, 90)]   # 2/3 winners
+        bad = [lot(end - d * day, -5.0 if d % 3 else 5.0) for d in range(1, 90)]
+        wf = walk_forward({"good": good, "bad": bad}, end, 45, 15, 3, 10, sizes=(1,))
+        self.assertGreater(wf[("copy return, average", 1)]["mean"], 0)       # picks "good"
+        self.assertAlmostEqual(wf[("all", None)]["mean"], 0.0, places=2)    # both wallets
+        self.assertEqual(wf[("copy return, average", 1)]["n"], 45)          # 3 folds x 15 days
+
     def test_pick_needs_enough_copies_and_a_positive_bound(self):
         from pmbot.select import pick
         win = {"pnl": 5.0, "cost": 5.0, "ts": 1, "price": 0.5}
@@ -1255,6 +1266,23 @@ class LiveBrokerTest(unittest.TestCase):
         settle = [f for f in self.b.fills if f.side == "SETTLE"]
         self.assertEqual([(f.slug, f.tag) for f in settle], [("brewers", "copytop")])
         self.assertEqual(copy.card.summary("w:0xabc")["settled"], 1)
+        e.shutdown()
+
+    def test_a_position_sold_by_hand_is_booked_as_a_sale_not_a_settlement(self):
+        d = tempfile.mkdtemp()
+        e = Engine(EngineConfig(mode="live", out_dir=d, minutes=0), StrategyConfig(),
+                   RiskManager(RiskConfig(kill_file=os.path.join(d, "STOP"))), self.b, strategies=[])
+        e.client = v = FakeVenues()
+        e.refresh_pairs()
+        self.b.sync()
+        self.pos = {}                                  # sold in the app; market still open
+        e.cycle()
+        f = self.b.fills[-1]
+        self.assertEqual((f.slug, f.side, f.qty), ("brewers", "SELL", 8))
+        self.assertEqual(self.b.vanished, {})
+        v.state, v.settlement = "MARKET_STATE_CLOSED", 1.0
+        e.cycle()                                      # no payout booked later
+        self.assertFalse(any(x.side == "SETTLE" for x in self.b.fills))
         e.shutdown()
 
     def test_take_is_ioc_and_sell_closes_long(self):

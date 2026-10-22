@@ -1,1 +1,1 @@
---days 45 --per-board 250 --max-trades 40000 --shortlist 60 --leaders 16 --delay 30
+--days 90 --per-board 500 --boards VOL,PNL --periods DAY,WEEK,MONTH,ALL --max-trades 40000 --shortlist 150 --min-copies 15 --folds 3 --choose-days 45 --test-days 15 --final-size 40 --leaders 40 --delay 60 --max-rps 20 --workers 12

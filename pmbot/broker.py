@@ -416,6 +416,17 @@ class LiveBroker:
         self.fills.append(Fill(time.time(), slug, order.side, round(avg, 4), n, False,
                                round(fee, 4), order.tag, round(pnl, 4)))
 
+    def sold_outside(self, slug: str, price: float, tag: str = "") -> None:
+        """A position that left the account while its market still trades was
+        sold by hand; book it as a sale at ``price`` (the mid) so it is scored
+        and never later mistaken for a settlement."""
+        p = self.vanished.pop(slug, None)
+        if p and p.qty:
+            pnl = p.qty * price - p.cost
+            self.realized += pnl
+            self.fills.append(Fill(time.time(), slug, "SELL", round(price, 4), p.qty, False, 0.0,
+                                   tag, round(pnl, 4)))
+
     def settle(self, slug: str, value: float, tag: str = "") -> None:
         """Record the payout of a position the exchange settled (``vanished``)."""
         p = self.vanished.pop(slug, None)

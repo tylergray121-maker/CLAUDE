@@ -210,6 +210,66 @@ def pick(by_wallet: dict[str, list[dict]], min_n: int, k: int,
     return [w for _, w in sorted(scored, reverse=True)[:k]]
 
 
+# -- ranking methods, compared walk-forward -----------------------------------------
+def _closed(lots):
+    return [x for x in lots if x.get("pnl") is not None and x.get("cost")]
+
+
+def _beats_odds(lots) -> float | None:
+    """How often their copies won minus the probability the prices implied."""
+    c = _closed(lots)
+    return (sum(x["pnl"] > 0 for x in c) / len(c) - sum(x["price"] for x in c) / len(c)) if c else None
+
+
+def _consistency(lots) -> float | None:
+    """Share of weeks whose copies made money (needs 4+ weeks)."""
+    weeks: dict[int, float] = defaultdict(float)
+    for x in _closed(lots):
+        weeks[x["ts"] // (7 * 86400)] += x["pnl"]
+    return sum(v > 0 for v in weeks.values()) / len(weeks) if len(weeks) >= 4 else None
+
+
+METHODS = {
+    "copy return, lower bound": lambda L: stats(L)["lcb"],
+    "copy return, average": lambda L: stats(L)["mean"],
+    "win rate vs the odds": _beats_odds,
+    "consistency (winning weeks)": _consistency,
+    "most active": lambda L: float(len(_closed(L))),
+}
+
+
+def rank(by_wallet: dict[str, list[dict]], method: str, min_n: int, k: int | None) -> list[str]:
+    """Wallets with ``min_n`` closed copies, best first by ``method``; all of them if k is None."""
+    scored = []
+    for w, L in by_wallet.items():
+        if len(_closed(L)) < min_n:
+            continue
+        v = METHODS[method](L) if method in METHODS else 0.0
+        if v is not None:
+            scored.append((v, w))
+    out = [w for _, w in sorted(scored, reverse=True)]
+    return out if k is None else out[:k]
+
+
+def walk_forward(lots: dict[str, list[dict]], end_ts: int, choose_days: int, test_days: int,
+                 folds: int, min_n: int, sizes=(16, 40)) -> dict[tuple, dict]:
+    """For each fold (choose on choose_days, test on the next test_days; folds
+    step back test_days each), each method and size: pooled test-window stats.
+    Key ("all", None) is every wallet that qualified (no ranking)."""
+    pooled: dict[tuple, list] = defaultdict(list)
+    for f in range(folds):
+        t_end = end_ts - f * test_days * 86400
+        t_start = t_end - test_days * 86400
+        c_start = t_start - choose_days * 86400
+        choose = {w: [x for x in v if c_start <= x["ts"] < t_start] for w, v in lots.items()}
+        test = {w: [x for x in v if t_start <= x["ts"] < t_end] for w, v in lots.items()}
+        for method in ["all", *METHODS]:
+            for k in ([None] if method == "all" else sizes):
+                ws = rank(choose, method, min_n, k)
+                pooled[(method, k)] += [x for w in ws for x in test.get(w, [])]
+    return {key: stats(v) for key, v in pooled.items()}
+
+
 def _segments(lots: list[dict]) -> dict[str, list[dict]]:
     seg: dict[str, list[dict]] = defaultdict(list)
     for x in lots:
@@ -249,6 +309,15 @@ def parse_args(argv=None):
     p.add_argument("--min-copies", type=int, default=15,
                    help="closed copies needed to be chosen (on the choosing window)")
     p.add_argument("--leaders", type=int, default=16)
+    p.add_argument("--folds", type=int, default=0,
+                   help="walk-forward folds comparing ranking methods (0 = off)")
+    p.add_argument("--choose-days", type=int, default=45)
+    p.add_argument("--test-days", type=int, default=15)
+    p.add_argument("--final-size", type=int, default=40,
+                   help="leaders written by the walk-forward pick")
+    p.add_argument("--boards", default="VOL",
+                   help="leaderboard orders for the universe: VOL, or VOL,PNL")
+    p.add_argument("--periods", default="WEEK,MONTH,ALL")
     p.add_argument("--delay", type=int, default=Rules.delay_s)
     p.add_argument("--leaders-file", default=os.path.join(os.path.dirname(__file__),
                                                           "leaders.json"))
@@ -277,7 +346,8 @@ def main(argv=None) -> int:
     log.info("Polymarket US lists %d league/market kinds", len(pairs))
 
     # Candidates.
-    meta = fetch_leaderboard(client, periods=("WEEK", "MONTH", "ALL"), orders=("VOL",),
+    meta = fetch_leaderboard(client, periods=tuple(a.periods.split(",")),
+                             orders=tuple(a.boards.split(",")),
                              categories=("SPORTS",), per_board=a.per_board)
     for w, m in fetch_leaderboard(client, periods=("ALL",), orders=("PNL",),
                                   categories=("SPORTS",), per_board=a.per_board).items():
@@ -343,6 +413,11 @@ def main(argv=None) -> int:
     # on the whole window (they never feed the validation numbers).
     pool_val = set(pick(train_q, a.min_copies, a.shortlist))
     short = pool_val | set(pick(quick, a.min_copies, a.shortlist)) | {w for w in current if w in hist}
+    if a.folds:
+        # Walk-forward compares ranking methods, so the pool must not be chosen
+        # by results at all: take the most active wallets (copyable trades).
+        short = set(sorted(quick, key=lambda w: -len(_closed(quick[w])))[:a.shortlist])
+        short |= {w for w in current if w in hist}
     log.info("re-pricing %d wallets at a %ds copy delay", len(short), a.delay)
     prices = PriceHistory(client)
     prices.prefetch({(t.asset, t.ts + d) for w in short for t in hist[w]
@@ -383,6 +458,38 @@ def main(argv=None) -> int:
 
     # Final pick on the whole window, among wallets copied in the last week.
     final = pick(lots, a.min_copies + 5, a.leaders, active_since=end_ts - 7 * 86400)
+    wf_lines, method_used = [], None
+    if a.folds:
+        wf = walk_forward(lots, end_ts, a.choose_days, a.test_days, a.folds, a.min_copies)
+        base = wf[("all", None)]
+        wf_lines = ["## Ranking methods, walk-forward", "",
+                    f"Choose on {a.choose_days} days, score the next {a.test_days} days, "
+                    f"{a.folds} folds pooled. 'Every qualified wallet' is the no-ranking baseline.", "",
+                    HEAD, _row("every qualified wallet", base)]
+        best = None
+        for (m, k), st in sorted(wf.items(), key=lambda kv: (kv[0][0], kv[0][1] or 0)):
+            if m == "all":
+                continue
+            wf_lines.append(_row(f"{m}, top {k}", st))
+            # A method must beat the baseline per copy and hold up statistically.
+            if st["n"] >= 150 and st["mean"] is not None and base["mean"] is not None and \
+                    st["mean"] > base["mean"] and (st["t"] or 0) > 1.0 and \
+                    (best is None or st["mean"] > best[1]["mean"]):
+                best = ((m, k), st)
+        recent = {w: [x for x in v if x["ts"] >= end_ts - a.choose_days * 86400]
+                  for w, v in lots.items()}
+        active = {w for w, v in lots.items() if any(x["ts"] >= end_ts - 7 * 86400
+                                                    for x in v if "price" in x)}
+        if best:
+            method_used = f"{best[0][0]}, top {a.final_size}"
+            ranked = rank(recent, best[0][0], a.min_copies, None)
+        else:
+            method_used = "every qualified wallet (no ranking method beat it out of sample)"
+            ranked = sorted((w for w in rank(recent, "all", a.min_copies, None)),
+                            key=lambda w: -(stats(recent[w])["mean"] or 0))
+        final = [w for w in ranked if w in active][:a.final_size]
+        wf_lines += ["", f"Used for the final list: **{method_used}** ({len(final)} wallets, "
+                     "copied in the last week).", ""]
 
     # Outputs.
     names = {w: meta.get(w, {}).get("name") or current.get(w) or w[:10] for w in hist}
@@ -417,6 +524,7 @@ def main(argv=None) -> int:
                       "copy_pnl_per_10usd": round(10 * (s["mean"] or 0), 2)})
     with open(os.path.join(a.out_dir, "leaders.json"), "w") as f:
         json.dump({"chosen": time.strftime("%Y-%m-%d", time.gmtime(end_ts)),
+                   "method": method_used,
                    "rule": (f"Backtest of copytop itself over {a.days} days on markets "
                             f"Polymarket US listed ({a.delay}s copy delay, $10 a signal, US "
                             f"taker fee, never more than 1c over the leader, held to "
@@ -452,7 +560,7 @@ def main(argv=None) -> int:
         f = lambda s: (f"{s['n']} | {(s['roi'] or 0):+.1%} | "
                        f"{s['t'] if s['t'] is not None else '—'}")
         lines.append(f"| {key} | {f(a1)} | {f(b1)} |")
-    lines += ["", "## Final picks (whole window, copied in the last week)", "",
+    lines += ["", *wf_lines, "## Final picks (copied in the last week)", "",
               "| wallet | copies | won | return | t | per $10 copy |", "|---|---|---|---|---|---|"]
     for p in picks:
         lines.append(f"| {p['name'][:28]} | {p['copies']} | {p['won']} | "

@@ -436,6 +436,16 @@ class Engine:
             end = m.end if m else self.ends.get(slug)
             closed = (self.states.get(slug) in self.CLOSED_STATES
                       or (m is None and end is not None and now > end))
+            if live and not closed and self.states.get(slug) == "MARKET_STATE_OPEN" \
+                    and slug in self.marks:
+                # Gone while the market still trades: sold outside the bot (by
+                # hand in the app). Book it at the current mid, not as a payout.
+                tag = self.owner.get(slug) or next(
+                    (f.tag for f in reversed(self.broker.fills) if f.slug == slug and f.tag), "")
+                self.broker.sold_outside(slug, self.marks[slug], tag)
+                self.owner.pop(slug, None)
+                self._log("sold_outside", slug=slug, price=self.marks[slug])
+                continue
             if not closed:
                 continue
             value = data.us_settlement(self.client, slug)
