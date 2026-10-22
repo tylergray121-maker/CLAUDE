@@ -21,6 +21,7 @@ from collections import Counter, defaultdict
 
 from copybt.api import DATA_API, HTTPError
 
+from . import data as pmdata
 from .broker import SHORT
 from .copy import league, load_leaders
 from .engine import Engine, EngineConfig
@@ -57,8 +58,9 @@ def main(argv=None) -> int:
             print(f"lookup {name}: {err}")
     want = {x.strip() for x in a.leagues.split(",") if x.strip()}
     if want:
-        us_t = [m for m in e.markets.values() if any(f"-{lg}-" in m.slug for lg in want)]
-        print(f"\nUS markets in {sorted(want)}: {len(us_t)}")
+        us_t = [m for m in e.markets.values() if any(f"-{lg}-" in m.slug for lg in want)
+                and m.market_type not in pmdata.LONG_RUNNING]
+        print(f"\nUS markets in {sorted(want)} (not futures): {len(us_t)}")
         for m in us_t[:25]:
             print(f"  US {m.slug} | {m.market_type} | {m.question[:70]} | long={m.long_label} "
                   f"short={m.short_label} start={m.game_start}")

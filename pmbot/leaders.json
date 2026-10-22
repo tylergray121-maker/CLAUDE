@@ -229,6 +229,11 @@
    "source": "copytop backtest run 2 (whole window)",
    "copy_return": 0.1074,
    "copies": 606
+  },
+  {
+   "wallet": "0x0d23fc6838433dbff11e4667ef5991e9dd9d2d56",
+   "name": "Tiger105",
+   "source": "owner's pick (Polymarket username tiger105)"
   }
  ]
 }
