@@ -61,6 +61,13 @@ class EngineConfig:
     resume: bool = False             # continue the paper account in out_dir/state.json
     snapshot_seconds: float = 60.0   # how often state.json and paper.json are written
     equity_seconds: float = 300.0    # how often an equity point is recorded
+    # Limits as shares of account value, re-set every cycle (0 = use the
+    # fixed dollar limits). The stake is at least min_stake dollars.
+    total_pct: float = 0.0
+    market_pct: float = 0.0
+    wallet_pct: float = 0.0
+    stake_pct: float = 0.0
+    min_stake: float = 1.0
 
 
 @dataclass
@@ -237,8 +244,26 @@ class Engine:
     def _signal(self, *_):
         self._stop = True
 
+    def scale_limits(self, equity: float) -> None:
+        """Follow the account's value: caps and stake as shares of equity."""
+        e, c = self.ecfg, self.risk.cfg
+        if equity <= 0:
+            return
+        if e.total_pct:
+            c.max_total_usd = round(equity * e.total_pct, 2)
+        if e.market_pct:
+            c.max_market_usd = round(max(equity * e.market_pct, e.min_stake), 2)
+        if e.stake_pct:
+            self.scfg.order_usd = round(max(equity * e.stake_pct, e.min_stake), 2)
+        if e.wallet_pct:
+            for x in self.strategies:
+                if hasattr(x, "max_wallet_usd"):
+                    x.max_wallet_usd = round(max(equity * e.wallet_pct, e.min_stake), 2)
+
     def cycle(self) -> None:
         self.broker.sync()
+        if self.ecfg.mode != "scan":
+            self.scale_limits(self.broker.equity(self.marks))
         now = time.time()
         n_fills = len(self.broker.fills)
         by_slug = {p.us_slug: p for p in self.pairs}

@@ -70,6 +70,12 @@ def parse_args(argv=None):
     g.add_argument("--daily-loss-limit", type=float, default=r.daily_loss_limit,
                    help="halt for the day after losing this much (0 = no daily stop)")
     g.add_argument("--kill-file", default=r.kill_file)
+    g.add_argument("--total-pct", type=float, default=0.0,
+                   help="cap money at risk at this share of account value, re-set each cycle")
+    g.add_argument("--market-pct", type=float, default=0.0, help="per-market cap as a share")
+    g.add_argument("--wallet-pct", type=float, default=0.0, help="copytop per-wallet cap as a share")
+    g.add_argument("--stake-pct", type=float, default=0.0, help="stake as a share (min --min-stake)")
+    g.add_argument("--min-stake", type=float, default=1.0)
     p.add_argument("--no-preview", action="store_true",
                    help="paper: don't check orders with the exchange's order preview "
                    "even when API keys are set")
@@ -88,7 +94,9 @@ def main(argv=None) -> int:
                         cycle_seconds=a.cycle_seconds, max_markets=a.max_markets,
                         pairs_file=a.pairs_file, max_rps=a.max_rps, resume=a.resume,
                         snapshot_seconds=a.snapshot_seconds,
-                        equity_seconds=a.equity_seconds)
+                        equity_seconds=a.equity_seconds, total_pct=a.total_pct,
+                        market_pct=a.market_pct, wallet_pct=a.wallet_pct,
+                        stake_pct=a.stake_pct, min_stake=a.min_stake)
     scfg = StrategyConfig(maker_edge=a.maker_edge, taker_edge=a.taker_edge,
                           order_usd=a.order_usd, max_fair_spread=a.max_fair_spread,
                           taker_enabled=not a.no_taker, maker_enabled=not a.no_maker)

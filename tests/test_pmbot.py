@@ -145,6 +145,27 @@ class PerformanceTest(unittest.TestCase):
         e.shutdown()
 
 
+class ScaledLimitsTest(unittest.TestCase):
+    def test_limits_follow_the_account_value(self):
+        from pmbot.copy import CopyTop
+        d = tempfile.mkdtemp()
+        copy = CopyTop(StrategyConfig(order_usd=1), {}, max_wallet_usd=5)
+        scfg = copy.cfg
+        e = Engine(EngineConfig(mode="paper", out_dir=d, minutes=0, total_pct=0.88, market_pct=0.053,
+                                wallet_pct=0.09, stake_pct=0.0175, min_stake=1.0),
+                   scfg, RiskManager(RiskConfig(bankroll=57, kill_file=os.path.join(d, "STOP"))),
+                   strategies=[copy])
+        e.scale_limits(57.0)
+        self.assertEqual((e.risk.cfg.max_total_usd, e.risk.cfg.max_market_usd), (50.16, 3.02))
+        self.assertEqual((scfg.order_usd, copy.max_wallet_usd), (1.0, 5.13))     # $1 floor
+        e.scale_limits(200.0)
+        self.assertEqual((e.risk.cfg.max_total_usd, scfg.order_usd, copy.max_wallet_usd),
+                         (176.0, 3.5, 18.0))
+        e.scale_limits(20.0)
+        self.assertEqual((e.risk.cfg.max_total_usd, scfg.order_usd), (17.6, 1.0))
+        e.shutdown()
+
+
 class RiskTest(unittest.TestCase):
     def test_a_zero_daily_loss_limit_means_no_daily_stop(self):
         d = tempfile.mkdtemp()
