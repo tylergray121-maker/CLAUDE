@@ -1,20 +1,188 @@
-18:03:12 INFO Polymarket US: 80549 open markets
-18:03:12 INFO Polymarket US lists 195 league/market kinds
-18:03:12 INFO leaderboard SPORTS/DAY/VOL: 500 wallets
-18:03:12 INFO leaderboard SPORTS/DAY/PNL: 500 wallets
-18:03:12 INFO leaderboard SPORTS/WEEK/VOL: 500 wallets
-18:03:12 INFO leaderboard SPORTS/WEEK/PNL: 500 wallets
-18:03:12 INFO leaderboard SPORTS/MONTH/VOL: 500 wallets
-18:03:12 INFO leaderboard SPORTS/MONTH/PNL: 500 wallets
-18:03:12 INFO leaderboard SPORTS/ALL/VOL: 500 wallets
-18:03:12 INFO leaderboard SPORTS/ALL/PNL: 500 wallets
-18:03:13 INFO leaderboard OVERALL/DAY/VOL: 500 wallets
-18:03:13 INFO leaderboard OVERALL/DAY/PNL: 500 wallets
-18:03:14 INFO leaderboard OVERALL/WEEK/VOL: 500 wallets
-18:03:14 INFO leaderboard OVERALL/WEEK/PNL: 500 wallets
-18:03:15 INFO leaderboard OVERALL/MONTH/VOL: 500 wallets
-18:03:15 INFO leaderboard OVERALL/MONTH/PNL: 500 wallets
-18:03:16 INFO leaderboard OVERALL/ALL/VOL: 500 wallets
-18:03:17 INFO leaderboard OVERALL/ALL/PNL: 500 wallets
-18:03:17 INFO leaderboard SPORTS/ALL/PNL: 500 wallets
-18:03:17 INFO leaderboard OVERALL/ALL/PNL: 500 wallets
+18:07:58 INFO Polymarket US: 80770 open markets
+18:07:58 INFO Polymarket US lists 197 league/market kinds
+18:07:58 INFO leaderboard SPORTS/DAY/VOL: 500 wallets
+18:07:58 INFO leaderboard SPORTS/DAY/PNL: 500 wallets
+18:07:58 INFO leaderboard SPORTS/WEEK/VOL: 500 wallets
+18:07:58 INFO leaderboard SPORTS/WEEK/PNL: 500 wallets
+18:07:58 INFO leaderboard SPORTS/MONTH/VOL: 500 wallets
+18:07:58 INFO leaderboard SPORTS/MONTH/PNL: 500 wallets
+18:07:58 INFO leaderboard SPORTS/ALL/VOL: 500 wallets
+18:07:58 INFO leaderboard SPORTS/ALL/PNL: 500 wallets
+18:07:58 INFO leaderboard OVERALL/DAY/VOL: 500 wallets
+18:07:58 INFO leaderboard OVERALL/DAY/PNL: 500 wallets
+18:07:58 INFO leaderboard OVERALL/WEEK/VOL: 500 wallets
+18:07:58 INFO leaderboard OVERALL/WEEK/PNL: 500 wallets
+18:07:58 INFO leaderboard OVERALL/MONTH/VOL: 500 wallets
+18:07:58 INFO leaderboard OVERALL/MONTH/PNL: 500 wallets
+18:07:58 INFO leaderboard OVERALL/ALL/VOL: 500 wallets
+18:07:58 INFO leaderboard OVERALL/ALL/PNL: 500 wallets
+18:07:58 INFO leaderboard SPORTS/ALL/PNL: 500 wallets
+18:07:58 INFO leaderboard OVERALL/ALL/PNL: 500 wallets
+18:15:25 INFO discover esports: 2009 markets, 899 wallets with 15+ buys
+18:20:51 INFO discover counter-strike-2: 2123 markets, 880 wallets with 15+ buys
+18:38:14 INFO discover league-of-legends: 4670 markets, 1531 wallets with 15+ buys
+18:50:10 INFO discover dota-2: 3348 markets, 996 wallets with 15+ buys
+19:02:08 INFO discover valorant: 3343 markets, 1002 wallets with 15+ buys
+19:02:08 INFO 5483 candidate wallets (30 currently copied)
+19:02:32 INFO trades: 50/5483 wallets
+19:03:11 INFO trades: 100/5483 wallets
+19:03:49 INFO trades: 150/5483 wallets
+19:04:24 INFO trades: 200/5483 wallets
+19:05:16 INFO trades: 250/5483 wallets
+19:06:05 INFO trades: 300/5483 wallets
+19:06:37 INFO trades: 350/5483 wallets
+19:07:22 INFO trades: 400/5483 wallets
+19:08:04 INFO trades: 450/5483 wallets
+19:08:35 INFO trades: 500/5483 wallets
+19:09:03 INFO trades: 550/5483 wallets
+19:09:44 INFO trades: 600/5483 wallets
+19:10:29 INFO trades: 650/5483 wallets
+19:11:28 INFO trades: 700/5483 wallets
+19:12:24 INFO trades: 750/5483 wallets
+19:13:10 INFO trades: 800/5483 wallets
+19:13:41 INFO trades: 850/5483 wallets
+19:14:25 INFO trades: 900/5483 wallets
+19:15:12 INFO trades: 950/5483 wallets
+19:15:40 INFO trades: 1000/5483 wallets
+19:16:40 INFO trades: 1050/5483 wallets
+19:17:32 INFO trades: 1100/5483 wallets
+19:18:28 INFO trades: 1150/5483 wallets
+19:19:13 INFO trades: 1200/5483 wallets
+19:19:55 INFO trades: 1250/5483 wallets
+19:20:33 INFO trades: 1300/5483 wallets
+19:21:11 INFO trades: 1350/5483 wallets
+19:21:55 INFO trades: 1400/5483 wallets
+19:22:23 INFO trades: 1450/5483 wallets
+19:23:11 INFO trades: 1500/5483 wallets
+19:23:52 INFO trades: 1550/5483 wallets
+19:24:43 INFO trades: 1600/5483 wallets
+19:25:05 INFO trades: 1650/5483 wallets
+19:25:49 INFO trades: 1700/5483 wallets
+19:26:42 INFO trades: 1750/5483 wallets
+19:27:29 INFO trades: 1800/5483 wallets
+19:28:25 INFO trades: 1850/5483 wallets
+19:29:29 INFO trades: 1900/5483 wallets
+19:30:16 INFO trades: 1950/5483 wallets
+19:30:42 INFO trades: 2000/5483 wallets
+19:31:30 INFO trades: 2050/5483 wallets
+19:32:07 INFO trades: 2100/5483 wallets
+19:32:46 INFO trades: 2150/5483 wallets
+19:33:10 INFO trades: 2200/5483 wallets
+19:33:58 INFO trades: 2250/5483 wallets
+19:34:41 INFO trades: 2300/5483 wallets
+19:35:29 INFO trades: 2350/5483 wallets
+19:36:18 INFO trades: 2400/5483 wallets
+19:36:46 INFO trades: 2450/5483 wallets
+19:37:24 INFO trades: 2500/5483 wallets
+19:38:03 INFO trades: 2550/5483 wallets
+19:38:41 INFO trades: 2600/5483 wallets
+19:39:29 INFO trades: 2650/5483 wallets
+19:40:20 INFO trades: 2700/5483 wallets
+19:41:17 INFO trades: 2750/5483 wallets
+19:41:45 INFO trades: 2800/5483 wallets
+19:42:32 INFO trades: 2850/5483 wallets
+19:43:28 INFO trades: 2900/5483 wallets
+19:44:24 INFO trades: 2950/5483 wallets
+19:44:55 INFO trades: 3000/5483 wallets
+19:45:20 INFO trades: 3050/5483 wallets
+19:45:39 INFO trades: 3100/5483 wallets
+19:46:09 INFO trades: 3150/5483 wallets
+19:46:37 INFO trades: 3200/5483 wallets
+19:47:19 INFO trades: 3250/5483 wallets
+19:48:07 INFO trades: 3300/5483 wallets
+19:48:46 INFO trades: 3350/5483 wallets
+19:49:29 INFO trades: 3400/5483 wallets
+19:50:16 INFO trades: 3450/5483 wallets
+19:50:44 INFO trades: 3500/5483 wallets
+19:51:33 INFO trades: 3550/5483 wallets
+19:52:25 INFO trades: 3600/5483 wallets
+19:52:54 INFO trades: 3650/5483 wallets
+19:53:35 INFO trades: 3700/5483 wallets
+19:54:04 INFO trades: 3750/5483 wallets
+19:54:54 INFO trades: 3800/5483 wallets
+19:55:55 INFO trades: 3850/5483 wallets
+19:56:39 INFO trades: 3900/5483 wallets
+19:57:10 INFO trades: 3950/5483 wallets
+19:57:39 INFO trades: 4000/5483 wallets
+19:58:18 INFO trades: 4050/5483 wallets
+19:58:42 INFO trades: 4100/5483 wallets
+19:59:18 INFO trades: 4150/5483 wallets
+20:00:13 INFO trades: 4200/5483 wallets
+20:01:03 INFO trades: 4250/5483 wallets
+20:02:11 INFO trades: 4300/5483 wallets
+20:03:09 INFO trades: 4350/5483 wallets
+20:04:11 INFO trades: 4400/5483 wallets
+20:05:02 INFO trades: 4450/5483 wallets
+20:05:42 INFO trades: 4500/5483 wallets
+20:06:42 INFO trades: 4550/5483 wallets
+20:07:24 INFO trades: 4600/5483 wallets
+20:07:55 INFO trades: 4650/5483 wallets
+20:08:48 INFO trades: 4700/5483 wallets
+20:09:45 INFO trades: 4750/5483 wallets
+20:10:29 INFO trades: 4800/5483 wallets
+20:11:12 INFO trades: 4850/5483 wallets
+20:11:59 INFO trades: 4900/5483 wallets
+20:12:52 INFO trades: 4950/5483 wallets
+20:13:19 INFO trades: 5000/5483 wallets
+20:14:01 INFO trades: 5050/5483 wallets
+20:14:38 INFO trades: 5100/5483 wallets
+20:15:44 INFO trades: 5150/5483 wallets
+20:16:18 INFO trades: 5200/5483 wallets
+20:16:55 INFO trades: 5250/5483 wallets
+20:17:47 INFO trades: 5300/5483 wallets
+20:18:15 INFO trades: 5350/5483 wallets
+20:18:53 INFO trades: 5400/5483 wallets
+20:19:59 INFO trades: 5450/5483 wallets
+20:21:08 INFO trades: 5483/5483 wallets
+20:27:51 INFO listed on Polymarket US: 18898 of 50502 markets the candidates traded; by league: cs2/result 0/6490, mlb/totals 2438/5487, cs2/moneyline 965/4232, cfb/totals 40/4168, atp/moneyline 4120/4120, nfl/totals 104/2662, wta/moneyline 1722/1722, dota2/result 370/1494, lol/moneyline 681/1166, cfb/moneyline 954/976, mlb/moneyline 804/938, mls/result 652/872, mlb/result 0/859, nhl/totals 445/818, nba/totals 437/748, dota2/moneyline 186/701, uel/totals 22/701, setkameua/moneyline 0/658, lal/totals 199/594, uslc/result 395/520, wnba/totals 151/520, bra/result 331/500, epl/totals 161/489, sea/totals 287/464, uel/result 107/451, lal/result 159/389, nwsl/result 307/389, bun/totals 58/383, uru1/result 303/371, spl/result 282/369
+20:27:52 INFO 3846 wallets with copyable trades (448 skipped as too high-frequency); resolving 18898 markets
+20:27:53 INFO gamma closed: 18/378 requests, 877 markets known
+20:27:54 INFO gamma closed: 36/378 requests, 1757 markets known
+20:27:55 INFO gamma closed: 54/378 requests, 2641 markets known
+20:27:56 INFO gamma closed: 72/378 requests, 3522 markets known
+20:27:57 INFO gamma closed: 90/378 requests, 4394 markets known
+20:27:58 INFO gamma closed: 108/378 requests, 5267 markets known
+20:27:59 INFO gamma closed: 126/378 requests, 6137 markets known
+20:28:00 INFO gamma closed: 144/378 requests, 7006 markets known
+20:28:00 INFO gamma closed: 162/378 requests, 7876 markets known
+20:28:01 INFO gamma closed: 180/378 requests, 8750 markets known
+20:28:02 INFO gamma closed: 198/378 requests, 9620 markets known
+20:28:03 INFO gamma closed: 216/378 requests, 10489 markets known
+20:28:04 INFO gamma closed: 234/378 requests, 11372 markets known
+20:28:05 INFO gamma closed: 252/378 requests, 12244 markets known
+20:28:06 INFO gamma closed: 270/378 requests, 13116 markets known
+20:28:07 INFO gamma closed: 288/378 requests, 13988 markets known
+20:28:08 INFO gamma closed: 306/378 requests, 14867 markets known
+20:28:09 INFO gamma closed: 324/378 requests, 15741 markets known
+20:28:10 INFO gamma closed: 342/378 requests, 16618 markets known
+20:28:11 INFO gamma closed: 360/378 requests, 17494 markets known
+20:28:11 INFO gamma closed: 378/378 requests, 18364 markets known
+20:28:12 INFO gamma open: 1/11 requests, 18414 markets known
+20:28:12 INFO gamma open: 2/11 requests, 18464 markets known
+20:28:12 INFO gamma open: 3/11 requests, 18514 markets known
+20:28:12 INFO gamma open: 4/11 requests, 18564 markets known
+20:28:12 INFO gamma open: 5/11 requests, 18614 markets known
+20:28:12 INFO gamma open: 6/11 requests, 18664 markets known
+20:28:12 INFO gamma open: 7/11 requests, 18714 markets known
+20:28:12 INFO gamma open: 8/11 requests, 18764 markets known
+20:28:12 INFO gamma open: 9/11 requests, 18814 markets known
+20:28:12 INFO gamma open: 10/11 requests, 18864 markets known
+20:28:12 INFO gamma open: 11/11 requests, 18898 markets known
+20:29:01 INFO re-pricing 228 wallets at a 60s copy delay
+20:36:30 INFO price history: 14992/299848 windows
+20:43:49 INFO price history: 29984/299848 windows
+20:51:08 INFO price history: 44976/299848 windows
+20:58:20 INFO price history: 59968/299848 windows
+21:05:36 INFO price history: 74960/299848 windows
+21:12:52 INFO price history: 89952/299848 windows
+21:20:10 INFO price history: 104944/299848 windows
+21:27:28 INFO price history: 119936/299848 windows
+21:34:43 INFO price history: 134928/299848 windows
+21:41:54 INFO price history: 149920/299848 windows
+21:49:13 INFO price history: 164912/299848 windows
+21:56:26 INFO price history: 179904/299848 windows
+22:03:44 INFO price history: 194896/299848 windows
+22:10:54 INFO price history: 209888/299848 windows
+22:18:09 INFO price history: 224880/299848 windows
+22:25:25 INFO price history: 239872/299848 windows
+22:32:42 INFO price history: 254864/299848 windows
