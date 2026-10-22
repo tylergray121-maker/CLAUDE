@@ -28,10 +28,10 @@ import re
 from collections import Counter, deque
 from statistics import median
 
-from copybt.api import DATA_API, HTTPError
+from copybt.api import DATA_API
 
 from .broker import SHORT, split_side
-from .data import fetch_parallel
+from .data import FETCH_ERRORS, fetch_parallel
 from .mapping import prices_agree
 from .strategies import Strategy
 from .strategy import MarketView, Order, StrategyConfig
@@ -51,7 +51,7 @@ STAT_KEYS = ("leader_trades", "mapped", "mapped_short_side", "not_on_polymarket_
              "skip_repeat", "skip_recently_copied", "skip_tiny", "skip_not_open",
              "skip_price_band", "skip_prices_disagree", "skip_no_room_or_size",
              "skip_holding_other_side", "skip_exit_price", "skip_benched_wallet",
-             "skip_losing_pattern", "poll_errors")
+             "skip_losing_pattern", "skip_stale", "poll_errors")
 _GAME = re.compile(r"^([a-z0-9]+)-.*\d{4}-\d{2}-\d{2}")
 
 
@@ -99,6 +99,8 @@ class CopyTop(Strategy):
         self.lags: deque = deque(maxlen=500)       # seconds from their trade to our order
         self.copy_sells, self.conviction_sizing = copy_sells, conviction_sizing
         self.sizes: dict[str, deque] = {}          # leader -> their recent buy sizes ($)
+        self.unmapped: Counter = Counter()         # (intl slug, outcome) not on US, for diagnostics
+        self.max_age_s = 300                       # never copy a trade older than this
 
     # -- signals ------------------------------------------------------------
     def _fetch(self, eng, wallet: str) -> list[dict] | None:
@@ -106,7 +108,7 @@ class CopyTop(Strategy):
             return eng.client.get(DATA_API, "/trades", {"user": wallet, "limit": 50,
                                                         "takerOnly": "false"},
                                   use_cache=False) or []
-        except HTTPError as e:
+        except FETCH_ERRORS as e:
             log.debug("leader %s trades: %s", wallet, e)
             return None
 
@@ -155,6 +157,9 @@ class CopyTop(Strategy):
                     else:
                         self.stats["not_on_polymarket_us"] += 1
                         self.stats[f"missed_{league(str(t.get('slug') or ''))}"] += 1
+                    self.unmapped[(str(t.get("slug") or ""), str(t.get("outcome") or ""))] += 1
+                    if len(self.unmapped) > 2000:
+                        self.unmapped = Counter(dict(self.unmapped.most_common(500)))
                     eng._log("copy_unmapped", leader=name, market=t.get("title"),
                              intl_slug=t.get("slug"), outcome=t.get("outcome"))
                     continue
@@ -168,6 +173,9 @@ class CopyTop(Strategy):
                     continue
                 if side == "BUY" and price * size < self.min_leader_usd:
                     self.stats["skip_tiny"] += 1
+                    continue
+                if now - int(t["timestamp"]) > self.max_age_s:
+                    self.stats["skip_stale"] += 1   # e.g. placed while the bot restarted
                     continue
                 if side == "SELL" and not self.copy_sells:
                     continue  # held to settlement
@@ -213,7 +221,10 @@ class CopyTop(Strategy):
                     self.stats["skip_holding_other_side"] += 1  # would only lock in a loss
                     del self.pending[slug]
                     continue
-                limit = round(min(sig["price"] + self.max_slip, self.cfg.max_price), 4)
+                # Round down to the market's tick: the exchange rejects off-tick prices.
+                tick = v.tick or 0.01
+                limit = round(int(min(sig["price"] + self.max_slip, self.cfg.max_price) / tick
+                                  + 1e-9) * tick, 4)
                 ask = v.us_ask
                 if ask is None or ask > limit:
                     continue  # keep waiting until the signal expires
@@ -257,7 +268,9 @@ class CopyTop(Strategy):
                 qty = min(held, mine, int(v.us_bid_qty or 0))
                 if qty < 1 or v.us_bid is None:
                     continue
-                floor = round(max(sig["price"] - self.max_slip, 0.01), 4)
+                tick = v.tick or 0.01
+                floor = round(max(-int(-(sig["price"] - self.max_slip) / tick + 1e-9) * tick,
+                                  tick), 4)
                 if v.us_bid < floor:
                     self.stats["skip_exit_price"] += 1
                     continue
@@ -297,7 +310,7 @@ class CopyTop(Strategy):
                     rows = eng.client.get(DATA_API, "/v1/leaderboard", {
                         "category": "SPORTS", "timePeriod": period, "orderBy": "PNL",
                         "user": wallet, "limit": 1}, use_cache=False) or []
-                except HTTPError as e:
+                except FETCH_ERRORS as e:
                     log.debug("form %s %s: %s", wallet, period, e)
                     continue
                 row = next((r for r in rows if isinstance(r, dict)
@@ -344,13 +357,18 @@ class CopyTop(Strategy):
     # -- persistence and dashboard ----------------------------------------------
     def to_state(self) -> dict:
         return {"card": self.card.to_state(), "form": self.form, "status": self.status,
-                "skipped": self.skipped}
+                "skipped": self.skipped, "last_ts": self.last_ts,
+                "sizes": {w: list(d) for w, d in self.sizes.items()}}
 
     def load_state(self, d: dict) -> None:
         self.card.load(d.get("card", {}))
         self.form = d.get("form", {})
         self.status = d.get("status", {})
         self.skipped = d.get("skipped", {})
+        # Pick up each leader's history where the last run left off, so trades
+        # made during a restart are seen (those over max_age_s are skipped).
+        self.last_ts = {w: int(t) for w, t in d.get("last_ts", {}).items()}
+        self.sizes = {w: deque(v, maxlen=200) for w, v in d.get("sizes", {}).items()}
 
     def copied_from(self, slug: str) -> str:
         names = [self.leaders.get(k[2:], k[2:12]) for k in self.card.keys_for(slug)
@@ -362,7 +380,9 @@ class CopyTop(Strategy):
                                   if x == st and w in self.leaders)
         return {"copytop_benched": by("benched"), "copytop_cooling": by("cooling"),
                 "copytop_patterns_skipped": ", ".join(sorted(self.skipped)),
-                "copytop_lag_median_s": round(median(self.lags), 1) if self.lags else None}
+                "copytop_lag_median_s": round(median(self.lags), 1) if self.lags else None,
+                "copytop_unmapped_top": "; ".join(f"{s}|{o}|{n}" for (s, o), n
+                                                  in self.unmapped.most_common(15))}
 
     def dashboard_rows(self) -> list[dict]:
         rows = []

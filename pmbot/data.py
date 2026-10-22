@@ -7,6 +7,7 @@ defensive and drop records they can't read.
 
 from __future__ import annotations
 
+import http.client
 import json
 import logging
 import time
@@ -15,6 +16,10 @@ from dataclasses import dataclass
 from datetime import datetime
 
 from copybt.api import Client, HTTPError
+
+# What a request can fail with after the client's retries: HTTP errors, and
+# network errors (URLError, timeouts, cut-off reads) or a bad JSON body.
+FETCH_ERRORS = (HTTPError, OSError, ValueError, http.client.HTTPException)
 
 from .broker import Quote, split_side
 
@@ -115,7 +120,7 @@ def us_markets(client: Client, page: int = 100, max_pages: int = 1000) -> list[U
             rows = (client.get(US_GATEWAY, "/v1/markets", {
                 "active": "true", "closed": "false", "limit": page,
                 "offset": offset}, use_cache=False) or {}).get("markets", [])
-        except HTTPError as e:
+        except FETCH_ERRORS as e:
             log.warning("US markets at offset %d: %s", offset, e)
             break
         new = 0
@@ -139,7 +144,7 @@ def us_quote(client: Client, slug: str) -> tuple[Quote, str] | None:
     try:
         md = (client.get(US_GATEWAY, f"/v1/markets/{slug}/book", use_cache=False)
               or {}).get("marketData") or {}
-    except HTTPError as e:
+    except FETCH_ERRORS as e:
         log.debug("US book %s: %s", slug, e)
         return None
     bids = [(amount(l.get("px")), float(l.get("qty") or 0)) for l in md.get("bids") or []]
@@ -160,7 +165,7 @@ def us_settlement(client: Client, slug: str) -> float | None:
     try:
         v = amount((client.get(US_GATEWAY, f"/v1/markets/{slug}/settlement",
                                use_cache=False) or {}).get("settlement"))
-    except HTTPError:
+    except FETCH_ERRORS:
         return None
     return round(1.0 - v, 6) if short and v is not None else v
 
@@ -224,7 +229,7 @@ def intl_options(client: Client, page: int = 500, max_pages: int = 200,
                 "active": "true", "closed": "false", "order": "volume24hr",
                 "ascending": "false", "limit": page, "offset": offset},
                 use_cache=False, keep=keep) or []
-        except HTTPError as e:
+        except FETCH_ERRORS as e:
             if e.status != 422:  # 422 = past the offset limit: we have enough
                 log.warning("intl markets at offset %d: %s", offset, e)
             break
@@ -248,7 +253,7 @@ def intl_by_slugs(client: Client, slugs: list[str], batch: int = 40) -> dict[str
         params = [("slug", x) for x in slugs[i:i + batch]] + [("limit", batch)]
         try:
             rows = client.get(GAMMA, "/markets", params, use_cache=False, keep=keep) or []
-        except HTTPError as e:
+        except FETCH_ERRORS as e:
             log.warning("intl markets by slug: %s", e)
             continue
         for r in rows:
@@ -261,7 +266,7 @@ def intl_book(client: Client, token: str) -> tuple[float | None, float | None, f
     """(best bid, best ask, spread) from the CLOB book; spread inf if one-sided."""
     try:
         b = client.get(CLOB, "/book", {"token_id": token}, use_cache=False) or {}
-    except HTTPError:
+    except FETCH_ERRORS:
         return None, None, float("inf")
     bids = [_f(l.get("price")) for l in b.get("bids") or []]
     asks = [_f(l.get("price")) for l in b.get("asks") or []]

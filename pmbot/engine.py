@@ -9,6 +9,7 @@ import re
 import signal
 import time
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict, dataclass, field, replace
 
 from copybt.api import Client
@@ -25,6 +26,24 @@ log = logging.getLogger(__name__)
 # Totals are named differently: international "...-2026-10-21-total-2pt5" is
 # US "...-2026-10-21-2pt5".
 _TOTAL = re.compile(r"-total-(?=\d+pt\d+$)")
+# Team codes Polymarket US spells differently from the international site
+# (seen: aec-nba-gs-lal, aec-nba-ind-no, aec-nba-pho-por). Only a fallback:
+# the bet's outcome name must still match the US market's side.
+_ALIASES = {"nba": {"gsw": "gs", "nop": "no", "phx": "pho", "sas": "sa", "nyk": "ny"}}
+_GAME_SLUG = re.compile(r"^([a-z0-9]+)-([a-z0-9]+)-([a-z0-9]+)-(\d{4}-\d{2}-\d{2}.*)$")
+
+
+def us_spellings(intl_slug: str) -> list[str]:
+    """The international slug as US may name it: totals without '-total-',
+    and team codes US spells differently."""
+    out = [intl_slug, _TOTAL.sub("-", intl_slug)]
+    m = _GAME_SLUG.match(intl_slug)
+    alias = _ALIASES.get(m.group(1), {}) if m else {}
+    if m and (m.group(2) in alias or m.group(3) in alias):
+        lg, a, b, rest = m.groups()
+        x = f"{lg}-{alias.get(a, a)}-{alias.get(b, b)}-{rest}"
+        out += [x, _TOTAL.sub("-", x)]
+    return list(dict.fromkeys(out))
 
 
 @dataclass
@@ -87,27 +106,33 @@ class Engine:
 
     # -- setup --------------------------------------------------------------
     def refresh_pairs(self) -> None:
-        us = data.us_markets(self.client)
-        self.markets = {m.slug: m for m in us}
+        self._apply_pairs(self._build_pairs(self.client))
+
+    def _build_pairs(self, client) -> dict:
+        """Fetch the US market list and map it, without touching the engine's
+        state (so it can run in a background thread while trading goes on)."""
+        us = data.us_markets(client)
+        markets = {m.slug: m for m in us}
         # Game, spread, total and prop markets: the US slug is the international
         # one plus a venue prefix. Ambiguous ones (two US markets) are dropped.
         seen: dict[str, list] = defaultdict(list)
         for m in us:
             if m.market_type not in data.LONG_RUNNING:
                 seen[mapping.intl_slug(m.slug)].append(m)
-        self.by_intl_slug = {k: v[0] for k, v in seen.items() if len(v) == 1}
+        by_intl_slug = {k: v[0] for k, v in seen.items() if len(v) == 1}
         self._dump_market_types(us)
+        intl = []
         if self.ecfg.pairs_file:
-            pairs = [p for p in mapping.load(self.ecfg.pairs_file) if p.us_slug in self.markets]
+            pairs = [p for p in mapping.load(self.ecfg.pairs_file) if p.us_slug in markets]
         else:
-            intl = data.intl_options(self.client)
+            intl = data.intl_options(client)
             pairs = mapping.match(us, intl)
             # Games: exact slug matches for games starting within two days.
             now = time.time()
             # Games from 6 hours ago (in play) to 2 days ahead.
             games = [m for m in us if m.market_type in mapping.GAME_TYPES
                      and m.game_start and -6 * 3600 < m.game_start - now <= 2 * 86400]
-            rows = data.intl_by_slugs(self.client, sorted({mapping.intl_slug(m.slug)
+            rows = data.intl_by_slugs(client, sorted({mapping.intl_slug(m.slug)
                                                            for m in games}))
             game_pairs = mapping.match_games(games, rows)
             log.info("games: %d US game markets in the next 48h, %d international "
@@ -115,7 +140,7 @@ class Engine:
             intl_by_token = {o.token: o for o in intl}
             kept, rejected = [], []
             for p in pairs:
-                m, o = self.markets[p.us_slug], intl_by_token[p.intl_token]
+                m, o = markets[p.us_slug], intl_by_token[p.intl_token]
                 if None in (m.bid, m.ask, o.bid, o.ask):
                     kept.append((p, o.volume24h))  # checked against live books later
                     continue
@@ -133,13 +158,18 @@ class Engine:
             with open(os.path.join(self.ecfg.out_dir, "pairs_rejected.json"), "w") as f:
                 json.dump(rejected, f, indent=1)
             log.info("pairs: %d kept, %d rejected on price", len(pairs), len(rejected))
-        self.all_pairs = pairs
-        self.pairs = pairs[:self.ecfg.max_markets]
-        for p in pairs:
+        return {"markets": markets, "by_intl_slug": by_intl_slug, "pairs": pairs,
+                "map_stats": {"us_markets": len(us), "pairs": len(pairs),
+                              "tracked": min(len(pairs), self.ecfg.max_markets),
+                              "intl_options": len(intl) if not self.ecfg.pairs_file else None}}
+
+    def _apply_pairs(self, r: dict) -> None:
+        self.markets, self.by_intl_slug = r["markets"], r["by_intl_slug"]
+        self.all_pairs = r["pairs"]
+        self.pairs = r["pairs"][:self.ecfg.max_markets]
+        for p in r["pairs"]:
             self.labels[p.us_slug] = p.us_label
-        self.map_stats = {"us_markets": len(us), "pairs": len(pairs),
-                          "tracked": len(self.pairs),
-                          "intl_options": len(intl) if not self.ecfg.pairs_file else None}
+        self.map_stats = r["map_stats"]
         if not self.all_pairs:
             log.error("no US market could be paired with a reference price; "
                       "check pairs.json / the mapping before trusting this run")
@@ -165,18 +195,43 @@ class Engine:
         signal.signal(signal.SIGTERM, self._signal)
         end = time.time() + self.ecfg.minutes * 60 if self.ecfg.minutes else float("inf")
         next_remap = 0.0
+        failures = 0
+        refresh = None
+        pool = ThreadPoolExecutor(1)
         try:
             while not self._stop and time.time() < end:
                 t0 = time.time()
+                if refresh is not None and refresh.done():
+                    try:
+                        self._apply_pairs(refresh.result())
+                    except Exception:
+                        log.exception("market refresh failed; keeping the previous maps")
+                    refresh = None
                 if t0 >= next_remap:
-                    self.refresh_pairs()
+                    if not self.markets:
+                        self.refresh_pairs()   # the first one blocks: nothing maps without it
+                    elif refresh is None:
+                        # Later ones run beside trading (paging ~80k US markets
+                        # takes minutes), on their own client and request budget.
+                        refresh = pool.submit(self._build_pairs, Client(
+                            cache_dir=None, max_rps=3, retries=2, timeout=15))
                     next_remap = t0 + self.ecfg.remap_minutes * 60
-                self.cycle()
+                try:
+                    self.cycle()
+                    failures = 0
+                except Exception:
+                    # A rejected order or a network blip must not end the run:
+                    # every cycle starts from a fresh sync, so just go again.
+                    failures += 1
+                    log.exception("cycle failed (%d in a row)", failures)
+                    if failures >= 30:
+                        raise
                 if self.risk.halted:
                     log.error("HALTED: %s", self.risk.halted)
                     break
                 time.sleep(max(0.0, self.ecfg.cycle_seconds - (time.time() - t0)))
         finally:
+            pool.shutdown(wait=False, cancel_futures=True)
             self.shutdown()
 
     def _signal(self, *_):
@@ -266,7 +321,7 @@ class Engine:
 
     def lists(self, intl_slug: str) -> bool:
         """Polymarket US lists this international game/spread/total/prop market."""
-        return intl_slug in self.by_intl_slug or _TOTAL.sub("-", intl_slug) in self.by_intl_slug
+        return any(s in self.by_intl_slug for s in us_spellings(intl_slug))
 
     def us_for_trade(self, t: dict, index: dict[str, str] | None = None) -> str | None:
         """The US market, or its short side, for an international trade.
@@ -280,7 +335,7 @@ class Engine:
         if slug:
             return slug
         isl = str(t.get("slug") or "")
-        m = self.by_intl_slug.get(isl) or self.by_intl_slug.get(_TOTAL.sub("-", isl))
+        m = next((self.by_intl_slug[s] for s in us_spellings(isl) if s in self.by_intl_slug), None)
         outcome = str(t.get("outcome") or "").strip().lower()
         if m is None or not outcome:
             return None
@@ -321,9 +376,11 @@ class Engine:
 
     def _trade_all(self, views: dict, now: float) -> None:
         b = self.broker
-        # Release markets a strategy no longer has anything in.
+        # Release markets a strategy no longer has anything in (live, a settled
+        # position stays owned until its payout is booked, so it is scored).
         for slug in list(self.owner):
-            if not self.held(slug) and not any(o.slug == slug for o in b.open_orders.values()):
+            if not self.held(slug) and not any(o.slug == slug for o in b.open_orders.values()) \
+                    and slug not in getattr(b, "vanished", {}):
                 del self.owner[slug]
         plain = {s: v for s, (v, _) in views.items()}
         want: dict[str, list[Order]] = defaultdict(list)
@@ -384,7 +441,11 @@ class Engine:
             value = data.us_settlement(self.client, slug)
             if value is None or not 0.0 <= value <= 1.0:
                 continue
-            self.broker.settle(slug, value, self.owner.get(slug, ""))
+            tag = self.owner.get(slug) or next(
+                (f.tag for f in reversed(self.broker.fills) if f.slug == slug and f.tag), "")
+            self.broker.settle(slug, value, tag)
+            if live:
+                self.owner.pop(slug, None)
             self._log("settle", slug=slug, value=value)
 
     # -- persistence and dashboard ------------------------------------------------

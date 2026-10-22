@@ -28,6 +28,21 @@ def quote(bid, ask, last=None, traded=0.0, ts=None, qty=100):
     return Quote(bid, ask, qty, qty, last, traded, ts if ts is not None else time.time() + 1)
 
 
+class BackgroundRefreshTest(unittest.TestCase):
+    def test_building_maps_leaves_the_engine_alone_until_applied(self):
+        d = tempfile.mkdtemp()
+        e = Engine(EngineConfig(mode="paper", out_dir=d, minutes=0), StrategyConfig(),
+                   RiskManager(RiskConfig(kill_file=os.path.join(d, "STOP"))))
+        v = FakeVenues()
+        v.game = True
+        r = e._build_pairs(v)
+        self.assertEqual(e.markets, {})
+        self.assertIn(GAME, r["markets"])
+        e._apply_pairs(r)
+        self.assertIn(GAME, e.markets)
+        e.shutdown()
+
+
 class ScorecardTest(unittest.TestCase):
     def test_lots_close_oldest_first_and_credit_every_key(self):
         from pmbot.track import Scorecard
@@ -569,6 +584,7 @@ class CopyTopTest(unittest.TestCase):
         self.v = self.e.client = FakeVenues()
         self.e.refresh_pairs()
         self.n = 0
+        self.t0 = int(time.time()) - 100
 
     def tearDown(self):
         self.e.shutdown()
@@ -576,7 +592,7 @@ class CopyTopTest(unittest.TestCase):
     def trade(self, side, price, size=100, asset="tokY", tx=None):
         self.n += 1
         self.v.leader_trades.append({"proxyWallet": self.LEADER, "side": side, "asset": asset,
-                                     "price": price, "size": size, "timestamp": 1_000 + self.n,
+                                     "price": price, "size": size, "timestamp": self.t0 + self.n,
                                      "title": "Brewers", "transactionHash": tx or f"0x{self.n}"})
 
     def test_copies_new_buys_only_at_or_near_the_leaders_price(self):
@@ -658,7 +674,7 @@ class CopyTopTest(unittest.TestCase):
         self.n += 1
         self.v.leader_trades.append({"proxyWallet": self.LEADER, "side": side,
                                      "asset": f"tok-{outcome}", "price": price, "size": size,
-                                     "timestamp": 1_000 + self.n, "title": "Bucks vs. Wizards",
+                                     "timestamp": self.t0 + self.n, "title": "Bucks vs. Wizards",
                                      "slug": slug, "outcome": outcome,
                                      "transactionHash": f"0x{self.n}"})
 
@@ -799,7 +815,7 @@ class CopyTopTest(unittest.TestCase):
         self.e.cycle()
         self.n += 1
         self.v.leader_trades.append({"proxyWallet": other, "side": "BUY", "asset": "tokY",
-                                     "price": 0.62, "size": 100, "timestamp": 1_000 + self.n,
+                                     "price": 0.62, "size": 100, "timestamp": self.t0 + self.n,
                                      "title": "Brewers", "transactionHash": "0xother"})
         self.e.cycle()                               # theowalcott: 16 more
         self.assertEqual(self.e.held("brewers"), 32)
@@ -810,6 +826,44 @@ class CopyTopTest(unittest.TestCase):
         self.assertEqual(self.copy.card.summary(f"w:{self.LEADER}")["settled"], 1)
         self.assertEqual(self.copy.card.summary(f"w:{other}")["settled"], 0)
         self.assertIsNotNone(self.copy.summary()["copytop_lag_median_s"])
+
+    def test_us_team_spellings_map_only_when_the_side_matches(self):
+        from pmbot.engine import us_spellings
+        self.assertIn("nba-gs-lal-2026-10-21", us_spellings("nba-gsw-lal-2026-10-21"))
+        self.assertIn("nba-ind-no-2026-10-21-229pt5", us_spellings("nba-ind-nop-2026-10-21-total-229pt5"))
+        self.assertEqual(us_spellings("wnba-phx-lv-2026-10-21"), ["wnba-phx-lv-2026-10-21"])
+        self.v.game = True
+        self.e.refresh_pairs()
+        m = self.e.markets[GAME]
+        self.e.by_intl_slug = {"nba-ind-no-2099-01-01": m}   # US spells New Orleans 'no'
+        t = {"slug": "nba-ind-nop-2099-01-01", "outcome": "Wizards", "asset": "x"}
+        self.assertEqual(self.e.us_for_trade(t), GAME + ":short")
+        self.assertIsNone(self.e.us_for_trade({**t, "outcome": "Lakers"}))   # wrong side: no bet
+
+    def test_stale_trades_are_not_copied_and_a_restart_resumes_the_history(self):
+        from pmbot.copy import CopyTop
+        self.e.cycle()
+        self.n += 1
+        self.v.leader_trades.append({"proxyWallet": self.LEADER, "side": "BUY", "asset": "tokY",
+                                     "price": 0.62, "size": 100, "timestamp": self.t0 - 1000,
+                                     "title": "Brewers", "transactionHash": "0xold"})
+        self.trade("BUY", 0.62)
+        self.e.cycle()
+        self.assertEqual(self.copy.stats["skip_stale"], 1)
+        self.assertEqual(len(self.e.broker.fills), 1)
+        self.e.save_state()
+        self.trade("BUY", 0.62, asset="tokY", tx="0xduring-restart")
+        again = CopyTop(StrategyConfig(), {self.LEADER: "primm"})
+        e2 = Engine(EngineConfig(mode="paper", out_dir=self.d, minutes=0, resume=True),
+                    StrategyConfig(), RiskManager(RiskConfig(kill_file=os.path.join(self.d, "STOP"))),
+                    strategies=[again])
+        e2.client = self.v
+        e2.refresh_pairs()
+        again.recent.clear()
+        e2.cycle()
+        # The trade made during the restart is seen, not dropped as a baseline.
+        self.assertEqual(again.stats["leader_trades"], self.copy.stats["leader_trades"] + 1)
+        e2._events.close()
 
     def test_unmapped_trades_are_counted_not_copied(self):
         self.e.cycle()
@@ -932,6 +986,7 @@ class LiveBrokerTest(unittest.TestCase):
                       "price": {"value": "0.40", "currency": "USD"}, "leavesQuantity": 5}]
         self.pos = {"brewers": {"netPosition": "8", "cost": {"value": "4.80", "currency": "USD"}}}
         self.execs = []
+        self.reject = False
 
         def handler(req):
             body = json.loads(req.content) if req.content else None
@@ -945,6 +1000,8 @@ class LiveBrokerTest(unittest.TestCase):
             if p == "/v1/orders/open":
                 return httpx.Response(200, json={"orders": self.open})
             if p == "/v1/orders":
+                if self.reject:
+                    return httpx.Response(400, json={"message": "market suspended"})
                 return httpx.Response(200, json={"id": "bot-1", "executions": self.execs})
             if p == "/v1/order/preview":
                 return httpx.Response(200, json={"order": {"state": "ORDER_STATE_NEW"}})
@@ -1052,6 +1109,37 @@ class LiveBrokerTest(unittest.TestCase):
                            client=self.b.client)
         again.load_state(st)
         self.assertEqual(len(again.fills), len(self.b.fills))
+
+    def test_a_rejected_order_books_nothing_and_does_not_raise(self):
+        self.reject = True
+        self.assertIsNone(self.b.place("brewers", Order("BUY", 0.6, 3, False, tag="copytop")))
+        self.assertEqual(self.b.fills, [])
+
+    def test_a_live_settlement_is_credited_to_the_strategy_that_bought(self):
+        from pmbot.copy import CopyTop
+        copy = CopyTop(StrategyConfig(), {})
+        d = tempfile.mkdtemp()
+        e = Engine(EngineConfig(mode="live", out_dir=d, minutes=0), StrategyConfig(),
+                   RiskManager(RiskConfig(kill_file=os.path.join(d, "STOP"))), self.b,
+                   strategies=[copy])
+        e.client = v = FakeVenues()
+        e.refresh_pairs()
+        self.b.sync()
+        self.execs = [{"lastShares": "3", "lastPx": {"value": "0.60", "currency": "USD"},
+                       "commissionNotionalCollected": {"value": "0.05", "currency": "USD"}}]
+        copy._placing["brewers"] = ["w:0xabc", "league:mlb"]
+        n = len(self.b.fills)
+        self.b.place("brewers", Order("BUY", 0.61, 3, False, tag="copytop"))
+        e.owner["brewers"] = "copytop"
+        copy.on_fills(e, self.b.fills[n:])
+        self.pos = {}                                  # the exchange settled it
+        v.state = "MARKET_STATE_CLOSED"
+        v.settlement = 1.0
+        e.cycle()
+        settle = [f for f in self.b.fills if f.side == "SETTLE"]
+        self.assertEqual([(f.slug, f.tag) for f in settle], [("brewers", "copytop")])
+        self.assertEqual(copy.card.summary("w:0xabc")["settled"], 1)
+        e.shutdown()
 
     def test_take_is_ioc_and_sell_closes_long(self):
         self.b.place("brewers", Order("SELL", 0.7, 3, False))

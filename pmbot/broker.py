@@ -334,7 +334,14 @@ class LiveBroker:
         params = order_params(slug, order)
         if not order.post_only:
             params["synchronousExecution"] = True  # executions come back in the response
-        resp = self.client.orders.create(params) or {}
+        try:
+            resp = self.client.orders.create(params) or {}
+        except Exception as e:
+            # Rejected (e.g. the market just suspended) or no answer. Nothing is
+            # booked; if it did fill, the next sync() picks up the position.
+            log.warning("live %s %s %d @ %.3f not placed: %s: %s", order.side, slug,
+                        order.qty, order.price, type(e).__name__, str(e)[:200])
+            return None
         log.info("live %s %s %d @ %.3f -> %s", order.side, slug, order.qty,
                  order.price, resp.get("id"))
         if not order.post_only:
