@@ -58,15 +58,6 @@
    "copy_pnl_per_10usd": 2.81
   },
   {
-   "wallet": "0x0d23fc6838433dbff11e4667ef5991e9dd9d2d56",
-   "name": "tiger105",
-   "copy_return": 0.2456,
-   "copy_t": 1.75,
-   "copies": 45,
-   "won": 30,
-   "copy_pnl_per_10usd": 2.47
-  },
-  {
    "wallet": "0x285faa3e3d1465cf3ff1bff1e1d14891f5b8495f",
    "name": "yabanci",
    "copy_return": 0.228,
@@ -94,6 +85,15 @@
    "copy_pnl_per_10usd": 2.76
   },
   {
+   "wallet": "0x0d23fc6838433dbff11e4667ef5991e9dd9d2d56",
+   "name": "tiger105",
+   "copy_return": 0.219,
+   "copy_t": 1.57,
+   "copies": 46,
+   "won": 30,
+   "copy_pnl_per_10usd": 2.2
+  },
+  {
    "wallet": "0x5fdd66ffd0325d4e8d1d86fbec50caa31770a747",
    "name": "juice-fruit",
    "copy_return": 0.2633,
@@ -105,20 +105,20 @@
   {
    "wallet": "0xff81cc85838ce8f91a7d4ae2eeddadfa3f8444c9",
    "name": "eokho",
-   "copy_return": 0.0328,
-   "copy_t": 0.6,
-   "copies": 709,
-   "won": 385,
-   "copy_pnl_per_10usd": 0.28
+   "copy_return": 0.0372,
+   "copy_t": 0.68,
+   "copies": 708,
+   "won": 384,
+   "copy_pnl_per_10usd": 0.32
   },
   {
    "wallet": "0x8c0b024c17831a0dde038547b7e791ae6a0d7aa5",
    "name": "THEHIGHLIFE",
-   "copy_return": 0.1218,
-   "copy_t": 1.64,
-   "copies": 519,
+   "copy_return": 0.124,
+   "copy_t": 1.67,
+   "copies": 518,
    "won": 226,
-   "copy_pnl_per_10usd": 1.24
+   "copy_pnl_per_10usd": 1.26
   },
   {
    "wallet": "0x56d8d5f6585716a1a900282192dd21a4261e1cce",
@@ -159,29 +159,20 @@
   {
    "wallet": "0x684baa57c338c2549aec0aa3f034f695d72a8409",
    "name": "monkeymashingkeyboard",
-   "copy_return": 0.0724,
-   "copy_t": 3.11,
-   "copies": 1956,
-   "won": 1101,
-   "copy_pnl_per_10usd": 0.7
+   "copy_return": 0.0715,
+   "copy_t": 3.07,
+   "copies": 1955,
+   "won": 1100,
+   "copy_pnl_per_10usd": 0.69
   },
   {
    "wallet": "0xe5241830e8876c115d7dc8311ad9f43d85fdd34f",
    "name": "GamblingOdyssey",
-   "copy_return": 0.0744,
-   "copy_t": 1.44,
-   "copies": 414,
-   "won": 210,
-   "copy_pnl_per_10usd": 0.85
-  },
-  {
-   "wallet": "0xe7870d0e1bfc65a23e3d66caf00ca1b9129e5034",
-   "name": "Kkunn",
-   "copy_return": 0.0722,
-   "copy_t": 1.43,
-   "copies": 611,
-   "won": 266,
-   "copy_pnl_per_10usd": 0.83
+   "copy_return": 0.0754,
+   "copy_t": 1.46,
+   "copies": 415,
+   "won": 211,
+   "copy_pnl_per_10usd": 0.86
   },
   {
    "wallet": "0xf4f88a1e25ff5dfae68326eb62049d6a1b7c5bf1",
@@ -204,38 +195,47 @@
   {
    "wallet": "0xdaef2be2a19ad331737d06545f85615b094554e9",
    "name": "PEYZ-BIGGEST-FAN",
-   "copy_return": 0.0468,
-   "copy_t": 0.72,
-   "copies": 360,
+   "copy_return": 0.0561,
+   "copy_t": 0.83,
+   "copies": 357,
    "won": 182,
-   "copy_pnl_per_10usd": 0.54
+   "copy_pnl_per_10usd": 0.63
   },
   {
    "wallet": "0x154ca10dfee317dcfb9337788db7da858cba658e",
    "name": "AmericaFirst1",
-   "copy_return": 0.0684,
-   "copy_t": 1.65,
-   "copies": 497,
+   "copy_return": 0.0662,
+   "copy_t": 1.6,
+   "copies": 498,
    "won": 312,
-   "copy_pnl_per_10usd": 0.69
+   "copy_pnl_per_10usd": 0.67
+  },
+  {
+   "wallet": "0xe7870d0e1bfc65a23e3d66caf00ca1b9129e5034",
+   "name": "Kkunn",
+   "copy_return": 0.0751,
+   "copy_t": 1.49,
+   "copies": 619,
+   "won": 271,
+   "copy_pnl_per_10usd": 0.86
   },
   {
    "wallet": "0xa2fc0448a1dce9258ebb91b2f3abcddb98a0b1b4",
    "name": "jiafan",
-   "copy_return": 0.0291,
-   "copy_t": 0.7,
-   "copies": 950,
-   "won": 564,
-   "copy_pnl_per_10usd": 0.25
+   "copy_return": 0.0249,
+   "copy_t": 0.59,
+   "copies": 941,
+   "won": 559,
+   "copy_pnl_per_10usd": 0.21
   },
   {
    "wallet": "0x5e3040eb55cb0f4f86eb0af40cb84c9d3585acbf",
    "name": "slimjoe",
-   "copy_return": -0.0884,
-   "copy_t": -2.32,
+   "copy_return": -0.089,
+   "copy_t": -2.33,
    "copies": 694,
    "won": 335,
-   "copy_pnl_per_10usd": -0.86
+   "copy_pnl_per_10usd": -0.87
   },
   {
    "wallet": "0x39fcd0aafb7047035e9323e6d1f99cd46f43e2f2",
@@ -249,38 +249,47 @@
   {
    "wallet": "0x4ccc0117ef9506fd57db87537ad785a385bf77ab",
    "name": "MurkSniper",
-   "copy_return": -0.0181,
+   "copy_return": -0.018,
    "copy_t": -0.49,
-   "copies": 606,
-   "won": 399,
-   "copy_pnl_per_10usd": -0.18
+   "copies": 607,
+   "won": 400,
+   "copy_pnl_per_10usd": -0.17
   },
   {
-   "wallet": "0xf12f7688a0bc8cc744ef871f70b74c16a976b30f",
-   "name": "0xf12f7688A0bC8Cc744eF871f70B74c16a976b30f-1779780453239",
-   "copy_return": 0.0454,
-   "copy_t": 0.78,
-   "copies": 761,
-   "won": 305,
-   "copy_pnl_per_10usd": 0.43
-  },
-  {
-   "wallet": "0xe015b5a2a299167be835a2fd1e86f09c49e06ffd",
-   "name": "TAIWANNUMBERONE",
-   "copy_return": -0.0761,
-   "copy_t": -2.96,
-   "copies": 1587,
-   "won": 817,
-   "copy_pnl_per_10usd": -0.77
+   "wallet": "0x0d0efde748a217f3985ef32ecc7d005f83e50570",
+   "name": "n1ck10s",
+   "copy_return": 0.0323,
+   "copy_t": 0.86,
+   "copies": 914,
+   "won": 491,
+   "copy_pnl_per_10usd": 0.32
   },
   {
    "wallet": "0x04641b57f332c15ecaa497799c55026d521967da",
    "name": "UNEB3154s4f251",
    "copy_return": 0.0328,
    "copy_t": 1.79,
-   "copies": 1886,
-   "won": 1186,
+   "copies": 1889,
+   "won": 1188,
    "copy_pnl_per_10usd": 0.34
+  },
+  {
+   "wallet": "0xe015b5a2a299167be835a2fd1e86f09c49e06ffd",
+   "name": "TAIWANNUMBERONE",
+   "copy_return": -0.0644,
+   "copy_t": -2.46,
+   "copies": 1560,
+   "won": 813,
+   "copy_pnl_per_10usd": -0.65
+  },
+  {
+   "wallet": "0xf12f7688a0bc8cc744ef871f70b74c16a976b30f",
+   "name": "0xf12f7688A0bC8Cc744eF871f70B74c16a976b30f-1779780453239",
+   "copy_return": 0.0439,
+   "copy_t": 0.75,
+   "copies": 760,
+   "won": 304,
+   "copy_pnl_per_10usd": 0.41
   },
   {
    "wallet": "0x3e591ae11c107331790396ab098f339561212a66",
@@ -292,30 +301,12 @@
    "copy_pnl_per_10usd": -0.53
   },
   {
-   "wallet": "0x377d1929a14bd380c8d23154d2b8d1bbb33b1825",
-   "name": "littlebay",
-   "copy_return": 0.0228,
-   "copy_t": 0.57,
-   "copies": 691,
-   "won": 454,
-   "copy_pnl_per_10usd": 0.23
-  },
-  {
    "wallet": "0x3e1ac4bede0a559fc47e78e8a74adeeb6f704d5c",
    "name": "TheRomanProcurator",
-   "copy_return": 0.0221,
-   "copy_t": 0.96,
-   "copies": 3334,
-   "won": 1664,
-   "copy_pnl_per_10usd": 0.22
-  },
-  {
-   "wallet": "0x0d0efde748a217f3985ef32ecc7d005f83e50570",
-   "name": "n1ck10s",
-   "copy_return": 0.022,
-   "copy_t": 0.6,
-   "copies": 907,
-   "won": 486,
+   "copy_return": 0.0224,
+   "copy_t": 0.97,
+   "copies": 3341,
+   "won": 1667,
    "copy_pnl_per_10usd": 0.22
   },
   {
@@ -328,13 +319,13 @@
    "copy_pnl_per_10usd": -0.16
   },
   {
-   "wallet": "0xf3ce7f04dde4f8c5aed19a20e5ecd8520e5ca57a",
-   "name": "Sisyphus-",
-   "copy_return": -0.0088,
-   "copy_t": -0.1,
-   "copies": 114,
-   "won": 68,
-   "copy_pnl_per_10usd": -0.09
+   "wallet": "0x377d1929a14bd380c8d23154d2b8d1bbb33b1825",
+   "name": "littlebay",
+   "copy_return": 0.0204,
+   "copy_t": 0.51,
+   "copies": 695,
+   "won": 456,
+   "copy_pnl_per_10usd": 0.2
   },
   {
    "wallet": "0x27f738fe203827445690339104aae35b20bc44b0",
@@ -346,22 +337,31 @@
    "copy_pnl_per_10usd": 0.2
   },
   {
-   "wallet": "0x01e6e3c5cfe50943e7721398054cb1e22032e7e0",
-   "name": "JustADonk",
-   "copy_return": 0.0287,
-   "copy_t": 0.61,
-   "copies": 720,
-   "won": 432,
-   "copy_pnl_per_10usd": 0.24
-  },
-  {
    "wallet": "0x5b45946c1ddec3ecd71a1ebcfca283af9967362b",
    "name": "nightcity2077",
-   "copy_return": -0.0153,
-   "copy_t": -0.3,
-   "copies": 1041,
-   "won": 486,
-   "copy_pnl_per_10usd": -0.14
+   "copy_return": -0.0144,
+   "copy_t": -0.28,
+   "copies": 1039,
+   "won": 485,
+   "copy_pnl_per_10usd": -0.13
+  },
+  {
+   "wallet": "0x01e6e3c5cfe50943e7721398054cb1e22032e7e0",
+   "name": "JustADonk",
+   "copy_return": 0.0302,
+   "copy_t": 0.65,
+   "copies": 719,
+   "won": 432,
+   "copy_pnl_per_10usd": 0.26
+  },
+  {
+   "wallet": "0xd27cc742d023d06ef633a4c880cf1ff1836ec081",
+   "name": "madkkee",
+   "copy_return": 0.0051,
+   "copy_t": 0.21,
+   "copies": 570,
+   "won": 409,
+   "copy_pnl_per_10usd": 0.06
   }
  ]
 }
