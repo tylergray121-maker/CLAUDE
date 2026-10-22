@@ -1,37 +1,5 @@
 [
  {
-  "us_slug": "aec-nba-chi-tor-2026-10-21",
-  "intl_token": "8478232975053021656102481848967329190182250864822625630950559616369952555004",
-  "score": 1.0,
-  "us_label": "Bulls vs. Raptors: Bulls",
-  "intl_label": "Bulls vs. Raptors [Bulls]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nba-chi-tor-2026-10-21:short",
-  "intl_token": "99964542458256567041071603202810954439068213855769986773400890577966753751107",
-  "score": 1.0,
-  "us_label": "Bulls vs. Raptors: Raptors",
-  "intl_label": "Bulls vs. Raptors [Raptors]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nba-uta-mem-2026-10-21",
-  "intl_token": "7685158848984498977390071784341171138992058973607044422044852725107513658437",
-  "score": 1.0,
-  "us_label": "Jazz vs. Grizzlies: Jazz",
-  "intl_label": "Jazz vs. Grizzlies [Jazz]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nba-uta-mem-2026-10-21:short",
-  "intl_token": "92026908821928990759307387761911364987540060356600925155085252262202735890787",
-  "score": 1.0,
-  "us_label": "Jazz vs. Grizzlies: Grizzlies",
-  "intl_label": "Jazz vs. Grizzlies [Grizzlies]",
-  "tick": 0.01
- },
- {
   "us_slug": "aec-nba-dal-hou-2026-10-21",
   "intl_token": "70448374113237600852894674614824159045901244794984612914777108422734736077371",
   "score": 1.0,
@@ -656,54 +624,6 @@
   "tick": 0.01
  },
  {
-  "us_slug": "atc-lib-pal-flu-2026-10-21-pal",
-  "intl_token": "2790086222828231518900888914941526306743862027163195238386140530469013546872",
-  "score": 1.0,
-  "us_label": "Will SE Palmeiras win on 2026-10-21?: Yes",
-  "intl_label": "Will SE Palmeiras win on 2026-10-21? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-lib-pal-flu-2026-10-21-pal:short",
-  "intl_token": "68367103559867149448643178059927278950893952302851098096852106503793603155007",
-  "score": 1.0,
-  "us_label": "Will SE Palmeiras win on 2026-10-21?: No",
-  "intl_label": "Will SE Palmeiras win on 2026-10-21? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-lib-pal-flu-2026-10-21-draw",
-  "intl_token": "70862620757603204945975215545281191541277553511948823972509178541798630497945",
-  "score": 1.0,
-  "us_label": "Will SE Palmeiras vs. Fluminense FC end in a draw?: Yes",
-  "intl_label": "Will SE Palmeiras vs. Fluminense FC end in a draw? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-lib-pal-flu-2026-10-21-draw:short",
-  "intl_token": "73768419524086518743525920059356180689387388370447190305817234965679698067563",
-  "score": 1.0,
-  "us_label": "Will SE Palmeiras vs. Fluminense FC end in a draw?: No",
-  "intl_label": "Will SE Palmeiras vs. Fluminense FC end in a draw? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-lib-pal-flu-2026-10-21-flu",
-  "intl_token": "106880379793252910179523666422089999201038728070757526201080937231393548187866",
-  "score": 1.0,
-  "us_label": "Will Fluminense FC win on 2026-10-21?: Yes",
-  "intl_label": "Will Fluminense FC win on 2026-10-21? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-lib-pal-flu-2026-10-21-flu:short",
-  "intl_token": "109673251504421090181559162033203832094452579233762448350119898703815450485132",
-  "score": 1.0,
-  "us_label": "Will Fluminense FC win on 2026-10-21?: No",
-  "intl_label": "Will Fluminense FC win on 2026-10-21? [No]",
-  "tick": 0.01
- },
- {
   "us_slug": "atc-spl-haz-fay-2026-10-22-haz",
   "intl_token": "55820637656080051236779553744171718550430743317298849483643993923931369327674",
   "score": 1.0,
@@ -797,22 +717,6 @@
   "score": 1.0,
   "us_label": "Will Al Shabab Saudi Club win on 2026-10-22?: No",
   "intl_label": "Will Al Shabab Saudi Club win on 2026-10-22? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nhl-fla-ott-2026-10-21",
-  "intl_token": "51577654098216909438598446353000359057088537083281122752275219430752362831666",
-  "score": 1.0,
-  "us_label": "Panthers vs. Senators: Panthers",
-  "intl_label": "Panthers vs. Senators [Panthers]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nhl-fla-ott-2026-10-21:short",
-  "intl_token": "48866081821578022736438008069486146542430511053729421808030028737699960320449",
-  "score": 1.0,
-  "us_label": "Panthers vs. Senators: Senators",
-  "intl_label": "Panthers vs. Senators [Senators]",
   "tick": 0.01
  },
  {
@@ -1904,6 +1808,22 @@
   "tick": 0.01
  },
  {
+  "us_slug": "aec-cs2-ksm-lph-2026-10-22",
+  "intl_token": "112830070932059090088620991251998560452480523031753733558589666313046951658258",
+  "score": 1.0,
+  "us_label": "Counter-Strike: KUUSAMO.gg vs LPH Gaming (BO3) - ESL Challenger League Europe Cup #9 Group D: KUUSAMO.gg",
+  "intl_label": "Counter-Strike: KUUSAMO.gg vs LPH Gaming (BO3) - ESL Challenger League Europe Cup #9 Group D [KUUSAMO.gg]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-ksm-lph-2026-10-22:short",
+  "intl_token": "22245050338594615342515125748319556833762379478196924780545783328522393891987",
+  "score": 1.0,
+  "us_label": "Counter-Strike: KUUSAMO.gg vs LPH Gaming (BO3) - ESL Challenger League Europe Cup #9 Group D: LPH Gaming",
+  "intl_label": "Counter-Strike: KUUSAMO.gg vs LPH Gaming (BO3) - ESL Challenger League Europe Cup #9 Group D [LPH Gaming]",
+  "tick": 0.01
+ },
+ {
   "us_slug": "aec-cs2-xi-rcave-2026-10-22",
   "intl_token": "27114601467224875426850413781554308855690492194089057314698198547292178913558",
   "score": 1.0,
@@ -2040,19 +1960,19 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-ucl-final-2026-06-05-w-spo",
-  "intl_token": "51852859144588408353883434057387376016222865952172946996183559003223391693129",
-  "score": 0.6,
-  "us_label": "UEFA Champions League Winner: Sporting CP",
-  "intl_label": "Will Sporting CP win the 2026-27 UEFA Champions League Championship? [Sporting CP]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-champ-2027-06-18-w-min",
   "intl_token": "70393266426571575127884261634092459667577738304718921911204715531748407428131",
   "score": 0.625,
   "us_label": "2027 NBA Champion: Minnesota Timberwolves",
   "intl_label": "Will Minnesota Timberwolves win the 2027 NBA Finals? [Minnesota Timberwolves]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-ucl-final-2026-06-05-w-spo",
+  "intl_token": "51852859144588408353883434057387376016222865952172946996183559003223391693129",
+  "score": 0.6,
+  "us_label": "UEFA Champions League Winner: Sporting CP",
+  "intl_label": "Will Sporting CP win the 2026-27 UEFA Champions League Championship? [Sporting CP]",
   "tick": 0.01
  },
  {
@@ -2088,20 +2008,20 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-mlb-champ-2026-09-27-mil",
-  "intl_token": "68495273029336552259622116656826978391613637593537133254546205487243272235948",
-  "score": 0.75,
-  "us_label": "World Series Champion: Milwaukee Brewers",
-  "intl_label": "Will the Milwaukee Brewers win the 2026 World Series? [Milwaukee Brewers]",
-  "tick": 0.001
- },
- {
   "us_slug": "tec-nba-champ-2027-06-18-w-lal",
   "intl_token": "26571480884168216649675719735797492426851959149575524589012193881222415382420",
   "score": 0.625,
   "us_label": "2027 NBA Champion: Los Angeles Lakers",
   "intl_label": "Will Los Angeles Lakers win the 2027 NBA Finals? [Los Angeles Lakers]",
   "tick": 0.01
+ },
+ {
+  "us_slug": "tec-mlb-champ-2026-09-27-mil",
+  "intl_token": "68495273029336552259622116656826978391613637593537133254546205487243272235948",
+  "score": 0.75,
+  "us_label": "World Series Champion: Milwaukee Brewers",
+  "intl_label": "Will the Milwaukee Brewers win the 2026 World Series? [Milwaukee Brewers]",
+  "tick": 0.001
  },
  {
   "us_slug": "tec-nba-champ-2027-06-18-w-cha",
@@ -2144,12 +2064,12 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-mlb-champ-2026-09-27-tb",
-  "intl_token": "47619537154464827225570738666275423513741144464229940374555699932743034295206",
-  "score": 0.75,
-  "us_label": "World Series Champion: Tampa Bay Rays",
-  "intl_label": "Will the Tampa Bay Rays win the 2026 World Series? [Tampa Bay Rays]",
-  "tick": 0.001
+  "us_slug": "tec-nba-champ-2027-06-18-w-mil",
+  "intl_token": "95591695216171451248134018784429977920892345198186404402775566795817315978257",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Milwaukee Bucks",
+  "intl_label": "Will Milwaukee Bucks win the 2027 NBA Finals? [Milwaukee Bucks]",
+  "tick": 0.01
  },
  {
   "us_slug": "tec-nba-champ-2027-06-18-w-hou",
@@ -2192,12 +2112,12 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nba-champ-2027-06-18-w-mil",
-  "intl_token": "95591695216171451248134018784429977920892345198186404402775566795817315978257",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Milwaukee Bucks",
-  "intl_label": "Will Milwaukee Bucks win the 2027 NBA Finals? [Milwaukee Bucks]",
-  "tick": 0.01
+  "us_slug": "tec-mlb-champ-2026-09-27-tb",
+  "intl_token": "47619537154464827225570738666275423513741144464229940374555699932743034295206",
+  "score": 0.75,
+  "us_label": "World Series Champion: Tampa Bay Rays",
+  "intl_label": "Will the Tampa Bay Rays win the 2026 World Series? [Tampa Bay Rays]",
+  "tick": 0.001
  },
  {
   "us_slug": "tec-nba-champ-2027-06-18-w-den",
@@ -2224,6 +2144,22 @@
   "tick": 0.01
  },
  {
+  "us_slug": "tec-nba-champ-2027-06-18-w-nop",
+  "intl_token": "38556205473470072936293737937663401559968429300207925799805811020804034073896",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: New Orleans Pelicans",
+  "intl_label": "Will New Orleans Pelicans win the 2027 NBA Finals? [New Orleans Pelicans]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-mem",
+  "intl_token": "71113005321543345953148982401714344852983979956921740107184770476905149747949",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Memphis Grizzlies",
+  "intl_label": "Will Memphis Grizzlies win the 2027 NBA Finals? [Memphis Grizzlies]",
+  "tick": 0.01
+ },
+ {
   "us_slug": "tac-oscars-nom-bstprod-2027-01-21-wuthei",
   "intl_token": "767603171870407657445764512400149874707666791861114053189745410094214884651",
   "score": 0.504,
@@ -2240,27 +2176,11 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nba-champ-2027-06-18-w-nop",
-  "intl_token": "38556205473470072936293737937663401559968429300207925799805811020804034073896",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: New Orleans Pelicans",
-  "intl_label": "Will New Orleans Pelicans win the 2027 NBA Finals? [New Orleans Pelicans]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-champ-2027-06-18-w-sac",
   "intl_token": "57732863988930661516951373762180729621826532679525881570777417952859748544005",
   "score": 0.625,
   "us_label": "2027 NBA Champion: Sacramento Kings",
   "intl_label": "Will Sacramento Kings win the 2027 NBA Finals? [Sacramento Kings]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-mem",
-  "intl_token": "71113005321543345953148982401714344852983979956921740107184770476905149747949",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Memphis Grizzlies",
-  "intl_label": "Will Memphis Grizzlies win the 2027 NBA Finals? [Memphis Grizzlies]",
   "tick": 0.01
  },
  {
@@ -2408,14 +2328,6 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tac-oscars-nom-bstedit-2027-01-21-digger",
-  "intl_token": "54357421105140568192253212493819595093860495415332105841215997048840594174894",
-  "score": 0.604,
-  "us_label": "Oscar Nominees: Best Film Editing: Digger",
-  "intl_label": "Will \"Digger\" be nominated for Best Original Screenplay at the 99th Academy Awards? [Digger]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-epl-title-2027-05-30-w-ars",
   "intl_token": "106464589845250400124249015666766731317110899241411841699938652823328750757436",
   "score": 0.633,
@@ -2464,19 +2376,19 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tac-oscars-nom-bstanimshort-2027-01-21-elcue",
-  "intl_token": "66897649130983653467996752725405404079877340036736916099145023066179838873624",
-  "score": 0.674,
-  "us_label": "Oscar Nominees: Best Animated Short Film: El Cuerpo de Cristo",
-  "intl_label": "Will \"El Cuerpo de Cristo\" be nominated for Best Animated Short Film at the 99th Academy Awards? [El Cuerpo de Cristo]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nhl-champ-2027-06-18-w-ana",
   "intl_token": "77180180469445154105037188312587313186766506757733070365580009549280079931400",
   "score": 0.654,
   "us_label": "2027 Stanley Cup Champion: Anaheim Ducks",
   "intl_label": "Will the Anaheim Ducks be named the 2026-27 NHL Stanley Cup Champion? [Anaheim Ducks]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstanimshort-2027-01-21-elcue",
+  "intl_token": "66897649130983653467996752725405404079877340036736916099145023066179838873624",
+  "score": 0.674,
+  "us_label": "Oscar Nominees: Best Animated Short Film: El Cuerpo de Cristo",
+  "intl_label": "Will \"El Cuerpo de Cristo\" be nominated for Best Animated Short Film at the 99th Academy Awards? [El Cuerpo de Cristo]",
   "tick": 0.01
  },
  {
@@ -2512,6 +2424,22 @@
   "tick": 0.01
  },
  {
+  "us_slug": "tec-nba-eastconf-2027-05-19-w-nyk",
+  "intl_token": "59166355150177368147653574087707142738209395513991688354695396907436634214895",
+  "score": 0.643,
+  "us_label": "NBA Eastern Conference Champion: New York Knicks",
+  "intl_label": "Will the New York Knicks be the 2027 NBA Eastern Conference Champion? [New York Knicks]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstact-2027-01-21-matdam",
+  "intl_token": "52833793216659629987091317352950095009058096430593160831827879731180903924887",
+  "score": 0.643,
+  "us_label": "Oscar Nominees: Best Actor: Matt Damon",
+  "intl_label": "Will Matt Damon be nominated for Best Actor at the 99th Academy Awards? [Matt Damon]",
+  "tick": 0.01
+ },
+ {
   "us_slug": "tac-oscars-nom-bstcast-2027-01-21-debut",
   "intl_token": "19923169701743169913996740974284918934040175461548398956507868440350127057374",
   "score": 0.609,
@@ -2541,30 +2469,6 @@
   "score": 0.504,
   "us_label": "Oscar Nominees: Best Original Song: This City May Have Chewed Me Up (But It Hasn't Spit Me Out) - The Debut",
   "intl_label": "Will \"The Debut\" be nominated for Best Film Editing at the 99th Academy Awards? [The Debut]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstanim-2027-01-21-tangle",
-  "intl_token": "29237342947195586498525434418417658553833613796036417614683915234263904574697",
-  "score": 0.674,
-  "us_label": "Oscar Nominees: Best Animated Feature Film: Tangles",
-  "intl_label": "Will \"Tangles\" be nominated for Best Animated Feature Film at the 99th Academy Awards? [Tangles]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-eastconf-2027-05-19-w-nyk",
-  "intl_token": "59166355150177368147653574087707142738209395513991688354695396907436634214895",
-  "score": 0.643,
-  "us_label": "NBA Eastern Conference Champion: New York Knicks",
-  "intl_label": "Will the New York Knicks be the 2027 NBA Eastern Conference Champion? [New York Knicks]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstact-2027-01-21-matdam",
-  "intl_token": "52833793216659629987091317352950095009058096430593160831827879731180903924887",
-  "score": 0.643,
-  "us_label": "Oscar Nominees: Best Actor: Matt Damon",
-  "intl_label": "Will Matt Damon be nominated for Best Actor at the 99th Academy Awards? [Matt Damon]",
   "tick": 0.01
  },
  {
@@ -2696,19 +2600,43 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tac-oscars-nom-bstorigscr-2027-01-21-elsino",
-  "intl_token": "49947883690893321668605904280941329019506708400369927735110598916726348018121",
-  "score": 0.604,
-  "us_label": "Oscar Nominees: Best Original Screenplay: Elsinore",
-  "intl_label": "Will \"Elsinore\" be nominated for Best Film Editing at the 99th Academy Awards? [Elsinore]",
-  "tick": 0.01
- },
- {
   "us_slug": "tac-oscars-nom-bstedit-2027-01-21-elsino",
   "intl_token": "49947883690893321668605904280941329019506708400369927735110598916726348018121",
   "score": 0.659,
   "us_label": "Oscar Nominees: Best Film Editing: Elsinore",
   "intl_label": "Will \"Elsinore\" be nominated for Best Film Editing at the 99th Academy Awards? [Elsinore]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestanimshort-please",
+  "intl_token": "40043803944260984718787095418347867514565836398435093197260629245561467110665",
+  "score": 0.684,
+  "us_label": "Oscar Winner: Best Animated Short Film: Please",
+  "intl_label": "Will Please win Best Animated Short Film at the 99th Academy Awards? [Please]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstdoc-2027-01-21-youcan",
+  "intl_token": "53610167052119594539943260017737712674154626353449223102231029322515421519907",
+  "score": 0.674,
+  "us_label": "Oscar Nominees: Best Documentary Feature Film: You Can See Everything",
+  "intl_label": "Will \"You Can See Everything\" be nominated for Best Documentary Feature Film at the 99th Academy Awards? [You Can See Everything]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstedit-2027-01-21-youcan",
+  "intl_token": "53610167052119594539943260017737712674154626353449223102231029322515421519907",
+  "score": 0.625,
+  "us_label": "Oscar Nominees: Best Film Editing: You Can See Everything",
+  "intl_label": "Will \"You Can See Everything\" be nominated for Best Documentary Feature Film at the 99th Academy Awards? [You Can See Everything]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-epl-title-2027-05-30-w-bha",
+  "intl_token": "9221383556608449303835174806846320148935846556873035382860978740383478459961",
+  "score": 0.533,
+  "us_label": "English Premier League Champion: Brighton & Hove Albion",
+  "intl_label": "Will Brighton win the 2026-27 English Premier League (EPL) Championship? [Brighton]",
   "tick": 0.01
  }
 ]

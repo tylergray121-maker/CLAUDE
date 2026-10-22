@@ -5741,3 +5741,29 @@
 {"ts": 1792636260.39, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Will the Republicans win the Texas Senate race in 2026?", "intl_slug": "will-the-republicans-win-the-texas-senate-race-in-2026", "outcome": "Yes"}
 {"ts": 1792636260.39, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Will the Republicans win the Texas Senate race in 2026?", "intl_slug": "will-the-republicans-win-the-texas-senate-race-in-2026", "outcome": "Yes"}
 {"ts": 1792636338.847, "kind": "cancel_all", "reason": "shutdown"}
+{"ts": 1792636846.207, "kind": "leader_status", "leader": "HVAB", "wallet": "0x8546a601f7c7cc3dae7141f20b0e09e42bbf35b8", "status": "cooling", "was": "copying", "why": "\u2212$41,003 on Polymarket this week"}
+{"ts": 1792636851.911, "kind": "pair_rejected", "slug": "aec-nba-det-mia-2026-10-23", "token": "89614825808182318517107438603433323788424431273582563248306521028214302552681", "gap": 0.145, "us": "Pistons vs. Heat: Pistons", "intl": "Pistons vs. Heat [Pistons]"}
+{"ts": 1792636851.911, "kind": "pair_rejected", "slug": "aec-nba-det-mia-2026-10-23:short", "token": "3021433766774774205774882245432612275670356823481494044161832381875746344594", "gap": 0.145, "us": "Pistons vs. Heat: Heat", "intl": "Pistons vs. Heat [Heat]"}
+{"ts": 1792636863.439, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "2026 Balance of Power: D Senate, R House", "intl_slug": "2026-balance-of-power-d-senate-r-house-692", "outcome": "Yes"}
+{"ts": 1792636973.439, "kind": "copy_unmapped", "leader": "EdZachary", "market": "Spread: Clippers (-5.5)", "intl_slug": "nba-sac-lac-2026-10-21-spread-home-5pt5", "outcome": "Kings"}
+{"ts": 1792636973.439, "kind": "copy_unmapped", "leader": "EdZachary", "market": "Spread: Clippers (-5.5)", "intl_slug": "nba-sac-lac-2026-10-21-spread-home-5pt5", "outcome": "Kings"}
+{"ts": 1792636973.439, "kind": "copy_unmapped", "leader": "EdZachary", "market": "Spread: Clippers (-5.5)", "intl_slug": "nba-sac-lac-2026-10-21-spread-home-5pt5", "outcome": "Kings"}
+{"ts": 1792636973.439, "kind": "copy_unmapped", "leader": "EdZachary", "market": "Spread: Clippers (-5.5)", "intl_slug": "nba-sac-lac-2026-10-21-spread-home-5pt5", "outcome": "Kings"}
+{"ts": 1792636973.439, "kind": "copy_unmapped", "leader": "EdZachary", "market": "Spread: Clippers (-4.5)", "intl_slug": "nba-sac-lac-2026-10-21-spread-home-4pt5", "outcome": "Kings"}
+{"ts": 1792636973.439, "kind": "copy_unmapped", "leader": "EdZachary", "market": "Spread: Clippers (-4.5)", "intl_slug": "nba-sac-lac-2026-10-21-spread-home-4pt5", "outcome": "Kings"}
+{"ts": 1792636973.439, "kind": "copy_unmapped", "leader": "EdZachary", "market": "Spread: Clippers (-4.5)", "intl_slug": "nba-sac-lac-2026-10-21-spread-home-4pt5", "outcome": "Kings"}
+{"ts": 1792636973.439, "kind": "copy_unmapped", "leader": "EdZachary", "market": "Spread: Clippers (-4.5)", "intl_slug": "nba-sac-lac-2026-10-21-spread-home-4pt5", "outcome": "Kings"}
+{"ts": 1792636973.439, "kind": "copy_unmapped", "leader": "EdZachary", "market": "Spread: Clippers (-4.5)", "intl_slug": "nba-sac-lac-2026-10-21-spread-home-4pt5", "outcome": "Kings"}
+{"ts": 1792636973.439, "kind": "copy_unmapped", "leader": "EdZachary", "market": "Spread: Clippers (-4.5)", "intl_slug": "nba-sac-lac-2026-10-21-spread-home-4pt5", "outcome": "Kings"}
+{"ts": 1792636973.439, "kind": "copy_unmapped", "leader": "EdZachary", "market": "Spread: Clippers (-4.5)", "intl_slug": "nba-sac-lac-2026-10-21-spread-home-4pt5", "outcome": "Kings"}
+{"ts": 1792636973.439, "kind": "copy_unmapped", "leader": "EdZachary", "market": "Spread: Clippers (-4.5)", "intl_slug": "nba-sac-lac-2026-10-21-spread-home-4pt5", "outcome": "Kings"}
+{"ts": 1792636973.439, "kind": "copy_unmapped", "leader": "EdZachary", "market": "Spread: Clippers (-4.5)", "intl_slug": "nba-sac-lac-2026-10-21-spread-home-4pt5", "outcome": "Kings"}
+{"ts": 1792636973.439, "kind": "copy_unmapped", "leader": "EdZachary", "market": "Spread: Clippers (-4.5)", "intl_slug": "nba-sac-lac-2026-10-21-spread-home-4pt5", "outcome": "Kings"}
+{"ts": 1792636973.439, "kind": "copy_unmapped", "leader": "EdZachary", "market": "Spread: Clippers (-4.5)", "intl_slug": "nba-sac-lac-2026-10-21-spread-home-4pt5", "outcome": "Kings"}
+{"ts": 1792636973.439, "kind": "copy_unmapped", "leader": "EdZachary", "market": "Spread: Clippers (-4.5)", "intl_slug": "nba-sac-lac-2026-10-21-spread-home-4pt5", "outcome": "Kings"}
+{"ts": 1792636973.439, "kind": "copy_unmapped", "leader": "EdZachary", "market": "Spread: Clippers (-4.5)", "intl_slug": "nba-sac-lac-2026-10-21-spread-home-4pt5", "outcome": "Kings"}
+{"ts": 1792636973.439, "kind": "copy_unmapped", "leader": "EdZachary", "market": "Spread: Clippers (-5.5)", "intl_slug": "nba-sac-lac-2026-10-21-spread-home-5pt5", "outcome": "Kings"}
+{"ts": 1792637023.44, "kind": "copy_unmapped", "leader": "primm", "market": "Spread: New Mexico State (-6.5)", "intl_slug": "cfb-nmxst-smho-2026-10-21-spread-away-6pt5", "outcome": "Sam Houston"}
+{"ts": 1792637103.441, "kind": "copy_signal", "slug": "aec-nhl-nyr-tor-2026-10-22", "side": "BUY", "leader": "PEYZ-BIGGEST-FAN", "price": 0.51, "leader_usd": 10.2, "market": "Rangers vs. Maple Leafs"}
+{"ts": 1792637107.226, "kind": "order", "slug": "aec-nhl-nyr-tor-2026-10-22", "side": "BUY", "price": 0.52, "qty": 9, "post_only": false, "fair": null, "strategy": "copytop", "id": null}
+{"ts": 1792637201.919, "kind": "cancel_all", "reason": "shutdown"}

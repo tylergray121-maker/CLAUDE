@@ -1,20 +1,21 @@
-02:25:42 INFO Polymarket US: 81673 open markets
-02:25:45 INFO international: 2547 active outcome tokens
-02:25:59 INFO games: 1697 US game markets in the next 48h, 134 international matches, 244 pairs
-02:25:59 INFO pairs: 339 kept, 14 rejected on price
-02:26:03 INFO leader HVAB: copying -> cooling (−$41,003 on Polymarket this week)
+02:40:26 INFO Polymarket US: 80875 open markets
+02:40:28 INFO international: 2507 active outcome tokens
+02:40:42 INFO games: 1723 US game markets in the next 48h, 130 international matches, 234 pairs
+02:40:42 INFO pairs: 330 kept, 17 rejected on price
+02:40:46 INFO leader HVAB: copying -> cooling (−$41,003 on Polymarket this week)
+02:45:07 INFO paper BUY aec-nhl-nyr-tor-2026-10-22 9 @ 0.520 (taker, fee +0.16)
 # Polymarket US bot — paper run
 
-Mapping: 81673 open US markets, 2547 international outcomes, 339 pairs (20 tracked after live price checks); observations with a trustworthy reference price: 532.
+Mapping: 80875 open US markets, 2507 international outcomes, 330 pairs (18 tracked after live price checks); observations with a trustworthy reference price: 576.
 
 ## Is there an edge to take?
 
-US mid vs international mid, absolute gap: median 1.00¢, 90th pct 2.50¢, 99th pct 4.00¢.
+US mid vs international mid, absolute gap: median 1.00¢, 90th pct 5.00¢, 99th pct 5.50¢.
 Times a US price was through fair value by ≥ 3¢ after the taker fee: 0 to buy, 0 to sell (see `events.jsonl`, kind=opportunity).
 
 ## Trading
 
-Equity $200.00 from $200.00 (+0.00), cash $200.00; 0 fills; taker fees $0.00; maker rebates $0.00; open positions 0.
+Equity $199.79 from $200.00 (-0.21), cash $195.16; 1 fills; taker fees $0.16; maker rebates $0.00; open positions 1.
 Halted: no.
 
 

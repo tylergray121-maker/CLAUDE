@@ -1,20 +1,50 @@
-US: 81663 open markets, 60497 game/spread/total/prop slugs, 339 verified pairs
+profile 'Tiger105': tiger105 0x0d23fc6838433dbff11e4667ef5991e9dd9d2d56
+profile 'Tiger105': ah-cop-tiger105 0x8d6064a7f8b67988a4073ac1b051356fc8cebd76
+profile 'Tiger105': tiger105050 0x185031bb4a1763496d706e0c07339a690e00b57f
+
+US markets in ['atp', 'itf', 'wta']: 1300
+  US arankc-atp-2026-12-31-no1-tayfri | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-novdjo | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-lormus | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-karkha | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-jansin | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-jacdra | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-fratia | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-felaug | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-danmed | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-casruu | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-benshe | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-alemin | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-alebub | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-alezve | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-fracer | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-flacob | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-gabdia | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-artfil | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-joafon | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-hubhur | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-rafjod | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-sebkor | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-jakmen | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-camnor | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+  US arankc-atp-2026-12-31-no1-tompau | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
+US: 81187 open markets, 60024 game/spread/total/prop slugs, 338 verified pairs
 
 age                    long side              short side  listed, outcome names     not on Polymarket US  copyable
-<3h                           94                       0                       1                     222       30%
-3-12h                        206                       1                       0                     211       50%
-12-48h                        22                       1                       0                     840        3%
-older                          0                       4                       0                    1598        0%
+<3h                          100                       0                       1                     224       31%
+3-12h                        132                       1                       0                     287       32%
+12-48h                        12                       1                       0                     841        2%
+older                          0                       4                       0                    1597        0%
 
 by league (all ages): copyable / total
-  nfl              0 / 386
-  nba            127 / 367
-  futures        151 / 363
+  nfl              0 / 385
+  nba             53 / 374
+  futures        151 / 356
   atp              0 / 264
   lol             15 / 253
-  nhl             35 / 223
+  nhl             31 / 223
   dota2            0 / 206
-  cfb              0 / 179
+  cfb              0 / 180
   ucl              0 / 155
   mlb              0 / 152
   fifwc            0 / 140
@@ -29,28 +59,28 @@ by league (all ages): copyable / total
   fl1              0 / 4
 
 recent trades not on Polymarket US (international slug | outcome | US lists for the same matchup):
-  104  nba-sac-lac-2026-10-21-spread-home-4pt5 | Kings | nba-sac-lac-2026-10-21, nba-sac-lac-2026-10-21-216pt5, nba-sac-lac-2026-10-21-219pt5, nba-sac-lac-2026-10-21-222pt5
-   58  nba-sac-lac-2026-10-21-spread-home-5pt5 | Kings | nba-sac-lac-2026-10-21, nba-sac-lac-2026-10-21-216pt5, nba-sac-lac-2026-10-21-219pt5, nba-sac-lac-2026-10-21-222pt5
+  105  nba-sac-lac-2026-10-21-spread-home-4pt5 | Kings | nba-sac-lac-2026-10-21, nba-sac-lac-2026-10-21-216pt5, nba-sac-lac-2026-10-21-219pt5, nba-sac-lac-2026-10-21-222pt5
+   73  nba-sac-lac-2026-10-21-spread-home-5pt5 | Kings | nba-sac-lac-2026-10-21, nba-sac-lac-2026-10-21-216pt5, nba-sac-lac-2026-10-21-219pt5, nba-sac-lac-2026-10-21-222pt5
+   72  nba-chi-tor-2026-10-21 | Bulls | nba-chi-tor-2026-10-21-3pm-calwil-gte1, nba-chi-tor-2026-10-21-3pm-calwil-gte2, nba-chi-tor-2026-10-21-3pm-calwil-gte3, nba-chi-tor-2026-10-21-3pm-immqui-gte3
    45  nba-ind-nop-2026-10-21-spread-away-3pt5 | Pelicans | -
-   36  will-philadelphia-76ers-win-the-2027-nba-finals | No | -
    34  ucl-bay-ars-2026-10-21-bay | No | -
-   31   |  | -
+   30   |  | -
+   25  will-philadelphia-76ers-win-the-2027-nba-finals | No | -
    18  nba-cha-bkn-2026-10-21 | Nets | nba-cha-bkn-2026-10-21-3pm-bramil-gte3, nba-cha-bkn-2026-10-21-3pm-bramil-gte4, nba-cha-bkn-2026-10-21-3pm-bramil-gte5, nba-cha-bkn-2026-10-21-3pm-bramil-gte6
    17  itf-zeltin1-olmo1-2026-10-21 | Beatrise Zeltina | -
-   10  will-the-democrats-win-the-texas-senate-race-in-2026 | No | -
-    9  nba-atl-orl-2026-10-21 | Hawks | -
+    9  will-the-republicans-win-the-texas-senate-race-in-2026 | Yes | -
     8  dota2-yes-bot1-2026-10-21-game1 | Yellow Submarine | -
     7  wta-annli-sonmez-2026-10-21 | Ann Li | -
     7  itf-hosogi1-inoue1-2026-10-21 | Hina Inoue | -
     6  ucl-bru-rcl-2026-10-21-total-4pt5 | Under | -
+    6  will-the-democrats-win-the-texas-senate-race-in-2026 | No | -
+    5  nba-atl-orl-2026-10-21 | Hawks | -
     5  itf-palico1-rapolu1-2026-10-21 | Malaika Rapolu | -
-    5  nba-sac-lac-2026-10-21-spread-home-3pt5 | Kings | nba-sac-lac-2026-10-21, nba-sac-lac-2026-10-21-216pt5, nba-sac-lac-2026-10-21-219pt5, nba-sac-lac-2026-10-21-222pt5
+    4  nhl-fla-ott-2026-10-21 | Panthers | nhl-fla-ott-2026-10-21-ast-antlun-gte1, nhl-fla-ott-2026-10-21-ast-antlun-gte2, nhl-fla-ott-2026-10-21-ast-bratka-gte1, nhl-fla-ott-2026-10-21-ast-bratka-gte2
     4  ucl-com-mnu-2026-10-21-total-2pt5 | Under | -
     4  dota2-salami-huliga-2026-10-21-game1 | salamit | -
-    4  2026-balance-of-power-d-senate-r-house-692 | Yes | -
     3  itf-palico1-rapolu1-2026-10-21 | Barbora Palicova | -
     3  atp-goffin-bertola-2026-10-20 | Remy Bertola | -
+    3  2026-balance-of-power-d-senate-r-house-692 | Yes | -
     2  dota2-dawnbu-z10-2026-10-21 | Zero Tenacity | -
     2  itf-zeltin1-olmo1-2026-10-21 | Ane Mintegi Del Olmo | -
-    1  cfb-nmxst-smho-2026-10-21-spread-home-2pt5 | Sam Houston | cfb-nmxst-smho-2026-10-21, cfb-nmxst-smho-2026-10-21-2h-22pt5, cfb-nmxst-smho-2026-10-21-2h-23pt5, cfb-nmxst-smho-2026-10-21-2h-24pt5
-    1  ucl-bru-rcl-2026-10-21-total-3pt5 | Under | -
