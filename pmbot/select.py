@@ -36,7 +36,7 @@ from statistics import median
 
 from collections import Counter
 
-from copybt.api import Client, HTTPError
+from copybt.api import DATA_API, GAMMA_API, Client, HTTPError
 from copybt.data import PriceHistory, fetch_leaderboard, fetch_markets, fetch_trades
 
 from . import data as pmdata
@@ -53,6 +53,58 @@ _KINDS = ((re.compile(rf"^{_DATE}$"), "moneyline"),
 
 
 _TOTAL = re.compile(r"-total-(?=\d+pt\d+$)")
+
+
+# League codes of esports markets (international slugs), for the esports report.
+ESPORTS = {"cs2", "csgo", "lol", "dota2", "val", "r6", "rl", "cod", "codmw", "ow", "mlbb",
+           "sc2", "hok", "pubg", "apex", "fifa"}
+
+
+def discover(client: Client, tags: list[str], start_ts: int, max_events: int = 150,
+             min_buys: int = 15) -> dict[str, dict]:
+    """Wallets that bet often on markets with these Polymarket tags (e.g.
+    'esports'): specialists too small for the volume leaderboards. Reads the
+    tags' events that ended in the window, then each market's recent trades;
+    keeps wallets with ``min_buys`` buys across them."""
+    since = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(start_ts))
+    found: dict[str, dict] = {}
+    for tag in tags:
+        conds: list[str] = []
+        for offset in range(0, max_events, 50):
+            try:
+                page = client.get(GAMMA_API, "/events", {
+                    "tag_slug": tag, "closed": "true", "end_date_min": since,
+                    "order": "endDate", "ascending": "false", "limit": 50, "offset": offset})
+            except (HTTPError, OSError, ValueError) as e:
+                log.warning("discover %s events: %s", tag, e)
+                break
+            page = page if isinstance(page, list) else (page or {}).get("data") or []
+            for ev in page:
+                conds += [m.get("conditionId") for m in ev.get("markets") or []
+                          if m.get("conditionId")]
+            if len(page) < 50:
+                break
+        buys: Counter = Counter()
+        names: dict[str, str] = {}
+        for c in conds:
+            try:
+                rows = client.get(DATA_API, "/trades", {"market": c, "limit": 500,
+                                                       "takerOnly": "false"})
+            except (HTTPError, OSError, ValueError) as e:
+                log.warning("discover %s trades %s: %s", tag, c[:10], e)
+                continue
+            for r in rows if isinstance(rows, list) else []:
+                w = str(r.get("proxyWallet") or "").lower()
+                if w.startswith("0x") and r.get("side") == "BUY":
+                    buys[w] += 1
+                    names.setdefault(w, r.get("name") or r.get("pseudonym") or "")
+        kept = {w: n for w, n in buys.items() if n >= min_buys}
+        log.info("discover %s: %d markets, %d wallets with %d+ buys", tag, len(conds),
+                 len(kept), min_buys)
+        for w in kept:
+            e = found.setdefault(w, {"name": names.get(w, ""), "best_rank": 0, "boards": []})
+            e["boards"].append(f"tag:{tag}")
+    return found
 
 
 def us_name(intl: str) -> str:
@@ -318,6 +370,12 @@ def parse_args(argv=None):
     p.add_argument("--boards", default="VOL",
                    help="leaderboard orders for the universe: VOL, or VOL,PNL")
     p.add_argument("--periods", default="WEEK,MONTH,ALL")
+    p.add_argument("--categories", default="SPORTS",
+                   help="leaderboard categories for the universe, e.g. SPORTS,OVERALL")
+    p.add_argument("--discover-tags", default="",
+                   help="also take wallets that bet often on these Polymarket tags, e.g. esports")
+    p.add_argument("--discover-events", type=int, default=150)
+    p.add_argument("--discover-min-buys", type=int, default=15)
     p.add_argument("--delay", type=int, default=Rules.delay_s)
     p.add_argument("--leaders-file", default=os.path.join(os.path.dirname(__file__),
                                                           "leaders.json"))
@@ -346,11 +404,16 @@ def main(argv=None) -> int:
     log.info("Polymarket US lists %d league/market kinds", len(pairs))
 
     # Candidates.
+    cats = tuple(c.strip().upper() for c in a.categories.split(",") if c.strip())
     meta = fetch_leaderboard(client, periods=tuple(a.periods.split(",")),
                              orders=tuple(a.boards.split(",")),
-                             categories=("SPORTS",), per_board=a.per_board)
+                             categories=cats, per_board=a.per_board)
     for w, m in fetch_leaderboard(client, periods=("ALL",), orders=("PNL",),
-                                  categories=("SPORTS",), per_board=a.per_board).items():
+                                  categories=cats, per_board=a.per_board).items():
+        meta.setdefault(w, m)
+    tags = [t.strip() for t in a.discover_tags.split(",") if t.strip()]
+    disc = discover(client, tags, start_ts, a.discover_events, a.discover_min_buys) if tags else {}
+    for w, m in disc.items():
         meta.setdefault(w, m)
     current = load_leaders(a.leaders_file)
     for w, name in current.items():
@@ -423,6 +486,9 @@ def main(argv=None) -> int:
         # by results at all: take the most active wallets (copyable trades).
         short = set(sorted(quick, key=lambda w: -len(_closed(quick[w])))[:a.shortlist])
         short |= {w for w in current if w in hist}
+    # Specialists found by tag (esports) are re-priced too, busiest first.
+    short |= set(sorted((w for w in disc if w in quick),
+                        key=lambda w: -len(_closed(quick[w])))[:a.shortlist])
     log.info("re-pricing %d wallets at a %ds copy delay", len(short), a.delay)
     prices = PriceHistory(client)
     prices.prefetch({(t.asset, t.ts + d) for w in short for t in hist[w]
@@ -571,6 +637,35 @@ def main(argv=None) -> int:
         lines.append(f"| {p['name'][:28]} | {p['copies']} | {p['won']} | "
                      f"{(p['copy_return'] or 0):+.1%} | {p['copy_t']} | "
                      f"{p['copy_pnl_per_10usd']:+.2f} |")
+    # Esports: each wallet's copies on esports markets only, both halves shown.
+    es = []
+    for w in short:
+        e = [x for x in lots.get(w, []) if x.get("league") in ESPORTS]
+        s = stats(e)
+        if s["n"] >= 10:
+            es.append((w, s, stats([x for x in e if x["ts"] < split_ts]),
+                       stats([x for x in e if x["ts"] >= split_ts])))
+    es.sort(key=lambda r: -(r[1]["lcb"] or -9))
+    lines += ["", "## Esports specialists (copies on esports markets only)", "",
+              f"{len(disc)} wallets found by tag ({', '.join(tags) or 'none'}); "
+              f"{len(es)} with 10+ closed esports copies.", "",
+              "| wallet | source | copies | won | return | t | first part | test part | active last week |",
+              "|---|---|---|---|---|---|---|---|---|"]
+    week = end_ts - 7 * 86400
+    for w, s, s1, s2 in es[:30]:
+        src = "tag" if w in disc else ("current" if w in current else "leaderboard")
+        act = any(x["ts"] >= week for x in lots[w] if "price" in x and x.get("league") in ESPORTS)
+        lines.append(f"| {names[w][:28]} | {src} | {s['n']} | {s['won']} | {(s['roi'] or 0):+.1%} | "
+                     f"{s['t']} | {(s1['roi'] or 0):+.1%} ({s1['n']}) | "
+                     f"{(s2['roi'] or 0):+.1%} ({s2['n']}) | {'yes' if act else 'no'} |")
+    with open(os.path.join(a.out_dir, "esports.json"), "w") as f:
+        json.dump([{"wallet": w, "name": names[w], "found_by_tag": w in disc,
+                    "copies": s["n"], "won": s["won"], "copy_return": s["roi"], "copy_t": s["t"],
+                    "first_return": s1["roi"], "first_copies": s1["n"],
+                    "test_return": s2["roi"], "test_copies": s2["n"],
+                    "active_last_week": any(x["ts"] >= week for x in lots[w]
+                                            if "price" in x and x.get("league") in ESPORTS)}
+                   for w, s, s1, s2 in es], f, indent=1)
     lines += ["", "## Currently copied wallets", "",
               "| wallet | copies | won | return | t | in final picks |", "|---|---|---|---|---|---|"]
     for w, name in current.items():

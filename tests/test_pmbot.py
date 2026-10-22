@@ -146,6 +146,23 @@ class PerformanceTest(unittest.TestCase):
         e.shutdown()
 
 
+class DiscoverTest(unittest.TestCase):
+    def test_wallets_that_bet_often_on_a_tag_are_found(self):
+        from pmbot.select import discover
+
+        class C:
+            def get(self, base, path, params=None, **kw):
+                if path == "/events":
+                    return [] if params["offset"] else [
+                        {"markets": [{"conditionId": "0xc1"}, {"conditionId": "0xc2"}]}]
+                return [{"proxyWallet": "0xAAA", "side": "BUY", "name": "esp"}] * 9 + \
+                       [{"proxyWallet": "0xbbb", "side": "BUY"}] * 2 + \
+                       [{"proxyWallet": "0xccc", "side": "SELL"}] * 20
+        got = discover(C(), ["esports"], 0, max_events=50, min_buys=15)
+        self.assertEqual(list(got), ["0xaaa"])                 # 18 buys; bbb 4; ccc only sells
+        self.assertEqual((got["0xaaa"]["name"], got["0xaaa"]["boards"]), ("esp", ["tag:esports"]))
+
+
 class ApplyLeadersTest(unittest.TestCase):
     def test_keeps_owner_picks_and_refuses_a_thin_selection(self):
         from pmbot.apply_leaders import merge
