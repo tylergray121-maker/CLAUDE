@@ -1,21 +1,21 @@
-US: 83187 open markets, 62084 game/spread/total/prop slugs, 339 verified pairs
+US: 81663 open markets, 60497 game/spread/total/prop slugs, 339 verified pairs
 
 age                    long side              short side  listed, outcome names     not on Polymarket US  copyable
-<3h                          132                     129                       1                     123       68%
-3-12h                        139                      16                       0                     154       50%
-12-48h                        37                       1                       0                     910        4%
-older                          0                       4                       0                    1554        0%
+<3h                           94                       0                       1                     222       30%
+3-12h                        206                       1                       0                     211       50%
+12-48h                        22                       1                       0                     840        3%
+older                          0                       4                       0                    1598        0%
 
 by league (all ages): copyable / total
-  nba            311 / 411
-  nfl              0 / 387
-  nhl             33 / 273
-  futures         99 / 266
+  nfl              0 / 386
+  nba            127 / 367
+  futures        151 / 363
   atp              0 / 264
   lol             15 / 253
+  nhl             35 / 223
   dota2            0 / 206
-  cfb              0 / 178
-  ucl              0 / 158
+  cfb              0 / 179
+  ucl              0 / 155
   mlb              0 / 152
   fifwc            0 / 140
   val              0 / 137
@@ -29,28 +29,28 @@ by league (all ages): copyable / total
   fl1              0 / 4
 
 recent trades not on Polymarket US (international slug | outcome | US lists for the same matchup):
+  104  nba-sac-lac-2026-10-21-spread-home-4pt5 | Kings | nba-sac-lac-2026-10-21, nba-sac-lac-2026-10-21-216pt5, nba-sac-lac-2026-10-21-219pt5, nba-sac-lac-2026-10-21-222pt5
+   58  nba-sac-lac-2026-10-21-spread-home-5pt5 | Kings | nba-sac-lac-2026-10-21, nba-sac-lac-2026-10-21-216pt5, nba-sac-lac-2026-10-21-219pt5, nba-sac-lac-2026-10-21-222pt5
    45  nba-ind-nop-2026-10-21-spread-away-3pt5 | Pelicans | -
-   37   |  | -
+   36  will-philadelphia-76ers-win-the-2027-nba-finals | No | -
    34  ucl-bay-ars-2026-10-21-bay | No | -
-   18  nba-sac-lac-2026-10-21-spread-home-5pt5 | Kings | nba-sac-lac-2026-10-21, nba-sac-lac-2026-10-21-216pt5, nba-sac-lac-2026-10-21-219pt5, nba-sac-lac-2026-10-21-222pt5
+   31   |  | -
+   18  nba-cha-bkn-2026-10-21 | Nets | nba-cha-bkn-2026-10-21-3pm-bramil-gte3, nba-cha-bkn-2026-10-21-3pm-bramil-gte4, nba-cha-bkn-2026-10-21-3pm-bramil-gte5, nba-cha-bkn-2026-10-21-3pm-bramil-gte6
    17  itf-zeltin1-olmo1-2026-10-21 | Beatrise Zeltina | -
-   15  nba-cha-bkn-2026-10-21-spread-away-1pt5 | Hornets | nba-cha-bkn-2026-10-21, nba-cha-bkn-2026-10-21-207pt5, nba-cha-bkn-2026-10-21-210pt5, nba-cha-bkn-2026-10-21-213pt5
-   10  dota2-dawnbu-z10-2026-10-21-game2 | Dawn Bulls | -
-    8  atp-moutet-balshaw-2026-10-21 | Felix Balshaw | -
+   10  will-the-democrats-win-the-texas-senate-race-in-2026 | No | -
+    9  nba-atl-orl-2026-10-21 | Hawks | -
     8  dota2-yes-bot1-2026-10-21-game1 | Yellow Submarine | -
-    7  atp-chidekh-fearnle-2026-10-21 | Clement Chidekh | -
+    7  wta-annli-sonmez-2026-10-21 | Ann Li | -
     7  itf-hosogi1-inoue1-2026-10-21 | Hina Inoue | -
     6  ucl-bru-rcl-2026-10-21-total-4pt5 | Under | -
-    6  nba-uta-mem-2026-10-21-spread-home-2pt5 | Grizzlies | nba-uta-mem-2026-10-21, nba-uta-mem-2026-10-21-229pt5, nba-uta-mem-2026-10-21-232pt5, nba-uta-mem-2026-10-21-235pt5
-    5  wta-annli-sonmez-2026-10-21 | Ann Li | -
     5  itf-palico1-rapolu1-2026-10-21 | Malaika Rapolu | -
-    5  nba-min-mia-2026-10-21-spread-home-3pt5 | Heat | nba-min-mia-2026-10-21, nba-min-mia-2026-10-21-229pt5, nba-min-mia-2026-10-21-232pt5, nba-min-mia-2026-10-21-235pt5
+    5  nba-sac-lac-2026-10-21-spread-home-3pt5 | Kings | nba-sac-lac-2026-10-21, nba-sac-lac-2026-10-21-216pt5, nba-sac-lac-2026-10-21-219pt5, nba-sac-lac-2026-10-21-222pt5
     4  ucl-com-mnu-2026-10-21-total-2pt5 | Under | -
     4  dota2-salami-huliga-2026-10-21-game1 | salamit | -
-    4  nba-cha-bkn-2026-10-21-spread-away-5pt5 | Hornets | nba-cha-bkn-2026-10-21, nba-cha-bkn-2026-10-21-207pt5, nba-cha-bkn-2026-10-21-210pt5, nba-cha-bkn-2026-10-21-213pt5
-    4  nba-cha-bkn-2026-10-21-spread-away-2pt5 | Hornets | nba-cha-bkn-2026-10-21, nba-cha-bkn-2026-10-21-207pt5, nba-cha-bkn-2026-10-21-210pt5, nba-cha-bkn-2026-10-21-213pt5
+    4  2026-balance-of-power-d-senate-r-house-692 | Yes | -
     3  itf-palico1-rapolu1-2026-10-21 | Barbora Palicova | -
     3  atp-goffin-bertola-2026-10-20 | Remy Bertola | -
-    3  2026-balance-of-power-d-senate-r-house-692 | Yes | -
-    3  will-the-republican-party-hold-exactly-48-senate-seats-after-the-2026-midterm-elections-971 | Yes | -
-    2  wta-alexand-kostyuk-2026-10-21 | Ekaterina Alexandrova | -
+    2  dota2-dawnbu-z10-2026-10-21 | Zero Tenacity | -
+    2  itf-zeltin1-olmo1-2026-10-21 | Ane Mintegi Del Olmo | -
+    1  cfb-nmxst-smho-2026-10-21-spread-home-2pt5 | Sam Houston | cfb-nmxst-smho-2026-10-21, cfb-nmxst-smho-2026-10-21-2h-22pt5, cfb-nmxst-smho-2026-10-21-2h-23pt5, cfb-nmxst-smho-2026-10-21-2h-24pt5
+    1  ucl-bru-rcl-2026-10-21-total-3pt5 | Under | -

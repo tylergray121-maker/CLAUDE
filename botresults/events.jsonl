@@ -5729,3 +5729,15 @@
 {"ts": 1792619002.863, "kind": "cancel_all", "reason": "shutdown"}
 {"ts": 1792620243.317, "kind": "cancel_all", "reason": "shutdown"}
 {"ts": 1792629879.399, "kind": "leader_status", "leader": "HVAB", "wallet": "0x8546a601f7c7cc3dae7141f20b0e09e42bbf35b8", "status": "cooling", "was": "copying", "why": "\u2212$41,003 on Polymarket this week"}
+{"ts": 1792635963.042, "kind": "leader_status", "leader": "HVAB", "wallet": "0x8546a601f7c7cc3dae7141f20b0e09e42bbf35b8", "status": "cooling", "was": "copying", "why": "\u2212$41,003 on Polymarket this week"}
+{"ts": 1792636200.388, "kind": "copy_signal", "slug": "tec-nba-champ-2027-06-18-w-okc", "side": "BUY", "leader": "PEYZ-BIGGEST-FAN", "price": 0.21, "leader_usd": 20.8, "market": "Will Oklahoma City Thunder win the 2027 NBA Finals?"}
+{"ts": 1792636260.39, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Spread: Clippers (-5.5)", "intl_slug": "nba-sac-lac-2026-10-21-spread-home-5pt5", "outcome": "Kings"}
+{"ts": 1792636260.39, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Spread: Clippers (-4.5)", "intl_slug": "nba-sac-lac-2026-10-21-spread-home-4pt5", "outcome": "Kings"}
+{"ts": 1792636260.39, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Spread: Clippers (-4.5)", "intl_slug": "nba-sac-lac-2026-10-21-spread-home-4pt5", "outcome": "Kings"}
+{"ts": 1792636260.39, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Spread: Clippers (-4.5)", "intl_slug": "nba-sac-lac-2026-10-21-spread-home-4pt5", "outcome": "Kings"}
+{"ts": 1792636260.39, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Will the Democrats win the Texas Senate race in 2026?", "intl_slug": "will-the-democrats-win-the-texas-senate-race-in-2026", "outcome": "No"}
+{"ts": 1792636260.39, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Will the Republicans win the Texas Senate race in 2026?", "intl_slug": "will-the-republicans-win-the-texas-senate-race-in-2026", "outcome": "Yes"}
+{"ts": 1792636260.39, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Will the Republicans win the Texas Senate race in 2026?", "intl_slug": "will-the-republicans-win-the-texas-senate-race-in-2026", "outcome": "Yes"}
+{"ts": 1792636260.39, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Will the Republicans win the Texas Senate race in 2026?", "intl_slug": "will-the-republicans-win-the-texas-senate-race-in-2026", "outcome": "Yes"}
+{"ts": 1792636260.39, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Will the Republicans win the Texas Senate race in 2026?", "intl_slug": "will-the-republicans-win-the-texas-senate-race-in-2026", "outcome": "Yes"}
+{"ts": 1792636338.847, "kind": "cancel_all", "reason": "shutdown"}
