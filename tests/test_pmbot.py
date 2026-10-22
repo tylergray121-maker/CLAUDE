@@ -159,6 +159,9 @@ class ApplyLeadersTest(unittest.TestCase):
         self.assertNotIn("0xbbb", ws)                         # dropped
         self.assertEqual(len(ws), 13)                         # 12 picks + Tiger105, no dup
         self.assertIsNone(merge(cur, {"leaders": sel["leaders"][:3]}, 10))
+        # the no-ranking fallback lost out of sample: never applied
+        self.assertIsNone(merge(cur, {**sel, "method": "every qualified wallet (no ranking "
+                                      "method beat it out of sample)"}, 10))
 
 
 class ScaledLimitsTest(unittest.TestCase):

@@ -5,7 +5,9 @@
 The new list is the selection's picks plus every wallet the owner added by
 hand ("owner's pick" in its source), which are always kept. If the selection
 found fewer than --min wallets, the current list is left as it is, so a
-thin or failed run can never leave the bot with nothing to copy.
+thin or failed run can never leave the bot with nothing to copy. Nor is
+the "every qualified wallet" fallback applied: it is what the search uses
+when no ranking held up out of sample, and copying everyone lost money there.
 """
 
 from __future__ import annotations
@@ -20,7 +22,7 @@ HERE = os.path.join(os.path.dirname(__file__), "leaders.json")
 
 def merge(current: dict, picked: dict, min_picks: int = 10) -> dict | None:
     picks = [x for x in picked.get("leaders", []) if x.get("wallet")]
-    if len(picks) < min_picks:
+    if len(picks) < min_picks or str(picked.get("method", "")).startswith("every qualified"):
         return None
     owner = [x for x in current.get("leaders", []) if "owner" in str(x.get("source", ""))]
     seen, leaders = set(), []
@@ -47,7 +49,8 @@ def main(argv=None) -> int:
         current = json.load(f)
     new = merge(current, picked, a.min)
     if new is None:
-        print(f"selection has fewer than {a.min} wallets; keeping the current "
+        print(f"selection has fewer than {a.min} wallets or no method held up out of sample; "
+              f"keeping the current "
               f"{len(current.get('leaders', []))}")
         return 1
     with open(a.out, "w") as f:
