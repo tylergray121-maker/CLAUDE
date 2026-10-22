@@ -1,0 +1,399 @@
+import os
+import tempfile
+import unittest
+from unittest import mock
+
+from copybt import cli, data, portfolio, us
+from copybt.models import Market, Trade
+from copybt.sim import SimConfig, profile, simulate
+
+DAY = 86400
+T0 = 1_700_000_000
+COND = "0xc1"
+YES, NO = "111", "222"
+
+
+def trade(ts, side, price, size, asset=YES, cond=COND, title="Will X happen?",
+          wallet=""):
+    return Trade(ts=ts, asset=asset, condition_id=cond, side=side, price=price,
+                 size=size, title=title, tx=f"0x{ts}{side}", wallet=wallet)
+
+
+def resolved(winner=YES, ts=T0 + 5 * DAY, cond=COND):
+    return {cond: Market(cond, True, ts, {YES: 1.0 if winner == YES else 0.0,
+                                          NO: 0.0 if winner == YES else 1.0})}
+
+
+NOFRICTION = SimConfig(slippage=0.0, base_pct=0.10)
+
+
+class SimulateTest(unittest.TestCase):
+    def run_sim(self, trades, markets, cfg=NOFRICTION, end=T0 + 10 * DAY):
+        return simulate(trades, markets, cfg, T0, end, T0 + 3 * DAY)
+
+    def test_winning_buy_pays_out_at_resolution(self):
+        # 10% of $200 = $20 at 50c -> 40 shares -> $40 on resolution.
+        r = self.run_sim([trade(T0 + 60, "BUY", 0.5, 100)], resolved(YES))
+        self.assertAlmostEqual(r.final_equity, 220.0)
+        self.assertEqual(r.buys_copied, 1)
+        self.assertEqual(r.win_rate, 1.0)
+
+    def test_losing_buy_goes_to_zero(self):
+        r = self.run_sim([trade(T0 + 60, "BUY", 0.5, 100)], resolved(NO))
+        self.assertAlmostEqual(r.final_equity, 180.0)
+        self.assertAlmostEqual(r.max_drawdown_pct, 10.0)
+        self.assertEqual(r.win_rate, 0.0)
+
+    def test_slippage_reduces_shares(self):
+        cfg = SimConfig(slippage=0.05, base_pct=0.10)
+        r = self.run_sim([trade(T0 + 60, "BUY", 0.5, 100)], resolved(YES), cfg)
+        self.assertAlmostEqual(r.final_equity, 180 + 20 / 0.55)
+
+    def test_proportional_partial_sell(self):
+        trades = [trade(T0 + 60, "BUY", 0.5, 100),
+                  trade(T0 + 120, "SELL", 0.8, 50)]  # leader sells half
+        r = self.run_sim(trades, resolved(YES))
+        # 40 shares: 20 sold at 0.8 = 16, 20 redeemed at 1.0 = 20.
+        self.assertAlmostEqual(r.final_equity, 180 + 16 + 20)
+        self.assertEqual(r.sells_copied, 1)
+
+    def test_sell_of_position_opened_before_window_is_ignored(self):
+        r = self.run_sim([trade(T0 + 60, "SELL", 0.8, 50)], resolved(YES))
+        self.assertAlmostEqual(r.final_equity, 200.0)
+        self.assertEqual(r.sells_copied, 0)
+
+    def test_conviction_scales_size_without_lookahead(self):
+        # First buy is sized 1x (no history); second is 3x larger -> clipped 3x.
+        c1, c2 = "0xa", "0xb"
+        trades = [trade(T0 + 60, "BUY", 0.5, 100, asset="a", cond=c1),
+                  trade(T0 + 120, "BUY", 0.5, 300, asset="b", cond=c2)]
+        markets = {c1: Market(c1, True, T0 + DAY, {"a": 1.0}),
+                   c2: Market(c2, True, T0 + DAY, {"b": 1.0})}
+        cfg = SimConfig(slippage=0.0, base_pct=0.05, max_trade_pct=1.0)
+        r = self.run_sim(trades, markets, cfg)
+        # $10 -> 20 shares; then 0.05*200*3 = $30 -> 60 shares.
+        self.assertAlmostEqual(r.final_equity, 200 - 10 - 30 + 20 + 60)
+
+    def test_caps_and_min_order(self):
+        cfg = SimConfig(slippage=0.0, base_pct=0.5, max_trade_pct=0.2,
+                        max_market_pct=0.3)
+        trades = [trade(T0 + 60, "BUY", 0.5, 100),
+                  trade(T0 + 61, "BUY", 0.5, 100),
+                  trade(T0 + 62, "BUY", 0.5, 100)]
+        r = self.run_sim(trades, resolved(YES), cfg)
+        # $40 (trade cap), then $20 (market cap 60), then nothing left.
+        self.assertEqual(r.buys_copied, 2)
+        self.assertEqual(r.skipped, {"market_cap": 1})
+        self.assertAlmostEqual(r.final_equity, 140 + 120)
+
+    def test_never_copies_more_than_the_leader_traded(self):
+        # 10% of $200 would be $20, but the leader only spent $5.
+        r = self.run_sim([trade(T0 + 60, "BUY", 0.5, 10)], resolved(YES))
+        self.assertAlmostEqual(r.final_equity, 195 + 10)
+        tiny = self.run_sim([trade(T0 + 60, "BUY", 0.5, 1)], resolved(YES))
+        self.assertEqual(tiny.skipped, {"leader_too_small": 1})
+
+    def test_unknown_market_is_skipped(self):
+        r = self.run_sim([trade(T0 + 60, "BUY", 0.5, 100, cond="0xnope")],
+                         resolved(YES))
+        self.assertEqual(r.skipped, {"unknown_market": 1})
+        self.assertAlmostEqual(r.final_equity, 200.0)
+
+    def test_fill_log(self):
+        r = simulate([trade(T0 + 60, "BUY", 0.5, 100)], resolved(YES), NOFRICTION,
+                     T0, T0 + 10 * DAY, T0 + 3 * DAY, log_fills=True)
+        self.assertEqual(len(r.fills), 1)
+        self.assertEqual((r.fills[0]["action"], r.fills[0]["payout"]), ("BUY", 1.0))
+
+    def test_skips_buys_with_nothing_left_to_win(self):
+        r = self.run_sim([trade(T0 + 60, "BUY", 0.995, 100)], resolved(YES))
+        self.assertEqual(r.skipped, {"price_too_high": 1})
+
+    def test_trades_after_resolution_ignored(self):
+        trades = [trade(T0 + 60, "BUY", 0.5, 100),
+                  trade(T0 + 6 * DAY, "BUY", 0.5, 100)]
+        r = self.run_sim(trades, resolved(YES))
+        self.assertEqual(r.buys_copied, 1)
+
+    def test_open_position_marked_at_current_price(self):
+        markets = {COND: Market(COND, False, None, {YES: 0.75, NO: 0.25})}
+        r = self.run_sim([trade(T0 + 60, "BUY", 0.5, 100)], markets)
+        self.assertAlmostEqual(r.final_equity, 180 + 40 * 0.75)
+
+    def test_train_test_split(self):
+        c1, c2 = "0xa", "0xb"
+        trades = [trade(T0 + 60, "BUY", 0.5, 100, asset="a", cond=c1),
+                  trade(T0 + 4 * DAY, "BUY", 0.5, 100, asset="b", cond=c2)]
+        markets = {c1: Market(c1, True, T0 + DAY, {"a": 1.0}),
+                   c2: Market(c2, True, T0 + 5 * DAY, {"b": 0.0})}
+        r = self.run_sim(trades, markets)
+        self.assertAlmostEqual(r.train_return_pct, 10.0)
+        self.assertAlmostEqual(r.test_return_pct, -10.0)
+
+    def test_market_taker_fee_on_buy(self):
+        m = resolved(YES)
+        m[COND].fee_rate, m[COND].fee_exponent = 0.03, 1.0
+        r = self.run_sim([trade(T0 + 60, "BUY", 0.5, 100)], m)
+        # $20 buys shares at 0.5 + 0.03*0.25 per share.
+        self.assertAlmostEqual(r.final_equity, 180 + 20 / 0.5075)
+        off = simulate([trade(T0 + 60, "BUY", 0.5, 100)], m,
+                       SimConfig(slippage=0.0, base_pct=0.10, market_fees=False),
+                       T0, T0 + 10 * DAY, T0 + 3 * DAY)
+        self.assertAlmostEqual(off.final_equity, 220.0)
+
+    def test_delay_uses_worse_of_leader_and_delayed_price(self):
+        cfg = SimConfig(slippage=0.0, base_pct=0.10, delay_seconds=5)
+        r = simulate([trade(T0 + 60, "BUY", 0.5, 100)], resolved(YES), cfg,
+                     T0, T0 + 10 * DAY, T0 + 3 * DAY, lambda a, t: 0.8)
+        self.assertAlmostEqual(r.final_equity, 180 + 20 / 0.8)
+
+
+class PortfolioTest(unittest.TestCase):
+    def test_one_leaders_exit_only_closes_its_own_lot(self):
+        trades = [trade(T0 + 60, "BUY", 0.5, 100, wallet="a"),
+                  trade(T0 + 61, "BUY", 0.5, 100, wallet="b"),
+                  trade(T0 + 120, "SELL", 0.8, 100, wallet="a")]
+        r = simulate(trades, resolved(YES), NOFRICTION, T0, T0 + 10 * DAY,
+                     T0 + 3 * DAY)
+        # Each lot is $20 -> 40 shares. a's 40 sell at 0.8 = $32; b's 40 pay $1.
+        self.assertAlmostEqual(r.final_equity, 200 - 20 - 20 + 32 + 40, places=6)
+        self.assertEqual(r.sells_copied, 1)
+
+    def _wallet(self, name, p_train, p_test, n=30):
+        """n bets at 50c per period; wins on a fixed pattern at rate p."""
+        out, markets = [], {}
+        for period, p in ((0, p_train), (1, p_test)):
+            for i in range(n):
+                ts = T0 + period * 10 * DAY + i * 8 * 3600
+                cond, tok = f"0x{name}{period}_{i}", f"{name}{period}_{i}"
+                win = (i % 10) < round(p * 10)
+                out.append(trade(ts, "BUY", 0.5, 100, asset=tok, cond=cond, wallet=name))
+                markets[cond] = Market(cond, True, ts + 3600, {tok: 1.0 if win else 0.0})
+        return out, markets
+
+    def test_validation_detects_persistent_vs_lucky_wallets(self):
+        hist, markets = {}, {}
+        for name, a, b in (("good", .8, .8), ("luck", .8, .2), ("bad", .2, .2)):
+            hist[name], m = self._wallet(name, a, b)
+            markets.update(m)
+        end, split = T0 + 20 * DAY, T0 + 10 * DAY
+        plan = portfolio.build_plan("t", hist, markets, NOFRICTION, T0, end,
+                                    split, min_buys=10, ks=(1, 2))
+        self.assertEqual(plan.candidates, 2)          # good and luck qualify
+        self.assertTrue(plan.edge)
+        self.assertEqual(plan.best_k, 1)
+        self.assertEqual(plan.validations[0].wallets, ["good"])
+        self.assertAlmostEqual(plan.validations[0].test.roi, 0.6)
+        self.assertEqual(plan.picks[0]["wallet"], "good")
+
+    def test_no_edge_verdict(self):
+        hist, markets = {}, {}
+        for name in ("l1", "l2"):
+            hist[name], m = self._wallet(name, .8, .3)
+            markets.update(m)
+        plan = portfolio.build_plan("t", hist, markets, NOFRICTION, T0,
+                                    T0 + 20 * DAY, T0 + 10 * DAY, min_buys=10)
+        self.assertFalse(plan.edge)
+        text = "\n".join(portfolio.render(plan, NOFRICTION, str))
+        self.assertIn("no reliable edge", text)
+
+
+class CacheTest(unittest.TestCase):
+    def test_trade_blob_round_trip_and_pruning(self):
+        from copybt.api import Client, _prune
+        with tempfile.TemporaryDirectory() as d:
+            c = Client(cache_dir=d)
+            rows = [{"side": "BUY", "price": 0.5, "size": 2, "timestamp": T0 + i,
+                     "asset": "a", "conditionId": "c", "transactionHash": f"0x{i}",
+                     "bio": "x" * 1000} for i in range(3)]
+
+            class Once(NoBlobs):
+                calls = 0
+
+                def get(self, base, path, params=None, use_cache=True, keep=None):
+                    Once.calls += 1
+                    return rows if params["offset"] == 0 else []
+            src = Once()
+            src.load_blob, src.save_blob = c.load_blob, c.save_blob
+            a, _ = data.fetch_trades(src, "0xW", T0, T0 + 100)
+            b, _ = data.fetch_trades(src, "0xW", T0, T0 + 100)
+            self.assertEqual(a, b)
+            self.assertEqual(Once.calls, 1)
+        self.assertEqual(_prune([{"a": 1, "b": 2}], ("a",)), [{"a": 1}])
+        self.assertEqual(_prune({"markets": [{"a": 1, "b": 2}]}, ("a",)),
+                         {"markets": [{"a": 1}]})
+        self.assertEqual(_prune({"a": 1, "tokens": [{"x": 1}], "z": 0},
+                                ("a", "tokens")), {"a": 1, "tokens": [{"x": 1}]})
+
+
+class USTest(unittest.TestCase):
+    def test_matching(self):
+        m = us.USMarkets({"psg-ucl"}, {us.normalize("Will PSG win the UCL?")})
+        self.assertTrue(m.lists("will psg win the ucl"))
+        self.assertTrue(m.lists("Other", "PSG-UCL"))
+        self.assertFalse(m.lists("Will Bitcoin hit $200k?"))
+
+    def test_game_matching_ignores_order_and_market_type(self):
+        day = us._day("2026-10-20")
+        g = us.game_teams("Knicks vs. 76ers")
+        days = (day - 1, day, day + 1)  # as fetch_us_markets stores them
+        m = us.USMarkets(set(), set(), {(g, d) for d in days},
+                         {(t, d) for t in g | {"como"} for d in days})
+        self.assertTrue(m.lists("76ers vs. Knicks: O/U 230.5", "nba-phi-nyk-2026-10-20"))
+        self.assertTrue(m.lists("76ers vs. Knicks", "", 1792540800))  # same day
+        self.assertFalse(m.lists("76ers vs. Knicks", "nba-phi-nyk-2026-11-20"))
+        self.assertTrue(m.lists("Will Como win on 2026-10-20?"))
+        self.assertFalse(m.lists("76ers vs. Knicks", "nba-2026-27-12-final"))
+
+
+class ProfileTest(unittest.TestCase):
+    def test_flags(self):
+        ts = [trade(T0 + i, "BUY", 0.97, 10,
+                    title="Bitcoin Up or Down - Oct 20, 3:15PM-3:30PM ET")
+              for i in range(2000)]
+        p = profile(ts, T0, T0 + 10 * DAY)
+        self.assertEqual(set(p.flags),
+                         {"high_frequency", "short_duration_markets", "bonder"})
+
+
+class ParserTest(unittest.TestCase):
+    def test_parse_trade(self):
+        t = data._parse_trade({"side": "BUY", "price": "0.42", "size": 10,
+                               "timestamp": 1700000000, "asset": "9",
+                               "conditionId": "0xABC"})
+        self.assertEqual((t.condition_id, t.price, t.size), ("0xabc", 0.42, 10.0))
+        self.assertIsNone(data._parse_trade({"side": "MERGE"}))
+        self.assertIsNone(data._parse_trade({"side": "BUY", "price": 1.0, "size": 1,
+                                             "timestamp": 1, "asset": "x",
+                                             "conditionId": "c"}))
+
+    def test_parse_ts(self):
+        self.assertEqual(data._parse_ts("2024-11-06 12:00:00+00"), 1730894400)
+        self.assertEqual(data._parse_ts("2024-11-06T12:00:00Z"), 1730894400)
+        self.assertEqual(data._parse_ts(1730894400000), 1730894400)
+
+    def test_gamma_market(self):
+        m = data._market_from_gamma({
+            "conditionId": "0xC", "closed": True, "clobTokenIds": '["1","2"]',
+            "outcomePrices": '["0","1"]', "closedTime": "2024-11-06 12:00:00+00",
+            "feesEnabled": True, "feeSchedule": {"exponent": 1, "rate": 0.03}})
+        self.assertEqual((m.fee_rate, m.fee_exponent), (0.03, 1.0))
+        self.assertTrue(m.resolved)
+        self.assertEqual(m.prices, {"1": 0.0, "2": 1.0})
+        self.assertEqual(m.resolve_ts, 1730894400)
+        live = data._market_from_gamma({
+            "conditionId": "0xD", "closed": False, "clobTokenIds": '["1","2"]',
+            "outcomePrices": '["0.4","0.6"]'})
+        self.assertFalse(live.resolved)
+
+    def test_clob_market(self):
+        m = data._market_from_clob({
+            "condition_id": "0xE", "closed": True, "end_date_iso": "2024-11-06T12:00:00Z",
+            "tokens": [{"token_id": "1", "winner": False, "price": 0},
+                       {"token_id": "2", "winner": True, "price": 1}]})
+        self.assertTrue(m.resolved)
+        self.assertEqual(m.prices, {"1": 0.0, "2": 1.0})
+
+
+class NoBlobs:
+    def load_blob(self, key):
+        return None
+
+    def save_blob(self, key, data):
+        pass
+
+
+class PagingTest(unittest.TestCase):
+    def test_reanchors_past_offset_cap_without_duplicates(self):
+        rows = [{"side": "BUY", "price": 0.5, "size": 1, "timestamp": T0 + i // 3,
+                 "asset": "a", "conditionId": "c", "transactionHash": f"0x{i}"}
+                for i in range(1234)]  # three trades per second
+
+        class Paged(NoBlobs):
+            def get(self, base, path, params=None, use_cache=True, keep=None):
+                if params["offset"] > 200:
+                    raise data.HTTPError(400, path)
+                hits = sorted((r for r in rows
+                               if params["start"] <= r["timestamp"] <= params["end"]),
+                              key=lambda r: -r["timestamp"])
+                return hits[params["offset"]:params["offset"] + params["limit"]]
+
+        out, truncated = data.fetch_trades(Paged(), "0xw", T0, T0 + 10_000,
+                                           page_size=100, max_offset=10_000)
+        self.assertFalse(truncated)
+        self.assertEqual(len(out), 1234)
+        self.assertEqual([t.ts for t in out], sorted(t.ts for t in out))
+
+
+class FakeClient(NoBlobs):
+    """Serves canned API responses keyed on path."""
+
+    requests_made = 0
+
+    def __init__(self, now):
+        self.now = now
+
+    def get(self, base, path, params=None, use_cache=True, keep=None):
+        params = dict(params) if isinstance(params, dict) else params
+        if path == "/v1/leaderboard":
+            if params["offset"] > 0 or params["category"] != "OVERALL":
+                return []
+            return [{"rank": "1", "proxyWallet": "0x" + "a" * 40, "userName": "good"},
+                    {"rank": "2", "proxyWallet": "0x" + "b" * 40, "userName": "bad"}]
+        if path == "/activity":
+            if params["offset"] > 0:
+                return []
+            win = params["user"] == "0x" + "a" * 40
+            rows = []
+            for i in range(20):
+                ts = self.now - (80 - i * 3) * DAY
+                rows.append({"side": "BUY", "price": 0.5, "size": 100, "timestamp": ts,
+                             "asset": f"{'w' if win else 'l'}{i}",
+                             "conditionId": f"0xc{i}", "title": "Will X?",
+                             "transactionHash": f"0x{i}"})
+            return rows[::-1]
+        if path == "/markets":
+            out = []
+            for k, v in params:
+                if k == "condition_ids":
+                    i = int(v[3:])
+                    out.append({"conditionId": v, "closed": True,
+                                "clobTokenIds": f'["w{i}","l{i}"]',
+                                "outcomePrices": '["1","0"]',
+                                "closedTime": self.now - (79 - i * 3) * DAY})
+            return out
+        if path == "/prices-history":
+            # Long ranges come back empty, forcing the one-hour fallback.
+            if params["endTs"] - params["startTs"] > 3 * 3600:
+                return {"history": []}
+            return {"history": [{"t": params["startTs"] + 60 * i, "p": 0.52}
+                                for i in range(120)]}
+        if path == "/v1/markets":
+            if params["offset"] > 0 or params["closed"] == "true":
+                return {"markets": []}
+            return {"markets": [{"slug": "x", "question": "Will X?"}]}
+        raise AssertionError(f"unexpected request {path}")
+
+
+class EndToEndTest(unittest.TestCase):
+    def test_cli_ranks_the_profitable_wallet(self):
+        import time
+        now = int(time.time()) // 3600 * 3600
+        with tempfile.TemporaryDirectory() as out, \
+                mock.patch.object(cli, "Client", return_value=FakeClient(now)):
+            rc = cli.main(["--days", "90", "--out-dir", out, "--min-buys", "5",
+                           "--cache-dir", ""])
+            self.assertEqual(rc, 0)
+            with open(os.path.join(out, "report.md")) as f:
+                report = f.read()
+            self.assertIn("**0x" + "a" * 40 + "**", report)
+            self.assertIn("Plan B", report)
+            self.assertIn("100%) were in markets matched", report)
+            with open(os.path.join(out, "ranking.csv")) as f:
+                ranking = f.read().splitlines()
+            self.assertEqual(len(ranking), 3)
+            self.assertTrue(ranking[1].startswith("0x" + "a" * 40))
+
+
+if __name__ == "__main__":
+    unittest.main()

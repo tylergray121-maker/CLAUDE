@@ -1,0 +1,81 @@
+name: top-wallet study
+
+on:
+  push:
+    branches: [claude/polymarket-copy-backtest]
+    paths: ["study/**", ".github/workflows/study.yml", "study.args"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: study
+  cancel-in-progress: true
+
+jobs:
+  study:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/cache/restore@v4
+        with:
+          path: .cache-study
+          key: study-${{ github.run_id }}
+          restore-keys: study-
+
+      - name: Tests
+        run: python -m unittest tests.test_study
+
+      - name: Study top wallets
+        timeout-minutes: 150
+        shell: bash -o pipefail {0}
+        run: |
+          mkdir -p studyresults
+          python -u -m study $(cat study.args 2>/dev/null) 2>&1 | tee studyresults/run.log | tail -120
+
+      - name: Bonding backtest
+        timeout-minutes: 60
+        shell: bash -o pipefail {0}
+        run: python -u -m study.bonds --days 90 --min-volume 20000 2>&1 | tee studyresults/bonds.log | tail -60
+
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: .cache-study
+          key: study-${{ github.run_id }}
+
+      - name: Probe data-api endpoints
+        if: false
+        run: |
+          mkdir -p studyresults/probe && cd studyresults/probe
+          D=https://data-api.polymarket.com
+          get() { curl -sS -m 60 "$2" -o "$1.json" -w "$1 %{http_code}\n" || true; }
+          get lb_all "$D/v1/leaderboard?category=OVERALL&timePeriod=ALL&orderBy=PNL&limit=5&offset=0"
+          W=$(python -c "import json;print(json.load(open('lb_all.json'))[0]['proxyWallet'])")
+          echo "wallet $W"
+          get positions "$D/positions?user=$W&limit=5&sizeThreshold=1"
+          get closed "$D/closed-positions?user=$W&limit=5"
+          get closed_sorted "$D/closed-positions?user=$W&limit=5&sortBy=REALIZEDPNL&sortDirection=DESC"
+          get value "$D/value?user=$W"
+          get traded "$D/traded?user=$W"
+          get trades_taker "$D/trades?user=$W&limit=5&takerOnly=true"
+          get trades_all "$D/trades?user=$W&limit=5&takerOnly=false"
+          for t in REWARD MERGE SPLIT REDEEM CONVERSION MAKER_REBATE YIELD; do get "act_$t" "$D/activity?user=$W&type=$t&limit=3"; done
+          get act_any "$D/activity?user=$W&limit=10"
+          get profile "https://gamma-api.polymarket.com/public-profile?address=$W"
+          for f in *.json; do echo "== $f $(wc -c < $f)"; head -c 700 "$f"; echo; done
+
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f studyresults
+          git commit -m "Study results ($(date -u +%Y-%m-%dT%H:%MZ)) [skip ci]" || exit 0
+          git pull --rebase origin "$GITHUB_REF_NAME" && git push origin HEAD:"$GITHUB_REF_NAME"

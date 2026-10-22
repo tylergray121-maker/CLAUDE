@@ -1,0 +1,1 @@
+--days 90 --end 2026-10-21T01:00:00Z --max-wallets 1500 --workers 12 --max-rps 12 --delay-seconds 30 --shortlist 60

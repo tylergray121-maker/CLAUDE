@@ -1,0 +1,253 @@
+# What Polymarket's most profitable wallets do
+
+## All-time top (100 wallets, $424.8M profit)
+
+73 of 100 wallets reconcile (sampled positions within 30% of their all-time leaderboard profit); edge and win rate use only those.
+
+| strategy | wallets | share of profit | reconciled | median edge per $ | median win rate | maker share of $ | median transactions/day |
+|---|---|---|---|---|---|---|---|
+| whale / concentrated bets | 47 | 56% | 46 | 64% | 70% | 31% | 302.6 |
+| high-volume sports operation (market making) | 17 | 17% | 3 | 6% | 47% | 78% | 899.1 |
+| high-volume sports operation (taker flow) | 10 | 11% | 4 | 6% | 50% | 41% | 616.8 |
+| sports bettor (pre-game/futures) | 8 | 5% | 8 | 16% | 53% | 36% | 142.4 |
+| sports bettor (same-day/in-play) | 5 | 4% | 5 | 15% | 52% | 55% | 11.4 |
+| high-volume politics operation (market making) | 5 | 3% | 3 | 2% | 72% | 69% | 55.6 |
+| high-volume politics operation (taker flow) | 2 | 1% | 1 | 3% | 70% | 33% | 20.4 |
+| high-volume crypto operation (taker flow) | 2 | 1% | 0 | — | — | 25% | 131.1 |
+| high-volume geopolitics operation (market making) | 1 | 1% | 1 | 9% | 66% | 91% | 14.8 |
+| politics / macro trader | 1 | 1% | 1 | 1% | 47% | 38% | 16.8 |
+| crypto short-term bot | 1 | 0% | 0 | — | — | 90% | 170.4 |
+| arbitrage / merger | 1 | 0% | 1 | 11% | 54% | 0% | 13.7 |
+
+## This month top (100 wallets, $58.7M profit)
+
+60 of 100 wallets reconcile (sampled positions within 30% of their all-time leaderboard profit); edge and win rate use only those.
+
+| strategy | wallets | share of profit | reconciled | median edge per $ | median win rate | maker share of $ | median transactions/day |
+|---|---|---|---|---|---|---|---|
+| whale / concentrated bets | 19 | 22% | 16 | 20% | 56% | 38% | 13.9 |
+| high-volume sports operation (market making) | 9 | 19% | 4 | 5% | 52% | 77% | 621.3 |
+| high-volume sports operation (taker flow) | 18 | 17% | 5 | 7% | 51% | 11% | 268.6 |
+| sports bettor (pre-game/futures) | 9 | 11% | 9 | 8% | 54% | 31% | 169.4 |
+| sports bettor (same-day/in-play) | 10 | 8% | 10 | 8% | 54% | 49% | 119.2 |
+| high-volume other operation (taker flow) | 1 | 5% | 0 | — | — | 13% | 998.0 |
+| high-volume politics operation (taker flow) | 10 | 5% | 6 | 19% | 27% | 28% | 574.6 |
+| crypto short-term bot | 4 | 3% | 0 | — | — | 42% | 993.0 |
+| generalist | 5 | 2% | 3 | 19% | 42% | 75% | 128.9 |
+| high-volume geopolitics operation (market making) | 3 | 2% | 2 | -0% | 52% | 76% | 248.0 |
+| high-volume politics operation (market making) | 4 | 2% | 1 | 23% | 23% | 70% | 717.0 |
+| high-volume crypto operation (market making) | 3 | 2% | 0 | — | — | 62% | 149.7 |
+| politics / macro trader | 3 | 2% | 3 | 9% | 42% | 30% | 70.2 |
+| high-volume geopolitics operation (taker flow) | 1 | 1% | 1 | 5% | 57% | 16% | 54.3 |
+| high-volume weather operation (taker flow) | 1 | 0% | 0 | — | — | 43% | 111.6 |
+
+## Politics leaders (20 wallets, $120.6M profit)
+
+20 of 20 wallets reconcile (sampled positions within 30% of their all-time leaderboard profit); edge and win rate use only those.
+
+| strategy | wallets | share of profit | reconciled | median edge per $ | median win rate | maker share of $ | median transactions/day |
+|---|---|---|---|---|---|---|---|
+| whale / concentrated bets | 18 | 96% | 18 | 74% | 84% | 51% | 385.2 |
+| high-volume geopolitics operation (market making) | 1 | 2% | 1 | 9% | 66% | 91% | 14.8 |
+| politics / macro trader | 1 | 2% | 1 | 9% | 42% | 30% | 57.9 |
+
+## Sports leaders (20 wallets, $153.1M profit)
+
+15 of 20 wallets reconcile (sampled positions within 30% of their all-time leaderboard profit); edge and win rate use only those.
+
+| strategy | wallets | share of profit | reconciled | median edge per $ | median win rate | maker share of $ | median transactions/day |
+|---|---|---|---|---|---|---|---|
+| whale / concentrated bets | 11 | 51% | 11 | 62% | 73% | 4% | 349.0 |
+| high-volume sports operation (market making) | 4 | 24% | 1 | 6% | 42% | 70% | 917.1 |
+| high-volume sports operation (taker flow) | 2 | 15% | 0 | — | — | 26% | 996.5 |
+| sports bettor (pre-game/futures) | 2 | 6% | 2 | 20% | 50% | 50% | 62.6 |
+| sports bettor (same-day/in-play) | 1 | 4% | 1 | 4% | 55% | 2% | 8.2 |
+
+## Crypto leaders (20 wallets, $20.4M profit)
+
+5 of 20 wallets reconcile (sampled positions within 30% of their all-time leaderboard profit); edge and win rate use only those.
+
+| strategy | wallets | share of profit | reconciled | median edge per $ | median win rate | maker share of $ | median transactions/day |
+|---|---|---|---|---|---|---|---|
+| crypto short-term bot | 9 | 45% | 1 | 4% | 58% | 61% | 931.0 |
+| high-volume crypto operation (taker flow) | 6 | 36% | 1 | 3% | 64% | 44% | 131.1 |
+| high-volume crypto operation (market making) | 3 | 11% | 1 | 6% | 54% | 70% | 49.6 |
+| whale / concentrated bets | 1 | 4% | 1 | 204% | 88% | 91% | 138.0 |
+| arbitrage / merger | 1 | 3% | 1 | 4% | 55% | 40% | 175.2 |
+
+## Culture leaders (20 wallets, $5.8M profit)
+
+15 of 20 wallets reconcile (sampled positions within 30% of their all-time leaderboard profit); edge and win rate use only those.
+
+| strategy | wallets | share of profit | reconciled | median edge per $ | median win rate | maker share of $ | median transactions/day |
+|---|---|---|---|---|---|---|---|
+| whale / concentrated bets | 5 | 19% | 5 | 45% | 46% | 39% | 5.5 |
+| high-volume culture operation (taker flow) | 2 | 18% | 1 | 13% | 25% | 24% | 482.3 |
+| high-volume politics operation (market making) | 2 | 15% | 0 | — | — | 74% | 24.7 |
+| high-volume culture operation (market making) | 2 | 8% | 2 | 9% | 30% | 84% | 196.9 |
+| high-volume politics operation (taker flow) | 1 | 7% | 0 | — | — | 46% | 27.6 |
+| crypto short-term bot | 1 | 5% | 1 | 67% | 32% | 0% | 5.0 |
+| market maker | 1 | 5% | 1 | -23% | 48% | 78% | 4.9 |
+| politics / macro trader | 1 | 5% | 1 | 10% | 28% | 10% | 4.0 |
+| sports bettor (same-day/in-play) | 1 | 4% | 1 | -14% | 37% | 53% | 9.9 |
+| bonder (near-certain outcomes) | 1 | 4% | 1 | 9% | 75% | 27% | 7.1 |
+| high-volume geopolitics operation (market making) | 1 | 4% | 0 | — | — | 90% | 126.7 |
+| high-volume other operation (taker flow) | 1 | 3% | 1 | 3% | 54% | 57% | 31.1 |
+| sports bettor (pre-game/futures) | 1 | 3% | 1 | 16% | 39% | 72% | 31.8 |
+
+## Economics leaders (20 wallets, $10.1M profit)
+
+17 of 20 wallets reconcile (sampled positions within 30% of their all-time leaderboard profit); edge and win rate use only those.
+
+| strategy | wallets | share of profit | reconciled | median edge per $ | median win rate | maker share of $ | median transactions/day |
+|---|---|---|---|---|---|---|---|
+| politics / macro trader | 8 | 29% | 7 | 4% | 49% | 46% | 13.3 |
+| high-volume politics operation (market making) | 3 | 18% | 2 | 2% | 75% | 69% | 55.6 |
+| high-volume economics operation (taker flow) | 1 | 16% | 1 | 7% | 61% | 54% | 27.4 |
+| high-volume geopolitics operation (market making) | 2 | 12% | 1 | -7% | 49% | 97% | 361.5 |
+| arbitrage / merger | 2 | 11% | 2 | 3% | 50% | 29% | 47.8 |
+| whale / concentrated bets | 2 | 9% | 2 | 25% | 62% | 71% | 17.4 |
+| bonder (near-certain outcomes) | 2 | 6% | 2 | 2% | 74% | 54% | 7.6 |
+
+## Tech leaders (20 wallets, $2.9M profit)
+
+12 of 20 wallets reconcile (sampled positions within 30% of their all-time leaderboard profit); edge and win rate use only those.
+
+| strategy | wallets | share of profit | reconciled | median edge per $ | median win rate | maker share of $ | median transactions/day |
+|---|---|---|---|---|---|---|---|
+| generalist | 2 | 43% | 2 | 15% | 59% | 30% | 209.7 |
+| high-volume politics operation (taker flow) | 5 | 20% | 3 | 3% | 65% | 54% | 15.0 |
+| bonder (near-certain outcomes) | 2 | 13% | 1 | 3% | 46% | 41% | 6.4 |
+| high-volume politics operation (market making) | 2 | 5% | 0 | — | — | 70% | 16.9 |
+| whale / concentrated bets | 2 | 4% | 2 | -6% | 55% | 39% | 2.3 |
+| politics / macro trader | 2 | 4% | 2 | 11% | 58% | 57% | 6.0 |
+| arbitrage / merger | 1 | 4% | 0 | — | — | 40% | 124.0 |
+| high-volume geopolitics operation (taker flow) | 1 | 3% | 1 | 0% | 51% | 42% | 3.3 |
+| high-volume tech operation (taker flow) | 1 | 2% | 1 | 12% | 56% | 34% | 27.9 |
+| high-volume geopolitics operation (market making) | 1 | 2% | 0 | — | — | 74% | 221.4 |
+| high-volume sports operation (taker flow) | 1 | 2% | 0 | — | — | 38% | 938.0 |
+
+## Finance leaders (20 wallets, $5.0M profit)
+
+15 of 20 wallets reconcile (sampled positions within 30% of their all-time leaderboard profit); edge and win rate use only those.
+
+| strategy | wallets | share of profit | reconciled | median edge per $ | median win rate | maker share of $ | median transactions/day |
+|---|---|---|---|---|---|---|---|
+| whale / concentrated bets | 5 | 28% | 5 | 36% | 58% | 21% | 5.0 |
+| generalist | 3 | 16% | 3 | 12% | 40% | 39% | 22.2 |
+| politics / macro trader | 2 | 14% | 2 | 11% | 42% | 28% | 89.4 |
+| high-volume crypto operation (market making) | 2 | 9% | 1 | 4% | 54% | 81% | 226.2 |
+| high-volume crypto operation (taker flow) | 2 | 8% | 0 | — | — | 38% | 741.1 |
+| high-volume sports operation (market making) | 1 | 5% | 0 | — | — | 100% | 974.0 |
+| bonder (near-certain outcomes) | 1 | 5% | 1 | -2% | 64% | 30% | 853.4 |
+| high-volume economics operation (market making) | 1 | 5% | 1 | 1% | 84% | 62% | 23.4 |
+| market maker | 1 | 4% | 1 | -17% | 34% | 93% | 8.4 |
+| high-volume politics operation (taker flow) | 1 | 4% | 0 | — | — | 3% | 5.3 |
+| crypto short-term bot | 1 | 3% | 1 | 14% | 52% | 10% | 31.1 |
+
+## Weather leaders (20 wallets, $2.1M profit)
+
+8 of 20 wallets reconcile (sampled positions within 30% of their all-time leaderboard profit); edge and win rate use only those.
+
+| strategy | wallets | share of profit | reconciled | median edge per $ | median win rate | maker share of $ | median transactions/day |
+|---|---|---|---|---|---|---|---|
+| high-volume weather operation (taker flow) | 8 | 31% | 2 | 13% | 25% | 32% | 60.3 |
+| high-volume politics operation (market making) | 2 | 18% | 2 | 4% | 52% | 71% | 67.2 |
+| high-volume politics operation (taker flow) | 1 | 14% | 0 | — | — | 46% | 27.6 |
+| politics / macro trader | 2 | 10% | 2 | 15% | 57% | 56% | 5.5 |
+| high-volume geopolitics operation (market making) | 2 | 9% | 0 | — | — | 74% | 495.5 |
+| high-volume weather operation (market making) | 2 | 8% | 0 | — | — | 90% | 399.8 |
+| generalist | 1 | 3% | 1 | 10% | 65% | 10% | 3.6 |
+| whale / concentrated bets | 1 | 3% | 1 | 11% | 53% | 35% | 3.2 |
+| high-volume sports operation (taker flow) | 1 | 3% | 0 | — | — | 38% | 938.0 |
+
+## Mentions leaders (20 wallets, $2.4M profit)
+
+12 of 20 wallets reconcile (sampled positions within 30% of their all-time leaderboard profit); edge and win rate use only those.
+
+| strategy | wallets | share of profit | reconciled | median edge per $ | median win rate | maker share of $ | median transactions/day |
+|---|---|---|---|---|---|---|---|
+| high-volume politics operation (taker flow) | 10 | 51% | 4 | 10% | 63% | 47% | 11.6 |
+| politics / macro trader | 3 | 21% | 3 | 21% | 61% | 39% | 1.6 |
+| high-volume sports operation (taker flow) | 2 | 9% | 2 | 5% | 68% | 45% | 3.3 |
+| high-volume politics operation (market making) | 2 | 9% | 1 | -1% | 60% | 72% | 16.7 |
+| market maker | 1 | 4% | 1 | -1% | 66% | 62% | 2.9 |
+| high-volume geopolitics operation (taker flow) | 1 | 4% | 0 | — | — | 38% | 23.4 |
+| bonder (near-certain outcomes) | 1 | 3% | 1 | 3% | 63% | 71% | 6.5 |
+
+## All-time top: where the money came from
+
+Profit by market category (reconciled wallets): sports $174.5M (56%), politics $124.0M (40%), geopolitics $11.3M (4%), economics $1.3M (0%), other $1.2M (0%), crypto $714k (0%), tech $92k (0%), weather $29 (0%).
+
+Money spent by entry price: <20c 2%, 20-50c 26%, 50-80c 45%, 80-95c 11%, >=95c 17%.
+
+Concentration: 40 of 100 made 80%+ of their gains in 5 or fewer markets; median share from the single best market 18%.
+
+Market making: 83 received liquidity rewards (total $3.7M); 92 had 60%+ maker fills in their recent trades.
+
+Still active (traded in the sample's last 30 days of data): 28 of 100.
+
+## All-time top 30
+
+| # | wallet | name | profit | strategy | why | edge per $ | win rate | best category | last trade |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | `0x56687bf4…` | Theo4 | $22.1M | whale / concentrated bets | 22 positions, top 5 = 99% of gains, median position $24,216 | 110% | 82% | politics | 2024-11-13 |
+| 2 | `0x204f72f3…` | swisstony | $18.4M | high-volume sports operation (taker flow) | 5009+ positions, 15% of $ as maker, median position $34,507 | ? | ? | sports | 2026-08-26 |
+| 3 | `0x1f2dd6d4…` | Fredi9999 | $16.6M | whale / concentrated bets | 66 positions, top 5 = 84% of gains, median position $27,200 | 56% | 61% | politics | 2024-10-24 |
+| 4 | `0x2005d16a…` | RN1 | $13.0M | high-volume sports operation (market making) | 10000+ positions, 90% of $ as maker, median position $11,366 | ? | ? | geopolitics | 2026-10-21 |
+| 5 | `0x6a72f618…` | kch123 | $11.4M | high-volume sports operation (market making) | 4072+ positions, 70% of $ as maker, median position $6,817 | ? | ? | sports | 2026-06-29 |
+| 6 | `0x96cfcb0c…` | mintblade | $9.1M | whale / concentrated bets | 5 positions, top 5 = 100% of gains, median position $667,332 | 105% | 100% | geopolitics | 2026-06-16 |
+| 7 | `0xed64a7bf…` | fishalive | $9.0M | whale / concentrated bets | 2 positions, top 5 = 100% of gains, median position $2,141,006 | 210% | 100% | sports | 2026-06-15 |
+| 8 | `0xbc11a64a…` | frostrizz | $8.8M | whale / concentrated bets | 6 positions, top 5 = 100% of gains, median position $1,822,445 | 62% | 83% | sports | 2026-06-20 |
+| 9 | `0x78b9ac44…` | Len9311238 | $8.7M | whale / concentrated bets | 8 positions, top 5 = 99% of gains, median position $569,709 | 114% | 88% | politics | 2024-11-06 |
+| 10 | `0x664ce9fb…` | sparklingwater123 | $8.4M | whale / concentrated bets | 4 positions, top 5 = 100% of gains, median position $1,150,678 | 87% | 75% | sports | 2026-06-25 |
+| 11 | `0xf0318c32…` | BreakTheBank | $8.3M | high-volume sports operation (market making) | 1260+ positions, 63% of $ as maker, median position $20,153 | 6% | 42% | sports | 2026-10-21 |
+| 12 | `0xd2359732…` | zxgngl | $7.8M | whale / concentrated bets | 8 positions, top 5 = 100% of gains, median position $147 | 36% | 88% | politics | 2024-11-16 |
+| 13 | `0x863134d0…` | RepTrump | $7.5M | whale / concentrated bets | 8 positions, top 5 = 99% of gains, median position $165,268 | 117% | 100% | politics | 2024-10-24 |
+| 14 | `0x3f87d51f…` | GRIMDRIP | $7.5M | whale / concentrated bets | 2 positions, top 5 = 100% of gains, median position $3,045,500 | 123% | 100% | sports | 2026-06-18 |
+| 15 | `0x09b428f7…` | DEEDDIT | $7.5M | whale / concentrated bets | 17 positions, top 5 = 82% of gains, median position $1,202,279 | 21% | 59% | sports | 2026-07-14 |
+| 16 | `0x5e4c3b5b…` | endlessFate | $7.2M | whale / concentrated bets | 9 positions, top 5 = 98% of gains, median position $849,964 | 52% | 67% | sports | 2026-06-18 |
+| 17 | `0xcdcccd0f…` | joseph00677 | $6.9M | whale / concentrated bets | 22 positions, top 5 = 84% of gains, median position $38,643 | 49% | 46% | sports | 2026-10-19 |
+| 18 | `0x8119010a…` | PrincessCaro | $6.1M | whale / concentrated bets | 21 positions, top 5 = 90% of gains, median position $74,049 | 51% | 81% | politics | 2024-10-18 |
+| 19 | `0xe9ad918c…` | walletmobile | $5.9M | whale / concentrated bets | 1 positions, top 5 = 100% of gains, median position $9,948,778 | 60% | 100% | politics | 2024-11-06 |
+| 20 | `0xc2e7800b…` | beachboy4 | $5.8M | sports bettor (same-day/in-play) | 100% of spend in sports, 69% of trades on settlement day | 4% | 55% | sports | 2026-09-09 |
+| 21 | `0x94f199fb…` | KeyTransporter | $5.7M | whale / concentrated bets | 15 positions, top 5 = 93% of gains, median position $301,277 | 46% | 73% | sports | 2026-02-22 |
+| 22 | `0x88578376…` | BetTom42 | $5.6M | whale / concentrated bets | 7 positions, top 5 = 99% of gains, median position $474,563 | 101% | 100% | politics | 2024-11-06 |
+| 23 | `0x23786fda…` | mikatrade77 | $5.1M | whale / concentrated bets | 7 positions, top 5 = 99% of gains, median position $384,212 | 94% | 86% | politics | 2024-11-06 |
+| 24 | `0xe90bec87…` | gmanas | $4.9M | high-volume sports operation (taker flow) | 5179+ positions, 37% of $ as maker, median position $18,527 | ? | ? | sports | 2026-03-02 |
+| 25 | `0xd0c042c0…` | alexmulti | $4.8M | whale / concentrated bets | 6 positions, top 5 = 100% of gains, median position $279,530 | 94% | 67% | politics | 2024-11-01 |
+| 26 | `0x006cc834…` | 0x006cc834Cc092684 | $4.7M | sports bettor (pre-game/futures) | 93% of spend in sports, 55% of trades on settlement day | 17% | 48% | sports | 2026-10-14 |
+| 27 | `0xdc876e68…` | 432614799197 | $4.5M | high-volume sports operation (market making) | 6050+ positions, 69% of $ as maker, median position $1,558 | ? | ? | sports | 2026-03-09 |
+| 28 | `0x9319a045…` | sainttroplay | $4.4M | whale / concentrated bets | 14 positions, top 5 = 88% of gains, median position $227,537 | 78% | 71% | sports | 2026-09-05 |
+| 29 | `0x507e52ef…` | GamblingIsAllYouNe | $4.4M | high-volume sports operation (market making) | 5004+ positions, 100% of $ as maker, median position $12,206 | ? | ? | sports | 2026-07-15 |
+| 30 | `0xe5495816…` | Allezpapa | $4.1M | sports bettor (pre-game/futures) | 98% of spend in sports, 22% of trades on settlement day | 22% | 52% | sports | 2026-07-19 |
+
+## Examples by strategy (best markets of the top wallets)
+
+- **whale / concentrated bets** — Theo4 ($22.1M): Will Donald Trump win the popular vote in the 2024 President (Yes @ 0.37, $8.3M); Kamala Harris wins the popular vote? (No @ 0.37, $6.1M); Will Donald Trump win the 2024 US Presidential Election? (Yes @ 0.60, $5.9M)
+- **high-volume sports operation (taker flow)** — swisstony ($18.4M): Will Germany win on 2026-06-25? (No @ 0.45, $1.2M); Will Belgium win on 2026-06-21? (No @ 0.41, $961k); Will Spain win on 2026-06-15? (No @ 0.13, $791k)
+- **whale / concentrated bets** — Fredi9999 ($16.6M): Will Donald Trump win the 2024 US Presidential Election? (Yes @ 0.54, $9.7M); Will Donald Trump win the popular vote in the 2024 President (Yes @ 0.32, $3.8M); Will a Republican win the popular vote and the Presidency?  (Yes @ 0.29, $795k)
+- **high-volume sports operation (market making)** — RN1 ($13.0M): Australian Open Men's: Carlos Alcaraz vs Alexander Zverev (Alcaraz @ 0.37, $243k); Will Argentina win on 2026-07-07? (Yes @ 0.22, $224k); Will Cabo Verde win on 2026-07-03? (Yes @ 0.04, $208k)
+- **high-volume sports operation (market making)** — kch123 ($11.4M): Will Villarreal CF win on 2026-01-20? (No @ 0.27, $1.1M); Spread: Seahawks (-4.5) (Seahawks @ 0.51, $987k); Will Paris Saint-Germain FC win on 2026-01-20? (No @ 0.42, $580k)
+- **whale / concentrated bets** — mintblade ($9.1M): Will IR Iran win on 2026-06-15? (No @ 0.50, $7.2M); Will Uruguay win on 2026-06-15? (No @ 0.37, $1.4M); Spread: Uruguay (-1.5) (Saudi Arabia @ 0.63, $386k)
+- **high-volume sports operation (market making)** — BreakTheBank ($8.3M): Will Spain vs. Argentina end in a draw? (Yes @ 0.33, $1.4M); Will Ghana win on 2026-06-17? (Yes @ 0.40, $1.3M); Will Belgium win on 2026-07-01? (No @ 0.53, $1.2M)
+- **sports bettor (same-day/in-play)** — beachboy4 ($5.8M): Will Tottenham Hotspur FC win on 2026-01-17? (No @ 0.49, $3.5M); Will Liverpool FC win on 2026-01-31? (Yes @ 0.60, $3.1M); Will Liverpool FC win on 2026-01-21? (Yes @ 0.54, $2.9M)
+- **high-volume sports operation (taker flow)** — gmanas ($4.9M): Will Paris Saint-Germain FC win on 2026-01-20? (No @ 0.42, $803k); Will Paris Saint-Germain FC win on 2026-01-28? (No @ 0.35, $705k); Will Villarreal CF win on 2026-01-20? (No @ 0.29, $693k)
+- **sports bettor (pre-game/futures)** — 0x006cc834Cc092684F1B56626E23BEdB3835c16ea-1729683673397 ($4.7M): Will Villarreal CF win on 2026-01-20? (No @ 0.27, $730k); Will Paris Saint-Germain FC win on 2026-01-20? (No @ 0.42, $714k); Will Manchester City FC win on 2026-01-04? (No @ 0.33, $670k)
+- **sports bettor (pre-game/futures)** — Allezpapa ($4.1M): Will Spain win the 2026 FIFA World Cup? (Yes @ 0.16, $2.3M); Will Norway vs. England end in a draw? (Yes @ 0.26, $739k); Will Spain vs. Argentina end in a draw? (Yes @ 0.33, $444k)
+- **high-volume sports operation (taker flow)** — omnibus-076daa ($3.6M): Will United States win on 2026-06-25? (No @ 0.49, $368k); Will Portugal win on 2026-06-27? (No @ 0.51, $348k); Will Japan win on 2026-06-25? (No @ 0.50, $313k)
+- **sports bettor (same-day/in-play)** — 0x5966Db1fE50763C9e3C014d756369BAd07E1F804-1777648534241 ($3.5M): Will Netherlands win on 2026-06-14? (No @ 0.54, $339k); Will England win on 2026-06-17? (Yes @ 0.60, $338k); Will Leeds United FC win on 2026-05-01? (Yes @ 0.71, $334k)
+- **sports bettor (pre-game/futures)** — Kch-Temp ($3.2M): Belgium vs. IR Iran: O/U 2.5 (Under @ 0.47, $368k); Will Croatia win on 2026-06-27? (Yes @ 0.53, $285k); Will Mexico win on 2026-06-30? (Yes @ 0.43, $285k)
+- **high-volume politics operation (market making)** — ndb1 ($3.1M): Will Alexander Zverev win the 2026 Men's US Open? (Yes @ 0.49, $1.1M); Will PSG win the 2025–26 Champions League? (Yes @ 0.03, $699k); Mexico vs. England: Team to Advance (England @ 0.52, $550k)
+- **sports bettor (same-day/in-play)** — weflyhigh ($2.9M): Will Spain win on 2026-06-26? (Yes @ 0.61, $573k); Will Netherlands win on 2026-06-14? (No @ 0.55, $459k); Blue Jackets vs. Flyers (Blue Jackets @ 0.56, $412k)
+- **high-volume politics operation (taker flow)** — aenews2 ($2.4M): Will "Avatar: Fire and Ash" Opening Weekend Box Office be le (Yes @ 0.26, $403k); Will Kim Moon-soo be the People's Power Party candidate for  (Yes @ 1.00, $308k); Israel x Hezbollah Ceasefire in 2024? (No @ 0.00, $305k)
+- **high-volume geopolitics operation (market making)** — denizz ($2.3M): US x Iran permanent peace deal by June 15, 2026? (Yes @ 0.15, $807k); Iran x Israel/US conflict ends by April 7? (Yes @ 0.95, $383k); US-Iran nuclear deal by June 30? (Yes @ 0.28, $318k)
+- **politics / macro trader** — 0943 ($2.3M): Will Kamala Harris win the 2024 US Presidential Election? (Yes @ 0.38, $1.9M); Will Kamala Harris win the 2024 US Presidential Election? (No @ 0.60, $1.9M); Fed decreases interest rates by 50+ bps after September 2024 (Yes @ 0.34, $1.0M)
+- **high-volume politics operation (market making)** — ImJustKen ($2.3M): Will Trump nominate Kevin Warsh as the next Fed chair? (Yes @ 0.04, $1.3M); Will Kamala Harris win the 2024 Democratic Presidential Nomi (Yes @ 0.62, $399k); Will Michelle Obama win the 2024 US Presidential Election? (Yes @ 0.00, $310k)
+- **high-volume crypto operation (taker flow)** — 0xf705fa045201391d9632b7f3cde06a5e24453ca7 ($2.2M): Will Ethereum dip to $2,600 in January? (Yes @ 0.41, $148k); Will Bitcoin dip to $85,000 in January? (Yes @ 0.36, $104k); Will Bitcoin dip to $80,000 in January? (Yes @ 0.69, $81k)
+- **high-volume politics operation (taker flow)** — ilovecircle ($2.2M): Missouri vs. Vanderbilt (Vanderbilt @ 0.56, $258k); Texans vs. Ravens (Texans @ 0.54, $183k); Will Crystal Palace win on 2025-09-13? (No @ 0.41, $156k)
+- **high-volume politics operation (market making)** — geniusMC ($2.1M): Will the Seattle Seahawks win Super Bowl 2026? (Yes @ 0.31, $1.4M); Rams vs. Seahawks (Seahawks @ 0.60, $472k); Will Club Atlético de Madrid win on 2026-01-28? (No @ 0.22, $400k)
+- **crypto short-term bot** — 0x8dxd ($2.1M): Bitcoin Up or Down - February 9, 9:00AM-9:15AM ET (Up @ 0.28, $41k); Bitcoin Up or Down - February 17, 6PM ET (Down @ 0.50, $32k); Bitcoin Up or Down - January 19, 5AM ET (Up @ 0.36, $28k)
+- **high-volume crypto operation (taker flow)** — justdance ($2.0M): Will Bitcoin hit $100k in November? (Yes @ 0.03, $86k); Will Bitcoin reach $70,000 in October?  (Yes @ 0.45, $80k); Will Bitcoin reach $150,000 by December 31, 2025? (Yes @ 0.01, $63k)
+- **arbitrage / merger** — PowerSupplyUnit ($1.7M): Spurs vs. Knicks (Knicks @ 0.17, $894k); Knicks vs. Spurs (Knicks @ 0.51, $362k); Cavaliers vs. Knicks (Knicks @ 0.19, $226k)
+

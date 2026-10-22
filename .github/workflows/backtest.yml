@@ -1,0 +1,89 @@
+name: copy-trade backtest
+
+on:
+  push:
+    branches: [claude/polymarket-copy-backtest]
+    paths: ["copybt/**", ".github/workflows/backtest.yml", "backtest.args"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: backtest
+  cancel-in-progress: true
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - name: Free disk space
+        run: |
+          df -h /
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL /usr/local/share/boost || true
+          df -h /
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/cache/restore@v4
+        with:
+          path: .cache
+          key: polymarket-v2-${{ github.run_id }}
+          restore-keys: polymarket-v2-
+
+      - name: Unit tests
+        run: python -m unittest discover -s tests
+
+      - name: Probe API response shapes
+        run: |
+          mkdir -p results/probe
+          probe() { curl -sS -m 30 "$2" -o "results/probe/$1.json" -w "$1 %{http_code}\n" || true; }
+          probe leaderboard "https://data-api.polymarket.com/v1/leaderboard?category=OVERALL&timePeriod=MONTH&orderBy=PNL&limit=3&offset=0"
+          W=$(python -c "import json;d=json.load(open('results/probe/leaderboard.json'));d=d if isinstance(d,list) else d.get('data',[]);print(d[0].get('proxyWallet',''))" 2>/dev/null || true)
+          echo "sample wallet: $W"
+          probe activity "https://data-api.polymarket.com/activity?user=$W&type=TRADE&limit=3&offset=0&sortBy=TIMESTAMP&sortDirection=DESC"
+          C=$(python -c "import json;d=json.load(open('results/probe/activity.json'));print(d[0]['conditionId'])" 2>/dev/null || true)
+          probe gamma "https://gamma-api.polymarket.com/markets?condition_ids=$C&limit=1"
+          probe gamma_closed "https://gamma-api.polymarket.com/markets?condition_ids=$C&closed=true&limit=1"
+          probe clob "https://clob.polymarket.com/markets/$C"
+          A=$(python -c "import json;d=json.load(open('results/probe/activity.json'));print(d[0]['asset'])" 2>/dev/null || true)
+          T=$(( $(date +%s) / 3600 * 3600 - 86400 ))
+          probe prices_history "https://clob.polymarket.com/prices-history?market=$A&startTs=$T&endTs=$(( T + 7200 ))&fidelity=1"
+          probe us_markets "https://gateway.polymarket.us/v1/markets?closed=false&limit=3&offset=0"
+          for f in results/probe/*.json; do echo "== $f"; head -c 1500 "$f"; echo; done
+
+      - name: Download trades and markets
+        timeout-minutes: 150
+        shell: bash -o pipefail {0}
+        run: python -u -m copybt --fetch-only $(cat backtest.args 2>/dev/null) 2>&1 | tee results/fetch.log
+
+      - uses: actions/cache/save@v4
+        with:
+          path: .cache
+          key: polymarket-v2-fetched-${{ github.run_id }}
+
+      - name: Run backtest
+        # Stop well before the job limit so the cache and results still get saved.
+        timeout-minutes: 120
+        run: |
+          # Log disk and memory every 2 minutes so a runner death is diagnosable.
+          (while true; do echo "[res] disk $(df -h / | awk 'NR==2{print $3" used/"$4" free"}'), ram $(free -m | awk '/Mem/{print $3"MB used"}'), cache $(du -sh .cache 2>/dev/null | cut -f1)"; sleep 120; done) &
+          set -o pipefail
+          python -u -m copybt $(cat backtest.args 2>/dev/null) 2>&1 | tee results/run.log
+
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: .cache
+          key: polymarket-v2-${{ github.run_id }}
+
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f results
+          git commit -m "Backtest results ($(date -u +%Y-%m-%dT%H:%MZ))" || exit 0
+          git pull --rebase origin "$GITHUB_REF_NAME" && git push origin HEAD:"$GITHUB_REF_NAME"

@@ -1,0 +1,56 @@
+US: 80600 open markets, 59608 game/spread/total/prop slugs, 296 verified pairs
+
+age                    long side              short side  listed, outcome names     not on Polymarket US  copyable
+<3h                          134                     156                       0                      74       80%
+3-12h                        118                       1                       0                     166       42%
+12-48h                        35                       0                       0                     985        3%
+older                          0                       4                       0                    1527        0%
+
+by league (all ages): copyable / total
+  nfl              0 / 413
+  nba            372 / 395
+  nhl             22 / 296
+  lol             15 / 276
+  atp              0 / 268
+  dota2            0 / 206
+  futures         39 / 199
+  cfb              0 / 177
+  ucl              0 / 170
+  mlb              0 / 152
+  fifwc            0 / 140
+  val              0 / 137
+  wta              0 / 125
+  bra2             0 / 64
+  por              0 / 61
+  arg              0 / 57
+  itf              0 / 36
+  mex              0 / 16
+  egy1             0 / 6
+  fl1              0 / 4
+
+recent trades not on Polymarket US (international slug | outcome | US lists for the same matchup):
+   39   |  | -
+   34  ucl-bay-ars-2026-10-21-bay | No | -
+   16  mex-tol-tij-2026-10-21-spread-home-1pt5 | Deportivo Toluca FC | -
+   14  atp-damm-cerundo-2026-10-21 | Martin Damm | -
+   13  itf-zeltin1-olmo1-2026-10-21 | Beatrise Zeltina | -
+   10  dota2-dawnbu-z10-2026-10-21-game2 | Dawn Bulls | -
+    9  nba-atl-orl-2026-10-21-spread-home-3pt5 | Magic | nba-atl-orl-2026-10-21, nba-atl-orl-2026-10-21-219pt5, nba-atl-orl-2026-10-21-222pt5, nba-atl-orl-2026-10-21-225pt5
+    8  atp-moutet-balshaw-2026-10-21 | Felix Balshaw | -
+    8  dota2-yes-bot1-2026-10-21-game1 | Yellow Submarine | -
+    8  dota2-pr1-ic-2026-10-21-game2 | Inner Circle | -
+    7  atp-chidekh-fearnle-2026-10-21 | Clement Chidekh | -
+    7  itf-hosogi1-inoue1-2026-10-21 | Hina Inoue | -
+    7  nba-min-mia-2026-10-21-spread-home-1pt5 | Heat | nba-min-mia-2026-10-21, nba-min-mia-2026-10-21-229pt5, nba-min-mia-2026-10-21-232pt5, nba-min-mia-2026-10-21-235pt5
+    6  ucl-bru-rcl-2026-10-21-total-4pt5 | Under | -
+    5  itf-palico1-rapolu1-2026-10-21 | Malaika Rapolu | -
+    4  ucl-com-mnu-2026-10-21-total-2pt5 | Under | -
+    4  dota2-salami-huliga-2026-10-21-game1 | salamit | -
+    3  wta-alexand-kostyuk-2026-10-21 | Ekaterina Alexandrova | -
+    3  dota2-pr1-ic-2026-10-21 | Power Rangers | -
+    3  itf-palico1-rapolu1-2026-10-21 | Barbora Palicova | -
+    3  atp-goffin-bertola-2026-10-20 | Remy Bertola | -
+    3  2026-balance-of-power-d-senate-r-house-692 | Yes | -
+    2  atp-mannari-rublev-2026-10-21 | Andrey Rublev | -
+    2  dota2-dawnbu-z10-2026-10-21 | Zero Tenacity | -
+    2  nba-ind-nop-2026-10-21 | Pacers | -

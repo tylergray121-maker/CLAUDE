@@ -1,0 +1,128 @@
+[
+ {
+  "us_slug": "astatc-nfl-rushyds-ou-2027-01-10-javwil",
+  "intl_token": "94698499970724143169901676300597928083757051289865555016809967958722849440452",
+  "score": 0.515,
+  "us_label": "Regular Season Rushing Yards O/U: Javonte Williams 949.5+",
+  "intl_label": "Will Javonte Williams have 1,000+ rushing yards in the 2026-27 NFL regular season? [Javonte Williams]",
+  "tick": 0.01,
+  "price_gap": 0.08
+ },
+ {
+  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-debut",
+  "intl_token": "19923169701743169913996740974284918934040175461548398956507868440350127057374",
+  "score": 0.614,
+  "us_label": "Oscar Nominees: Best Picture: The Debut",
+  "intl_label": "Will \"The Debut\" be nominated for Best Film Editing at the 99th Academy Awards? [The Debut]",
+  "tick": 0.01,
+  "price_gap": 0.39
+ },
+ {
+  "us_slug": "tac-grammys-aoty-2027-02-07-artlov",
+  "intl_token": "115038513749123323356108768879054424621968703965081397630027954404380369699982",
+  "score": 0.7,
+  "us_label": "Grammy Winner: Album of the Year: The Art of Loving - Olivia Dean",
+  "intl_label": "Will The Art of Loving (Olivia Dean) win Album of the Year at the 69th Annual GRAMMY Awards? [The Art of Loving - Olivia Dean]",
+  "tick": 0.01,
+  "price_gap": 0.089
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstact-2027-01-21-samroc",
+  "intl_token": "108285250004806143512903340445429431007464603507420637790462951090711050338491",
+  "score": 0.643,
+  "us_label": "Oscar Nominees: Best Actor: Sam Rockwell",
+  "intl_label": "Will Sam Rockwell be nominated for Best Actor at the 99th Academy Awards? [Sam Rockwell]",
+  "tick": 0.01,
+  "price_gap": 0.07
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstact-2027-01-21-sebsta",
+  "intl_token": "40847202115451387434808435109279851210744351296326876587607208153705401944516",
+  "score": 0.643,
+  "us_label": "Oscar Nominees: Best Actor: Sebastian Stan",
+  "intl_label": "Will Sebastian Stan be nominated for Best Actor at the 99th Academy Awards? [Sebastian Stan]",
+  "tick": 0.01,
+  "price_gap": 0.13
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestdoc-youcan",
+  "intl_token": "100757376849492277132821909746555605457515786857395729851351563483016663901152",
+  "score": 0.632,
+  "us_label": "Oscar Winner: Best Documentary Feature Film: You Can See Everything",
+  "intl_label": "Will You Can See Everything win Best Picture at the 99th Academy Awards? [You Can See Everything]",
+  "tick": 0.01,
+  "price_gap": 0.562
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstsupact-2027-01-21-samroc",
+  "intl_token": "108285250004806143512903340445429431007464603507420637790462951090711050338491",
+  "score": 0.636,
+  "us_label": "Oscar Nominees: Best Supporting Actor: Sam Rockwell",
+  "intl_label": "Will Sam Rockwell be nominated for Best Actor at the 99th Academy Awards? [Sam Rockwell]",
+  "tick": 0.01,
+  "price_gap": 0.74
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstmakeup-2027-01-21-digger",
+  "intl_token": "113986052500172357426560421744159670111789534136168517241878927501016027675541",
+  "score": 0.604,
+  "us_label": "Oscar Nominees: Best Makeup and Hairstyling: Digger",
+  "intl_label": "Will \"Digger\" be nominated for Best Costume Design at the 99th Academy Awards? [Digger]",
+  "tick": 0.01,
+  "price_gap": 0.68
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstcine-2027-01-21-digger",
+  "intl_token": "113986052500172357426560421744159670111789534136168517241878927501016027675541",
+  "score": 0.609,
+  "us_label": "Oscar Nominees: Best Cinematography: Digger",
+  "intl_label": "Will \"Digger\" be nominated for Best Costume Design at the 99th Academy Awards? [Digger]",
+  "tick": 0.01,
+  "price_gap": 0.095
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestedit-youcan",
+  "intl_token": "100757376849492277132821909746555605457515786857395729851351563483016663901152",
+  "score": 0.639,
+  "us_label": "Oscar Winner: Best Film Editing: You Can See Everything",
+  "intl_label": "Will You Can See Everything win Best Picture at the 99th Academy Awards? [You Can See Everything]",
+  "tick": 0.01,
+  "price_gap": 0.182
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstorigscr-2027-01-21-debut",
+  "intl_token": "19923169701743169913996740974284918934040175461548398956507868440350127057374",
+  "score": 0.604,
+  "us_label": "Oscar Nominees: Best Original Screenplay: The Debut",
+  "intl_label": "Will \"The Debut\" be nominated for Best Film Editing at the 99th Academy Awards? [The Debut]",
+  "tick": 0.01,
+  "price_gap": 0.475
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstcast-2027-01-21-digger",
+  "intl_token": "113986052500172357426560421744159670111789534136168517241878927501016027675541",
+  "score": 0.609,
+  "us_label": "Oscar Nominees: Best Casting: Digger",
+  "intl_label": "Will \"Digger\" be nominated for Best Costume Design at the 99th Academy Awards? [Digger]",
+  "tick": 0.01,
+  "price_gap": 0.09
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstedit-2027-01-21-debut",
+  "intl_token": "19923169701743169913996740974284918934040175461548398956507868440350127057374",
+  "score": 0.659,
+  "us_label": "Oscar Nominees: Best Film Editing: The Debut",
+  "intl_label": "Will \"The Debut\" be nominated for Best Film Editing at the 99th Academy Awards? [The Debut]",
+  "tick": 0.01,
+  "price_gap": 0.19
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstlashort-2027-01-21-32b",
+  "intl_token": "21907984520995959944533899676569769585658871812948425812678533694128857792510",
+  "score": 0.688,
+  "us_label": "Oscar Nominees: Best Live Action Short Film: 32B",
+  "intl_label": "Will \"32B\" be nominated for Best Live Action Short Film at the 99th Academy Awards? [32B]",
+  "tick": 0.01,
+  "price_gap": 0.125
+ }
+]

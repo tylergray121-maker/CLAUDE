@@ -1,0 +1,68 @@
+name: polymarket-us bot
+
+on:
+  push:
+    branches: [claude/polymarket-copy-backtest]
+    paths: ["pmbot/**", "tests/test_pmbot.py", ".github/workflows/bot.yml", "bot.args"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bot
+  cancel-in-progress: true
+
+jobs:
+  paper:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Tests
+        run: |
+          pip install -q polymarket-us==2.4.1 pyflakes
+          python -m pyflakes pmbot study copybt
+          python -m unittest tests.test_pmbot
+
+      - name: Copy coverage of the leaders' recent trades
+        timeout-minutes: 20
+        shell: bash -o pipefail {0}
+        run: |
+          mkdir -p botresults
+          python -u -m pmbot.coverage | tee botresults/coverage.txt
+
+      - name: Paper trade against live quotes
+        if: ${{ !contains(github.event.head_commit.message, '[probe only]') }}
+        timeout-minutes: 100
+        shell: bash -o pipefail {0}
+        run: |
+          mkdir -p botresults
+          python -u -m pmbot paper --out-dir botresults $(cat bot.args 2>/dev/null) 2>&1 | tee botresults/run.log | grep -v " paper " | tail -40
+
+      - name: Probe game market slugs
+        run: |
+          mkdir -p botresults/probe && cd botresults/probe
+          G=https://gateway.polymarket.us; M=https://gamma-api.polymarket.com
+          get() { curl -sS -m 30 "$2" -o "$1.json" -w "$1 %{http_code}\n" || true; }
+          get us_ml "$G/v1/market/slug/aec-nba-mil-was-2026-10-21"
+          get us_soccer "$G/v1/market/slug/atc-lal-ray-ath-2026-10-10-ray"
+          get us_spread "$G/v1/markets?active=true&closed=false&limit=5&offset=0&slug=asc-cs2-re-nem-2026-09-24-hcap-pos-1pt5"
+          get intl_ml_market "$M/markets?slug=nba-mil-was-2026-10-21"
+          get intl_ml_event "$M/events?slug=nba-mil-was-2026-10-21"
+          get intl_soccer_event "$M/events?slug=lal-ray-ath-2026-10-10"
+          get intl_soccer_market "$M/markets?slug=lal-ray-ath-2026-10-10-ray"
+          for f in *.json; do echo "== $f $(wc -c < $f)"; head -c 1200 "$f"; echo; done
+
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f botresults
+          git commit -m "Bot run results ($(date -u +%Y-%m-%dT%H:%MZ)) [skip ci]" || exit 0
+          git pull --rebase origin "$GITHUB_REF_NAME" && git push origin HEAD:"$GITHUB_REF_NAME"
