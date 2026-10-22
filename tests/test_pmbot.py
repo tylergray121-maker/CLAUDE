@@ -118,6 +118,20 @@ class EVSniperTest(unittest.TestCase):
         self.assertNotIn("SECRET-KEY-123", "\n".join(logs.output))
 
 
+class RiskTest(unittest.TestCase):
+    def test_a_zero_daily_loss_limit_means_no_daily_stop(self):
+        d = tempfile.mkdtemp()
+        r = RiskManager(RiskConfig(daily_loss_limit=0, kill_file=os.path.join(d, "STOP")))
+        self.assertEqual(r.check(30.0, now=1000), "")
+        self.assertEqual(r.check(5.0, now=2000), "")      # down $25: still trading
+        r = RiskManager(RiskConfig(daily_loss_limit=10, kill_file=os.path.join(d, "STOP")))
+        r.check(30.0, now=1000)
+        self.assertIn("daily loss", r.check(19.0, now=2000))
+        open(os.path.join(d, "STOP"), "w").close()
+        r = RiskManager(RiskConfig(daily_loss_limit=0, kill_file=os.path.join(d, "STOP")))
+        self.assertIn("kill file", r.check(30.0, now=1000))   # the STOP file still works
+
+
 class ScorecardTest(unittest.TestCase):
     def test_lots_close_oldest_first_and_credit_every_key(self):
         from pmbot.track import Scorecard

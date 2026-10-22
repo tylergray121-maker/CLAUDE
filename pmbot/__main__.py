@@ -65,7 +65,8 @@ def parse_args(argv=None):
     g.add_argument("--bankroll", type=float, default=r.bankroll)
     g.add_argument("--max-market-usd", type=float, default=r.max_market_usd)
     g.add_argument("--max-total-usd", type=float, default=r.max_total_usd)
-    g.add_argument("--daily-loss-limit", type=float, default=r.daily_loss_limit)
+    g.add_argument("--daily-loss-limit", type=float, default=r.daily_loss_limit,
+                   help="halt for the day after losing this much (0 = no daily stop)")
     g.add_argument("--kill-file", default=r.kill_file)
     p.add_argument("--no-preview", action="store_true",
                    help="paper: don't check orders with the exchange's order preview "

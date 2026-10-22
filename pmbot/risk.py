@@ -55,7 +55,8 @@ class RiskManager:
         day = int((time.time() if now is None else now) // 86400)
         if day != self._day:
             self._day, self._day_start_equity = day, equity
-        if self._day_start_equity - equity >= self.cfg.daily_loss_limit:
+        if self.cfg.daily_loss_limit > 0 and \
+                self._day_start_equity - equity >= self.cfg.daily_loss_limit:  # 0 = no daily stop
             self.halted = (f"daily loss limit: equity {equity:.2f} vs "
                            f"{self._day_start_equity:.2f} at start of day")
         return self.halted
