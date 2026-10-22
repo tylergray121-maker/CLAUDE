@@ -507,12 +507,19 @@ class Engine:
             if live and not closed and self.states.get(slug) == "MARKET_STATE_OPEN" \
                     and slug in self.marks:
                 # Gone while the market still trades: sold outside the bot (by
-                # hand in the app). Book it at the current mid, not as a payout.
+                # hand in the app). Book it at the current mid, not as a payout,
+                # unless the price says the game is decided: the exchange pays
+                # winners out before it marks the market closed.
                 tag = self.owner.get(slug) or next(
                     (f.tag for f in reversed(self.broker.fills) if f.slug == slug and f.tag), "")
-                self.broker.sold_outside(slug, self.marks[slug], tag)
+                mark = self.marks[slug]
+                if mark >= 0.95 or mark <= 0.05:
+                    self.broker.settle(slug, 1.0 if mark >= 0.95 else 0.0, tag)
+                    self._log("settle", slug=slug, value=round(mark), early=True)
+                else:
+                    self.broker.sold_outside(slug, mark, tag)
+                    self._log("sold_outside", slug=slug, price=mark)
                 self.owner.pop(slug, None)
-                self._log("sold_outside", slug=slug, price=self.marks[slug])
                 continue
             if not closed:
                 continue

@@ -1432,6 +1432,21 @@ class LiveBrokerTest(unittest.TestCase):
         self.assertFalse(any(x.side == "SETTLE" for x in self.b.fills))
         e.shutdown()
 
+    def test_a_payout_before_the_market_closes_is_a_settlement(self):
+        d = tempfile.mkdtemp()
+        e = Engine(EngineConfig(mode="live", out_dir=d, minutes=0), StrategyConfig(),
+                   RiskManager(RiskConfig(kill_file=os.path.join(d, "STOP"))), self.b, strategies=[])
+        e.client = v = FakeVenues()
+        v.us_bid, v.us_ask = 0.96, 0.97                # decided: the winner is paid early
+        e.refresh_pairs()
+        self.b.sync()
+        self.pos = {}
+        e.cycle()
+        f = self.b.fills[-1]
+        self.assertEqual((f.slug, f.side, f.qty, f.price), ("brewers", "SETTLE", 8, 1.0))
+        self.assertAlmostEqual(f.pnl, 8 - 4.80, places=4)
+        e.shutdown()
+
     def test_take_is_ioc_and_sell_closes_long(self):
         self.b.place("brewers", Order("SELL", 0.7, 3, False))
         body = self.requests[-1][2]
