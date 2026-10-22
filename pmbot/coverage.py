@@ -37,11 +37,31 @@ def main(argv=None) -> int:
     p.add_argument("--leaders-file", default=os.path.join(os.path.dirname(__file__),
                                                           "leaders.json"))
     p.add_argument("--trades", type=int, default=200, help="latest trades per leader")
+    p.add_argument("--lookup", default="", help="comma list of usernames to find wallets for")
+    p.add_argument("--leagues", default="atp,wta,itf",
+                   help="print US and international market names for these leagues")
     a = p.parse_args(argv)
     d = tempfile.mkdtemp()
     e = Engine(EngineConfig(mode="scan", out_dir=d, minutes=0), StrategyConfig(),
                RiskManager(RiskConfig(kill_file=os.path.join(d, "STOP"))), strategies=[])
     e.refresh_pairs()
+    for name in [x.strip() for x in a.lookup.split(",") if x.strip()]:
+        try:
+            r = e.client.get("https://gamma-api.polymarket.com", "/public-search",
+                             {"q": name, "search_profiles": "true", "limit_per_type": 10},
+                             use_cache=False) or {}
+            for prof in r.get("profiles") or []:
+                print(f"profile {name!r}: {prof.get('name') or prof.get('pseudonym')} "
+                      f"{prof.get('proxyWallet')}")
+        except Exception as err:
+            print(f"lookup {name}: {err}")
+    want = {x.strip() for x in a.leagues.split(",") if x.strip()}
+    if want:
+        us_t = [m for m in e.markets.values() if any(f"-{lg}-" in m.slug for lg in want)]
+        print(f"\nUS markets in {sorted(want)}: {len(us_t)}")
+        for m in us_t[:25]:
+            print(f"  US {m.slug} | {m.market_type} | {m.question[:70]} | long={m.long_label} "
+                  f"short={m.short_label} start={m.game_start}")
     index = e.token_index()
     by_matchup = defaultdict(list)
     for s in e.by_intl_slug:

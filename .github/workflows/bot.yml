@@ -34,7 +34,7 @@ jobs:
         shell: bash -o pipefail {0}
         run: |
           mkdir -p botresults
-          python -u -m pmbot.coverage | tee botresults/coverage.txt
+          python -u -m pmbot.coverage --lookup Tiger105 --leagues atp,wta,itf | tee botresults/coverage.txt
 
       - name: Paper trade against live quotes
         if: ${{ !contains(github.event.head_commit.message, '[probe only]') }}
