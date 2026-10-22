@@ -28,32 +28,32 @@ US markets in ['atp', 'itf', 'wta'] (not futures): 818
   US asc-atp-kaybig-aidmay-2026-10-21-gs-neg-4pt5 | spreads | Will the Kaylan Bigun cover -4.5 vs the Aidan Mayo in Kaylan Bigun vs. | long=-4.50 short=+4.50 start=1792684800.0
   US asc-atp-kaybig-aidmay-2026-10-21-gs-pos-4pt5 | spreads | Will the Kaylan Bigun cover 4.5 vs the Aidan Mayo in Kaylan Bigun vs.  | long=+4.50 short=-4.50 start=1792684800.0
   US asc-atp-kaybig-aidmay-2026-10-21-gs-neg-7pt5 | spreads | Will the Kaylan Bigun cover -7.5 vs the Aidan Mayo in Kaylan Bigun vs. | long=-7.50 short=+7.50 start=1792684800.0
-US: 79778 open markets, 58654 game/spread/total/prop slugs, 470 verified pairs
+US: 80549 open markets, 59425 game/spread/total/prop slugs, 473 verified pairs
 
 age                    long side              short side  listed, outcome names     not on Polymarket US  copyable
-<3h                           72                     130                       0                    1025       16%
-3-12h                        204                       4                       0                     286       42%
-12-48h                       185                       3                       0                    1553       11%
-older                          0                       0                       0                    2538        0%
+<3h                           94                     145                       0                     999       19%
+3-12h                        208                       6                       0                     327       40%
+12-48h                       190                       3                       0                    1484       12%
+older                          0                       0                       0                    2544        0%
 
 by league (all ages): copyable / total
-  nba            189 / 675
-  futures        153 / 555
-  ucl              0 / 541
-  uel            124 / 500
+  nba            224 / 684
+  uel            131 / 613
+  futures        151 / 546
+  ucl              0 / 518
   nfl              0 / 475
-  atp             16 / 462
+  atp             19 / 456
   cs2              0 / 384
   cfb              0 / 323
   dota2            0 / 285
-  col              0 / 268
-  nhl            112 / 176
-  mlb              0 / 163
+  nhl            117 / 180
+  col              0 / 174
+  mlb              0 / 158
   val              0 / 145
   fifwc            0 / 140
   lol              0 / 121
   lal              0 / 100
-  itf              0 / 88
+  itf              0 / 95
   epl              0 / 73
   bra2             0 / 68
   por              0 / 62
@@ -61,26 +61,26 @@ by league (all ages): copyable / total
 recent trades not on Polymarket US (international slug | outcome | US lists for the same matchup):
   131  uel-juv-ren1-2026-10-22-juv | No | -
   120  atp-herbert-fritz-2026-10-22 | Pierre-Hugues Herbert | -
-  104  col-tra-hmi-2026-10-22-spread-home-1pt5 | Heart of Midlothian FC | -
-   97  col-jab-bha-2026-10-22-spread-away-2pt5 | FK Jablonec | -
-   93  uel-bou-mil1-2026-10-22-total-2pt5 | Under | -
-   66  2026-balance-of-power-d-senate-r-house-692 | Yes | -
+   94  uel-bou-mil1-2026-10-22-total-2pt5 | Under | -
+   90  uel-bou-mil1-2026-10-22-bou | Yes | -
+   76  col-tra-hmi-2026-10-22-spread-home-1pt5 | Heart of Midlothian FC | -
+   54  2026-balance-of-power-d-senate-r-house-692 | Yes | -
    47  atp-dzumhur-bergs-2026-10-22 | Damir Dzumhur | -
    37  atp-zarate-comesan-2026-10-22 | Carlos Maria Zarate | -
    37  nba-den-okc-2026-10-22-spread-home-9pt5 | Thunder | nba-den-okc-2026-10-22, nba-den-okc-2026-10-22-221pt5, nba-den-okc-2026-10-22-224pt5, nba-den-okc-2026-10-22-227pt5
+   35  uel-bou-mil1-2026-10-22-bou | No | -
    34  lol-gal-sly-2026-10-22-game3 | Galions | -
-   33  uel-bou-mil1-2026-10-22-bou | No | -
    32  atp-vachero-assche-2026-10-22 | Valentin Vacherot | -
    31  atp-goffin-michels-2026-10-22 | David Goffin | -
+   31  col-jab-bha-2026-10-22-spread-away-2pt5 | FK Jablonec | -
    28  atp-herbert-fritz-2026-10-22 | Taylor Fritz | -
-   27  will-dan-sullivan-win-the-alaska-senate-race-in-2026 | Yes | -
+   28  will-dan-sullivan-win-the-alaska-senate-race-in-2026 | Yes | -
    20  spl-fat-sha-2026-10-22-total-4pt5 | Over | -
    19  lol-gal-sly-2026-10-22-game4 | Solary | -
+   17  nba-cle-phi-2026-10-22-spread-home-3pt5 | Cavaliers | nba-cle-phi-2026-10-22, nba-cle-phi-2026-10-22-221pt5, nba-cle-phi-2026-10-22-224pt5, nba-cle-phi-2026-10-22-227pt5
    17  uel-juv-ren1-2026-10-22-juv | Yes | -
+   16  uel-juv-ren1-2026-10-22-draw | No | -
    16  uel-ftc-ut-2026-10-22-total-2pt5 | Over | -
-   15  nba-cle-phi-2026-10-22-spread-home-3pt5 | Cavaliers | nba-cle-phi-2026-10-22, nba-cle-phi-2026-10-22-221pt5, nba-cle-phi-2026-10-22-224pt5, nba-cle-phi-2026-10-22-227pt5
+   15  2026-balance-of-power-r-senate-r-house-537 | No | -
    15  uel-bou-mil1-2026-10-22-mil1 | No | -
-   14  2026-balance-of-power-r-senate-r-house-537 | No | -
-   13  uel-juv-ren1-2026-10-22-draw | No | -
-   13  col-kau-bra-2026-10-22-bra | Yes | -
-   12  nba-den-okc-2026-10-22-spread-home-7pt5 | Thunder | nba-den-okc-2026-10-22, nba-den-okc-2026-10-22-221pt5, nba-den-okc-2026-10-22-224pt5, nba-den-okc-2026-10-22-227pt5
+   13  will-the-republican-party-hold-exactly-48-senate-seats-after-the-2026-midterm-elections-971 | Yes | -
