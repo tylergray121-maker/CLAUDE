@@ -1,1 +1,1 @@
---strategies copytop --order-usd 1 --max-market-usd 3 --max-total-usd 50 --max-wallet-usd 5 --total-pct 0.88 --market-pct 0.053 --wallet-pct 0.09 --stake-pct 0.0175 --min-stake 1 --daily-loss-limit 0 --cycle-seconds 5 --max-markets 0 --max-rps 10 --snapshot-seconds 60
+--strategies copytop --order-usd 1 --max-market-usd 3 --max-total-usd 50 --max-wallet-usd 5 --total-pct 0.88 --market-pct 0.075 --wallet-pct 0.12 --stake-pct 0.025 --min-stake 1 --daily-loss-limit 0 --cycle-seconds 5 --max-markets 0 --max-rps 10 --snapshot-seconds 60
