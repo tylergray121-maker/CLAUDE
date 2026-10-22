@@ -1,21 +1,5 @@
 [
  {
-  "us_slug": "aec-nba-dal-hou-2026-10-21",
-  "intl_token": "70448374113237600852894674614824159045901244794984612914777108422734736077371",
-  "score": 1.0,
-  "us_label": "Mavericks vs. Rockets: Mavericks",
-  "intl_label": "Mavericks vs. Rockets [Mavericks]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nba-dal-hou-2026-10-21:short",
-  "intl_token": "64698927313611102726409711210982081603793479545509554906925009949133726827935",
-  "score": 1.0,
-  "us_label": "Mavericks vs. Rockets: Rockets",
-  "intl_label": "Mavericks vs. Rockets [Rockets]",
-  "tick": 0.01
- },
- {
   "us_slug": "aec-nba-sac-lac-2026-10-21",
   "intl_token": "112910648330465833413877547232231876252900072314935588375523944706456051504208",
   "score": 1.0,
@@ -1952,19 +1936,19 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nba-champ-2027-06-18-w-min",
-  "intl_token": "70393266426571575127884261634092459667577738304718921911204715531748407428131",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Minnesota Timberwolves",
-  "intl_label": "Will Minnesota Timberwolves win the 2027 NBA Finals? [Minnesota Timberwolves]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-champ-2027-06-18-w-bos",
   "intl_token": "26581349382054409189680640260022986621270538404458754938164475396816106860966",
   "score": 0.625,
   "us_label": "2027 NBA Champion: Boston Celtics",
   "intl_label": "Will Boston Celtics win the 2027 NBA Finals? [Boston Celtics]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-min",
+  "intl_token": "70393266426571575127884261634092459667577738304718921911204715531748407428131",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Minnesota Timberwolves",
+  "intl_label": "Will Minnesota Timberwolves win the 2027 NBA Finals? [Minnesota Timberwolves]",
   "tick": 0.01
  },
  {
@@ -2040,12 +2024,12 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-mlb-champ-2026-09-27-mil",
-  "intl_token": "68495273029336552259622116656826978391613637593537133254546205487243272235948",
-  "score": 0.75,
-  "us_label": "World Series Champion: Milwaukee Brewers",
-  "intl_label": "Will the Milwaukee Brewers win the 2026 World Series? [Milwaukee Brewers]",
-  "tick": 0.001
+  "us_slug": "tec-nba-champ-2027-06-18-w-cle",
+  "intl_token": "7103927316928557651756293615464760318461267087970415244972136093676271405674",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Cleveland Cavaliers",
+  "intl_label": "Will Cleveland Cavaliers win the 2027 NBA Finals? [Cleveland Cavaliers]",
+  "tick": 0.01
  },
  {
   "us_slug": "tec-nba-champ-2027-06-18-w-atl",
@@ -2064,12 +2048,12 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nba-champ-2027-06-18-w-mil",
-  "intl_token": "95591695216171451248134018784429977920892345198186404402775566795817315978257",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Milwaukee Bucks",
-  "intl_label": "Will Milwaukee Bucks win the 2027 NBA Finals? [Milwaukee Bucks]",
-  "tick": 0.01
+  "us_slug": "tec-mlb-champ-2026-09-27-mil",
+  "intl_token": "68495273029336552259622116656826978391613637593537133254546205487243272235948",
+  "score": 0.75,
+  "us_label": "World Series Champion: Milwaukee Brewers",
+  "intl_label": "Will the Milwaukee Brewers win the 2026 World Series? [Milwaukee Brewers]",
+  "tick": 0.001
  },
  {
   "us_slug": "tec-nba-champ-2027-06-18-w-orl",
@@ -2077,6 +2061,14 @@
   "score": 0.625,
   "us_label": "2027 NBA Champion: Orlando Magic",
   "intl_label": "Will Orlando Magic win the 2027 NBA Finals? [Orlando Magic]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-mil",
+  "intl_token": "95591695216171451248134018784429977920892345198186404402775566795817315978257",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Milwaukee Bucks",
+  "intl_label": "Will Milwaukee Bucks win the 2027 NBA Finals? [Milwaukee Bucks]",
   "tick": 0.01
  },
  {
@@ -2096,14 +2088,6 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nba-champ-2027-06-18-w-cle",
-  "intl_token": "7103927316928557651756293615464760318461267087970415244972136093676271405674",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Cleveland Cavaliers",
-  "intl_label": "Will Cleveland Cavaliers win the 2027 NBA Finals? [Cleveland Cavaliers]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-champ-2027-06-18-w-hou",
   "intl_token": "54389136151618785952849043856295459748131034150210702007482093675046699037784",
   "score": 0.625,
@@ -2120,19 +2104,19 @@
   "tick": 0.001
  },
  {
-  "us_slug": "tec-nba-champ-2027-06-18-w-den",
-  "intl_token": "338436322259062069756479235974559743523378455152932470985493948167186891368",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Denver Nuggets",
-  "intl_label": "Will Denver Nuggets win the 2027 NBA Finals? [Denver Nuggets]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-champ-2027-06-18-w-det",
   "intl_token": "22589862545502642463701340320964032988974740564891659118937148977135855914254",
   "score": 0.625,
   "us_label": "2027 NBA Champion: Detroit Pistons",
   "intl_label": "Will Detroit Pistons win the 2027 NBA Finals? [Detroit Pistons]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-den",
+  "intl_token": "338436322259062069756479235974559743523378455152932470985493948167186891368",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Denver Nuggets",
+  "intl_label": "Will Denver Nuggets win the 2027 NBA Finals? [Denver Nuggets]",
   "tick": 0.01
  },
  {
@@ -2184,19 +2168,19 @@
   "tick": 0.01
  },
  {
+  "us_slug": "ewc-usgub-ca-2026-11-03-stehil",
+  "intl_token": "82742036522262670996662794097029680950132682539859985097974842241612036171395",
+  "score": 0.625,
+  "us_label": "California Governor Election Winner: Steve Hilton",
+  "intl_label": "Will Steve Hilton win the California Governor Election in 2026? [Steve Hilton]",
+  "tick": 0.01
+ },
+ {
   "us_slug": "tec-ucl-final-2026-06-05-w-fcb",
   "intl_token": "105424657244554511014150825202397702180419919286931996082717264149902476600628",
   "score": 0.5,
   "us_label": "UEFA Champions League Winner: FC Barcelona",
   "intl_label": "Will Barcelona win the 2026-27 UEFA Champions League Championship? [Barcelona]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-epl-title-2027-05-30-w-mnc",
-  "intl_token": "19864216715488298679276291756659013279877343825699353033505020208765688353462",
-  "score": 0.633,
-  "us_label": "English Premier League Champion: Manchester City",
-  "intl_label": "Will Manchester City win the 2026-27 English Premier League (EPL) Championship? [Manchester City]",
   "tick": 0.01
  },
  {
@@ -2208,19 +2192,27 @@
   "tick": 0.01
  },
  {
+  "us_slug": "tac-grammys-aoty-2027-02-07-artlov",
+  "intl_token": "115038513749123323356108768879054424621968703965081397630027954404380369699982",
+  "score": 0.7,
+  "us_label": "Grammy Winner: Album of the Year: The Art of Loving - Olivia Dean",
+  "intl_label": "Will The Art of Loving (Olivia Dean) win Album of the Year at the 69th Annual GRAMMY Awards? [The Art of Loving - Olivia Dean]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-epl-title-2027-05-30-w-mnc",
+  "intl_token": "19864216715488298679276291756659013279877343825699353033505020208765688353462",
+  "score": 0.633,
+  "us_label": "English Premier League Champion: Manchester City",
+  "intl_label": "Will Manchester City win the 2026-27 English Premier League (EPL) Championship? [Manchester City]",
+  "tick": 0.01
+ },
+ {
   "us_slug": "tac-oscars-nom-bstact-2027-01-21-jaajac",
   "intl_token": "56500855863363416759643810647515909082021667563507046593610709743822288479727",
   "score": 0.643,
   "us_label": "Oscar Nominees: Best Actor: Jaafar Jackson",
   "intl_label": "Will Jaafar Jackson be nominated for Best Actor at the 99th Academy Awards? [Jaafar Jackson]",
-  "tick": 0.01
- },
- {
-  "us_slug": "ewc-usgub-ca-2026-11-03-stehil",
-  "intl_token": "82742036522262670996662794097029680950132682539859985097974842241612036171395",
-  "score": 0.625,
-  "us_label": "California Governor Election Winner: Steve Hilton",
-  "intl_label": "Will Steve Hilton win the California Governor Election in 2026? [Steve Hilton]",
   "tick": 0.01
  },
  {
@@ -2269,6 +2261,14 @@
   "score": 0.6,
   "us_label": "UEFA Champions League Winner: VfB Stuttgart",
   "intl_label": "Will VfB Stuttgart win the 2026-27 UEFA Champions League Championship? [VfB Stuttgart]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nhl-champ-2027-06-18-w-cgy",
+  "intl_token": "64046321602101495877602060497756783123422573922748935304554904644552521563234",
+  "score": 0.667,
+  "us_label": "2027 Stanley Cup Champion: Calgary Flames",
+  "intl_label": "Will the Calgary Flames be named the 2026-27 NHL Stanley Cup Champion? [Calgary Flames]",
   "tick": 0.01
  },
  {
@@ -2448,14 +2448,6 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-ucl-final-2026-06-05-w-gal",
-  "intl_token": "37235274069643596212861925289800974015038229343057468524186718238198125063603",
-  "score": 0.5,
-  "us_label": "UEFA Champions League Winner: Galatasaray SK",
-  "intl_label": "Will Galatasaray win the 2026-27 UEFA Champions League Championship? [Galatasaray]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-ucl-final-2026-06-05-w-bru",
   "intl_token": "42934023876900744469315825151054686737366748717421206370305908868326441586868",
   "score": 0.5,
@@ -2616,14 +2608,6 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-epl-title-2027-05-30-w-bha",
-  "intl_token": "9221383556608449303835174806846320148935846556873035382860978740383478459961",
-  "score": 0.533,
-  "us_label": "English Premier League Champion: Brighton & Hove Albion",
-  "intl_label": "Will Brighton win the 2026-27 English Premier League (EPL) Championship? [Brighton]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-epl-title-2027-05-30-w-eve",
   "intl_token": "80367005308757874454920246636237476898466725678692332165499458085317111212451",
   "score": 0.633,
@@ -2637,14 +2621,6 @@
   "score": 0.659,
   "us_label": "Oscar Nominees: Best Production Design: Backrooms",
   "intl_label": "Will \"Backrooms\" be nominated for Best Production Design at the 99th Academy Awards? [Backrooms]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nhl-champ-2027-06-18-w-mon",
-  "intl_token": "101075383399790518260771222164963904576747335934335904011626511256957817201781",
-  "score": 0.667,
-  "us_label": "2027 Stanley Cup Champion: Montreal Canadiens",
-  "intl_label": "Will the Montreal Canadiens be named the 2026-27 NHL Stanley Cup Champion? [Montreal Canadiens]",
   "tick": 0.01
  }
 ]

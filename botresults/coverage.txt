@@ -28,27 +28,27 @@ US markets in ['atp', 'itf', 'wta'] (not futures): 1121
   US aec-wta-annli-zeyson-2026-10-20 | moneyline | Who will win in the upcoming wta event Ann Li vs Zeynep Sonmez schedul | long=Ann Li short=Zeynep Sonmez start=1792636500.0
   US astatc-wta-marsto-moyuch-2026-10-20-sw2 | props | Will Mary Stoiana win set 2 against Moyuka Uchijima? | long=Yes short=No start=1792640700.0
   US astatc-wta-marsto-moyuch-2026-10-20-sw1 | props | Will Mary Stoiana win set 1 against Moyuka Uchijima? | long=Yes short=No start=1792640700.0
-US: 80848 open markets, 59684 game/spread/total/prop slugs, 328 verified pairs
+US: 80176 open markets, 59013 game/spread/total/prop slugs, 331 verified pairs
 
 age                    long side              short side  listed, outcome names     not on Polymarket US  copyable
-<3h                          153                      81                       1                     297       44%
-3-12h                        101                       2                       0                    1327        7%
-12-48h                        14                       1                       0                    1357        1%
-older                          0                       4                       0                    2462        0%
+<3h                          164                      81                       1                     274       47%
+3-12h                        100                       2                       0                    1325        7%
+12-48h                        14                       1                       0                    1371        1%
+older                          0                       4                       0                    2463        0%
 
 by league (all ages): copyable / total
-  ucl              0 / 1157
-  nba            115 / 732
-  futures        207 / 511
-  nfl              3 / 430
+  ucl              0 / 1156
+  nba            115 / 726
+  futures        207 / 518
+  nfl              3 / 429
   atp              0 / 321
-  cfb              0 / 294
+  cfb              0 / 295
   nhl             16 / 294
   cs2              0 / 271
-  lol             15 / 253
-  dota2            0 / 206
+  lol             15 / 254
+  dota2            0 / 205
   mlb              0 / 183
-  wta              0 / 150
+  wta             10 / 150
   val              0 / 145
   fifwc            0 / 141
   lal              0 / 101
@@ -59,7 +59,7 @@ by league (all ages): copyable / total
   arg              0 / 58
 
 recent trades not on Polymarket US (international slug | outcome | US lists for the same matchup):
-  117  nba-sac-lac-2026-10-21-spread-home-4pt5 | Kings | nba-sac-lac-2026-10-21, nba-sac-lac-2026-10-21-216pt5, nba-sac-lac-2026-10-21-219pt5, nba-sac-lac-2026-10-21-222pt5
+  111  nba-sac-lac-2026-10-21-spread-home-4pt5 | Kings | nba-sac-lac-2026-10-21, nba-sac-lac-2026-10-21-216pt5, nba-sac-lac-2026-10-21-219pt5, nba-sac-lac-2026-10-21-222pt5
   102  ucl-ast-vf-2026-10-21-spread-home-2pt5 | Aston Villa FC | -
    91  ucl-bay-ars-2026-10-21-ars | Yes | -
    90  ucl-ast-vf-2026-10-21-spread-home-1pt5 | Aston Villa FC | -
@@ -72,15 +72,15 @@ recent trades not on Polymarket US (international slug | outcome | US lists for 
    54  nba-ind-nop-2026-10-21-spread-away-3pt5 | Pelicans | -
    47  ucl-bru-rcl-2026-10-21-bru | No | -
    43  ucl-lil-gal-2026-10-21-gal | Yes | -
-   31   |  | -
-   31  nba-uta-mem-2026-10-21-spread-home-1pt5 | Grizzlies | nba-uta-mem-2026-10-21-3pm-acebai-gte1, nba-uta-mem-2026-10-21-3pm-acebai-gte2, nba-uta-mem-2026-10-21-3pm-acebai-gte3, nba-uta-mem-2026-10-21-3pm-cameboo-gte1
+   32   |  | -
+   31  nba-uta-mem-2026-10-21-spread-home-1pt5 | Grizzlies | -
    25  will-philadelphia-76ers-win-the-2027-nba-finals | No | -
    23  nba-gsw-lal-2026-10-21-spread-home-7pt5 | Warriors | -
    22  ucl-ast-vf-2026-10-21-ast | Yes | -
    22  will-the-milwaukee-brewers-win-the-2026-world-series | No | -
    21  ucl-lil-gal-2026-10-21-total-6pt5 | Under | -
    20  ucl-com-mnu-2026-10-21-com | No | -
-   17  nba-ind-nop-2026-10-21 | Pelicans | -
    17  itf-zeltin1-olmo1-2026-10-21 | Beatrise Zeltina | -
    16  ucl-bay-ars-2026-10-21-btts | Yes | -
-   15  nba-uta-mem-2026-10-21 | Jazz | nba-uta-mem-2026-10-21-3pm-acebai-gte1, nba-uta-mem-2026-10-21-3pm-acebai-gte2, nba-uta-mem-2026-10-21-3pm-acebai-gte3, nba-uta-mem-2026-10-21-3pm-cameboo-gte1
+   15  nba-uta-mem-2026-10-21 | Jazz | -
+   14  ucl-bay-ars-2026-10-21-draw | Yes | -

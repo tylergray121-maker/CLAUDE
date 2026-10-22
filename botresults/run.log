@@ -1,22 +1,22 @@
-02:57:01 INFO Polymarket US: 80496 open markets
-02:57:09 INFO international: 2438 active outcome tokens
-02:57:26 INFO games: 1699 US game markets in the next 48h, 130 international matches, 234 pairs
-02:57:26 INFO pairs: 331 kept, 17 rejected on price
-02:57:33 INFO leader HVAB: copying -> cooling (−$41,003 on Polymarket this week)
-02:57:33 INFO leader 0010001000001100: copying -> cooling (−$5,949 on Polymarket this week)
-02:57:33 INFO leader totoro3miyazaki: copying -> benched (losing on Polymarket: −$1,468,004 this week, −$2,478,581 this month)
-02:57:33 INFO leader 1l2ihj34li12u34: copying -> benched (losing on Polymarket: −$108,110 this week, −$308,753 this month)
-02:57:33 INFO leader juice-fruit: copying -> cooling (−$40,418 on Polymarket this week)
-02:57:33 INFO leader plonker2026: copying -> benched (losing on Polymarket: −$67,592 this week, −$297,300 this month)
-02:57:33 INFO leader monkeymashingkeyboard: copying -> cooling (−$211,594 on Polymarket this week)
+03:09:23 INFO Polymarket US: 80118 open markets
+03:09:30 INFO international: 2454 active outcome tokens
+03:09:42 INFO games: 1710 US game markets in the next 48h, 129 international matches, 232 pairs
+03:09:42 INFO pairs: 328 kept, 16 rejected on price
+03:09:51 INFO leader HVAB: copying -> cooling (−$41,003 on Polymarket this week)
+03:09:51 INFO leader 0010001000001100: copying -> cooling (−$5,949 on Polymarket this week)
+03:09:51 INFO leader totoro3miyazaki: copying -> benched (losing on Polymarket: −$1,468,004 this week, −$2,478,581 this month)
+03:09:51 INFO leader 1l2ihj34li12u34: copying -> benched (losing on Polymarket: −$108,110 this week, −$308,753 this month)
+03:09:51 INFO leader juice-fruit: copying -> cooling (−$40,418 on Polymarket this week)
+03:09:51 INFO leader plonker2026: copying -> benched (losing on Polymarket: −$67,592 this week, −$297,300 this month)
+03:09:51 INFO leader monkeymashingkeyboard: copying -> cooling (−$211,594 on Polymarket this week)
 # Polymarket US bot — paper run
 
-Mapping: 80496 open US markets, 2438 international outcomes, 331 pairs (20 tracked after live price checks); observations with a trustworthy reference price: 252.
+Mapping: 80118 open US markets, 2454 international outcomes, 328 pairs (20 tracked after live price checks); observations with a trustworthy reference price: 500.
 
 ## Is there an edge to take?
 
-US mid vs international mid, absolute gap: median 1.50¢, 90th pct 4.50¢, 99th pct 4.50¢.
-Times a US price was through fair value by ≥ 3¢ after the taker fee: 1 to buy, 1 to sell (see `events.jsonl`, kind=opportunity).
+US mid vs international mid, absolute gap: median 1.00¢, 90th pct 4.00¢, 99th pct 4.00¢.
+Times a US price was through fair value by ≥ 3¢ after the taker fee: 0 to buy, 0 to sell (see `events.jsonl`, kind=opportunity).
 
 ## Trading
 

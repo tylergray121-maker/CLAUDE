@@ -15,16 +15,7 @@
   "us_label": "Oscar Nominees: Best Picture: The Debut",
   "intl_label": "Will \"The Debut\" be nominated for Best Film Editing at the 99th Academy Awards? [The Debut]",
   "tick": 0.01,
-  "price_gap": 0.32
- },
- {
-  "us_slug": "tac-grammys-aoty-2027-02-07-artlov",
-  "intl_token": "115038513749123323356108768879054424621968703965081397630027954404380369699982",
-  "score": 0.7,
-  "us_label": "Grammy Winner: Album of the Year: The Art of Loving - Olivia Dean",
-  "intl_label": "Will The Art of Loving (Olivia Dean) win Album of the Year at the 69th Annual GRAMMY Awards? [The Art of Loving - Olivia Dean]",
-  "tick": 0.01,
-  "price_gap": 0.08
+  "price_gap": 0.325
  },
  {
   "us_slug": "tac-oscars-nom-bstact-2027-01-21-samroc",
@@ -51,7 +42,7 @@
   "us_label": "Oscar Winner: Best Documentary Feature Film: You Can See Everything",
   "intl_label": "Will You Can See Everything win Best Picture at the 99th Academy Awards? [You Can See Everything]",
   "tick": 0.01,
-  "price_gap": 0.598
+  "price_gap": 0.588
  },
  {
   "us_slug": "tac-oscars-nom-bstsupact-2027-01-21-samroc",
@@ -78,7 +69,7 @@
   "us_label": "Oscar Nominees: Best Documentary Feature Film: One in a Million",
   "intl_label": "Will \"One in a Million\" be nominated for Best Documentary Feature Film at the 99th Academy Awards? [One in a Million]",
   "tick": 0.01,
-  "price_gap": 0.09
+  "price_gap": 0.095
  },
  {
   "us_slug": "tac-oscars-nom-bstcine-2027-01-21-digger",
@@ -96,7 +87,7 @@
   "us_label": "Oscar Winner: Best Film Editing: You Can See Everything",
   "intl_label": "Will You Can See Everything win Best Picture at the 99th Academy Awards? [You Can See Everything]",
   "tick": 0.01,
-  "price_gap": 0.183
+  "price_gap": 0.189
  },
  {
   "us_slug": "tac-oscars-nom-bstorigscr-2027-01-21-debut",
@@ -105,7 +96,7 @@
   "us_label": "Oscar Nominees: Best Original Screenplay: The Debut",
   "intl_label": "Will \"The Debut\" be nominated for Best Film Editing at the 99th Academy Awards? [The Debut]",
   "tick": 0.01,
-  "price_gap": 0.405
+  "price_gap": 0.41
  },
  {
   "us_slug": "tac-oscars-nom-bstadascr-2027-01-21-wildwo",
@@ -114,7 +105,7 @@
   "us_label": "Oscar Nominees: Best Adapted Screenplay: Wildwood",
   "intl_label": "Will \"Wildwood\" be nominated for Best Production Design at the 99th Academy Awards? [Wildwood]",
   "tick": 0.01,
-  "price_gap": 0.086
+  "price_gap": 0.084
  },
  {
   "us_slug": "tac-oscars-nom-bstintl-2027-01-21-coward",
@@ -123,7 +114,7 @@
   "us_label": "Oscar Nominees: Best International Feature Film: Coward",
   "intl_label": "Will \"Coward\" be nominated for Best International Feature Film at the 99th Academy Awards? [Coward]",
   "tick": 0.01,
-  "price_gap": 0.23
+  "price_gap": 0.24
  },
  {
   "us_slug": "tac-oscars-nom-bstcostume-2027-01-21-wuthei",

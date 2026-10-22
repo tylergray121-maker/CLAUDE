@@ -1,11 +1,11 @@
 # Polymarket US bot — paper run
 
-Mapping: 80496 open US markets, 2438 international outcomes, 331 pairs (20 tracked after live price checks); observations with a trustworthy reference price: 252.
+Mapping: 80118 open US markets, 2454 international outcomes, 328 pairs (20 tracked after live price checks); observations with a trustworthy reference price: 500.
 
 ## Is there an edge to take?
 
-US mid vs international mid, absolute gap: median 1.50¢, 90th pct 4.50¢, 99th pct 4.50¢.
-Times a US price was through fair value by ≥ 3¢ after the taker fee: 1 to buy, 1 to sell (see `events.jsonl`, kind=opportunity).
+US mid vs international mid, absolute gap: median 1.00¢, 90th pct 4.00¢, 99th pct 4.00¢.
+Times a US price was through fair value by ≥ 3¢ after the taker fee: 0 to buy, 0 to sell (see `events.jsonl`, kind=opportunity).
 
 ## Trading
 
