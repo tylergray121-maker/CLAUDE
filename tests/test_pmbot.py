@@ -118,6 +118,33 @@ class EVSniperTest(unittest.TestCase):
         self.assertNotIn("SECRET-KEY-123", "\n".join(logs.output))
 
 
+class PerformanceTest(unittest.TestCase):
+    def test_win_rate_roi_and_profit_by_source(self):
+        d = tempfile.mkdtemp()
+        e = Engine(EngineConfig(mode="paper", out_dir=d, minutes=0), StrategyConfig(),
+                   RiskManager(RiskConfig(bankroll=100, kill_file=os.path.join(d, "STOP"))))
+        b = e.broker
+        b._fill("a", "BUY", 0.40, 10, False, "copytop")      # $4 + fee
+        b._fill("b", "BUY", 0.50, 10, False, "copytop")
+        b._fill("c", "BUY", 0.60, 5, False, "")              # a manual bet
+        b.settle("a", 1.0, "copytop")                        # won
+        b.settle("b", 0.0, "copytop")                        # lost
+        perf = e.performance()
+        c = perf["copytop"]
+        self.assertEqual((c["settled"], c["won"], c["win_rate"]), (2, 1, 0.5))
+        self.assertAlmostEqual(c["staked"], 4.0 + 5.0 + 0.17 + 0.18, places=2)
+        self.assertAlmostEqual(c["pnl"], (10 - 4.17) - 5.18, places=2)
+        self.assertAlmostEqual(c["roi"], c["pnl"] / c["staked"], places=3)
+        self.assertEqual(perf["manual"]["settled"], 0)
+        self.assertGreater(perf["manual"]["open_cost"], 3.0)
+        self.assertEqual(perf["all"]["settled"], 2)
+        e.write_dashboard(b.equity(e.marks))
+        rows = json.load(open(os.path.join(d, "paper.json")))
+        self.assertEqual(rows[0]["perf_win_rate"], 0.5)
+        self.assertEqual({r["source"] for r in rows if r["kind"] == "perf"}, {"copytop", "manual", "all"})
+        e.shutdown()
+
+
 class RiskTest(unittest.TestCase):
     def test_a_zero_daily_loss_limit_means_no_daily_stop(self):
         d = tempfile.mkdtemp()

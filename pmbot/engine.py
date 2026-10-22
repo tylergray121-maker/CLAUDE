@@ -516,6 +516,41 @@ class Engine:
                  self.broker.cash, len(self.broker.positions), len(self.broker.fills),
                  time.strftime("%Y-%m-%d %H:%M", time.gmtime(self.started)))
 
+    def performance(self, since: float = 0.0) -> dict[str, dict]:
+        """Settled results by source (each strategy, 'manual' for bets the bot
+        didn't place), plus 'all': bets closed, won, win rate, dollars staked,
+        realized P&L, ROI and open exposure. A bet closes when it settles or
+        is sold; its stake is the cost basis of the contracts closed."""
+        b = self.broker
+        out: dict[str, dict] = {}
+
+        def row(k):
+            return out.setdefault(k, {"settled": 0, "won": 0, "staked": 0.0, "pnl": 0.0,
+                                      "open_cost": 0.0, "open_value": 0.0})
+        for f in b.fills:
+            if f.side not in ("SETTLE", "SELL") or f.ts < since:
+                continue
+            stake = f.qty * f.price - (f.fee if f.side == "SELL" else 0.0) - f.pnl
+            for k in (f.tag or "manual", "all"):
+                r = row(k)
+                r["settled"] += 1
+                r["won"] += f.pnl > 0
+                r["staked"] += stake
+                r["pnl"] += f.pnl
+        if not since:
+            for slug, p in b.positions.items():
+                mark = self.marks.get(slug, p.cost / p.qty if p.qty else 0.0)
+                for k in (self.owner.get(slug) or "manual", "all"):
+                    r = row(k)
+                    r["open_cost"] += p.cost
+                    r["open_value"] += p.qty * mark
+        for r in out.values():
+            r["win_rate"] = round(r["won"] / r["settled"], 4) if r["settled"] else None
+            r["roi"] = round(r["pnl"] / r["staked"], 4) if r["staked"] > 0 else None
+            for k in ("staked", "pnl", "open_cost", "open_value"):
+                r[k] = round(r[k], 2)
+        return out
+
     def _strategy_stats(self) -> dict:
         out = {}
         for strat in self.strategies:
@@ -549,6 +584,8 @@ class Engine:
         at_cost = sum(p.cost for p in b.positions.values())
         gaps = sorted(abs(g) for g in s.gaps)
         pct = lambda q: round(100 * gaps[min(len(gaps) - 1, int(q * len(gaps)))], 2) if gaps else None
+        perf = self.performance()
+        today = self.performance(since=time.time() // 86400 * 86400)
         rows = [{
             "kind": "summary", "mode": self.ecfg.mode, "updated": iso(time.time()),
             "started": iso(self.started),
@@ -569,7 +606,10 @@ class Engine:
             "observations": s.observations, "gap_median_c": pct(.5), "gap_p90_c": pct(.9),
             "buy_opps": s.buy_opps, "sell_opps": s.sell_opps,
             **self._preview_summary(), **self._strategy_stats(),
-            **{f"balance_{k}": v for k, v in getattr(b, "balance_info", {}).items()}}]
+            **{f"balance_{k}": v for k, v in getattr(b, "balance_info", {}).items()},
+            **{f"perf_{k}": v for k, v in perf.get("all", {}).items()},
+            **{f"perf_today_{k}": v for k, v in today.get("all", {}).items()}}]
+        rows += [{"kind": "perf", "id": k, "source": k, **v} for k, v in perf.items()]
         # Equity: every point for the last 2 days, hourly before that.
         cut = time.time() - 2 * 86400
         last_hour = None
