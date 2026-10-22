@@ -93,7 +93,8 @@ jobs:
           MIN=$(python -c "import os; print(int(min(5.75, max(0.1, float(os.environ['HOURS']))) * 60))")
           publish() {
             rm -rf /tmp/ld && mkdir -p /tmp/ld
-            for f in state.json paper.json report.md summary.json live_orders.json; do
+            # STOP is kept, so a stopped bot stays stopped (later segments see it).
+            for f in state.json paper.json report.md summary.json live_orders.json STOP; do
               [ -f "live/$f" ] && cp "live/$f" /tmp/ld/
             done
             tail -400 live/run.log > /tmp/ld/run_tail.log 2>/dev/null || true
