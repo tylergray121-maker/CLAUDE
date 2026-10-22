@@ -1,39 +1,21 @@
 [
  {
-  "us_slug": "astatc-nfl-rushyds-ou-2027-01-10-javwil",
-  "intl_token": "94698499970724143169901676300597928083757051289865555016809967958722849440452",
-  "score": 0.515,
-  "us_label": "Regular Season Rushing Yards O/U: Javonte Williams 949.5+",
-  "intl_label": "Will Javonte Williams have 1,000+ rushing yards in the 2026-27 NFL regular season? [Javonte Williams]",
+  "us_slug": "tec-epl-title-2027-05-30-w-mnc",
+  "intl_token": "19864216715488298679276291756659013279877343825699353033505020208765688353462",
+  "score": 0.633,
+  "us_label": "English Premier League Champion: Manchester City",
+  "intl_label": "Will Manchester City win the 2026-27 English Premier League (EPL) Championship? [Manchester City]",
   "tick": 0.01,
-  "price_gap": 0.08
+  "price_gap": 0.09
  },
  {
-  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-debut",
-  "intl_token": "19923169701743169913996740974284918934040175461548398956507868440350127057374",
-  "score": 0.614,
-  "us_label": "Oscar Nominees: Best Picture: The Debut",
-  "intl_label": "Will \"The Debut\" be nominated for Best Film Editing at the 99th Academy Awards? [The Debut]",
+  "us_slug": "rtc-dwts-s35-1-2026-11-17-conwoo",
+  "intl_token": "72077817209809632721131429413945832567579619745596157597714795679492199033608",
+  "score": 0.604,
+  "us_label": "Dancing With The Stars S35 Winner: Connor Wood",
+  "intl_label": "Will Connor Wood be eliminated in week 7 of Dancing With The Stars: Season 35? [Connor Wood]",
   "tick": 0.01,
-  "price_gap": 0.325
- },
- {
-  "us_slug": "tac-oscars-nom-bstact-2027-01-21-samroc",
-  "intl_token": "108285250004806143512903340445429431007464603507420637790462951090711050338491",
-  "score": 0.643,
-  "us_label": "Oscar Nominees: Best Actor: Sam Rockwell",
-  "intl_label": "Will Sam Rockwell be nominated for Best Actor at the 99th Academy Awards? [Sam Rockwell]",
-  "tick": 0.01,
-  "price_gap": 0.068
- },
- {
-  "us_slug": "tac-oscars-nom-bstact-2027-01-21-sebsta",
-  "intl_token": "40847202115451387434808435109279851210744351296326876587607208153705401944516",
-  "score": 0.643,
-  "us_label": "Oscar Nominees: Best Actor: Sebastian Stan",
-  "intl_label": "Will Sebastian Stan be nominated for Best Actor at the 99th Academy Awards? [Sebastian Stan]",
-  "tick": 0.01,
-  "price_gap": 0.12
+  "price_gap": 0.24
  },
  {
   "us_slug": "tac-oscars-03-14-2027-bestdoc-youcan",
@@ -42,16 +24,7 @@
   "us_label": "Oscar Winner: Best Documentary Feature Film: You Can See Everything",
   "intl_label": "Will You Can See Everything win Best Picture at the 99th Academy Awards? [You Can See Everything]",
   "tick": 0.01,
-  "price_gap": 0.588
- },
- {
-  "us_slug": "tac-oscars-nom-bstsupact-2027-01-21-samroc",
-  "intl_token": "108285250004806143512903340445429431007464603507420637790462951090711050338491",
-  "score": 0.636,
-  "us_label": "Oscar Nominees: Best Supporting Actor: Sam Rockwell",
-  "intl_label": "Will Sam Rockwell be nominated for Best Actor at the 99th Academy Awards? [Sam Rockwell]",
-  "tick": 0.01,
-  "price_gap": 0.742
+  "price_gap": 0.605
  },
  {
   "us_slug": "tac-oscars-nom-bstmakeup-2027-01-21-digger",
@@ -60,43 +33,16 @@
   "us_label": "Oscar Nominees: Best Makeup and Hairstyling: Digger",
   "intl_label": "Will \"Digger\" be nominated for Best Original Screenplay at the 99th Academy Awards? [Digger]",
   "tick": 0.01,
-  "price_gap": 0.765
+  "price_gap": 0.47
  },
  {
-  "us_slug": "tac-oscars-nom-bstdoc-2027-01-21-onein",
-  "intl_token": "75969229729638974757562407423617954314418971029965641052108113170873212832559",
-  "score": 0.674,
-  "us_label": "Oscar Nominees: Best Documentary Feature Film: One in a Million",
-  "intl_label": "Will \"One in a Million\" be nominated for Best Documentary Feature Film at the 99th Academy Awards? [One in a Million]",
+  "us_slug": "tac-oscars-nom-bstanim-2027-01-21-wildwo",
+  "intl_token": "2508489636738661930994760182793180269571824290372506307718769203519747394269",
+  "score": 0.6,
+  "us_label": "Oscar Nominees: Best Animated Feature Film: Wildwood",
+  "intl_label": "Will \"Wildwood\" be nominated for Best Production Design at the 99th Academy Awards? [Wildwood]",
   "tick": 0.01,
-  "price_gap": 0.095
- },
- {
-  "us_slug": "tac-oscars-nom-bstcine-2027-01-21-digger",
-  "intl_token": "54357421105140568192253212493819595093860495415332105841215997048840594174894",
-  "score": 0.609,
-  "us_label": "Oscar Nominees: Best Cinematography: Digger",
-  "intl_label": "Will \"Digger\" be nominated for Best Original Screenplay at the 99th Academy Awards? [Digger]",
-  "tick": 0.01,
-  "price_gap": 0.155
- },
- {
-  "us_slug": "tac-oscars-03-14-2027-bestedit-youcan",
-  "intl_token": "100757376849492277132821909746555605457515786857395729851351563483016663901152",
-  "score": 0.639,
-  "us_label": "Oscar Winner: Best Film Editing: You Can See Everything",
-  "intl_label": "Will You Can See Everything win Best Picture at the 99th Academy Awards? [You Can See Everything]",
-  "tick": 0.01,
-  "price_gap": 0.189
- },
- {
-  "us_slug": "tac-oscars-nom-bstorigscr-2027-01-21-debut",
-  "intl_token": "19923169701743169913996740974284918934040175461548398956507868440350127057374",
-  "score": 0.604,
-  "us_label": "Oscar Nominees: Best Original Screenplay: The Debut",
-  "intl_label": "Will \"The Debut\" be nominated for Best Film Editing at the 99th Academy Awards? [The Debut]",
-  "tick": 0.01,
-  "price_gap": 0.41
+  "price_gap": 0.494
  },
  {
   "us_slug": "tac-oscars-nom-bstadascr-2027-01-21-wildwo",
@@ -105,7 +51,7 @@
   "us_label": "Oscar Nominees: Best Adapted Screenplay: Wildwood",
   "intl_label": "Will \"Wildwood\" be nominated for Best Production Design at the 99th Academy Awards? [Wildwood]",
   "tick": 0.01,
-  "price_gap": 0.084
+  "price_gap": 0.109
  },
  {
   "us_slug": "tac-oscars-nom-bstintl-2027-01-21-coward",
@@ -114,33 +60,24 @@
   "us_label": "Oscar Nominees: Best International Feature Film: Coward",
   "intl_label": "Will \"Coward\" be nominated for Best International Feature Film at the 99th Academy Awards? [Coward]",
   "tick": 0.01,
-  "price_gap": 0.24
- },
- {
-  "us_slug": "tac-oscars-nom-bstcostume-2027-01-21-wuthei",
-  "intl_token": "767603171870407657445764512400149874707666791861114053189745410094214884651",
-  "score": 0.504,
-  "us_label": "Oscar Nominees: Best Costume Design: Wuthering Heights",
-  "intl_label": "Will \"Chains of Love\" from Wuthering Heights be nominated for Best Original Song at the 99th Academy Awards? [Chains of Love - Wuthering Heights]",
-  "tick": 0.01,
-  "price_gap": 0.211
- },
- {
-  "us_slug": "tac-oscars-nom-bstedit-2027-01-21-digger",
-  "intl_token": "54357421105140568192253212493819595093860495415332105841215997048840594174894",
-  "score": 0.604,
-  "us_label": "Oscar Nominees: Best Film Editing: Digger",
-  "intl_label": "Will \"Digger\" be nominated for Best Original Screenplay at the 99th Academy Awards? [Digger]",
-  "tick": 0.01,
-  "price_gap": 0.08
- },
- {
-  "us_slug": "tac-oscars-nom-bstlashort-2027-01-21-32b",
-  "intl_token": "21907984520995959944533899676569769585658871812948425812678533694128857792510",
-  "score": 0.688,
-  "us_label": "Oscar Nominees: Best Live Action Short Film: 32B",
-  "intl_label": "Will \"32B\" be nominated for Best Live Action Short Film at the 99th Academy Awards? [32B]",
-  "tick": 0.01,
   "price_gap": 0.185
+ },
+ {
+  "us_slug": "ccrc-bilbrd-1song-2026-10-31-chotex",
+  "intl_token": "11592792935640794517921371112770670535784058360546778447714183572486401406653",
+  "score": 0.603,
+  "us_label": "Billboard #1 Song Week of October 31?: Choosin' Texas - Ella Langley",
+  "intl_label": "Will \"Choosin' Texas - Ella Langley\" be the Billboard Hot 100 #2 song for the week of October 31? [Choosin' Texas - Ella Langley]",
+  "tick": 0.01,
+  "price_gap": 0.149
+ },
+ {
+  "us_slug": "ccrc-bilbrd-1song-2026-10-31-houwif",
+  "intl_token": "59128666465466181494492805464008816698886290734111856914602330967491309741010",
+  "score": 0.603,
+  "us_label": "Billboard #1 Song Week of October 31?: Housewife - Tate McRae",
+  "intl_label": "Will \"Housewife - Tate McRae\" be the Billboard Hot 100 #2 song for the week of October 31? [Housewife - Tate McRae]",
+  "tick": 0.01,
+  "price_gap": 0.275
  }
 ]

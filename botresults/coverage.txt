@@ -2,85 +2,85 @@ profile 'Tiger105': tiger105 0x0d23fc6838433dbff11e4667ef5991e9dd9d2d56
 profile 'Tiger105': ah-cop-tiger105 0x8d6064a7f8b67988a4073ac1b051356fc8cebd76
 profile 'Tiger105': tiger105050 0x185031bb4a1763496d706e0c07339a690e00b57f
 
-US markets in ['atp', 'itf', 'wta'] (not futures): 1121
-  US aec-atp-fedbon-frafor-2026-10-21 | moneyline | Who will win in the upcoming atp event Federico Bondioli vs Francesco  | long=Federico Bondioli short=Francesco Forti start=1792656000.0
-  US astatc-atp-fedbon-frafor-2026-10-21-sw2 | props | Will Federico Bondioli win set 2 against Francesco Forti? | long=Yes short=No start=1792656000.0
-  US astatc-atp-fedbon-frafor-2026-10-21-sw1 | props | Will Federico Bondioli win set 1 against Francesco Forti? | long=Yes short=No start=1792656000.0
-  US astatc-atp-fedbon-frafor-2026-10-21-es-0-2 | props | Forti wins 2-0 | long=Yes short=No start=1792656000.0
-  US astatc-atp-fedbon-frafor-2026-10-21-es-1-2 | props | Forti wins 2-1 | long=Yes short=No start=1792656000.0
-  US astatc-atp-fedbon-frafor-2026-10-21-es-2-1 | props | Bondioli wins 2-1 | long=Yes short=No start=1792656000.0
-  US astatc-atp-fedbon-frafor-2026-10-21-es-2-0 | props | Bondioli wins 2-0 | long=Yes short=No start=1792656000.0
-  US tsc-atp-fedbon-frafor-2026-10-21-st-2pt5 | totals | Will the total in Federico Bondioli vs. Francesco Forti be more than 2 | long=Over short=Under start=1792656000.0
-  US tsc-atp-fedbon-frafor-2026-10-21-tg-27pt5 | totals | Will the total in Federico Bondioli vs. Francesco Forti be more than 2 | long=Over short=Under start=1792656000.0
-  US tsc-atp-fedbon-frafor-2026-10-21-tg-22pt5 | totals | Will the total in Federico Bondioli vs. Francesco Forti be more than 2 | long=Over short=Under start=1792656000.0
-  US tsc-atp-fedbon-frafor-2026-10-21-tg-17pt5 | totals | Will the total in Federico Bondioli vs. Francesco Forti be more than 1 | long=Over short=Under start=1792656000.0
-  US asc-atp-fedbon-frafor-2026-10-21-ss-pos-1pt5 | spreads | Will the Federico Bondioli cover 1.5 vs the Francesco Forti in Federic | long=+1.50 short=-1.50 start=1792656000.0
-  US asc-atp-fedbon-frafor-2026-10-21-ss-neg-1pt5 | spreads | Will the Federico Bondioli cover -1.5 vs the Francesco Forti in Federi | long=-1.50 short=+1.50 start=1792656000.0
-  US asc-atp-fedbon-frafor-2026-10-21-gs-pos-7pt5 | spreads | Will the Federico Bondioli cover 7.5 vs the Francesco Forti in Federic | long=+7.50 short=-7.50 start=1792656000.0
-  US asc-atp-fedbon-frafor-2026-10-21-gs-neg-7pt5 | spreads | Will the Federico Bondioli cover -7.5 vs the Francesco Forti in Federi | long=-7.50 short=+7.50 start=1792656000.0
-  US asc-atp-fedbon-frafor-2026-10-21-gs-pos-4pt5 | spreads | Will the Federico Bondioli cover 4.5 vs the Francesco Forti in Federic | long=+4.50 short=-4.50 start=1792656000.0
-  US asc-atp-fedbon-frafor-2026-10-21-gs-neg-4pt5 | spreads | Will the Federico Bondioli cover -4.5 vs the Francesco Forti in Federi | long=-4.50 short=+4.50 start=1792656000.0
-  US asc-atp-fedbon-frafor-2026-10-21-gs-pos-1pt5 | spreads | Will the Federico Bondioli cover 1.5 vs the Francesco Forti in Federic | long=+1.50 short=-1.50 start=1792656000.0
-  US asc-atp-fedbon-frafor-2026-10-21-gs-neg-1pt5 | spreads | Will the Federico Bondioli cover -1.5 vs the Francesco Forti in Federi | long=-1.50 short=+1.50 start=1792656000.0
-  US aec-wta-aleeal-diashn-2026-10-21 | moneyline | Who will win in the upcoming wta event Alexandra Eala vs Diana Shnaide | long=Alexandra Eala short=Diana Shnaider start=1792653600.0
-  US aec-wta-marsto-moyuch-2026-10-20 | moneyline | Who will win in the upcoming wta event Mary Stoiana vs Moyuka Uchijima | long=Mary Stoiana short=Moyuka Uchijima start=1792640700.0
-  US aec-wta-antruz-kayday-2026-10-20 | moneyline | Who will win in the upcoming wta event Antonia Ruzic vs Kayla Day sche | long=Antonia Ruzic short=Kayla Day start=1792636500.0
-  US aec-wta-annli-zeyson-2026-10-20 | moneyline | Who will win in the upcoming wta event Ann Li vs Zeynep Sonmez schedul | long=Ann Li short=Zeynep Sonmez start=1792636500.0
-  US astatc-wta-marsto-moyuch-2026-10-20-sw2 | props | Will Mary Stoiana win set 2 against Moyuka Uchijima? | long=Yes short=No start=1792640700.0
-  US astatc-wta-marsto-moyuch-2026-10-20-sw1 | props | Will Mary Stoiana win set 1 against Moyuka Uchijima? | long=Yes short=No start=1792640700.0
-US: 80176 open markets, 59013 game/spread/total/prop slugs, 331 verified pairs
+US markets in ['atp', 'itf', 'wta'] (not futures): 818
+  US aec-atp-matalm-nicjar-2026-10-21 | moneyline | Who will win in the upcoming atp event Matheus Pucinelli de Almeida vs | long=Matheus Pucinelli de Almeida short=Nicolas Jarry start=1792689600.0
+  US asc-atp-matalm-nicjar-2026-10-21-gs-neg-1pt5 | spreads | Will the Matheus Pucinelli de Almeida cover -1.5 vs the Nicolas Jarry  | long=-1.50 short=+1.50 start=1792689600.0
+  US asc-atp-matalm-nicjar-2026-10-21-gs-pos-1pt5 | spreads | Will the Matheus Pucinelli de Almeida cover 1.5 vs the Nicolas Jarry i | long=+1.50 short=-1.50 start=1792689600.0
+  US asc-atp-matalm-nicjar-2026-10-21-gs-neg-4pt5 | spreads | Will the Matheus Pucinelli de Almeida cover -4.5 vs the Nicolas Jarry  | long=-4.50 short=+4.50 start=1792689600.0
+  US asc-atp-matalm-nicjar-2026-10-21-gs-pos-4pt5 | spreads | Will the Matheus Pucinelli de Almeida cover 4.5 vs the Nicolas Jarry i | long=+4.50 short=-4.50 start=1792689600.0
+  US asc-atp-matalm-nicjar-2026-10-21-gs-neg-7pt5 | spreads | Will the Matheus Pucinelli de Almeida cover -7.5 vs the Nicolas Jarry  | long=-7.50 short=+7.50 start=1792689600.0
+  US asc-atp-matalm-nicjar-2026-10-21-gs-pos-7pt5 | spreads | Will the Matheus Pucinelli de Almeida cover 7.5 vs the Nicolas Jarry i | long=+7.50 short=-7.50 start=1792689600.0
+  US asc-atp-matalm-nicjar-2026-10-21-ss-neg-1pt5 | spreads | Will the Matheus Pucinelli de Almeida cover -1.5 vs the Nicolas Jarry  | long=-1.50 short=+1.50 start=1792689600.0
+  US asc-atp-matalm-nicjar-2026-10-21-ss-pos-1pt5 | spreads | Will the Matheus Pucinelli de Almeida cover 1.5 vs the Nicolas Jarry i | long=+1.50 short=-1.50 start=1792689600.0
+  US tsc-atp-matalm-nicjar-2026-10-21-tg-17pt5 | totals | Will the total in Matheus Pucinelli de Almeida vs. Nicolas Jarry be mo | long=Over short=Under start=1792689600.0
+  US tsc-atp-matalm-nicjar-2026-10-21-tg-22pt5 | totals | Will the total in Matheus Pucinelli de Almeida vs. Nicolas Jarry be mo | long=Over short=Under start=1792689600.0
+  US tsc-atp-matalm-nicjar-2026-10-21-tg-27pt5 | totals | Will the total in Matheus Pucinelli de Almeida vs. Nicolas Jarry be mo | long=Over short=Under start=1792689600.0
+  US tsc-atp-matalm-nicjar-2026-10-21-st-2pt5 | totals | Will the total in Matheus Pucinelli de Almeida vs. Nicolas Jarry be mo | long=Over short=Under start=1792689600.0
+  US astatc-atp-matalm-nicjar-2026-10-21-es-2-0 | props | Almeida wins 2-0 | long=Yes short=No start=1792689600.0
+  US astatc-atp-matalm-nicjar-2026-10-21-es-2-1 | props | Almeida wins 2-1 | long=Yes short=No start=1792689600.0
+  US astatc-atp-matalm-nicjar-2026-10-21-es-1-2 | props | Jarry wins 2-1 | long=Yes short=No start=1792689600.0
+  US astatc-atp-matalm-nicjar-2026-10-21-es-0-2 | props | Jarry wins 2-0 | long=Yes short=No start=1792689600.0
+  US astatc-atp-matalm-nicjar-2026-10-21-sw1 | props | Will Matheus Pucinelli de Almeida win set 1 against Nicolas Jarry? | long=Yes short=No start=1792689600.0
+  US astatc-atp-matalm-nicjar-2026-10-21-sw2 | props | Will Matheus Pucinelli de Almeida win set 2 against Nicolas Jarry? | long=Yes short=No start=1792689600.0
+  US aec-atp-kaybig-aidmay-2026-10-21 | moneyline | Who will win in the upcoming atp event Kaylan Bigun vs Aidan Mayo sche | long=Kaylan Bigun short=Aidan Mayo start=1792684800.0
+  US asc-atp-kaybig-aidmay-2026-10-21-gs-neg-1pt5 | spreads | Will the Kaylan Bigun cover -1.5 vs the Aidan Mayo in Kaylan Bigun vs. | long=-1.50 short=+1.50 start=1792684800.0
+  US asc-atp-kaybig-aidmay-2026-10-21-gs-pos-1pt5 | spreads | Will the Kaylan Bigun cover 1.5 vs the Aidan Mayo in Kaylan Bigun vs.  | long=+1.50 short=-1.50 start=1792684800.0
+  US asc-atp-kaybig-aidmay-2026-10-21-gs-neg-4pt5 | spreads | Will the Kaylan Bigun cover -4.5 vs the Aidan Mayo in Kaylan Bigun vs. | long=-4.50 short=+4.50 start=1792684800.0
+  US asc-atp-kaybig-aidmay-2026-10-21-gs-pos-4pt5 | spreads | Will the Kaylan Bigun cover 4.5 vs the Aidan Mayo in Kaylan Bigun vs.  | long=+4.50 short=-4.50 start=1792684800.0
+  US asc-atp-kaybig-aidmay-2026-10-21-gs-neg-7pt5 | spreads | Will the Kaylan Bigun cover -7.5 vs the Aidan Mayo in Kaylan Bigun vs. | long=-7.50 short=+7.50 start=1792684800.0
+US: 79778 open markets, 58654 game/spread/total/prop slugs, 470 verified pairs
 
 age                    long side              short side  listed, outcome names     not on Polymarket US  copyable
-<3h                          164                      81                       1                     274       47%
-3-12h                        100                       2                       0                    1325        7%
-12-48h                        14                       1                       0                    1371        1%
-older                          0                       4                       0                    2463        0%
+<3h                           72                     130                       0                    1025       16%
+3-12h                        204                       4                       0                     286       42%
+12-48h                       185                       3                       0                    1553       11%
+older                          0                       0                       0                    2538        0%
 
 by league (all ages): copyable / total
-  ucl              0 / 1156
-  nba            115 / 726
-  futures        207 / 518
-  nfl              3 / 429
-  atp              0 / 321
-  cfb              0 / 295
-  nhl             16 / 294
-  cs2              0 / 271
-  lol             15 / 254
-  dota2            0 / 205
-  mlb              0 / 183
-  wta             10 / 150
+  nba            189 / 675
+  futures        153 / 555
+  ucl              0 / 541
+  uel            124 / 500
+  nfl              0 / 475
+  atp             16 / 462
+  cs2              0 / 384
+  cfb              0 / 323
+  dota2            0 / 285
+  col              0 / 268
+  nhl            112 / 176
+  mlb              0 / 163
   val              0 / 145
-  fifwc            0 / 141
-  lal              0 / 101
-  epl              0 / 71
-  bra2             0 / 67
+  fifwc            0 / 140
+  lol              0 / 121
+  lal              0 / 100
+  itf              0 / 88
+  epl              0 / 73
+  bra2             0 / 68
   por              0 / 62
-  el1              0 / 61
-  arg              0 / 58
 
 recent trades not on Polymarket US (international slug | outcome | US lists for the same matchup):
-  111  nba-sac-lac-2026-10-21-spread-home-4pt5 | Kings | nba-sac-lac-2026-10-21, nba-sac-lac-2026-10-21-216pt5, nba-sac-lac-2026-10-21-219pt5, nba-sac-lac-2026-10-21-222pt5
-  102  ucl-ast-vf-2026-10-21-spread-home-2pt5 | Aston Villa FC | -
-   91  ucl-bay-ars-2026-10-21-ars | Yes | -
-   90  ucl-ast-vf-2026-10-21-spread-home-1pt5 | Aston Villa FC | -
-   78  nba-sac-lac-2026-10-21-spread-home-5pt5 | Kings | nba-sac-lac-2026-10-21, nba-sac-lac-2026-10-21-216pt5, nba-sac-lac-2026-10-21-219pt5, nba-sac-lac-2026-10-21-222pt5
-   75  ucl-bay-ars-2026-10-21-bay | Yes | -
-   68  nba-chi-tor-2026-10-21 | Bulls | -
-   62  ucl-com-mnu-2026-10-21-com | Yes | -
-   61  nba-cha-bkn-2026-10-21 | Nets | nba-cha-bkn-2026-10-21-3pm-bramil-gte3, nba-cha-bkn-2026-10-21-3pm-bramil-gte4, nba-cha-bkn-2026-10-21-3pm-bramil-gte5, nba-cha-bkn-2026-10-21-3pm-bramil-gte6
-   56  ucl-bay-ars-2026-10-21-bay | No | -
-   54  nba-ind-nop-2026-10-21-spread-away-3pt5 | Pelicans | -
-   47  ucl-bru-rcl-2026-10-21-bru | No | -
-   43  ucl-lil-gal-2026-10-21-gal | Yes | -
-   32   |  | -
-   31  nba-uta-mem-2026-10-21-spread-home-1pt5 | Grizzlies | -
-   25  will-philadelphia-76ers-win-the-2027-nba-finals | No | -
-   23  nba-gsw-lal-2026-10-21-spread-home-7pt5 | Warriors | -
-   22  ucl-ast-vf-2026-10-21-ast | Yes | -
-   22  will-the-milwaukee-brewers-win-the-2026-world-series | No | -
-   21  ucl-lil-gal-2026-10-21-total-6pt5 | Under | -
-   20  ucl-com-mnu-2026-10-21-com | No | -
-   17  itf-zeltin1-olmo1-2026-10-21 | Beatrise Zeltina | -
-   16  ucl-bay-ars-2026-10-21-btts | Yes | -
-   15  nba-uta-mem-2026-10-21 | Jazz | -
-   14  ucl-bay-ars-2026-10-21-draw | Yes | -
+  131  uel-juv-ren1-2026-10-22-juv | No | -
+  120  atp-herbert-fritz-2026-10-22 | Pierre-Hugues Herbert | -
+  104  col-tra-hmi-2026-10-22-spread-home-1pt5 | Heart of Midlothian FC | -
+   97  col-jab-bha-2026-10-22-spread-away-2pt5 | FK Jablonec | -
+   93  uel-bou-mil1-2026-10-22-total-2pt5 | Under | -
+   66  2026-balance-of-power-d-senate-r-house-692 | Yes | -
+   47  atp-dzumhur-bergs-2026-10-22 | Damir Dzumhur | -
+   37  atp-zarate-comesan-2026-10-22 | Carlos Maria Zarate | -
+   37  nba-den-okc-2026-10-22-spread-home-9pt5 | Thunder | nba-den-okc-2026-10-22, nba-den-okc-2026-10-22-221pt5, nba-den-okc-2026-10-22-224pt5, nba-den-okc-2026-10-22-227pt5
+   34  lol-gal-sly-2026-10-22-game3 | Galions | -
+   33  uel-bou-mil1-2026-10-22-bou | No | -
+   32  atp-vachero-assche-2026-10-22 | Valentin Vacherot | -
+   31  atp-goffin-michels-2026-10-22 | David Goffin | -
+   28  atp-herbert-fritz-2026-10-22 | Taylor Fritz | -
+   27  will-dan-sullivan-win-the-alaska-senate-race-in-2026 | Yes | -
+   20  spl-fat-sha-2026-10-22-total-4pt5 | Over | -
+   19  lol-gal-sly-2026-10-22-game4 | Solary | -
+   17  uel-juv-ren1-2026-10-22-juv | Yes | -
+   16  uel-ftc-ut-2026-10-22-total-2pt5 | Over | -
+   15  nba-cle-phi-2026-10-22-spread-home-3pt5 | Cavaliers | nba-cle-phi-2026-10-22, nba-cle-phi-2026-10-22-221pt5, nba-cle-phi-2026-10-22-224pt5, nba-cle-phi-2026-10-22-227pt5
+   15  uel-bou-mil1-2026-10-22-mil1 | No | -
+   14  2026-balance-of-power-r-senate-r-house-537 | No | -
+   13  uel-juv-ren1-2026-10-22-draw | No | -
+   13  col-kau-bra-2026-10-22-bra | Yes | -
+   12  nba-den-okc-2026-10-22-spread-home-7pt5 | Thunder | nba-den-okc-2026-10-22, nba-den-okc-2026-10-22-221pt5, nba-den-okc-2026-10-22-224pt5, nba-den-okc-2026-10-22-227pt5

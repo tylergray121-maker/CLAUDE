@@ -1,14 +1,14 @@
 {
  "counts": {
-  "props/sports": 27768,
-  "totals/sports": 14809,
-  "futures/sports": 12140,
-  "spreads/sports": 10665,
+  "props/sports": 28021,
+  "totals/sports": 14523,
+  "futures/sports": 12100,
+  "spreads/sports": 11027,
   "futures/politics": 6785,
-  "drawable_outcome/sports": 2350,
-  "moneyline/sports": 1886,
+  "drawable_outcome/sports": 2338,
   "futures/culture": 1681,
-  "/crypto": 1476,
+  "moneyline/sports": 1473,
+  "/crypto": 1460,
   "futures/macro": 224,
   "futures/climate": 119,
   "futures/technology": 66,
@@ -26,8 +26,8 @@
     "title": "",
     "game_start": 1793502000.0,
     "end": 1794715200.0,
-    "bid": 0.71,
-    "ask": 0.73
+    "bid": 0.73,
+    "ask": 0.74
    },
    {
     "slug": "aec-vtb-mba-eni-2026-10-10",
@@ -39,49 +39,13 @@
     "ask": null
    },
    {
-    "slug": "aec-nba-pho-por-2026-10-21",
-    "question": "Who will win in the upcoming basketball event PHO Suns vs POR Trail Blazers scheduled for October 22, 2026 at 2:00 AM UTC?",
-    "title": "",
-    "game_start": 1792634400.0,
-    "end": 1793844000.0,
-    "bid": 0.02,
-    "ask": 0.03
-   },
-   {
-    "slug": "aec-nba-gs-lal-2026-10-21",
-    "question": "Who will win in the upcoming basketball event GS Warriors vs LA Lakers scheduled for October 22, 2026 at 2:00 AM UTC?",
-    "title": "",
-    "game_start": 1792634400.0,
-    "end": 1793844000.0,
-    "bid": 0.25,
-    "ask": 0.26
-   },
-   {
-    "slug": "aec-nba-sac-lac-2026-10-21",
-    "question": "Who will win in the upcoming basketball event SAC Kings vs LA Clippers scheduled for October 22, 2026 at 2:30 AM UTC?",
-    "title": "",
-    "game_start": 1792636200.0,
-    "end": 1793845800.0,
-    "bid": 0.19,
-    "ask": 0.2
-   },
-   {
     "slug": "aec-nfl-ne-chi-2026-10-22",
     "question": "Who will win in the upcoming football event New England Patriots vs Chicago Bears scheduled for October 23, 2026 at 12:15 AM UTC?",
     "title": "",
     "game_start": 1792714500.0,
     "end": 1793942100.0,
-    "bid": 0.4025,
-    "ask": 0.405
-   },
-   {
-    "slug": "aec-cfb-nmxst-smho-2026-10-21",
-    "question": "Who will win in the upcoming football event NM State vs Sam Houston scheduled for October 22, 2026 at 12:00 AM UTC?",
-    "title": "",
-    "game_start": 1792627200.0,
-    "end": 1793854800.0,
-    "bid": 0.87,
-    "ask": 0.875
+    "bid": 0.405,
+    "ask": 0.4075
    },
    {
     "slug": "aec-nba-cle-phi-2026-10-22",
@@ -89,8 +53,8 @@
     "title": "",
     "game_start": 1792710000.0,
     "end": 1793919600.0,
-    "bid": 0.41,
-    "ask": 0.42
+    "bid": 0.42,
+    "ask": 0.43
    },
    {
     "slug": "aec-nba-den-okc-2026-10-22",
@@ -116,8 +80,8 @@
     "title": "",
     "game_start": 1792796400.0,
     "end": 1794006000.0,
-    "bid": 0.34,
-    "ask": 0.36
+    "bid": 0.33,
+    "ask": 0.34
    },
    {
     "slug": "aec-nba-min-orl-2026-10-23",
@@ -125,8 +89,8 @@
     "title": "",
     "game_start": 1792796400.0,
     "end": 1794006000.0,
-    "bid": 0.67,
-    "ask": 0.68
+    "bid": 0.53,
+    "ask": 0.54
    },
    {
     "slug": "aec-nba-tor-was-2026-10-23",
@@ -134,7 +98,7 @@
     "title": "",
     "game_start": 1792796400.0,
     "end": 1794006000.0,
-    "bid": 0.63,
+    "bid": 0.64,
     "ask": 0.65
    },
    {
@@ -143,8 +107,8 @@
     "title": "",
     "game_start": 1792796400.0,
     "end": 1794006000.0,
-    "bid": 0.44,
-    "ask": 0.45
+    "bid": 0.45,
+    "ask": 0.46
    },
    {
     "slug": "aec-nba-atl-cha-2026-10-23",
@@ -152,8 +116,44 @@
     "title": "",
     "game_start": 1792796400.0,
     "end": 1794006000.0,
-    "bid": 0.52,
-    "ask": 0.6
+    "bid": 0.56,
+    "ask": 0.57
+   },
+   {
+    "slug": "aec-nba-det-mia-2026-10-23",
+    "question": "Who will win in the upcoming basketball event DET Pistons vs MIA Heat scheduled for October 24, 2026 at 12:00 AM UTC?",
+    "title": "",
+    "game_start": 1792800000.0,
+    "end": 1794009600.0,
+    "bid": 0.45,
+    "ask": 0.46
+   },
+   {
+    "slug": "aec-nba-chi-mil-2026-10-23",
+    "question": "Who will win in the upcoming basketball event CHI Bulls vs MIL Bucks scheduled for October 24, 2026 at 12:00 AM UTC?",
+    "title": "",
+    "game_start": 1792785600.0,
+    "end": 1794009600.0,
+    "bid": 0.49,
+    "ask": 0.5
+   },
+   {
+    "slug": "aec-nba-no-uta-2026-10-23",
+    "question": "Who will win in the upcoming basketball event NO Pelicans vs UTA Jazz scheduled for October 24, 2026 at 1:30 AM UTC?",
+    "title": "",
+    "game_start": 1792805400.0,
+    "end": 1794015000.0,
+    "bid": 0.4,
+    "ask": 0.41
+   },
+   {
+    "slug": "aec-nba-hou-sa-2026-10-23",
+    "question": "Who will win in the upcoming basketball event HOU Rockets vs SA Spurs scheduled for October 24, 2026 at 1:30 AM UTC?",
+    "title": "",
+    "game_start": 1792805400.0,
+    "end": 1794015000.0,
+    "bid": 0.32,
+    "ask": 0.33
    }
   ],
   "drawable_outcome/sports": [
@@ -181,7 +181,7 @@
     "title": "",
     "game_start": 1791633600.0,
     "end": 1792857600.0,
-    "bid": 0.18,
+    "bid": 0.02,
     "ask": 0.19
    },
    {
@@ -190,7 +190,7 @@
     "title": "",
     "game_start": 1791633600.0,
     "end": 1792857600.0,
-    "bid": 0.19,
+    "bid": 0.17,
     "ask": 0.31
    },
    {
@@ -199,8 +199,8 @@
     "title": "",
     "game_start": 1792717200.0,
     "end": 1792905300.0,
-    "bid": 0.74,
-    "ask": 0.76
+    "bid": 0.77,
+    "ask": 0.79
    },
    {
     "slug": "atc-lco-atl-adp-2026-10-10-draw",
@@ -208,8 +208,8 @@
     "title": "",
     "game_start": 1792717200.0,
     "end": 1792905300.0,
-    "bid": 0.17,
-    "ask": 0.18
+    "bid": 0.15,
+    "ask": 0.17
    },
    {
     "slug": "atc-lco-atl-adp-2026-10-10-adp",
@@ -218,7 +218,7 @@
     "game_start": 1792717200.0,
     "end": 1792905300.0,
     "bid": 0.06,
-    "ask": 0.08
+    "ask": 0.07
    },
    {
     "slug": "atc-tff1-umr-bol-2026-10-14-umr",
@@ -711,8 +711,8 @@
     "title": "Reaches $90,000",
     "game_start": 1790827200.0,
     "end": 1793507400.0,
-    "bid": 0.13,
-    "ask": 0.15
+    "bid": 0.05,
+    "ask": 0.13
    },
    {
     "slug": "cpc-btc-hit-h-m-2026-10-92500",
@@ -720,8 +720,8 @@
     "title": "Reaches $92,500",
     "game_start": 1790827200.0,
     "end": 1793507400.0,
-    "bid": 0.04,
-    "ask": 0.08
+    "bid": 0.01,
+    "ask": 0.07
    },
    {
     "slug": "cpc-btc-hit-h-m-2026-10-95000",
@@ -730,7 +730,7 @@
     "game_start": 1790827200.0,
     "end": 1793507400.0,
     "bid": null,
-    "ask": 0.06
+    "ask": 0.01
    },
    {
     "slug": "cpc-btc-hit-h-m-2026-10-97500",
@@ -801,8 +801,8 @@
     "title": "Dips to $70,000",
     "game_start": 1790827200.0,
     "end": 1793507400.0,
-    "bid": null,
-    "ask": null
+    "bid": 0.02,
+    "ask": 0.07
    },
    {
     "slug": "cpc-btc-hit-l-m-2026-10-72500",
@@ -810,8 +810,8 @@
     "title": "Dips to $72,500",
     "game_start": 1790827200.0,
     "end": 1793507400.0,
-    "bid": 0.02,
-    "ask": 0.09
+    "bid": 0.06,
+    "ask": 0.12
    },
    {
     "slug": "cpc-btc-hit-l-m-2026-10-75000",
@@ -819,8 +819,8 @@
     "title": "Dips to $75,000",
     "game_start": 1790827200.0,
     "end": 1793507400.0,
-    "bid": 0.07,
-    "ask": 0.15
+    "bid": 0.15,
+    "ask": 0.23
    },
    {
     "slug": "cpc-btc-hit-l-m-2026-10-77500",
@@ -828,8 +828,8 @@
     "title": "Dips to $77,500",
     "game_start": 1790827200.0,
     "end": 1793507400.0,
-    "bid": 0.19,
-    "ask": 0.28
+    "bid": 0.36,
+    "ask": 0.44
    },
    {
     "slug": "cpc-btc-hit-l-m-2026-10-62500",
