@@ -1,0 +1,27 @@
+22:46:22 INFO Polymarket US: 79505 open markets
+22:46:25 INFO international: 2570 active outcome tokens
+22:46:45 INFO games: 2353 US game markets in the next 48h, 349 international matches, 510 pairs
+22:46:45 INFO pairs: 576 kept, 6 rejected on price
+22:46:59 INFO leader EdZachary: copying -> cooling (−$111,157 on Polymarket this week)
+22:46:59 INFO leader HVAB: copying -> cooling (−$78,668 on Polymarket this week)
+22:46:59 INFO leader 0010001000001100: copying -> cooling (−$5,966 on Polymarket this week)
+22:46:59 INFO leader totoro3miyazaki: copying -> benched (losing on Polymarket: −$1,457,801 this week, −$2,468,378 this month)
+22:46:59 INFO leader juice-fruit: copying -> cooling (−$40,418 on Polymarket this week)
+22:46:59 INFO leader plonker2026: copying -> benched (losing on Polymarket: −$2,636 this week, −$232,344 this month)
+22:46:59 INFO leader monkeymashingkeyboard: copying -> benched (losing on Polymarket: −$295,542 this week, −$180,307 this month)
+22:46:59 INFO leader UNEB3154s4f251: copying -> cooling (−$2,362 on Polymarket this week)
+# Polymarket US bot — paper run
+
+Mapping: 79505 open US markets, 2570 international outcomes, 576 pairs (20 tracked after live price checks); observations with a trustworthy reference price: 400.
+
+## Is there an edge to take?
+
+US mid vs international mid, absolute gap: median 1.00¢, 90th pct 2.00¢, 99th pct 2.00¢.
+Times a US price was through fair value by ≥ 3¢ after the taker fee: 0 to buy, 0 to sell (see `events.jsonl`, kind=opportunity).
+
+## Trading
+
+Equity $200.00 from $200.00 (+0.00), cash $200.00; 0 fills; taker fees $0.00; maker rebates $0.00; open positions 0.
+Halted: no.
+
+

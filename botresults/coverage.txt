@@ -2,85 +2,85 @@ profile 'Tiger105': tiger105 0x0d23fc6838433dbff11e4667ef5991e9dd9d2d56
 profile 'Tiger105': ah-cop-tiger105 0x8d6064a7f8b67988a4073ac1b051356fc8cebd76
 profile 'Tiger105': tiger105050 0x185031bb4a1763496d706e0c07339a690e00b57f
 
-US markets in ['atp', 'itf', 'wta'] (not futures): 818
-  US aec-atp-matalm-nicjar-2026-10-21 | moneyline | Who will win in the upcoming atp event Matheus Pucinelli de Almeida vs | long=Matheus Pucinelli de Almeida short=Nicolas Jarry start=1792689600.0
-  US asc-atp-matalm-nicjar-2026-10-21-gs-neg-1pt5 | spreads | Will the Matheus Pucinelli de Almeida cover -1.5 vs the Nicolas Jarry  | long=-1.50 short=+1.50 start=1792689600.0
-  US asc-atp-matalm-nicjar-2026-10-21-gs-pos-1pt5 | spreads | Will the Matheus Pucinelli de Almeida cover 1.5 vs the Nicolas Jarry i | long=+1.50 short=-1.50 start=1792689600.0
-  US asc-atp-matalm-nicjar-2026-10-21-gs-neg-4pt5 | spreads | Will the Matheus Pucinelli de Almeida cover -4.5 vs the Nicolas Jarry  | long=-4.50 short=+4.50 start=1792689600.0
-  US asc-atp-matalm-nicjar-2026-10-21-gs-pos-4pt5 | spreads | Will the Matheus Pucinelli de Almeida cover 4.5 vs the Nicolas Jarry i | long=+4.50 short=-4.50 start=1792689600.0
-  US asc-atp-matalm-nicjar-2026-10-21-gs-neg-7pt5 | spreads | Will the Matheus Pucinelli de Almeida cover -7.5 vs the Nicolas Jarry  | long=-7.50 short=+7.50 start=1792689600.0
-  US asc-atp-matalm-nicjar-2026-10-21-gs-pos-7pt5 | spreads | Will the Matheus Pucinelli de Almeida cover 7.5 vs the Nicolas Jarry i | long=+7.50 short=-7.50 start=1792689600.0
-  US asc-atp-matalm-nicjar-2026-10-21-ss-neg-1pt5 | spreads | Will the Matheus Pucinelli de Almeida cover -1.5 vs the Nicolas Jarry  | long=-1.50 short=+1.50 start=1792689600.0
-  US asc-atp-matalm-nicjar-2026-10-21-ss-pos-1pt5 | spreads | Will the Matheus Pucinelli de Almeida cover 1.5 vs the Nicolas Jarry i | long=+1.50 short=-1.50 start=1792689600.0
-  US tsc-atp-matalm-nicjar-2026-10-21-tg-17pt5 | totals | Will the total in Matheus Pucinelli de Almeida vs. Nicolas Jarry be mo | long=Over short=Under start=1792689600.0
-  US tsc-atp-matalm-nicjar-2026-10-21-tg-22pt5 | totals | Will the total in Matheus Pucinelli de Almeida vs. Nicolas Jarry be mo | long=Over short=Under start=1792689600.0
-  US tsc-atp-matalm-nicjar-2026-10-21-tg-27pt5 | totals | Will the total in Matheus Pucinelli de Almeida vs. Nicolas Jarry be mo | long=Over short=Under start=1792689600.0
-  US tsc-atp-matalm-nicjar-2026-10-21-st-2pt5 | totals | Will the total in Matheus Pucinelli de Almeida vs. Nicolas Jarry be mo | long=Over short=Under start=1792689600.0
-  US astatc-atp-matalm-nicjar-2026-10-21-es-2-0 | props | Almeida wins 2-0 | long=Yes short=No start=1792689600.0
-  US astatc-atp-matalm-nicjar-2026-10-21-es-2-1 | props | Almeida wins 2-1 | long=Yes short=No start=1792689600.0
-  US astatc-atp-matalm-nicjar-2026-10-21-es-1-2 | props | Jarry wins 2-1 | long=Yes short=No start=1792689600.0
-  US astatc-atp-matalm-nicjar-2026-10-21-es-0-2 | props | Jarry wins 2-0 | long=Yes short=No start=1792689600.0
-  US astatc-atp-matalm-nicjar-2026-10-21-sw1 | props | Will Matheus Pucinelli de Almeida win set 1 against Nicolas Jarry? | long=Yes short=No start=1792689600.0
-  US astatc-atp-matalm-nicjar-2026-10-21-sw2 | props | Will Matheus Pucinelli de Almeida win set 2 against Nicolas Jarry? | long=Yes short=No start=1792689600.0
-  US aec-atp-kaybig-aidmay-2026-10-21 | moneyline | Who will win in the upcoming atp event Kaylan Bigun vs Aidan Mayo sche | long=Kaylan Bigun short=Aidan Mayo start=1792684800.0
-  US asc-atp-kaybig-aidmay-2026-10-21-gs-neg-1pt5 | spreads | Will the Kaylan Bigun cover -1.5 vs the Aidan Mayo in Kaylan Bigun vs. | long=-1.50 short=+1.50 start=1792684800.0
-  US asc-atp-kaybig-aidmay-2026-10-21-gs-pos-1pt5 | spreads | Will the Kaylan Bigun cover 1.5 vs the Aidan Mayo in Kaylan Bigun vs.  | long=+1.50 short=-1.50 start=1792684800.0
-  US asc-atp-kaybig-aidmay-2026-10-21-gs-neg-4pt5 | spreads | Will the Kaylan Bigun cover -4.5 vs the Aidan Mayo in Kaylan Bigun vs. | long=-4.50 short=+4.50 start=1792684800.0
-  US asc-atp-kaybig-aidmay-2026-10-21-gs-pos-4pt5 | spreads | Will the Kaylan Bigun cover 4.5 vs the Aidan Mayo in Kaylan Bigun vs.  | long=+4.50 short=-4.50 start=1792684800.0
-  US asc-atp-kaybig-aidmay-2026-10-21-gs-neg-7pt5 | spreads | Will the Kaylan Bigun cover -7.5 vs the Aidan Mayo in Kaylan Bigun vs. | long=-7.50 short=+7.50 start=1792684800.0
-US: 80549 open markets, 59425 game/spread/total/prop slugs, 473 verified pairs
+US markets in ['atp', 'itf', 'wta'] (not futures): 760
+  US aec-atp-jjwol-sanjon-2026-10-22 | moneyline | Who will win in the upcoming atp event Jeffrey John Wolf vs Sander Jon | long=J.J. Wolf short=Sander Jong start=1792704000.0
+  US asc-atp-jjwol-sanjon-2026-10-22-gs-neg-1pt5 | spreads | Will the Jeffrey John Wolf cover -1.5 vs the Sander Jong in Jeffrey Jo | long=-1.50 short=+1.50 start=1792704000.0
+  US asc-atp-jjwol-sanjon-2026-10-22-gs-pos-1pt5 | spreads | Will the Jeffrey John Wolf cover 1.5 vs the Sander Jong in Jeffrey Joh | long=+1.50 short=-1.50 start=1792704000.0
+  US asc-atp-jjwol-sanjon-2026-10-22-gs-neg-4pt5 | spreads | Will the Jeffrey John Wolf cover -4.5 vs the Sander Jong in Jeffrey Jo | long=-4.50 short=+4.50 start=1792704000.0
+  US asc-atp-jjwol-sanjon-2026-10-22-gs-pos-4pt5 | spreads | Will the Jeffrey John Wolf cover 4.5 vs the Sander Jong in Jeffrey Joh | long=+4.50 short=-4.50 start=1792704000.0
+  US asc-atp-jjwol-sanjon-2026-10-22-gs-neg-7pt5 | spreads | Will the Jeffrey John Wolf cover -7.5 vs the Sander Jong in Jeffrey Jo | long=-7.50 short=+7.50 start=1792704000.0
+  US asc-atp-jjwol-sanjon-2026-10-22-gs-pos-7pt5 | spreads | Will the Jeffrey John Wolf cover 7.5 vs the Sander Jong in Jeffrey Joh | long=+7.50 short=-7.50 start=1792704000.0
+  US asc-atp-jjwol-sanjon-2026-10-22-ss-neg-1pt5 | spreads | Will the Jeffrey John Wolf cover -1.5 vs the Sander Jong in Jeffrey Jo | long=-1.50 short=+1.50 start=1792704000.0
+  US asc-atp-jjwol-sanjon-2026-10-22-ss-pos-1pt5 | spreads | Will the Jeffrey John Wolf cover 1.5 vs the Sander Jong in Jeffrey Joh | long=+1.50 short=-1.50 start=1792704000.0
+  US tsc-atp-jjwol-sanjon-2026-10-22-tg-17pt5 | totals | Will the total in Jeffrey John Wolf vs. Sander Jong be more than 17.5? | long=Over short=Under start=1792704000.0
+  US tsc-atp-jjwol-sanjon-2026-10-22-tg-22pt5 | totals | Will the total in Jeffrey John Wolf vs. Sander Jong be more than 22.5? | long=Over short=Under start=1792704000.0
+  US tsc-atp-jjwol-sanjon-2026-10-22-tg-27pt5 | totals | Will the total in Jeffrey John Wolf vs. Sander Jong be more than 27.5? | long=Over short=Under start=1792704000.0
+  US tsc-atp-jjwol-sanjon-2026-10-22-st-2pt5 | totals | Will the total in Jeffrey John Wolf vs. Sander Jong be more than 2.5? | long=Over short=Under start=1792704000.0
+  US astatc-atp-jjwol-sanjon-2026-10-22-es-2-0 | props | Wolf wins 2-0 | long=Yes short=No start=1792704000.0
+  US astatc-atp-jjwol-sanjon-2026-10-22-es-2-1 | props | Wolf wins 2-1 | long=Yes short=No start=1792704000.0
+  US astatc-atp-jjwol-sanjon-2026-10-22-es-1-2 | props | Jong wins 2-1 | long=Yes short=No start=1792704000.0
+  US astatc-atp-jjwol-sanjon-2026-10-22-es-0-2 | props | Jong wins 2-0 | long=Yes short=No start=1792704000.0
+  US astatc-atp-jjwol-sanjon-2026-10-22-sw1 | props | Will Jeffrey John Wolf win set 1 against Sander Jong? | long=Yes short=No start=1792704000.0
+  US astatc-atp-jjwol-sanjon-2026-10-22-sw2 | props | Will Jeffrey John Wolf win set 2 against Sander Jong? | long=Yes short=No start=1792704000.0
+  US aec-wta-talgib-ashkru-2026-10-22 | moneyline | Who will win in the upcoming wta event Talia Gibson vs Ashlyn Krueger  | long=Talia Gibson short=Ashlyn Krueger start=1792726800.0
+  US aec-atp-migtob-nicmej-2026-10-22 | moneyline | Who will win in the upcoming atp event Miguel Tobon vs Nicolas Mejia s | long=Miguel Tobon short=Nicolas Mejia start=1792708200.0
+  US asc-atp-migtob-nicmej-2026-10-22-gs-neg-1pt5 | spreads | Will the Miguel Tobon cover -1.5 vs the Nicolas Mejia in Miguel Tobon  | long=-1.50 short=+1.50 start=1792708200.0
+  US asc-atp-migtob-nicmej-2026-10-22-gs-pos-1pt5 | spreads | Will the Miguel Tobon cover 1.5 vs the Nicolas Mejia in Miguel Tobon v | long=+1.50 short=-1.50 start=1792708200.0
+  US asc-atp-migtob-nicmej-2026-10-22-gs-neg-4pt5 | spreads | Will the Miguel Tobon cover -4.5 vs the Nicolas Mejia in Miguel Tobon  | long=-4.50 short=+4.50 start=1792708200.0
+  US asc-atp-migtob-nicmej-2026-10-22-gs-pos-4pt5 | spreads | Will the Miguel Tobon cover 4.5 vs the Nicolas Mejia in Miguel Tobon v | long=+4.50 short=-4.50 start=1792708200.0
+US: 79498 open markets, 58574 game/spread/total/prop slugs, 576 verified pairs
 
 age                    long side              short side  listed, outcome names     not on Polymarket US  copyable
-<3h                           94                     145                       0                     999       19%
-3-12h                        208                       6                       0                     327       40%
-12-48h                       190                       3                       0                    1484       12%
-older                          0                       0                       0                    2544        0%
+<3h                          251                     239                       0                     259       65%
+3-12h                         64                      43                       0                    1417        7%
+12-48h                       184                       1                       0                     919       17%
+older                          0                       0                       0                    2623        0%
 
 by league (all ages): copyable / total
-  nba            224 / 684
-  uel            131 / 613
-  futures        151 / 546
-  ucl              0 / 518
-  nfl              0 / 475
-  atp             19 / 456
+  uel              0 / 845
+  nba            469 / 690
+  nfl              0 / 537
+  futures        124 / 452
+  atp              7 / 436
+  ucl              0 / 397
   cs2              0 / 384
-  cfb              0 / 323
-  dota2            0 / 285
-  nhl            117 / 180
-  col              0 / 174
-  mlb              0 / 158
+  cfb              0 / 325
+  dota2            0 / 288
+  nhl            173 / 224
   val              0 / 145
   fifwc            0 / 140
   lol              0 / 121
-  lal              0 / 100
-  itf              0 / 95
-  epl              0 / 73
+  mlb              0 / 117
+  itf              0 / 106
+  lal              0 / 98
+  col              0 / 90
+  epl              0 / 72
   bra2             0 / 68
   por              0 / 62
 
 recent trades not on Polymarket US (international slug | outcome | US lists for the same matchup):
-  131  uel-juv-ren1-2026-10-22-juv | No | -
-  120  atp-herbert-fritz-2026-10-22 | Pierre-Hugues Herbert | -
-   94  uel-bou-mil1-2026-10-22-total-2pt5 | Under | -
-   90  uel-bou-mil1-2026-10-22-bou | Yes | -
-   76  col-tra-hmi-2026-10-22-spread-home-1pt5 | Heart of Midlothian FC | -
-   54  2026-balance-of-power-d-senate-r-house-692 | Yes | -
+  122  uel-bou-mil1-2026-10-22-bou | Yes | -
+  117  atp-herbert-fritz-2026-10-22 | Pierre-Hugues Herbert | -
+   96  uel-juv-ren1-2026-10-22-juv | No | -
+   95  uel-bou-mil1-2026-10-22-total-2pt5 | Under | -
+   83  uel-bou-mil1-2026-10-22-spread-home-1pt5 | AFC Bournemouth | -
+   77  uel-lep-sun-2026-10-22-sun | No | -
+   75  uel-bou-mil1-2026-10-22-bou | No | -
+   60  nfl-ne-chi-2026-10-23-spread-home-2pt5 | Bears | -
    47  atp-dzumhur-bergs-2026-10-22 | Damir Dzumhur | -
+   39  itf-frodin1-brengl1-2026-10-22 | Madison Brengle | -
    37  atp-zarate-comesan-2026-10-22 | Carlos Maria Zarate | -
-   37  nba-den-okc-2026-10-22-spread-home-9pt5 | Thunder | nba-den-okc-2026-10-22, nba-den-okc-2026-10-22-221pt5, nba-den-okc-2026-10-22-224pt5, nba-den-okc-2026-10-22-227pt5
-   35  uel-bou-mil1-2026-10-22-bou | No | -
    34  lol-gal-sly-2026-10-22-game3 | Galions | -
    32  atp-vachero-assche-2026-10-22 | Valentin Vacherot | -
    31  atp-goffin-michels-2026-10-22 | David Goffin | -
-   31  col-jab-bha-2026-10-22-spread-away-2pt5 | FK Jablonec | -
-   28  atp-herbert-fritz-2026-10-22 | Taylor Fritz | -
-   28  will-dan-sullivan-win-the-alaska-senate-race-in-2026 | Yes | -
+   29  uel-bou-mil1-2026-10-22-mil1 | No | -
+   23  uel-lep-sun-2026-10-22-lep | Yes | -
    20  spl-fat-sha-2026-10-22-total-4pt5 | Over | -
    19  lol-gal-sly-2026-10-22-game4 | Solary | -
+   18  itf-tikhon1-ku1-2026-10-22 | Anastasia Tikhonova | -
    17  nba-cle-phi-2026-10-22-spread-home-3pt5 | Cavaliers | nba-cle-phi-2026-10-22, nba-cle-phi-2026-10-22-221pt5, nba-cle-phi-2026-10-22-224pt5, nba-cle-phi-2026-10-22-227pt5
    17  uel-juv-ren1-2026-10-22-juv | Yes | -
    16  uel-juv-ren1-2026-10-22-draw | No | -
    16  uel-ftc-ut-2026-10-22-total-2pt5 | Over | -
-   15  2026-balance-of-power-r-senate-r-house-537 | No | -
-   15  uel-bou-mil1-2026-10-22-mil1 | No | -
-   13  will-the-republican-party-hold-exactly-48-senate-seats-after-the-2026-midterm-elections-971 | Yes | -
+   14  nba-den-okc-2026-10-22-spread-home-9pt5 | Thunder | nba-den-okc-2026-10-22, nba-den-okc-2026-10-22-221pt5, nba-den-okc-2026-10-22-224pt5, nba-den-okc-2026-10-22-227pt5
+   13  dota2-bot1-z10-2026-10-22-game1 | Zero Tenacity | -

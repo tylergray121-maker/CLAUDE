@@ -1,12 +1,12 @@
 [
  {
-  "us_slug": "tec-epl-title-2027-05-30-w-mnc",
-  "intl_token": "19864216715488298679276291756659013279877343825699353033505020208765688353462",
-  "score": 0.633,
-  "us_label": "English Premier League Champion: Manchester City",
-  "intl_label": "Will Manchester City win the 2026-27 English Premier League (EPL) Championship? [Manchester City]",
+  "us_slug": "arankc-ucl-2027-01-27-9to24-psg",
+  "intl_token": "85158083954959796766812188892373720498279667307690193184015683156633458364631",
+  "score": 0.505,
+  "us_label": "Champions League League Phase 9-24 Place Finishers: Paris Saint-Germain FC",
+  "intl_label": "Will Paris Saint-Germain finish first in UCL league phase? [Paris Saint-Germain]",
   "tick": 0.01,
-  "price_gap": 0.09
+  "price_gap": 0.235
  },
  {
   "us_slug": "rtc-dwts-s35-1-2026-11-17-conwoo",
@@ -15,16 +15,7 @@
   "us_label": "Dancing With The Stars S35 Winner: Connor Wood",
   "intl_label": "Will Connor Wood be eliminated in week 7 of Dancing With The Stars: Season 35? [Connor Wood]",
   "tick": 0.01,
-  "price_gap": 0.24
- },
- {
-  "us_slug": "tac-oscars-03-14-2027-bestdoc-youcan",
-  "intl_token": "100757376849492277132821909746555605457515786857395729851351563483016663901152",
-  "score": 0.632,
-  "us_label": "Oscar Winner: Best Documentary Feature Film: You Can See Everything",
-  "intl_label": "Will You Can See Everything win Best Picture at the 99th Academy Awards? [You Can See Everything]",
-  "tick": 0.01,
-  "price_gap": 0.605
+  "price_gap": 0.235
  },
  {
   "us_slug": "tac-oscars-nom-bstmakeup-2027-01-21-digger",
@@ -34,24 +25,6 @@
   "intl_label": "Will \"Digger\" be nominated for Best Original Screenplay at the 99th Academy Awards? [Digger]",
   "tick": 0.01,
   "price_gap": 0.47
- },
- {
-  "us_slug": "tac-oscars-nom-bstanim-2027-01-21-wildwo",
-  "intl_token": "2508489636738661930994760182793180269571824290372506307718769203519747394269",
-  "score": 0.6,
-  "us_label": "Oscar Nominees: Best Animated Feature Film: Wildwood",
-  "intl_label": "Will \"Wildwood\" be nominated for Best Production Design at the 99th Academy Awards? [Wildwood]",
-  "tick": 0.01,
-  "price_gap": 0.494
- },
- {
-  "us_slug": "tac-oscars-nom-bstadascr-2027-01-21-wildwo",
-  "intl_token": "2508489636738661930994760182793180269571824290372506307718769203519747394269",
-  "score": 0.604,
-  "us_label": "Oscar Nominees: Best Adapted Screenplay: Wildwood",
-  "intl_label": "Will \"Wildwood\" be nominated for Best Production Design at the 99th Academy Awards? [Wildwood]",
-  "tick": 0.01,
-  "price_gap": 0.109
  },
  {
   "us_slug": "tac-oscars-nom-bstintl-2027-01-21-coward",
@@ -69,7 +42,7 @@
   "us_label": "Billboard #1 Song Week of October 31?: Choosin' Texas - Ella Langley",
   "intl_label": "Will \"Choosin' Texas - Ella Langley\" be the Billboard Hot 100 #2 song for the week of October 31? [Choosin' Texas - Ella Langley]",
   "tick": 0.01,
-  "price_gap": 0.149
+  "price_gap": 0.098
  },
  {
   "us_slug": "ccrc-bilbrd-1song-2026-10-31-houwif",
@@ -78,6 +51,6 @@
   "us_label": "Billboard #1 Song Week of October 31?: Housewife - Tate McRae",
   "intl_label": "Will \"Housewife - Tate McRae\" be the Billboard Hot 100 #2 song for the week of October 31? [Housewife - Tate McRae]",
   "tick": 0.01,
-  "price_gap": 0.275
+  "price_gap": 0.17
  }
 ]
