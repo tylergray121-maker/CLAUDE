@@ -81,6 +81,7 @@ def main(argv=None) -> int:
     a = parse_args(argv)
     logging.basicConfig(level=logging.DEBUG if a.verbose else logging.INFO,
                         format="%(asctime)s %(levelname)s %(message)s", datefmt="%H:%M:%S")
+    logging.getLogger("httpx").setLevel(logging.WARNING)  # one line per API call otherwise
     ecfg = EngineConfig(mode=a.mode, out_dir=a.out_dir, minutes=a.minutes,
                         cycle_seconds=a.cycle_seconds, max_markets=a.max_markets,
                         pairs_file=a.pairs_file, max_rps=a.max_rps, resume=a.resume,

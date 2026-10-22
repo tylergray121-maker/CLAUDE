@@ -51,7 +51,7 @@ STAT_KEYS = ("leader_trades", "mapped", "mapped_short_side", "not_on_polymarket_
              "skip_repeat", "skip_recently_copied", "skip_tiny", "skip_not_open",
              "skip_price_band", "skip_prices_disagree", "skip_no_room_or_size",
              "skip_holding_other_side", "skip_exit_price", "skip_benched_wallet",
-             "skip_losing_pattern", "skip_stale", "poll_errors")
+             "skip_losing_pattern", "skip_stale", "sells_not_copied", "poll_errors")
 _GAME = re.compile(r"^([a-z0-9]+)-.*\d{4}-\d{2}-\d{2}")
 
 
@@ -178,7 +178,8 @@ class CopyTop(Strategy):
                     self.stats["skip_stale"] += 1   # e.g. placed while the bot restarted
                     continue
                 if side == "SELL" and not self.copy_sells:
-                    continue  # held to settlement
+                    self.stats["sells_not_copied"] += 1  # held to settlement
+                    continue
                 if side == "BUY" and self.status.get(wallet, ["copying"])[0] == "benched":
                     self.stats["skip_benched_wallet"] += 1
                     continue
