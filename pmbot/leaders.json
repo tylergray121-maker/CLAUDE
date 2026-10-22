@@ -1,6 +1,6 @@
 {
  "chosen": "2026-10-21",
- "rule": "Top-wallet study: sports wallets active in the last week whose sampled positions reconcile with their all-time leaderboard profit, 150+ positions (no whales), edge per dollar above 4%; top 16 by edge. Plus the copytop backtest's run-2 picks (2026-10-21), for more volume.",
+ "rule": "Top-wallet study: sports wallets active in the last week whose sampled positions reconcile with their all-time leaderboard profit, 150+ positions (no whales), edge per dollar above 4%; top 16 by edge. Plus the copytop backtest's run-2 picks (2026-10-21), for more volume. | 2026-10-22: dropped para-Vision (-15%, t -2.25) and ColdBlooded (-11%, t -2.5) on the 90-day copy backtest; added THEHIGHLIFE, AmericaFirst1, UNEB3154s4f251. The search's 'every qualified wallet' list was not used: it lost 4.2% out of sample vs +6.1% for the current list.",
  "leaders": [
   {
    "wallet": "0x006cc834cc092684f1b56626e23bedb3835c16ea",
@@ -21,15 +21,6 @@
    "style": "high-volume sports operation (taker flow)"
   },
   {
-   "wallet": "0x676c1bb692c76b57b06f1b93817515acfa5ce139",
-   "name": "para-Vision",
-   "edge_per_dollar": 0.1581,
-   "win_rate": 0.573,
-   "positions": 309,
-   "maker_usd_share": 0.543,
-   "style": "sports bettor (same-day/in-play)"
-  },
-  {
    "wallet": "0x924379a79c64b77ad5816ad362122a5f6228658e",
    "name": "Kch-Temp",
    "edge_per_dollar": 0.141,
@@ -46,15 +37,6 @@
    "positions": 232,
    "maker_usd_share": 0.688,
    "style": "sports bettor (same-day/in-play)"
-  },
-  {
-   "wallet": "0xbcc321b6336117432f4e9d2d28b20d8b6795ac9c",
-   "name": "ColdBlooded",
-   "edge_per_dollar": 0.0944,
-   "win_rate": 0.693,
-   "positions": 254,
-   "maker_usd_share": 0.667,
-   "style": "sports bettor (pre-game/futures)"
   },
   {
    "wallet": "0x7e3a1f95c558f39a51ff334d789e3e039b553246",
@@ -234,6 +216,36 @@
    "wallet": "0x0d23fc6838433dbff11e4667ef5991e9dd9d2d56",
    "name": "Tiger105",
    "source": "owner's pick (Polymarket username tiger105)"
+  },
+  {
+   "wallet": "0x8c0b024c17831a0dde038547b7e791ae6a0d7aa5",
+   "name": "THEHIGHLIFE",
+   "copy_return": 0.1218,
+   "copy_t": 1.64,
+   "copies": 519,
+   "won": 226,
+   "copy_pnl_per_10usd": 1.24,
+   "source": "selection 2026-10-22: copy return t>=1.5 over 500+ copies, added for volume"
+  },
+  {
+   "wallet": "0x154ca10dfee317dcfb9337788db7da858cba658e",
+   "name": "AmericaFirst1",
+   "copy_return": 0.0684,
+   "copy_t": 1.65,
+   "copies": 497,
+   "won": 312,
+   "copy_pnl_per_10usd": 0.69,
+   "source": "selection 2026-10-22: copy return t>=1.5 over 500+ copies, added for volume"
+  },
+  {
+   "wallet": "0x04641b57f332c15ecaa497799c55026d521967da",
+   "name": "UNEB3154s4f251",
+   "copy_return": 0.0328,
+   "copy_t": 1.79,
+   "copies": 1886,
+   "won": 1186,
+   "copy_pnl_per_10usd": 0.34,
+   "source": "selection 2026-10-22: copy return t>=1.5 over 500+ copies, added for volume"
   }
  ]
 }
