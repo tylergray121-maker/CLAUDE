@@ -992,6 +992,21 @@ class CopyTopTest(unittest.TestCase):
         self.assertEqual(again.stats["leader_trades"], self.copy.stats["leader_trades"] + 1)
         e2._events.close()
 
+    def test_one_wallet_cannot_take_more_than_its_cap(self):
+        self.copy.max_wallet_usd = 15.0
+        self.e.cycle()
+        self.trade("BUY", 0.62)                      # $10 copy: 16 @ 0.61
+        self.e.cycle()
+        self.copy.recent.clear()
+        self.trade("BUY", 0.62)                      # only ~$5 of the cap left
+        self.e.cycle()
+        buys = [f for f in self.e.broker.fills if f.side == "BUY"]
+        self.assertEqual([f.qty for f in buys], [16, 8])
+        self.copy.recent.clear()
+        self.trade("BUY", 0.62)                      # cap used up
+        self.e.cycle()
+        self.assertEqual(self.copy.stats["skip_wallet_cap"], 1)
+
     def test_unmapped_trades_are_counted_not_copied(self):
         self.e.cycle()
         self.trade("BUY", 0.5, asset="not-on-us")

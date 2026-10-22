@@ -47,6 +47,8 @@ def parse_args(argv=None):
                    help="copytop: wallets to copy")
     g.add_argument("--copy-sells", action="store_true",
                    help="copytop: also copy the leaders' sells (default: hold to settlement)")
+    g.add_argument("--max-wallet-usd", type=float, default=0.0,
+                   help="copytop: most money open copying any one wallet (0 = no cap)")
     g.add_argument("--conviction-sizing", action="store_true",
                    help="copytop: stake x0.5 when a leader bets under half their usual size, "
                    "x1.5 at twice it or more")
@@ -114,7 +116,7 @@ def main(argv=None) -> int:
     from .strategies import build
     engine = Engine(ecfg, scfg, RiskManager(rcfg), broker,
                     build(a.strategies, scfg, a.leaders_file, copy_sells=a.copy_sells,
-                          conviction_sizing=a.conviction_sizing,
+                          conviction_sizing=a.conviction_sizing, max_wallet_usd=a.max_wallet_usd,
                           ev_min_edge=a.ev_min_edge, ev_monthly_budget=a.ev_budget))
     if a.mode == "paper" and not a.no_preview and os.environ.get("PMUS_KEY_ID") \
             and os.environ.get("PMUS_SECRET_KEY"):

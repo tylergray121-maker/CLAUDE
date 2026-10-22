@@ -51,7 +51,8 @@ STAT_KEYS = ("leader_trades", "mapped", "mapped_short_side", "not_on_polymarket_
              "skip_repeat", "skip_recently_copied", "skip_tiny", "skip_not_open",
              "skip_price_band", "skip_prices_disagree", "skip_no_room_or_size",
              "skip_holding_other_side", "skip_exit_price", "skip_benched_wallet",
-             "skip_losing_pattern", "skip_stale", "sells_not_copied", "poll_errors")
+             "skip_losing_pattern", "skip_stale", "sells_not_copied", "skip_wallet_cap",
+             "poll_errors")
 _GAME = re.compile(r"^([a-z0-9]+)-.*\d{4}-\d{2}-\d{2}")
 
 
@@ -75,7 +76,8 @@ class CopyTop(Strategy):
     def __init__(self, cfg: StrategyConfig, leaders: dict[str, str], max_slip: float = 0.01,
                  signal_ttl_s: float = 180, dedupe_s: float = 600, min_leader_usd: float = 5.0,
                  form_every_s: float = 7200, min_wallet_n: int = 10, min_pattern_n: int = 15,
-                 copy_sells: bool = False, conviction_sizing: bool = False):
+                 copy_sells: bool = False, conviction_sizing: bool = False,
+                 max_wallet_usd: float = 0.0):
         self.cfg = cfg
         self.leaders = leaders
         self.max_slip = max_slip
@@ -98,6 +100,9 @@ class CopyTop(Strategy):
         self._next_form = 0.0
         self.lags: deque = deque(maxlen=500)       # seconds from their trade to our order
         self.copy_sells, self.conviction_sizing = copy_sells, conviction_sizing
+        # Most money open copying any one wallet (0 = no cap), so one wallet's
+        # big swings (a whale's losing streak) can't dominate the account.
+        self.max_wallet_usd = max_wallet_usd
         self.sizes: dict[str, deque] = {}          # leader -> their recent buy sizes ($)
         self.unmapped: Counter = Counter()         # (intl slug, outcome) not on US, for diagnostics
         self.max_age_s = 300                       # never copy a trade older than this
@@ -249,6 +254,13 @@ class CopyTop(Strategy):
                 stake = self.cfg.order_usd
                 if self.conviction_sizing:
                     stake *= 0.5 if c < 0.5 else 1.5 if c >= 2 else 1.0
+                if self.max_wallet_usd > 0:
+                    left = self.max_wallet_usd - self.card.summary(f"w:{sig['wallet']}")["open_usd"]
+                    if left < ask:
+                        self.stats["skip_wallet_cap"] += 1
+                        del self.pending[slug]
+                        continue
+                    stake = min(stake, left)
                 qty = min(int(min(stake, eng.room(slug)) // ask), int(v.us_ask_qty))
                 del self.pending[slug]
                 if qty < 1:
