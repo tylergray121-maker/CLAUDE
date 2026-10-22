@@ -136,6 +136,7 @@ class Rules:
     conviction_sizing: bool = False  # stake x0.5 under 0.5x their usual bet, x1.5 at 2x+
     min_conviction: float = 0.0      # skip bets smaller than this multiple of their usual
     pregame_only: bool = False
+    markouts: bool = False           # record 30m / 2h markouts (needs extra price history)
 
 
 def copies(trades, markets, pairs, rules: Rules, price_at=None) -> list[dict]:
@@ -186,7 +187,7 @@ def copies(trades, markets, pairs, rules: Rules, price_at=None) -> list[dict]:
                    "conviction": round(conviction, 3),
                    "delay_move": round(p - t.price, 4) if p is not None else None,
                    "leader_usd": round(notional, 2), "exit": None, "pnl": None}
-            if price_at:
+            if price_at and rules.markouts:
                 # Markouts: how far the price moved our way 30 minutes and 2
                 # hours after our fill (the payout once the market resolved).
                 # Far less noisy than settlement, so better for ranking.
@@ -510,7 +511,7 @@ def main(argv=None) -> int:
 
     # Holding to settlement beat copying their sells in both windows of the
     # first run (their exits lose the spread and the fee twice); it is the base.
-    rules = replace(Rules(), delay_s=a.delay, copy_sells=False)
+    rules = replace(Rules(), delay_s=a.delay, copy_sells=False, markouts=True)
     # Pass 1: at the leader's price plus spread, every wallet.
     quick = {w: copies(t, markets, pairs, rules) for w, t in hist.items()}
     train_q = {w: [x for x in lots if x["ts"] < split_ts] for w, lots in quick.items()}
@@ -528,9 +529,10 @@ def main(argv=None) -> int:
                         key=lambda w: -len(_closed(quick[w])))[:a.shortlist])
     log.info("re-pricing %d wallets at a %ds copy delay", len(short), a.delay)
     prices = PriceHistory(client)
-    # Fill prices at each tested delay, and the markouts 30m and 2h after.
-    prices.prefetch({(t.asset, t.ts + d + h) for w in short for t in hist[w]
-                     for d in {a.delay, 15, 60} for h in (0, 1800, 7200)}, workers=a.workers)
+    # Fill prices at each tested delay; markouts (30m, 2h) at the base delay only.
+    prices.prefetch({(t.asset, t.ts + d) for w in short for t in hist[w]
+                     for d in {a.delay, 15, 60, a.delay + 1800, a.delay + 7200}},
+                    workers=a.workers)
 
     def run(r: Rules) -> dict[str, list[dict]]:
         return {w: copies(hist[w], markets, pairs, r, prices.price_at) for w in short}

@@ -300,7 +300,7 @@ class SelectTest(unittest.TestCase):
         from pmbot.select import METHODS, Rules, copies
         drift = lambda tok, ts: 0.40 if ts < 1_000_100 else 0.48    # moves our way after the fill
         lots = copies([self.t(1_000_000, "BUY", 0.40)], self.m, self.pairs,
-                      Rules(delay_s=30), drift)
+                      Rules(delay_s=30, markouts=True), drift)
         self.assertEqual((lots[0]["mo30"], lots[0]["mo120"]), (0.075, 0.075))  # 0.48 - 0.405 ask
         L = [{"mo120": 0.05 + 0.01 * (i % 2), "mo30": 0.02, "pnl": 1.0, "cost": 5.0}
              for i in range(12)]

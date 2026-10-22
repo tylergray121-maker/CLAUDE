@@ -20,7 +20,7 @@ concurrency:
 jobs:
   select:
     runs-on: ubuntu-latest
-    timeout-minutes: 300
+    timeout-minutes: 355
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -37,7 +37,7 @@ jobs:
         run: python -m unittest tests.test_pmbot
 
       - name: Backtest copytop on every candidate wallet
-        timeout-minutes: 270
+        timeout-minutes: 335
         shell: bash -o pipefail {0}
         run: |
           mkdir -p selectresults
