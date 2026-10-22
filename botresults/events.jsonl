@@ -5728,3 +5728,4 @@
 {"ts": 1792618794.316, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Spread: Magic (-3.5)", "intl_slug": "nba-atl-orl-2026-10-21-spread-home-3pt5", "outcome": "Magic"}
 {"ts": 1792619002.863, "kind": "cancel_all", "reason": "shutdown"}
 {"ts": 1792620243.317, "kind": "cancel_all", "reason": "shutdown"}
+{"ts": 1792629879.399, "kind": "leader_status", "leader": "HVAB", "wallet": "0x8546a601f7c7cc3dae7141f20b0e09e42bbf35b8", "status": "cooling", "was": "copying", "why": "\u2212$41,003 on Polymarket this week"}

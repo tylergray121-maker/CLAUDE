@@ -1,19 +1,5 @@
-22:00:32 INFO Polymarket US: 80636 open markets
-22:00:41 INFO international: 2430 active outcome tokens
-22:00:59 INFO games: 1606 US game markets in the next 48h, 107 international matches, 198 pairs
-22:00:59 INFO pairs: 296 kept, 14 rejected on price
-# Polymarket US bot — paper run
-
-Mapping: 80636 open US markets, 2430 international outcomes, 296 pairs (20 tracked after live price checks); observations with a trustworthy reference price: 360.
-
-## Is there an edge to take?
-
-US mid vs international mid, absolute gap: median 1.00¢, 90th pct 2.00¢, 99th pct 2.00¢.
-Times a US price was through fair value by ≥ 3¢ after the taker fee: 0 to buy, 0 to sell (see `events.jsonl`, kind=opportunity).
-
-## Trading
-
-Equity $200.00 from $200.00 (+0.00), cash $200.00; 0 fills; taker fees $0.00; maker rebates $0.00; open positions 0.
-Halted: no.
-
-
+00:44:14 INFO Polymarket US: 83227 open markets
+00:44:17 INFO international: 2549 active outcome tokens
+00:44:33 INFO games: 1690 US game markets in the next 48h, 134 international matches, 244 pairs
+00:44:33 INFO pairs: 339 kept, 13 rejected on price
+00:44:39 INFO leader HVAB: copying -> cooling (−$41,003 on Polymarket this week)
