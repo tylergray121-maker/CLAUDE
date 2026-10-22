@@ -56,4 +56,10 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -f selectresults
           git commit -m "Leader selection results ($(date -u +%Y-%m-%dT%H:%MZ)) [skip ci]" || exit 0
-          git pull --rebase origin "$GITHUB_REF_NAME" && git push origin HEAD:"$GITHUB_REF_NAME"
+          # this run's results win over any earlier run's (e.g. a cancelled one's)
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin "$GITHUB_REF_NAME" && git push origin HEAD:"$GITHUB_REF_NAME" && exit 0
+            git rebase --abort 2>/dev/null || true
+            sleep 10
+          done
+          exit 1
