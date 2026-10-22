@@ -1003,6 +1003,15 @@ class CopyTopTest(unittest.TestCase):
         # Without the losing league they are judged on their own merits.
         self.assertEqual(card.summary_without("kind:moneyline", {"league:atp"})["settled"], 16)
 
+    def test_a_hand_cash_out_does_not_score_the_wallet(self):
+        from pmbot.broker import Fill
+        card = self.copy.card
+        card.open("brewers", ["w:0xabc", "league:mlb"], 10, 5.0)
+        self.copy.on_fills(self.e, [Fill(0, "brewers", "SELL", 0.49, 10, False, 0.0,
+                                         "copytop", -0.1, "hand")])
+        self.assertEqual(card.summary("w:0xabc")["settled"], 0)     # no verdict on them
+        self.assertEqual(card.lots, {})                              # and nothing left open
+
     def test_scorecard_survives_a_restart(self):
         from pmbot.copy import CopyTop
         self.e.cycle()

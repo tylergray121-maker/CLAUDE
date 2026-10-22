@@ -42,6 +42,7 @@ class Fill:
     fee: float     # positive = paid, negative = rebate
     tag: str = ""  # strategy
     pnl: float = 0.0  # realized on this fill (sells and settlements)
+    note: str = ""    # "hand": sold by the owner in the app, not by the bot
 
 
 @dataclass
@@ -484,7 +485,7 @@ class LiveBroker:
                 pnl = qty * price - cost
                 self.realized += pnl
                 self.fills.append(Fill(time.time(), slug, "SELL", round(price, 4), qty, False,
-                                       0.0, tag if bots else "", round(pnl, 4)))
+                                       0.0, tag if bots else "", round(pnl, 4), "hand"))
 
     def settle(self, slug: str, value: float, tag: str = "") -> None:
         """Record the payout of a position the exchange settled (``vanished``)."""

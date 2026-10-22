@@ -300,6 +300,10 @@ class CopyTop(Strategy):
         for f in fills:
             if f.tag != self.name:
                 continue
+            if getattr(f, "note", "") == "hand":
+                # Cashed out by the owner: says nothing about the leader.
+                self.card.drop(f.slug, f.qty)
+                continue
             if f.side == "BUY" and f.slug in self._placing:
                 self.card.open(f.slug, self._placing[f.slug], f.qty, f.price * f.qty + f.fee)
             elif f.side == "SELL" and f.slug in self._selling:

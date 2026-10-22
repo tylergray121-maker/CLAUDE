@@ -75,6 +75,22 @@ class Scorecard:
         if not lots:
             self.lots.pop(slug, None)
 
+    def drop(self, slug: str, qty: int) -> None:
+        """``qty`` contracts of ``slug`` left without a verdict on whoever we
+        copied (the owner cashed them out by hand): remove them unscored."""
+        lots = self.lots.get(slug, [])
+        left = qty
+        while left > 0 and lots:
+            lot = lots[0]
+            take = min(left, lot["qty"])
+            lot["cost"] -= lot["cost"] * take / lot["qty"]
+            lot["qty"] -= take
+            left -= take
+            if lot["qty"] <= 0:
+                lots.pop(0)
+        if not lots:
+            self.lots.pop(slug, None)
+
     def summary_without(self, key: str, excluded: set[str]) -> dict:
         """Like ``summary`` over the closed lots with ``key`` that carry none of
         the ``excluded`` keys: a pattern judged on its own, not on bets that a
