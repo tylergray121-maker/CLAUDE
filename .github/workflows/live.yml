@@ -1,7 +1,9 @@
 name: live trading
 
 # REAL MONEY on Polymarket US. Runs only when started by hand from the
-# Actions tab with the confirmation typed in; never on a push. The account
+# Actions tab with the confirmation typed in; never on a push. One start runs
+# up to four back-to-back segments (GitHub caps a job at 6 hours), about 23
+# hours in all; each segment resumes the account from live-desk. The account
 # state, scorecard and dashboard snapshot go to the live-desk branch every
 # 10 minutes. To stop: add a file named STOP to the live-desk branch (the bot
 # halts within a minute and cancels its own orders), or cancel the run.
@@ -14,9 +16,13 @@ on:
         description: 'Type exactly: I accept the risk of losing this money'
         required: true
       hours:
-        description: "How long to run (max 5.75; start it again to continue)"
+        description: "Hours per segment (max 5.75)"
         required: true
         default: "5.75"
+      segments:
+        description: "Back-to-back segments, 1-4 (4 x 5.75h is about 23 hours)"
+        required: true
+        default: "4"
 
 permissions:
   contents: write
@@ -29,30 +35,44 @@ jobs:
   live:
     runs-on: ubuntu-latest
     timeout-minutes: 358
+    strategy:
+      max-parallel: 1
+      fail-fast: false
+      matrix:
+        segment: [1, 2, 3, 4]
     env:
       REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
       PMUS_KEY_ID: ${{ secrets.PMUS_KEY_ID }}
       PMUS_SECRET_KEY: ${{ secrets.PMUS_SECRET_KEY }}
       CONFIRM: ${{ inputs.confirm }}
       HOURS: ${{ inputs.hours }}
+      SEGMENTS: ${{ inputs.segments }}
+      SEGMENT: ${{ matrix.segment }}
     steps:
       - name: Check the confirmation and keys
         run: |
+          if [ "$SEGMENT" -gt "${SEGMENTS:-1}" ]; then
+            echo "Segment $SEGMENT not requested (segments=$SEGMENTS)."; echo "SKIP=1" >> "$GITHUB_ENV"; exit 0; fi
           if [ "$CONFIRM" != "I accept the risk of losing this money" ]; then
             echo "Confirmation not typed exactly; not trading."; exit 1; fi
           if [ -z "$PMUS_KEY_ID" ] || [ -z "$PMUS_SECRET_KEY" ]; then
             echo "Add the PMUS_KEY_ID and PMUS_SECRET_KEY repository secrets first."; exit 1; fi
       - uses: actions/checkout@v4
+        if: env.SKIP != '1'
       - uses: actions/setup-python@v5
+        if: env.SKIP != '1'
         with:
           python-version: "3.12"
       - name: Install the Polymarket US SDK
+        if: env.SKIP != '1'
         run: pip install -q polymarket-us==2.4.1
 
       - name: Tests
+        if: env.SKIP != '1'
         run: python -m unittest tests.test_pmbot
 
       - name: Restore the live desk
+        if: env.SKIP != '1'
         id: restore
         run: |
           mkdir -p live
@@ -64,7 +84,7 @@ jobs:
           ls -la live
 
       - name: Trade live and publish snapshots
-        if: steps.restore.outputs.stop != '1'
+        if: env.SKIP != '1' && steps.restore.outputs.stop != '1'
         timeout-minutes: 350
         shell: bash
         run: |
@@ -74,6 +94,7 @@ jobs:
             for f in state.json paper.json report.md summary.json live_orders.json; do
               [ -f "live/$f" ] && cp "live/$f" /tmp/ld/
             done
+            tail -400 live/run.log > /tmp/ld/run_tail.log 2>/dev/null || true
             (cd /tmp/ld && git init -q && git checkout -q -b live-desk && git add -A &&
              git -c user.name="github-actions[bot]" \
                  -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
