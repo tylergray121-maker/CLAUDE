@@ -1,1 +1,1 @@
---strategies copytop --order-usd 1 --max-market-usd 3 --max-total-usd 24 --daily-loss-limit 0 --cycle-seconds 5 --max-markets 0 --max-rps 10 --snapshot-seconds 60
+--strategies copytop --order-usd 1 --max-market-usd 3 --max-total-usd 32 --daily-loss-limit 0 --cycle-seconds 5 --max-markets 0 --max-rps 10 --snapshot-seconds 60
