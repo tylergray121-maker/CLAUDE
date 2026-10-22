@@ -99,9 +99,10 @@ def main(argv=None) -> int:
         if not key or not secret:
             print("Set PMUS_KEY_ID and PMUS_SECRET_KEY first.", file=sys.stderr)
             return 2
+        stop = (f"stop after ${rcfg.daily_loss_limit:.0f} daily loss"
+                if rcfg.daily_loss_limit > 0 else "no daily stop")
         print(f"LIVE trading on Polymarket US with real money. Limits: ${rcfg.max_total_usd:.0f} "
-              f"total, ${rcfg.max_market_usd:.0f} per market, stop after "
-              f"${rcfg.daily_loss_limit:.0f} daily loss.")
+              f"total, ${rcfg.max_market_usd:.0f} per market, {stop}.")
         if not a.yes and input(f"Type '{CONFIRM}' to continue: ").strip() != CONFIRM:
             print("Not confirmed; exiting.")
             return 1
