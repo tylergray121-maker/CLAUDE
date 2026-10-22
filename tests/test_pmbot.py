@@ -960,7 +960,7 @@ class LiveBrokerTest(unittest.TestCase):
     def test_sync_reads_cash_positions_and_ignores_manual_orders(self):
         self.b.sync()
         self.assertEqual(self.b.cash, 150.0)          # buyingPower: what we can spend now
-        self.assertEqual(self.b.account_cash, 200.0)  # the account's own cash
+        self.assertEqual(self.b.account_cash, 150.0)  # the account's own cash (no open orders)
         self.assertEqual(self.b.balance_info["buyingPower"], 150.0)
         self.assertEqual(self.b.positions["brewers"].qty, 8)
         self.assertEqual(self.b.open_orders, {})      # manual-1 isn't ours
@@ -1007,7 +1007,8 @@ class LiveBrokerTest(unittest.TestCase):
         row = {"currentBalance": 41.0, "buyingPower": 33.5, "displayedCash": 0.0,
                "displayedBonus": 10.0}
         self.assertEqual(spendable(row), 33.5)        # what the exchange lets us spend
-        self.assertEqual(own_cash(row), 31.0)         # what the account owns, as the app shows
+        self.assertEqual(own_cash(row), 33.5)         # buying power + open orders, as the app shows
+        self.assertEqual(own_cash({"currentBalance": 41.0, "displayedBonus": 10.0}), 31.0)
         self.assertEqual(spendable({"currentBalance": 41.0, "displayedBonus": 10.0}), 31.0)
         self.assertEqual(spendable({"currentBalance": 200.0}), 200.0)
 

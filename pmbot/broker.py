@@ -516,8 +516,11 @@ def spendable(b: dict) -> float:
 
 
 def own_cash(b: dict) -> float:
-    """The account's own cash, as the app shows it: currentBalance without
-    promotional bonus credit."""
+    """The account's own cash, as the app shows it. currentBalance carries
+    promotional credit (seen live: $10 above the app, in no bonus field), so
+    use buyingPower plus the account's open orders when the API gives them."""
+    if b.get("buyingPower") is not None:
+        return max(0.0, _amount(b.get("buyingPower")) + _amount(b.get("openOrders")))
     bonus = sum(_amount(b.get(k)) for k in _BONUS)
     return max(0.0, _amount(b.get("currentBalance")) - bonus)
 
