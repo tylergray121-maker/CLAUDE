@@ -1,16 +1,16 @@
 {
  "counts": {
-  "props/sports": 28359,
-  "totals/sports": 14897,
-  "futures/sports": 12140,
-  "spreads/sports": 10729,
+  "props/sports": 28145,
+  "totals/sports": 14817,
+  "futures/sports": 12129,
+  "spreads/sports": 10689,
   "futures/politics": 6785,
-  "drawable_outcome/sports": 2364,
-  "moneyline/sports": 1886,
-  "futures/culture": 1681,
+  "drawable_outcome/sports": 2348,
+  "moneyline/sports": 1871,
+  "futures/culture": 1680,
   "/crypto": 1476,
   "futures/macro": 224,
-  "futures/climate": 119,
+  "futures/climate": 117,
   "futures/technology": 66,
   "futures/finance": 65,
   "futures/crypto": 59,
@@ -53,8 +53,8 @@
     "title": "",
     "game_start": 1792634400.0,
     "end": 1793844000.0,
-    "bid": 0.06,
-    "ask": 0.07
+    "bid": 0.08,
+    "ask": 0.09
    },
    {
     "slug": "aec-nba-gs-lal-2026-10-21",
@@ -62,8 +62,8 @@
     "title": "",
     "game_start": 1792634400.0,
     "end": 1793844000.0,
-    "bid": 0.38,
-    "ask": 0.39
+    "bid": 0.3,
+    "ask": 0.31
    },
    {
     "slug": "aec-nba-sac-lac-2026-10-21",
@@ -71,8 +71,8 @@
     "title": "",
     "game_start": 1792636200.0,
     "end": 1793845800.0,
-    "bid": 0.36,
-    "ask": 0.37
+    "bid": 0.31,
+    "ask": 0.32
    },
    {
     "slug": "aec-nfl-ne-chi-2026-10-22",
@@ -89,8 +89,8 @@
     "title": "",
     "game_start": 1792627200.0,
     "end": 1793854800.0,
-    "bid": 0.87,
-    "ask": 0.875
+    "bid": 0.91,
+    "ask": 0.915
    },
    {
     "slug": "aec-nba-cle-phi-2026-10-22",
@@ -135,7 +135,7 @@
     "game_start": 1792796400.0,
     "end": 1794006000.0,
     "bid": 0.67,
-    "ask": 0.7
+    "ask": 0.68
    },
    {
     "slug": "aec-nba-tor-was-2026-10-23",
@@ -152,7 +152,7 @@
     "title": "",
     "game_start": 1792796400.0,
     "end": 1794006000.0,
-    "bid": 0.44,
+    "bid": 0.43,
     "ask": 0.45
    }
   ],
@@ -730,7 +730,7 @@
     "game_start": 1790827200.0,
     "end": 1793507400.0,
     "bid": null,
-    "ask": null
+    "ask": 0.06
    },
    {
     "slug": "cpc-btc-hit-h-m-2026-10-97500",
@@ -819,7 +819,7 @@
     "title": "Dips to $75,000",
     "game_start": 1790827200.0,
     "end": 1793507400.0,
-    "bid": 0.08,
+    "bid": 0.07,
     "ask": 0.15
    },
    {
@@ -828,7 +828,7 @@
     "title": "Dips to $77,500",
     "game_start": 1790827200.0,
     "end": 1793507400.0,
-    "bid": null,
+    "bid": 0.19,
     "ask": 0.28
    },
    {

@@ -2,85 +2,85 @@ profile 'Tiger105': tiger105 0x0d23fc6838433dbff11e4667ef5991e9dd9d2d56
 profile 'Tiger105': ah-cop-tiger105 0x8d6064a7f8b67988a4073ac1b051356fc8cebd76
 profile 'Tiger105': tiger105050 0x185031bb4a1763496d706e0c07339a690e00b57f
 
-US markets in ['atp', 'itf', 'wta']: 1300
-  US arankc-atp-2026-12-31-no1-tayfri | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-novdjo | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-lormus | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-karkha | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-jansin | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-jacdra | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-fratia | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-felaug | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-danmed | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-casruu | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-benshe | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-alemin | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-alebub | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-alezve | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-fracer | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-flacob | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-gabdia | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-artfil | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-joafon | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-hubhur | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-rafjod | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-sebkor | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-jakmen | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-camnor | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-  US arankc-atp-2026-12-31-no1-tompau | futures | Men's Pro Tennis No. 1 on Dec 31, 2026 | long=Yes short=No start=1783868400.0
-US: 81187 open markets, 60024 game/spread/total/prop slugs, 338 verified pairs
+US markets in ['atp', 'itf', 'wta'] (not futures): 1121
+  US aec-atp-fedbon-frafor-2026-10-21 | moneyline | Who will win in the upcoming atp event Federico Bondioli vs Francesco  | long=Federico Bondioli short=Francesco Forti start=1792656000.0
+  US astatc-atp-fedbon-frafor-2026-10-21-sw2 | props | Will Federico Bondioli win set 2 against Francesco Forti? | long=Yes short=No start=1792656000.0
+  US astatc-atp-fedbon-frafor-2026-10-21-sw1 | props | Will Federico Bondioli win set 1 against Francesco Forti? | long=Yes short=No start=1792656000.0
+  US astatc-atp-fedbon-frafor-2026-10-21-es-0-2 | props | Forti wins 2-0 | long=Yes short=No start=1792656000.0
+  US astatc-atp-fedbon-frafor-2026-10-21-es-1-2 | props | Forti wins 2-1 | long=Yes short=No start=1792656000.0
+  US astatc-atp-fedbon-frafor-2026-10-21-es-2-1 | props | Bondioli wins 2-1 | long=Yes short=No start=1792656000.0
+  US astatc-atp-fedbon-frafor-2026-10-21-es-2-0 | props | Bondioli wins 2-0 | long=Yes short=No start=1792656000.0
+  US tsc-atp-fedbon-frafor-2026-10-21-st-2pt5 | totals | Will the total in Federico Bondioli vs. Francesco Forti be more than 2 | long=Over short=Under start=1792656000.0
+  US tsc-atp-fedbon-frafor-2026-10-21-tg-27pt5 | totals | Will the total in Federico Bondioli vs. Francesco Forti be more than 2 | long=Over short=Under start=1792656000.0
+  US tsc-atp-fedbon-frafor-2026-10-21-tg-22pt5 | totals | Will the total in Federico Bondioli vs. Francesco Forti be more than 2 | long=Over short=Under start=1792656000.0
+  US tsc-atp-fedbon-frafor-2026-10-21-tg-17pt5 | totals | Will the total in Federico Bondioli vs. Francesco Forti be more than 1 | long=Over short=Under start=1792656000.0
+  US asc-atp-fedbon-frafor-2026-10-21-ss-pos-1pt5 | spreads | Will the Federico Bondioli cover 1.5 vs the Francesco Forti in Federic | long=+1.50 short=-1.50 start=1792656000.0
+  US asc-atp-fedbon-frafor-2026-10-21-ss-neg-1pt5 | spreads | Will the Federico Bondioli cover -1.5 vs the Francesco Forti in Federi | long=-1.50 short=+1.50 start=1792656000.0
+  US asc-atp-fedbon-frafor-2026-10-21-gs-pos-7pt5 | spreads | Will the Federico Bondioli cover 7.5 vs the Francesco Forti in Federic | long=+7.50 short=-7.50 start=1792656000.0
+  US asc-atp-fedbon-frafor-2026-10-21-gs-neg-7pt5 | spreads | Will the Federico Bondioli cover -7.5 vs the Francesco Forti in Federi | long=-7.50 short=+7.50 start=1792656000.0
+  US asc-atp-fedbon-frafor-2026-10-21-gs-pos-4pt5 | spreads | Will the Federico Bondioli cover 4.5 vs the Francesco Forti in Federic | long=+4.50 short=-4.50 start=1792656000.0
+  US asc-atp-fedbon-frafor-2026-10-21-gs-neg-4pt5 | spreads | Will the Federico Bondioli cover -4.5 vs the Francesco Forti in Federi | long=-4.50 short=+4.50 start=1792656000.0
+  US asc-atp-fedbon-frafor-2026-10-21-gs-pos-1pt5 | spreads | Will the Federico Bondioli cover 1.5 vs the Francesco Forti in Federic | long=+1.50 short=-1.50 start=1792656000.0
+  US asc-atp-fedbon-frafor-2026-10-21-gs-neg-1pt5 | spreads | Will the Federico Bondioli cover -1.5 vs the Francesco Forti in Federi | long=-1.50 short=+1.50 start=1792656000.0
+  US aec-wta-aleeal-diashn-2026-10-21 | moneyline | Who will win in the upcoming wta event Alexandra Eala vs Diana Shnaide | long=Alexandra Eala short=Diana Shnaider start=1792653600.0
+  US aec-wta-marsto-moyuch-2026-10-20 | moneyline | Who will win in the upcoming wta event Mary Stoiana vs Moyuka Uchijima | long=Mary Stoiana short=Moyuka Uchijima start=1792640700.0
+  US aec-wta-antruz-kayday-2026-10-20 | moneyline | Who will win in the upcoming wta event Antonia Ruzic vs Kayla Day sche | long=Antonia Ruzic short=Kayla Day start=1792636500.0
+  US aec-wta-annli-zeyson-2026-10-20 | moneyline | Who will win in the upcoming wta event Ann Li vs Zeynep Sonmez schedul | long=Ann Li short=Zeynep Sonmez start=1792636500.0
+  US astatc-wta-marsto-moyuch-2026-10-20-sw2 | props | Will Mary Stoiana win set 2 against Moyuka Uchijima? | long=Yes short=No start=1792640700.0
+  US astatc-wta-marsto-moyuch-2026-10-20-sw1 | props | Will Mary Stoiana win set 1 against Moyuka Uchijima? | long=Yes short=No start=1792640700.0
+US: 80848 open markets, 59684 game/spread/total/prop slugs, 328 verified pairs
 
 age                    long side              short side  listed, outcome names     not on Polymarket US  copyable
-<3h                          100                       0                       1                     224       31%
-3-12h                        132                       1                       0                     287       32%
-12-48h                        12                       1                       0                     841        2%
-older                          0                       4                       0                    1597        0%
+<3h                          153                      81                       1                     297       44%
+3-12h                        101                       2                       0                    1327        7%
+12-48h                        14                       1                       0                    1357        1%
+older                          0                       4                       0                    2462        0%
 
 by league (all ages): copyable / total
-  nfl              0 / 385
-  nba             53 / 374
-  futures        151 / 356
-  atp              0 / 264
+  ucl              0 / 1157
+  nba            115 / 732
+  futures        207 / 511
+  nfl              3 / 430
+  atp              0 / 321
+  cfb              0 / 294
+  nhl             16 / 294
+  cs2              0 / 271
   lol             15 / 253
-  nhl             31 / 223
   dota2            0 / 206
-  cfb              0 / 180
-  ucl              0 / 155
-  mlb              0 / 152
-  fifwc            0 / 140
-  val              0 / 137
-  wta              0 / 125
-  bra2             0 / 64
-  por              0 / 61
-  arg              0 / 57
-  itf              0 / 40
-  mex              0 / 16
-  egy1             0 / 6
-  fl1              0 / 4
+  mlb              0 / 183
+  wta              0 / 150
+  val              0 / 145
+  fifwc            0 / 141
+  lal              0 / 101
+  epl              0 / 71
+  bra2             0 / 67
+  por              0 / 62
+  el1              0 / 61
+  arg              0 / 58
 
 recent trades not on Polymarket US (international slug | outcome | US lists for the same matchup):
-  105  nba-sac-lac-2026-10-21-spread-home-4pt5 | Kings | nba-sac-lac-2026-10-21, nba-sac-lac-2026-10-21-216pt5, nba-sac-lac-2026-10-21-219pt5, nba-sac-lac-2026-10-21-222pt5
-   73  nba-sac-lac-2026-10-21-spread-home-5pt5 | Kings | nba-sac-lac-2026-10-21, nba-sac-lac-2026-10-21-216pt5, nba-sac-lac-2026-10-21-219pt5, nba-sac-lac-2026-10-21-222pt5
-   72  nba-chi-tor-2026-10-21 | Bulls | nba-chi-tor-2026-10-21-3pm-calwil-gte1, nba-chi-tor-2026-10-21-3pm-calwil-gte2, nba-chi-tor-2026-10-21-3pm-calwil-gte3, nba-chi-tor-2026-10-21-3pm-immqui-gte3
-   45  nba-ind-nop-2026-10-21-spread-away-3pt5 | Pelicans | -
-   34  ucl-bay-ars-2026-10-21-bay | No | -
-   30   |  | -
+  117  nba-sac-lac-2026-10-21-spread-home-4pt5 | Kings | nba-sac-lac-2026-10-21, nba-sac-lac-2026-10-21-216pt5, nba-sac-lac-2026-10-21-219pt5, nba-sac-lac-2026-10-21-222pt5
+  102  ucl-ast-vf-2026-10-21-spread-home-2pt5 | Aston Villa FC | -
+   91  ucl-bay-ars-2026-10-21-ars | Yes | -
+   90  ucl-ast-vf-2026-10-21-spread-home-1pt5 | Aston Villa FC | -
+   78  nba-sac-lac-2026-10-21-spread-home-5pt5 | Kings | nba-sac-lac-2026-10-21, nba-sac-lac-2026-10-21-216pt5, nba-sac-lac-2026-10-21-219pt5, nba-sac-lac-2026-10-21-222pt5
+   75  ucl-bay-ars-2026-10-21-bay | Yes | -
+   68  nba-chi-tor-2026-10-21 | Bulls | -
+   62  ucl-com-mnu-2026-10-21-com | Yes | -
+   61  nba-cha-bkn-2026-10-21 | Nets | nba-cha-bkn-2026-10-21-3pm-bramil-gte3, nba-cha-bkn-2026-10-21-3pm-bramil-gte4, nba-cha-bkn-2026-10-21-3pm-bramil-gte5, nba-cha-bkn-2026-10-21-3pm-bramil-gte6
+   56  ucl-bay-ars-2026-10-21-bay | No | -
+   54  nba-ind-nop-2026-10-21-spread-away-3pt5 | Pelicans | -
+   47  ucl-bru-rcl-2026-10-21-bru | No | -
+   43  ucl-lil-gal-2026-10-21-gal | Yes | -
+   31   |  | -
+   31  nba-uta-mem-2026-10-21-spread-home-1pt5 | Grizzlies | nba-uta-mem-2026-10-21-3pm-acebai-gte1, nba-uta-mem-2026-10-21-3pm-acebai-gte2, nba-uta-mem-2026-10-21-3pm-acebai-gte3, nba-uta-mem-2026-10-21-3pm-cameboo-gte1
    25  will-philadelphia-76ers-win-the-2027-nba-finals | No | -
-   18  nba-cha-bkn-2026-10-21 | Nets | nba-cha-bkn-2026-10-21-3pm-bramil-gte3, nba-cha-bkn-2026-10-21-3pm-bramil-gte4, nba-cha-bkn-2026-10-21-3pm-bramil-gte5, nba-cha-bkn-2026-10-21-3pm-bramil-gte6
+   23  nba-gsw-lal-2026-10-21-spread-home-7pt5 | Warriors | -
+   22  ucl-ast-vf-2026-10-21-ast | Yes | -
+   22  will-the-milwaukee-brewers-win-the-2026-world-series | No | -
+   21  ucl-lil-gal-2026-10-21-total-6pt5 | Under | -
+   20  ucl-com-mnu-2026-10-21-com | No | -
+   17  nba-ind-nop-2026-10-21 | Pelicans | -
    17  itf-zeltin1-olmo1-2026-10-21 | Beatrise Zeltina | -
-    9  will-the-republicans-win-the-texas-senate-race-in-2026 | Yes | -
-    8  dota2-yes-bot1-2026-10-21-game1 | Yellow Submarine | -
-    7  wta-annli-sonmez-2026-10-21 | Ann Li | -
-    7  itf-hosogi1-inoue1-2026-10-21 | Hina Inoue | -
-    6  ucl-bru-rcl-2026-10-21-total-4pt5 | Under | -
-    6  will-the-democrats-win-the-texas-senate-race-in-2026 | No | -
-    5  nba-atl-orl-2026-10-21 | Hawks | -
-    5  itf-palico1-rapolu1-2026-10-21 | Malaika Rapolu | -
-    4  nhl-fla-ott-2026-10-21 | Panthers | nhl-fla-ott-2026-10-21-ast-antlun-gte1, nhl-fla-ott-2026-10-21-ast-antlun-gte2, nhl-fla-ott-2026-10-21-ast-bratka-gte1, nhl-fla-ott-2026-10-21-ast-bratka-gte2
-    4  ucl-com-mnu-2026-10-21-total-2pt5 | Under | -
-    4  dota2-salami-huliga-2026-10-21-game1 | salamit | -
-    3  itf-palico1-rapolu1-2026-10-21 | Barbora Palicova | -
-    3  atp-goffin-bertola-2026-10-20 | Remy Bertola | -
-    3  2026-balance-of-power-d-senate-r-house-692 | Yes | -
-    2  dota2-dawnbu-z10-2026-10-21 | Zero Tenacity | -
-    2  itf-zeltin1-olmo1-2026-10-21 | Ane Mintegi Del Olmo | -
+   16  ucl-bay-ars-2026-10-21-btts | Yes | -
+   15  nba-uta-mem-2026-10-21 | Jazz | nba-uta-mem-2026-10-21-3pm-acebai-gte1, nba-uta-mem-2026-10-21-3pm-acebai-gte2, nba-uta-mem-2026-10-21-3pm-acebai-gte3, nba-uta-mem-2026-10-21-3pm-cameboo-gte1

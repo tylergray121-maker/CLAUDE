@@ -1,23 +1,18 @@
 {
- "ts": 1792637201.9190018,
+ "ts": 1792637990.9059486,
  "mode": "paper",
- "pairs": 18,
- "equity": 199.79,
- "cash": 195.16,
- "positions": {
-  "aec-nhl-nyr-tor-2026-10-22": {
-   "qty": 9,
-   "cost": 4.84
-  }
- },
+ "pairs": 20,
+ "equity": 200.0,
+ "cash": 200.0,
+ "positions": {},
  "open_orders": 0,
- "fills": 1,
- "fees_paid": 0.16,
+ "fills": 0,
+ "fees_paid": 0.0,
  "rebates": 0.0,
  "halted": "",
  "scan": {
-  "observations": 576,
-  "buy_opps": 0,
-  "sell_opps": 0
+  "observations": 252,
+  "buy_opps": 1,
+  "sell_opps": 1
  }
 }

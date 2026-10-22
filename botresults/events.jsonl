@@ -5767,3 +5767,15 @@
 {"ts": 1792637103.441, "kind": "copy_signal", "slug": "aec-nhl-nyr-tor-2026-10-22", "side": "BUY", "leader": "PEYZ-BIGGEST-FAN", "price": 0.51, "leader_usd": 10.2, "market": "Rangers vs. Maple Leafs"}
 {"ts": 1792637107.226, "kind": "order", "slug": "aec-nhl-nyr-tor-2026-10-22", "side": "BUY", "price": 0.52, "qty": 9, "post_only": false, "fair": null, "strategy": "copytop", "id": null}
 {"ts": 1792637201.919, "kind": "cancel_all", "reason": "shutdown"}
+{"ts": 1792637853.861, "kind": "leader_status", "leader": "HVAB", "wallet": "0x8546a601f7c7cc3dae7141f20b0e09e42bbf35b8", "status": "cooling", "was": "copying", "why": "\u2212$41,003 on Polymarket this week"}
+{"ts": 1792637853.862, "kind": "leader_status", "leader": "0010001000001100", "wallet": "0x96020c20842a5175e3e0aeef7843d1dbb7bc4d02", "status": "cooling", "was": "copying", "why": "\u2212$5,949 on Polymarket this week"}
+{"ts": 1792637853.862, "kind": "leader_status", "leader": "totoro3miyazaki", "wallet": "0x0f6f76ced62a911bccef92f50faaff143854d977", "status": "benched", "was": "copying", "why": "losing on Polymarket: \u2212$1,468,004 this week, \u2212$2,478,581 this month"}
+{"ts": 1792637853.862, "kind": "leader_status", "leader": "1l2ihj34li12u34", "wallet": "0xb52e8b3afd9f0f0d502a5a76494b42816d67285c", "status": "benched", "was": "copying", "why": "losing on Polymarket: \u2212$108,110 this week, \u2212$308,753 this month"}
+{"ts": 1792637853.862, "kind": "leader_status", "leader": "juice-fruit", "wallet": "0x5fdd66ffd0325d4e8d1d86fbec50caa31770a747", "status": "cooling", "was": "copying", "why": "\u2212$40,418 on Polymarket this week"}
+{"ts": 1792637853.862, "kind": "leader_status", "leader": "plonker2026", "wallet": "0x0a39b3b29ab3b7dd753aa96fde4ecab3f2dbb0b9", "status": "benched", "was": "copying", "why": "losing on Polymarket: \u2212$67,592 this week, \u2212$297,300 this month"}
+{"ts": 1792637853.862, "kind": "leader_status", "leader": "monkeymashingkeyboard", "wallet": "0x684baa57c338c2549aec0aa3f034f695d72a8409", "status": "cooling", "was": "copying", "why": "\u2212$211,594 on Polymarket this week"}
+{"ts": 1792637933.779, "kind": "copy_unmapped", "leader": "primm", "market": "New Mexico State vs. Sam Houston: O/U 57.5", "intl_slug": "cfb-nmxst-smho-2026-10-21-total-57pt5", "outcome": "Under"}
+{"ts": 1792637973.779, "kind": "copy_unmapped", "leader": "ColdBlooded", "market": "Games Total: O/U 4.5", "intl_slug": "lol-gal-sly-2026-10-22-total-games-4pt5", "outcome": "Under"}
+{"ts": 1792637977.887, "kind": "opportunity", "slug": "aec-nba-sac-lac-2026-10-21", "side": "SELL", "edge": 0.031, "us_bid": 0.28, "bid_qty": 30265.36, "fair": 0.235, "fair_spread": 0.009999999999999981, "tradable": false, "note": "in-play"}
+{"ts": 1792637977.888, "kind": "opportunity", "slug": "aec-nba-sac-lac-2026-10-21:short", "side": "BUY", "edge": 0.031, "us_ask": 0.72, "ask_qty": 30265.36, "fair": 0.765, "fair_spread": 0.010000000000000009, "tradable": false, "note": "in-play"}
+{"ts": 1792637990.906, "kind": "cancel_all", "reason": "shutdown"}
