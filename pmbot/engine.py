@@ -115,6 +115,7 @@ class Engine:
         self.labels: dict[str, str] = {}   # slug -> readable market name
         self.ends: dict[str, float] = {}   # slug -> scheduled close, for held markets
         self.states: dict[str, str] = {}   # slug -> last US book state
+        self._vanished_at: dict[str, tuple] = {}   # slug -> (when it vanished, mid then)
         self.equity_hist: list[list] = []  # [ts, equity, cash]
         self.started = time.time()
         self.start_cash = risk.cfg.bankroll
@@ -496,6 +497,7 @@ class Engine:
                       post_only=w.post_only, fair=v.fair, strategy=w.tag, id=oid)
 
     CLOSED_STATES = {"MARKET_STATE_CLOSED", "MARKET_STATE_EXPIRED", "MARKET_STATE_TERMINATED"}
+    HAND_SALE_WAIT_S = 600.0
 
     def _settle_closed(self, now: float) -> None:
         """Pay out paper positions in markets that have finished.
@@ -524,8 +526,15 @@ class Engine:
                     self.broker.settle(slug, 1.0 if mark >= 0.95 else 0.0, tag)
                     self._log("settle", slug=slug, value=round(mark), early=True)
                 else:
-                    self.broker.sold_outside(slug, mark, tag)
-                    self._log("sold_outside", slug=slug, price=mark)
+                    # A losing side can vanish a few seconds before its market
+                    # shows closed; give it time to close before calling it a
+                    # hand sale (at the mid when it vanished).
+                    first, mark0 = self._vanished_at.setdefault(slug, (now, mark))
+                    if now - first < self.HAND_SALE_WAIT_S:
+                        continue
+                    self.broker.sold_outside(slug, mark0, tag)
+                    self._log("sold_outside", slug=slug, price=mark0)
+                self._vanished_at.pop(slug, None)
                 self.owner.pop(slug, None)
                 continue
             if not closed:
@@ -536,6 +545,7 @@ class Engine:
             tag = self.owner.get(slug) or next(
                 (f.tag for f in reversed(self.broker.fills) if f.slug == slug and f.tag), "")
             self.broker.settle(slug, value, tag)
+            self._vanished_at.pop(slug, None)
             if live:
                 self.owner.pop(slug, None)
             self._log("settle", slug=slug, value=value)

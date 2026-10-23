@@ -1583,12 +1583,35 @@ class LiveBrokerTest(unittest.TestCase):
         self.b.sync()
         self.pos = {}                                  # sold in the app; market still open
         e.cycle()
+        self.assertEqual(list(self.b.vanished), ["brewers"])   # waits for the market first
+        first, mid = e._vanished_at["brewers"]
+        e._vanished_at["brewers"] = (first - e.HAND_SALE_WAIT_S, mid)
+        v.us_bid, v.us_ask = 0.30, 0.32                # the price moves on afterwards
+        e.cycle()
         f = self.b.fills[-1]
-        self.assertEqual((f.slug, f.side, f.qty), ("brewers", "SELL", 8))
+        self.assertEqual((f.slug, f.side, f.qty, f.price), ("brewers", "SELL", 8, mid))
         self.assertEqual(self.b.vanished, {})
         v.state, v.settlement = "MARKET_STATE_CLOSED", 1.0
         e.cycle()                                      # no payout booked later
         self.assertFalse(any(x.side == "SETTLE" for x in self.b.fills))
+        e.shutdown()
+
+    def test_a_loser_gone_just_before_its_market_closes_is_a_settlement(self):
+        d = tempfile.mkdtemp()
+        e = Engine(EngineConfig(mode="live", out_dir=d, minutes=0), StrategyConfig(),
+                   RiskManager(RiskConfig(kill_file=os.path.join(d, "STOP"))), self.b, strategies=[])
+        e.client = v = FakeVenues()
+        v.us_bid, v.us_ask = 0.05, 0.06                # the draw at full time, not yet closed
+        e.refresh_pairs()
+        self.b.sync()
+        self.pos = {}                                  # paid out at $0
+        e.cycle()
+        self.assertFalse(any(x.side in ("SELL", "SETTLE") for x in self.b.fills))
+        v.state, v.settlement = "MARKET_STATE_CLOSED", 0.0
+        e.cycle()
+        f = self.b.fills[-1]
+        self.assertEqual((f.slug, f.side, f.qty, f.price, f.note), ("brewers", "SETTLE", 8, 0.0, ""))
+        self.assertEqual((self.b.vanished, e._vanished_at), ({}, {}))
         e.shutdown()
 
     def test_a_payout_before_the_market_closes_is_a_settlement(self):
