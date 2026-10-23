@@ -1,23 +1,23 @@
 {
  "counts": {
-  "props/sports": 27152,
-  "totals/sports": 15180,
-  "futures/sports": 11900,
-  "spreads/sports": 10996,
-  "futures/politics": 6785,
-  "drawable_outcome/sports": 2341,
-  "moneyline/sports": 1692,
+  "props/sports": 26584,
+  "totals/sports": 14567,
+  "futures/sports": 11762,
+  "spreads/sports": 10619,
+  "futures/politics": 6788,
+  "drawable_outcome/sports": 2288,
   "futures/culture": 1681,
-  "/crypto": 1216,
-  "futures/macro": 224,
+  "moneyline/sports": 1671,
+  "/crypto": 1212,
+  "futures/macro": 207,
   "futures/climate": 119,
   "futures/technology": 66,
   "futures/finance": 65,
   "futures/crypto": 59,
   "futures/science": 11,
   "futures/geopolitics": 10,
-  "election/politics": 4,
-  "/finance": 4
+  "/finance": 6,
+  "election/politics": 4
  },
  "samples": {
   "moneyline/sports": [
@@ -27,7 +27,7 @@
     "title": "",
     "game_start": 1793502000.0,
     "end": 1794715200.0,
-    "bid": 0.73,
+    "bid": 0.71,
     "ask": 0.74
    },
    {
@@ -38,33 +38,6 @@
     "end": 1792850400.0,
     "bid": null,
     "ask": null
-   },
-   {
-    "slug": "aec-nfl-ne-chi-2026-10-22",
-    "question": "Who will win in the upcoming football event New England Patriots vs Chicago Bears scheduled for October 23, 2026 at 12:15 AM UTC?",
-    "title": "",
-    "game_start": 1792714500.0,
-    "end": 1793942100.0,
-    "bid": 0.405,
-    "ask": 0.4075
-   },
-   {
-    "slug": "aec-nba-cle-phi-2026-10-22",
-    "question": "Who will win in the upcoming basketball event CLE Cavaliers vs PHI 76ers scheduled for October 22, 2026 at 11:00 PM UTC?",
-    "title": "",
-    "game_start": 1792710000.0,
-    "end": 1793919600.0,
-    "bid": 0.43,
-    "ask": 0.44
-   },
-   {
-    "slug": "aec-nba-den-okc-2026-10-22",
-    "question": "Who will win in the upcoming basketball event DEN Nuggets vs OKC Thunder scheduled for October 23, 2026 at 1:30 AM UTC?",
-    "title": "",
-    "game_start": 1792719000.0,
-    "end": 1793928600.0,
-    "bid": 0.26,
-    "ask": 0.27
    },
    {
     "slug": "aec-cznbl-pis-ost-2026-10-11",
@@ -99,8 +72,8 @@
     "title": "",
     "game_start": 1792796400.0,
     "end": 1794006000.0,
-    "bid": 0.67,
-    "ask": 0.68
+    "bid": 0.68,
+    "ask": 0.69
    },
    {
     "slug": "aec-nba-ny-bos-2026-10-23",
@@ -144,8 +117,8 @@
     "title": "",
     "game_start": 1792805400.0,
     "end": 1794015000.0,
-    "bid": 0.44,
-    "ask": 0.45
+    "bid": 0.45,
+    "ask": 0.46
    },
    {
     "slug": "aec-nba-hou-sa-2026-10-23",
@@ -155,6 +128,33 @@
     "end": 1794015000.0,
     "bid": 0.34,
     "ask": 0.35
+   },
+   {
+    "slug": "aec-nba-por-sac-2026-10-23",
+    "question": "Who will win in the upcoming basketball event POR Trail Blazers vs SAC Kings scheduled for October 24, 2026 at 2:00 AM UTC?",
+    "title": "",
+    "game_start": 1792807200.0,
+    "end": 1794016800.0,
+    "bid": 0.74,
+    "ask": 0.75
+   },
+   {
+    "slug": "aec-nba-mem-gs-2026-10-23",
+    "question": "Who will win in the upcoming basketball event MEM Grizzlies vs GS Warriors scheduled for October 24, 2026 at 2:00 AM UTC?",
+    "title": "",
+    "game_start": 1792807200.0,
+    "end": 1794016800.0,
+    "bid": 0.41,
+    "ask": 0.42
+   },
+   {
+    "slug": "aec-nba-lac-lal-2026-10-23",
+    "question": "Who will win in the upcoming basketball event LA Clippers vs LA Lakers scheduled for October 24, 2026 at 2:00 AM UTC?",
+    "title": "",
+    "game_start": 1792807200.0,
+    "end": 1794016800.0,
+    "bid": 0.22,
+    "ask": 0.23
    }
   ],
   "drawable_outcome/sports": [
@@ -191,35 +191,8 @@
     "title": "",
     "game_start": 1791633600.0,
     "end": 1792857600.0,
-    "bid": 0.3,
+    "bid": 0.17,
     "ask": 0.31
-   },
-   {
-    "slug": "atc-lco-atl-adp-2026-10-10-atl",
-    "question": "Will Atletico Nacional win against AD Pasto in the Liga Colombia match scheduled for Oct 10, 2026?",
-    "title": "",
-    "game_start": 1792717200.0,
-    "end": 1792905300.0,
-    "bid": 0.77,
-    "ask": 0.79
-   },
-   {
-    "slug": "atc-lco-atl-adp-2026-10-10-draw",
-    "question": "Will the Liga Colombia match Atletico Nacional vs AD Pasto scheduled for Oct 10, 2026 end in a draw?",
-    "title": "",
-    "game_start": 1792717200.0,
-    "end": 1792905300.0,
-    "bid": 0.15,
-    "ask": 0.17
-   },
-   {
-    "slug": "atc-lco-atl-adp-2026-10-10-adp",
-    "question": "Will AD Pasto win against Atletico Nacional in the Liga Colombia match scheduled for Oct 10, 2026?",
-    "title": "",
-    "game_start": 1792717200.0,
-    "end": 1792905300.0,
-    "bid": 0.06,
-    "ask": 0.07
    },
    {
     "slug": "atc-tff1-umr-bol-2026-10-14-umr",
@@ -290,6 +263,33 @@
     "title": "",
     "game_start": 1791741600.0,
     "end": 1792965600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "atc-ncaaws-wfa-bke-2026-10-11-bke",
+    "question": "Will Bellarmine Knights win against West Florida Argonauts in the NCAA Women's Soccer match scheduled for Oct 11, 2026?",
+    "title": "",
+    "game_start": 1791741600.0,
+    "end": 1792965600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "atc-ncaams-wfa-car-2026-10-11-wfa",
+    "question": "Will West Florida Argonauts win against Central Arkansas Bears in the NCAA Men's Soccer match scheduled for Oct 11, 2026?",
+    "title": "",
+    "game_start": 1791752400.0,
+    "end": 1792976400.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "atc-ncaams-wfa-car-2026-10-11-draw",
+    "question": "Will the NCAA Men's Soccer match West Florida Argonauts vs Central Arkansas Bears scheduled for Oct 11, 2026 end in a draw?",
+    "title": "",
+    "game_start": 1791752400.0,
+    "end": 1792976400.0,
     "bid": null,
     "ask": null
    }
@@ -547,7 +547,7 @@
     "game_start": 1791633600.0,
     "end": 1792857600.0,
     "bid": null,
-    "ask": 0.02
+    "ask": null
    },
    {
     "slug": "asc-lal-ray-ath-2026-10-10-fh-neg-1pt5",
@@ -712,8 +712,8 @@
     "title": "Reaches $90,000",
     "game_start": 1790827200.0,
     "end": 1793507400.0,
-    "bid": 0.05,
-    "ask": 0.09
+    "bid": 0.07,
+    "ask": 0.13
    },
    {
     "slug": "cpc-btc-hit-h-m-2026-10-92500",
@@ -731,7 +731,7 @@
     "game_start": 1790827200.0,
     "end": 1793507400.0,
     "bid": null,
-    "ask": null
+    "ask": 0.01
    },
    {
     "slug": "cpc-btc-hit-h-m-2026-10-97500",
@@ -802,8 +802,8 @@
     "title": "Dips to $70,000",
     "game_start": 1790827200.0,
     "end": 1793507400.0,
-    "bid": 0.01,
-    "ask": 0.07
+    "bid": null,
+    "ask": null
    },
    {
     "slug": "cpc-btc-hit-l-m-2026-10-72500",
@@ -811,8 +811,8 @@
     "title": "Dips to $72,500",
     "game_start": 1790827200.0,
     "end": 1793507400.0,
-    "bid": 0.04,
-    "ask": 0.12
+    "bid": 0.03,
+    "ask": 0.1
    },
    {
     "slug": "cpc-btc-hit-l-m-2026-10-75000",
@@ -820,8 +820,8 @@
     "title": "Dips to $75,000",
     "game_start": 1790827200.0,
     "end": 1793507400.0,
-    "bid": 0.13,
-    "ask": 0.21
+    "bid": 0.09,
+    "ask": 0.18
    },
    {
     "slug": "cpc-btc-hit-l-m-2026-10-77500",
@@ -829,8 +829,8 @@
     "title": "Dips to $77,500",
     "game_start": 1790827200.0,
     "end": 1793507400.0,
-    "bid": 0.34,
-    "ask": 0.42
+    "bid": 0.31,
+    "ask": 0.35
    },
    {
     "slug": "cpc-btc-hit-l-m-2026-10-62500",
@@ -853,13 +853,13 @@
     "ask": null
    },
    {
-    "slug": "cpagsp-silver-updown-15m-2026-10-22-2245z",
-    "question": "Silver Up or Down 15m",
-    "title": "Silver Up or Down 15m",
-    "game_start": 1792709100.0,
-    "end": 1792711800.0,
-    "bid": null,
-    "ask": null
+    "slug": "cpagsp-silver-updown-1h-2026-10-23-0400z",
+    "question": "Silver Up or Down Hourly",
+    "title": "Silver Up or Down Hourly",
+    "game_start": 1792728000.0,
+    "end": 1792733400.0,
+    "bid": 0.05,
+    "ask": 0.16
    },
    {
     "slug": "cpausp-gold-updown-1d-2026-10-22-2215z",
@@ -871,13 +871,31 @@
     "ask": null
    },
    {
-    "slug": "cpausp-gold-updown-15m-2026-10-22-2245z",
+    "slug": "cpagsp-silver-updown-15m-2026-10-23-0415z",
+    "question": "Silver Up or Down 15m",
+    "title": "Silver Up or Down 15m",
+    "game_start": 1792728900.0,
+    "end": 1792731600.0,
+    "bid": 0.01,
+    "ask": 0.09
+   },
+   {
+    "slug": "cpausp-gold-updown-15m-2026-10-23-0415z",
     "question": "Gold Up or Down 15m",
     "title": "Gold Up or Down 15m",
-    "game_start": 1792709100.0,
-    "end": 1792711800.0,
-    "bid": null,
-    "ask": null
+    "game_start": 1792728900.0,
+    "end": 1792731600.0,
+    "bid": 0.01,
+    "ask": 0.09
+   },
+   {
+    "slug": "cpausp-gold-updown-1h-2026-10-23-0400z",
+    "question": "Gold Up or Down Hourly",
+    "title": "Gold Up or Down Hourly",
+    "game_start": 1792728000.0,
+    "end": 1792733400.0,
+    "bid": 0.03,
+    "ask": 0.12
    }
   ]
  }

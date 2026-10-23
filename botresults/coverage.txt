@@ -3,84 +3,84 @@ profile 'Tiger105': ah-cop-tiger105 0x8d6064a7f8b67988a4073ac1b051356fc8cebd76
 profile 'Tiger105': tiger105050 0x185031bb4a1763496d706e0c07339a690e00b57f
 
 US markets in ['atp', 'itf', 'wta'] (not futures): 760
-  US aec-atp-jjwol-sanjon-2026-10-22 | moneyline | Who will win in the upcoming atp event Jeffrey John Wolf vs Sander Jon | long=J.J. Wolf short=Sander Jong start=1792704000.0
-  US asc-atp-jjwol-sanjon-2026-10-22-gs-neg-1pt5 | spreads | Will the Jeffrey John Wolf cover -1.5 vs the Sander Jong in Jeffrey Jo | long=-1.50 short=+1.50 start=1792704000.0
-  US asc-atp-jjwol-sanjon-2026-10-22-gs-pos-1pt5 | spreads | Will the Jeffrey John Wolf cover 1.5 vs the Sander Jong in Jeffrey Joh | long=+1.50 short=-1.50 start=1792704000.0
-  US asc-atp-jjwol-sanjon-2026-10-22-gs-neg-4pt5 | spreads | Will the Jeffrey John Wolf cover -4.5 vs the Sander Jong in Jeffrey Jo | long=-4.50 short=+4.50 start=1792704000.0
-  US asc-atp-jjwol-sanjon-2026-10-22-gs-pos-4pt5 | spreads | Will the Jeffrey John Wolf cover 4.5 vs the Sander Jong in Jeffrey Joh | long=+4.50 short=-4.50 start=1792704000.0
-  US asc-atp-jjwol-sanjon-2026-10-22-gs-neg-7pt5 | spreads | Will the Jeffrey John Wolf cover -7.5 vs the Sander Jong in Jeffrey Jo | long=-7.50 short=+7.50 start=1792704000.0
-  US asc-atp-jjwol-sanjon-2026-10-22-gs-pos-7pt5 | spreads | Will the Jeffrey John Wolf cover 7.5 vs the Sander Jong in Jeffrey Joh | long=+7.50 short=-7.50 start=1792704000.0
-  US asc-atp-jjwol-sanjon-2026-10-22-ss-neg-1pt5 | spreads | Will the Jeffrey John Wolf cover -1.5 vs the Sander Jong in Jeffrey Jo | long=-1.50 short=+1.50 start=1792704000.0
-  US asc-atp-jjwol-sanjon-2026-10-22-ss-pos-1pt5 | spreads | Will the Jeffrey John Wolf cover 1.5 vs the Sander Jong in Jeffrey Joh | long=+1.50 short=-1.50 start=1792704000.0
-  US tsc-atp-jjwol-sanjon-2026-10-22-tg-17pt5 | totals | Will the total in Jeffrey John Wolf vs. Sander Jong be more than 17.5? | long=Over short=Under start=1792704000.0
-  US tsc-atp-jjwol-sanjon-2026-10-22-tg-22pt5 | totals | Will the total in Jeffrey John Wolf vs. Sander Jong be more than 22.5? | long=Over short=Under start=1792704000.0
-  US tsc-atp-jjwol-sanjon-2026-10-22-tg-27pt5 | totals | Will the total in Jeffrey John Wolf vs. Sander Jong be more than 27.5? | long=Over short=Under start=1792704000.0
-  US tsc-atp-jjwol-sanjon-2026-10-22-st-2pt5 | totals | Will the total in Jeffrey John Wolf vs. Sander Jong be more than 2.5? | long=Over short=Under start=1792704000.0
-  US astatc-atp-jjwol-sanjon-2026-10-22-es-2-0 | props | Wolf wins 2-0 | long=Yes short=No start=1792704000.0
-  US astatc-atp-jjwol-sanjon-2026-10-22-es-2-1 | props | Wolf wins 2-1 | long=Yes short=No start=1792704000.0
-  US astatc-atp-jjwol-sanjon-2026-10-22-es-1-2 | props | Jong wins 2-1 | long=Yes short=No start=1792704000.0
-  US astatc-atp-jjwol-sanjon-2026-10-22-es-0-2 | props | Jong wins 2-0 | long=Yes short=No start=1792704000.0
-  US astatc-atp-jjwol-sanjon-2026-10-22-sw1 | props | Will Jeffrey John Wolf win set 1 against Sander Jong? | long=Yes short=No start=1792704000.0
-  US astatc-atp-jjwol-sanjon-2026-10-22-sw2 | props | Will Jeffrey John Wolf win set 2 against Sander Jong? | long=Yes short=No start=1792704000.0
-  US aec-wta-talgib-ashkru-2026-10-22 | moneyline | Who will win in the upcoming wta event Talia Gibson vs Ashlyn Krueger  | long=Talia Gibson short=Ashlyn Krueger start=1792726800.0
-  US aec-atp-migtob-nicmej-2026-10-22 | moneyline | Who will win in the upcoming atp event Miguel Tobon vs Nicolas Mejia s | long=Miguel Tobon short=Nicolas Mejia start=1792708200.0
-  US asc-atp-migtob-nicmej-2026-10-22-gs-neg-1pt5 | spreads | Will the Miguel Tobon cover -1.5 vs the Nicolas Mejia in Miguel Tobon  | long=-1.50 short=+1.50 start=1792708200.0
-  US asc-atp-migtob-nicmej-2026-10-22-gs-pos-1pt5 | spreads | Will the Miguel Tobon cover 1.5 vs the Nicolas Mejia in Miguel Tobon v | long=+1.50 short=-1.50 start=1792708200.0
-  US asc-atp-migtob-nicmej-2026-10-22-gs-neg-4pt5 | spreads | Will the Miguel Tobon cover -4.5 vs the Nicolas Mejia in Miguel Tobon  | long=-4.50 short=+4.50 start=1792708200.0
-  US asc-atp-migtob-nicmej-2026-10-22-gs-pos-4pt5 | spreads | Will the Miguel Tobon cover 4.5 vs the Nicolas Mejia in Miguel Tobon v | long=+4.50 short=-4.50 start=1792708200.0
-US: 79498 open markets, 58574 game/spread/total/prop slugs, 576 verified pairs
+  US aec-wta-talgib-ashkru-2026-10-22 | moneyline | Who will win in the upcoming wta event Talia Gibson vs Ashlyn Krueger  | long=Talia Gibson short=Ashlyn Krueger start=1792729800.0
+  US aec-atp-colwon-jayfri-2026-10-22 | moneyline | Who will win in the upcoming atp event Coleman Wong vs Jay Friend sche | long=Coleman Wong short=Jay Dylan Friend start=1792728000.0
+  US aec-atp-yizho-andila-2026-10-23 | moneyline | Who will win in the upcoming atp event Yi Zhou vs Andre Ilagan schedul | long=Yi Zhou short=Andre Ilagan start=1792732200.0
+  US aec-atp-nikbas-adrman-2026-10-23 | moneyline | Who will win in the upcoming atp event Nikoloz Basilashvili vs Adrian  | long=Nikoloz Basilashvili short=Adrian Mannarino start=1792737000.0
+  US aec-wta-sarbej-marbou-2026-10-23 | moneyline | Who will win in the upcoming wta event Sara Bejlek vs Marie Bouzkova s | long=Sara Bejlek short=Marie Bouzkova start=1792731600.0
+  US aec-wta-leyfer-ekaale-2026-10-23 | moneyline | Who will win in the upcoming wta event Leylah Fernandez vs Ekaterina A | long=Leylah Fernandez short=Ekaterina Alexandrova start=1792735800.0
+  US aec-atp-elmmoe-henroc-2026-10-23 | moneyline | Who will win in the upcoming atp event Elmer Moller vs Henrique Rocha  | long=Elmer Moeller short=Henrique Rocha start=1792761000.0
+  US asc-atp-elmmoe-henroc-2026-10-23-gs-neg-1pt5 | spreads | Will the Elmer Moller cover -1.5 vs the Henrique Rocha in Elmer Moller | long=-1.50 short=+1.50 start=1792761000.0
+  US asc-atp-elmmoe-henroc-2026-10-23-gs-pos-1pt5 | spreads | Will the Elmer Moller cover 1.5 vs the Henrique Rocha in Elmer Moller  | long=+1.50 short=-1.50 start=1792761000.0
+  US asc-atp-elmmoe-henroc-2026-10-23-gs-neg-4pt5 | spreads | Will the Elmer Moller cover -4.5 vs the Henrique Rocha in Elmer Moller | long=-4.50 short=+4.50 start=1792761000.0
+  US asc-atp-elmmoe-henroc-2026-10-23-gs-pos-4pt5 | spreads | Will the Elmer Moller cover 4.5 vs the Henrique Rocha in Elmer Moller  | long=+4.50 short=-4.50 start=1792761000.0
+  US asc-atp-elmmoe-henroc-2026-10-23-gs-neg-7pt5 | spreads | Will the Elmer Moller cover -7.5 vs the Henrique Rocha in Elmer Moller | long=-7.50 short=+7.50 start=1792761000.0
+  US asc-atp-elmmoe-henroc-2026-10-23-gs-pos-7pt5 | spreads | Will the Elmer Moller cover 7.5 vs the Henrique Rocha in Elmer Moller  | long=+7.50 short=-7.50 start=1792761000.0
+  US asc-atp-elmmoe-henroc-2026-10-23-ss-neg-1pt5 | spreads | Will the Elmer Moller cover -1.5 vs the Henrique Rocha in Elmer Moller | long=-1.50 short=+1.50 start=1792761000.0
+  US asc-atp-elmmoe-henroc-2026-10-23-ss-pos-1pt5 | spreads | Will the Elmer Moller cover 1.5 vs the Henrique Rocha in Elmer Moller  | long=+1.50 short=-1.50 start=1792761000.0
+  US tsc-atp-elmmoe-henroc-2026-10-23-tg-17pt5 | totals | Will the total in Elmer Moller vs. Henrique Rocha be more than 17.5? | long=Over short=Under start=1792761000.0
+  US tsc-atp-elmmoe-henroc-2026-10-23-tg-22pt5 | totals | Will the total in Elmer Moller vs. Henrique Rocha be more than 22.5? | long=Over short=Under start=1792761000.0
+  US tsc-atp-elmmoe-henroc-2026-10-23-tg-27pt5 | totals | Will the total in Elmer Moller vs. Henrique Rocha be more than 27.5? | long=Over short=Under start=1792761000.0
+  US tsc-atp-elmmoe-henroc-2026-10-23-st-2pt5 | totals | Will the total in Elmer Moller vs. Henrique Rocha be more than 2.5? | long=Over short=Under start=1792761000.0
+  US astatc-atp-elmmoe-henroc-2026-10-23-es-2-0 | props | Moller wins 2-0 | long=Yes short=No start=1792761000.0
+  US astatc-atp-elmmoe-henroc-2026-10-23-es-2-1 | props | Moller wins 2-1 | long=Yes short=No start=1792761000.0
+  US astatc-atp-elmmoe-henroc-2026-10-23-es-1-2 | props | Rocha wins 2-1 | long=Yes short=No start=1792761000.0
+  US astatc-atp-elmmoe-henroc-2026-10-23-es-0-2 | props | Rocha wins 2-0 | long=Yes short=No start=1792761000.0
+  US astatc-atp-elmmoe-henroc-2026-10-23-sw1 | props | Will Elmer Moller win set 1 against Henrique Rocha? | long=Yes short=No start=1792761000.0
+  US astatc-atp-elmmoe-henroc-2026-10-23-sw2 | props | Will Elmer Moller win set 2 against Henrique Rocha? | long=Yes short=No start=1792761000.0
+US: 77785 open markets, 57013 game/spread/total/prop slugs, 725 verified pairs
 
 age                    long side              short side  listed, outcome names     not on Polymarket US  copyable
-<3h                          251                     239                       0                     259       65%
-3-12h                         64                      43                       0                    1417        7%
-12-48h                       184                       1                       0                     919       17%
-older                          0                       0                       0                    2623        0%
+<3h                           31                     195                       0                     262       46%
+3-12h                         11                       5                       0                    1561        1%
+12-48h                       109                       3                       0                    1259        8%
+older                          1                       0                       0                    2563        0%
 
 by league (all ages): copyable / total
-  uel              0 / 845
-  nba            469 / 690
-  nfl              0 / 537
-  futures        124 / 452
-  atp              7 / 436
-  ucl              0 / 397
-  cs2              0 / 384
-  cfb              0 / 325
-  dota2            0 / 288
-  nhl            173 / 224
+  uel              0 / 844
+  nba            200 / 663
+  futures         99 / 493
+  nfl              0 / 480
+  cfb              0 / 395
+  ucl              0 / 381
+  cs2              0 / 378
+  atp              7 / 294
+  dota2            0 / 286
+  nhl             22 / 245
+  itf              0 / 227
   val              0 / 145
   fifwc            0 / 140
   lol              0 / 121
-  mlb              0 / 117
-  itf              0 / 106
-  lal              0 / 98
+  mlb              1 / 101
+  lal              0 / 97
   col              0 / 90
-  epl              0 / 72
-  bra2             0 / 68
+  epl              0 / 71
+  bra2             0 / 67
   por              0 / 62
 
 recent trades not on Polymarket US (international slug | outcome | US lists for the same matchup):
+  166  nba-cle-phi-2026-10-22 | Cavaliers | -
   122  uel-bou-mil1-2026-10-22-bou | Yes | -
-  117  atp-herbert-fritz-2026-10-22 | Pierre-Hugues Herbert | -
+   96  will-the-democratic-party-control-the-house-after-the-2026-midterm-elections | No | -
    96  uel-juv-ren1-2026-10-22-juv | No | -
    95  uel-bou-mil1-2026-10-22-total-2pt5 | Under | -
    83  uel-bou-mil1-2026-10-22-spread-home-1pt5 | AFC Bournemouth | -
-   77  uel-lep-sun-2026-10-22-sun | No | -
    75  uel-bou-mil1-2026-10-22-bou | No | -
-   60  nfl-ne-chi-2026-10-23-spread-home-2pt5 | Bears | -
-   47  atp-dzumhur-bergs-2026-10-22 | Damir Dzumhur | -
-   39  itf-frodin1-brengl1-2026-10-22 | Madison Brengle | -
-   37  atp-zarate-comesan-2026-10-22 | Carlos Maria Zarate | -
-   34  lol-gal-sly-2026-10-22-game3 | Galions | -
-   32  atp-vachero-assche-2026-10-22 | Valentin Vacherot | -
-   31  atp-goffin-michels-2026-10-22 | David Goffin | -
+   61  itf-bains1-sato2-2026-10-22 | Hikaru Sato | -
+   59  itf-arsene1-sebov1-2026-10-22 | Ariana Arseneault | -
+   48  nhl-ana-nj-2026-10-22 | Devils | -
+   42  nba-den-okc-2026-10-22 | Thunder | nba-den-okc-2026-10-22-3pm-aargor-gte2, nba-den-okc-2026-10-22-3pm-aargor-gte3, nba-den-okc-2026-10-22-3pm-ajamit-gte1, nba-den-okc-2026-10-22-3pm-ajamit-gte2
+   40  uel-lep-sun-2026-10-22-sun | No | -
+   37  nfl-ne-chi-2026-10-23 | Patriots | -
    29  uel-bou-mil1-2026-10-22-mil1 | No | -
-   23  uel-lep-sun-2026-10-22-lep | Yes | -
+   25  nfl-ne-chi-2026-10-23-total-50pt5 | Over | -
+   23  nhl-nyr-tor-2026-10-22 | Rangers | -
+   22  itf-saito1-bajral1-2026-10-22 | Sara Saito | -
+   21  cfb-ecar-mphs-2026-10-22 | East Carolina | cfb-ecar-mphs-2026-10-22-2pc-0pt5, cfb-ecar-mphs-2026-10-22-4dc-0pt5, cfb-ecar-mphs-2026-10-22-dstd-0pt5, cfb-ecar-mphs-2026-10-22-fd-a-19pt5
+   21  itf-saito1-bajral1-2026-10-22 | Linea Bajraliu | -
+   21  itf-bains1-sato2-2026-10-22 | Naiktha Bains | -
    20  spl-fat-sha-2026-10-22-total-4pt5 | Over | -
-   19  lol-gal-sly-2026-10-22-game4 | Solary | -
-   18  itf-tikhon1-ku1-2026-10-22 | Anastasia Tikhonova | -
-   17  nba-cle-phi-2026-10-22-spread-home-3pt5 | Cavaliers | nba-cle-phi-2026-10-22, nba-cle-phi-2026-10-22-221pt5, nba-cle-phi-2026-10-22-224pt5, nba-cle-phi-2026-10-22-227pt5
+   20  nba-den-okc-2026-10-22-spread-home-7pt5 | Thunder | nba-den-okc-2026-10-22-3pm-aargor-gte2, nba-den-okc-2026-10-22-3pm-aargor-gte3, nba-den-okc-2026-10-22-3pm-ajamit-gte1, nba-den-okc-2026-10-22-3pm-ajamit-gte2
+   19  nba-den-okc-2026-10-22-spread-home-8pt5 | Thunder | nba-den-okc-2026-10-22-3pm-aargor-gte2, nba-den-okc-2026-10-22-3pm-aargor-gte3, nba-den-okc-2026-10-22-3pm-ajamit-gte1, nba-den-okc-2026-10-22-3pm-ajamit-gte2
    17  uel-juv-ren1-2026-10-22-juv | Yes | -
-   16  uel-juv-ren1-2026-10-22-draw | No | -
-   16  uel-ftc-ut-2026-10-22-total-2pt5 | Over | -
-   14  nba-den-okc-2026-10-22-spread-home-9pt5 | Thunder | nba-den-okc-2026-10-22, nba-den-okc-2026-10-22-221pt5, nba-den-okc-2026-10-22-224pt5, nba-den-okc-2026-10-22-227pt5
-   13  dota2-bot1-z10-2026-10-22-game1 | Zero Tenacity | -
+   16  nba-cle-phi-2026-10-22-spread-home-3pt5 | Cavaliers | -
