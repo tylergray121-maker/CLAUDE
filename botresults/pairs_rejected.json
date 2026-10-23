@@ -1,30 +1,66 @@
 [
  {
-  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-cliboo",
-  "intl_token": "42156401458647726175969415472436799476915451586087374950283847947523085728602",
-  "score": 0.514,
-  "us_label": "Oscar Nominees: Best Picture: The Adventures of Cliff Booth",
-  "intl_label": "Will \"The Further Mis-Adventures of Cliff Booth\" be nominated for Best Adapted Screenplay at the 99th Academy Awards? [The Further Mis-Adventures of Cliff Booth]",
+  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-werwul",
+  "intl_token": "27893549732531334371458126119018727774674796368760363389779350784162231088798",
+  "score": 0.619,
+  "us_label": "Oscar Nominees: Best Picture: Werwulf",
+  "intl_label": "Will \"Werwulf\" be nominated for Best Cinematography at the 99th Academy Awards? [Werwulf]",
   "tick": 0.01,
-  "price_gap": 0.081
+  "price_gap": 0.3
  },
  {
-  "us_slug": "arankc-ucl-2027-01-27-9to24-psg",
-  "intl_token": "85158083954959796766812188892373720498279667307690193184015683156633458364631",
-  "score": 0.505,
-  "us_label": "Champions League League Phase 9-24 Place Finishers: Paris Saint-Germain FC",
-  "intl_label": "Will Paris Saint-Germain finish first in UCL league phase? [Paris Saint-Germain]",
+  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-behemo",
+  "intl_token": "91594360199959247410412605326255786665493323629041552000386837259184347680958",
+  "score": 0.614,
+  "us_label": "Oscar Nominees: Best Picture: Behemoth",
+  "intl_label": "Will \"Behemoth!\" be nominated for Best Original Score at the 99th Academy Awards? [Behemoth!]",
   "tick": 0.01,
-  "price_gap": 0.231
+  "price_gap": 0.2
  },
  {
-  "us_slug": "rtc-dwts-s35-1-2026-11-17-conwoo",
-  "intl_token": "72077817209809632721131429413945832567579619745596157597714795679492199033608",
-  "score": 0.604,
-  "us_label": "Dancing With The Stars S35 Winner: Connor Wood",
-  "intl_label": "Will Connor Wood be eliminated in week 7 of Dancing With The Stars: Season 35? [Connor Wood]",
+  "us_slug": "tac-oscars-03-14-2027-bestorigscr-fjord",
+  "intl_token": "47638456646328069218369238448252849512429773682326538594772163419724920790883",
+  "score": 0.639,
+  "us_label": "Oscar Winner: Best Original Screenplay: Fjord",
+  "intl_label": "Will Fjord win Best Picture at the 99th Academy Awards? [Fjord]",
   "tick": 0.01,
-  "price_gap": 0.245
+  "price_gap": 0.204
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestorigscr-digger",
+  "intl_token": "32526162714773867912785518898835066061162206486720028615668575863160064611389",
+  "score": 0.639,
+  "us_label": "Oscar Winner: Best Original Screenplay: Digger",
+  "intl_label": "Will Digger win Best Picture at the 99th Academy Awards? [Digger]",
+  "tick": 0.01,
+  "price_gap": 0.216
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestorigscr-obsess",
+  "intl_token": "25601342717620503612425420751166594329226529945994817971076837605467020152924",
+  "score": 0.639,
+  "us_label": "Oscar Winner: Best Original Screenplay: Obsession",
+  "intl_label": "Will \"Obsession\" win Best Picture at the 99th Academy Awards? [Obsession]",
+  "tick": 0.01,
+  "price_gap": 0.083
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestorigscr-joseph",
+  "intl_token": "29051033623138549106862488617276369309671090582568432466640314087090568282284",
+  "score": 0.639,
+  "us_label": "Oscar Winner: Best Original Screenplay: Josephine",
+  "intl_label": "Will Josephine win Best Picture at the 99th Academy Awards? [Josephine]",
+  "tick": 0.01,
+  "price_gap": 0.092
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestorigscr-advof",
+  "intl_token": "21204855601465785413372712820639446032889240268573662474721206268054081691990",
+  "score": 0.639,
+  "us_label": "Oscar Winner: Best Original Screenplay: The Adventures of Cliff Booth",
+  "intl_label": "Will The Adventures of Cliff Booth win Best Picture at the 99th Academy Awards? [The Adventures of Cliff Booth]",
+  "tick": 0.01,
+  "price_gap": 0.048
  },
  {
   "us_slug": "tac-oscars-03-14-2027-bestdoc-youcan",
@@ -33,78 +69,114 @@
   "us_label": "Oscar Winner: Best Documentary Feature Film: You Can See Everything",
   "intl_label": "Will You Can See Everything win Best Picture at the 99th Academy Awards? [You Can See Everything]",
   "tick": 0.01,
-  "price_gap": 0.608
+  "price_gap": 0.54
  },
  {
-  "us_slug": "tac-oscars-nom-bstmakeup-2027-01-21-dunpar",
-  "intl_token": "33508968301114917043627837708650494565434367154755045581059300801362728248070",
-  "score": 0.636,
-  "us_label": "Oscar Nominees: Best Makeup and Hairstyling: Dune: Part Three",
-  "intl_label": "Will \"Dune: Part Three\" be nominated for Best Picture at the 99th Academy Awards? [Dune: Part Three]",
+  "us_slug": "tac-oscars-03-14-2027-bestmakeup-dunpar",
+  "intl_token": "43674325341217495599095278148622412266171753951219805121207270556817201390695",
+  "score": 0.639,
+  "us_label": "Oscar Winner: Best Makeup and Hairstyling: Dune: Part Three",
+  "intl_label": "Will Dune: Part Three win Best Picture at the 99th Academy Awards? [Dune: Part Three]",
   "tick": 0.01,
-  "price_gap": 0.245
+  "price_gap": 0.055
  },
  {
-  "us_slug": "tac-oscars-nom-bstvfx-2027-01-21-dunpar",
-  "intl_token": "33508968301114917043627837708650494565434367154755045581059300801362728248070",
-  "score": 0.636,
-  "us_label": "Oscar Nominees: Best Visual Effects: Dune: Part Three",
-  "intl_label": "Will \"Dune: Part Three\" be nominated for Best Picture at the 99th Academy Awards? [Dune: Part Three]",
+  "us_slug": "tac-oscars-03-14-2027-bestmakeup-socrec",
+  "intl_token": "78565699170249208271139821082594943659931190082259184245721788349922218734299",
+  "score": 0.639,
+  "us_label": "Oscar Winner: Best Makeup and Hairstyling: The Social Reckoning",
+  "intl_label": "Will The Social Reckoning win Best Picture at the 99th Academy Awards? [The Social Reckoning]",
   "tick": 0.01,
-  "price_gap": 0.175
+  "price_gap": 0.176
  },
  {
-  "us_slug": "tac-oscars-nom-bstscore-2027-01-21-dunpar",
-  "intl_token": "33508968301114917043627837708650494565434367154755045581059300801362728248070",
-  "score": 0.636,
-  "us_label": "Oscar Nominees: Best Original Score: Dune: Part Three",
-  "intl_label": "Will \"Dune: Part Three\" be nominated for Best Picture at the 99th Academy Awards? [Dune: Part Three]",
+  "us_slug": "tac-oscars-nom-bstmakeup-2027-01-21-werwul",
+  "intl_token": "27893549732531334371458126119018727774674796368760363389779350784162231088798",
+  "score": 0.609,
+  "us_label": "Oscar Nominees: Best Makeup and Hairstyling: Werwulf",
+  "intl_label": "Will \"Werwulf\" be nominated for Best Cinematography at the 99th Academy Awards? [Werwulf]",
   "tick": 0.01,
-  "price_gap": 0.22
+  "price_gap": 0.405
  },
  {
-  "us_slug": "tac-oscars-nom-bstcast-2027-01-21-dunpar",
-  "intl_token": "33508968301114917043627837708650494565434367154755045581059300801362728248070",
+  "us_slug": "tac-oscars-nom-bstcine-2027-01-21-werwul",
+  "intl_token": "27893549732531334371458126119018727774674796368760363389779350784162231088798",
   "score": 0.643,
-  "us_label": "Oscar Nominees: Best Casting: Dune: Part Three",
-  "intl_label": "Will \"Dune: Part Three\" be nominated for Best Picture at the 99th Academy Awards? [Dune: Part Three]",
+  "us_label": "Oscar Nominees: Best Cinematography: Werwulf",
+  "intl_label": "Will \"Werwulf\" be nominated for Best Cinematography at the 99th Academy Awards? [Werwulf]",
   "tick": 0.01,
-  "price_gap": 0.315
+  "price_gap": 0.195
  },
  {
-  "us_slug": "tac-oscars-nom-bstsound-2027-01-21-dunpar",
-  "intl_token": "33508968301114917043627837708650494565434367154755045581059300801362728248070",
-  "score": 0.643,
-  "us_label": "Oscar Nominees: Best Sound: Dune: Part Three",
-  "intl_label": "Will \"Dune: Part Three\" be nominated for Best Picture at the 99th Academy Awards? [Dune: Part Three]",
+  "us_slug": "tac-oscars-03-14-2027-bestscore-dunpar",
+  "intl_token": "43674325341217495599095278148622412266171753951219805121207270556817201390695",
+  "score": 0.639,
+  "us_label": "Oscar Winner: Best Original Score: Dune: Part Three",
+  "intl_label": "Will Dune: Part Three win Best Picture at the 99th Academy Awards? [Dune: Part Three]",
   "tick": 0.01,
-  "price_gap": 0.37
+  "price_gap": 0.115
  },
  {
-  "us_slug": "tac-oscars-nom-bstedit-2027-01-21-dunpar",
-  "intl_token": "33508968301114917043627837708650494565434367154755045581059300801362728248070",
-  "score": 0.636,
-  "us_label": "Oscar Nominees: Best Film Editing: Dune: Part Three",
-  "intl_label": "Will \"Dune: Part Three\" be nominated for Best Picture at the 99th Academy Awards? [Dune: Part Three]",
+  "us_slug": "tac-oscars-03-14-2027-bestscore-prohai",
+  "intl_token": "109575170067408035389456153071696119509487010393943667087607715644094583727979",
+  "score": 0.639,
+  "us_label": "Oscar Winner: Best Original Score: Project Hail Mary",
+  "intl_label": "Will Project Hail Mary win Best Picture at the 99th Academy Awards? [Project Hail Mary]",
   "tick": 0.01,
-  "price_gap": 0.6
+  "price_gap": 0.212
  },
  {
-  "us_slug": "ccrc-bilbrd-1song-2026-10-31-chotex",
-  "intl_token": "11592792935640794517921371112770670535784058360546778447714183572486401406653",
-  "score": 0.603,
-  "us_label": "Billboard #1 Song Week of October 31?: Choosin' Texas - Ella Langley",
-  "intl_label": "Will \"Choosin' Texas - Ella Langley\" be the Billboard Hot 100 #2 song for the week of October 31? [Choosin' Texas - Ella Langley]",
+  "us_slug": "tac-oscars-03-14-2027-bestscore-advof",
+  "intl_token": "21204855601465785413372712820639446032889240268573662474721206268054081691990",
+  "score": 0.539,
+  "us_label": "Oscar Winner: Best Original Score: The Further Mis-Adventures of Cliff Booth",
+  "intl_label": "Will The Adventures of Cliff Booth win Best Picture at the 99th Academy Awards? [The Adventures of Cliff Booth]",
   "tick": 0.01,
-  "price_gap": 0.192
+  "price_gap": 0.133
  },
  {
-  "us_slug": "ccrc-bilbrd-1song-2026-10-31-houwif",
-  "intl_token": "59128666465466181494492805464008816698886290734111856914602330967491309741010",
-  "score": 0.603,
-  "us_label": "Billboard #1 Song Week of October 31?: Housewife - Tate McRae",
-  "intl_label": "Will \"Housewife - Tate McRae\" be the Billboard Hot 100 #2 song for the week of October 31? [Housewife - Tate McRae]",
+  "us_slug": "tac-oscars-03-14-2027-bestsound-prohai",
+  "intl_token": "109575170067408035389456153071696119509487010393943667087607715644094583727979",
+  "score": 0.647,
+  "us_label": "Oscar Winner: Best Sound: Project Hail Mary",
+  "intl_label": "Will Project Hail Mary win Best Picture at the 99th Academy Awards? [Project Hail Mary]",
   "tick": 0.01,
-  "price_gap": 0.285
+  "price_gap": 0.257
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstorigscr-2027-01-21-behemo",
+  "intl_token": "91594360199959247410412605326255786665493323629041552000386837259184347680958",
+  "score": 0.63,
+  "us_label": "Oscar Nominees: Best Original Screenplay: Behemoth!",
+  "intl_label": "Will \"Behemoth!\" be nominated for Best Original Score at the 99th Academy Awards? [Behemoth!]",
+  "tick": 0.01,
+  "price_gap": 0.185
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestcine-prohai",
+  "intl_token": "109575170067408035389456153071696119509487010393943667087607715644094583727979",
+  "score": 0.647,
+  "us_label": "Oscar Winner: Best Cinematography: Project Hail Mary",
+  "intl_label": "Will Project Hail Mary win Best Picture at the 99th Academy Awards? [Project Hail Mary]",
+  "tick": 0.01,
+  "price_gap": 0.242
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestcine-obsess",
+  "intl_token": "25601342717620503612425420751166594329226529945994817971076837605467020152924",
+  "score": 0.647,
+  "us_label": "Oscar Winner: Best Cinematography: Obsession",
+  "intl_label": "Will \"Obsession\" win Best Picture at the 99th Academy Awards? [Obsession]",
+  "tick": 0.01,
+  "price_gap": 0.083
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestcine-joseph",
+  "intl_token": "29051033623138549106862488617276369309671090582568432466640314087090568282284",
+  "score": 0.647,
+  "us_label": "Oscar Winner: Best Cinematography: Josephine",
+  "intl_label": "Will Josephine win Best Picture at the 99th Academy Awards? [Josephine]",
+  "tick": 0.01,
+  "price_gap": 0.052
  }
 ]

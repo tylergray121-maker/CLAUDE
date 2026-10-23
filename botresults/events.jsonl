@@ -5835,3 +5835,33 @@
 {"ts": 1792729902.089, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Will the Democratic Party control the House after the 2026 Midterm elections?", "intl_slug": "will-the-democratic-party-control-the-house-after-the-2026-midterm-elections", "outcome": "No"}
 {"ts": 1792729902.089, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Will the Democratic Party control the House after the 2026 Midterm elections?", "intl_slug": "will-the-democratic-party-control-the-house-after-the-2026-midterm-elections", "outcome": "No"}
 {"ts": 1792730099.14, "kind": "cancel_all", "reason": "shutdown"}
+{"ts": 1792785504.214, "kind": "leader_status", "leader": "EdZachary", "wallet": "0xe5b70fd855af9258d9463992e4f1ed7987905ee3", "status": "cooling", "was": "copying", "why": "\u2212$208,247 on Polymarket this week"}
+{"ts": 1792785504.214, "kind": "leader_status", "leader": "theowalcott", "wallet": "0x7ad71d79a3bb90d0a87a06500fa0fe11663842aa", "status": "cooling", "was": "copying", "why": "\u2212$197,335 on Polymarket this week"}
+{"ts": 1792785504.214, "kind": "leader_status", "leader": "HVAB", "wallet": "0x8546a601f7c7cc3dae7141f20b0e09e42bbf35b8", "status": "cooling", "was": "copying", "why": "\u2212$60,962 on Polymarket this week"}
+{"ts": 1792785504.214, "kind": "leader_status", "leader": "0010001000001100", "wallet": "0x96020c20842a5175e3e0aeef7843d1dbb7bc4d02", "status": "cooling", "was": "copying", "why": "\u2212$5,706 on Polymarket this week"}
+{"ts": 1792785504.214, "kind": "leader_status", "leader": "totoro3miyazaki", "wallet": "0x0f6f76ced62a911bccef92f50faaff143854d977", "status": "benched", "was": "copying", "why": "losing on Polymarket: \u2212$1,504,734 this week, \u2212$2,474,500 this month"}
+{"ts": 1792785504.214, "kind": "leader_status", "leader": "juice-fruit", "wallet": "0x5fdd66ffd0325d4e8d1d86fbec50caa31770a747", "status": "cooling", "was": "copying", "why": "\u2212$113,185 on Polymarket this week"}
+{"ts": 1792785504.214, "kind": "leader_status", "leader": "plonker2026", "wallet": "0x0a39b3b29ab3b7dd753aa96fde4ecab3f2dbb0b9", "status": "benched", "was": "copying", "why": "losing on Polymarket: \u2212$114,445 this week, \u2212$235,267 this month"}
+{"ts": 1792785504.214, "kind": "leader_status", "leader": "monkeymashingkeyboard", "wallet": "0x684baa57c338c2549aec0aa3f034f695d72a8409", "status": "benched", "was": "copying", "why": "losing on Polymarket: \u2212$384,771 this week, \u2212$328,224 this month"}
+{"ts": 1792785504.214, "kind": "leader_status", "leader": "UNEB3154s4f251", "wallet": "0x04641b57f332c15ecaa497799c55026d521967da", "status": "cooling", "was": "copying", "why": "\u2212$3,006 on Polymarket this week"}
+{"ts": 1792785524.363, "kind": "copy_unmapped", "leader": "monkeymashingkeyboard", "market": "Spread: Hawks (-2.5)", "intl_slug": "nba-atl-cha-2026-10-23-spread-away-2pt5", "outcome": "Hawks"}
+{"ts": 1792785534.684, "kind": "copy_signal", "slug": "atc-bra-cru-cre-2026-10-23-cre:short", "side": "BUY", "leader": "UNEB3154s4f251", "price": 0.9, "leader_usd": 5.81, "market": "Will Clube do Remo win on 2026-10-23?"}
+{"ts": 1792785534.684, "kind": "copy_signal", "slug": "atc-bra-cru-cre-2026-10-23-cre:short", "side": "BUY", "leader": "UNEB3154s4f251", "price": 0.9, "leader_usd": 5.81, "market": "Will Clube do Remo win on 2026-10-23?"}
+{"ts": 1792785538.846, "kind": "order", "slug": "atc-bra-cru-cre-2026-10-23-cre:short", "side": "BUY", "price": 0.91, "qty": 5, "post_only": false, "fair": null, "strategy": "copytop", "id": null}
+{"ts": 1792785584.337, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Spread: Bucks (-1.5)", "intl_slug": "nba-chi-mil-2026-10-23-spread-home-1pt5", "outcome": "Bucks"}
+{"ts": 1792785584.337, "kind": "copy_signal", "slug": "aec-nba-atl-cha-2026-10-23:short", "side": "BUY", "leader": "BreakTheBank", "price": 0.430000023, "leader_usd": 7.47, "market": "Hawks vs. Hornets"}
+{"ts": 1792785584.338, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Spread: Bucks (-1.5)", "intl_slug": "nba-chi-mil-2026-10-23-spread-home-1pt5", "outcome": "Bucks"}
+{"ts": 1792785584.338, "kind": "copy_signal", "slug": "aec-nba-atl-cha-2026-10-23:short", "side": "BUY", "leader": "BreakTheBank", "price": 0.4300000045, "leader_usd": 35.46, "market": "Hawks vs. Hornets"}
+{"ts": 1792785584.338, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Spread: Bucks (-1.5)", "intl_slug": "nba-chi-mil-2026-10-23-spread-home-1pt5", "outcome": "Bucks"}
+{"ts": 1792785584.338, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Spread: Bucks (-4.5)", "intl_slug": "nba-chi-mil-2026-10-23-spread-home-4pt5", "outcome": "Bucks"}
+{"ts": 1792785584.338, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Spread: Bucks (-4.5)", "intl_slug": "nba-chi-mil-2026-10-23-spread-home-4pt5", "outcome": "Bucks"}
+{"ts": 1792785584.338, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Spread: Bucks (-4.5)", "intl_slug": "nba-chi-mil-2026-10-23-spread-home-4pt5", "outcome": "Bucks"}
+{"ts": 1792785584.338, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Spread: Bucks (-4.5)", "intl_slug": "nba-chi-mil-2026-10-23-spread-home-4pt5", "outcome": "Bucks"}
+{"ts": 1792785588.55, "kind": "order", "slug": "aec-nba-atl-cha-2026-10-23:short", "side": "BUY", "price": 0.44, "qty": 11, "post_only": false, "fair": 0.435, "strategy": "copytop", "id": null}
+{"ts": 1792785594.34, "kind": "copy_signal", "slug": "aec-nba-min-orl-2026-10-23:short", "side": "BUY", "leader": "PEYZ-BIGGEST-FAN", "price": 0.5100000329, "leader_usd": 5.12, "market": "Timberwolves vs. Magic"}
+{"ts": 1792785594.34, "kind": "copy_signal", "slug": "aec-nba-min-orl-2026-10-23:short", "side": "BUY", "leader": "PEYZ-BIGGEST-FAN", "price": 0.5100000176, "leader_usd": 5.2, "market": "Timberwolves vs. Magic"}
+{"ts": 1792785594.34, "kind": "copy_signal", "slug": "aec-nba-min-orl-2026-10-23:short", "side": "BUY", "leader": "PEYZ-BIGGEST-FAN", "price": 0.5100000033, "leader_usd": 48.92, "market": "Timberwolves vs. Magic"}
+{"ts": 1792785594.34, "kind": "copy_unmapped", "leader": "PEYZ-BIGGEST-FAN", "market": "Army vs. Tulsa", "intl_slug": "cfb-army-tulsa-2026-10-23", "outcome": "Tulsa"}
+{"ts": 1792785594.34, "kind": "copy_signal", "slug": "aec-nba-min-orl-2026-10-23:short", "side": "BUY", "leader": "PEYZ-BIGGEST-FAN", "price": 0.51, "leader_usd": 5204.08, "market": "Timberwolves vs. Magic"}
+{"ts": 1792785598.554, "kind": "order", "slug": "aec-nba-min-orl-2026-10-23:short", "side": "BUY", "price": 0.52, "qty": 9, "post_only": false, "fair": 0.515, "strategy": "copytop", "id": null}
+{"ts": 1792785761.396, "kind": "cancel_all", "reason": "shutdown"}

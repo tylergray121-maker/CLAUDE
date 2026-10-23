@@ -1,6 +1,6 @@
 # Polymarket US bot — paper run
 
-Mapping: 77719 open US markets, 2423 international outcomes, 726 pairs (20 tracked after live price checks); observations with a trustworthy reference price: 560.
+Mapping: 83779 open US markets, 2686 international outcomes, 952 pairs (20 tracked after live price checks); observations with a trustworthy reference price: 520.
 
 ## Is there an edge to take?
 
@@ -9,6 +9,6 @@ Times a US price was through fair value by ≥ 3¢ after the taker fee: 0 to buy
 
 ## Trading
 
-Equity $200.00 from $200.00 (+0.00), cash $200.00; 0 fills; taker fees $0.00; maker rebates $0.00; open positions 0.
+Equity $199.49 from $200.00 (-0.51), cash $185.59; 3 fills; taker fees $0.39; maker rebates $0.00; open positions 3.
 Halted: no.
 

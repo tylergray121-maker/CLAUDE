@@ -1,21 +1,21 @@
 {
  "counts": {
-  "props/sports": 26584,
-  "totals/sports": 14567,
-  "futures/sports": 11762,
-  "spreads/sports": 10619,
-  "futures/politics": 6788,
-  "drawable_outcome/sports": 2288,
-  "futures/culture": 1681,
-  "moneyline/sports": 1671,
-  "/crypto": 1212,
-  "futures/macro": 207,
+  "props/sports": 28980,
+  "totals/sports": 15935,
+  "spreads/sports": 12892,
+  "futures/sports": 11599,
+  "futures/politics": 6790,
+  "drawable_outcome/sports": 2397,
+  "moneyline/sports": 1729,
+  "futures/culture": 1679,
+  "/crypto": 1220,
+  "futures/macro": 219,
   "futures/climate": 119,
   "futures/technology": 66,
   "futures/finance": 65,
   "futures/crypto": 59,
-  "futures/science": 11,
   "futures/geopolitics": 10,
+  "futures/science": 10,
   "/finance": 6,
   "election/politics": 4
  },
@@ -27,7 +27,7 @@
     "title": "",
     "game_start": 1793502000.0,
     "end": 1794715200.0,
-    "bid": 0.71,
+    "bid": 0.72,
     "ask": 0.74
    },
    {
@@ -54,8 +54,8 @@
     "title": "",
     "game_start": 1792796400.0,
     "end": 1794006000.0,
-    "bid": 0.33,
-    "ask": 0.34
+    "bid": 0.29,
+    "ask": 0.3
    },
    {
     "slug": "aec-nba-min-orl-2026-10-23",
@@ -63,8 +63,8 @@
     "title": "",
     "game_start": 1792796400.0,
     "end": 1794006000.0,
-    "bid": 0.53,
-    "ask": 0.54
+    "bid": 0.48,
+    "ask": 0.49
    },
    {
     "slug": "aec-nba-tor-was-2026-10-23",
@@ -72,8 +72,8 @@
     "title": "",
     "game_start": 1792796400.0,
     "end": 1794006000.0,
-    "bid": 0.68,
-    "ask": 0.69
+    "bid": 0.74,
+    "ask": 0.75
    },
    {
     "slug": "aec-nba-ny-bos-2026-10-23",
@@ -90,8 +90,8 @@
     "title": "",
     "game_start": 1792796400.0,
     "end": 1794006000.0,
-    "bid": 0.55,
-    "ask": 0.56
+    "bid": 0.56,
+    "ask": 0.57
    },
    {
     "slug": "aec-nba-det-mia-2026-10-23",
@@ -99,8 +99,8 @@
     "title": "",
     "game_start": 1792800000.0,
     "end": 1794009600.0,
-    "bid": 0.5,
-    "ask": 0.51
+    "bid": 0.53,
+    "ask": 0.54
    },
    {
     "slug": "aec-nba-chi-mil-2026-10-23",
@@ -108,8 +108,8 @@
     "title": "",
     "game_start": 1792785600.0,
     "end": 1794009600.0,
-    "bid": 0.49,
-    "ask": 0.5
+    "bid": 0.46,
+    "ask": 0.47
    },
    {
     "slug": "aec-nba-no-uta-2026-10-23",
@@ -117,8 +117,8 @@
     "title": "",
     "game_start": 1792805400.0,
     "end": 1794015000.0,
-    "bid": 0.45,
-    "ask": 0.46
+    "bid": 0.49,
+    "ask": 0.5
    },
    {
     "slug": "aec-nba-hou-sa-2026-10-23",
@@ -126,8 +126,8 @@
     "title": "",
     "game_start": 1792805400.0,
     "end": 1794015000.0,
-    "bid": 0.34,
-    "ask": 0.35
+    "bid": 0.35,
+    "ask": 0.36
    },
    {
     "slug": "aec-nba-por-sac-2026-10-23",
@@ -135,8 +135,8 @@
     "title": "",
     "game_start": 1792807200.0,
     "end": 1794016800.0,
-    "bid": 0.74,
-    "ask": 0.75
+    "bid": 0.8,
+    "ask": 0.81
    },
    {
     "slug": "aec-nba-mem-gs-2026-10-23",
@@ -144,8 +144,8 @@
     "title": "",
     "game_start": 1792807200.0,
     "end": 1794016800.0,
-    "bid": 0.41,
-    "ask": 0.42
+    "bid": 0.38,
+    "ask": 0.39
    },
    {
     "slug": "aec-nba-lac-lal-2026-10-23",
@@ -153,8 +153,8 @@
     "title": "",
     "game_start": 1792807200.0,
     "end": 1794016800.0,
-    "bid": 0.22,
-    "ask": 0.23
+    "bid": 0.23,
+    "ask": 0.24
    }
   ],
   "drawable_outcome/sports": [
@@ -222,74 +222,74 @@
     "ask": null
    },
    {
-    "slug": "atc-ncaaws-fls-nct-2026-10-09-fls",
-    "question": "Will Florida State Seminoles win against North Carolina Tar Heels in the NCAA Women's Soccer match scheduled for Oct 9, 2026?",
+    "slug": "atc-arg2-ccns-aca-2026-10-17-ccns",
+    "question": "Will CA Central Norte Salta win against CA Acassuso in the Primera Nacional match scheduled for Oct 17, 2026?",
     "title": "",
-    "game_start": 1791583200.0,
-    "end": 1792807200.0,
+    "game_start": 1792958400.0,
+    "end": 1793491200.0,
+    "bid": 0.43,
+    "ask": 0.48
+   },
+   {
+    "slug": "atc-arg2-ccns-aca-2026-10-17-draw",
+    "question": "Will the Primera Nacional match CA Central Norte Salta vs CA Acassuso scheduled for Oct 17, 2026 end in a draw?",
+    "title": "",
+    "game_start": 1792958400.0,
+    "end": 1793491200.0,
+    "bid": 0.31,
+    "ask": 0.33
+   },
+   {
+    "slug": "atc-arg2-ccns-aca-2026-10-17-aca",
+    "question": "Will CA Acassuso win against CA Central Norte Salta in the Primera Nacional match scheduled for Oct 17, 2026?",
+    "title": "",
+    "game_start": 1792958400.0,
+    "end": 1793491200.0,
+    "bid": 0.21,
+    "ask": 0.24
+   },
+   {
+    "slug": "atc-arg2-alm-tri-2026-10-17-alm",
+    "question": "Will Club Almagro win against CSD Tristan Suarez in the Primera Nacional match scheduled for Oct 17, 2026?",
+    "title": "",
+    "game_start": 1792866600.0,
+    "end": 1793491200.0,
+    "bid": 0.13,
+    "ask": 0.15
+   },
+   {
+    "slug": "atc-arg2-alm-tri-2026-10-17-draw",
+    "question": "Will the Primera Nacional match Club Almagro vs CSD Tristan Suarez scheduled for Oct 17, 2026 end in a draw?",
+    "title": "",
+    "game_start": 1792866600.0,
+    "end": 1793491200.0,
+    "bid": 0.3,
+    "ask": 0.32
+   },
+   {
+    "slug": "atc-arg2-alm-tri-2026-10-17-tri",
+    "question": "Will CSD Tristan Suarez win against Club Almagro in the Primera Nacional match scheduled for Oct 17, 2026?",
+    "title": "",
+    "game_start": 1792866600.0,
+    "end": 1793491200.0,
+    "bid": 0.54,
+    "ask": 0.57
+   },
+   {
+    "slug": "atc-fbl-svw-tsg-2026-10-18-svw",
+    "question": "Will Werder Bremen win against TSG Hoffenheim in the Frauen-Bundesliga match scheduled for Oct 18, 2026?",
+    "title": "",
+    "game_start": 1792332000.0,
+    "end": 1793559600.0,
     "bid": null,
     "ask": null
    },
    {
-    "slug": "atc-ncaaws-fls-nct-2026-10-09-draw",
-    "question": "Will the NCAA Women's Soccer match Florida State Seminoles vs North Carolina Tar Heels scheduled for Oct 9, 2026 end in a draw?",
+    "slug": "atc-fbl-svw-tsg-2026-10-18-draw",
+    "question": "Will the Frauen-Bundesliga match Werder Bremen vs TSG Hoffenheim scheduled for Oct 18, 2026 end in a draw?",
     "title": "",
-    "game_start": 1791583200.0,
-    "end": 1792807200.0,
-    "bid": null,
-    "ask": null
-   },
-   {
-    "slug": "atc-ncaaws-fls-nct-2026-10-09-nct",
-    "question": "Will North Carolina Tar Heels win against Florida State Seminoles in the NCAA Women's Soccer match scheduled for Oct 9, 2026?",
-    "title": "",
-    "game_start": 1791583200.0,
-    "end": 1792807200.0,
-    "bid": null,
-    "ask": null
-   },
-   {
-    "slug": "atc-ncaaws-wfa-bke-2026-10-11-wfa",
-    "question": "Will West Florida Argonauts win against Bellarmine Knights in the NCAA Women's Soccer match scheduled for Oct 11, 2026?",
-    "title": "",
-    "game_start": 1791741600.0,
-    "end": 1792965600.0,
-    "bid": null,
-    "ask": null
-   },
-   {
-    "slug": "atc-ncaaws-wfa-bke-2026-10-11-draw",
-    "question": "Will the NCAA Women's Soccer match West Florida Argonauts vs Bellarmine Knights scheduled for Oct 11, 2026 end in a draw?",
-    "title": "",
-    "game_start": 1791741600.0,
-    "end": 1792965600.0,
-    "bid": null,
-    "ask": null
-   },
-   {
-    "slug": "atc-ncaaws-wfa-bke-2026-10-11-bke",
-    "question": "Will Bellarmine Knights win against West Florida Argonauts in the NCAA Women's Soccer match scheduled for Oct 11, 2026?",
-    "title": "",
-    "game_start": 1791741600.0,
-    "end": 1792965600.0,
-    "bid": null,
-    "ask": null
-   },
-   {
-    "slug": "atc-ncaams-wfa-car-2026-10-11-wfa",
-    "question": "Will West Florida Argonauts win against Central Arkansas Bears in the NCAA Men's Soccer match scheduled for Oct 11, 2026?",
-    "title": "",
-    "game_start": 1791752400.0,
-    "end": 1792976400.0,
-    "bid": null,
-    "ask": null
-   },
-   {
-    "slug": "atc-ncaams-wfa-car-2026-10-11-draw",
-    "question": "Will the NCAA Men's Soccer match West Florida Argonauts vs Central Arkansas Bears scheduled for Oct 11, 2026 end in a draw?",
-    "title": "",
-    "game_start": 1791752400.0,
-    "end": 1792976400.0,
+    "game_start": 1792332000.0,
+    "end": 1793559600.0,
     "bid": null,
     "ask": null
    }
@@ -712,8 +712,8 @@
     "title": "Reaches $90,000",
     "game_start": 1790827200.0,
     "end": 1793507400.0,
-    "bid": 0.07,
-    "ask": 0.13
+    "bid": 0.05,
+    "ask": 0.08
    },
    {
     "slug": "cpc-btc-hit-h-m-2026-10-92500",
@@ -722,7 +722,7 @@
     "game_start": 1790827200.0,
     "end": 1793507400.0,
     "bid": 0.02,
-    "ask": 0.07
+    "ask": 0.04
    },
    {
     "slug": "cpc-btc-hit-h-m-2026-10-95000",
@@ -731,7 +731,7 @@
     "game_start": 1790827200.0,
     "end": 1793507400.0,
     "bid": null,
-    "ask": 0.01
+    "ask": null
    },
    {
     "slug": "cpc-btc-hit-h-m-2026-10-97500",
@@ -820,7 +820,7 @@
     "title": "Dips to $75,000",
     "game_start": 1790827200.0,
     "end": 1793507400.0,
-    "bid": 0.09,
+    "bid": 0.1,
     "ask": 0.18
    },
    {
@@ -830,7 +830,7 @@
     "game_start": 1790827200.0,
     "end": 1793507400.0,
     "bid": 0.31,
-    "ask": 0.35
+    "ask": 0.36
    },
    {
     "slug": "cpc-btc-hit-l-m-2026-10-62500",
@@ -853,15 +853,6 @@
     "ask": null
    },
    {
-    "slug": "cpagsp-silver-updown-1h-2026-10-23-0400z",
-    "question": "Silver Up or Down Hourly",
-    "title": "Silver Up or Down Hourly",
-    "game_start": 1792728000.0,
-    "end": 1792733400.0,
-    "bid": 0.05,
-    "ask": 0.16
-   },
-   {
     "slug": "cpausp-gold-updown-1d-2026-10-22-2215z",
     "question": "Gold Up or Down Daily",
     "title": "Gold Up or Down Daily",
@@ -871,31 +862,40 @@
     "ask": null
    },
    {
-    "slug": "cpagsp-silver-updown-15m-2026-10-23-0415z",
-    "question": "Silver Up or Down 15m",
-    "title": "Silver Up or Down 15m",
-    "game_start": 1792728900.0,
-    "end": 1792731600.0,
-    "bid": 0.01,
-    "ask": 0.09
+    "slug": "cpagsp-silver-updown-1h-2026-10-23-1900z",
+    "question": "Silver Up or Down Hourly",
+    "title": "Silver Up or Down Hourly",
+    "game_start": 1792782000.0,
+    "end": 1792787400.0,
+    "bid": 0.03,
+    "ask": 0.11
    },
    {
-    "slug": "cpausp-gold-updown-15m-2026-10-23-0415z",
-    "question": "Gold Up or Down 15m",
-    "title": "Gold Up or Down 15m",
-    "game_start": 1792728900.0,
-    "end": 1792731600.0,
-    "bid": 0.01,
-    "ask": 0.09
-   },
-   {
-    "slug": "cpausp-gold-updown-1h-2026-10-23-0400z",
+    "slug": "cpausp-gold-updown-1h-2026-10-23-1900z",
     "question": "Gold Up or Down Hourly",
     "title": "Gold Up or Down Hourly",
-    "game_start": 1792728000.0,
-    "end": 1792733400.0,
-    "bid": 0.03,
+    "game_start": 1792782000.0,
+    "end": 1792787400.0,
+    "bid": 0.73,
+    "ask": 0.85
+   },
+   {
+    "slug": "cpagsp-silver-updown-15m-2026-10-23-1945z",
+    "question": "Silver Up or Down 15m",
+    "title": "Silver Up or Down 15m",
+    "game_start": 1792784700.0,
+    "end": 1792787400.0,
+    "bid": 0.11,
     "ask": 0.12
+   },
+   {
+    "slug": "cpausp-gold-updown-15m-2026-10-23-1945z",
+    "question": "Gold Up or Down 15m",
+    "title": "Gold Up or Down 15m",
+    "game_start": 1792784700.0,
+    "end": 1792787400.0,
+    "bid": 0.72,
+    "ask": 0.73
    }
   ]
  }

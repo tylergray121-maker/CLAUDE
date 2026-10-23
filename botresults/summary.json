@@ -1,17 +1,30 @@
 {
- "ts": 1792730099.1405654,
+ "ts": 1792785761.395635,
  "mode": "paper",
  "pairs": 20,
- "equity": 200.0,
- "cash": 200.0,
- "positions": {},
+ "equity": 199.49,
+ "cash": 185.59,
+ "positions": {
+  "atc-bra-cru-cre-2026-10-23-cre:short": {
+   "qty": 5,
+   "cost": 4.54
+  },
+  "aec-nba-atl-cha-2026-10-23:short": {
+   "qty": 11,
+   "cost": 5.03
+  },
+  "aec-nba-min-orl-2026-10-23:short": {
+   "qty": 9,
+   "cost": 4.84
+  }
+ },
  "open_orders": 0,
- "fills": 0,
- "fees_paid": 0.0,
+ "fills": 3,
+ "fees_paid": 0.39,
  "rebates": 0.0,
  "halted": "",
  "scan": {
-  "observations": 560,
+  "observations": 520,
   "buy_opps": 0,
   "sell_opps": 0
  }
