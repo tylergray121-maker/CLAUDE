@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import json
 import logging
+import math
 import re
 from collections import Counter, deque
 from statistics import median
@@ -38,6 +39,19 @@ from .strategy import MarketView, Order, StrategyConfig
 from .track import Scorecard, clearly_losing
 
 log = logging.getLogger(__name__)
+
+MARKOUTS = (("mo30", 1800), ("mo120", 7200))   # name, seconds after our fill
+
+
+def markout_stats(xs: list[float]) -> dict:
+    """Mean markout in cents of price, how many, and its t-statistic."""
+    n = len(xs)
+    if not n:
+        return {"c": None, "n": 0, "t": None}
+    mean = sum(xs) / n
+    var = sum((x - mean) ** 2 for x in xs) / (n - 1) if n >= 2 else 0.0
+    t = mean / math.sqrt(var / n) if var > 0 else None
+    return {"c": round(mean * 100, 2), "n": n, "t": round(t, 2) if t is not None else None}
 
 
 def load_leaders(path: str) -> dict[str, str]:
@@ -77,8 +91,9 @@ class CopyTop(Strategy):
                  signal_ttl_s: float = 180, dedupe_s: float = 600, min_leader_usd: float = 5.0,
                  form_every_s: float = 7200, min_wallet_n: int = 10, min_pattern_n: int = 15,
                  copy_sells: bool = False, conviction_sizing: bool = False,
-                 max_wallet_usd: float = 0.0):
+                 max_wallet_usd: float = 0.0, min_price: float = 0.0):
         self.cfg = cfg
+        self.min_price = min_price                 # copies only; other strategies keep theirs
         self.leaders = leaders
         self.max_slip = max_slip
         self.signal_ttl_s = signal_ttl_s
@@ -106,6 +121,12 @@ class CopyTop(Strategy):
         self.sizes: dict[str, deque] = {}          # leader -> their recent buy sizes ($)
         self.unmapped: Counter = Counter()         # (intl slug, outcome) not on US, for diagnostics
         self.max_age_s = 300                       # never copy a trade older than this
+        # Markouts: how far the price moved our way 30 min and 2 h after each
+        # copy fill (mid minus our price, per contract), by wallet and pattern.
+        # Evidence of information long before settlements can tell.
+        self.marking: list[dict] = []              # fills still waiting for a markout
+        self.mo: dict[str, dict[str, list[float]]] = {h: {} for h, _ in MARKOUTS}
+        self._settled: dict[str, float] = {}       # slug -> settlement price, for markouts
 
     # -- signals ------------------------------------------------------------
     def _fetch(self, eng, wallet: str) -> list[dict] | None:
@@ -144,6 +165,7 @@ class CopyTop(Strategy):
         return usd / usual if usual > 0 else 1.0
 
     def watch(self, eng, now):
+        self._markouts(eng, now)
         if now >= self._next_form:
             self._check_form(eng)
             self._judge(eng)
@@ -208,7 +230,40 @@ class CopyTop(Strategy):
         for slug in [s for s, sig in self.pending.items() if now - sig["at"] > self.signal_ttl_s]:
             self.stats["expired_price_moved"] += 1
             del self.pending[slug]
-        return set(self.pending)
+        return set(self.pending) | {m["slug"] for m in self.marking}
+
+    def _markouts(self, eng, now: float) -> None:
+        """Record each due markout from the market's mid (its payout once
+        settled); one more than 15 minutes overdue without a price is dropped."""
+        keep = []
+        for m in self.marking:
+            for h, after in MARKOUTS:
+                if h not in m["todo"] or now < m["ts"] + after:
+                    continue
+                px = self._settled.get(m["slug"], eng.marks.get(m["slug"]))
+                if px is None and now < m["ts"] + after + 900:
+                    continue
+                m["todo"].remove(h)
+                if px is None:
+                    continue
+                for k in [*m["keys"], "all"]:
+                    r = self.mo[h].setdefault(k, [])
+                    r.append(round(px - m["px"], 4))
+                    del r[:-self.card.keep]
+            if m["todo"]:
+                keep.append(m)
+        self.marking = keep
+        waiting = {m["slug"] for m in keep}
+        self._settled = {s: p for s, p in self._settled.items() if s in waiting}
+
+    def markouts(self, key: str) -> dict:
+        out = {}
+        for h, _ in MARKOUTS:
+            st = markout_stats(self.mo[h].get(key, []))
+            out[f"{h}_c"], out[f"{h}_n"] = st["c"], st["n"]
+            if h == "mo120":
+                out["mo120_t"] = st["t"]
+        return out
 
     # -- orders ---------------------------------------------------------------
     def orders(self, eng, views: dict[str, MarketView], now):
@@ -234,7 +289,7 @@ class CopyTop(Strategy):
                 ask = v.us_ask
                 if ask is None or ask > limit:
                     continue  # keep waiting until the signal expires
-                if ask < self.cfg.min_price:
+                if ask < max(self.cfg.min_price, self.min_price):
                     self.stats["skip_price_band"] += 1
                     del self.pending[slug]
                     continue
@@ -304,8 +359,12 @@ class CopyTop(Strategy):
                 # Cashed out by the owner: says nothing about the leader.
                 self.card.drop(f.slug, f.qty)
                 continue
+            if f.side == "SETTLE":
+                self._settled[f.slug] = f.price
             if f.side == "BUY" and f.slug in self._placing:
                 self.card.open(f.slug, self._placing[f.slug], f.qty, f.price * f.qty + f.fee)
+                self.marking.append({"slug": f.slug, "keys": list(self._placing[f.slug]),
+                                     "px": f.price, "ts": f.ts, "todo": [h for h, _ in MARKOUTS]})
             elif f.side == "SELL" and f.slug in self._selling:
                 self.card.close(f.slug, f.qty, f.price * f.qty - f.fee, self._selling[f.slug])
                 closed = True
@@ -387,7 +446,8 @@ class CopyTop(Strategy):
     def to_state(self) -> dict:
         return {"card": self.card.to_state(), "form": self.form, "status": self.status,
                 "skipped": self.skipped, "last_ts": self.last_ts,
-                "sizes": {w: list(d) for w, d in self.sizes.items()}}
+                "sizes": {w: list(d) for w, d in self.sizes.items()},
+                "marking": self.marking, "mo": self.mo, "settled": self._settled}
 
     def load_state(self, d: dict) -> None:
         self.card.load(d.get("card", {}))
@@ -398,6 +458,9 @@ class CopyTop(Strategy):
         # made during a restart are seen (those over max_age_s are skipped).
         self.last_ts = {w: int(t) for w, t in d.get("last_ts", {}).items()}
         self.sizes = {w: deque(v, maxlen=200) for w, v in d.get("sizes", {}).items()}
+        self.marking = d.get("marking", [])
+        self.mo = {h: d.get("mo", {}).get(h, {}) for h, _ in MARKOUTS}
+        self._settled = d.get("settled", {})
 
     def copied_from(self, slug: str) -> str:
         names = [self.leaders.get(k[2:], k[2:12]) for k in self.card.keys_for(slug)
@@ -410,6 +473,7 @@ class CopyTop(Strategy):
         return {"copytop_benched": by("benched"), "copytop_cooling": by("cooling"),
                 "copytop_patterns_skipped": ", ".join(sorted(self.skipped)),
                 "copytop_lag_median_s": round(median(self.lags), 1) if self.lags else None,
+                **{f"copytop_{k}": v for k, v in self.markouts("all").items()},
                 "copytop_unmapped_top": "; ".join(f"{s}|{o}|{n}" for (s, o), n
                                                   in self.unmapped.most_common(15))}
 
@@ -419,6 +483,7 @@ class CopyTop(Strategy):
             st, why = self.status.get(wallet, ["copying", ""])
             rows.append({"kind": "leader", "id": wallet, "name": name, "status": st,
                          "reason": why, **self.card.summary(f"w:{wallet}"),
+                         **self.markouts(f"w:{wallet}"),
                          **{k: self.form.get(wallet, {}).get(k) for k in
                             ("week_pnl", "month_pnl", "week_roi", "month_roi")}})
         for key in sorted(set(self.card.copies) | set(self.card.results)):
@@ -427,5 +492,6 @@ class CopyTop(Strategy):
             group, _, value = key.partition(":")
             rows.append({"kind": "pattern", "id": key, "group": group, "value": value,
                          "status": "skipped" if key in self.skipped else "copying",
-                         "reason": self.skipped.get(key, ""), **self.card.summary(key)})
+                         "reason": self.skipped.get(key, ""), **self.card.summary(key),
+                         **self.markouts(key)})
         return rows

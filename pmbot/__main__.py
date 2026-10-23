@@ -50,6 +50,8 @@ def parse_args(argv=None):
                    help="copytop: also copy the leaders' sells (default: hold to settlement)")
     g.add_argument("--max-wallet-usd", type=float, default=0.0,
                    help="copytop: most money open copying any one wallet (0 = no cap)")
+    g.add_argument("--copy-min-price", type=float, default=0.0,
+                   help="copytop: never copy a buy below this price (e.g. 0.30: no long shots)")
     g.add_argument("--conviction-sizing", action="store_true",
                    help="copytop: stake x0.5 when a leader bets under half their usual size, "
                    "x1.5 at twice it or more")
@@ -76,7 +78,7 @@ def parse_args(argv=None):
     g.add_argument("--kill-file", default=r.kill_file)
     g.add_argument("--total-pct", type=float, default=0.0,
                    help="cap money at risk at this share of account value, re-set each cycle")
-    g.add_argument("--market-pct", type=float, default=0.0, help="per-market cap as a share")
+    g.add_argument("--market-pct", type=float, default=0.0, help="per-game cap (all its markets) as a share")
     g.add_argument("--wallet-pct", type=float, default=0.0, help="copytop per-wallet cap as a share")
     g.add_argument("--stake-pct", type=float, default=0.0, help="stake as a share (min --min-stake)")
     g.add_argument("--min-stake", type=float, default=1.0)
@@ -121,7 +123,7 @@ def main(argv=None) -> int:
         stop = (f"stop after ${rcfg.daily_loss_limit:.0f} daily loss"
                 if rcfg.daily_loss_limit > 0 else "no daily stop")
         print(f"LIVE trading on Polymarket US with real money. Limits: ${rcfg.max_total_usd:.0f} "
-              f"total, ${rcfg.max_market_usd:.0f} per market, {stop}."
+              f"total, ${rcfg.max_market_usd:.0f} per game, {stop}."
               + (f" Sized on at most ${a.sizing_cap_usd:.0f} of the account." if a.sizing_cap_usd else ""))
         if not a.yes and input(f"Type '{CONFIRM}' to continue: ").strip() != CONFIRM:
             print("Not confirmed; exiting.")
@@ -143,6 +145,7 @@ def main(argv=None) -> int:
     engine = Engine(ecfg, scfg, RiskManager(rcfg), broker,
                     build(a.strategies, scfg, a.leaders_file, copy_sells=a.copy_sells,
                           conviction_sizing=a.conviction_sizing, max_wallet_usd=a.max_wallet_usd,
+                          min_price=a.copy_min_price,
                           ev_min_edge=a.ev_min_edge, ev_monthly_budget=a.ev_budget,
                           out_dir=ecfg.out_dir))
     if a.mode == "paper" and not a.no_preview and os.environ.get("PMUS_KEY_ID") \

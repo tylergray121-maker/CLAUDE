@@ -3,14 +3,26 @@
 from __future__ import annotations
 
 import os
+import re
 import time
 from dataclasses import dataclass
+
+_GAME = re.compile(r"^[a-z]+-(.+?-\d{4}-\d{2}-\d{2})")
+
+
+def game_of(slug: str) -> str:
+    """The game a market belongs to: ``atc-epl-ips-not-2026-10-23-draw:short``
+    and ``tsc-epl-ips-not-2026-10-23-2pt5`` are both ``epl-ips-not-2026-10-23``.
+    A slug with no date (a future) is its own game."""
+    base = slug.removesuffix(":short")
+    m = _GAME.match(base)
+    return m.group(1) if m else base
 
 
 @dataclass
 class RiskConfig:
     bankroll: float = 200.0
-    max_market_usd: float = 25.0     # cost basis + open bids, per market
+    max_market_usd: float = 25.0     # cost basis + open bids, per game (all its markets)
     max_total_usd: float = 150.0     # across all markets
     daily_loss_limit: float = 30.0   # halt and cancel everything below this
     max_orders_per_min: int = 30
@@ -26,14 +38,17 @@ class RiskManager:
         self._order_times: list[float] = []
 
     def room(self, slug: str, positions: dict, open_orders: dict, cash: float) -> float:
-        """Dollars that may still be committed to new buys in ``slug``."""
-        def committed(s=None):
-            pos = sum(p.cost for k, p in positions.items() if s is None or k == s)
+        """Dollars that may still be committed to new buys in ``slug``. The
+        per-game cap covers every market of its game together (moneyline,
+        draw, totals, both sides), so copies of different markets of one
+        match cannot stack past it."""
+        def committed(game=None):
+            pos = sum(p.cost for k, p in positions.items() if game is None or game_of(k) == game)
             bids = sum(o.price * o.qty for o in open_orders.values()
-                       if o.side == "BUY" and (s is None or o.slug == s))
+                       if o.side == "BUY" and (game is None or game_of(o.slug) == game))
             return pos + bids
         pending_all = sum(o.price * o.qty for o in open_orders.values() if o.side == "BUY")
-        return max(0.0, min(self.cfg.max_market_usd - committed(slug),
+        return max(0.0, min(self.cfg.max_market_usd - committed(game_of(slug)),
                             self.cfg.max_total_usd - committed(),
                             cash - pending_all))
 

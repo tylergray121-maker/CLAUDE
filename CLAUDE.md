@@ -46,3 +46,18 @@ profit you only hoped for, assumed or never checked does not count.
 - API keys live only in GitHub secrets (`PMUS_KEY_ID`, `PMUS_SECRET_KEY`,
   `ODDS_API_KEY`). Never print, log or ask for them.
 - Run `python -m unittest tests.test_pmbot` before every push.
+
+## Decisions set in advance (2026-10-23, owner delegated)
+
+Written before the results are in, so they cannot move the goalposts:
+
+- **Favorites-only goes live** when paper B (`paper-b.args`, 50c+) has 50
+  settled copies with ROI above 0 and a positive 2 h markout.
+- **Live copying is judged at 150 settled copies:** ROI below -5% with a
+  2 h markout at or below 0 turns copytop off, and its bankroll goes to
+  whatever paper has proven; ROI above +3% with positive markouts earns a
+  case for more size (the owner decides).
+- **No copies under 30c** (`--copy-min-price 0.30`, live and paper A):
+  long shots went 2 for 13 live (-42%) and lost out of sample.
+- **One cap per game** covers every market of a match (`pmbot/risk.py`),
+  so copies of its moneyline, draw and totals cannot stack past it.

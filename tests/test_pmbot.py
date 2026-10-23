@@ -274,7 +274,7 @@ class ScaledLimitsTest(unittest.TestCase):
         e.shutdown()
 
 
-class RiskTest(unittest.TestCase):
+class DailyStopTest(unittest.TestCase):
     def test_a_zero_daily_loss_limit_means_no_daily_stop(self):
         d = tempfile.mkdtemp()
         r = RiskManager(RiskConfig(daily_loss_limit=0, kill_file=os.path.join(d, "STOP")))
@@ -478,6 +478,22 @@ class RiskTest(unittest.TestCase):
         self.assertAlmostEqual(r.room("c", pos, orders, cash=100), 17)
         # cash binds, net of cash already promised to open bids
         self.assertAlmostEqual(r.room("c", pos, orders, cash=8), 3)
+
+    def test_one_cap_covers_every_market_of_a_game(self):
+        from pmbot.risk import game_of
+        g = "epl-ips-not-2026-10-23"
+        for slug in ("atc-epl-ips-not-2026-10-23-ips:short", "atc-epl-ips-not-2026-10-23-draw:short",
+                     "atc-epl-ips-not-2026-10-23-not", "tsc-epl-ips-not-2026-10-23-2pt5"):
+            self.assertEqual(game_of(slug), g)
+        self.assertEqual(game_of("tsc-nba-tor-was-2026-10-23-236pt5"), "nba-tor-was-2026-10-23")
+        self.assertEqual(game_of("aec-nba-chi-mil-2026-10-23:short"), "nba-chi-mil-2026-10-23")
+        self.assertEqual(game_of("brewers"), "brewers")              # no date: its own game
+        r = RiskManager(RiskConfig(max_market_usd=23, max_total_usd=270))
+        pos = {"atc-epl-ips-not-2026-10-23-ips:short": Position(32, 22.87),
+               "atc-epl-ips-not-2026-10-23-draw:short": Position(20, 15.36)}
+        # Forest to win is a new market, but the game already holds $38: no room.
+        self.assertEqual(r.room("atc-epl-ips-not-2026-10-23-not", pos, {}, cash=100), 0.0)
+        self.assertAlmostEqual(r.room("aec-nba-chi-mil-2026-10-23", pos, {}, cash=100), 23.0)
 
     def test_daily_loss_halts(self):
         r = RiskManager(RiskConfig(daily_loss_limit=30, kill_file="/nonexistent/STOP"))
@@ -875,6 +891,54 @@ class CopyTopTest(unittest.TestCase):
         self.assertEqual((f.side, f.price, f.qty, f.maker, f.tag), ("BUY", 0.61, 16, False, "copytop"))
         self.assertGreater(f.fee, 0)                # taker fee paid
         self.assertEqual(self.e.owner["brewers"], "copytop")
+
+    def test_copy_price_floor_skips_long_shots(self):
+        self.copy.min_price = 0.65
+        self.e.cycle()
+        self.trade("BUY", 0.62)                     # US ask 0.61 is under the floor
+        self.e.cycle()
+        self.assertEqual(self.e.broker.fills, [])
+        self.assertEqual(self.copy.stats["skip_price_band"], 1)
+
+    def test_markouts_after_30_minutes_and_2_hours_by_wallet(self):
+        from pmbot.broker import Fill
+        self.e.cycle()
+        self.trade("BUY", 0.62)
+        self.e.cycle()
+        f = self.e.broker.fills[-1]
+        self.assertEqual([(m["slug"], m["px"]) for m in self.copy.marking], [("brewers", 0.61)])
+        self.assertIn("brewers", self.copy.watch(self.e, f.ts))  # kept quoted until marked
+        self.e.marks["brewers"] = 0.66
+        self.copy._markouts(self.e, f.ts + 1799)
+        self.assertEqual(self.copy.markouts("all")["mo30_n"], 0)  # not due yet
+        self.copy._markouts(self.e, f.ts + 1801)
+        self.copy.on_fills(self.e, [Fill(f.ts + 5000, "brewers", "SETTLE", 1.0, f.qty, False, 0.0,
+                                         "copytop")])
+        self.e.marks["brewers"] = 0.10              # stale mid after the game: payout wins
+        self.copy._markouts(self.e, f.ts + 7201)
+        mo = self.copy.markouts(f"w:{self.LEADER}")
+        self.assertEqual((mo["mo30_c"], mo["mo30_n"], mo["mo120_c"], mo["mo120_n"]), (5.0, 1, 39.0, 1))
+        self.assertEqual(self.copy.marking, [])
+        self.assertEqual(self.copy.summary()["copytop_mo120_c"], 39.0)
+        leader = [r for r in self.copy.dashboard_rows() if r["kind"] == "leader"][0]
+        self.assertEqual(leader["mo30_c"], 5.0)
+        state = json.loads(json.dumps(self.copy.to_state()))
+        from pmbot.copy import CopyTop
+        again = CopyTop(StrategyConfig(), {self.LEADER: "primm"})
+        again.load_state(state)
+        self.assertEqual(again.markouts("all")["mo120_c"], 39.0)
+
+    def test_a_markout_with_no_price_is_dropped_when_overdue(self):
+        self.e.cycle()
+        self.trade("BUY", 0.62)
+        self.e.cycle()
+        f = self.e.broker.fills[-1]
+        self.e.marks.pop("brewers", None)
+        self.copy._markouts(self.e, f.ts + 1801)
+        self.assertEqual(self.copy.marking[0]["todo"], ["mo30", "mo120"])   # waits a while
+        self.copy._markouts(self.e, f.ts + 1800 + 901)
+        self.assertEqual(self.copy.marking[0]["todo"], ["mo120"])
+        self.assertEqual(self.copy.markouts("all")["mo30_n"], 0)
 
     def test_does_not_chase_a_moved_price_or_copy_fills_twice(self):
         self.e.cycle()
