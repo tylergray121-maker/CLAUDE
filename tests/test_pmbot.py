@@ -248,6 +248,31 @@ class ScaledLimitsTest(unittest.TestCase):
         self.assertEqual((e.risk.cfg.max_total_usd, scfg.order_usd), (17.6, 1.0))
         e.shutdown()
 
+    def test_a_sizing_cap_sizes_on_the_bots_book_and_ignores_hand_bets(self):
+        from pmbot.broker import Position
+        from pmbot.copy import CopyTop
+        d = tempfile.mkdtemp()
+        copy = CopyTop(StrategyConfig(order_usd=1), {}, max_wallet_usd=5)
+        e = Engine(EngineConfig(mode="paper", out_dir=d, minutes=0, total_pct=0.88, market_pct=0.075,
+                                wallet_pct=0.12, stake_pct=0.025, min_stake=1.0, sizing_cap_usd=120),
+                   copy.cfg, RiskManager(RiskConfig(bankroll=310, kill_file=os.path.join(d, "STOP"))),
+                   strategies=[copy])
+        e.scale_limits(310.0)                       # $310 account, bot sized on $120
+        self.assertEqual((e.risk.cfg.max_total_usd, e.risk.cfg.max_market_usd), (105.6, 9.0))
+        self.assertEqual((copy.cfg.order_usd, copy.max_wallet_usd), (3.0, 14.4))
+        e.scale_limits(80.0)                        # owner withdrew: size on what is there
+        self.assertEqual(copy.cfg.order_usd, 2.0)
+        e.scale_limits(310.0)
+        b = e.broker
+        b.cash = 200.0
+        b.positions = {"hand": Position(100, 90.0), "bot": Position(10, 5.0)}
+        b.own = {"bot": Position(10, 5.0)}          # the owner's $90 hand bet is not the bot's
+        self.assertAlmostEqual(e.room("x"), 9.0)
+        self.assertAlmostEqual(e.room("bot"), 4.0)
+        b.own = {"bot": Position(10, 5.0), "y": Position(200, 100.6)}
+        self.assertAlmostEqual(e.room("x"), 0.0)    # its own book is full
+        e.shutdown()
+
 
 class RiskTest(unittest.TestCase):
     def test_a_zero_daily_loss_limit_means_no_daily_stop(self):
@@ -711,6 +736,7 @@ class PreviewCheckerTest(unittest.TestCase):
 class StrategyPluginTest(unittest.TestCase):
     def engine_with(self, markets):
         e = Engine.__new__(Engine)
+        e.ecfg = EngineConfig()
         e.markets = {m.slug: m for m in markets}
         e.broker = PaperBroker(200)
         e.risk = RiskManager(RiskConfig(kill_file="/nonexistent/STOP"))

@@ -80,6 +80,9 @@ def parse_args(argv=None):
     g.add_argument("--wallet-pct", type=float, default=0.0, help="copytop per-wallet cap as a share")
     g.add_argument("--stake-pct", type=float, default=0.0, help="stake as a share (min --min-stake)")
     g.add_argument("--min-stake", type=float, default=1.0)
+    g.add_argument("--sizing-cap-usd", type=float, default=0.0,
+                   help="size the shares above on at most this much account value; "
+                   "only the bot's own contracts count against its caps (0 = whole account)")
     p.add_argument("--no-preview", action="store_true",
                    help="paper: don't check orders with the exchange's order preview "
                    "even when API keys are set")
@@ -100,7 +103,8 @@ def main(argv=None) -> int:
                         snapshot_seconds=a.snapshot_seconds,
                         equity_seconds=a.equity_seconds, total_pct=a.total_pct,
                         market_pct=a.market_pct, wallet_pct=a.wallet_pct,
-                        stake_pct=a.stake_pct, min_stake=a.min_stake)
+                        stake_pct=a.stake_pct, min_stake=a.min_stake,
+                        sizing_cap_usd=a.sizing_cap_usd)
     scfg = StrategyConfig(maker_edge=a.maker_edge, taker_edge=a.taker_edge,
                           order_usd=a.order_usd, max_fair_spread=a.max_fair_spread,
                           taker_enabled=not a.no_taker, maker_enabled=not a.no_maker,
@@ -117,7 +121,8 @@ def main(argv=None) -> int:
         stop = (f"stop after ${rcfg.daily_loss_limit:.0f} daily loss"
                 if rcfg.daily_loss_limit > 0 else "no daily stop")
         print(f"LIVE trading on Polymarket US with real money. Limits: ${rcfg.max_total_usd:.0f} "
-              f"total, ${rcfg.max_market_usd:.0f} per market, {stop}.")
+              f"total, ${rcfg.max_market_usd:.0f} per market, {stop}."
+              + (f" Sized on at most ${a.sizing_cap_usd:.0f} of the account." if a.sizing_cap_usd else ""))
         if not a.yes and input(f"Type '{CONFIRM}' to continue: ").strip() != CONFIRM:
             print("Not confirmed; exiting.")
             return 1

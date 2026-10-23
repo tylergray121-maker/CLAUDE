@@ -79,6 +79,10 @@ class EngineConfig:
     wallet_pct: float = 0.0
     stake_pct: float = 0.0
     min_stake: float = 1.0
+    # Size the bot as if the account held at most this much (0 = all of it).
+    # The bot then counts only its own contracts against its caps: money the
+    # owner keeps in the account, or bets by hand, is not the bot's to spend.
+    sizing_cap_usd: float = 0.0
 
 
 @dataclass
@@ -272,6 +276,8 @@ class Engine:
         e, c = self.ecfg, self.risk.cfg
         if equity <= 0:
             return
+        if e.sizing_cap_usd:
+            equity = min(equity, e.sizing_cap_usd)
         if e.total_pct:
             c.max_total_usd = round(equity * e.total_pct, 2)
         if e.market_pct:
@@ -418,7 +424,8 @@ class Engine:
 
     def room(self, slug: str) -> float:
         b = self.broker
-        return self.risk.room(slug, b.positions, b.open_orders, b.cash)
+        own = getattr(b, "own", None) if self.ecfg.sizing_cap_usd else None
+        return self.risk.room(slug, b.positions if own is None else own, b.open_orders, b.cash)
 
     def _scan(self, v: MarketView) -> None:
         if v.fair is None or v.fair_spread is None or v.fair_spread > self.scfg.max_fair_spread:
