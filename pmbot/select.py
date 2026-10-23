@@ -571,7 +571,7 @@ def main(argv=None) -> int:
 
     # Final pick on the whole window, among wallets copied in the last week.
     final = pick(lots, a.min_copies + 5, a.leaders, active_since=end_ts - 7 * 86400)
-    wf_lines, method_used = [], None
+    wf_lines, method_used, evidence = [], None, {}
     if a.folds:
         wf = walk_forward(lots, end_ts, a.choose_days, a.test_days, a.folds, a.min_copies)
         base = wf[("all", None)]
@@ -584,9 +584,11 @@ def main(argv=None) -> int:
             if m == "all":
                 continue
             wf_lines.append(_row(f"{m}, top {k}", st))
-            # A method must beat the baseline per copy and hold up statistically.
+            # A method must beat the baseline per copy, make money, and hold up
+            # statistically: with ~20 method/size pairs compared, the best of
+            # them clears t = 1 by luck alone, so it needs t >= 2.
             if st["n"] >= 150 and st["mean"] is not None and base["mean"] is not None and \
-                    st["mean"] > base["mean"] and (st["t"] or 0) > 1.0 and \
+                    st["mean"] > base["mean"] and st["mean"] > 0 and (st["t"] or 0) >= 2.0 and \
                     (best is None or st["mean"] > best[1]["mean"]):
                 best = ((m, k), st)
         recent = {w: [x for x in v if x["ts"] >= end_ts - a.choose_days * 86400]
@@ -594,14 +596,16 @@ def main(argv=None) -> int:
         active = {w for w, v in lots.items() if any(x["ts"] >= end_ts - 7 * 86400
                                                     for x in v if "price" in x)}
         if best:
-            method_used = f"{best[0][0]}, top {a.final_size}"
+            method_used = f"{best[0][0]}, top {best[0][1]}"
+            evidence = {"method_t": best[1]["t"], "method_return": best[1]["roi"],
+                        "method_copies": best[1]["n"]}
             ranked = rank(recent, best[0][0], a.min_copies, None,
                           positive=best[0][0] != "most active")
         else:
             method_used = "every qualified wallet (no ranking method beat it out of sample)"
             ranked = sorted((w for w in rank(recent, "all", a.min_copies, None)),
                             key=lambda w: -(stats(recent[w])["mean"] or 0))
-        final = [w for w in ranked if w in active][:a.final_size]
+        final = [w for w in ranked if w in active][:best[0][1] if best else a.final_size]
         wf_lines += ["", f"Used for the final list: **{method_used}** ({len(final)} wallets, "
                      "copied in the last week).", ""]
 
@@ -638,7 +642,7 @@ def main(argv=None) -> int:
                       "copy_pnl_per_10usd": round(10 * (s["mean"] or 0), 2)})
     with open(os.path.join(a.out_dir, "leaders.json"), "w") as f:
         json.dump({"chosen": time.strftime("%Y-%m-%d", time.gmtime(end_ts)),
-                   "method": method_used,
+                   "method": method_used, **evidence,
                    "rule": (f"Backtest of copytop itself over {a.days} days on markets "
                             f"Polymarket US listed ({a.delay}s copy delay, $10 a signal, US "
                             f"taker fee, never more than 1c over the leader, held to "

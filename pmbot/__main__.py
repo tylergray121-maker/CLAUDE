@@ -58,6 +58,9 @@ def parse_args(argv=None):
                    "much after the taker fee (needs ODDS_API_KEY)")
     g.add_argument("--ev-budget", type=int, default=450,
                    help="evsniper: odds requests per month (free key: 500)")
+    g.add_argument("--min-price", type=float, default=s.min_price,
+                   help="never buy below this price (e.g. 0.5: favorites only)")
+    g.add_argument("--max-price", type=float, default=s.max_price)
     g.add_argument("--maker-edge", type=float, default=s.maker_edge)
     g.add_argument("--taker-edge", type=float, default=s.taker_edge)
     g.add_argument("--order-usd", type=float, default=s.order_usd)
@@ -100,7 +103,8 @@ def main(argv=None) -> int:
                         stake_pct=a.stake_pct, min_stake=a.min_stake)
     scfg = StrategyConfig(maker_edge=a.maker_edge, taker_edge=a.taker_edge,
                           order_usd=a.order_usd, max_fair_spread=a.max_fair_spread,
-                          taker_enabled=not a.no_taker, maker_enabled=not a.no_maker)
+                          taker_enabled=not a.no_taker, maker_enabled=not a.no_maker,
+                          min_price=a.min_price, max_price=a.max_price)
     rcfg = RiskConfig(bankroll=a.bankroll, max_market_usd=a.max_market_usd,
                       max_total_usd=a.max_total_usd,
                       daily_loss_limit=a.daily_loss_limit, kill_file=a.kill_file)

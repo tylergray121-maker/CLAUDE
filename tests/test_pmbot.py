@@ -168,7 +168,7 @@ class ApplyLeadersTest(unittest.TestCase):
         from pmbot.apply_leaders import merge
         cur = {"leaders": [{"wallet": "0xAAA", "name": "Tiger105", "source": "owner's pick"},
                            {"wallet": "0xBBB", "name": "old"}]}
-        sel = {"chosen": "2026-10-23", "method": "m",
+        sel = {"chosen": "2026-10-23", "method": "m", "method_t": 2.3, "method_return": 0.04,
                "leaders": [{"wallet": f"0x{i}", "name": f"w{i}"} for i in range(12)]
                + [{"wallet": "0xaaa", "name": "dup"}]}
         new = merge(cur, sel, 10)
@@ -177,6 +177,9 @@ class ApplyLeadersTest(unittest.TestCase):
         self.assertNotIn("0xbbb", ws)                         # dropped
         self.assertEqual(len(ws), 13)                         # 12 picks + Tiger105, no dup
         self.assertIsNone(merge(cur, {"leaders": sel["leaders"][:3]}, 10))
+        # a method that did not clearly make money out of sample: never applied
+        self.assertIsNone(merge(cur, {**sel, "method_t": 1.07}, 10))
+        self.assertIsNone(merge(cur, {k: v for k, v in sel.items() if k != "method_t"}, 10))
         # the no-ranking fallback lost out of sample: never applied
         self.assertIsNone(merge(cur, {**sel, "method": "every qualified wallet (no ranking "
                                       "method beat it out of sample)"}, 10))

@@ -6,8 +6,9 @@ The new list is the selection's picks plus every wallet the owner added by
 hand ("owner's pick" in its source), which are always kept. If the selection
 found fewer than --min wallets, the current list is left as it is, so a
 thin or failed run can never leave the bot with nothing to copy. Nor is
-the "every qualified wallet" fallback applied: it is what the search uses
-when no ranking held up out of sample, and copying everyone lost money there.
+the "every qualified wallet" fallback applied (copying everyone lost money
+out of sample), nor a list whose ranking method did not make money in the
+walk-forward test with a t-statistic of at least 2.
 """
 
 from __future__ import annotations
@@ -18,12 +19,15 @@ import os
 import sys
 
 HERE = os.path.join(os.path.dirname(__file__), "leaders.json")
+MIN_T = 2.0   # walk-forward t-statistic the selection's method must reach
 
 
 def merge(current: dict, picked: dict, min_picks: int = 10) -> dict | None:
     picks = [x for x in picked.get("leaders", []) if x.get("wallet")]
     if len(picks) < min_picks or str(picked.get("method", "")).startswith("every qualified"):
         return None
+    if (picked.get("method_t") or 0) < MIN_T or (picked.get("method_return") or 0) <= 0:
+        return None   # the ranking method did not clearly make money out of sample
     owner = [x for x in current.get("leaders", []) if "owner" in str(x.get("source", ""))]
     seen, leaders = set(), []
     for x in owner + [{**p, "source": f"selection {picked.get('chosen', '')}: "

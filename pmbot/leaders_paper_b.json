@@ -1,0 +1,286 @@
+{
+ "chosen": "2026-10-21",
+ "rule": "Top-wallet study: sports wallets active in the last week whose sampled positions reconcile with their all-time leaderboard profit, 150+ positions (no whales), edge per dollar above 4%; top 16 by edge. Plus the copytop backtest's run-2 picks (2026-10-21), for more volume. | 2026-10-22: dropped para-Vision (-15%, t -2.25) and ColdBlooded (-11%, t -2.5) on the 90-day copy backtest; added THEHIGHLIFE, AmericaFirst1, UNEB3154s4f251. The search's 'every qualified wallet' list was not used: it lost 4.2% out of sample vs +6.1% for the current list. | paper desk B: plus esports specialists that made money in both halves of the 90-day copy backtest.",
+ "leaders": [
+  {
+   "wallet": "0x006cc834cc092684f1b56626e23bedb3835c16ea",
+   "name": "0x006cc834Cc092684F1B56626E23BEdB3835c16ea-1729683673397",
+   "edge_per_dollar": 0.1712,
+   "win_rate": 0.475,
+   "positions": 600,
+   "maker_usd_share": 0.755,
+   "style": "sports bettor (pre-game/futures)"
+  },
+  {
+   "wallet": "0xd38b71f3e8ed1af71983e5c309eac3dfa9b35029",
+   "name": "primm",
+   "edge_per_dollar": 0.1639,
+   "win_rate": 0.465,
+   "positions": 2959,
+   "maker_usd_share": 0.585,
+   "style": "high-volume sports operation (taker flow)"
+  },
+  {
+   "wallet": "0x924379a79c64b77ad5816ad362122a5f6228658e",
+   "name": "Kch-Temp",
+   "edge_per_dollar": 0.141,
+   "win_rate": 0.539,
+   "positions": 406,
+   "maker_usd_share": 0.089,
+   "style": "sports bettor (pre-game/futures)"
+  },
+  {
+   "wallet": "0xe5b70fd855af9258d9463992e4f1ed7987905ee3",
+   "name": "EdZachary",
+   "edge_per_dollar": 0.1283,
+   "win_rate": 0.44,
+   "positions": 232,
+   "maker_usd_share": 0.688,
+   "style": "sports bettor (same-day/in-play)"
+  },
+  {
+   "wallet": "0x7e3a1f95c558f39a51ff334d789e3e039b553246",
+   "name": "KaneAnalytics",
+   "edge_per_dollar": 0.0849,
+   "win_rate": 0.518,
+   "positions": 730,
+   "maker_usd_share": 0.049,
+   "style": "sports bettor (same-day/in-play)"
+  },
+  {
+   "wallet": "0x83720820a8aa6c3f20ad71850e7a1a17d16c5223",
+   "name": "Jsram",
+   "edge_per_dollar": 0.0809,
+   "win_rate": 0.545,
+   "positions": 299,
+   "maker_usd_share": 0.792,
+   "style": "sports bettor (pre-game/futures)"
+  },
+  {
+   "wallet": "0xe7870d0e1bfc65a23e3d66caf00ca1b9129e5034",
+   "name": "Kkunn",
+   "edge_per_dollar": 0.0772,
+   "win_rate": 0.419,
+   "positions": 506,
+   "maker_usd_share": 0.235,
+   "style": "sports bettor (pre-game/futures)"
+  },
+  {
+   "wallet": "0xf3ce7f04dde4f8c5aed19a20e5ecd8520e5ca57a",
+   "name": "Sisyphus-",
+   "edge_per_dollar": 0.0772,
+   "win_rate": 0.577,
+   "positions": 1891,
+   "maker_usd_share": 0.0,
+   "style": "high-volume sports operation (taker flow)"
+  },
+  {
+   "wallet": "0xdaef2be2a19ad331737d06545f85615b094554e9",
+   "name": "PEYZ-BIGGEST-FAN",
+   "edge_per_dollar": 0.0693,
+   "win_rate": 0.506,
+   "positions": 2547,
+   "maker_usd_share": 0.502,
+   "style": "high-volume sports operation (taker flow)"
+  },
+  {
+   "wallet": "0x7ad71d79a3bb90d0a87a06500fa0fe11663842aa",
+   "name": "theowalcott",
+   "edge_per_dollar": 0.0664,
+   "win_rate": 0.538,
+   "positions": 212,
+   "maker_usd_share": 0.533,
+   "style": "sports bettor (same-day/in-play)"
+  },
+  {
+   "wallet": "0x8546a601f7c7cc3dae7141f20b0e09e42bbf35b8",
+   "name": "HVAB",
+   "edge_per_dollar": 0.0605,
+   "win_rate": 0.69,
+   "positions": 1137,
+   "maker_usd_share": 0.663,
+   "style": "high-volume sports operation (market making)"
+  },
+  {
+   "wallet": "0xf0318c32136c2db7fec88b84869aee6a1106c80c",
+   "name": "BreakTheBank",
+   "edge_per_dollar": 0.0582,
+   "win_rate": 0.424,
+   "positions": 1260,
+   "maker_usd_share": 0.628,
+   "style": "high-volume sports operation (market making)"
+  },
+  {
+   "wallet": "0x7c37b52eb226bcb9411375ec48b0169663fb6aeb",
+   "name": "Diabolical-Prize",
+   "edge_per_dollar": 0.0455,
+   "win_rate": 0.49,
+   "positions": 418,
+   "maker_usd_share": 0.307,
+   "style": "sports bettor (pre-game/futures)"
+  },
+  {
+   "wallet": "0xa71093cafc0c099b4ccab24c3cb8018d817923c4",
+   "name": "Talvez10",
+   "edge_per_dollar": 0.0437,
+   "win_rate": 0.503,
+   "positions": 1601,
+   "maker_usd_share": 0.455,
+   "style": "high-volume sports operation (taker flow)"
+  },
+  {
+   "wallet": "0x996ac56c9e72b6ca38a30ae9f6e85152d9afe3cc",
+   "name": "BunCaCham",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.5014,
+   "copies": 21
+  },
+  {
+   "wallet": "0x96020c20842a5175e3e0aeef7843d1dbb7bc4d02",
+   "name": "0010001000001100",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.698,
+   "copies": 35
+  },
+  {
+   "wallet": "0x0f6f76ced62a911bccef92f50faaff143854d977",
+   "name": "totoro3miyazaki",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.4126,
+   "copies": 33
+  },
+  {
+   "wallet": "0xb52e8b3afd9f0f0d502a5a76494b42816d67285c",
+   "name": "1l2ihj34li12u34",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.4057,
+   "copies": 28
+  },
+  {
+   "wallet": "0x285faa3e3d1465cf3ff1bff1e1d14891f5b8495f",
+   "name": "yabanci",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.3441,
+   "copies": 23
+  },
+  {
+   "wallet": "0x20d6436849f930584892730c7f96ebb2ac763856",
+   "name": "0x20D6436849F930584892730C7F96eBB2Ac763856-1768642056357",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.3365,
+   "copies": 130
+  },
+  {
+   "wallet": "0x5fdd66ffd0325d4e8d1d86fbec50caa31770a747",
+   "name": "juice-fruit",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.2939,
+   "copies": 30
+  },
+  {
+   "wallet": "0x16bb9951a36fce71e2ef57890b786145e0ba8492",
+   "name": "0x16bb9951a36fce71e2ef57890b786145e0ba8492",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.1661,
+   "copies": 385
+  },
+  {
+   "wallet": "0xe5241830e8876c115d7dc8311ad9f43d85fdd34f",
+   "name": "GamblingOdyssey",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.1939,
+   "copies": 57
+  },
+  {
+   "wallet": "0x0a39b3b29ab3b7dd753aa96fde4ecab3f2dbb0b9",
+   "name": "plonker2026",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.2286,
+   "copies": 34
+  },
+  {
+   "wallet": "0x56d8d5f6585716a1a900282192dd21a4261e1cce",
+   "name": "xxyx0xx",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.2368,
+   "copies": 112
+  },
+  {
+   "wallet": "0x684baa57c338c2549aec0aa3f034f695d72a8409",
+   "name": "monkeymashingkeyboard",
+   "source": "copytop backtest run 2 (whole window)",
+   "copy_return": 0.1074,
+   "copies": 606
+  },
+  {
+   "wallet": "0x0d23fc6838433dbff11e4667ef5991e9dd9d2d56",
+   "name": "Tiger105",
+   "source": "owner's pick (Polymarket username tiger105)"
+  },
+  {
+   "wallet": "0x8c0b024c17831a0dde038547b7e791ae6a0d7aa5",
+   "name": "THEHIGHLIFE",
+   "copy_return": 0.1218,
+   "copy_t": 1.64,
+   "copies": 519,
+   "won": 226,
+   "copy_pnl_per_10usd": 1.24,
+   "source": "selection 2026-10-22: copy return t>=1.5 over 500+ copies, added for volume"
+  },
+  {
+   "wallet": "0x154ca10dfee317dcfb9337788db7da858cba658e",
+   "name": "AmericaFirst1",
+   "copy_return": 0.0684,
+   "copy_t": 1.65,
+   "copies": 497,
+   "won": 312,
+   "copy_pnl_per_10usd": 0.69,
+   "source": "selection 2026-10-22: copy return t>=1.5 over 500+ copies, added for volume"
+  },
+  {
+   "wallet": "0x04641b57f332c15ecaa497799c55026d521967da",
+   "name": "UNEB3154s4f251",
+   "copy_return": 0.0328,
+   "copy_t": 1.79,
+   "copies": 1886,
+   "won": 1186,
+   "copy_pnl_per_10usd": 0.34,
+   "source": "selection 2026-10-22: copy return t>=1.5 over 500+ copies, added for volume"
+  },
+  {
+   "wallet": "0xf1404010a21a61c1f5693beee65285273be47cd8",
+   "name": "yakz",
+   "copy_return": 0.218,
+   "copies": 122,
+   "source": "esports specialist, 2026-10-23 search: +19.1% (73) then +25.8% (49) on esports copies"
+  },
+  {
+   "wallet": "0x3a449b6b30e10f13f2ceae471e5ecb57a71b6881",
+   "name": "dddd123s",
+   "copy_return": 0.0532,
+   "copies": 439,
+   "source": "esports specialist, 2026-10-23 search: +5.7% (182) then +5.0% (257) on esports copies"
+  },
+  {
+   "wallet": "0x31234101ffb9421eeab5b704fe974f0b6721b44d",
+   "name": "newUser2025",
+   "copy_return": 0.0791,
+   "copies": 125,
+   "source": "esports specialist, 2026-10-23 search: +10.7% (80) then +2.9% (45) on esports copies"
+  },
+  {
+   "wallet": "0xab969bd37a5b6a75ed79190ebe120618da0e8d69",
+   "name": "sinhtuycanh",
+   "copy_return": 0.0608,
+   "copies": 152,
+   "source": "esports specialist, 2026-10-23 search: +1.3% (71) then +10.2% (81) on esports copies"
+  },
+  {
+   "wallet": "0xcf279d521e62d60848dbfba1791617dc9a99f35f",
+   "name": "0xcf279d52",
+   "copy_return": 0.0324,
+   "copies": 312,
+   "source": "esports specialist, 2026-10-23 search: +2.6% (153) then +3.8% (159) on esports copies"
+  }
+ ]
+}

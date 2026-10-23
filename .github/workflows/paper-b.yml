@@ -1,0 +1,90 @@
+name: paper trading B (refined)
+
+# Desk B: the refined copy rules under test (favorites only, esports
+# specialists added), against desk A (paper.yml) and live, which copy as is.
+
+# A long paper-trading session on Polymarket US: one run made of segments
+# that execute one after another (GitHub caps a job at 6 hours). Each segment
+# resumes the account from the paper-b branch and publishes a snapshot
+# there every 10 minutes. Add a file named STOP to paper-b to end early.
+
+on:
+  push:
+    branches: [claude/polymarket-copy-backtest]
+    paths: [".github/workflows/paper-b.yml", "paper-b.args"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# A newer run replaces a running one; the account carries over from the
+# last snapshot (at most 10 minutes old).
+concurrency:
+  group: paper-b
+  cancel-in-progress: true
+
+jobs:
+  segment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 358
+    strategy:
+      max-parallel: 1
+      fail-fast: false
+      matrix:
+        segment: [1, 2, 3, 4]
+    env:
+      REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+      # Optional: with these repository secrets set, every paper order is
+      # checked with Polymarket US's order preview (nothing is placed).
+      PMUS_KEY_ID: ${{ secrets.PMUS_KEY_ID }}
+      PMUS_SECRET_KEY: ${{ secrets.PMUS_SECRET_KEY }}
+      # Optional: The Odds API key for the evsniper strategy (Pinnacle fair odds).
+      ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install the Polymarket US SDK
+        run: pip install -q polymarket-us==2.4.1
+
+      - name: Restore the paper account
+        id: restore
+        run: |
+          mkdir -p live
+          if git fetch -q origin paper-b 2>/dev/null; then
+            git show origin/paper-b:state.json > live/state.json 2>/dev/null || rm -f live/state.json
+            if git show origin/paper-b:STOP >/dev/null 2>&1; then echo "stop=1" >> "$GITHUB_OUTPUT"; fi
+          fi
+          ls -la live
+
+      - name: Paper trade and publish snapshots
+        if: steps.restore.outputs.stop != '1'
+        timeout-minutes: 352
+        shell: bash
+        run: |
+          publish() {
+            rm -rf /tmp/pl && mkdir -p /tmp/pl
+            for f in state.json paper.json report.md summary.json; do
+              [ -f "live/$f" ] && cp "live/$f" /tmp/pl/
+            done
+            (cd /tmp/pl && git init -q && git checkout -q -b paper-b && git add -A &&
+             git -c user.name="github-actions[bot]" \
+                 -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+                 commit -qm "Paper snapshot $(date -u +%Y-%m-%dT%H:%MZ) [skip ci]" &&
+             git push -qf "$REPO_URL" paper-b) || echo "publish failed"
+          }
+          python -u -m pmbot paper --resume --out-dir live --minutes 345 $(cat paper-b.args) \
+            > live/run.log 2>&1 &
+          BOT=$!
+          while kill -0 $BOT 2>/dev/null; do
+            sleep 600
+            publish
+            grep -v " paper " live/run.log | tail -3 || true
+          done
+          STATUS=0
+          wait $BOT || STATUS=$?   # under bash -e a bare failing wait would skip the publish
+          publish
+          tail -20 live/run.log || true
+          exit $STATUS
