@@ -10,7 +10,8 @@ The list is read once (by its ``id``) and kept with the account. Each position i
 back as cash allows, pre-game only (the market must still be tradable) and
 never above its ``max_price`` (what the bot paid plus a cent), so it is the
 same bet at the same price, not a chase after a line that moved. Entries
-are dropped once filled or once their game starts.
+are dropped once filled or once their game starts. The same list tops up
+open positions to a new stake size when the owner raises the bankroll.
 """
 
 from __future__ import annotations
