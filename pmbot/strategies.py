@@ -73,7 +73,12 @@ REGISTRY = {"fairvalue": FairValue, "sportsgameday": SportsGameDay}
 
 def build(names: str, cfg: StrategyConfig, leaders_file: str = "", **copy_opts) -> list[Strategy]:
     out = []
+    out_dir = copy_opts.pop("out_dir", ".")
     for n in [x.strip() for x in names.split(",") if x.strip()]:
+        if n == "reenter":
+            from .reenter import ReEnter
+            out.append(ReEnter(out_dir))
+            continue
         if n == "evsniper":
             import os
             from .ev import EVSniper

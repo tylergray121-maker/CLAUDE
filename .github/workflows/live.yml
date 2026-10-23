@@ -81,6 +81,8 @@ jobs:
           if git fetch -q origin live-desk 2>/dev/null; then
             git show origin/live-desk:state.json > live/state.json 2>/dev/null || rm -f live/state.json
             git show origin/live-desk:live_orders.json > live/live_orders.json 2>/dev/null || true
+            # A one-shot list of positions to buy back (pmbot/reenter.py), if any.
+            git show origin/live-desk:reenter.json > live/reenter.json 2>/dev/null || rm -f live/reenter.json
             if git show origin/live-desk:STOP >/dev/null 2>&1; then echo "stop=1" >> "$GITHUB_OUTPUT"; fi
           fi
           ls -la live

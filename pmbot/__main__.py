@@ -43,7 +43,7 @@ def parse_args(argv=None):
     g.add_argument("--equity-seconds", type=float, default=e.equity_seconds)
     g = p.add_argument_group("strategy")
     g.add_argument("--strategies", default="sportsgameday,fairvalue",
-                   help="comma list, in priority order: copytop, evsniper, sportsgameday, fairvalue")
+                   help="comma list, in priority order: copytop, reenter, evsniper, sportsgameday, fairvalue")
     g.add_argument("--leaders-file", default=os.path.join(os.path.dirname(__file__), "leaders.json"),
                    help="copytop: wallets to copy")
     g.add_argument("--copy-sells", action="store_true",
@@ -138,7 +138,8 @@ def main(argv=None) -> int:
     engine = Engine(ecfg, scfg, RiskManager(rcfg), broker,
                     build(a.strategies, scfg, a.leaders_file, copy_sells=a.copy_sells,
                           conviction_sizing=a.conviction_sizing, max_wallet_usd=a.max_wallet_usd,
-                          ev_min_edge=a.ev_min_edge, ev_monthly_budget=a.ev_budget))
+                          ev_min_edge=a.ev_min_edge, ev_monthly_budget=a.ev_budget,
+                          out_dir=ecfg.out_dir))
     if a.mode == "paper" and not a.no_preview and os.environ.get("PMUS_KEY_ID") \
             and os.environ.get("PMUS_SECRET_KEY"):
         from .broker import PreviewChecker

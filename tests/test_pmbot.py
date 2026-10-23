@@ -146,6 +146,49 @@ class PerformanceTest(unittest.TestCase):
         e.shutdown()
 
 
+class ReEnterTest(unittest.TestCase):
+    def setUp(self):
+        from pmbot.reenter import ReEnter
+        self.d = tempfile.mkdtemp()
+        self.re = ReEnter(self.d)
+        self.e = Engine(EngineConfig(mode="paper", out_dir=self.d, minutes=0), StrategyConfig(),
+                        RiskManager(RiskConfig(kill_file=os.path.join(self.d, "STOP"))),
+                        strategies=[self.re])
+        self.v = self.e.client = FakeVenues()
+        self.v.game = True
+        self.e.refresh_pairs()
+        self.e.markets[GAME].game_start = time.time() + 3 * 3600
+        self.e.markets[GAME].slug = GAME
+
+    def tearDown(self):
+        self.e.shutdown()
+
+    def write(self, lid, max_price, qty=5):
+        with open(os.path.join(self.d, "reenter.json"), "w") as f:
+            json.dump({"id": lid, "positions": [{"slug": GAME, "qty": qty,
+                                                  "max_price": max_price}]}, f)
+
+    def test_buys_back_at_no_more_than_its_price_once(self):
+        self.write("a", 0.36)                  # ask is 0.37: above the cap, nothing yet
+        self.e.cycle()
+        self.assertEqual(self.e.broker.fills, [])
+        self.assertFalse(os.path.exists(os.path.join(self.d, "reenter.json")))   # one-shot
+        self.re.pending[GAME]["max_price"] = 0.38
+        self.e.cycle()
+        f = self.e.broker.fills[-1]
+        self.assertEqual((f.slug, f.side, f.qty, f.price, f.tag), (GAME, "BUY", 5, 0.37, "reenter"))
+        self.assertEqual(self.re.pending, {})
+        self.write("a", 0.40)                  # the same list again is ignored
+        self.e.cycle()
+        self.assertEqual(sum(1 for f in self.e.broker.fills if f.side == "BUY"), 1)
+
+    def test_never_after_the_game_starts(self):
+        self.e.markets[GAME].game_start = time.time() + 60
+        self.write("b", 0.50)
+        self.e.cycle()
+        self.assertEqual((self.e.broker.fills, self.re.pending), ([], {}))
+
+
 class DiscoverTest(unittest.TestCase):
     def test_wallets_that_bet_often_on_a_tag_are_found(self):
         from pmbot.select import discover
