@@ -1,0 +1,95 @@
+{
+ "ts": 1792876382.683054,
+ "mode": "paper",
+ "pairs": 0,
+ "equity": 356.14,
+ "cash": 135.54,
+ "positions": {
+  "atc-swe2-hel-lsk-2026-10-25-hel:short": {
+   "qty": 23,
+   "cost": 13.280000000000001
+  },
+  "aec-nfl-cin-bal-2026-10-25:short": {
+   "qty": 1,
+   "cost": 0.5325
+  },
+  "tsc-cfb-okl-mspst-2026-10-24-total-47pt5": {
+   "qty": 20,
+   "cost": 10.549999999999999
+  },
+  "tec-mlb-champ-2026-09-27-mil": {
+   "qty": 5,
+   "cost": 3.27
+  },
+  "atc-mls-rsl-stl-2026-10-24-rsl:short": {
+   "qty": 19,
+   "cost": 11.159999999999998
+  },
+  "aec-nfl-sf-atl-2026-10-25": {
+   "qty": 20,
+   "cost": 11.99
+  },
+  "aec-nba-hou-atl-2026-10-24:short": {
+   "qty": 60,
+   "cost": 32.05
+  },
+  "tsc-nba-no-den-2026-10-24-237pt5": {
+   "qty": 48,
+   "cost": 26.560000000000002
+  },
+  "aec-mlb-tb-mil-2026-10-24:short": {
+   "qty": 17,
+   "cost": 9.31
+  },
+  "tsc-cfb-bowlgr-buf-2026-10-24-total-43pt5": {
+   "qty": 17,
+   "cost": 9.48
+  },
+  "tsc-mlb-tb-mil-2026-10-24-6pt5:short": {
+   "qty": 18,
+   "cost": 9.41
+  },
+  "tsc-cfb-byu-ucf-2026-10-24-total-43pt5": {
+   "qty": 17,
+   "cost": 9.14
+  },
+  "atc-mls-clb-tor-2026-10-24-clb": {
+   "qty": 30,
+   "cost": 18.22
+  },
+  "tsc-mls-clb-tor-2026-10-24-3pt5:short": {
+   "qty": 8,
+   "cost": 4.779999999999999
+  },
+  "aec-nba-mia-cha-2026-10-24": {
+   "qty": 29,
+   "cost": 17.31
+  },
+  "aec-atp-lormus-tayfri-2026-10-25:short": {
+   "qty": 13,
+   "cost": 8.530000000000001
+  },
+  "atc-mls-por-clt-2026-10-24-por:short": {
+   "qty": 16,
+   "cost": 8.6
+  },
+  "atc-mls-nyr-mia-2026-10-24-mia:short": {
+   "qty": 16,
+   "cost": 8.92
+  },
+  "atc-mls-orl-nyc-2026-10-24-orl:short": {
+   "qty": 15,
+   "cost": 8.66
+  }
+ },
+ "open_orders": 0,
+ "fills": 194,
+ "fees_paid": 32.83,
+ "rebates": 0.0,
+ "halted": "",
+ "scan": {
+  "observations": 0,
+  "buy_opps": 0,
+  "sell_opps": 0
+ }
+}
