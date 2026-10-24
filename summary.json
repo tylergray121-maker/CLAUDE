@@ -1,0 +1,39 @@
+{
+ "ts": 1792876144.880326,
+ "mode": "live",
+ "pairs": 0,
+ "equity": 82.22,
+ "cash": 0.03,
+ "positions": {
+  "aec-nba-hou-atl-2026-10-24:short": {
+   "qty": 7,
+   "cost": 3.74
+  },
+  "aec-nba-mia-cha-2026-10-24": {
+   "qty": 3,
+   "cost": 1.74
+  },
+  "asc-cfb-ntx-navy-2026-10-24-neg-7pt5:short": {
+   "qty": 223,
+   "cost": 125.0498
+  },
+  "tsc-cfb-byu-ucf-2026-10-24-total-43pt5": {
+   "qty": 4,
+   "cost": 2.2
+  },
+  "tsc-nba-sa-dal-2026-10-24-230pt5": {
+   "qty": 4,
+   "cost": 2.0
+  }
+ },
+ "open_orders": 0,
+ "fills": 235,
+ "fees_paid": 12.83,
+ "rebates": 0.0,
+ "halted": "",
+ "scan": {
+  "observations": 6560,
+  "buy_opps": 16,
+  "sell_opps": 18
+ }
+}

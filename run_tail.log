@@ -1,0 +1,41 @@
+LIVE trading on Polymarket US with real money. Limits: $50 total, $3 per game, no daily stop. Sized on at most $300 of the account.
+15:57:21 INFO balance fields: {'currentBalance': 117.198723, 'buyingPower': 110.198723, 'assetNotional': 0, 'assetAvailable': 0, 'pendingCredit': 0, 'openOrders': 0, 'unsettledFunds': 0, 'marginRequirement': 7, 'balanceReservation': 110.198723, 'depositReservation': 110.19784539181497, 'bonusReservation': 0.0008776081850321, 'displayedBonus': 0.002632, 'displayedAvailableSoon': 110.196091, 'displayedCash': 0, 'availableToWithdraw': 0, 'bonusHold': 0.002632}
+15:57:21 INFO resumed paper account: cash $110.20, 3 positions, 223 fills, started 2026-10-21 23:25
+16:01:17 INFO Polymarket US: 84055 open markets
+16:01:27 INFO international: 2716 active outcome tokens
+16:01:48 INFO games: 2420 US game markets in the next 48h, 456 international matches, 715 pairs
+16:01:48 INFO pairs: 835 kept, 29 rejected on price
+16:02:01 INFO leader Kch-Temp: cooling -> copying ()
+16:02:01 INFO leader BunCaCham: copying -> cooling (−$1,369 on Polymarket this week)
+16:02:01 INFO leader UNEB3154s4f251: benched -> cooling (−$1,112 on Polymarket this week)
+16:10:23 INFO live BUY aec-nba-hou-atl-2026-10-24:short 1 @ 0.520 -> D9Y1ZDHG11M3
+17:02:21 INFO Polymarket US: 83705 open markets
+17:02:31 INFO international: 2757 active outcome tokens
+17:03:01 INFO games: 2345 US game markets in the next 48h, 435 international matches, 673 pairs
+17:03:01 INFO pairs: 776 kept, 20 rejected on price
+18:02:06 INFO leader BunCaCham: cooling -> copying ()
+18:02:28 INFO Polymarket US: 83516 open markets
+18:02:41 INFO international: 2754 active outcome tokens
+18:03:11 INFO games: 2395 US game markets in the next 48h, 424 international matches, 651 pairs
+18:03:11 INFO pairs: 764 kept, 28 rejected on price
+19:02:23 INFO Polymarket US: 83689 open markets
+19:02:37 INFO international: 2750 active outcome tokens
+19:03:07 INFO games: 2400 US game markets in the next 48h, 412 international matches, 627 pairs
+19:03:07 INFO pairs: 753 kept, 34 rejected on price
+19:11:18 INFO live BUY tsc-nba-sa-dal-2026-10-24-230pt5 7 @ 0.510 -> DA0MSP7091TB
+19:39:02 INFO live BUY aec-nba-mia-cha-2026-10-24 3 @ 0.590 -> DA11FRJ011TB
+20:02:06 INFO leader Diabolical-Prize: copying -> cooling (−$0 on Polymarket this week)
+20:02:06 INFO leader juice-fruit: cooling -> copying ()
+20:02:06 INFO leader GamblingOdyssey: copying -> cooling (−$3,592 on Polymarket this week)
+20:02:06 INFO leader plonker2026: benched -> copying ()
+20:02:20 INFO Polymarket US: 82226 open markets
+20:02:31 INFO international: 2797 active outcome tokens
+20:03:01 INFO games: 2481 US game markets in the next 48h, 392 international matches, 617 pairs
+20:03:01 INFO pairs: 703 kept, 24 rejected on price
+20:11:48 INFO live BUY tsc-nba-sa-dal-2026-10-24-230pt5 4 @ 0.510 -> DA1GFTQG11MM
+20:12:33 INFO live BUY tsc-cfb-byu-ucf-2026-10-24-total-43pt5 4 @ 0.550 -> DA1GTTBG11MQ
+20:16:48 INFO live BUY aec-nba-hou-atl-2026-10-24:short 1 @ 0.510 -> DA1JS35G11TB
+21:02:20 INFO Polymarket US: 82275 open markets
+21:02:29 INFO international: 2733 active outcome tokens
+21:02:59 INFO games: 2434 US game markets in the next 48h, 381 international matches, 615 pairs
+21:02:59 INFO pairs: 704 kept, 24 rejected on price
