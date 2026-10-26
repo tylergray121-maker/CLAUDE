@@ -902,22 +902,24 @@ class CopyTopTest(unittest.TestCase):
 
     def test_the_feed_shows_each_leader_bet_and_what_the_bot_did(self):
         self.e.cycle()
+        self.trade("BUY", 0.04, size=50)            # $2: too small to copy
+        self.t0 += 120                              # a separate bet, two minutes later
         self.trade("BUY", 0.62, tx="0xa")
-        self.trade("BUY", 0.62, size=50, tx="0xa")  # a second fill of the same order
-        self.trade("BUY", 0.62, size=5)             # $3: too small to copy
+        self.trade("BUY", 0.60, size=50, tx="0xb")  # more of the same bet, another order
         self.trade("SELL", 0.62)
         self.trade("BUY", 0.50, asset="elsewhere")  # a market Polymarket US doesn't list
         self.e.cycle()
         feed = [r for r in self.copy.dashboard_rows() if r["kind"] == "leader_trade"]
-        self.assertEqual([(r["side"], r["usd"], r["action"]) for r in feed], [
-            ("BUY", 50.0, "not on Polymarket US"),
-            ("SELL", 62.0, "a sale (copies are held to settlement)"),
-            ("BUY", 3.1, "too small to copy"),
-            ("BUY", 93.0, "copied")])
-        self.assertEqual((feed[-1]["leader"], feed[-1]["our_price"], feed[-1]["our_qty"]),
+        self.assertEqual([(r["side"], r["usd"], r["price"], r["action"]) for r in feed], [
+            ("BUY", 50.0, 0.5, "not on Polymarket US"),
+            ("SELL", 62.0, 0.62, "a sale (copies are held to settlement)"),
+            ("BUY", 92.0, 0.6133, "copied"),
+            ("BUY", 2.0, 0.04, "too small to copy")])
+        self.assertEqual((feed[2]["leader"], feed[2]["our_price"], feed[2]["our_qty"]),
                          ("primm", 0.61, 16))
         self.v.us_ask = 0.70                        # the price runs away: never filled
-        self.trade("BUY", 0.62, tx="0xb")
+        self.t0 += 120                              # a new bet, two minutes later
+        self.trade("BUY", 0.62)
         self.copy.recent.clear()
         self.e.cycle()
         self.assertEqual(self.copy.feed[-1]["action"], "waiting for our price")

@@ -166,26 +166,29 @@ class CopyTop(Strategy):
         return [] if first else fresh  # baseline: never copy trades from before we watched
 
     def _note(self, wallet: str, name: str, t: dict) -> dict:
-        """The feed entry for a leader trade. A later fill of an order already
-        shown adds its size and returns {}, so the first fill's decision stands,
-        unless that fill was too small to judge and this one may be copied."""
+        """The feed entry for a leader trade: fills of one bet (the same outcome
+        and side within a minute) are one entry, at their average price. A later
+        fill returns {} so the earlier decision stands, unless that was still
+        open (too small to judge, or waiting for our price)."""
         try:
-            price = float(t["price"])
-            usd = price * float(t["size"])
+            qty = float(t["size"])
+            usd = float(t["price"]) * qty
         except (KeyError, TypeError, ValueError):
-            price = usd = 0.0
-        key = f"{wallet}|{t.get('transactionHash')}|{t.get('asset')}"
-        if t.get("transactionHash"):
-            for e in reversed(self.feed):
-                if e["key"] == key:
-                    e["usd"] = round(e["usd"] + usd, 2)
-                    return e if e["action"] == TOO_SMALL else {}
+            qty = usd = 0.0
+        ts, side = int(t["timestamp"]), str(t.get("side", "")).upper()
+        key = f"{wallet}|{t.get('asset')}|{side}"
+        for e in reversed(self.feed):
+            if e["key"] == key and abs(ts - e["ts"]) <= 60:
+                e["qty"] = round(e.get("qty", 0) + qty, 4)
+                e["usd"] = round(e["usd"] + usd, 2)
+                e["price"] = round(e["usd"] / e["qty"], 4) if e["qty"] else e["price"]
+                return e if e["action"] in (TOO_SMALL, WAITING) else {}
         self._feed_n += 1
-        e = {"key": key, "id": f"lt{self._feed_n}", "ts": int(t["timestamp"]), "leader": name,
+        e = {"key": key, "id": f"lt{self._feed_n}", "ts": ts, "leader": name,
              "market": str(t.get("title") or t.get("slug") or ""),
-             "outcome": str(t.get("outcome") or ""), "side": str(t.get("side", "")).upper(),
-             "price": round(price, 4), "usd": round(usd, 2),
-             "league": league(str(t.get("slug") or "")), "action": ""}
+             "outcome": str(t.get("outcome") or ""), "side": side,
+             "price": round(usd / qty, 4) if qty else 0.0, "qty": round(qty, 4),
+             "usd": round(usd, 2), "league": league(str(t.get("slug") or "")), "action": ""}
         self.feed.append(e)
         return e
 
