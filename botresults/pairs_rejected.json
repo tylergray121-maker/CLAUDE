@@ -6,16 +6,7 @@
   "us_label": "Oscar Winner: Best Picture: The Black Ball",
   "intl_label": "Will \"La Nieve\" from The Black Ball win Best Original Song at the 99th Academy Awards? [La Nieve - The Black Ball]",
   "tick": 0.01,
-  "price_gap": 0.395
- },
- {
-  "us_slug": "astatc-nfl-passyds-ou-2027-01-10-cstr",
-  "intl_token": "48126735232186429993112845530731159951881380916376884686789586862286809199326",
-  "score": 0.511,
-  "us_label": "Regular Season Passing Yards O/U: C.J. Stroud 3599.5+",
-  "intl_label": "Will C.J. Stroud be the first QB to 2,000 passing yards in the 2026-27 NFL regular season? [C.J. Stroud]",
-  "tick": 0.01,
-  "price_gap": 0.743
+  "price_gap": 0.415
  },
  {
   "us_slug": "tac-oscars-nom-2027-01-31-bestpic-werwul",
@@ -33,7 +24,7 @@
   "us_label": "Oscar Nominees: Best Picture: Michael",
   "intl_label": "Will \"Michael\" be nominated for Best Sound at the 99th Academy Awards? [Michael]",
   "tick": 0.01,
-  "price_gap": 0.085
+  "price_gap": 0.09
  },
  {
   "us_slug": "tac-oscars-nom-2027-01-31-bestpic-clukid",
@@ -87,7 +78,7 @@
   "us_label": "Oscar Winner: Best Original Screenplay: The Black Ball",
   "intl_label": "Will \"La Nieve\" from The Black Ball win Best Original Song at the 99th Academy Awards? [La Nieve - The Black Ball]",
   "tick": 0.01,
-  "price_gap": 0.425
+  "price_gap": 0.445
  },
  {
   "us_slug": "tac-oscars-03-14-2027-bestorigscr-debut",
@@ -96,7 +87,7 @@
   "us_label": "Oscar Winner: Best Original Screenplay: The Debut",
   "intl_label": "Will \"This City May Have Chewed Me Up (But It Hasn't Spit Me Out)\" from The Debut win Best Original Song at the 99th Academy Awards? [This City May Have Chewed Me Up (But It Hasn't Spit Me Out) - The Debut]",
   "tick": 0.01,
-  "price_gap": 0.175
+  "price_gap": 0.165
  },
  {
   "us_slug": "tac-oscars-03-14-2027-bestdoc-youcan",
@@ -105,7 +96,7 @@
   "us_label": "Oscar Winner: Best Documentary Feature Film: You Can See Everything",
   "intl_label": "Will You Can See Everything win Best Picture at the 99th Academy Awards? [You Can See Everything]",
   "tick": 0.01,
-  "price_gap": 0.552
+  "price_gap": 0.547
  },
  {
   "us_slug": "tac-oscars-nom-bstmakeup-2027-01-21-odysse",
@@ -159,7 +150,7 @@
   "us_label": "Oscar Winner: Best Sound: The Debut",
   "intl_label": "Will \"This City May Have Chewed Me Up (But It Hasn't Spit Me Out)\" from The Debut win Best Original Song at the 99th Academy Awards? [This City May Have Chewed Me Up (But It Hasn't Spit Me Out) - The Debut]",
   "tick": 0.01,
-  "price_gap": 0.185
+  "price_gap": 0.175
  },
  {
   "us_slug": "tac-oscars-nom-bstscore-2027-01-21-odysse",

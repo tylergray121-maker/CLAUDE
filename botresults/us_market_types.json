@@ -1,12 +1,12 @@
 {
  "counts": {
-  "props/sports": 21587,
-  "totals/sports": 12854,
+  "props/sports": 21567,
+  "totals/sports": 12856,
   "futures/sports": 11142,
-  "spreads/sports": 10038,
+  "spreads/sports": 10037,
   "futures/politics": 6788,
-  "drawable_outcome/sports": 1966,
-  "moneyline/sports": 1706,
+  "drawable_outcome/sports": 1960,
+  "moneyline/sports": 1732,
   "futures/culture": 1661,
   "/crypto": 1480,
   "futures/macro": 219,
@@ -54,8 +54,8 @@
     "title": "",
     "game_start": 1793057400.0,
     "end": 1794267000.0,
-    "bid": 0.25,
-    "ask": 0.26
+    "bid": 0.26,
+    "ask": 0.27
    },
    {
     "slug": "aec-nba-chi-bos-2026-10-26",
@@ -135,8 +135,8 @@
     "title": "",
     "game_start": 1793145600.0,
     "end": 1794355200.0,
-    "bid": 0.42,
-    "ask": 0.43
+    "bid": 0.4,
+    "ask": 0.42
    },
    {
     "slug": "aec-nba-sac-sa-2026-10-27",
@@ -236,7 +236,7 @@
     "title": "",
     "game_start": 1793043000.0,
     "end": 1794185100.0,
-    "bid": 0.16,
+    "bid": 0.15,
     "ask": 0.17
    },
    {
@@ -263,7 +263,7 @@
     "title": "",
     "game_start": 1793039400.0,
     "end": 1794099600.0,
-    "bid": 0.3,
+    "bid": 0.31,
     "ask": 0.32
    },
    {
@@ -290,7 +290,7 @@
     "title": "",
     "game_start": 1793040300.0,
     "end": 1794267900.0,
-    "bid": 0.15,
+    "bid": 0.16,
     "ask": 0.17
    }
   ],
@@ -364,7 +364,7 @@
     "title": "Dallas Cowboys",
     "game_start": 1793060100.0,
     "end": 1794287700.0,
-    "bid": 0.45,
+    "bid": 0.46,
     "ask": 0.47
    },
    {
@@ -409,7 +409,7 @@
     "title": "Philadelphia Eagles",
     "game_start": 1793060100.0,
     "end": 1794287700.0,
-    "bid": 0.35,
+    "bid": 0.34,
     "ask": 0.36
    },
    {
@@ -428,7 +428,7 @@
     "game_start": 1793060100.0,
     "end": 1794287700.0,
     "bid": 0.18,
-    "ask": 0.19
+    "ask": 0.2
    }
   ],
   "spreads/sports": [
@@ -520,7 +520,7 @@
     "game_start": 1793060100.0,
     "end": 1794287700.0,
     "bid": 0.03,
-    "ask": 0.06
+    "ask": 0.065
    },
    {
     "slug": "asc-nfl-dal-phi-2026-10-26-neg-27pt5",
@@ -675,7 +675,7 @@
     "game_start": 1793060100.0,
     "end": 1794287700.0,
     "bid": 0.95,
-    "ask": 0.965
+    "ask": 0.96
    },
    {
     "slug": "tsc-nfl-dal-phi-2026-10-26-total-26pt5",
@@ -713,7 +713,7 @@
     "game_start": 1790827200.0,
     "end": 1793507400.0,
     "bid": null,
-    "ask": 0.05
+    "ask": 0.06
    },
    {
     "slug": "cpc-btc-hit-h-m-2026-10-92500",
@@ -811,8 +811,8 @@
     "title": "Dips to $72,500",
     "game_start": 1790827200.0,
     "end": 1793507400.0,
-    "bid": 0.03,
-    "ask": 0.1
+    "bid": null,
+    "ask": null
    },
    {
     "slug": "cpc-btc-hit-l-m-2026-10-75000",
@@ -820,8 +820,8 @@
     "title": "Dips to $75,000",
     "game_start": 1790827200.0,
     "end": 1793507400.0,
-    "bid": 0.14,
-    "ask": 0.21
+    "bid": 0.1,
+    "ask": 0.19
    },
    {
     "slug": "cpc-btc-hit-l-m-2026-10-77500",
@@ -829,8 +829,8 @@
     "title": "Dips to $77,500",
     "game_start": 1790827200.0,
     "end": 1793507400.0,
-    "bid": 0.47,
-    "ask": 0.5
+    "bid": 0.37,
+    "ask": 0.44
    },
    {
     "slug": "cpc-btc-hit-l-m-2026-10-62500",
@@ -862,40 +862,40 @@
     "ask": null
    },
    {
-    "slug": "cpagsp-silver-updown-1h-2026-10-26-1400z",
-    "question": "Silver Up or Down Hourly",
-    "title": "Silver Up or Down Hourly",
-    "game_start": 1793023200.0,
-    "end": 1793028600.0,
-    "bid": 0.98,
-    "ask": 0.99
-   },
-   {
-    "slug": "cpausp-gold-updown-1h-2026-10-26-1400z",
+    "slug": "cpausp-gold-updown-1h-2026-10-26-1500z",
     "question": "Gold Up or Down Hourly",
     "title": "Gold Up or Down Hourly",
-    "game_start": 1793023200.0,
-    "end": 1793028600.0,
-    "bid": 0.97,
-    "ask": 0.99
+    "game_start": 1793026800.0,
+    "end": 1793032200.0,
+    "bid": 0.38,
+    "ask": 0.47
    },
    {
-    "slug": "cpagsp-silver-updown-15m-2026-10-26-1445z",
+    "slug": "cpagsp-silver-updown-1h-2026-10-26-1500z",
+    "question": "Silver Up or Down Hourly",
+    "title": "Silver Up or Down Hourly",
+    "game_start": 1793026800.0,
+    "end": 1793032200.0,
+    "bid": 0.51,
+    "ask": 0.61
+   },
+   {
+    "slug": "cpagsp-silver-updown-15m-2026-10-26-1500z",
     "question": "Silver Up or Down 15m",
     "title": "Silver Up or Down 15m",
-    "game_start": 1793025900.0,
-    "end": 1793028600.0,
-    "bid": 0.5,
-    "ask": 0.51
+    "game_start": 1793026800.0,
+    "end": 1793029500.0,
+    "bid": 0.65,
+    "ask": 0.67
    },
    {
-    "slug": "cpausp-gold-updown-15m-2026-10-26-1445z",
+    "slug": "cpausp-gold-updown-15m-2026-10-26-1500z",
     "question": "Gold Up or Down 15m",
     "title": "Gold Up or Down 15m",
-    "game_start": 1793025900.0,
-    "end": 1793028600.0,
-    "bid": 0.28,
-    "ask": 0.29
+    "game_start": 1793026800.0,
+    "end": 1793029500.0,
+    "bid": 0.23,
+    "ask": 0.24
    }
   ]
  }

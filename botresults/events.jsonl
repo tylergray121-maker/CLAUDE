@@ -5884,3 +5884,22 @@
 {"ts": 1793026279.753, "kind": "leader_status", "leader": "UNEB3154s4f251", "wallet": "0x04641b57f332c15ecaa497799c55026d521967da", "status": "cooling", "was": "copying", "why": "\u2212$1,538 on Polymarket this week"}
 {"ts": 1793026529.77, "kind": "copy_unmapped", "leader": "BunCaCham", "market": "Xi Jinping out before 2027?", "intl_slug": "xi-jinping-out-before-2027", "outcome": "No"}
 {"ts": 1793026546.821, "kind": "cancel_all", "reason": "shutdown"}
+{"ts": 1793027434.576, "kind": "leader_status", "leader": "Kch-Temp", "wallet": "0x924379a79c64b77ad5816ad362122a5f6228658e", "status": "cooling", "was": "copying", "why": "\u2212$935,770 on Polymarket this week"}
+{"ts": 1793027434.576, "kind": "leader_status", "leader": "EdZachary", "wallet": "0xe5b70fd855af9258d9463992e4f1ed7987905ee3", "status": "cooling", "was": "copying", "why": "\u2212$407,364 on Polymarket this week"}
+{"ts": 1793027434.576, "kind": "leader_status", "leader": "KaneAnalytics", "wallet": "0x7e3a1f95c558f39a51ff334d789e3e039b553246", "status": "cooling", "was": "copying", "why": "\u2212$145,331 on Polymarket this week"}
+{"ts": 1793027434.576, "kind": "leader_status", "leader": "Jsram", "wallet": "0x83720820a8aa6c3f20ad71850e7a1a17d16c5223", "status": "cooling", "was": "copying", "why": "\u2212$36,494 on Polymarket this week"}
+{"ts": 1793027434.577, "kind": "leader_status", "leader": "Kkunn", "wallet": "0xe7870d0e1bfc65a23e3d66caf00ca1b9129e5034", "status": "cooling", "was": "copying", "why": "\u2212$314,244 on Polymarket this week"}
+{"ts": 1793027434.577, "kind": "leader_status", "leader": "PEYZ-BIGGEST-FAN", "wallet": "0xdaef2be2a19ad331737d06545f85615b094554e9", "status": "cooling", "was": "copying", "why": "\u2212$29,993 on Polymarket this week"}
+{"ts": 1793027434.577, "kind": "leader_status", "leader": "HVAB", "wallet": "0x8546a601f7c7cc3dae7141f20b0e09e42bbf35b8", "status": "cooling", "was": "copying", "why": "\u2212$80,733 on Polymarket this week"}
+{"ts": 1793027434.577, "kind": "leader_status", "leader": "Diabolical-Prize", "wallet": "0x7c37b52eb226bcb9411375ec48b0169663fb6aeb", "status": "cooling", "was": "copying", "why": "\u2212$0 on Polymarket this week"}
+{"ts": 1793027434.577, "kind": "leader_status", "leader": "Talvez10", "wallet": "0xa71093cafc0c099b4ccab24c3cb8018d817923c4", "status": "benched", "was": "copying", "why": "losing on Polymarket: \u2212$177,358 this week, \u2212$173,135 this month"}
+{"ts": 1793027434.577, "kind": "leader_status", "leader": "0010001000001100", "wallet": "0x96020c20842a5175e3e0aeef7843d1dbb7bc4d02", "status": "cooling", "was": "copying", "why": "\u2212$2,964 on Polymarket this week"}
+{"ts": 1793027434.577, "kind": "leader_status", "leader": "totoro3miyazaki", "wallet": "0x0f6f76ced62a911bccef92f50faaff143854d977", "status": "benched", "was": "copying", "why": "losing on Polymarket: \u2212$116,173 this week, \u2212$2,338,941 this month"}
+{"ts": 1793027434.577, "kind": "leader_status", "leader": "1l2ihj34li12u34", "wallet": "0xb52e8b3afd9f0f0d502a5a76494b42816d67285c", "status": "cooling", "was": "copying", "why": "\u2212$33,037 on Polymarket this week"}
+{"ts": 1793027434.577, "kind": "leader_status", "leader": "GamblingOdyssey", "wallet": "0xe5241830e8876c115d7dc8311ad9f43d85fdd34f", "status": "cooling", "was": "copying", "why": "\u2212$27,549 on Polymarket this week"}
+{"ts": 1793027434.577, "kind": "leader_status", "leader": "xxyx0xx", "wallet": "0x56d8d5f6585716a1a900282192dd21a4261e1cce", "status": "benched", "was": "copying", "why": "losing on Polymarket: \u2212$44,069 this week, \u2212$113,003 this month"}
+{"ts": 1793027434.577, "kind": "leader_status", "leader": "Tiger105", "wallet": "0x0d23fc6838433dbff11e4667ef5991e9dd9d2d56", "status": "cooling", "was": "copying", "why": "\u2212$88,881 on Polymarket this week"}
+{"ts": 1793027434.578, "kind": "leader_status", "leader": "AmericaFirst1", "wallet": "0x154ca10dfee317dcfb9337788db7da858cba658e", "status": "cooling", "was": "copying", "why": "\u2212$3,963 on Polymarket this week"}
+{"ts": 1793027434.578, "kind": "leader_status", "leader": "UNEB3154s4f251", "wallet": "0x04641b57f332c15ecaa497799c55026d521967da", "status": "cooling", "was": "copying", "why": "\u2212$1,538 on Polymarket this week"}
+{"ts": 1793027504.653, "kind": "copy_unmapped", "leader": "BreakTheBank", "market": "Will Philadelphia 76ers win the 2027 NBA Finals?", "intl_slug": "will-philadelphia-76ers-win-the-2027-nba-finals", "outcome": "No"}
+{"ts": 1793027731.711, "kind": "cancel_all", "reason": "shutdown"}

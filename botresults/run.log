@@ -1,27 +1,27 @@
-14:50:58 INFO Polymarket US: 69780 open markets
-14:51:01 INFO international: 2428 active outcome tokens
-14:51:13 INFO games: 1555 US game markets in the next 48h, 119 international matches, 230 pairs
-14:51:13 INFO pairs: 364 kept, 22 rejected on price
-14:51:19 INFO leader Kch-Temp: copying -> cooling (−$935,770 on Polymarket this week)
-14:51:19 INFO leader EdZachary: copying -> cooling (−$407,364 on Polymarket this week)
-14:51:19 INFO leader KaneAnalytics: copying -> cooling (−$145,331 on Polymarket this week)
-14:51:19 INFO leader Jsram: copying -> cooling (−$36,494 on Polymarket this week)
-14:51:19 INFO leader Kkunn: copying -> cooling (−$314,244 on Polymarket this week)
-14:51:19 INFO leader PEYZ-BIGGEST-FAN: copying -> cooling (−$29,993 on Polymarket this week)
-14:51:19 INFO leader HVAB: copying -> cooling (−$80,733 on Polymarket this week)
-14:51:19 INFO leader Diabolical-Prize: copying -> cooling (−$0 on Polymarket this week)
-14:51:19 INFO leader Talvez10: copying -> benched (losing on Polymarket: −$177,358 this week, −$173,135 this month)
-14:51:19 INFO leader 0010001000001100: copying -> cooling (−$2,964 on Polymarket this week)
-14:51:19 INFO leader totoro3miyazaki: copying -> benched (losing on Polymarket: −$116,173 this week, −$2,338,941 this month)
-14:51:19 INFO leader 1l2ihj34li12u34: copying -> cooling (−$33,037 on Polymarket this week)
-14:51:19 INFO leader GamblingOdyssey: copying -> cooling (−$27,549 on Polymarket this week)
-14:51:19 INFO leader xxyx0xx: copying -> benched (losing on Polymarket: −$44,069 this week, −$113,003 this month)
-14:51:19 INFO leader Tiger105: copying -> cooling (−$88,881 on Polymarket this week)
-14:51:19 INFO leader AmericaFirst1: copying -> cooling (−$3,963 on Polymarket this week)
-14:51:19 INFO leader UNEB3154s4f251: copying -> cooling (−$1,538 on Polymarket this week)
+15:10:12 INFO Polymarket US: 69781 open markets
+15:10:15 INFO international: 2444 active outcome tokens
+15:10:28 INFO games: 1591 US game markets in the next 48h, 119 international matches, 230 pairs
+15:10:28 INFO pairs: 363 kept, 21 rejected on price
+15:10:34 INFO leader Kch-Temp: copying -> cooling (−$935,770 on Polymarket this week)
+15:10:34 INFO leader EdZachary: copying -> cooling (−$407,364 on Polymarket this week)
+15:10:34 INFO leader KaneAnalytics: copying -> cooling (−$145,331 on Polymarket this week)
+15:10:34 INFO leader Jsram: copying -> cooling (−$36,494 on Polymarket this week)
+15:10:34 INFO leader Kkunn: copying -> cooling (−$314,244 on Polymarket this week)
+15:10:34 INFO leader PEYZ-BIGGEST-FAN: copying -> cooling (−$29,993 on Polymarket this week)
+15:10:34 INFO leader HVAB: copying -> cooling (−$80,733 on Polymarket this week)
+15:10:34 INFO leader Diabolical-Prize: copying -> cooling (−$0 on Polymarket this week)
+15:10:34 INFO leader Talvez10: copying -> benched (losing on Polymarket: −$177,358 this week, −$173,135 this month)
+15:10:34 INFO leader 0010001000001100: copying -> cooling (−$2,964 on Polymarket this week)
+15:10:34 INFO leader totoro3miyazaki: copying -> benched (losing on Polymarket: −$116,173 this week, −$2,338,941 this month)
+15:10:34 INFO leader 1l2ihj34li12u34: copying -> cooling (−$33,037 on Polymarket this week)
+15:10:34 INFO leader GamblingOdyssey: copying -> cooling (−$27,549 on Polymarket this week)
+15:10:34 INFO leader xxyx0xx: copying -> benched (losing on Polymarket: −$44,069 this week, −$113,003 this month)
+15:10:34 INFO leader Tiger105: copying -> cooling (−$88,881 on Polymarket this week)
+15:10:34 INFO leader AmericaFirst1: copying -> cooling (−$3,963 on Polymarket this week)
+15:10:34 INFO leader UNEB3154s4f251: copying -> cooling (−$1,538 on Polymarket this week)
 # Polymarket US bot — paper run
 
-Mapping: 69780 open US markets, 2428 international outcomes, 364 pairs (20 tracked after live price checks); observations with a trustworthy reference price: 540.
+Mapping: 69781 open US markets, 2444 international outcomes, 363 pairs (20 tracked after live price checks); observations with a trustworthy reference price: 600.
 
 ## Is there an edge to take?
 

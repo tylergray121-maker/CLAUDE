@@ -1,7 +1,7 @@
 profile 'Tiger105': ah-cop-tiger105 0x8d6064a7f8b67988a4073ac1b051356fc8cebd76
 profile 'Tiger105': tiger105050 0x185031bb4a1763496d706e0c07339a690e00b57f
 
-US markets in ['atp', 'itf', 'wta'] (not futures): 3209
+US markets in ['atp', 'itf', 'wta'] (not futures): 3196
   US aec-wta-naoosa-jaspao-2026-10-25 | moneyline | Who will win in the upcoming wta event Naomi Osaka vs Jasmine Paolini  | long=Naomi Osaka short=Jasmine Paolini start=1793088000.0
   US aec-wta-diapar-cribuc-2026-10-25 | moneyline | Who will win in the upcoming wta event Diane Parry vs Cristina Bucsa s | long=Diane Parry short=Cristina Bucsa start=1793070600.0
   US aec-wta-annli-ekaale-2026-10-25 | moneyline | Who will win in the upcoming wta event Ann Li vs Ekaterina Alexandrova | long=Ann Li short=Ekaterina Alexandrova start=1793066400.0
@@ -27,23 +27,23 @@ US markets in ['atp', 'itf', 'wta'] (not futures): 3209
   US aec-atp-lucass-leatie-2026-10-25 | moneyline | Who will win in the upcoming atp event Luca Van Assche vs Learner Tien | long=Luca Van Assche short=Learner Tien start=1793041200.0
   US aec-atp-flacob-gridim-2026-10-25 | moneyline | Who will win in the upcoming atp event Flavio Cobolli vs Grigor Dimitr | long=Flavio Cobolli short=Grigor Dimitrov start=1793104200.0
   US aec-atp-lormus-fratia-2026-10-25 | moneyline | Who will win in the upcoming atp event Lorenzo Musetti vs Frances Tiaf | long=Lorenzo Musetti short=Frances Tiafoe start=1793104200.0
-US: 69782 open markets, 49639 game/spread/total/prop slugs, 364 verified pairs
+US: 69792 open markets, 49649 game/spread/total/prop slugs, 363 verified pairs
 
 age                    long side              short side  listed, outcome names     not on Polymarket US  copyable
-<3h                           50                      45                       1                     160       37%
-3-12h                         60                      13                       0                     547       12%
-12-48h                         4                       4                       0                    3424        0%
-older                         59                       0                       0                    1633        3%
+<3h                           56                      45                       1                     147       41%
+3-12h                         60                      13                       0                     510       13%
+12-48h                         4                       4                       0                    3422        0%
+older                         59                       0                       0                    1679        3%
 
 by league (all ages): copyable / total
-  futures         59 / 859
-  nba            118 / 781
+  futures         59 / 861
+  nba            124 / 781
   lal              2 / 482
   nfl              0 / 446
   dota2            0 / 343
   lol              0 / 309
   epl              0 / 294
-  cs2              0 / 293
+  cs2              0 / 291
   atp             15 / 280
   por              0 / 192
   cfb              0 / 171
@@ -60,26 +60,26 @@ by league (all ages): copyable / total
 recent trades not on Polymarket US (international slug | outcome | US lists for the same matchup):
    60  cs2-nemi1-aur1-2026-10-26 | Aurora Gaming | -
    55  tur-gal-fen-2026-10-26-gal | Yes | -
-   40  will-the-republican-party-hold-exactly-53-senate-seats-after-the-2026-midterm-elections | No | -
    36  will-the-republican-party-control-the-house-after-the-2026-midterm-elections | Yes | -
    35  wta-snigur-bondar-2026-10-26 | Daria Snigur | -
+   29  will-the-republican-party-hold-exactly-53-senate-seats-after-the-2026-midterm-elections | No | -
    29  nba-phx-okc-2026-10-26-spread-home-9pt5 | Thunder | -
    28  dota2-og-gl-2026-10-26-game1 | GamerLegion | -
-   26  xi-jinping-out-before-2027 | No | -
+   28  xi-jinping-out-before-2027 | No | -
    24  cs2-9z-tyloo-2026-10-26 | TYLOO | -
-   22  nba-mem-sac-2026-10-25 | Grizzlies | -
    21  wta-uchijim-mertens-2026-10-26 | Moyuka Uchijima | -
    18  cs2-ts7-furia-2026-10-26 | Spirit | -
-   15  nfl-kc-sea-2026-10-26-spread-home-10pt5 | Chiefs | -
    15  2026-balance-of-power-r-senate-r-house-537 | No | -
    14  cs2-tl1-lgc-2026-10-26-game1 | Liquid | -
    13  bra-fla-cam-2026-10-26-spread-home-1pt5 | CR Flamengo | bra-fla-cam-2026-10-26-cam, bra-fla-cam-2026-10-26-draw, bra-fla-cam-2026-10-26-fla
+   12  nba-mem-sac-2026-10-25 | Grizzlies | -
    12  will-the-republican-party-hold-exactly-49-senate-seats-after-the-2026-midterm-elections-189 | Yes | -
    11  wta-shi-ibragim-2026-10-26 | Han Shi | -
    11  wta-badosa-lee-2026-10-26 | Paula Badosa | -
-   10  nfl-kc-sea-2026-10-26-total-24pt5 | Under | -
    10  itf-mirand4-voisin1-2026-10-26 | Antoine Voisin | -
     8  nba-phx-okc-2026-10-26-spread-home-8pt5 | Thunder | -
     7  cs2-vit-fut-2026-10-26 | FUT Esports | -
     7  cs2-nemi1-aur1-2026-10-26-game1 | Nemiga | -
     6  will-the-republican-party-control-the-senate-after-the-2026-midterm-elections | No | -
+    6  nba-gsw-den-2026-10-26-spread-home-8pt5 | Warriors | -
+    5  cs2-vit-fut-2026-10-26 | Vitality | -

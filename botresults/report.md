@@ -1,6 +1,6 @@
 # Polymarket US bot — paper run
 
-Mapping: 69780 open US markets, 2428 international outcomes, 364 pairs (20 tracked after live price checks); observations with a trustworthy reference price: 540.
+Mapping: 69781 open US markets, 2444 international outcomes, 363 pairs (20 tracked after live price checks); observations with a trustworthy reference price: 600.
 
 ## Is there an edge to take?
 

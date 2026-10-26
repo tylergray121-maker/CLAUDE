@@ -1968,19 +1968,19 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nba-champ-2027-06-18-w-det",
-  "intl_token": "22589862545502642463701340320964032988974740564891659118937148977135855914254",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Detroit Pistons",
-  "intl_label": "Will Detroit Pistons win the 2027 NBA Finals? [Detroit Pistons]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-champ-2027-06-18-w-cle",
   "intl_token": "7103927316928557651756293615464760318461267087970415244972136093676271405674",
   "score": 0.625,
   "us_label": "2027 NBA Champion: Cleveland Cavaliers",
   "intl_label": "Will Cleveland Cavaliers win the 2027 NBA Finals? [Cleveland Cavaliers]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-det",
+  "intl_token": "22589862545502642463701340320964032988974740564891659118937148977135855914254",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Detroit Pistons",
+  "intl_label": "Will Detroit Pistons win the 2027 NBA Finals? [Detroit Pistons]",
   "tick": 0.01
  },
  {
@@ -2112,14 +2112,6 @@
   "tick": 0.001
  },
  {
-  "us_slug": "tec-epl-title-2027-05-30-w-bha",
-  "intl_token": "9221383556608449303835174806846320148935846556873035382860978740383478459961",
-  "score": 0.533,
-  "us_label": "English Premier League Champion: Brighton & Hove Albion",
-  "intl_label": "Will Brighton win the 2026-27 English Premier League (EPL) Championship? [Brighton]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-mlb-champ-2026-09-27-tb",
   "intl_token": "47619537154464827225570738666275423513741144464229940374555699932743034295206",
   "score": 0.75,
@@ -2133,14 +2125,6 @@
   "score": 0.5,
   "us_label": "Bundesliga Champion: FSV Mainz 05",
   "intl_label": "Will Mainz 05 be the 2026-27 Bundesliga champion? [Mainz 05]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-epl-title-2027-05-30-w-mnu",
-  "intl_token": "73050236093508473398082398966067213274195424600650056280148681977814431775527",
-  "score": 0.633,
-  "us_label": "English Premier League Champion: Manchester United",
-  "intl_label": "Will Manchester United win the 2026-27 English Premier League (EPL) Championship? [Manchester United]",
   "tick": 0.01
  },
  {
@@ -2197,6 +2181,14 @@
   "score": 0.684,
   "us_label": "Oscar Winner: Best Animated Feature Film: Wildwood",
   "intl_label": "Will Wildwood win Best Animated Feature Film at the 99th Academy Awards? [Wildwood]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-epl-title-2027-05-30-w-mnu",
+  "intl_token": "73050236093508473398082398966067213274195424600650056280148681977814431775527",
+  "score": 0.633,
+  "us_label": "English Premier League Champion: Manchester United",
+  "intl_label": "Will Manchester United win the 2026-27 English Premier League (EPL) Championship? [Manchester United]",
   "tick": 0.01
  },
  {
@@ -2344,6 +2336,14 @@
   "tick": 0.01
  },
  {
+  "us_slug": "tec-epl-title-2027-05-30-w-lee",
+  "intl_token": "35746559934598687044244313512841185288491694151858023596582191133240765938021",
+  "score": 0.633,
+  "us_label": "English Premier League Champion: Leeds United",
+  "intl_label": "Will Leeds United win the 2026-27 English Premier League (EPL) Championship? [Leeds United]",
+  "tick": 0.01
+ },
+ {
   "us_slug": "tec-nba-westconf-2027-05-29-w-min",
   "intl_token": "2064057951195650991846566694706256084910477853719169856063724374885495362912",
   "score": 0.643,
@@ -2405,14 +2405,6 @@
   "score": 0.5,
   "us_label": "Bundesliga Champion: SV 07 Elversberg",
   "intl_label": "Will SV Elversberg be the 2026-27 Bundesliga champion? [SV Elversberg]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-epl-title-2027-05-30-w-cfc",
-  "intl_token": "71331397742700941957031238831543083934039786198089976413635532604236046151616",
-  "score": 0.633,
-  "us_label": "English Premier League Champion: Chelsea",
-  "intl_label": "Will Chelsea win the 2026-27 English Premier League (EPL) Championship? [Chelsea]",
   "tick": 0.01
  },
  {
@@ -2480,6 +2472,14 @@
   "tick": 0.01
  },
  {
+  "us_slug": "tec-epl-title-2027-05-30-w-cfc",
+  "intl_token": "71331397742700941957031238831543083934039786198089976413635532604236046151616",
+  "score": 0.633,
+  "us_label": "English Premier League Champion: Chelsea",
+  "intl_label": "Will Chelsea win the 2026-27 English Premier League (EPL) Championship? [Chelsea]",
+  "tick": 0.01
+ },
+ {
   "us_slug": "tac-oscars-nom-bstintl-2027-01-21-coward",
   "intl_token": "76907786161043777498997144656500386483859107847289065617951773605882733806728",
   "score": 0.674,
@@ -2493,6 +2493,14 @@
   "score": 0.643,
   "us_label": "NBA Western Conference Champion: Los Angeles Lakers",
   "intl_label": "Will the Los Angeles Lakers be the 2027 NBA Western Conference Champion? [Los Angeles Lakers]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-epl-title-2027-05-30-w-ars",
+  "intl_token": "106464589845250400124249015666766731317110899241411841699938652823328750757436",
+  "score": 0.633,
+  "us_label": "English Premier League Champion: Arsenal",
+  "intl_label": "Will Arsenal win the 2026-27 English Premier League (EPL) Championship? [Arsenal]",
   "tick": 0.01
  },
  {
@@ -2510,6 +2518,22 @@
   "us_label": "Major League Soccer Champion: San Jose Earthquakes",
   "intl_label": "Will San Jose Earthquakes win the 2026 MLS Cup? [San Jose Earthquakes]",
   "tick": 0.001
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestedit-youcan",
+  "intl_token": "100757376849492277132821909746555605457515786857395729851351563483016663901152",
+  "score": 0.639,
+  "us_label": "Oscar Winner: Best Film Editing: You Can See Everything",
+  "intl_label": "Will You Can See Everything win Best Picture at the 99th Academy Awards? [You Can See Everything]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestpic-youcan",
+  "intl_token": "100757376849492277132821909746555605457515786857395729851351563483016663901152",
+  "score": 0.656,
+  "us_label": "Oscar Winner: Best Picture: You Can See Everything",
+  "intl_label": "Will You Can See Everything win Best Picture at the 99th Academy Awards? [You Can See Everything]",
+  "tick": 0.01
  },
  {
   "us_slug": "tec-nba-westconf-2027-05-29-w-gsw",
@@ -2576,22 +2600,6 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tac-oscars-03-14-2027-bestedit-youcan",
-  "intl_token": "100757376849492277132821909746555605457515786857395729851351563483016663901152",
-  "score": 0.639,
-  "us_label": "Oscar Winner: Best Film Editing: You Can See Everything",
-  "intl_label": "Will You Can See Everything win Best Picture at the 99th Academy Awards? [You Can See Everything]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-03-14-2027-bestpic-youcan",
-  "intl_token": "100757376849492277132821909746555605457515786857395729851351563483016663901152",
-  "score": 0.656,
-  "us_label": "Oscar Winner: Best Picture: You Can See Everything",
-  "intl_label": "Will You Can See Everything win Best Picture at the 99th Academy Awards? [You Can See Everything]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-nba-westconf-2027-05-29-w-sac",
   "intl_token": "92042502087431829829975900231473917768444268188425758275058650346040420757573",
   "score": 0.643,
@@ -2613,14 +2621,6 @@
   "score": 0.613,
   "us_label": "CA-21 House Election Winner: Jim Costa (D)",
   "intl_label": "Will the Democratic Party win the CA-21 House seat? [Jim Costa (D)]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-bun-title-2027-05-22-w-scf",
-  "intl_token": "22175333496127081469990198415425480769050614407477193039195458572751419549061",
-  "score": 0.6,
-  "us_label": "Bundesliga Champion: SC Freiburg",
-  "intl_label": "Will SC Freiburg be the 2026-27 Bundesliga champion? [SC Freiburg]",
   "tick": 0.01
  },
  {
@@ -2902,13 +2902,5 @@
   "us_label": "National League Rookie of the Year: Owen Caissie",
   "intl_label": "Will Owen Caissie win the 2026 NL Rookie of the Year award? [Owen Caissie]",
   "tick": 0.001
- },
- {
-  "us_slug": "tec-ucl-final-2026-06-05-w-bru",
-  "intl_token": "42934023876900744469315825151054686737366748717421206370305908868326441586868",
-  "score": 0.5,
-  "us_label": "UEFA Champions League Winner: Club Brugge KV",
-  "intl_label": "Will Club Brugge win the 2026-27 UEFA Champions League Championship? [Club Brugge]",
-  "tick": 0.01
  }
 ]
