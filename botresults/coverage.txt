@@ -1,86 +1,85 @@
-profile 'Tiger105': tiger105 0x0d23fc6838433dbff11e4667ef5991e9dd9d2d56
 profile 'Tiger105': ah-cop-tiger105 0x8d6064a7f8b67988a4073ac1b051356fc8cebd76
 profile 'Tiger105': tiger105050 0x185031bb4a1763496d706e0c07339a690e00b57f
 
-US markets in ['atp', 'itf', 'wta'] (not futures): 1121
-  US aec-atp-jenbro-patmal-2026-10-22 | moneyline | Who will win in the upcoming atp event Jenson Brooksby vs Patrick Malo | long=Jenson Brooksby short=Patrick Maloney start=1792786500.0
-  US asc-atp-jenbro-patmal-2026-10-22-gs-neg-1pt5 | spreads | Will the Jenson Brooksby cover -1.5 vs the Patrick Maloney in Jenson B | long=-1.50 short=+1.50 start=1792786500.0
-  US asc-atp-jenbro-patmal-2026-10-22-gs-pos-1pt5 | spreads | Will the Jenson Brooksby cover 1.5 vs the Patrick Maloney in Jenson Br | long=+1.50 short=-1.50 start=1792786500.0
-  US asc-atp-jenbro-patmal-2026-10-22-gs-neg-4pt5 | spreads | Will the Jenson Brooksby cover -4.5 vs the Patrick Maloney in Jenson B | long=-4.50 short=+4.50 start=1792786500.0
-  US asc-atp-jenbro-patmal-2026-10-22-gs-pos-4pt5 | spreads | Will the Jenson Brooksby cover 4.5 vs the Patrick Maloney in Jenson Br | long=+4.50 short=-4.50 start=1792786500.0
-  US asc-atp-jenbro-patmal-2026-10-22-gs-neg-7pt5 | spreads | Will the Jenson Brooksby cover -7.5 vs the Patrick Maloney in Jenson B | long=-7.50 short=+7.50 start=1792786500.0
-  US asc-atp-jenbro-patmal-2026-10-22-gs-pos-7pt5 | spreads | Will the Jenson Brooksby cover 7.5 vs the Patrick Maloney in Jenson Br | long=+7.50 short=-7.50 start=1792786500.0
-  US asc-atp-jenbro-patmal-2026-10-22-ss-neg-1pt5 | spreads | Will the Jenson Brooksby cover -1.5 vs the Patrick Maloney in Jenson B | long=-1.50 short=+1.50 start=1792786500.0
-  US asc-atp-jenbro-patmal-2026-10-22-ss-pos-1pt5 | spreads | Will the Jenson Brooksby cover 1.5 vs the Patrick Maloney in Jenson Br | long=+1.50 short=-1.50 start=1792786500.0
-  US tsc-atp-jenbro-patmal-2026-10-22-tg-17pt5 | totals | Will the total in Jenson Brooksby vs. Patrick Maloney be more than 17. | long=Over short=Under start=1792786500.0
-  US tsc-atp-jenbro-patmal-2026-10-22-tg-22pt5 | totals | Will the total in Jenson Brooksby vs. Patrick Maloney be more than 22. | long=Over short=Under start=1792786500.0
-  US tsc-atp-jenbro-patmal-2026-10-22-tg-27pt5 | totals | Will the total in Jenson Brooksby vs. Patrick Maloney be more than 27. | long=Over short=Under start=1792786500.0
-  US tsc-atp-jenbro-patmal-2026-10-22-st-2pt5 | totals | Will the total in Jenson Brooksby vs. Patrick Maloney be more than 2.5 | long=Over short=Under start=1792786500.0
-  US astatc-atp-jenbro-patmal-2026-10-22-es-2-0 | props | Brooksby wins 2-0 | long=Yes short=No start=1792786500.0
-  US astatc-atp-jenbro-patmal-2026-10-22-es-2-1 | props | Brooksby wins 2-1 | long=Yes short=No start=1792786500.0
-  US astatc-atp-jenbro-patmal-2026-10-22-es-1-2 | props | Maloney wins 2-1 | long=Yes short=No start=1792786500.0
-  US astatc-atp-jenbro-patmal-2026-10-22-es-0-2 | props | Maloney wins 2-0 | long=Yes short=No start=1792786500.0
-  US astatc-atp-jenbro-patmal-2026-10-22-sw1 | props | Will Jenson Brooksby win set 1 against Patrick Maloney? | long=Yes short=No start=1792786500.0
-  US astatc-atp-jenbro-patmal-2026-10-22-sw2 | props | Will Jenson Brooksby win set 2 against Patrick Maloney? | long=Yes short=No start=1792786500.0
-  US astatc-atp-frafor-oribat-2026-10-23-es-2-0 | props | Forti wins 2-0 | long=Yes short=No start=1792747800.0
-  US astatc-atp-frafor-oribat-2026-10-23-es-2-1 | props | Forti wins 2-1 | long=Yes short=No start=1792747800.0
-  US astatc-atp-frafor-oribat-2026-10-23-es-1-2 | props | Batalla wins 2-1 | long=Yes short=No start=1792747800.0
-  US astatc-atp-frafor-oribat-2026-10-23-es-0-2 | props | Batalla wins 2-0 | long=Yes short=No start=1792747800.0
-  US astatc-atp-frafor-oribat-2026-10-23-sw1 | props | Will Francesco Forti win set 1 against Oriol Roca Batalla? | long=Yes short=No start=1792747800.0
-  US astatc-atp-frafor-oribat-2026-10-23-sw2 | props | Will Francesco Forti win set 2 against Oriol Roca Batalla? | long=Yes short=No start=1792747800.0
-US: 83596 open markets, 62976 game/spread/total/prop slugs, 960 verified pairs
+US markets in ['atp', 'itf', 'wta'] (not futures): 3209
+  US aec-wta-naoosa-jaspao-2026-10-25 | moneyline | Who will win in the upcoming wta event Naomi Osaka vs Jasmine Paolini  | long=Naomi Osaka short=Jasmine Paolini start=1793088000.0
+  US aec-wta-diapar-cribuc-2026-10-25 | moneyline | Who will win in the upcoming wta event Diane Parry vs Cristina Bucsa s | long=Diane Parry short=Cristina Bucsa start=1793070600.0
+  US aec-wta-annli-ekaale-2026-10-25 | moneyline | Who will win in the upcoming wta event Ann Li vs Ekaterina Alexandrova | long=Ann Li short=Ekaterina Alexandrova start=1793066400.0
+  US aec-wta-leyfer-himsak-2026-10-25 | moneyline | Who will win in the upcoming wta event Leylah Fernandez vs Himeno Saka | long=Leylah Fernandez short=Himeno Sakatsume start=1793080800.0
+  US aec-wta-polkud-jantje-2026-10-25 | moneyline | Who will win in the upcoming wta event Polina Kudermetova vs Janice Tj | long=Polina Kudermetova short=Janice Tjen start=1793078400.0
+  US aec-wta-katsin-lantar-2026-10-25 | moneyline | Who will win in the upcoming wta event Katerina Siniakova vs Lanlana T | long=Katerina Siniakova short=Lanlana Tararudee start=1793156400.0
+  US aec-wta-antruz-claliu-2026-10-25 | moneyline | Who will win in the upcoming wta event Antonia Ruzic vs Claire Liu sch | long=Antonia Ruzic short=Claire Liu start=1793078400.0
+  US aec-wta-xinsun-mansaw-2026-10-25 | moneyline | Who will win in the upcoming wta event Xinran Sun vs Mananchaya Sawang | long=Xinran Sun short=Mananchaya Sawangkaew start=1793098800.0
+  US aec-wta-sartor-zeyson-2026-10-25 | moneyline | Who will win in the upcoming wta event Sara Sorribes Tormo vs Zeynep S | long=Sara Sorribes Tormo short=Zeynep Sonmez start=1793074200.0
+  US aec-wta-simwal-jiltei-2026-10-25 | moneyline | Who will win in the upcoming wta event Simona Waltert vs Jil Teichmann | long=Simona Waltert short=Jil Teichmann start=1793070000.0
+  US aec-wta-kaique-sofken-2026-10-25 | moneyline | Who will win in the upcoming wta event Kaitlin Quevedo vs Sofia Kenin  | long=Kaitlin Quevedo short=Sofia Kenin start=1793070000.0
+  US aec-atp-stesak-timska-2026-10-25 | moneyline | Who will win in the upcoming atp event Stefanos Sakellaridis vs Timofe | long=Stefanos Sakellaridis short=Timofey Skatov start=1793079000.0
+  US aec-atp-aughol-jayfri-2026-10-25 | moneyline | Who will win in the upcoming atp event August Holmgren vs Jay Friend s | long=August Holmgren short=Jay Dylan Friend start=1793066400.0
+  US aec-atp-shoshi-jankum-2026-10-25 | moneyline | Who will win in the upcoming atp event Sho Shimabukuro vs Jan Kumstat  | long=Sho Shimabukuro short=Jan Kumstat start=1793066400.0
+  US aec-atp-seohon-yibwu-2026-10-25 | moneyline | Who will win in the upcoming atp event Seongchan Hong vs Yibing Wu sch | long=Seong-Chan Hong short=Yibing Wu start=1793074800.0
+  US aec-atp-tardan-andila-2026-10-25 | moneyline | Who will win in the upcoming atp event Taro Daniel vs Andre Ilagan sch | long=Taro Daniel short=Andre Ilagan start=1793066400.0
+  US aec-atp-karkha-caralc-2026-10-25 | moneyline | Who will win in the upcoming atp event Karen Khachanov vs Carlos Alcar | long=Karen Khachanov short=Carlos Alcaraz start=1793104200.0
+  US aec-atp-jurrod-nikbas-2026-10-25 | moneyline | Who will win in the upcoming atp event Jurij Rodionov vs Nikoloz Basil | long=Jurij Rodionov short=Nikoloz Basilashvili start=1793104200.0
+  US aec-atp-lucdar-matarn-2026-10-25 | moneyline | Who will win in the upcoming atp event Luciano Darderi vs Matteo Arnal | long=Luciano Darderi short=Matteo Arnaldi start=1793036400.0
+  US aec-atp-tompau-andrub-2026-10-25 | moneyline | Who will win in the upcoming atp event Tommy Paul vs Andrey Rublev sch | long=Tommy Paul short=Andrey Rublev start=1793104200.0
+  US aec-atp-danagu-danmed-2026-10-25 | moneyline | Who will win in the upcoming atp event Daniel Merida vs Daniil Medvede | long=Daniel Merida Aguilar short=Daniil Medvedev start=1793104200.0
+  US aec-atp-camnor-fracer-2026-10-25 | moneyline | Who will win in the upcoming atp event Cameron Norrie vs Francisco Cer | long=Cameron Norrie short=Francisco Cerundolo start=1793104200.0
+  US aec-atp-lucass-leatie-2026-10-25 | moneyline | Who will win in the upcoming atp event Luca Van Assche vs Learner Tien | long=Luca Van Assche short=Learner Tien start=1793041200.0
+  US aec-atp-flacob-gridim-2026-10-25 | moneyline | Who will win in the upcoming atp event Flavio Cobolli vs Grigor Dimitr | long=Flavio Cobolli short=Grigor Dimitrov start=1793104200.0
+  US aec-atp-lormus-fratia-2026-10-25 | moneyline | Who will win in the upcoming atp event Lorenzo Musetti vs Frances Tiaf | long=Lorenzo Musetti short=Frances Tiafoe start=1793104200.0
+US: 69782 open markets, 49639 game/spread/total/prop slugs, 364 verified pairs
 
 age                    long side              short side  listed, outcome names     not on Polymarket US  copyable
-<3h                          211                     609                       0                     359       70%
-3-12h                         11                      81                       0                     502       15%
-12-48h                        51                       1                       0                    1651        3%
-older                          1                       0                       0                    2523        0%
+<3h                           50                      45                       1                     160       37%
+3-12h                         60                      13                       0                     547       12%
+12-48h                         4                       4                       0                    3424        0%
+older                         59                       0                       0                    1633        3%
 
 by league (all ages): copyable / total
-  nba            235 / 772
-  uel              0 / 500
-  lol            401 / 464
-  futures         50 / 439
-  nfl              0 / 408
-  cfb              0 / 383
-  dota2            0 / 308
-  epl            213 / 293
-  ucl              0 / 289
-  cs2              0 / 265
-  wta             11 / 210
-  itf              0 / 202
-  atp              5 / 158
-  swe              0 / 148
-  val              0 / 145
+  futures         59 / 859
+  nba            118 / 781
+  lal              2 / 482
+  nfl              0 / 446
+  dota2            0 / 343
+  lol              0 / 309
+  epl              0 / 294
+  cs2              0 / 293
+  atp             15 / 280
+  por              0 / 192
+  cfb              0 / 171
+  wta             21 / 147
   fifwc            0 / 140
-  lal              0 / 99
-  bra2             0 / 67
-  por              0 / 63
-  bl2              0 / 61
+  val              0 / 137
+  fl1              0 / 129
+  ere              0 / 122
+  ucl              0 / 121
+  itf              0 / 102
+  mls              3 / 101
+  swe              0 / 81
 
 recent trades not on Polymarket US (international slug | outcome | US lists for the same matchup):
-  165  nba-por-sac-2026-10-23-spread-away-9pt5 | Trail Blazers | nba-por-sac-2026-10-23, nba-por-sac-2026-10-23-218pt5, nba-por-sac-2026-10-23-221pt5, nba-por-sac-2026-10-23-224pt5
-  148  swe-vas-hal-2026-10-23-total-2pt5 | Under | -
-   74  nato-x-russia-military-clash-by-october-31-2026 | No | -
-   51  bl2-boc-wob-2026-10-23-wob | No | -
-   27  cfb-hou-utah-2026-10-24-spread-home-6pt5 | Utah | cfb-hou-utah-2026-10-24, cfb-hou-utah-2026-10-24-1h-11pt5, cfb-hou-utah-2026-10-24-1h-18pt5, cfb-hou-utah-2026-10-24-1h-22pt5
-   24  tur-ala-koc-2026-10-23-total-2pt5 | Under | -
-   21  wta-jovic-shnaide-2026-10-23 | Iva Jovic | -
-   19  atp-chidekh-cerundo-2026-10-23 | Clement Chidekh | -
-   19  elc-bol-mid-2026-10-23-bol | Yes | -
-   18  tur-ala-koc-2026-10-23-ala | No | -
-   16  dota2-bb4-ai1-2026-10-23-game2 | BetBoom Team | -
-   16  nba-por-sac-2026-10-23-spread-away-10pt5 | Kings | nba-por-sac-2026-10-23, nba-por-sac-2026-10-23-218pt5, nba-por-sac-2026-10-23-221pt5, nba-por-sac-2026-10-23-224pt5
-   14   |  | -
-   12  will-the-san-francisco-49ers-win-the-2027-nfl-league-championship | Yes | -
-   11  dota2-1win-og-2026-10-23-game2 | OG | -
-    8  nba-chi-mil-2026-10-23-spread-home-3pt5 | Bucks | nba-chi-mil-2026-10-23, nba-chi-mil-2026-10-23-224pt5, nba-chi-mil-2026-10-23-227pt5, nba-chi-mil-2026-10-23-230pt5
-    7  nba-chi-mil-2026-10-23-spread-home-1pt5 | Bucks | nba-chi-mil-2026-10-23, nba-chi-mil-2026-10-23-224pt5, nba-chi-mil-2026-10-23-227pt5, nba-chi-mil-2026-10-23-230pt5
-    5  dota2-liquid-gl-2026-10-23-game2 | GamerLegion | -
-    5  will-atlanta-dream-win-the-2026-wnba-finals-857 | No | -
-    5  bun-stu-moe-2026-10-23-first-half-total-2pt5 | Under | -
-    5  bl2-boc-wob-2026-10-23-draw | No | -
-    5  nba-atl-cha-2026-10-23-spread-away-2pt5 | Hawks | nba-atl-cha-2026-10-23, nba-atl-cha-2026-10-23-213pt5, nba-atl-cha-2026-10-23-216pt5, nba-atl-cha-2026-10-23-219pt5
-    4  dota2-ic-huliga-2026-10-23-game1 | Inner Circle | -
-    4  2026-balance-of-power-r-senate-r-house-537 | No | -
-    4  nba-tor-was-2026-10-23-spread-away-9pt5 | Raptors | nba-tor-was-2026-10-23, nba-tor-was-2026-10-23-221pt5, nba-tor-was-2026-10-23-224pt5, nba-tor-was-2026-10-23-227pt5
+   60  cs2-nemi1-aur1-2026-10-26 | Aurora Gaming | -
+   55  tur-gal-fen-2026-10-26-gal | Yes | -
+   40  will-the-republican-party-hold-exactly-53-senate-seats-after-the-2026-midterm-elections | No | -
+   36  will-the-republican-party-control-the-house-after-the-2026-midterm-elections | Yes | -
+   35  wta-snigur-bondar-2026-10-26 | Daria Snigur | -
+   29  nba-phx-okc-2026-10-26-spread-home-9pt5 | Thunder | -
+   28  dota2-og-gl-2026-10-26-game1 | GamerLegion | -
+   26  xi-jinping-out-before-2027 | No | -
+   24  cs2-9z-tyloo-2026-10-26 | TYLOO | -
+   22  nba-mem-sac-2026-10-25 | Grizzlies | -
+   21  wta-uchijim-mertens-2026-10-26 | Moyuka Uchijima | -
+   18  cs2-ts7-furia-2026-10-26 | Spirit | -
+   15  nfl-kc-sea-2026-10-26-spread-home-10pt5 | Chiefs | -
+   15  2026-balance-of-power-r-senate-r-house-537 | No | -
+   14  cs2-tl1-lgc-2026-10-26-game1 | Liquid | -
+   13  bra-fla-cam-2026-10-26-spread-home-1pt5 | CR Flamengo | bra-fla-cam-2026-10-26-cam, bra-fla-cam-2026-10-26-draw, bra-fla-cam-2026-10-26-fla
+   12  will-the-republican-party-hold-exactly-49-senate-seats-after-the-2026-midterm-elections-189 | Yes | -
+   11  wta-shi-ibragim-2026-10-26 | Han Shi | -
+   11  wta-badosa-lee-2026-10-26 | Paula Badosa | -
+   10  nfl-kc-sea-2026-10-26-total-24pt5 | Under | -
+   10  itf-mirand4-voisin1-2026-10-26 | Antoine Voisin | -
+    8  nba-phx-okc-2026-10-26-spread-home-8pt5 | Thunder | -
+    7  cs2-vit-fut-2026-10-26 | FUT Esports | -
+    7  cs2-nemi1-aur1-2026-10-26-game1 | Nemiga | -
+    6  will-the-republican-party-control-the-senate-after-the-2026-midterm-elections | No | -

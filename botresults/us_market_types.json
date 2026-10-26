@@ -1,14 +1,14 @@
 {
  "counts": {
-  "props/sports": 28980,
-  "totals/sports": 15935,
-  "spreads/sports": 12892,
-  "futures/sports": 11599,
-  "futures/politics": 6790,
-  "drawable_outcome/sports": 2397,
-  "moneyline/sports": 1729,
-  "futures/culture": 1679,
-  "/crypto": 1220,
+  "props/sports": 21587,
+  "totals/sports": 12854,
+  "futures/sports": 11142,
+  "spreads/sports": 10038,
+  "futures/politics": 6788,
+  "drawable_outcome/sports": 1966,
+  "moneyline/sports": 1706,
+  "futures/culture": 1661,
+  "/crypto": 1480,
   "futures/macro": 219,
   "futures/climate": 119,
   "futures/technology": 66,
@@ -27,134 +27,134 @@
     "title": "",
     "game_start": 1793502000.0,
     "end": 1794715200.0,
-    "bid": 0.72,
+    "bid": 0.73,
     "ask": 0.74
    },
    {
-    "slug": "aec-vtb-mba-eni-2026-10-10",
-    "question": "Who will win in the upcoming basketball event MBA Moscow vs Enisey Krasnoyarsk scheduled for October 10, 2026 at 10:00 AM UTC?",
+    "slug": "aec-nba-was-cha-2026-10-26",
+    "question": "Who will win in the upcoming basketball event WAS Wizards vs CHA Hornets scheduled for October 26, 2026 at 11:00 PM UTC?",
     "title": "",
-    "game_start": 1791626400.0,
-    "end": 1792850400.0,
-    "bid": null,
-    "ask": null
-   },
-   {
-    "slug": "aec-cznbl-pis-ost-2026-10-11",
-    "question": "Who will win in the upcoming basketball event Srsni Pisek vs BK Nova Hut Ostrava scheduled for October 11, 2026 at 3:00 PM UTC?",
-    "title": "",
-    "game_start": 1791730800.0,
-    "end": 1792954800.0,
-    "bid": null,
-    "ask": null
-   },
-   {
-    "slug": "aec-nba-dal-ind-2026-10-23",
-    "question": "Who will win in the upcoming basketball event DAL Mavericks vs IND Pacers scheduled for October 23, 2026 at 11:00 PM UTC?",
-    "title": "",
-    "game_start": 1792796400.0,
-    "end": 1794006000.0,
-    "bid": 0.29,
-    "ask": 0.3
-   },
-   {
-    "slug": "aec-nba-min-orl-2026-10-23",
-    "question": "Who will win in the upcoming basketball event MIN Timberwolves vs ORL Magic scheduled for October 23, 2026 at 11:00 PM UTC?",
-    "title": "",
-    "game_start": 1792796400.0,
-    "end": 1794006000.0,
-    "bid": 0.48,
-    "ask": 0.49
-   },
-   {
-    "slug": "aec-nba-tor-was-2026-10-23",
-    "question": "Who will win in the upcoming basketball event TOR Raptors vs WAS Wizards scheduled for October 23, 2026 at 11:00 PM UTC?",
-    "title": "",
-    "game_start": 1792796400.0,
-    "end": 1794006000.0,
-    "bid": 0.74,
-    "ask": 0.75
-   },
-   {
-    "slug": "aec-nba-ny-bos-2026-10-23",
-    "question": "Who will win in the upcoming basketball event NY Knicks vs BOS Celtics scheduled for October 23, 2026 at 11:00 PM UTC?",
-    "title": "",
-    "game_start": 1792796400.0,
-    "end": 1794006000.0,
+    "game_start": 1793055600.0,
+    "end": 1794265200.0,
     "bid": 0.44,
     "ask": 0.45
    },
    {
-    "slug": "aec-nba-atl-cha-2026-10-23",
-    "question": "Who will win in the upcoming basketball event ATL Hawks vs CHA Hornets scheduled for October 23, 2026 at 11:00 PM UTC?",
+    "slug": "aec-nba-min-cle-2026-10-26",
+    "question": "Who will win in the upcoming basketball event MIN Timberwolves vs CLE Cavaliers scheduled for October 26, 2026 at 11:00 PM UTC?",
     "title": "",
-    "game_start": 1792796400.0,
-    "end": 1794006000.0,
-    "bid": 0.56,
-    "ask": 0.57
+    "game_start": 1793055600.0,
+    "end": 1794265200.0,
+    "bid": 0.37,
+    "ask": 0.38
    },
    {
-    "slug": "aec-nba-det-mia-2026-10-23",
-    "question": "Who will win in the upcoming basketball event DET Pistons vs MIA Heat scheduled for October 24, 2026 at 12:00 AM UTC?",
+    "slug": "aec-nba-dal-mia-2026-10-26",
+    "question": "Who will win in the upcoming basketball event DAL Mavericks vs MIA Heat scheduled for October 26, 2026 at 11:30 PM UTC?",
     "title": "",
-    "game_start": 1792800000.0,
-    "end": 1794009600.0,
-    "bid": 0.53,
-    "ask": 0.54
+    "game_start": 1793057400.0,
+    "end": 1794267000.0,
+    "bid": 0.25,
+    "ask": 0.26
    },
    {
-    "slug": "aec-nba-chi-mil-2026-10-23",
-    "question": "Who will win in the upcoming basketball event CHI Bulls vs MIL Bucks scheduled for October 24, 2026 at 12:00 AM UTC?",
+    "slug": "aec-nba-chi-bos-2026-10-26",
+    "question": "Who will win in the upcoming basketball event CHI Bulls vs BOS Celtics scheduled for October 26, 2026 at 11:30 PM UTC?",
     "title": "",
-    "game_start": 1792785600.0,
-    "end": 1794009600.0,
-    "bid": 0.46,
-    "ask": 0.47
+    "game_start": 1793057400.0,
+    "end": 1794267000.0,
+    "bid": 0.13,
+    "ask": 0.14
    },
    {
-    "slug": "aec-nba-no-uta-2026-10-23",
-    "question": "Who will win in the upcoming basketball event NO Pelicans vs UTA Jazz scheduled for October 24, 2026 at 1:30 AM UTC?",
+    "slug": "aec-nba-ind-mil-2026-10-26",
+    "question": "Who will win in the upcoming basketball event IND Pacers vs MIL Bucks scheduled for October 27, 2026 at 12:00 AM UTC?",
     "title": "",
-    "game_start": 1792805400.0,
-    "end": 1794015000.0,
-    "bid": 0.49,
-    "ask": 0.5
+    "game_start": 1793059200.0,
+    "end": 1794268800.0,
+    "bid": 0.62,
+    "ask": 0.63
    },
    {
-    "slug": "aec-nba-hou-sa-2026-10-23",
-    "question": "Who will win in the upcoming basketball event HOU Rockets vs SA Spurs scheduled for October 24, 2026 at 1:30 AM UTC?",
+    "slug": "aec-nba-pho-okc-2026-10-26",
+    "question": "Who will win in the upcoming basketball event PHO Suns vs OKC Thunder scheduled for October 27, 2026 at 12:00 AM UTC?",
     "title": "",
-    "game_start": 1792805400.0,
-    "end": 1794015000.0,
-    "bid": 0.35,
-    "ask": 0.36
+    "game_start": 1793059200.0,
+    "end": 1794268800.0,
+    "bid": 0.21,
+    "ask": 0.22
    },
    {
-    "slug": "aec-nba-por-sac-2026-10-23",
-    "question": "Who will win in the upcoming basketball event POR Trail Blazers vs SAC Kings scheduled for October 24, 2026 at 2:00 AM UTC?",
+    "slug": "aec-nba-atl-hou-2026-10-26",
+    "question": "Who will win in the upcoming basketball event ATL Hawks vs HOU Rockets scheduled for October 27, 2026 at 12:30 AM UTC?",
     "title": "",
-    "game_start": 1792807200.0,
-    "end": 1794016800.0,
-    "bid": 0.8,
-    "ask": 0.81
+    "game_start": 1793061000.0,
+    "end": 1794270600.0,
+    "bid": 0.34,
+    "ask": 0.35
    },
    {
-    "slug": "aec-nba-mem-gs-2026-10-23",
-    "question": "Who will win in the upcoming basketball event MEM Grizzlies vs GS Warriors scheduled for October 24, 2026 at 2:00 AM UTC?",
+    "slug": "aec-nba-mem-uta-2026-10-26",
+    "question": "Who will win in the upcoming basketball event MEM Grizzlies vs UTA Jazz scheduled for October 27, 2026 at 1:00 AM UTC?",
     "title": "",
-    "game_start": 1792807200.0,
-    "end": 1794016800.0,
-    "bid": 0.38,
-    "ask": 0.39
+    "game_start": 1793062800.0,
+    "end": 1794272400.0,
+    "bid": 0.5,
+    "ask": 0.51
    },
    {
-    "slug": "aec-nba-lac-lal-2026-10-23",
-    "question": "Who will win in the upcoming basketball event LA Clippers vs LA Lakers scheduled for October 24, 2026 at 2:00 AM UTC?",
+    "slug": "aec-nba-gs-den-2026-10-26",
+    "question": "Who will win in the upcoming basketball event GS Warriors vs DEN Nuggets scheduled for October 27, 2026 at 2:00 AM UTC?",
     "title": "",
-    "game_start": 1792807200.0,
-    "end": 1794016800.0,
-    "bid": 0.23,
-    "ask": 0.24
+    "game_start": 1793066400.0,
+    "end": 1794276000.0,
+    "bid": 0.28,
+    "ask": 0.29
+   },
+   {
+    "slug": "aec-nfl-dal-phi-2026-10-26",
+    "question": "Who will win in the upcoming football event Dallas Cowboys vs Philadelphia Eagles scheduled for October 27, 2026 at 12:15 AM UTC?",
+    "title": "",
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.67,
+    "ask": 0.6725
+   },
+   {
+    "slug": "aec-nba-bkn-bos-2026-10-27",
+    "question": "Who will win in the upcoming basketball event BKN Nets vs BOS Celtics scheduled for October 27, 2026 at 11:30 PM UTC?",
+    "title": "",
+    "game_start": 1793143800.0,
+    "end": 1794353400.0,
+    "bid": 0.19,
+    "ask": 0.21
+   },
+   {
+    "slug": "aec-nba-det-ny-2026-10-27",
+    "question": "Who will win in the upcoming basketball event DET Pistons vs NY Knicks scheduled for October 28, 2026 at 12:00 AM UTC?",
+    "title": "",
+    "game_start": 1793145600.0,
+    "end": 1794355200.0,
+    "bid": 0.42,
+    "ask": 0.43
+   },
+   {
+    "slug": "aec-nba-sac-sa-2026-10-27",
+    "question": "Who will win in the upcoming basketball event SAC Kings vs SA Spurs scheduled for October 28, 2026 at 12:00 AM UTC?",
+    "title": "",
+    "game_start": 1793145600.0,
+    "end": 1794355200.0,
+    "bid": 0.13,
+    "ask": 0.14
+   },
+   {
+    "slug": "aec-nba-por-lal-2026-10-27",
+    "question": "Who will win in the upcoming basketball event POR Trail Blazers vs LA Lakers scheduled for October 28, 2026 at 3:00 AM UTC?",
+    "title": "",
+    "game_start": 1793156400.0,
+    "end": 1794366000.0,
+    "bid": 0.41,
+    "ask": 0.43
    }
   ],
   "drawable_outcome/sports": [
@@ -166,33 +166,6 @@
     "end": 1786645800.0,
     "bid": null,
     "ask": null
-   },
-   {
-    "slug": "atc-lal-ray-ath-2026-10-10-ray",
-    "question": "Will Rayo Vallecano de Madrid win against Athletic Club in the La Liga match scheduled for Oct 10, 2026?",
-    "title": "",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": 0.17,
-    "ask": 0.18
-   },
-   {
-    "slug": "atc-lal-ray-ath-2026-10-10-draw",
-    "question": "Will the La Liga match Rayo Vallecano de Madrid vs Athletic Club scheduled for Oct 10, 2026 end in a draw?",
-    "title": "",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": 0.02,
-    "ask": 0.19
-   },
-   {
-    "slug": "atc-lal-ray-ath-2026-10-10-ath",
-    "question": "Will Athletic Club win against Rayo Vallecano de Madrid in the La Liga match scheduled for Oct 10, 2026?",
-    "title": "",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": 0.17,
-    "ask": 0.31
    },
    {
     "slug": "atc-tff1-umr-bol-2026-10-14-umr",
@@ -222,60 +195,6 @@
     "ask": null
    },
    {
-    "slug": "atc-arg2-ccns-aca-2026-10-17-ccns",
-    "question": "Will CA Central Norte Salta win against CA Acassuso in the Primera Nacional match scheduled for Oct 17, 2026?",
-    "title": "",
-    "game_start": 1792958400.0,
-    "end": 1793491200.0,
-    "bid": 0.43,
-    "ask": 0.48
-   },
-   {
-    "slug": "atc-arg2-ccns-aca-2026-10-17-draw",
-    "question": "Will the Primera Nacional match CA Central Norte Salta vs CA Acassuso scheduled for Oct 17, 2026 end in a draw?",
-    "title": "",
-    "game_start": 1792958400.0,
-    "end": 1793491200.0,
-    "bid": 0.31,
-    "ask": 0.33
-   },
-   {
-    "slug": "atc-arg2-ccns-aca-2026-10-17-aca",
-    "question": "Will CA Acassuso win against CA Central Norte Salta in the Primera Nacional match scheduled for Oct 17, 2026?",
-    "title": "",
-    "game_start": 1792958400.0,
-    "end": 1793491200.0,
-    "bid": 0.21,
-    "ask": 0.24
-   },
-   {
-    "slug": "atc-arg2-alm-tri-2026-10-17-alm",
-    "question": "Will Club Almagro win against CSD Tristan Suarez in the Primera Nacional match scheduled for Oct 17, 2026?",
-    "title": "",
-    "game_start": 1792866600.0,
-    "end": 1793491200.0,
-    "bid": 0.13,
-    "ask": 0.15
-   },
-   {
-    "slug": "atc-arg2-alm-tri-2026-10-17-draw",
-    "question": "Will the Primera Nacional match Club Almagro vs CSD Tristan Suarez scheduled for Oct 17, 2026 end in a draw?",
-    "title": "",
-    "game_start": 1792866600.0,
-    "end": 1793491200.0,
-    "bid": 0.3,
-    "ask": 0.32
-   },
-   {
-    "slug": "atc-arg2-alm-tri-2026-10-17-tri",
-    "question": "Will CSD Tristan Suarez win against Club Almagro in the Primera Nacional match scheduled for Oct 17, 2026?",
-    "title": "",
-    "game_start": 1792866600.0,
-    "end": 1793491200.0,
-    "bid": 0.54,
-    "ask": 0.57
-   },
-   {
     "slug": "atc-fbl-svw-tsg-2026-10-18-svw",
     "question": "Will Werder Bremen win against TSG Hoffenheim in the Frauen-Bundesliga match scheduled for Oct 18, 2026?",
     "title": "",
@@ -292,6 +211,87 @@
     "end": 1793559600.0,
     "bid": null,
     "ask": null
+   },
+   {
+    "slug": "atc-fbl-svw-tsg-2026-10-18-tsg",
+    "question": "Will TSG Hoffenheim win against Werder Bremen in the Frauen-Bundesliga match scheduled for Oct 18, 2026?",
+    "title": "",
+    "game_start": 1792332000.0,
+    "end": 1793559600.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "atc-lg1-psg-lyo-2026-10-25-psg",
+    "question": "Will Paris Saint-Germain FC win against Olympique Lyonnais in the Ligue 1 match scheduled for Oct 25, 2026?",
+    "title": "",
+    "game_start": 1793043000.0,
+    "end": 1794185100.0,
+    "bid": 0.73,
+    "ask": 0.74
+   },
+   {
+    "slug": "atc-lg1-psg-lyo-2026-10-25-draw",
+    "question": "Will the Ligue 1 match Paris Saint-Germain FC vs Olympique Lyonnais scheduled for Oct 25, 2026 end in a draw?",
+    "title": "",
+    "game_start": 1793043000.0,
+    "end": 1794185100.0,
+    "bid": 0.16,
+    "ask": 0.17
+   },
+   {
+    "slug": "atc-lg1-psg-lyo-2026-10-25-lyo",
+    "question": "Will Olympique Lyonnais win against Paris Saint-Germain FC in the Ligue 1 match scheduled for Oct 25, 2026?",
+    "title": "",
+    "game_start": 1793043000.0,
+    "end": 1794185100.0,
+    "bid": 0.1,
+    "ask": 0.11
+   },
+   {
+    "slug": "atc-arg2-ddb-casm-2026-10-24-ddb",
+    "question": "Will CA Defensores de Belgrano win against CA San Miguel in the Primera Nacional match scheduled for Oct 24, 2026?",
+    "title": "",
+    "game_start": 1793039400.0,
+    "end": 1794099600.0,
+    "bid": 0.48,
+    "ask": 0.5
+   },
+   {
+    "slug": "atc-arg2-ddb-casm-2026-10-24-draw",
+    "question": "Will the Primera Nacional match CA Defensores de Belgrano vs CA San Miguel scheduled for Oct 24, 2026 end in a draw?",
+    "title": "",
+    "game_start": 1793039400.0,
+    "end": 1794099600.0,
+    "bid": 0.3,
+    "ask": 0.32
+   },
+   {
+    "slug": "atc-arg2-ddb-casm-2026-10-24-casm",
+    "question": "Will CA San Miguel win against CA Defensores de Belgrano in the Primera Nacional match scheduled for Oct 24, 2026?",
+    "title": "",
+    "game_start": 1793039400.0,
+    "end": 1794099600.0,
+    "bid": 0.19,
+    "ask": 0.21
+   },
+   {
+    "slug": "atc-ligpor-scl-ben-2026-10-26-scl",
+    "question": "Will Santa Clara Azores win against SL Benfica in the Liga Portugal match scheduled for Oct 26, 2026?",
+    "title": "",
+    "game_start": 1793040300.0,
+    "end": 1794267900.0,
+    "bid": 0.09,
+    "ask": 0.1
+   },
+   {
+    "slug": "atc-ligpor-scl-ben-2026-10-26-draw",
+    "question": "Will the Liga Portugal match Santa Clara Azores vs SL Benfica scheduled for Oct 26, 2026 end in a draw?",
+    "title": "",
+    "game_start": 1793040300.0,
+    "end": 1794267900.0,
+    "bid": 0.15,
+    "ask": 0.17
    }
   ],
   "props/sports": [
@@ -305,130 +305,130 @@
     "ask": null
    },
    {
-    "slug": "astatc-lal-ray-ath-2026-10-10-btts",
-    "question": "Will both teams score in the match between Rayo Vallecano de Madrid and Athletic Club on 2026-10-10 8:00AM ET?",
-    "title": "Both Teams To Score",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "slug": "atc-nfl-dal-phi-2026-10-26-winner-1h-dal",
+    "question": "Will Dallas Cowboys win the first half?",
+    "title": "Dallas Cowboys",
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.57,
+    "ask": 0.58
    },
    {
-    "slug": "astatc-lal-ray-ath-2026-10-10-ftts-ray",
-    "question": "Will Rayo Vallecano de Madrid be the first to score a goal on 2026-10-10 8:00AM ET?",
-    "title": "Rayo Vallecano de Madrid",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "slug": "atc-nfl-dal-phi-2026-10-26-winner-1h-draw",
+    "question": "Will the first half end tied?",
+    "title": "Tie",
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.08,
+    "ask": 0.09
    },
    {
-    "slug": "astatc-lal-ray-ath-2026-10-10-ftts-ath",
-    "question": "Will Athletic Club be the first to score a goal on 2026-10-10 8:00AM ET?",
-    "title": "Athletic Club",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "slug": "atc-nfl-dal-phi-2026-10-26-winner-1h-phi",
+    "question": "Will Philadelphia Eagles win the first half?",
+    "title": "Philadelphia Eagles",
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.34,
+    "ask": 0.35
    },
    {
-    "slug": "astatc-lal-ray-ath-2026-10-10-ftts-none",
-    "question": "Will None be the first to score a goal on 2026-10-10 8:00AM ET?",
-    "title": "None",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "slug": "atc-nfl-dal-phi-2026-10-26-winner-2h-dal",
+    "question": "Will Dallas Cowboys win the second half?",
+    "title": "Dallas Cowboys",
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.55,
+    "ask": 0.56
    },
    {
-    "slug": "atc-lal-ray-ath-2026-10-10-exact-score-0-0",
-    "question": "Will RAY vs ATH finish Draw 0-0?",
-    "title": "Draw 0-0",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "slug": "atc-nfl-dal-phi-2026-10-26-winner-2h-draw",
+    "question": "Will the second half end tied?",
+    "title": "Tie",
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.06,
+    "ask": 0.07
    },
    {
-    "slug": "atc-lal-ray-ath-2026-10-10-exact-score-1-0",
-    "question": "Will RAY vs ATH finish RAY wins 1-0?",
-    "title": "RAY wins 1-0",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "slug": "atc-nfl-dal-phi-2026-10-26-winner-2h-phi",
+    "question": "Will Philadelphia Eagles win the second half?",
+    "title": "Philadelphia Eagles",
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.35,
+    "ask": 0.37
    },
    {
-    "slug": "atc-lal-ray-ath-2026-10-10-exact-score-0-1",
-    "question": "Will RAY vs ATH finish ATH wins 1-0?",
-    "title": "ATH wins 1-0",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "slug": "atc-nfl-dal-phi-2026-10-26-winner-1q-dal",
+    "question": "Will Dallas Cowboys win the first quarter?",
+    "title": "Dallas Cowboys",
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.45,
+    "ask": 0.47
    },
    {
-    "slug": "atc-lal-ray-ath-2026-10-10-exact-score-1-1",
-    "question": "Will RAY vs ATH finish Draw 1-1?",
-    "title": "Draw 1-1",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "slug": "atc-nfl-dal-phi-2026-10-26-winner-1q-draw",
+    "question": "Will the first quarter end tied?",
+    "title": "Tie",
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.22,
+    "ask": 0.23
    },
    {
-    "slug": "atc-lal-ray-ath-2026-10-10-exact-score-2-0",
-    "question": "Will RAY vs ATH finish RAY wins 2-0?",
-    "title": "RAY wins 2-0",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "slug": "atc-nfl-dal-phi-2026-10-26-winner-1q-phi",
+    "question": "Will Philadelphia Eagles win the first quarter?",
+    "title": "Philadelphia Eagles",
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.31,
+    "ask": 0.32
    },
    {
-    "slug": "atc-lal-ray-ath-2026-10-10-exact-score-0-2",
-    "question": "Will RAY vs ATH finish ATH wins 2-0?",
-    "title": "ATH wins 2-0",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "slug": "atc-nfl-dal-phi-2026-10-26-winner-2q-dal",
+    "question": "Will Dallas Cowboys win the second quarter?",
+    "title": "Dallas Cowboys",
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.5,
+    "ask": 0.52
    },
    {
-    "slug": "atc-lal-ray-ath-2026-10-10-exact-score-2-1",
-    "question": "Will RAY vs ATH finish RAY wins 2-1?",
-    "title": "RAY wins 2-1",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "slug": "atc-nfl-dal-phi-2026-10-26-winner-2q-draw",
+    "question": "Will the second quarter end tied?",
+    "title": "Tie",
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.12,
+    "ask": 0.13
    },
    {
-    "slug": "atc-lal-ray-ath-2026-10-10-exact-score-1-2",
-    "question": "Will RAY vs ATH finish ATH wins 2-1?",
-    "title": "ATH wins 2-1",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "slug": "atc-nfl-dal-phi-2026-10-26-winner-2q-phi",
+    "question": "Will Philadelphia Eagles win the second quarter?",
+    "title": "Philadelphia Eagles",
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.35,
+    "ask": 0.36
    },
    {
-    "slug": "atc-lal-ray-ath-2026-10-10-exact-score-2-2",
-    "question": "Will RAY vs ATH finish Draw 2-2?",
-    "title": "Draw 2-2",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "slug": "atc-nfl-dal-phi-2026-10-26-winner-3q-dal",
+    "question": "Will Dallas Cowboys win the third quarter?",
+    "title": "Dallas Cowboys",
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.45,
+    "ask": 0.47
    },
    {
-    "slug": "atc-lal-ray-ath-2026-10-10-exact-score-3-0",
-    "question": "Will RAY vs ATH finish RAY wins 3-0?",
-    "title": "RAY wins 3-0",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "slug": "atc-nfl-dal-phi-2026-10-26-winner-3q-draw",
+    "question": "Will the third quarter end tied?",
+    "title": "Tie",
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.18,
+    "ask": 0.19
    }
   ],
   "spreads/sports": [
@@ -505,67 +505,67 @@
     "ask": null
    },
    {
-    "slug": "asc-lal-ray-ath-2026-10-10-neg-2pt5",
-    "question": "Will the Rayo Vallecano de Madrid cover -2.5 vs the Athletic Club in RAY vs ATH?",
+    "slug": "asc-nfl-dal-phi-2026-10-26-neg-30pt5",
+    "question": "Will the Dallas Cowboys cover -30.5 vs the Philadelphia Eagles in DAL Cowboys vs. PHI Eagles?",
     "title": "",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.04,
+    "ask": 0.045
    },
    {
-    "slug": "asc-lal-ray-ath-2026-10-10-neg-1pt5",
-    "question": "Will the Rayo Vallecano de Madrid cover -1.5 vs the Athletic Club in RAY vs ATH?",
+    "slug": "asc-nfl-dal-phi-2026-10-26-neg-28pt5",
+    "question": "Will the Dallas Cowboys cover -28.5 vs the Philadelphia Eagles in DAL Cowboys vs. PHI Eagles?",
     "title": "",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.03,
+    "ask": 0.06
    },
    {
-    "slug": "asc-lal-ray-ath-2026-10-10-pos-1pt5",
-    "question": "Will the Rayo Vallecano de Madrid cover 1.5 vs the Athletic Club in RAY vs ATH?",
+    "slug": "asc-nfl-dal-phi-2026-10-26-neg-27pt5",
+    "question": "Will the Dallas Cowboys cover -27.5 vs the Philadelphia Eagles in DAL Cowboys vs. PHI Eagles?",
     "title": "",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.04,
+    "ask": 0.06
    },
    {
-    "slug": "asc-lal-ray-ath-2026-10-10-pos-2pt5",
-    "question": "Will the Rayo Vallecano de Madrid cover 2.5 vs the Athletic Club in RAY vs ATH?",
+    "slug": "asc-nfl-dal-phi-2026-10-26-neg-23pt5",
+    "question": "Will the Dallas Cowboys cover -23.5 vs the Philadelphia Eagles in DAL Cowboys vs. PHI Eagles?",
     "title": "",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.07,
+    "ask": 0.1
    },
    {
-    "slug": "asc-lal-ray-ath-2026-10-10-fh-neg-2pt5",
-    "question": "Will the Rayo Vallecano de Madrid cover -2.5 vs the Athletic Club in RAY vs ATH?",
+    "slug": "asc-nfl-dal-phi-2026-10-26-neg-21pt5",
+    "question": "Will the Dallas Cowboys cover -21.5 vs the Philadelphia Eagles in DAL Cowboys vs. PHI Eagles?",
     "title": "",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.09,
+    "ask": 0.1
    },
    {
-    "slug": "asc-lal-ray-ath-2026-10-10-fh-neg-1pt5",
-    "question": "Will the Rayo Vallecano de Madrid cover -1.5 vs the Athletic Club in RAY vs ATH?",
+    "slug": "asc-nfl-dal-phi-2026-10-26-neg-20pt5",
+    "question": "Will the Dallas Cowboys cover -20.5 vs the Philadelphia Eagles in DAL Cowboys vs. PHI Eagles?",
     "title": "",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.125,
+    "ask": 0.13
    },
    {
-    "slug": "asc-lal-ray-ath-2026-10-10-fh-pos-1pt5",
-    "question": "Will the Rayo Vallecano de Madrid cover 1.5 vs the Athletic Club in RAY vs ATH?",
+    "slug": "asc-nfl-dal-phi-2026-10-26-neg-19pt5",
+    "question": "Will the Dallas Cowboys cover -19.5 vs the Philadelphia Eagles in DAL Cowboys vs. PHI Eagles?",
     "title": "",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.14,
+    "ask": 0.15
    }
   ],
   "totals/sports": [
@@ -660,49 +660,49 @@
     "ask": null
    },
    {
-    "slug": "tsc-lal-ray-ath-2026-10-10-0pt5",
-    "question": "Will the total in RAY vs ATH be more than 0.5?",
+    "slug": "tsc-nfl-dal-phi-2026-10-26-total-20pt5",
+    "question": "Will the total in DAL Cowboys vs. PHI Eagles be more than 20.5?",
     "title": "",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.955,
+    "ask": 0.99
    },
    {
-    "slug": "tsc-lal-ray-ath-2026-10-10-1pt5",
-    "question": "Will the total in RAY vs ATH be more than 1.5?",
+    "slug": "tsc-nfl-dal-phi-2026-10-26-total-23pt5",
+    "question": "Will the total in DAL Cowboys vs. PHI Eagles be more than 23.5?",
     "title": "",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.95,
+    "ask": 0.965
    },
    {
-    "slug": "tsc-lal-ray-ath-2026-10-10-2pt5",
-    "question": "Will the total in RAY vs ATH be more than 2.5?",
+    "slug": "tsc-nfl-dal-phi-2026-10-26-total-26pt5",
+    "question": "Will the total in DAL Cowboys vs. PHI Eagles be more than 26.5?",
     "title": "",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.92,
+    "ask": 0.935
    },
    {
-    "slug": "tsc-lal-ray-ath-2026-10-10-3pt5",
-    "question": "Will the total in RAY vs ATH be more than 3.5?",
+    "slug": "tsc-nfl-dal-phi-2026-10-26-total-29pt5",
+    "question": "Will the total in DAL Cowboys vs. PHI Eagles be more than 29.5?",
     "title": "",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.885,
+    "ask": 0.895
    },
    {
-    "slug": "tsc-lal-ray-ath-2026-10-10-fh-0pt5",
-    "question": "Will the total in RAY vs ATH be more than 0.5?",
+    "slug": "tsc-nfl-dal-phi-2026-10-26-total-32pt5",
+    "question": "Will the total in DAL Cowboys vs. PHI Eagles be more than 32.5?",
     "title": "",
-    "game_start": 1791633600.0,
-    "end": 1792857600.0,
-    "bid": null,
-    "ask": null
+    "game_start": 1793060100.0,
+    "end": 1794287700.0,
+    "bid": 0.825,
+    "ask": 0.835
    }
   ],
   "/crypto": [
@@ -712,8 +712,8 @@
     "title": "Reaches $90,000",
     "game_start": 1790827200.0,
     "end": 1793507400.0,
-    "bid": 0.05,
-    "ask": 0.08
+    "bid": null,
+    "ask": 0.05
    },
    {
     "slug": "cpc-btc-hit-h-m-2026-10-92500",
@@ -721,8 +721,8 @@
     "title": "Reaches $92,500",
     "game_start": 1790827200.0,
     "end": 1793507400.0,
-    "bid": 0.02,
-    "ask": 0.04
+    "bid": null,
+    "ask": null
    },
    {
     "slug": "cpc-btc-hit-h-m-2026-10-95000",
@@ -731,7 +731,7 @@
     "game_start": 1790827200.0,
     "end": 1793507400.0,
     "bid": null,
-    "ask": null
+    "ask": 0.04
    },
    {
     "slug": "cpc-btc-hit-h-m-2026-10-97500",
@@ -749,7 +749,7 @@
     "game_start": 1790827200.0,
     "end": 1793507400.0,
     "bid": null,
-    "ask": null
+    "ask": 0.03
    },
    {
     "slug": "cpc-btc-hit-h-m-2026-10-102500",
@@ -820,8 +820,8 @@
     "title": "Dips to $75,000",
     "game_start": 1790827200.0,
     "end": 1793507400.0,
-    "bid": 0.1,
-    "ask": 0.18
+    "bid": 0.14,
+    "ask": 0.21
    },
    {
     "slug": "cpc-btc-hit-l-m-2026-10-77500",
@@ -829,8 +829,8 @@
     "title": "Dips to $77,500",
     "game_start": 1790827200.0,
     "end": 1793507400.0,
-    "bid": 0.31,
-    "ask": 0.36
+    "bid": 0.47,
+    "ask": 0.5
    },
    {
     "slug": "cpc-btc-hit-l-m-2026-10-62500",
@@ -844,58 +844,58 @@
   ],
   "/finance": [
    {
-    "slug": "cpagsp-silver-updown-1d-2026-10-22-2215z",
+    "slug": "cpagsp-silver-updown-1d-2026-10-25-2215z",
     "question": "Silver Up or Down Daily",
     "title": "Silver Up or Down Daily",
-    "game_start": 1792707300.0,
-    "end": 1792791000.0,
+    "game_start": 1792966500.0,
+    "end": 1793050200.0,
     "bid": null,
     "ask": null
    },
    {
-    "slug": "cpausp-gold-updown-1d-2026-10-22-2215z",
+    "slug": "cpausp-gold-updown-1d-2026-10-25-2215z",
     "question": "Gold Up or Down Daily",
     "title": "Gold Up or Down Daily",
-    "game_start": 1792707300.0,
-    "end": 1792791000.0,
+    "game_start": 1792966500.0,
+    "end": 1793050200.0,
     "bid": null,
     "ask": null
    },
    {
-    "slug": "cpagsp-silver-updown-1h-2026-10-23-1900z",
+    "slug": "cpagsp-silver-updown-1h-2026-10-26-1400z",
     "question": "Silver Up or Down Hourly",
     "title": "Silver Up or Down Hourly",
-    "game_start": 1792782000.0,
-    "end": 1792787400.0,
-    "bid": 0.03,
-    "ask": 0.11
+    "game_start": 1793023200.0,
+    "end": 1793028600.0,
+    "bid": 0.98,
+    "ask": 0.99
    },
    {
-    "slug": "cpausp-gold-updown-1h-2026-10-23-1900z",
+    "slug": "cpausp-gold-updown-1h-2026-10-26-1400z",
     "question": "Gold Up or Down Hourly",
     "title": "Gold Up or Down Hourly",
-    "game_start": 1792782000.0,
-    "end": 1792787400.0,
-    "bid": 0.73,
-    "ask": 0.85
+    "game_start": 1793023200.0,
+    "end": 1793028600.0,
+    "bid": 0.97,
+    "ask": 0.99
    },
    {
-    "slug": "cpagsp-silver-updown-15m-2026-10-23-1945z",
+    "slug": "cpagsp-silver-updown-15m-2026-10-26-1445z",
     "question": "Silver Up or Down 15m",
     "title": "Silver Up or Down 15m",
-    "game_start": 1792784700.0,
-    "end": 1792787400.0,
-    "bid": 0.11,
-    "ask": 0.12
+    "game_start": 1793025900.0,
+    "end": 1793028600.0,
+    "bid": 0.5,
+    "ask": 0.51
    },
    {
-    "slug": "cpausp-gold-updown-15m-2026-10-23-1945z",
+    "slug": "cpausp-gold-updown-15m-2026-10-26-1445z",
     "question": "Gold Up or Down 15m",
     "title": "Gold Up or Down 15m",
-    "game_start": 1792784700.0,
-    "end": 1792787400.0,
-    "bid": 0.72,
-    "ask": 0.73
+    "game_start": 1793025900.0,
+    "end": 1793028600.0,
+    "bid": 0.28,
+    "ask": 0.29
    }
   ]
  }
