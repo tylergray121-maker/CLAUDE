@@ -26,6 +26,7 @@ import json
 import logging
 import math
 import re
+import time
 from collections import Counter, deque
 from statistics import median
 
@@ -68,6 +69,8 @@ STAT_KEYS = ("leader_trades", "mapped", "mapped_short_side", "not_on_polymarket_
              "skip_losing_pattern", "skip_stale", "sells_not_copied", "skip_wallet_cap",
              "poll_errors")
 _GAME = re.compile(r"^([a-z0-9]+)-.*\d{4}-\d{2}-\d{2}")
+FEED_KEEP = 400                      # the leaders' latest bets shown on the dashboard
+TOO_SMALL, WAITING = "too small to copy", "waiting for our price"
 
 
 def league(intl_slug: str) -> str:
@@ -127,6 +130,10 @@ class CopyTop(Strategy):
         self.marking: list[dict] = []              # fills still waiting for a markout
         self.mo: dict[str, dict[str, list[float]]] = {h: {} for h, _ in MARKOUTS}
         self._settled: dict[str, float] = {}       # slug -> settlement price, for markouts
+        # The leaders' bets as the bot saw them and what it did with each, for
+        # the dashboard's feed: one entry per order (its later fills add to it).
+        self.feed: deque = deque(maxlen=FEED_KEEP)
+        self._feed_n = 0
 
     # -- signals ------------------------------------------------------------
     def _fetch(self, eng, wallet: str) -> list[dict] | None:
@@ -158,6 +165,36 @@ class CopyTop(Strategy):
                 pass
         return [] if first else fresh  # baseline: never copy trades from before we watched
 
+    def _note(self, wallet: str, name: str, t: dict) -> dict:
+        """The feed entry for a leader trade. A later fill of an order already
+        shown adds its size and returns {}, so the first fill's decision stands,
+        unless that fill was too small to judge and this one may be copied."""
+        try:
+            price = float(t["price"])
+            usd = price * float(t["size"])
+        except (KeyError, TypeError, ValueError):
+            price = usd = 0.0
+        key = f"{wallet}|{t.get('transactionHash')}|{t.get('asset')}"
+        if t.get("transactionHash"):
+            for e in reversed(self.feed):
+                if e["key"] == key:
+                    e["usd"] = round(e["usd"] + usd, 2)
+                    return e if e["action"] == TOO_SMALL else {}
+        self._feed_n += 1
+        e = {"key": key, "id": f"lt{self._feed_n}", "ts": int(t["timestamp"]), "leader": name,
+             "market": str(t.get("title") or t.get("slug") or ""),
+             "outcome": str(t.get("outcome") or ""), "side": str(t.get("side", "")).upper(),
+             "price": round(price, 4), "usd": round(usd, 2),
+             "league": league(str(t.get("slug") or "")), "action": ""}
+        self.feed.append(e)
+        return e
+
+    @staticmethod
+    def _decide(sig: dict, action: str, **more) -> None:
+        """Record on the feed what became of a signal."""
+        if sig.get("feed") is not None:
+            sig["feed"].update(action=action, **more)
+
     def conviction(self, wallet: str, usd: float) -> float:
         """This bet's size relative to the leader's usual (median recent) buy."""
         sizes = self.sizes.get(wallet)
@@ -177,13 +214,16 @@ class CopyTop(Strategy):
             name = self.leaders[wallet]
             for t in self._new_trades(wallet, rows):
                 self.stats["leader_trades"] += 1
+                entry = self._note(wallet, name, t)
                 slug = eng.us_for_trade(t, index)
                 if not slug:
                     if eng.lists(str(t.get("slug") or "")):
                         self.stats["listed_side_unknown"] += 1  # outcome names differ
+                        entry["action"] = "on US, but its side didn't match"
                     else:
                         self.stats["not_on_polymarket_us"] += 1
                         self.stats[f"missed_{league(str(t.get('slug') or ''))}"] += 1
+                        entry["action"] = "not on Polymarket US"
                     self.unmapped[(str(t.get("slug") or ""), str(t.get("outcome") or ""))] += 1
                     if len(self.unmapped) > 2000:
                         self.unmapped = Counter(dict(self.unmapped.most_common(500)))
@@ -200,15 +240,19 @@ class CopyTop(Strategy):
                     continue
                 if side == "BUY" and price * size < self.min_leader_usd:
                     self.stats["skip_tiny"] += 1
+                    entry["action"] = TOO_SMALL
                     continue
                 if now - int(t["timestamp"]) > self.max_age_s:
                     self.stats["skip_stale"] += 1   # e.g. placed while the bot restarted
+                    entry["action"] = "too old to copy"
                     continue
                 if side == "SELL" and not self.copy_sells:
                     self.stats["sells_not_copied"] += 1  # held to settlement
+                    entry["action"] = "a sale (copies are held to settlement)"
                     continue
                 if side == "BUY" and self.status.get(wallet, ["copying"])[0] == "benched":
                     self.stats["skip_benched_wallet"] += 1
+                    entry["action"] = "wallet benched"
                     continue
                 tx = (wallet, t.get("transactionHash"), t.get("asset"))
                 if t.get("transactionHash") and tx in self.seen_tx:
@@ -218,18 +262,23 @@ class CopyTop(Strategy):
                 key = (wallet, slug, side)
                 if now - self.recent.get(key, 0) < self.dedupe_s:
                     self.stats["skip_recently_copied"] += 1
+                    entry["action"] = "already copied this market"
                     continue
+                if slug in self.pending:
+                    self._decide(self.pending[slug], "replaced by a newer bet on it")
+                entry["action"] = WAITING
                 self.pending[slug] = {"side": side, "price": price, "leader": name,
                                       "wallet": wallet, "at": now,
                                       "trade_ts": int(t["timestamp"]),
                                       "leader_usd": round(price * size, 2),
                                       "conviction": round(self.conviction(wallet, price * size), 2),
-                                      "league": league(str(t.get("slug") or ""))}
+                                      "league": league(str(t.get("slug") or "")),
+                                      "feed": entry or None}
                 eng._log("copy_signal", slug=slug, side=side, leader=name, price=price,
                          leader_usd=round(price * size, 2), market=t.get("title"))
         for slug in [s for s, sig in self.pending.items() if now - sig["at"] > self.signal_ttl_s]:
             self.stats["expired_price_moved"] += 1
-            del self.pending[slug]
+            self._decide(self.pending.pop(slug), "price moved away; not copied")
         return set(self.pending) | {m["slug"] for m in self.marking}
 
     def _markouts(self, eng, now: float) -> None:
@@ -274,12 +323,14 @@ class CopyTop(Strategy):
                 continue
             if v.note not in ("", "in-play"):  # closed, suspended, closing soon...
                 self.stats["skip_not_open"] += 1
+                self._decide(sig, "market not open on US")
                 del self.pending[slug]
                 continue
             if sig["side"] == "BUY":
                 base, short = split_side(slug)
                 if eng.held(base if short else base + SHORT) > 0:
                     self.stats["skip_holding_other_side"] += 1  # would only lock in a loss
+                    self._decide(sig, "we hold the other side")
                     del self.pending[slug]
                     continue
                 # Round down to the market's tick: the exchange rejects off-tick prices.
@@ -289,12 +340,15 @@ class CopyTop(Strategy):
                 ask = v.us_ask
                 if ask is None or ask > limit:
                     continue  # keep waiting until the signal expires
-                if ask < max(self.cfg.min_price, self.min_price):
+                floor = max(self.cfg.min_price, self.min_price)
+                if ask < floor:
                     self.stats["skip_price_band"] += 1
+                    self._decide(sig, f"under the {100 * floor:.0f}¢ floor")
                     del self.pending[slug]
                     continue
                 if not prices_agree(ask, sig["price"]):
                     self.stats["skip_prices_disagree"] += 1  # likely not the same bet
+                    self._decide(sig, "US price too different (likely not the same bet)")
                     del self.pending[slug]
                     continue
                 c = sig.get("conviction", 1.0)
@@ -302,8 +356,10 @@ class CopyTop(Strategy):
                         f"kind:{v.market_type or 'other'}", f"price:{price_band(ask)}",
                         f"timing:{'in-play' if v.note == 'in-play' else 'pre-game'}",
                         "conviction:" + ("under 0.5x" if c < 0.5 else "0.5-2x" if c < 2 else "2x+")]
-                if any(k in self.skipped for k in keys):
+                losing = [k for k in keys if k in self.skipped]
+                if losing:
                     self.stats["skip_losing_pattern"] += 1
+                    self._decide(sig, f"losing pattern skipped ({losing[0]})")
                     del self.pending[slug]
                     continue
                 stake = self.cfg.order_usd
@@ -313,6 +369,7 @@ class CopyTop(Strategy):
                     left = self.max_wallet_usd - self.card.summary(f"w:{sig['wallet']}")["open_usd"]
                     if left < ask:
                         self.stats["skip_wallet_cap"] += 1
+                        self._decide(sig, "this wallet's cap is used up")
                         del self.pending[slug]
                         continue
                     stake = min(stake, left)
@@ -320,8 +377,10 @@ class CopyTop(Strategy):
                 del self.pending[slug]
                 if qty < 1:
                     self.stats["skip_no_room_or_size"] += 1
+                    self._decide(sig, "no cash or room left to copy")
                     continue
                 self.stats["copied_buys"] += 1
+                self._decide(sig, "copied", our_price=ask, our_qty=qty)
                 self.recent[(sig["wallet"], slug, "BUY")] = now
                 self._placing[slug] = keys
                 self.lags.append(now - sig.get("trade_ts", now))
@@ -335,14 +394,17 @@ class CopyTop(Strategy):
                 mine = self.card.qty_for(slug, who) if self.card.lots.get(slug) else held
                 qty = min(held, mine, int(v.us_bid_qty or 0))
                 if qty < 1 or v.us_bid is None:
+                    self._decide(sig, "a sale; we hold none of this copy")
                     continue
                 tick = v.tick or 0.01
                 floor = round(max(-int(-(sig["price"] - self.max_slip) / tick + 1e-9) * tick,
                                   tick), 4)
                 if v.us_bid < floor:
                     self.stats["skip_exit_price"] += 1
+                    self._decide(sig, "a sale; the US bid is under their price")
                     continue
                 self.stats["copied_sells"] += 1
+                self._decide(sig, "sold our copy", our_price=v.us_bid, our_qty=qty)
                 if self.card.lots.get(slug):
                     self._selling[slug] = who
                 out[slug] = [Order("SELL", floor, qty, post_only=False)]
@@ -447,7 +509,8 @@ class CopyTop(Strategy):
         return {"card": self.card.to_state(), "form": self.form, "status": self.status,
                 "skipped": self.skipped, "last_ts": self.last_ts,
                 "sizes": {w: list(d) for w, d in self.sizes.items()},
-                "marking": self.marking, "mo": self.mo, "settled": self._settled}
+                "marking": self.marking, "mo": self.mo, "settled": self._settled,
+                "feed": list(self.feed), "feed_n": self._feed_n}
 
     def load_state(self, d: dict) -> None:
         self.card.load(d.get("card", {}))
@@ -461,6 +524,11 @@ class CopyTop(Strategy):
         self.marking = d.get("marking", [])
         self.mo = {h: d.get("mo", {}).get(h, {}) for h, _ in MARKOUTS}
         self._settled = d.get("settled", {})
+        self.feed = deque(d.get("feed", []), maxlen=FEED_KEEP)
+        self._feed_n = int(d.get("feed_n", 0))
+        for e in self.feed:   # signals are not kept across a restart
+            if e.get("action") == WAITING:
+                e["action"] = "not decided (the bot restarted)"
 
     def copied_from(self, slug: str) -> str:
         names = [self.leaders.get(k[2:], k[2:12]) for k in self.card.keys_for(slug)
@@ -494,4 +562,7 @@ class CopyTop(Strategy):
                          "status": "skipped" if key in self.skipped else "copying",
                          "reason": self.skipped.get(key, ""), **self.card.summary(key),
                          **self.markouts(key)})
+        for e in reversed(self.feed):   # newest first
+            rows.append({"kind": "leader_trade", **{k: v for k, v in e.items() if k != "key"},
+                         "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(e["ts"]))})
         return rows

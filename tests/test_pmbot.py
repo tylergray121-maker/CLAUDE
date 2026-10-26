@@ -900,6 +900,35 @@ class CopyTopTest(unittest.TestCase):
         self.assertEqual(self.e.broker.fills, [])
         self.assertEqual(self.copy.stats["skip_price_band"], 1)
 
+    def test_the_feed_shows_each_leader_bet_and_what_the_bot_did(self):
+        self.e.cycle()
+        self.trade("BUY", 0.62, tx="0xa")
+        self.trade("BUY", 0.62, size=50, tx="0xa")  # a second fill of the same order
+        self.trade("BUY", 0.62, size=5)             # $3: too small to copy
+        self.trade("SELL", 0.62)
+        self.trade("BUY", 0.50, asset="elsewhere")  # a market Polymarket US doesn't list
+        self.e.cycle()
+        feed = [r for r in self.copy.dashboard_rows() if r["kind"] == "leader_trade"]
+        self.assertEqual([(r["side"], r["usd"], r["action"]) for r in feed], [
+            ("BUY", 50.0, "not on Polymarket US"),
+            ("SELL", 62.0, "a sale (copies are held to settlement)"),
+            ("BUY", 3.1, "too small to copy"),
+            ("BUY", 93.0, "copied")])
+        self.assertEqual((feed[-1]["leader"], feed[-1]["our_price"], feed[-1]["our_qty"]),
+                         ("primm", 0.61, 16))
+        self.v.us_ask = 0.70                        # the price runs away: never filled
+        self.trade("BUY", 0.62, tx="0xb")
+        self.copy.recent.clear()
+        self.e.cycle()
+        self.assertEqual(self.copy.feed[-1]["action"], "waiting for our price")
+        self.copy.watch(self.e, time.time() + self.copy.signal_ttl_s + 1)
+        self.assertEqual(self.copy.feed[-1]["action"], "price moved away; not copied")
+        state = json.loads(json.dumps(self.copy.to_state()))
+        from pmbot.copy import CopyTop
+        again = CopyTop(StrategyConfig(), {self.LEADER: "primm"})
+        again.load_state(state)
+        self.assertEqual([e["action"] for e in again.feed], [e["action"] for e in self.copy.feed])
+
     def test_markouts_after_30_minutes_and_2_hours_by_wallet(self):
         from pmbot.broker import Fill
         self.e.cycle()
