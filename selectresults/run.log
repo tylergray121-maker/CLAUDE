@@ -1,0 +1,203 @@
+15:32:57 INFO Polymarket US: 73213 open markets
+15:32:57 INFO Polymarket US lists 191 league/market kinds
+15:32:59 INFO leaderboard SPORTS/DAY/VOL: 500 wallets
+15:33:00 INFO leaderboard SPORTS/DAY/PNL: 500 wallets
+15:33:01 INFO leaderboard SPORTS/WEEK/VOL: 500 wallets
+15:33:02 INFO leaderboard SPORTS/WEEK/PNL: 500 wallets
+15:33:04 INFO leaderboard SPORTS/MONTH/VOL: 500 wallets
+15:33:05 INFO leaderboard SPORTS/MONTH/PNL: 500 wallets
+15:33:06 INFO leaderboard SPORTS/ALL/VOL: 500 wallets
+15:33:07 INFO leaderboard SPORTS/ALL/PNL: 500 wallets
+15:33:08 INFO leaderboard OVERALL/DAY/VOL: 500 wallets
+15:33:08 INFO leaderboard OVERALL/DAY/PNL: 500 wallets
+15:33:09 INFO leaderboard OVERALL/WEEK/VOL: 500 wallets
+15:33:10 INFO leaderboard OVERALL/WEEK/PNL: 500 wallets
+15:33:11 INFO leaderboard OVERALL/MONTH/VOL: 500 wallets
+15:33:12 INFO leaderboard OVERALL/MONTH/PNL: 500 wallets
+15:33:12 INFO leaderboard OVERALL/ALL/VOL: 500 wallets
+15:33:13 INFO leaderboard OVERALL/ALL/PNL: 500 wallets
+15:33:13 INFO leaderboard SPORTS/ALL/PNL: 500 wallets
+15:33:13 INFO leaderboard OVERALL/ALL/PNL: 500 wallets
+15:42:11 INFO discover esports: 2114 markets, 1034 wallets with 15+ buys
+15:48:00 INFO discover counter-strike-2: 2139 markets, 991 wallets with 15+ buys
+16:07:25 INFO discover league-of-legends: 4607 markets, 1626 wallets with 15+ buys
+16:21:44 INFO discover dota-2: 3452 markets, 1006 wallets with 15+ buys
+16:35:48 INFO discover valorant: 3601 markets, 1048 wallets with 15+ buys
+16:35:48 INFO 5545 candidate wallets (30 currently copied)
+16:36:14 INFO trades: 50/5545 wallets
+16:36:48 INFO trades: 100/5545 wallets
+16:37:28 INFO trades: 150/5545 wallets
+16:37:58 INFO trades: 200/5545 wallets
+16:38:38 INFO trades: 250/5545 wallets
+16:39:27 INFO trades: 300/5545 wallets
+16:39:56 INFO trades: 350/5545 wallets
+16:40:40 INFO trades: 400/5545 wallets
+16:41:16 INFO trades: 450/5545 wallets
+16:42:00 INFO trades: 500/5545 wallets
+16:42:23 INFO trades: 550/5545 wallets
+16:43:08 INFO trades: 600/5545 wallets
+16:43:52 INFO trades: 650/5545 wallets
+16:44:38 INFO trades: 700/5545 wallets
+16:45:32 INFO trades: 750/5545 wallets
+16:46:41 INFO trades: 800/5545 wallets
+16:47:12 INFO trades: 850/5545 wallets
+16:47:55 INFO trades: 900/5545 wallets
+16:48:40 INFO trades: 950/5545 wallets
+16:49:09 INFO trades: 1000/5545 wallets
+16:50:04 INFO trades: 1050/5545 wallets
+16:50:44 INFO trades: 1100/5545 wallets
+16:51:36 INFO trades: 1150/5545 wallets
+16:52:19 INFO trades: 1200/5545 wallets
+16:53:02 INFO trades: 1250/5545 wallets
+16:53:46 INFO trades: 1300/5545 wallets
+16:54:10 INFO trades: 1350/5545 wallets
+16:55:00 INFO trades: 1400/5545 wallets
+16:55:37 INFO trades: 1450/5545 wallets
+16:56:13 INFO trades: 1500/5545 wallets
+16:57:00 INFO trades: 1550/5545 wallets
+16:57:37 INFO trades: 1600/5545 wallets
+16:58:25 INFO trades: 1650/5545 wallets
+16:58:57 INFO trades: 1700/5545 wallets
+16:59:37 INFO trades: 1750/5545 wallets
+17:00:38 INFO trades: 1800/5545 wallets
+17:01:22 INFO trades: 1850/5545 wallets
+17:02:19 INFO trades: 1900/5545 wallets
+17:03:14 INFO trades: 1950/5545 wallets
+17:04:00 INFO trades: 2000/5545 wallets
+17:04:38 INFO trades: 2050/5545 wallets
+17:05:23 INFO trades: 2100/5545 wallets
+17:05:59 INFO trades: 2150/5545 wallets
+17:06:37 INFO trades: 2200/5545 wallets
+17:07:17 INFO trades: 2250/5545 wallets
+17:08:03 INFO trades: 2300/5545 wallets
+17:08:32 INFO trades: 2350/5545 wallets
+17:09:22 INFO trades: 2400/5545 wallets
+17:10:14 INFO trades: 2450/5545 wallets
+17:10:36 INFO trades: 2500/5545 wallets
+17:11:07 INFO trades: 2550/5545 wallets
+17:11:45 INFO trades: 2600/5545 wallets
+17:12:32 INFO trades: 2650/5545 wallets
+17:13:24 INFO trades: 2700/5545 wallets
+17:14:10 INFO trades: 2750/5545 wallets
+17:14:51 INFO trades: 2800/5545 wallets
+17:15:32 INFO trades: 2850/5545 wallets
+17:16:30 INFO trades: 2900/5545 wallets
+17:17:31 INFO trades: 2950/5545 wallets
+17:18:11 INFO trades: 3000/5545 wallets
+17:18:48 INFO trades: 3050/5545 wallets
+17:19:14 INFO trades: 3100/5545 wallets
+17:19:36 INFO trades: 3150/5545 wallets
+17:20:08 INFO trades: 3200/5545 wallets
+17:20:37 INFO trades: 3250/5545 wallets
+17:21:18 INFO trades: 3300/5545 wallets
+17:21:49 INFO trades: 3350/5545 wallets
+17:22:31 INFO trades: 3400/5545 wallets
+17:23:12 INFO trades: 3450/5545 wallets
+17:23:56 INFO trades: 3500/5545 wallets
+17:24:50 INFO trades: 3550/5545 wallets
+17:25:16 INFO trades: 3600/5545 wallets
+17:26:13 INFO trades: 3650/5545 wallets
+17:26:48 INFO trades: 3700/5545 wallets
+17:27:26 INFO trades: 3750/5545 wallets
+17:27:56 INFO trades: 3800/5545 wallets
+17:28:37 INFO trades: 3850/5545 wallets
+17:29:24 INFO trades: 3900/5545 wallets
+17:30:12 INFO trades: 3950/5545 wallets
+17:30:54 INFO trades: 4000/5545 wallets
+17:31:31 INFO trades: 4050/5545 wallets
+17:32:04 INFO trades: 4100/5545 wallets
+17:32:54 INFO trades: 4150/5545 wallets
+17:33:28 INFO trades: 4200/5545 wallets
+17:34:10 INFO trades: 4250/5545 wallets
+17:34:54 INFO trades: 4300/5545 wallets
+17:35:35 INFO trades: 4350/5545 wallets
+17:36:29 INFO trades: 4400/5545 wallets
+17:37:14 INFO trades: 4450/5545 wallets
+17:38:08 INFO trades: 4500/5545 wallets
+17:38:53 INFO trades: 4550/5545 wallets
+17:39:18 INFO trades: 4600/5545 wallets
+17:40:04 INFO trades: 4650/5545 wallets
+17:40:45 INFO trades: 4700/5545 wallets
+17:41:17 INFO trades: 4750/5545 wallets
+17:42:08 INFO trades: 4800/5545 wallets
+17:42:55 INFO trades: 4850/5545 wallets
+17:43:50 INFO trades: 4900/5545 wallets
+17:44:46 INFO trades: 4950/5545 wallets
+17:45:27 INFO trades: 5000/5545 wallets
+17:46:00 INFO trades: 5050/5545 wallets
+17:46:33 INFO trades: 5100/5545 wallets
+17:47:29 INFO trades: 5150/5545 wallets
+17:47:54 INFO trades: 5200/5545 wallets
+17:48:42 INFO trades: 5250/5545 wallets
+17:49:31 INFO trades: 5300/5545 wallets
+17:50:14 INFO trades: 5350/5545 wallets
+17:50:46 INFO trades: 5400/5545 wallets
+17:51:16 INFO trades: 5450/5545 wallets
+17:52:12 INFO trades: 5500/5545 wallets
+17:53:31 INFO trades: 5545/5545 wallets
+18:33:53 INFO listed on Polymarket US: 21107 of 54747 markets the candidates traded; by league: cs2/result 0/6569, mlb/totals 2278/5131, cfb/totals 16/4481, cs2/moneyline 960/4280, atp/moneyline 4206/4206, nfl/totals 7/2704, lol/result 1239/2285, wta/moneyline 1749/1749, nba/totals 1022/1568, dota2/result 371/1503, lol/moneyline 632/1111, cfb/moneyline 1040/1063, nhl/totals 528/968, mls/result 658/878, mlb/moneyline 744/870, mlb/result 0/792, uel/totals 23/711, dota2/moneyline 185/698, lal/totals 232/661, ucl/totals 257/653, epl/totals 197/562, sea/totals 362/542, uslc/result 400/524, setkameua/moneyline 0/519, bra/result 332/495, wnba/totals 147/495, uel/result 108/465, bun/totals 66/439, lal/result 172/419, ucl/result 206/406
+18:33:54 INFO 3853 wallets with copyable trades (454 skipped as too high-frequency); resolving 21107 markets
+18:33:55 INFO gamma closed: 21/423 requests, 1028 markets known
+18:33:56 INFO gamma closed: 42/423 requests, 2054 markets known
+18:33:57 INFO gamma closed: 63/423 requests, 3081 markets known
+18:33:59 INFO gamma closed: 84/423 requests, 4110 markets known
+18:33:59 INFO gamma closed: 105/423 requests, 5136 markets known
+18:34:00 INFO gamma closed: 126/423 requests, 6158 markets known
+18:34:02 INFO gamma closed: 147/423 requests, 7187 markets known
+18:34:03 INFO gamma closed: 168/423 requests, 8223 markets known
+18:34:04 INFO gamma closed: 189/423 requests, 9239 markets known
+18:34:05 INFO gamma closed: 210/423 requests, 10265 markets known
+18:34:07 INFO gamma closed: 231/423 requests, 11285 markets known
+18:34:07 INFO gamma closed: 252/423 requests, 12311 markets known
+18:34:08 INFO gamma closed: 273/423 requests, 13343 markets known
+18:34:09 INFO gamma closed: 294/423 requests, 14365 markets known
+18:34:10 INFO gamma closed: 315/423 requests, 15401 markets known
+18:34:11 INFO gamma closed: 336/423 requests, 16433 markets known
+18:34:12 INFO gamma closed: 357/423 requests, 17461 markets known
+18:34:13 INFO gamma closed: 378/423 requests, 18486 markets known
+18:34:15 INFO gamma closed: 399/423 requests, 19519 markets known
+18:34:15 INFO gamma closed: 420/423 requests, 20543 markets known
+18:34:15 INFO gamma closed: 423/423 requests, 20648 markets known
+18:34:16 INFO gamma open: 1/10 requests, 20698 markets known
+18:34:16 INFO gamma open: 2/10 requests, 20748 markets known
+18:34:16 INFO gamma open: 3/10 requests, 20798 markets known
+18:34:16 INFO gamma open: 4/10 requests, 20848 markets known
+18:34:16 INFO gamma open: 5/10 requests, 20898 markets known
+18:34:16 INFO gamma open: 6/10 requests, 20948 markets known
+18:34:16 INFO gamma open: 7/10 requests, 20998 markets known
+18:34:16 INFO gamma open: 8/10 requests, 21048 markets known
+18:34:16 INFO gamma open: 9/10 requests, 21098 markets known
+18:34:16 INFO gamma open: 10/10 requests, 21107 markets known
+18:34:56 INFO re-pricing 216 wallets at a 60s copy delay
+18:47:54 INFO price history: 15196/303930 windows
+19:00:34 INFO price history: 30392/303930 windows
+19:13:13 INFO price history: 45588/303930 windows
+19:25:53 INFO price history: 60784/303930 windows
+19:38:33 INFO price history: 75980/303930 windows
+19:51:13 INFO price history: 91176/303930 windows
+20:03:53 INFO price history: 106372/303930 windows
+20:17:02 INFO price history: 121568/303930 windows
+20:29:13 INFO price history: 136764/303930 windows
+20:41:53 INFO price history: 151960/303930 windows
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/CLAUDE/CLAUDE/pmbot/select.py", line 732, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/CLAUDE/CLAUDE/pmbot/select.py", line 533, in main
+    prices.prefetch({(t.asset, t.ts + d) for w in short for t in hist[w]
+  File "/home/runner/work/CLAUDE/CLAUDE/copybt/data.py", line 404, in prefetch
+    for i, (key, pts) in enumerate(zip(keys, pool.map(self._fetch, keys)), 1):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/concurrent/futures/_base.py", line 451, in result
+    self._condition.wait(timeout)
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+KeyboardInterrupt
