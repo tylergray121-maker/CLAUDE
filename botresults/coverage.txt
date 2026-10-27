@@ -1,85 +1,85 @@
 profile 'Tiger105': ah-cop-tiger105 0x8d6064a7f8b67988a4073ac1b051356fc8cebd76
 profile 'Tiger105': tiger105050 0x185031bb4a1763496d706e0c07339a690e00b57f
 
-US markets in ['atp', 'itf', 'wta'] (not futures): 3196
+US markets in ['atp', 'itf', 'wta'] (not futures): 2587
   US aec-wta-naoosa-jaspao-2026-10-25 | moneyline | Who will win in the upcoming wta event Naomi Osaka vs Jasmine Paolini  | long=Naomi Osaka short=Jasmine Paolini start=1793088000.0
-  US aec-wta-diapar-cribuc-2026-10-25 | moneyline | Who will win in the upcoming wta event Diane Parry vs Cristina Bucsa s | long=Diane Parry short=Cristina Bucsa start=1793070600.0
-  US aec-wta-annli-ekaale-2026-10-25 | moneyline | Who will win in the upcoming wta event Ann Li vs Ekaterina Alexandrova | long=Ann Li short=Ekaterina Alexandrova start=1793066400.0
-  US aec-wta-leyfer-himsak-2026-10-25 | moneyline | Who will win in the upcoming wta event Leylah Fernandez vs Himeno Saka | long=Leylah Fernandez short=Himeno Sakatsume start=1793080800.0
-  US aec-wta-polkud-jantje-2026-10-25 | moneyline | Who will win in the upcoming wta event Polina Kudermetova vs Janice Tj | long=Polina Kudermetova short=Janice Tjen start=1793078400.0
+  US aec-wta-polkud-jantje-2026-10-25 | moneyline | Who will win in the upcoming wta event Polina Kudermetova vs Janice Tj | long=Polina Kudermetova short=Janice Tjen start=1793091300.0
   US aec-wta-katsin-lantar-2026-10-25 | moneyline | Who will win in the upcoming wta event Katerina Siniakova vs Lanlana T | long=Katerina Siniakova short=Lanlana Tararudee start=1793156400.0
-  US aec-wta-antruz-claliu-2026-10-25 | moneyline | Who will win in the upcoming wta event Antonia Ruzic vs Claire Liu sch | long=Antonia Ruzic short=Claire Liu start=1793078400.0
-  US aec-wta-xinsun-mansaw-2026-10-25 | moneyline | Who will win in the upcoming wta event Xinran Sun vs Mananchaya Sawang | long=Xinran Sun short=Mananchaya Sawangkaew start=1793098800.0
-  US aec-wta-sartor-zeyson-2026-10-25 | moneyline | Who will win in the upcoming wta event Sara Sorribes Tormo vs Zeynep S | long=Sara Sorribes Tormo short=Zeynep Sonmez start=1793074200.0
-  US aec-wta-simwal-jiltei-2026-10-25 | moneyline | Who will win in the upcoming wta event Simona Waltert vs Jil Teichmann | long=Simona Waltert short=Jil Teichmann start=1793070000.0
-  US aec-wta-kaique-sofken-2026-10-25 | moneyline | Who will win in the upcoming wta event Kaitlin Quevedo vs Sofia Kenin  | long=Kaitlin Quevedo short=Sofia Kenin start=1793070000.0
-  US aec-atp-stesak-timska-2026-10-25 | moneyline | Who will win in the upcoming atp event Stefanos Sakellaridis vs Timofe | long=Stefanos Sakellaridis short=Timofey Skatov start=1793079000.0
-  US aec-atp-aughol-jayfri-2026-10-25 | moneyline | Who will win in the upcoming atp event August Holmgren vs Jay Friend s | long=August Holmgren short=Jay Dylan Friend start=1793066400.0
-  US aec-atp-shoshi-jankum-2026-10-25 | moneyline | Who will win in the upcoming atp event Sho Shimabukuro vs Jan Kumstat  | long=Sho Shimabukuro short=Jan Kumstat start=1793066400.0
-  US aec-atp-seohon-yibwu-2026-10-25 | moneyline | Who will win in the upcoming atp event Seongchan Hong vs Yibing Wu sch | long=Seong-Chan Hong short=Yibing Wu start=1793074800.0
-  US aec-atp-tardan-andila-2026-10-25 | moneyline | Who will win in the upcoming atp event Taro Daniel vs Andre Ilagan sch | long=Taro Daniel short=Andre Ilagan start=1793066400.0
-  US aec-atp-karkha-caralc-2026-10-25 | moneyline | Who will win in the upcoming atp event Karen Khachanov vs Carlos Alcar | long=Karen Khachanov short=Carlos Alcaraz start=1793104200.0
-  US aec-atp-jurrod-nikbas-2026-10-25 | moneyline | Who will win in the upcoming atp event Jurij Rodionov vs Nikoloz Basil | long=Jurij Rodionov short=Nikoloz Basilashvili start=1793104200.0
-  US aec-atp-lucdar-matarn-2026-10-25 | moneyline | Who will win in the upcoming atp event Luciano Darderi vs Matteo Arnal | long=Luciano Darderi short=Matteo Arnaldi start=1793036400.0
+  US aec-wta-antruz-claliu-2026-10-25 | moneyline | Who will win in the upcoming wta event Antonia Ruzic vs Claire Liu sch | long=Antonia Ruzic short=Claire Liu start=1793086200.0
+  US aec-wta-xinsun-mansaw-2026-10-25 | moneyline | Who will win in the upcoming wta event Xinran Sun vs Mananchaya Sawang | long=Xinran Sun short=Mananchaya Sawangkaew start=1793100000.0
+  US aec-atp-karkha-caralc-2026-10-25 | moneyline | Who will win in the upcoming atp event Karen Khachanov vs Carlos Alcar | long=Karen Khachanov short=Carlos Alcaraz start=1793108400.0
+  US aec-atp-jurrod-nikbas-2026-10-25 | moneyline | Who will win in the upcoming atp event Jurij Rodionov vs Nikoloz Basil | long=Jurij Rodionov short=Nikoloz Basilashvili start=1793183400.0
   US aec-atp-tompau-andrub-2026-10-25 | moneyline | Who will win in the upcoming atp event Tommy Paul vs Andrey Rublev sch | long=Tommy Paul short=Andrey Rublev start=1793104200.0
-  US aec-atp-danagu-danmed-2026-10-25 | moneyline | Who will win in the upcoming atp event Daniel Merida vs Daniil Medvede | long=Daniel Merida Aguilar short=Daniil Medvedev start=1793104200.0
-  US aec-atp-camnor-fracer-2026-10-25 | moneyline | Who will win in the upcoming atp event Cameron Norrie vs Francisco Cer | long=Cameron Norrie short=Francisco Cerundolo start=1793104200.0
-  US aec-atp-lucass-leatie-2026-10-25 | moneyline | Who will win in the upcoming atp event Luca Van Assche vs Learner Tien | long=Luca Van Assche short=Learner Tien start=1793041200.0
-  US aec-atp-flacob-gridim-2026-10-25 | moneyline | Who will win in the upcoming atp event Flavio Cobolli vs Grigor Dimitr | long=Flavio Cobolli short=Grigor Dimitrov start=1793104200.0
-  US aec-atp-lormus-fratia-2026-10-25 | moneyline | Who will win in the upcoming atp event Lorenzo Musetti vs Frances Tiaf | long=Lorenzo Musetti short=Frances Tiafoe start=1793104200.0
-US: 69792 open markets, 49649 game/spread/total/prop slugs, 363 verified pairs
+  US aec-atp-danagu-danmed-2026-10-25 | moneyline | Who will win in the upcoming atp event Daniel Merida vs Daniil Medvede | long=Daniel Merida Aguilar short=Daniil Medvedev start=1793183400.0
+  US aec-atp-camnor-fracer-2026-10-25 | moneyline | Who will win in the upcoming atp event Cameron Norrie vs Francisco Cer | long=Cameron Norrie short=Francisco Cerundolo start=1793113800.0
+  US aec-atp-flacob-gridim-2026-10-25 | moneyline | Who will win in the upcoming atp event Flavio Cobolli vs Grigor Dimitr | long=Flavio Cobolli short=Grigor Dimitrov start=1793127600.0
+  US aec-atp-lormus-fratia-2026-10-25 | moneyline | Who will win in the upcoming atp event Lorenzo Musetti vs Frances Tiaf | long=Lorenzo Musetti short=Frances Tiafoe start=1793183400.0
+  US aec-atp-talgri-branak-2026-10-25 | moneyline | Who will win in the upcoming atp event Tallon Griekspoor vs Brandon Na | long=Tallon Griekspoor short=Brandon Nakashima start=1793183400.0
+  US aec-atp-alezve-marlan-2026-10-25 | moneyline | Who will win in the upcoming atp event Alexander Zverev vs Martin Land | long=Alexander Zverev short=Martin Landaluce start=1793118600.0
+  US asc-atp-karkha-caralc-2026-10-25-gs-neg-1pt5 | spreads | Will the Karen Khachanov cover -1.5 vs the Carlos Alcaraz in Karen Kha | long=-1.50 short=+1.50 start=1793108400.0
+  US asc-atp-karkha-caralc-2026-10-25-gs-pos-1pt5 | spreads | Will the Karen Khachanov cover 1.5 vs the Carlos Alcaraz in Karen Khac | long=+1.50 short=-1.50 start=1793108400.0
+  US asc-atp-karkha-caralc-2026-10-25-gs-neg-4pt5 | spreads | Will the Karen Khachanov cover -4.5 vs the Carlos Alcaraz in Karen Kha | long=-4.50 short=+4.50 start=1793108400.0
+  US asc-atp-karkha-caralc-2026-10-25-gs-pos-4pt5 | spreads | Will the Karen Khachanov cover 4.5 vs the Carlos Alcaraz in Karen Khac | long=+4.50 short=-4.50 start=1793108400.0
+  US asc-atp-karkha-caralc-2026-10-25-gs-neg-7pt5 | spreads | Will the Karen Khachanov cover -7.5 vs the Carlos Alcaraz in Karen Kha | long=-7.50 short=+7.50 start=1793108400.0
+  US asc-atp-karkha-caralc-2026-10-25-gs-pos-7pt5 | spreads | Will the Karen Khachanov cover 7.5 vs the Carlos Alcaraz in Karen Khac | long=+7.50 short=-7.50 start=1793108400.0
+  US asc-atp-karkha-caralc-2026-10-25-ss-neg-1pt5 | spreads | Will the Karen Khachanov cover -1.5 vs the Carlos Alcaraz in Karen Kha | long=-1.50 short=+1.50 start=1793108400.0
+  US asc-atp-karkha-caralc-2026-10-25-ss-pos-1pt5 | spreads | Will the Karen Khachanov cover 1.5 vs the Carlos Alcaraz in Karen Khac | long=+1.50 short=-1.50 start=1793108400.0
+  US tsc-atp-karkha-caralc-2026-10-25-tg-17pt5 | totals | Will the total in Karen Khachanov vs. Carlos Alcaraz be more than 17.5 | long=Over short=Under start=1793108400.0
+  US tsc-atp-karkha-caralc-2026-10-25-tg-22pt5 | totals | Will the total in Karen Khachanov vs. Carlos Alcaraz be more than 22.5 | long=Over short=Under start=1793108400.0
+  US tsc-atp-karkha-caralc-2026-10-25-tg-27pt5 | totals | Will the total in Karen Khachanov vs. Carlos Alcaraz be more than 27.5 | long=Over short=Under start=1793108400.0
+US: 73190 open markets, 53236 game/spread/total/prop slugs, 537 verified pairs
 
 age                    long side              short side  listed, outcome names     not on Polymarket US  copyable
-<3h                           56                      45                       1                     147       41%
-3-12h                         60                      13                       0                     510       13%
-12-48h                         4                       4                       0                    3422        0%
-older                         59                       0                       0                    1679        3%
+<3h                           88                     101                       0                     165       53%
+3-12h                         44                      32                       0                    1232        6%
+12-48h                         5                       3                       0                    2591        0%
+older                         26                       0                       0                    1713        1%
 
 by league (all ages): copyable / total
-  futures         59 / 861
-  nba            124 / 781
-  lal              2 / 482
-  nfl              0 / 446
-  dota2            0 / 343
-  lol              0 / 309
-  epl              0 / 294
-  cs2              0 / 291
-  atp             15 / 280
-  por              0 / 192
-  cfb              0 / 171
-  wta             21 / 147
+  nba             94 / 875
+  futures         68 / 643
+  lal              0 / 451
+  nfl              0 / 436
+  lol              0 / 430
+  dota2            0 / 304
+  wta             31 / 299
+  atp              7 / 284
+  epl              1 / 227
+  tur              0 / 219
+  fl1              0 / 215
+  por              0 / 206
+  cs2              1 / 167
   fifwc            0 / 140
   val              0 / 137
-  fl1              0 / 129
-  ere              0 / 122
-  ucl              0 / 121
-  itf              0 / 102
-  mls              3 / 101
-  swe              0 / 81
+  cfb              0 / 129
+  ucl              0 / 115
+  acle            82 / 86
+  sea              3 / 72
+  den              0 / 69
 
 recent trades not on Polymarket US (international slug | outcome | US lists for the same matchup):
-   60  cs2-nemi1-aur1-2026-10-26 | Aurora Gaming | -
-   55  tur-gal-fen-2026-10-26-gal | Yes | -
-   36  will-the-republican-party-control-the-house-after-the-2026-midterm-elections | Yes | -
-   35  wta-snigur-bondar-2026-10-26 | Daria Snigur | -
-   29  will-the-republican-party-hold-exactly-53-senate-seats-after-the-2026-midterm-elections | No | -
-   29  nba-phx-okc-2026-10-26-spread-home-9pt5 | Thunder | -
-   28  dota2-og-gl-2026-10-26-game1 | GamerLegion | -
-   28  xi-jinping-out-before-2027 | No | -
-   24  cs2-9z-tyloo-2026-10-26 | TYLOO | -
-   21  wta-uchijim-mertens-2026-10-26 | Moyuka Uchijima | -
-   18  cs2-ts7-furia-2026-10-26 | Spirit | -
-   15  2026-balance-of-power-r-senate-r-house-537 | No | -
-   14  cs2-tl1-lgc-2026-10-26-game1 | Liquid | -
-   13  bra-fla-cam-2026-10-26-spread-home-1pt5 | CR Flamengo | bra-fla-cam-2026-10-26-cam, bra-fla-cam-2026-10-26-draw, bra-fla-cam-2026-10-26-fla
-   12  nba-mem-sac-2026-10-25 | Grizzlies | -
-   12  will-the-republican-party-hold-exactly-49-senate-seats-after-the-2026-midterm-elections-189 | Yes | -
-   11  wta-shi-ibragim-2026-10-26 | Han Shi | -
-   11  wta-badosa-lee-2026-10-26 | Paula Badosa | -
-   10  itf-mirand4-voisin1-2026-10-26 | Antoine Voisin | -
-    8  nba-phx-okc-2026-10-26-spread-home-8pt5 | Thunder | -
-    7  cs2-vit-fut-2026-10-26 | FUT Esports | -
-    7  cs2-nemi1-aur1-2026-10-26-game1 | Nemiga | -
-    6  will-the-republican-party-control-the-senate-after-the-2026-midterm-elections | No | -
-    6  nba-gsw-den-2026-10-26-spread-home-8pt5 | Warriors | -
-    5  cs2-vit-fut-2026-10-26 | Vitality | -
+  118  lol-tl2-al-2026-10-26-game2 | Anyones Legend | -
+   85  atp-milavsk-wendelk-2026-10-26 | Daniel Milavsky | -
+   83  lol-tl2-al-2026-10-26-game2 | Team Liquid | -
+   74  wta-sasnovi-bartunk-2026-10-25 | Nikola Bartunkova | -
+   73  nba-por-lal-2026-10-27-spread-home-2pt5 | Lakers | nba-por-lal-2026-10-27, nba-por-lal-2026-10-27-207pt5, nba-por-lal-2026-10-27-209pt5, nba-por-lal-2026-10-27-211pt5
+   55  wta-annli-alexand-2026-10-26 | Ann Li | -
+   50  nba-mem-uta-2026-10-26 | Grizzlies | -
+   44  nba-min-cle-2026-10-26-spread-home-1pt5 | Timberwolves | -
+   43  atp-milavsk-wendelk-2026-10-26 | Harry Wendelken | -
+   35  wta-silva-papamic-2026-10-26 | Despina Papamichail | -
+   34  fl1-psg-lyo-2026-10-25-psg | Yes | -
+   32  bol1-bol-uvi-2026-10-26-bol | Yes | -
+   31  nba-gsw-den-2026-10-26 | Nuggets | -
+   30  nba-mem-uta-2026-10-26 | Jazz | -
+   30  wta-yastrem-volynet-2026-10-26 | Dayana Yastremska | -
+   29  wta-putints-sakkari-2026-10-26 | Maria Sakkari | -
+   28  will-the-milwaukee-brewers-win-the-2026-world-series | No | -
+   27  will-harry-kane-win-the-2026-ballon-dor | Yes | -
+   23  will-harry-kane-win-the-2026-ballon-dor | No | -
+   21  nba-gsw-den-2026-10-26-spread-home-7pt5 | Nuggets | -
+   19  will-philadelphia-76ers-win-the-2027-nba-finals | No | -
+   18  nfl-dal-phi-2026-10-27 | Cowboys | -
+   18  2026-balance-of-power-r-senate-r-house-537 | No | -
+   15  nba-min-cle-2026-10-26-total-234pt5 | Under | -
+   12  nfl-dal-phi-2026-10-27 | Eagles | -
