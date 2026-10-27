@@ -228,6 +228,31 @@ class ApplyLeadersTest(unittest.TestCase):
                                       "method beat it out of sample)"}, 10))
 
 
+class StartupSyncTest(unittest.TestCase):
+    class Broker:
+        def __init__(self, errors):
+            self.errors, self.calls = list(errors), 0
+
+        def sync(self):
+            self.calls += 1
+            if self.errors:
+                raise self.errors.pop(0)
+
+    def test_an_outage_is_ridden_out(self):
+        from pmbot.__main__ import startup_sync
+        b = self.Broker([TimeoutError()] * 10)
+        startup_sync(b, sleep=lambda s: None)
+        self.assertEqual(b.calls, 11)
+
+    def test_a_blocked_address_gives_up_after_a_few_minutes(self):
+        from pmbot.__main__ import startup_sync
+        PermissionDeniedError = type("PermissionDeniedError", (Exception,), {})
+        b = self.Broker([PermissionDeniedError()] * 40)
+        with self.assertRaises(PermissionDeniedError):
+            startup_sync(b, sleep=lambda s: None)
+        self.assertEqual(b.calls, 6)
+
+
 class ScaledLimitsTest(unittest.TestCase):
     def test_limits_follow_the_account_value(self):
         from pmbot.copy import CopyTop

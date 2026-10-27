@@ -25,6 +25,28 @@ from .strategy import StrategyConfig
 CONFIRM = "I accept the risk of losing this money"
 
 
+def startup_sync(broker, tries: int = 40, blocked_tries: int = 6, wait_s: float = 45,
+                 sleep=time.sleep) -> None:
+    """Read the account before trading, riding out an exchange outage (~30 min).
+
+    A 403 (PermissionDeniedError) is Cloudflare refusing this machine's
+    address, which waiting does not fix: give up after a few minutes so the
+    next segment starts on a fresh runner instead of wasting half an hour.
+    """
+    blocked = 0
+    for attempt in range(1, tries + 1):
+        try:
+            broker.sync()
+            return
+        except Exception as e:
+            blocked = blocked + 1 if type(e).__name__ == "PermissionDeniedError" else 0
+            if attempt == tries or blocked >= blocked_tries:
+                raise
+            print(f"account sync failed ({type(e).__name__}); retrying in {wait_s:.0f}s",
+                  file=sys.stderr)
+            sleep(wait_s)
+
+
 def parse_args(argv=None):
     p = argparse.ArgumentParser(prog="pmbot", description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -131,15 +153,7 @@ def main(argv=None) -> int:
         from .broker import LiveBroker
         broker = LiveBroker(key, secret, os.path.join(ecfg.out_dir, "live_orders.json"))
         os.makedirs(ecfg.out_dir, exist_ok=True)
-        for attempt in range(1, 41):  # ride out an exchange outage, up to ~30 min
-            try:
-                broker.sync()
-                break
-            except Exception as e:
-                if attempt == 40:
-                    raise
-                print(f"account sync failed ({type(e).__name__}); retrying in 45s", file=sys.stderr)
-                time.sleep(45)
+        startup_sync(broker)
         broker.cancel_all()  # start clean: drop this bot's own leftovers
     from .strategies import build
     engine = Engine(ecfg, scfg, RiskManager(rcfg), broker,
