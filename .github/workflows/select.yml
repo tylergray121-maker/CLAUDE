@@ -41,7 +41,17 @@ jobs:
         shell: bash -o pipefail {0}
         run: |
           mkdir -p selectresults
-          python -u -m pmbot.select $(cat select.args 2>/dev/null) 2>&1 | tee selectresults/run.log | tail -150
+          du -sh .cache-select 2>/dev/null || echo "no cache restored"
+          # Stop the search ourselves before the step's limit: a search killed
+          # by the limit keeps writing to the cache while it is saved, the save
+          # fails, and the next run starts cold (~8 h of fetching) and times out
+          # too. Stopped here, whatever it fetched is saved for the next run.
+          timeout --signal=INT --kill-after=2m 320m \
+            python -u -m pmbot.select $(cat select.args 2>/dev/null) 2>&1 | tee selectresults/run.log | tail -150
+
+      - name: Cache size
+        if: always()
+        run: du -sh .cache-select 2>/dev/null || true
 
       - uses: actions/cache/save@v4
         if: always()
