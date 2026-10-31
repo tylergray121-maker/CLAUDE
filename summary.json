@@ -1,0 +1,75 @@
+{
+ "ts": 1793474670.090561,
+ "mode": "paper",
+ "pairs": 0,
+ "equity": 212.04,
+ "cash": 81.77,
+ "positions": {
+  "atc-epl-tot-cry-2026-10-31-tot:short": {
+   "qty": 46,
+   "cost": 19.78
+  },
+  "atc-epl-ast-ful-2026-10-31-ast:short": {
+   "qty": 33,
+   "cost": 18.28
+  },
+  "aec-nba-okc-hou-2026-10-31:short": {
+   "qty": 33,
+   "cost": 19.05
+  },
+  "aec-nba-por-uta-2026-10-31:short": {
+   "qty": 69,
+   "cost": 19.830000000000002
+  },
+  "aec-nba-sac-mem-2026-10-31:short": {
+   "qty": 22,
+   "cost": 17.020000000000003
+  },
+  "aec-nhl-pit-mon-2026-10-31:short": {
+   "qty": 32,
+   "cost": 17.53
+  },
+  "tsc-cfb-mspst-tx-2026-10-31-total-51pt5:short": {
+   "qty": 11,
+   "cost": 6.240000000000001
+  },
+  "tsc-cfb-boscol-duke-2026-10-31-total-51pt5:short": {
+   "qty": 11,
+   "cost": 6.240000000000001
+  },
+  "tsc-cfb-boscol-duke-2026-10-31-total-47pt5:short": {
+   "qty": 14,
+   "cost": 6.4
+  },
+  "tsc-cfb-boscol-duke-2026-10-31-total-49pt5:short": {
+   "qty": 12,
+   "cost": 6.21
+  },
+  "atc-spl-hil-fat-2026-10-31-hil": {
+   "qty": 6,
+   "cost": 5.39
+  },
+  "tsc-mls-clb-dcu-2026-10-31-3pt5": {
+   "qty": 13,
+   "cost": 5.95
+  },
+  "tsc-mls-stl-sdg-2026-10-31-3pt5": {
+   "qty": 20,
+   "cost": 10.72
+  },
+  "atc-mls-stl-sdg-2026-10-31-stl": {
+   "qty": 9,
+   "cost": 5.640000000000001
+  }
+ },
+ "open_orders": 0,
+ "fills": 387,
+ "fees_paid": 71.22,
+ "rebates": 0.0,
+ "halted": "",
+ "scan": {
+  "observations": 0,
+  "buy_opps": 0,
+  "sell_opps": 0
+ }
+}
