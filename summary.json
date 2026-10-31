@@ -1,0 +1,18 @@
+{
+ "ts": 1793474489.0065882,
+ "mode": "live",
+ "pairs": 0,
+ "equity": 0.02,
+ "cash": 0.02,
+ "positions": {},
+ "open_orders": 0,
+ "fills": 362,
+ "fees_paid": 15.69,
+ "rebates": 0.0,
+ "halted": "",
+ "scan": {
+  "observations": 6560,
+  "buy_opps": 16,
+  "sell_opps": 18
+ }
+}
