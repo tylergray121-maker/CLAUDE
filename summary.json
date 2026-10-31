@@ -1,0 +1,135 @@
+{
+ "ts": 1793474679.6323059,
+ "mode": "paper",
+ "pairs": 0,
+ "equity": 396.76,
+ "cash": 48.25,
+ "positions": {
+  "atc-epl-liv-ars-2026-11-01-ars:short": {
+   "qty": 13,
+   "cost": 7.64
+  },
+  "atc-epl-ast-ful-2026-10-31-ful:short": {
+   "qty": 23,
+   "cost": 17.66
+  },
+  "atc-epl-ast-ful-2026-10-31-ast": {
+   "qty": 20,
+   "cost": 10.35
+  },
+  "tsc-cfb-flint-librty-2026-10-31-total-45pt5:short": {
+   "qty": 21,
+   "cost": 11.08
+  },
+  "tsc-nfl-atl-tb-2026-11-01-total-44pt5:short": {
+   "qty": 19,
+   "cost": 10.590000000000002
+  },
+  "atc-ere-psv-wii-2026-10-31-psv": {
+   "qty": 21,
+   "cost": 19.440000000000005
+  },
+  "atc-epl-tot-cry-2026-10-31-tot": {
+   "qty": 18,
+   "cost": 10.969999999999999
+  },
+  "tsc-cfb-fl-ga-2026-10-31-total-55pt5": {
+   "qty": 20,
+   "cost": 10.950000000000001
+  },
+  "aec-nba-atl-no-2026-10-31": {
+   "qty": 49,
+   "cost": 31.21
+  },
+  "tsc-sea-mil-int-2026-10-31-2pt5": {
+   "qty": 8,
+   "cost": 4.62
+  },
+  "aec-nba-okc-hou-2026-10-31:short": {
+   "qty": 36,
+   "cost": 20.780000000000005
+  },
+  "aec-nhl-stl-det-2026-10-31": {
+   "qty": 19,
+   "cost": 10.21
+  },
+  "tsc-nba-sac-mem-2026-10-31-230pt5:short": {
+   "qty": 20,
+   "cost": 10.35
+  },
+  "tsc-cfb-ohiost-usc-2026-10-31-total-49pt5": {
+   "qty": 2,
+   "cost": 1.1400000000000001
+  },
+  "tsc-nba-phi-cha-2026-10-31-215pt5:short": {
+   "qty": 20,
+   "cost": 10.549999999999999
+  },
+  "tsc-cfb-mspst-tx-2026-10-31-total-51pt5:short": {
+   "qty": 18,
+   "cost": 10.21
+  },
+  "tsc-cfb-boscol-duke-2026-10-31-total-51pt5:short": {
+   "qty": 19,
+   "cost": 10.780000000000001
+  },
+  "tsc-cfb-boscol-duke-2026-10-31-total-49pt5:short": {
+   "qty": 19,
+   "cost": 9.84
+  },
+  "aec-nba-por-uta-2026-10-31": {
+   "qty": 18,
+   "cost": 13.579999999999998
+  },
+  "atc-epl-tot-cry-2026-10-31-cry:short": {
+   "qty": 12,
+   "cost": 9.97
+  },
+  "atc-sclc-rfc-abe-2026-10-31-abe:short": {
+   "qty": 11,
+   "cost": 9.97
+  },
+  "aec-nhl-edm-nyi-2026-10-31:short": {
+   "qty": 1,
+   "cost": 0.53
+  },
+  "atc-spl-hil-fat-2026-10-31-hil": {
+   "qty": 10,
+   "cost": 8.97
+  },
+  "tsc-mls-stl-sdg-2026-10-31-3pt5": {
+   "qty": 35,
+   "cost": 18.759999999999998
+  },
+  "aec-nhl-pit-mon-2026-10-31:short": {
+   "qty": 52,
+   "cost": 29.0
+  },
+  "atc-mls-stl-sdg-2026-10-31-stl": {
+   "qty": 16,
+   "cost": 10.03
+  },
+  "atc-sea-mil-int-2026-10-31-mil:short": {
+   "qty": 13,
+   "cost": 9.799999999999999
+  },
+  "tsc-nba-min-sa-2026-10-31-228pt5:short": {
+   "qty": 18,
+   "cost": 9.68
+  },
+  "tsc-cfb-colst-utahst-2026-10-31-total-59pt5": {
+   "qty": 14,
+   "cost": 7.53
+  }
+ },
+ "open_orders": 0,
+ "fills": 620,
+ "fees_paid": 87.79,
+ "rebates": 0.0,
+ "halted": "",
+ "scan": {
+  "observations": 0,
+  "buy_opps": 0,
+  "sell_opps": 0
+ }
+}
