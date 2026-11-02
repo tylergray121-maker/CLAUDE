@@ -1,198 +1,198 @@
-09:46:50 INFO Polymarket US: 80906 open markets
-09:46:50 INFO Polymarket US lists 174 league/market kinds
-09:46:50 INFO leaderboard SPORTS/DAY/VOL: 500 wallets
-09:46:50 INFO leaderboard SPORTS/DAY/PNL: 500 wallets
-09:46:50 INFO leaderboard SPORTS/WEEK/VOL: 500 wallets
-09:46:50 INFO leaderboard SPORTS/WEEK/PNL: 500 wallets
-09:46:50 INFO leaderboard SPORTS/MONTH/VOL: 500 wallets
-09:46:50 INFO leaderboard SPORTS/MONTH/PNL: 500 wallets
-09:46:50 INFO leaderboard SPORTS/ALL/VOL: 500 wallets
-09:46:50 INFO leaderboard SPORTS/ALL/PNL: 500 wallets
-09:46:50 INFO leaderboard OVERALL/DAY/VOL: 500 wallets
-09:46:50 INFO leaderboard OVERALL/DAY/PNL: 500 wallets
-09:46:50 INFO leaderboard OVERALL/WEEK/VOL: 500 wallets
-09:46:50 INFO leaderboard OVERALL/WEEK/PNL: 500 wallets
-09:46:50 INFO leaderboard OVERALL/MONTH/VOL: 500 wallets
-09:46:50 INFO leaderboard OVERALL/MONTH/PNL: 500 wallets
-09:46:50 INFO leaderboard OVERALL/ALL/VOL: 500 wallets
-09:46:50 INFO leaderboard OVERALL/ALL/PNL: 500 wallets
-09:46:50 INFO leaderboard SPORTS/ALL/PNL: 500 wallets
-09:46:50 INFO leaderboard OVERALL/ALL/PNL: 500 wallets
-09:50:37 INFO discover esports: 1925 markets, 912 wallets with 15+ buys
-09:50:40 INFO discover counter-strike-2: 2198 markets, 883 wallets with 15+ buys
-09:50:53 INFO discover league-of-legends: 4618 markets, 1695 wallets with 15+ buys
-09:50:56 INFO discover dota-2: 3335 markets, 1034 wallets with 15+ buys
-09:50:59 INFO discover valorant: 3852 markets, 1052 wallets with 15+ buys
-09:50:59 INFO 5576 candidate wallets (30 currently copied)
-09:51:24 INFO trades: 50/5576 wallets
-09:51:59 INFO trades: 100/5576 wallets
-09:52:35 INFO trades: 150/5576 wallets
-09:53:00 INFO trades: 200/5576 wallets
-09:53:41 INFO trades: 250/5576 wallets
-09:54:28 INFO trades: 300/5576 wallets
-09:55:02 INFO trades: 350/5576 wallets
-09:55:38 INFO trades: 400/5576 wallets
-09:56:17 INFO trades: 450/5576 wallets
-09:56:55 INFO trades: 500/5576 wallets
-09:57:19 INFO trades: 550/5576 wallets
-09:57:49 INFO trades: 600/5576 wallets
-09:58:23 INFO trades: 650/5576 wallets
-09:59:16 INFO trades: 700/5576 wallets
-10:00:16 INFO trades: 750/5576 wallets
-10:01:12 INFO trades: 800/5576 wallets
-10:01:51 INFO trades: 850/5576 wallets
-10:02:21 INFO trades: 900/5576 wallets
-10:03:02 INFO trades: 950/5576 wallets
-10:03:48 INFO trades: 1000/5576 wallets
-10:04:14 INFO trades: 1050/5576 wallets
-10:05:12 INFO trades: 1100/5576 wallets
-10:05:57 INFO trades: 1150/5576 wallets
-10:06:52 INFO trades: 1200/5576 wallets
-10:07:21 INFO trades: 1250/5576 wallets
-10:08:03 INFO trades: 1300/5576 wallets
-10:08:41 INFO trades: 1350/5576 wallets
-10:09:02 INFO trades: 1400/5576 wallets
-10:09:58 INFO trades: 1450/5576 wallets
-10:10:29 INFO trades: 1500/5576 wallets
-10:11:16 INFO trades: 1550/5576 wallets
-10:11:49 INFO trades: 1600/5576 wallets
-10:12:36 INFO trades: 1650/5576 wallets
-10:13:19 INFO trades: 1700/5576 wallets
-10:13:46 INFO trades: 1750/5576 wallets
-10:14:27 INFO trades: 1800/5576 wallets
-10:15:32 INFO trades: 1850/5576 wallets
-10:16:16 INFO trades: 1900/5576 wallets
-10:17:20 INFO trades: 1950/5576 wallets
-10:17:58 INFO trades: 2000/5576 wallets
-10:18:42 INFO trades: 2050/5576 wallets
-10:19:18 INFO trades: 2100/5576 wallets
-10:20:04 INFO trades: 2150/5576 wallets
-10:20:45 INFO trades: 2200/5576 wallets
-10:21:21 INFO trades: 2250/5576 wallets
-10:21:55 INFO trades: 2300/5576 wallets
-10:22:38 INFO trades: 2350/5576 wallets
-10:23:18 INFO trades: 2400/5576 wallets
-10:24:14 INFO trades: 2450/5576 wallets
-10:24:45 INFO trades: 2500/5576 wallets
-10:25:02 INFO trades: 2550/5576 wallets
-10:25:35 INFO trades: 2600/5576 wallets
-10:26:15 INFO trades: 2650/5576 wallets
-10:27:06 INFO trades: 2700/5576 wallets
-10:27:49 INFO trades: 2750/5576 wallets
-10:28:37 INFO trades: 2800/5576 wallets
-10:29:19 INFO trades: 2850/5576 wallets
-10:30:00 INFO trades: 2900/5576 wallets
-10:30:46 INFO trades: 2950/5576 wallets
-10:31:33 INFO trades: 3000/5576 wallets
-10:32:08 INFO trades: 3050/5576 wallets
-10:32:47 INFO trades: 3100/5576 wallets
-10:33:23 INFO trades: 3150/5576 wallets
-10:33:44 INFO trades: 3200/5576 wallets
-10:34:12 INFO trades: 3250/5576 wallets
-10:34:47 INFO trades: 3300/5576 wallets
-10:35:20 INFO trades: 3350/5576 wallets
-10:35:59 INFO trades: 3400/5576 wallets
-10:36:31 INFO trades: 3450/5576 wallets
-10:37:20 INFO trades: 3500/5576 wallets
-10:38:14 INFO trades: 3550/5576 wallets
-10:38:53 INFO trades: 3600/5576 wallets
-10:39:24 INFO trades: 3650/5576 wallets
-10:40:14 INFO trades: 3700/5576 wallets
-10:40:46 INFO trades: 3750/5576 wallets
-10:41:30 INFO trades: 3800/5576 wallets
-10:42:01 INFO trades: 3850/5576 wallets
-10:42:42 INFO trades: 3900/5576 wallets
-10:43:23 INFO trades: 3950/5576 wallets
-10:44:14 INFO trades: 4000/5576 wallets
-10:44:47 INFO trades: 4050/5576 wallets
-10:45:30 INFO trades: 4100/5576 wallets
-10:46:06 INFO trades: 4150/5576 wallets
-10:46:40 INFO trades: 4200/5576 wallets
-10:47:11 INFO trades: 4250/5576 wallets
-10:48:04 INFO trades: 4300/5576 wallets
-10:48:40 INFO trades: 4350/5576 wallets
-10:49:36 INFO trades: 4400/5576 wallets
-10:50:23 INFO trades: 4450/5576 wallets
-10:51:12 INFO trades: 4500/5576 wallets
-10:51:53 INFO trades: 4550/5576 wallets
-10:52:23 INFO trades: 4600/5576 wallets
-10:52:59 INFO trades: 4650/5576 wallets
-10:53:44 INFO trades: 4700/5576 wallets
-10:54:13 INFO trades: 4750/5576 wallets
-10:54:53 INFO trades: 4800/5576 wallets
-10:55:56 INFO trades: 4850/5576 wallets
-10:56:30 INFO trades: 4900/5576 wallets
-10:57:17 INFO trades: 4950/5576 wallets
-10:57:57 INFO trades: 5000/5576 wallets
-10:58:39 INFO trades: 5050/5576 wallets
-10:58:59 INFO trades: 5100/5576 wallets
-10:59:50 INFO trades: 5150/5576 wallets
-11:00:27 INFO trades: 5200/5576 wallets
-11:01:29 INFO trades: 5250/5576 wallets
-11:01:57 INFO trades: 5300/5576 wallets
-11:02:43 INFO trades: 5350/5576 wallets
-11:03:12 INFO trades: 5400/5576 wallets
-11:03:39 INFO trades: 5450/5576 wallets
-11:04:19 INFO trades: 5500/5576 wallets
-11:05:15 INFO trades: 5550/5576 wallets
-11:05:57 INFO trades: 5576/5576 wallets
-11:07:06 INFO listed on Polymarket US: 19606 of 49704 markets the candidates traded; by league: cs2/result 0/6606, cfb/totals 1/4893, cs2/moneyline 932/4316, atp/moneyline 4272/4272, nfl/totals 42/2753, nba/totals 1519/2356, lol/result 1141/2154, wta/moneyline 1778/1778, mls/totals 908/1387, dota2/result 355/1379, nhl/totals 651/1174, cfb/moneyline 1137/1162, lol/moneyline 557/1008, mls/result 672/899, lal/totals 250/703, dota2/moneyline 179/694, uel/totals 26/663, sea/totals 436/639, ucl/totals 235/612, epl/totals 231/608, ere/totals 200/588, bra/result 337/505, uslc/result 381/493, bun/totals 72/484, lal/result 188/443, uel/result 90/432, sea/result 300/393, ere/result 141/383, ucl/result 189/379, epl/result 61/369
-11:07:07 INFO 3835 wallets with copyable trades (463 skipped as too high-frequency); resolving 19606 markets
-11:07:08 INFO gamma closed: 19/393 requests, 931 markets known
-11:07:09 INFO gamma closed: 38/393 requests, 1865 markets known
-11:07:10 INFO gamma closed: 57/393 requests, 2796 markets known
-11:07:11 INFO gamma closed: 76/393 requests, 3725 markets known
-11:07:12 INFO gamma closed: 95/393 requests, 4648 markets known
-11:07:13 INFO gamma closed: 114/393 requests, 5574 markets known
-11:07:14 INFO gamma closed: 133/393 requests, 6502 markets known
-11:07:15 INFO gamma closed: 152/393 requests, 7432 markets known
-11:07:16 INFO gamma closed: 171/393 requests, 8356 markets known
-11:07:17 INFO gamma closed: 190/393 requests, 9290 markets known
-11:07:17 INFO gamma closed: 209/393 requests, 10214 markets known
-11:07:18 INFO gamma closed: 228/393 requests, 11144 markets known
-11:07:19 INFO gamma closed: 247/393 requests, 12069 markets known
-11:07:20 INFO gamma closed: 266/393 requests, 13000 markets known
-11:07:21 INFO gamma closed: 285/393 requests, 13930 markets known
-11:07:22 INFO gamma closed: 304/393 requests, 14850 markets known
-11:07:23 INFO gamma closed: 323/393 requests, 15769 markets known
-11:07:24 INFO gamma closed: 342/393 requests, 16706 markets known
-11:07:25 INFO gamma closed: 361/393 requests, 17638 markets known
-11:07:26 INFO gamma closed: 380/393 requests, 18563 markets known
-11:07:27 INFO gamma closed: 393/393 requests, 19161 markets known
-11:07:27 INFO gamma open: 1/9 requests, 19211 markets known
-11:07:27 INFO gamma open: 2/9 requests, 19261 markets known
-11:07:27 INFO gamma open: 3/9 requests, 19311 markets known
-11:07:27 INFO gamma open: 4/9 requests, 19361 markets known
-11:07:27 INFO gamma open: 5/9 requests, 19411 markets known
-11:07:27 INFO gamma open: 6/9 requests, 19461 markets known
-11:07:27 INFO gamma open: 7/9 requests, 19511 markets known
-11:07:27 INFO gamma open: 8/9 requests, 19561 markets known
-11:07:27 INFO gamma open: 9/9 requests, 19606 markets known
-11:08:25 INFO re-pricing 220 wallets at a 60s copy delay
-11:09:01 INFO price history: 12792/255849 windows
-11:09:16 INFO price history: 25584/255849 windows
-11:09:30 INFO price history: 38376/255849 windows
-11:09:42 INFO price history: 51168/255849 windows
-11:09:56 INFO price history: 63960/255849 windows
-11:10:08 INFO price history: 76752/255849 windows
-11:10:20 INFO price history: 89544/255849 windows
-11:10:30 INFO price history: 102336/255849 windows
-11:10:46 INFO price history: 115128/255849 windows
-11:11:03 INFO price history: 127920/255849 windows
-11:11:15 INFO price history: 140712/255849 windows
-11:11:26 INFO price history: 153504/255849 windows
-11:11:46 INFO price history: 166296/255849 windows
-11:12:04 INFO price history: 179088/255849 windows
-11:12:20 INFO price history: 191880/255849 windows
-11:12:36 INFO price history: 204672/255849 windows
-11:13:15 INFO price history: 217464/255849 windows
-11:13:15 INFO price history: 230256/255849 windows
-11:13:15 INFO price history: 243048/255849 windows
-11:13:30 INFO price history: 255840/255849 windows
-11:13:30 INFO price history: 255849/255849 windows
+09:48:08 INFO Polymarket US: 80314 open markets
+09:48:08 INFO Polymarket US lists 153 league/market kinds
+09:48:08 INFO leaderboard SPORTS/DAY/VOL: 500 wallets
+09:48:08 INFO leaderboard SPORTS/DAY/PNL: 500 wallets
+09:48:08 INFO leaderboard SPORTS/WEEK/VOL: 500 wallets
+09:48:08 INFO leaderboard SPORTS/WEEK/PNL: 500 wallets
+09:48:08 INFO leaderboard SPORTS/MONTH/VOL: 500 wallets
+09:48:08 INFO leaderboard SPORTS/MONTH/PNL: 500 wallets
+09:48:08 INFO leaderboard SPORTS/ALL/VOL: 500 wallets
+09:48:08 INFO leaderboard SPORTS/ALL/PNL: 500 wallets
+09:48:08 INFO leaderboard OVERALL/DAY/VOL: 500 wallets
+09:48:08 INFO leaderboard OVERALL/DAY/PNL: 500 wallets
+09:48:08 INFO leaderboard OVERALL/WEEK/VOL: 500 wallets
+09:48:08 INFO leaderboard OVERALL/WEEK/PNL: 500 wallets
+09:48:08 INFO leaderboard OVERALL/MONTH/VOL: 500 wallets
+09:48:08 INFO leaderboard OVERALL/MONTH/PNL: 500 wallets
+09:48:08 INFO leaderboard OVERALL/ALL/VOL: 500 wallets
+09:48:08 INFO leaderboard OVERALL/ALL/PNL: 500 wallets
+09:48:08 INFO leaderboard SPORTS/ALL/PNL: 500 wallets
+09:48:08 INFO leaderboard OVERALL/ALL/PNL: 500 wallets
+09:52:18 INFO discover esports: 1952 markets, 927 wallets with 15+ buys
+09:52:22 INFO discover counter-strike-2: 2232 markets, 913 wallets with 15+ buys
+09:52:25 INFO discover league-of-legends: 4618 markets, 1695 wallets with 15+ buys
+09:52:28 INFO discover dota-2: 3358 markets, 1059 wallets with 15+ buys
+09:52:30 INFO discover valorant: 3754 markets, 1029 wallets with 15+ buys
+09:52:30 INFO 5582 candidate wallets (30 currently copied)
+09:52:55 INFO trades: 50/5582 wallets
+09:53:29 INFO trades: 100/5582 wallets
+09:54:04 INFO trades: 150/5582 wallets
+09:54:32 INFO trades: 200/5582 wallets
+09:55:13 INFO trades: 250/5582 wallets
+09:55:59 INFO trades: 300/5582 wallets
+09:56:33 INFO trades: 350/5582 wallets
+09:57:12 INFO trades: 400/5582 wallets
+09:57:53 INFO trades: 450/5582 wallets
+09:58:30 INFO trades: 500/5582 wallets
+09:58:56 INFO trades: 550/5582 wallets
+09:59:30 INFO trades: 600/5582 wallets
+10:00:25 INFO trades: 650/5582 wallets
+10:01:21 INFO trades: 700/5582 wallets
+10:02:26 INFO trades: 750/5582 wallets
+10:03:21 INFO trades: 800/5582 wallets
+10:04:04 INFO trades: 850/5582 wallets
+10:04:37 INFO trades: 900/5582 wallets
+10:05:17 INFO trades: 950/5582 wallets
+10:06:07 INFO trades: 1000/5582 wallets
+10:06:31 INFO trades: 1050/5582 wallets
+10:07:29 INFO trades: 1100/5582 wallets
+10:08:19 INFO trades: 1150/5582 wallets
+10:09:17 INFO trades: 1200/5582 wallets
+10:09:47 INFO trades: 1250/5582 wallets
+10:10:25 INFO trades: 1300/5582 wallets
+10:11:02 INFO trades: 1350/5582 wallets
+10:11:31 INFO trades: 1400/5582 wallets
+10:12:25 INFO trades: 1450/5582 wallets
+10:12:53 INFO trades: 1500/5582 wallets
+10:13:40 INFO trades: 1550/5582 wallets
+10:14:16 INFO trades: 1600/5582 wallets
+10:15:00 INFO trades: 1650/5582 wallets
+10:15:46 INFO trades: 1700/5582 wallets
+10:16:16 INFO trades: 1750/5582 wallets
+10:16:52 INFO trades: 1800/5582 wallets
+10:18:06 INFO trades: 1850/5582 wallets
+10:18:43 INFO trades: 1900/5582 wallets
+10:19:50 INFO trades: 1950/5582 wallets
+10:20:24 INFO trades: 2000/5582 wallets
+10:21:06 INFO trades: 2050/5582 wallets
+10:21:43 INFO trades: 2100/5582 wallets
+10:22:32 INFO trades: 2150/5582 wallets
+10:23:12 INFO trades: 2200/5582 wallets
+10:23:37 INFO trades: 2250/5582 wallets
+10:24:14 INFO trades: 2300/5582 wallets
+10:25:01 INFO trades: 2350/5582 wallets
+10:25:42 INFO trades: 2400/5582 wallets
+10:26:30 INFO trades: 2450/5582 wallets
+10:26:59 INFO trades: 2500/5582 wallets
+10:27:23 INFO trades: 2550/5582 wallets
+10:27:58 INFO trades: 2600/5582 wallets
+10:28:37 INFO trades: 2650/5582 wallets
+10:29:24 INFO trades: 2700/5582 wallets
+10:30:02 INFO trades: 2750/5582 wallets
+10:31:00 INFO trades: 2800/5582 wallets
+10:31:44 INFO trades: 2850/5582 wallets
+10:32:17 INFO trades: 2900/5582 wallets
+10:32:58 INFO trades: 2950/5582 wallets
+10:33:56 INFO trades: 3000/5582 wallets
+10:34:31 INFO trades: 3050/5582 wallets
+10:35:09 INFO trades: 3100/5582 wallets
+10:35:35 INFO trades: 3150/5582 wallets
+10:35:56 INFO trades: 3200/5582 wallets
+10:36:22 INFO trades: 3250/5582 wallets
+10:36:58 INFO trades: 3300/5582 wallets
+10:37:40 INFO trades: 3350/5582 wallets
+10:38:23 INFO trades: 3400/5582 wallets
+10:38:55 INFO trades: 3450/5582 wallets
+10:39:33 INFO trades: 3500/5582 wallets
+10:40:23 INFO trades: 3550/5582 wallets
+10:41:16 INFO trades: 3600/5582 wallets
+10:41:48 INFO trades: 3650/5582 wallets
+10:42:36 INFO trades: 3700/5582 wallets
+10:43:06 INFO trades: 3750/5582 wallets
+10:43:42 INFO trades: 3800/5582 wallets
+10:44:12 INFO trades: 3850/5582 wallets
+10:44:55 INFO trades: 3900/5582 wallets
+10:45:51 INFO trades: 3950/5582 wallets
+10:46:37 INFO trades: 4000/5582 wallets
+10:47:13 INFO trades: 4050/5582 wallets
+10:47:47 INFO trades: 4100/5582 wallets
+10:48:23 INFO trades: 4150/5582 wallets
+10:49:00 INFO trades: 4200/5582 wallets
+10:49:32 INFO trades: 4250/5582 wallets
+10:50:34 INFO trades: 4300/5582 wallets
+10:51:06 INFO trades: 4350/5582 wallets
+10:52:02 INFO trades: 4400/5582 wallets
+10:52:38 INFO trades: 4450/5582 wallets
+10:53:25 INFO trades: 4500/5582 wallets
+10:54:07 INFO trades: 4550/5582 wallets
+10:54:50 INFO trades: 4600/5582 wallets
+10:55:27 INFO trades: 4650/5582 wallets
+10:56:13 INFO trades: 4700/5582 wallets
+10:56:43 INFO trades: 4750/5582 wallets
+10:57:22 INFO trades: 4800/5582 wallets
+10:58:11 INFO trades: 4850/5582 wallets
+10:58:41 INFO trades: 4900/5582 wallets
+10:59:31 INFO trades: 4950/5582 wallets
+11:00:27 INFO trades: 5000/5582 wallets
+11:01:06 INFO trades: 5050/5582 wallets
+11:01:30 INFO trades: 5100/5582 wallets
+11:02:17 INFO trades: 5150/5582 wallets
+11:02:56 INFO trades: 5200/5582 wallets
+11:03:46 INFO trades: 5250/5582 wallets
+11:04:12 INFO trades: 5300/5582 wallets
+11:05:00 INFO trades: 5350/5582 wallets
+11:05:31 INFO trades: 5400/5582 wallets
+11:06:11 INFO trades: 5450/5582 wallets
+11:06:52 INFO trades: 5500/5582 wallets
+11:07:49 INFO trades: 5550/5582 wallets
+11:08:40 INFO trades: 5582/5582 wallets
+11:09:16 INFO listed on Polymarket US: 17461 of 46129 markets the candidates traded; by league: cs2/result 0/6602, cfb/totals 3/4802, atp/moneyline 4329/4329, cs2/moneyline 922/4310, nfl/totals 2/2851, nba/totals 1568/2469, lol/result 1129/2132, wta/moneyline 1780/1780, dota2/result 349/1374, nhl/totals 659/1189, cfb/moneyline 1143/1168, lol/moneyline 548/991, lal/totals 260/716, dota2/moneyline 175/691, sea/totals 453/656, uel/totals 26/643, ucl/totals 242/609, epl/totals 236/607, bra/result 338/505, bun/totals 72/490, lal/result 189/449, uel/result 91/436, spl/result 317/419, sea/result 306/404, ucl/result 194/384, epl/result 61/373, uru1/result 295/368, ecu1/result 228/327, bel1/result 76/318, setkameua/moneyline 0/317
+11:09:17 INFO 3833 wallets with copyable trades (462 skipped as too high-frequency); resolving 17461 markets
+11:09:18 INFO gamma closed: 17/350 requests, 830 markets known
+11:09:19 INFO gamma closed: 34/350 requests, 1667 markets known
+11:09:20 INFO gamma closed: 51/350 requests, 2496 markets known
+11:09:20 INFO gamma closed: 68/350 requests, 3321 markets known
+11:09:21 INFO gamma closed: 85/350 requests, 4146 markets known
+11:09:22 INFO gamma closed: 102/350 requests, 4975 markets known
+11:09:23 INFO gamma closed: 119/350 requests, 5801 markets known
+11:09:24 INFO gamma closed: 136/350 requests, 6630 markets known
+11:09:25 INFO gamma closed: 153/350 requests, 7453 markets known
+11:09:26 INFO gamma closed: 170/350 requests, 8291 markets known
+11:09:26 INFO gamma closed: 187/350 requests, 9118 markets known
+11:09:27 INFO gamma closed: 204/350 requests, 9944 markets known
+11:09:28 INFO gamma closed: 221/350 requests, 10768 markets known
+11:09:29 INFO gamma closed: 238/350 requests, 11600 markets known
+11:09:30 INFO gamma closed: 255/350 requests, 12440 markets known
+11:09:31 INFO gamma closed: 272/350 requests, 13258 markets known
+11:09:31 INFO gamma closed: 289/350 requests, 14086 markets known
+11:09:32 INFO gamma closed: 306/350 requests, 14923 markets known
+11:09:33 INFO gamma closed: 323/350 requests, 15755 markets known
+11:09:34 INFO gamma closed: 340/350 requests, 16587 markets known
+11:09:34 INFO gamma closed: 350/350 requests, 17036 markets known
+11:09:35 INFO gamma open: 1/9 requests, 17086 markets known
+11:09:35 INFO gamma open: 2/9 requests, 17136 markets known
+11:09:35 INFO gamma open: 3/9 requests, 17186 markets known
+11:09:35 INFO gamma open: 4/9 requests, 17236 markets known
+11:09:35 INFO gamma open: 5/9 requests, 17286 markets known
+11:09:35 INFO gamma open: 6/9 requests, 17336 markets known
+11:09:35 INFO gamma open: 7/9 requests, 17386 markets known
+11:09:35 INFO gamma open: 8/9 requests, 17436 markets known
+11:09:35 INFO gamma open: 9/9 requests, 17461 markets known
+11:10:13 INFO re-pricing 217 wallets at a 60s copy delay
+11:10:27 INFO price history: 11705/234102 windows
+11:10:38 INFO price history: 23410/234102 windows
+11:10:48 INFO price history: 35115/234102 windows
+11:11:01 INFO price history: 46820/234102 windows
+11:11:10 INFO price history: 58525/234102 windows
+11:11:21 INFO price history: 70230/234102 windows
+11:11:30 INFO price history: 81935/234102 windows
+11:11:38 INFO price history: 93640/234102 windows
+11:11:49 INFO price history: 105345/234102 windows
+11:12:02 INFO price history: 117050/234102 windows
+11:12:10 INFO price history: 128755/234102 windows
+11:12:17 INFO price history: 140460/234102 windows
+11:12:29 INFO price history: 152165/234102 windows
+11:12:41 INFO price history: 163870/234102 windows
+11:12:50 INFO price history: 175575/234102 windows
+11:13:01 INFO price history: 187280/234102 windows
+11:13:13 INFO price history: 198985/234102 windows
+11:13:24 INFO price history: 210690/234102 windows
+11:13:34 INFO price history: 222395/234102 windows
+11:13:44 INFO price history: 234100/234102 windows
+11:13:44 INFO price history: 234102/234102 windows
 # Which wallets to copy on Polymarket US
 
-Backtest of copytop's own rules over 90 days to 2026-11-01 09:00 UTC: 5576 candidates, 3835 with trades copytop could copy, 220 re-priced at a 60s copy delay. Choosing window: first 67%; test window: the rest (30 days).
+Backtest of copytop's own rules over 90 days to 2026-11-02 09:00 UTC: 5582 candidates, 3833 with trades copytop could copy, 217 re-priced at a 60s copy delay. Choosing window: first 67%; test window: the rest (30 days).
 
 ## Does choosing this way hold up?
 
@@ -200,61 +200,59 @@ Wallets ranked on the choosing window only (lower bound of per-copy return, 15+ 
 
 | | copies | won | staked | P&L | return | t |
 |---|---|---|---|---|---|---|
-| chosen on the first part (test window) | 2889 | 1408 | $28,007 | -353.57 | -1.3% | -0.53 |
-| every wallet that qualified on the first part (test window) | 3484 | 1692 | $34,028 | -376.17 | -1.1% | -0.51 |
-| currently copied (test window) | 4095 | 2191 | $40,181 | +900.03 | +2.2% | +1.55 |
+| chosen on the first part (test window) | 2780 | 1380 | $26,976 | -52.75 | -0.2% | -0.05 |
+| every wallet that qualified on the first part (test window) | 2834 | 1402 | $27,524 | +17.19 | +0.1% | +0.05 |
+| currently copied (test window) | 4028 | 2149 | $39,572 | +969.77 | +2.5% | +1.58 |
 
 ## Copy rules, on the chosen wallets
 
 | | test window | | | | | | whole window | | | | | |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| base: 60s delay, 1c limit, hold to settlement | 2889 | 1408 | $28,007 | -353.57 | -1.3% | -0.53 | 6414 | 3227 | $62,288 | +4,768.43 | +7.7% | 4.55 |
-| copy their sells too | 2889 | 1062 | $28,007 | -921.18 | -3.3% | -1.63 | 6414 | 2672 | $62,288 | +3,473.23 | +5.6% | 3.5 |
-| size by conviction (x0.5 / x1 / x1.5) | 2752 | 1338 | $32,818 | -46.00 | -0.1% | -0.62 | 6102 | 3061 | $73,247 | +5,271.21 | +7.2% | 4.28 |
-| skip bets under 0.5x their usual | 2694 | 1314 | $26,314 | -218.45 | -0.8% | -0.16 | 5992 | 3019 | $58,629 | +4,513.19 | +7.7% | 4.51 |
-| pre-game only | 2740 | 1345 | $26,526 | -637.00 | -2.4% | -1.02 | 5939 | 3034 | $57,499 | +4,499.84 | +7.8% | 4.65 |
-| skip prices under 30c | 2423 | 1299 | $23,365 | -441.83 | -1.9% | -1.07 | 5162 | 2856 | $49,784 | +352.64 | +0.7% | 0.61 |
-| favorites only (50c+) | 1322 | 857 | $12,655 | -59.00 | -0.5% | -0.21 | 2709 | 1828 | $25,796 | +418.31 | +1.6% | 1.29 |
-| 15s delay | 2904 | 1418 | $28,197 | -142.80 | -0.5% | -0.14 | 6463 | 3259 | $62,820 | +5,243.11 | +8.3% | 4.94 |
-| 60s delay | 2889 | 1408 | $28,007 | -353.57 | -1.3% | -0.53 | 6414 | 3227 | $62,288 | +4,768.43 | +7.7% | 4.55 |
-| allow 2c over their price | 2954 | 1437 | $28,619 | -212.35 | -0.7% | -0.35 | 6663 | 3349 | $64,708 | +5,080.20 | +7.8% | 4.68 |
+| base: 60s delay, 1c limit, hold to settlement | 2780 | 1380 | $26,976 | -52.75 | -0.2% | -0.05 | 6593 | 3329 | $64,010 | +5,140.82 | +8.0% | 4.9 |
+| copy their sells too | 2791 | 1060 | $27,078 | -508.41 | -1.9% | -0.92 | 6604 | 2780 | $64,112 | +3,888.42 | +6.1% | 3.93 |
+| size by conviction (x0.5 / x1 / x1.5) | 2655 | 1314 | $32,157 | +333.09 | +1.0% | -0.11 | 6274 | 3155 | $76,027 | +5,786.35 | +7.6% | 4.56 |
+| skip bets under 0.5x their usual | 2605 | 1294 | $25,504 | -34.64 | -0.1% | 0.1 | 6182 | 3132 | $60,509 | +4,894.24 | +8.1% | 4.88 |
+| pre-game only | 2617 | 1312 | $25,335 | -249.14 | -1.0% | -0.35 | 6085 | 3123 | $58,885 | +4,906.93 | +8.3% | 5.08 |
+| skip prices under 30c | 2340 | 1272 | $22,608 | -380.31 | -1.7% | -0.92 | 5314 | 2941 | $51,274 | +338.68 | +0.7% | 0.62 |
+| favorites only (50c+) | 1290 | 851 | $12,354 | +102.11 | +0.8% | 0.42 | 2745 | 1860 | $26,153 | +494.24 | +1.9% | 1.5 |
+| 15s delay | 2796 | 1391 | $27,164 | +180.34 | +0.7% | 0.35 | 6648 | 3363 | $64,592 | +5,603.29 | +8.7% | 5.27 |
+| 60s delay | 2780 | 1380 | $26,976 | -52.75 | -0.2% | -0.05 | 6593 | 3329 | $64,010 | +5,140.82 | +8.0% | 4.9 |
+| allow 2c over their price | 2847 | 1414 | $27,609 | +160.65 | +0.6% | 0.24 | 6849 | 3454 | $66,494 | +5,447.74 | +8.2% | 5.01 |
 
 ## Patterns, on the chosen wallets (choosing window → test window)
 
 | pattern | copies | return | t | → copies | return | t |
 |---|---|---|---|---|---|---|
-| conviction:0.5-1x | 395 | +26.5% | 3.51 | 337 | +0.8% | -0.06 |
-| conviction:1-2x | 601 | +15.6% | 2.48 | 387 | +0.5% | 0.03 |
-| conviction:2x+ | 2097 | +10.8% | 3.48 | 1787 | +0.2% | 0.19 |
-| conviction:under 0.5x | 432 | +24.8% | 3.49 | 378 | -11.7% | -2.11 |
-| delay_move:flat | 2287 | +17.1% | 5.46 | 2227 | -1.1% | -0.42 |
-| delay_move:price fell | 1238 | +10.8% | 2.87 | 662 | -1.7% | -0.35 |
-| exit:settle | 3525 | +14.9% | 6.14 | 2889 | -1.3% | -0.53 |
-| kind:moneyline | 2601 | +12.7% | 4.23 | 2284 | -2.9% | -1.14 |
-| kind:result | 855 | +20.8% | 4.85 | 522 | +7.3% | 1.57 |
-| kind:totals | 69 | +26.4% | 2.69 | 83 | -11.7% | -1.06 |
-| league:atp | 387 | +6.5% | 1.0 | 182 | +16.5% | 2.54 |
-| league:bun | 8 | +50.3% | 14.89 | 4 | -100.0% | — |
-| league:cfb | 165 | +8.9% | 0.9 | 337 | +13.2% | 1.61 |
-| league:cs2 | 324 | +13.2% | 1.55 | 234 | +5.4% | 0.93 |
-| league:dota2 | 112 | -5.6% | -0.5 | 90 | +19.6% | 1.04 |
-| league:epl | 52 | +34.2% | 3.05 | 56 | -4.5% | -0.51 |
-| league:ere | 8 | +106.7% | 28.83 | 35 | +28.4% | 1.15 |
-| league:lal | 70 | +15.4% | 1.43 | 105 | -1.5% | -0.11 |
-| league:lol | 1748 | +18.2% | 4.7 | 260 | -5.6% | -0.71 |
-| league:mls | 32 | -3.9% | -0.2 | 202 | +0.1% | -0.01 |
-| league:nba | 0 | +0.0% | — | 266 | -11.3% | -1.73 |
-| league:nfl | 305 | +22.4% | 2.96 | 247 | -8.1% | -1.2 |
-| league:nhl | 46 | +15.7% | 0.94 | 636 | -14.8% | -3.76 |
-| league:sea | 33 | +59.4% | 3.41 | 39 | -29.2% | -1.58 |
-| league:ucl | 40 | -8.0% | -0.57 | 62 | +16.1% | 1.33 |
+| conviction:0.5-1x | 427 | +23.8% | 3.38 | 310 | +1.9% | 0.23 |
+| conviction:1-2x | 631 | +15.8% | 2.49 | 333 | -2.4% | -0.21 |
+| conviction:2x+ | 2304 | +10.4% | 3.68 | 1791 | +2.0% | 0.68 |
+| conviction:under 0.5x | 451 | +21.4% | 3.1 | 346 | -11.3% | -1.81 |
+| delay_move:flat | 2535 | +16.3% | 5.61 | 2149 | -1.2% | -0.42 |
+| delay_move:price fell | 1278 | +9.4% | 2.54 | 631 | +3.1% | 0.7 |
+| exit:settle | 3813 | +14.0% | 6.1 | 2780 | -0.2% | -0.05 |
+| kind:moneyline | 2909 | +11.4% | 4.14 | 2307 | -2.0% | -0.85 |
+| kind:result | 831 | +22.7% | 5.17 | 313 | +12.0% | 2.12 |
+| kind:totals | 73 | +20.4% | 2.3 | 160 | +1.5% | 0.18 |
+| league:atp | 527 | +5.9% | 1.18 | 217 | +13.1% | 2.15 |
+| league:bun | 9 | +80.1% | 2.93 | 4 | -100.0% | — |
+| league:cfb | 204 | +3.0% | 0.44 | 298 | +17.7% | 1.94 |
+| league:cs2 | 348 | +15.0% | 1.96 | 206 | +3.8% | 0.59 |
+| league:dota2 | 111 | -4.8% | -0.43 | 88 | +22.4% | 1.17 |
+| league:epl | 54 | +35.2% | 3.23 | 65 | +7.5% | 0.44 |
+| league:lal | 70 | +15.4% | 1.43 | 125 | +8.4% | 1.1 |
+| league:lol | 1760 | +17.3% | 4.46 | 228 | +1.8% | 0.18 |
+| league:nba | 0 | +0.0% | — | 349 | -10.1% | -1.82 |
+| league:nfl | 324 | +19.5% | 2.69 | 274 | -3.4% | -0.67 |
+| league:nhl | 74 | +12.4% | 0.85 | 655 | -14.6% | -3.8 |
+| league:sea | 34 | +54.4% | 3.14 | 44 | -23.7% | -1.35 |
+| league:ucl | 41 | -4.3% | -0.32 | 64 | +16.9% | 1.42 |
 | league:uel | 0 | +0.0% | — | 12 | +17.4% | 0.79 |
-| league:wta | 194 | +2.2% | 0.17 | 117 | +8.9% | 0.8 |
-| price:30-70c | 2252 | +3.7% | 1.88 | 2086 | -2.6% | -1.22 |
-| price:over 70c | 482 | -0.6% | -0.15 | 331 | +1.9% | 0.51 |
-| price:under 30c | 791 | +54.9% | 6.44 | 472 | +2.4% | 0.43 |
-| timing:in-play | 326 | -0.4% | -0.14 | 149 | +19.1% | 1.2 |
-| timing:pre-game | 3199 | +16.6% | 6.68 | 2740 | -2.4% | -1.02 |
+| league:wta | 244 | +8.4% | 0.98 | 139 | +4.5% | 0.44 |
+| price:30-70c | 2470 | +3.1% | 1.72 | 1986 | -2.2% | -1.02 |
+| price:over 70c | 499 | -1.1% | -0.46 | 348 | +0.8% | 0.23 |
+| price:under 30c | 844 | +53.4% | 6.6 | 446 | +7.9% | 0.97 |
+| timing:in-play | 345 | +1.1% | 0.06 | 163 | +12.0% | 0.77 |
+| timing:pre-game | 3468 | +15.4% | 6.55 | 2617 | -1.0% | -0.35 |
 
 ## Ranking methods, walk-forward
 
@@ -262,25 +260,25 @@ Choose on 45 days, score the next 15 days, 3 folds pooled. 'Every qualified wall
 
 | | copies | won | staked | P&L | return | t |
 |---|---|---|---|---|---|---|
-| every qualified wallet | 132501 | 69004 | $1,318,477 | -50,252.32 | -3.8% | -11.73 |
-| consistency (winning weeks), top 16 | 10699 | 5883 | $105,952 | -5,725.40 | -5.4% | -4.97 |
-| consistency (winning weeks), top 40 | 23646 | 12796 | $234,151 | -8,808.96 | -3.8% | -5.10 |
-| copy return, average, top 16 | 6868 | 3446 | $67,887 | -1,332.57 | -2.0% | -1.39 |
-| copy return, average, top 40 | 20877 | 10740 | $207,189 | -6,821.24 | -3.3% | -3.71 |
-| copy return, lower bound, top 16 | 7897 | 4110 | $77,946 | -4,472.35 | -5.7% | -4.64 |
-| copy return, lower bound, top 40 | 23760 | 12787 | $235,369 | -8,560.41 | -3.6% | -4.71 |
-| copy return, shrunk, top 16 | 6683 | 3131 | $66,355 | -3,905.92 | -5.9% | -3.65 |
-| copy return, shrunk, top 40 | 21244 | 10876 | $210,955 | -6,308.47 | -3.0% | -3.34 |
-| markout 2h, average, top 16 | 7520 | 4133 | $75,039 | -1,799.24 | -2.4% | -1.61 |
-| markout 2h, average, top 40 | 20009 | 10870 | $198,982 | -7,201.12 | -3.6% | -4.46 |
-| markout 2h, lower bound, top 16 | 8313 | 4619 | $82,514 | -4,551.98 | -5.5% | -4.55 |
-| markout 2h, lower bound, top 40 | 24773 | 13443 | $246,437 | -9,957.40 | -4.0% | -5.53 |
-| markout 30m, average, top 16 | 11164 | 6295 | $110,908 | -1,664.90 | -1.5% | -1.45 |
-| markout 30m, average, top 40 | 26400 | 14451 | $263,260 | -7,765.06 | -2.9% | -4.01 |
-| most active, top 16 | 21436 | 11274 | $213,607 | -9,319.15 | -4.4% | -5.47 |
-| most active, top 40 | 38973 | 20098 | $387,138 | -16,265.35 | -4.2% | -7.11 |
-| win rate vs the odds, top 16 | 5361 | 2845 | $53,081 | -1,064.32 | -2.0% | -1.14 |
-| win rate vs the odds, top 40 | 20751 | 10916 | $205,429 | -6,733.55 | -3.3% | -4.07 |
+| every qualified wallet | 128379 | 67015 | $1,276,663 | -50,965.62 | -4.0% | -12.10 |
+| consistency (winning weeks), top 16 | 10317 | 5759 | $101,887 | -2,854.74 | -2.8% | -2.26 |
+| consistency (winning weeks), top 40 | 22998 | 12529 | $227,336 | -7,706.56 | -3.4% | -4.45 |
+| copy return, average, top 16 | 6348 | 3114 | $63,175 | -618.65 | -1.0% | -0.56 |
+| copy return, average, top 40 | 22218 | 11632 | $220,355 | -5,629.48 | -2.5% | -2.95 |
+| copy return, lower bound, top 16 | 7214 | 3657 | $71,253 | -2,527.09 | -3.5% | -2.58 |
+| copy return, lower bound, top 40 | 23358 | 12305 | $230,606 | -7,921.52 | -3.4% | -4.29 |
+| copy return, shrunk, top 16 | 7075 | 3421 | $70,244 | -1,499.34 | -2.1% | -1.39 |
+| copy return, shrunk, top 40 | 21828 | 11449 | $216,304 | -5,351.66 | -2.5% | -2.81 |
+| markout 2h, average, top 16 | 7666 | 4190 | $76,541 | -2,407.46 | -3.1% | -2.11 |
+| markout 2h, average, top 40 | 21832 | 11762 | $217,444 | -8,202.66 | -3.8% | -4.64 |
+| markout 2h, lower bound, top 16 | 7965 | 4294 | $79,204 | -5,172.68 | -6.5% | -5.00 |
+| markout 2h, lower bound, top 40 | 23476 | 12691 | $232,721 | -9,450.02 | -4.1% | -5.25 |
+| markout 30m, average, top 16 | 9656 | 5500 | $96,304 | -1,945.00 | -2.0% | -1.64 |
+| markout 30m, average, top 40 | 24570 | 13562 | $245,128 | -6,449.67 | -2.6% | -3.53 |
+| most active, top 16 | 20626 | 10732 | $205,540 | -9,249.45 | -4.5% | -5.53 |
+| most active, top 40 | 38845 | 20231 | $385,080 | -16,604.30 | -4.3% | -7.32 |
+| win rate vs the odds, top 16 | 4890 | 2610 | $48,302 | +248.56 | +0.5% | +0.31 |
+| win rate vs the odds, top 40 | 20732 | 10897 | $205,661 | -7,555.06 | -3.7% | -4.41 |
 
 Used for the final list: **every qualified wallet (no ranking method beat it out of sample)** (40 wallets, copied in the last week).
 
@@ -288,115 +286,115 @@ Used for the final list: **every qualified wallet (no ranking method beat it out
 
 | wallet | copies | won | return | t | per $10 copy |
 |---|---|---|---|---|---|
-| chillhouse123 | 855 | 462 | +1.2% | 0.08 | +0.04 |
+| BunCaCham | 55 | 50 | +36.2% | 3.82 | +3.52 |
+| chillhouse123 | 849 | 459 | +0.3% | -0.1 | -0.05 |
 | Talvez10 | 111 | 90 | +45.2% | 6.28 | +4.48 |
-| BunCaCham | 51 | 46 | +26.7% | 3.19 | +2.62 |
 | 0x20D6436849F930584892730C7F | 124 | 70 | +30.4% | 1.84 | +3.03 |
-| xxyx0xx | 280 | 139 | +6.8% | 0.64 | +0.62 |
-| plonker2026 | 141 | 85 | +19.4% | 2.5 | +2.29 |
-| eokho | 801 | 447 | +4.0% | 0.86 | +0.37 |
-| yabanci | 69 | 45 | +10.8% | 1.25 | +1.35 |
-| am100 | 926 | 556 | +13.5% | 3.54 | +1.35 |
-| 1l2ihj34li12u34 | 95 | 56 | +16.9% | 1.89 | +1.98 |
-| juice-fruit | 48 | 32 | +9.0% | 0.79 | +1.00 |
-| moreplatesmoredates | 945 | 474 | +2.5% | 0.83 | +0.36 |
-| AmericaFirst1 | 467 | 284 | +5.0% | 1.18 | +0.51 |
-| 0xffAaEFb5f6762Cc70cb575Da87 | 694 | 328 | +1.9% | 0.31 | +0.18 |
-| SimpleTony | 1151 | 381 | +11.6% | 2.2 | +1.18 |
-| platarb | 567 | 227 | +0.2% | 0.02 | +0.01 |
-| pltrkr111 | 1103 | 627 | +13.7% | 3.47 | +1.32 |
-| monkeymashingkeyboard | 759 | 406 | +8.6% | 2.11 | +0.86 |
-| 0x8Cb25E16F2F0893C1bd4d70773 | 950 | 430 | +7.1% | 1.27 | +0.69 |
-| arahbo | 1525 | 644 | -2.0% | -0.49 | -0.21 |
-| eskk | 1003 | 255 | +0.7% | 0.14 | +0.10 |
-| Sisyphus- | 125 | 69 | -3.0% | -0.33 | -0.29 |
-| smithagent | 1124 | 622 | +4.0% | 0.85 | +0.40 |
-| Future-Tarot-Trader | 1976 | 1005 | -1.0% | -0.37 | -0.12 |
-| User7429 | 918 | 488 | -1.9% | -0.52 | -0.20 |
-| GamblingOdyssey | 386 | 190 | +6.0% | 1.15 | +0.71 |
-| igot50k | 1663 | 1017 | +0.3% | 0.06 | +0.02 |
-| cosmicsteaks | 1221 | 533 | -0.8% | -0.23 | -0.10 |
-| iseedota | 1377 | 609 | -1.3% | -0.34 | -0.13 |
-| torta.tech | 1117 | 689 | -0.0% | 0.01 | +0.00 |
-| UNEB3154s4f251 | 2196 | 1394 | +3.3% | 1.94 | +0.33 |
-| KaneAnalytics | 167 | 91 | +2.5% | 0.27 | +0.25 |
+| xxyx0xx | 285 | 141 | +6.1% | 0.58 | +0.56 |
+| 1l2ihj34li12u34 | 102 | 64 | +24.6% | 2.73 | +2.73 |
+| eokho | 798 | 444 | +3.8% | 0.81 | +0.35 |
+| am100 | 916 | 549 | +13.9% | 3.6 | +1.38 |
+| juice-fruit | 47 | 32 | +11.5% | 0.96 | +1.24 |
+| AmericaFirst1 | 457 | 279 | +6.6% | 1.52 | +0.68 |
+| 0x6918EA182D963b1Fb7888860b8 | 688 | 404 | +11.1% | 2.41 | +0.99 |
+| yabanci | 73 | 46 | +7.4% | 0.95 | +1.01 |
+| pltrkr111 | 1089 | 620 | +14.0% | 3.52 | +1.35 |
+| moreplatesmoredates | 930 | 466 | +2.8% | 0.87 | +0.38 |
+| platarb | 515 | 208 | +0.0% | -0.01 | -0.01 |
+| SimpleTony | 1126 | 374 | +12.4% | 2.31 | +1.27 |
+| KaneAnalytics | 172 | 93 | +7.2% | 0.63 | +0.70 |
+| Jsram | 100 | 61 | +5.1% | 0.73 | +0.64 |
+| 0x8Cb25E16F2F0893C1bd4d70773 | 784 | 348 | +5.3% | 0.84 | +0.51 |
+| monkeymashingkeyboard | 785 | 414 | +6.9% | 1.69 | +0.68 |
+| GamblingOdyssey | 355 | 182 | +8.5% | 1.54 | +0.98 |
+| Sisyphus- | 120 | 66 | -4.0% | -0.43 | -0.38 |
+| arahbo | 1518 | 637 | -2.6% | -0.64 | -0.27 |
+| cosmicsteaks | 1186 | 510 | -1.1% | -0.29 | -0.13 |
+| smithagent | 1061 | 579 | +3.6% | 0.73 | +0.36 |
+| Future-Tarot-Trader | 1946 | 992 | -1.5% | -0.54 | -0.18 |
+| 636763 | 1461 | 459 | +1.7% | 0.47 | +0.24 |
+| darkumbreon88 | 1762 | 1205 | +3.7% | 1.63 | +0.36 |
+| igot50k | 1666 | 1024 | -0.6% | -0.24 | -0.06 |
+| torta.tech | 1010 | 617 | +0.5% | 0.17 | +0.05 |
+| iseedota | 1290 | 572 | -1.8% | -0.44 | -0.17 |
 | n1ck10s | 1132 | 600 | +2.5% | 0.68 | +0.24 |
-| 636763 | 1466 | 459 | +1.4% | 0.4 | +0.21 |
-| theowalcott | 108 | 58 | +0.8% | 0.25 | +0.23 |
-| walnutz | 637 | 323 | -2.9% | -0.69 | -0.30 |
-| assasin5002 | 623 | 316 | +2.1% | 0.37 | +0.19 |
-| jiafan | 978 | 579 | +0.5% | 0.09 | +0.03 |
-| 0x1E3bB7DEf89B002D45FD86D37F | 1341 | 797 | +2.0% | 0.52 | +0.18 |
-| Jsram | 95 | 56 | +0.0% | 0.21 | +0.19 |
+| 0x1E3bB7DEf89B002D45FD86D37F | 1360 | 807 | +2.6% | 0.65 | +0.23 |
+| jiafan | 977 | 582 | +1.1% | 0.24 | +0.08 |
+| UNEB3154s4f251 | 2130 | 1346 | +2.7% | 1.59 | +0.27 |
+| assasin5002 | 598 | 297 | +2.1% | 0.35 | +0.19 |
+| EdZachary | 104 | 42 | +2.1% | 0.14 | +0.19 |
+| carelia | 1830 | 849 | -4.4% | -1.57 | -0.44 |
+| walnutz | 626 | 319 | -2.4% | -0.56 | -0.25 |
+| 0xffAaEFb5f6762Cc70cb575Da87 | 694 | 328 | +1.9% | 0.31 | +0.18 |
 
 ## Esports specialists (copies on esports markets only)
 
-3002 wallets found by tag (esports, counter-strike-2, league-of-legends, dota-2, valorant); 168 with 10+ closed esports copies.
+3006 wallets found by tag (esports, counter-strike-2, league-of-legends, dota-2, valorant); 167 with 10+ closed esports copies.
 
 | wallet | source | copies | won | return | t | first part | test part | active last week |
 |---|---|---|---|---|---|---|---|---|
-| xxyx0xx | tag | 76 | 43 | +48.6% | 2.16 | +52.3% (58) | +36.7% (18) | no |
-| pltrkr111 | tag | 277 | 160 | +32.8% | 3.24 | +40.9% (226) | -3.7% (51) | yes |
-| 0x5fD2D9C60781D711721145Ff2b | tag | 31 | 17 | +91.9% | 1.31 | +150.0% (19) | -0.5% (12) | yes |
-| 0x0x23kjookhaiuohduoayh8c9 | tag | 301 | 182 | +24.2% | 2.62 | +19.1% (243) | +46.1% (58) | no |
-| am100 | tag | 926 | 556 | +13.5% | 3.54 | +13.0% (880) | +22.7% (46) | yes |
-| SimpleTony | tag | 1129 | 369 | +10.8% | 2.04 | +13.4% (797) | +4.6% (332) | yes |
-| 0xa3B5dA76FfBBE3325BB1b40A30 | tag | 1314 | 691 | +7.5% | 2.32 | +10.9% (1152) | -16.2% (162) | yes |
-| -5rud | tag | 528 | 363 | +8.4% | 2.06 | +7.2% (435) | +14.2% (93) | yes |
+| xxyx0xx | tag | 76 | 43 | +48.6% | 2.16 | +42.4% (66) | +89.7% (10) | no |
+| pltrkr111 | tag | 277 | 160 | +32.8% | 3.24 | +32.2% (242) | +37.1% (35) | yes |
+| 0x0x23kjookhaiuohduoayh8c9 | tag | 298 | 182 | +25.5% | 2.74 | +20.6% (240) | +46.1% (58) | no |
+| am100 | tag | 916 | 549 | +13.9% | 3.6 | +13.0% (876) | +32.8% (40) | yes |
+| SimpleTony | tag | 1112 | 366 | +11.8% | 2.19 | +14.3% (791) | +5.6% (321) | yes |
+| 0x6918EA182D963b1Fb7888860b8 | tag | 688 | 404 | +11.1% | 2.41 | +9.2% (639) | +35.8% (49) | yes |
+| 0xa3B5dA76FfBBE3325BB1b40A30 | tag | 1306 | 685 | +7.3% | 2.26 | +10.5% (1151) | -16.3% (155) | yes |
+| -5rud | tag | 528 | 363 | +8.4% | 2.06 | +7.1% (437) | +14.8% (91) | yes |
 | MIracle33 | tag | 449 | 229 | +9.6% | 1.68 | +9.5% (362) | +9.9% (87) | yes |
-| 0x567212c82AAa6fe589bE5A2f4C | tag | 612 | 321 | +7.8% | 1.62 | +13.7% (425) | -6.0% (187) | yes |
-| Nooserac | tag | 151 | 83 | +13.8% | 1.31 | +5.8% (100) | +29.8% (51) | yes |
+| Nooserac | tag | 150 | 83 | +14.6% | 1.38 | +5.9% (100) | +32.4% (50) | yes |
+| 0x4dDC7068ef679Dc7c34e2c2241 | tag | 78 | 46 | +15.9% | 1.22 | +44.6% (9) | +12.2% (69) | yes |
 | juice-fruit | current | 29 | 20 | +19.4% | 1.16 | +0.0% (0) | +19.4% (29) | yes |
 | BunCaCham | tag | 21 | 20 | +7.9% | 1.41 | +4.9% (14) | +13.9% (7) | yes |
-| shaw | tag | 270 | 163 | +7.1% | 1.11 | +10.3% (209) | -4.6% (61) | yes |
-| ZEST011 | tag | 656 | 490 | +2.9% | 1.1 | +2.4% (558) | +5.7% (98) | yes |
-| AmericaFirst1 | current | 256 | 165 | +5.1% | 1.03 | +7.1% (217) | -6.2% (39) | no |
-| littlebay | tag | 97 | 72 | +6.7% | 0.96 | +9.3% (51) | +3.9% (46) | yes |
-| moreplatesmoredates | tag | 945 | 474 | +2.5% | 0.83 | -1.0% (584) | +8.2% (361) | yes |
-| yakz | leaderboard | 191 | 92 | +12.8% | 0.9 | +31.2% (89) | -4.0% (102) | yes |
-| berlinskies | tag | 1044 | 606 | +2.1% | 0.63 | +3.1% (858) | -2.8% (186) | yes |
-| GC-C | tag | 747 | 523 | +1.2% | 0.5 | -4.9% (410) | +8.9% (337) | yes |
-| TAIWANNUMBERONE | tag | 1049 | 557 | +1.4% | 0.45 | +0.2% (957) | +13.7% (92) | yes |
-| 636763 | tag | 1444 | 452 | +2.0% | 0.53 | -0.3% (1068) | +8.7% (376) | yes |
-| superlxj | tag | 218 | 152 | +1.8% | 0.42 | -6.9% (113) | +11.7% (105) | no |
-| igot50k | tag | 997 | 499 | +1.2% | 0.26 | -0.4% (868) | +12.1% (129) | yes |
-| HalleyChen | tag | 632 | 387 | +1.6% | 0.35 | +2.2% (482) | -0.2% (150) | yes |
-| 0x85264d29Fa7279946D15105C17 | tag | 128 | 67 | +7.1% | 0.67 | +10.6% (101) | -5.8% (27) | yes |
-| dddd123s | tag | 579 | 348 | +0.0% | -0.01 | +5.2% (392) | -10.9% (187) | yes |
-| johnbaster | tag | 794 | 424 | +1.7% | 0.29 | +0.9% (740) | +12.8% (54) | yes |
-| Diabolical-Prize | tag | 224 | 118 | +2.1% | 0.47 | +5.8% (178) | -12.3% (46) | no |
+| 0x567212c82AAa6fe589bE5A2f4C | tag | 600 | 316 | +6.0% | 1.4 | +11.6% (410) | -6.0% (190) | yes |
+| shaw | tag | 258 | 159 | +8.1% | 1.25 | +10.8% (205) | -2.8% (53) | yes |
+| 0x5fD2D9C60781D711721145Ff2b | tag | 28 | 16 | +41.6% | 1.04 | +72.9% (16) | -0.5% (12) | yes |
+| ZEST011 | tag | 645 | 484 | +3.1% | 1.19 | +3.0% (554) | +3.8% (91) | yes |
+| AmericaFirst1 | current | 256 | 165 | +5.1% | 1.03 | +7.3% (220) | -8.2% (36) | no |
+| littlebay | tag | 97 | 72 | +6.7% | 0.96 | +9.3% (52) | +3.7% (45) | yes |
+| moreplatesmoredates | tag | 930 | 466 | +2.8% | 0.87 | -0.3% (584) | +8.2% (346) | yes |
+| yakz | leaderboard | 191 | 92 | +12.8% | 0.9 | +27.2% (111) | -7.4% (80) | yes |
+| berlinskies | tag | 1043 | 605 | +2.0% | 0.62 | +2.7% (875) | -1.5% (168) | yes |
+| GC-C | tag | 747 | 523 | +1.2% | 0.5 | -4.0% (454) | +9.6% (293) | yes |
+| 636763 | tag | 1438 | 452 | +2.4% | 0.59 | -1.7% (1079) | +14.8% (359) | yes |
+| TAIWANNUMBERONE | tag | 1026 | 543 | +0.5% | 0.2 | -0.5% (938) | +11.1% (88) | yes |
+| superlxj | tag | 218 | 152 | +1.8% | 0.42 | -2.1% (123) | +7.1% (95) | no |
+| HalleyChen | tag | 613 | 375 | +1.8% | 0.38 | +2.5% (472) | -0.4% (141) | yes |
+| johnbaster | tag | 786 | 420 | +1.9% | 0.32 | +1.1% (732) | +12.8% (54) | yes |
+| dddd123s | tag | 579 | 348 | +0.0% | -0.01 | +4.6% (398) | -10.0% (181) | yes |
+| nightcity2077 | tag | 413 | 200 | +4.1% | 0.53 | +5.6% (399) | -41.1% (14) | yes |
 
 ## Currently copied wallets
 
 | wallet | copies | won | return | t | in final picks |
 |---|---|---|---|---|---|
 | 0x006cc834Cc092684F1B56626E2 | — | — | — | — | no copyable trades |
-| primm | 307 | 125 | -10.8% | -1.6 | no |
-| Kch-Temp | 127 | 61 | -6.8% | -0.66 | no |
-| EdZachary | 88 | 33 | -7.5% | -0.67 | no |
-| KaneAnalytics | 167 | 91 | +2.5% | 0.27 | yes |
-| Jsram | 95 | 56 | +0.0% | 0.21 | yes |
-| Kkunn | 792 | 338 | +1.4% | 0.53 | no |
-| Sisyphus- | 125 | 69 | -3.0% | -0.33 | yes |
-| PEYZ-BIGGEST-FAN | 395 | 201 | +3.8% | 0.6 | no |
-| theowalcott | 108 | 58 | +0.8% | 0.25 | yes |
-| HVAB | 340 | 205 | -3.3% | -0.6 | no |
+| primm | 311 | 129 | -9.8% | -1.47 | no |
+| Kch-Temp | 127 | 61 | -6.8% | -0.67 | no |
+| EdZachary | 104 | 42 | +2.1% | 0.14 | yes |
+| KaneAnalytics | 172 | 93 | +7.2% | 0.63 | yes |
+| Jsram | 100 | 61 | +5.1% | 0.73 | yes |
+| Kkunn | 804 | 341 | +0.9% | 0.43 | no |
+| Sisyphus- | 120 | 66 | -4.0% | -0.43 | yes |
+| PEYZ-BIGGEST-FAN | 400 | 199 | +1.1% | 0.2 | no |
+| theowalcott | 13 | 11 | +63.3% | 2.93 | no |
+| HVAB | 342 | 207 | -1.8% | -0.33 | no |
 | BreakTheBank | — | — | — | — | no copyable trades |
 | Diabolical-Prize | 282 | 147 | +6.5% | 1.18 | no |
 | Talvez10 | 111 | 90 | +45.2% | 6.28 | yes |
-| BunCaCham | 51 | 46 | +26.7% | 3.19 | yes |
-| 0010001000001100 | 164 | 79 | -0.1% | -0.29 | no |
+| BunCaCham | 55 | 50 | +36.2% | 3.82 | yes |
+| 0010001000001100 | 173 | 85 | -0.5% | -0.31 | no |
 | totoro3miyazaki | 49 | 31 | +8.7% | 0.68 | no |
-| 1l2ihj34li12u34 | 95 | 56 | +16.9% | 1.89 | yes |
-| yabanci | 69 | 45 | +10.8% | 1.25 | yes |
+| 1l2ihj34li12u34 | 102 | 64 | +24.6% | 2.73 | yes |
+| yabanci | 73 | 46 | +7.4% | 0.95 | yes |
 | 0x20D6436849F930584892730C7F | 124 | 70 | +30.4% | 1.84 | yes |
-| juice-fruit | 48 | 32 | +9.0% | 0.79 | yes |
-| 0x16bb9951a36fce71e2ef57890b | 58 | 23 | -2.5% | -0.2 | no |
-| GamblingOdyssey | 386 | 190 | +6.0% | 1.15 | yes |
-| plonker2026 | 141 | 85 | +19.4% | 2.5 | yes |
-| xxyx0xx | 280 | 139 | +6.8% | 0.64 | yes |
-| monkeymashingkeyboard | 759 | 406 | +8.6% | 2.11 | yes |
-| Tiger105 | 43 | 28 | +19.1% | 1.34 | no |
+| juice-fruit | 47 | 32 | +11.5% | 0.96 | yes |
+| 0x16bb9951a36fce71e2ef57890b | 61 | 23 | -7.3% | -0.5 | no |
+| GamblingOdyssey | 355 | 182 | +8.5% | 1.54 | yes |
+| plonker2026 | 109 | 65 | +9.3% | 1.47 | no |
+| xxyx0xx | 285 | 141 | +6.1% | 0.58 | yes |
+| monkeymashingkeyboard | 785 | 414 | +6.9% | 1.69 | yes |
+| Tiger105 | 38 | 25 | +20.5% | 1.37 | no |
 | THEHIGHLIFE | — | — | — | — | no copyable trades |
-| AmericaFirst1 | 467 | 284 | +5.0% | 1.18 | yes |
-| UNEB3154s4f251 | 2196 | 1394 | +3.3% | 1.94 | yes |
+| AmericaFirst1 | 457 | 279 | +6.6% | 1.52 | yes |
+| UNEB3154s4f251 | 2130 | 1346 | +2.7% | 1.59 | yes |
