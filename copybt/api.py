@@ -41,6 +41,46 @@ def _prune(data, keep: tuple[str, ...]):
     return data
 
 
+# Polymarket retired Data API v1 on 2026-11-02 (every v1 path answers HTTP 410).
+# v2 lives under /v2, wraps rows as {"data": ..., "pagination": {...}}, names
+# fields in snake_case, pages by cursor only (an `offset` is a 400), filters a
+# market with `condition` instead of `market`, and sorts the leaderboard with
+# `sort_by` (PNL or VOLUME). The client translates v1-style calls, so callers
+# keep v1 paths, params and field names.
+_V2_PATHS = {"/trades": "/v2/trades", "/activity": "/v2/activity",
+             "/positions": "/v2/positions", "/v1/leaderboard": "/v2/leaderboard"}
+_V1_NAMES = {"token_id": "asset", "user_id": "proxyWallet", "volume": "vol",
+             "current_size": "size", "current_price": "curPrice"}
+
+
+def _v1_key(k: str) -> str:
+    if k in _V1_NAMES:
+        return _V1_NAMES[k]
+    head, *rest = k.split("_")
+    return head + "".join(p[:1].upper() + p[1:] for p in rest)
+
+
+def _v1_row(row):
+    if not isinstance(row, dict):
+        return row
+    out = {_v1_key(k): v for k, v in row.items()}
+    if "rank" not in out and ("rankPnl" in out or "rankVolume" in out):
+        out["rank"] = out.get("rankPnl") or out.get("rankVolume")
+    return out
+
+
+def _v2_params(path: str, params: dict) -> tuple[dict, int]:
+    """v1-style params -> (v2 params without paging, v1 offset)."""
+    p = dict(params)
+    offset = int(p.pop("offset", 0) or 0)
+    if "market" in p:
+        p["condition"] = p.pop("market")
+    if "orderBy" in p:
+        order = str(p.pop("orderBy")).upper()
+        p["sort_by"] = "VOLUME" if order in ("VOL", "VOLUME") else order
+    return p, offset
+
+
 class Client:
     """GET-only JSON client with a disk cache, retries and a global rate limit."""
 
@@ -55,6 +95,9 @@ class Client:
         self._lock = threading.Lock()
         self._next_slot = 0.0
         self.requests_made = 0
+        # v2 cursors by (path, params) -> {row offset: next cursor or None at the end}
+        self._cursors: dict[tuple, dict[int, str | None]] = {}
+        self._cursor_lock = threading.Lock()
 
     def _cache_path(self, url: str) -> str | None:
         if not self.cache_dir:
@@ -105,6 +148,52 @@ class Client:
                 raise HTTPError(data["__http_error__"], url, "(cached)")
             return data
 
+        if base == DATA_API and path in _V2_PATHS and not isinstance(params, list):
+            data = self._get_v2(path, params or {})
+        else:
+            data = self._fetch(url, cpath)
+        if keep:
+            data = _prune(data, keep)
+        if cpath:
+            self._write(cpath, data)
+        return data
+
+    def _get_v2(self, path: str, params: dict) -> list:
+        """One v1-style page from Data API v2: rows with v1 field names. A v1
+        offset is reached by following v2 cursors, remembered per query so
+        sequential pages cost one request each."""
+        v2path = DATA_API + _V2_PATHS[path]
+        p, offset = _v2_params(path, params)
+        key = (v2path, tuple(sorted((k, str(v)) for k, v in p.items())))
+        with self._cursor_lock:
+            known = self._cursors.get(key, {0: ""})
+            at = max(o for o in known if o <= offset) if offset else 0
+            cursor = known.get(at, "")
+        while True:
+            if cursor is None:  # past the last page
+                return []
+            q = {**p, "cursor": cursor} if cursor else p
+            body = self._fetch(f"{v2path}?{urllib.parse.urlencode(q, doseq=True)}", None)
+            data = body.get("data") if isinstance(body, dict) else body
+            rows = [data] if isinstance(data, dict) else list(data or [])
+            pag = (body.get("pagination") if isinstance(body, dict) else None) or {}
+            nxt = pag.get("next_cursor") if pag.get("has_more") and rows else None
+            end = at + len(rows)
+            with self._cursor_lock:
+                if len(self._cursors) > 2000 and key not in self._cursors:
+                    self._cursors.pop(next(iter(self._cursors)))
+                self._cursors.setdefault(key, {0: ""})[end] = nxt
+            if at >= offset:  # the page asked for
+                break
+            if end > offset:  # the offset falls inside this page
+                rows = rows[offset - at:]
+                break
+            if not rows:
+                return []
+            at, cursor = end, nxt
+        return [_v1_row(r) for r in rows]
+
+    def _fetch(self, url: str, cpath: str | None):
         last_err: Exception | None = None
         for attempt in range(self.retries):
             self._throttle()
@@ -129,11 +218,6 @@ class Client:
             time.sleep(min(30.0, (2 ** attempt) + random.random()))
         else:
             raise last_err  # type: ignore[misc]
-
-        if keep:
-            data = _prune(data, keep)
-        if cpath:
-            self._write(cpath, data)
         return data
 
     @staticmethod

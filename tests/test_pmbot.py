@@ -28,6 +28,71 @@ def quote(bid, ask, last=None, traded=0.0, ts=None, qty=100):
     return Quote(bid, ask, qty, qty, last, traded, ts if ts is not None else time.time() + 1)
 
 
+class DataApiV2Test(unittest.TestCase):
+    """Data API v1 is retired (HTTP 410): the client maps v1-style calls onto v2."""
+
+    def client(self, pages):
+        from copybt.api import Client
+        c, calls = Client(cache_dir=None, max_rps=0), []
+
+        def fetch(url, cpath):
+            calls.append(url)
+            return pages(url)
+        c._fetch = fetch
+        return c, calls
+
+    def test_trades_rows_get_v1_names_and_params(self):
+        from copybt.api import DATA_API
+        row = {"proxy_wallet": "0xab", "condition_id": "0xc", "token_id": "7",
+               "transaction_hash": "0xt", "outcome_index": 1, "side": "BUY",
+               "price": 0.4, "size": 10.0, "timestamp": 5, "slug": "s"}
+        c, calls = self.client(lambda url: {"data": [row], "pagination": {"has_more": False}})
+        got = c.get(DATA_API, "/trades", {"market": "0xc", "limit": 50,
+                                          "takerOnly": "false"}, use_cache=False)
+        self.assertIn("/v2/trades?", calls[0])
+        self.assertIn("condition=0xc", calls[0])
+        self.assertNotIn("market=", calls[0])
+        self.assertEqual((got[0]["proxyWallet"], got[0]["conditionId"], got[0]["asset"],
+                          got[0]["transactionHash"], got[0]["outcomeIndex"]),
+                         ("0xab", "0xc", "7", "0xt", 1))
+
+    def test_offsets_follow_cursors(self):
+        from copybt.api import DATA_API
+        rows = [{"timestamp": 100 - i} for i in range(7)]
+
+        def pages(url):
+            start = int(url.split("cursor=c")[1].split("&")[0]) if "cursor=" in url else 0
+            self.assertNotIn("offset=", url)
+            chunk = rows[start:start + 3]
+            more = start + 3 < len(rows)
+            return {"data": chunk, "pagination": {"has_more": more,
+                                                  "next_cursor": f"c{start + 3}" if more else None}}
+        c, calls = self.client(pages)
+        q = {"user": "0xab", "type": "TRADE", "limit": 3}
+        got = [c.get(DATA_API, "/activity", {**q, "offset": o}, use_cache=False)
+               for o in (0, 3, 6, 9)]
+        self.assertEqual([len(g) for g in got], [3, 3, 1, 0])
+        self.assertEqual(len(calls), 3)  # sequential pages cost one request each
+        c2, calls2 = self.client(pages)
+        jump = c2.get(DATA_API, "/activity", {**q, "offset": 6}, use_cache=False)
+        self.assertEqual(jump, rows[6:7])
+        self.assertEqual(len(calls2), 3)
+
+    def test_leaderboard_sort_and_single_user(self):
+        from copybt.api import DATA_API
+        one = {"user_id": "0xab", "pnl": -5.0, "volume": 100.0, "rank_pnl": 9}
+        c, calls = self.client(lambda url: {"data": one} if "user=" in url else {"data": None})
+        got = c.get(DATA_API, "/v1/leaderboard", {"category": "SPORTS", "timePeriod": "WEEK",
+                                                  "orderBy": "VOL", "user": "0xab", "limit": 1},
+                    use_cache=False)
+        self.assertIn("/v2/leaderboard?", calls[0])
+        self.assertIn("sort_by=VOLUME", calls[0])
+        self.assertEqual((got[0]["proxyWallet"], got[0]["pnl"], got[0]["vol"], got[0]["rank"]),
+                         ("0xab", -5.0, 100.0, 9))
+        self.assertEqual(c.get(DATA_API, "/v1/leaderboard", {"category": "SPORTS"},
+                               use_cache=False), [])
+
+
 class BackgroundRefreshTest(unittest.TestCase):
     def test_building_maps_leaves_the_engine_alone_until_applied(self):
         d = tempfile.mkdtemp()
