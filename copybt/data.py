@@ -385,7 +385,10 @@ class PriceHistory:
             rows = _as_list(self.client.get(CLOB_API, "/prices-history", {
                 "market": token, "startTs": hour * 3600,
                 "endTs": hour * 3600 + 7200, "fidelity": 1}))
-        except (HTTPError, ValueError, TypeError) as e:
+        except (HTTPError, ValueError, TypeError, OSError) as e:
+            # One window that still times out after the client's retries is a
+            # missing price (the copy falls back), not a reason to lose a
+            # multi-hour search: on 2026-11-03 a single read timeout ended one.
             log.debug("price history %s: %s", token, e)
             return []
         out = []

@@ -79,6 +79,19 @@ class DataApiV2Test(unittest.TestCase):
         self.assertEqual(jump, rows[6:7])
         self.assertEqual(len(calls2), 3)
 
+    def test_price_history_survives_a_timeout(self):
+        from copybt.data import PriceHistory
+
+        class Flaky:
+            def get(self, base, path, params=None, **kw):
+                if params["market"] == "bad":
+                    raise TimeoutError("The read operation timed out")
+                return {"history": [{"t": params["startTs"] + 60, "p": 0.42}]}
+        ph = PriceHistory(Flaky())
+        ph.prefetch({("bad", 7200), ("good", 7200)})
+        self.assertIsNone(ph.price_at("bad", 7200))
+        self.assertEqual(ph.price_at("good", 7200), 0.42)
+
     def test_leaderboard_sort_and_single_user(self):
         from copybt.api import DATA_API
         one = {"user_id": "0xab", "pnl": -5.0, "volume": 100.0, "rank_pnl": 9}
