@@ -1,85 +1,85 @@
 profile 'Tiger105': ah-cop-tiger105 0x8d6064a7f8b67988a4073ac1b051356fc8cebd76
 profile 'Tiger105': tiger105050 0x185031bb4a1763496d706e0c07339a690e00b57f
 
-US markets in ['atp', 'itf', 'wta'] (not futures): 2454
-  US aec-atp-alemic-jirleh-2026-10-31 | moneyline | Who will win in the upcoming atp event Alex Michelsen vs Jiri Lehecka  | long=Alex Michelsen short=Jiri Lehecka start=1793714400.0
-  US aec-atp-branak-matber-2026-10-31 | moneyline | Who will win in the upcoming atp event Brandon Nakashima vs Matteo Ber | long=Brandon Nakashima short=Matteo Berrettini start=1793709000.0
-  US aec-atp-tompau-holrun-2026-10-31 | moneyline | Who will win in the upcoming atp event Tommy Paul vs Holger Rune sched | long=Tommy Paul short=Holger Rune start=1793711100.0
-  US aec-atp-andrub-tometc-2026-10-31 | moneyline | Who will win in the upcoming atp event Andrey Rublev vs Tomas Martin E | long=Andrey Rublev short=Tomas Etcheverry start=1793700000.0
-  US aec-atp-novdjo-valvac-2026-10-31 | moneyline | Who will win in the upcoming atp event Novak Djokovic vs Valentin Vach | long=Novak Djokovic short=Valentin Vacherot start=1793711400.0
-  US asc-atp-alemic-jirleh-2026-10-31-gs-neg-1pt5 | spreads | Will the Alex Michelsen cover -1.5 vs the Jiri Lehecka in Alex Michels | long=-1.50 short=+1.50 start=1793714400.0
-  US asc-atp-alemic-jirleh-2026-10-31-gs-pos-1pt5 | spreads | Will the Alex Michelsen cover 1.5 vs the Jiri Lehecka in Alex Michelse | long=+1.50 short=-1.50 start=1793714400.0
-  US asc-atp-alemic-jirleh-2026-10-31-gs-neg-4pt5 | spreads | Will the Alex Michelsen cover -4.5 vs the Jiri Lehecka in Alex Michels | long=-4.50 short=+4.50 start=1793714400.0
-  US asc-atp-alemic-jirleh-2026-10-31-gs-pos-4pt5 | spreads | Will the Alex Michelsen cover 4.5 vs the Jiri Lehecka in Alex Michelse | long=+4.50 short=-4.50 start=1793714400.0
-  US asc-atp-alemic-jirleh-2026-10-31-gs-neg-7pt5 | spreads | Will the Alex Michelsen cover -7.5 vs the Jiri Lehecka in Alex Michels | long=-7.50 short=+7.50 start=1793714400.0
-  US asc-atp-alemic-jirleh-2026-10-31-gs-pos-7pt5 | spreads | Will the Alex Michelsen cover 7.5 vs the Jiri Lehecka in Alex Michelse | long=+7.50 short=-7.50 start=1793714400.0
-  US asc-atp-alemic-jirleh-2026-10-31-ss-neg-1pt5 | spreads | Will the Alex Michelsen cover -1.5 vs the Jiri Lehecka in Alex Michels | long=-1.50 short=+1.50 start=1793714400.0
-  US asc-atp-alemic-jirleh-2026-10-31-ss-pos-1pt5 | spreads | Will the Alex Michelsen cover 1.5 vs the Jiri Lehecka in Alex Michelse | long=+1.50 short=-1.50 start=1793714400.0
-  US tsc-atp-alemic-jirleh-2026-10-31-tg-17pt5 | totals | Will the total in Alex Michelsen vs. Jiri Lehecka be more than 17.5? | long=Over short=Under start=1793714400.0
-  US tsc-atp-alemic-jirleh-2026-10-31-tg-22pt5 | totals | Will the total in Alex Michelsen vs. Jiri Lehecka be more than 22.5? | long=Over short=Under start=1793714400.0
-  US tsc-atp-alemic-jirleh-2026-10-31-tg-27pt5 | totals | Will the total in Alex Michelsen vs. Jiri Lehecka be more than 27.5? | long=Over short=Under start=1793714400.0
-  US tsc-atp-alemic-jirleh-2026-10-31-st-2pt5 | totals | Will the total in Alex Michelsen vs. Jiri Lehecka be more than 2.5? | long=Over short=Under start=1793714400.0
-  US astatc-atp-alemic-jirleh-2026-10-31-es-2-0 | props | Michelsen wins 2-0 | long=Yes short=No start=1793714400.0
-  US astatc-atp-alemic-jirleh-2026-10-31-es-2-1 | props | Michelsen wins 2-1 | long=Yes short=No start=1793714400.0
-  US astatc-atp-alemic-jirleh-2026-10-31-es-1-2 | props | Lehecka wins 2-1 | long=Yes short=No start=1793714400.0
-  US astatc-atp-alemic-jirleh-2026-10-31-es-0-2 | props | Lehecka wins 2-0 | long=Yes short=No start=1793714400.0
-  US astatc-atp-alemic-jirleh-2026-10-31-sw1 | props | Will Alex Michelsen win set 1 against Jiri Lehecka? | long=Yes short=No start=1793714400.0
-  US astatc-atp-alemic-jirleh-2026-10-31-sw2 | props | Will Alex Michelsen win set 2 against Jiri Lehecka? | long=Yes short=No start=1793714400.0
-  US asc-atp-branak-matber-2026-10-31-gs-neg-1pt5 | spreads | Will the Brandon Nakashima cover -1.5 vs the Matteo Berrettini in Bran | long=-1.50 short=+1.50 start=1793709000.0
-  US asc-atp-branak-matber-2026-10-31-gs-pos-1pt5 | spreads | Will the Brandon Nakashima cover 1.5 vs the Matteo Berrettini in Brand | long=+1.50 short=-1.50 start=1793709000.0
-US: 72172 open markets, 51028 game/spread/total/prop slugs, 312 verified pairs
+US markets in ['atp', 'itf', 'wta'] (not futures): 2133
+  US aec-atp-alemic-jirleh-2026-10-31 | moneyline | Who will win in the upcoming atp event Alex Michelsen vs Jiri Lehecka  | long=Alex Michelsen short=Jiri Lehecka start=1793720700.0
+  US asc-atp-alemic-jirleh-2026-10-31-gs-neg-1pt5 | spreads | Will the Alex Michelsen cover -1.5 vs the Jiri Lehecka in Alex Michels | long=-1.50 short=+1.50 start=1793720700.0
+  US asc-atp-alemic-jirleh-2026-10-31-gs-pos-1pt5 | spreads | Will the Alex Michelsen cover 1.5 vs the Jiri Lehecka in Alex Michelse | long=+1.50 short=-1.50 start=1793720700.0
+  US asc-atp-alemic-jirleh-2026-10-31-gs-neg-4pt5 | spreads | Will the Alex Michelsen cover -4.5 vs the Jiri Lehecka in Alex Michels | long=-4.50 short=+4.50 start=1793720700.0
+  US asc-atp-alemic-jirleh-2026-10-31-gs-pos-4pt5 | spreads | Will the Alex Michelsen cover 4.5 vs the Jiri Lehecka in Alex Michelse | long=+4.50 short=-4.50 start=1793720700.0
+  US asc-atp-alemic-jirleh-2026-10-31-gs-neg-7pt5 | spreads | Will the Alex Michelsen cover -7.5 vs the Jiri Lehecka in Alex Michels | long=-7.50 short=+7.50 start=1793720700.0
+  US asc-atp-alemic-jirleh-2026-10-31-gs-pos-7pt5 | spreads | Will the Alex Michelsen cover 7.5 vs the Jiri Lehecka in Alex Michelse | long=+7.50 short=-7.50 start=1793720700.0
+  US asc-atp-alemic-jirleh-2026-10-31-ss-neg-1pt5 | spreads | Will the Alex Michelsen cover -1.5 vs the Jiri Lehecka in Alex Michels | long=-1.50 short=+1.50 start=1793720700.0
+  US asc-atp-alemic-jirleh-2026-10-31-ss-pos-1pt5 | spreads | Will the Alex Michelsen cover 1.5 vs the Jiri Lehecka in Alex Michelse | long=+1.50 short=-1.50 start=1793720700.0
+  US tsc-atp-alemic-jirleh-2026-10-31-tg-17pt5 | totals | Will the total in Alex Michelsen vs. Jiri Lehecka be more than 17.5? | long=Over short=Under start=1793720700.0
+  US tsc-atp-alemic-jirleh-2026-10-31-tg-22pt5 | totals | Will the total in Alex Michelsen vs. Jiri Lehecka be more than 22.5? | long=Over short=Under start=1793720700.0
+  US tsc-atp-alemic-jirleh-2026-10-31-tg-27pt5 | totals | Will the total in Alex Michelsen vs. Jiri Lehecka be more than 27.5? | long=Over short=Under start=1793720700.0
+  US tsc-atp-alemic-jirleh-2026-10-31-st-2pt5 | totals | Will the total in Alex Michelsen vs. Jiri Lehecka be more than 2.5? | long=Over short=Under start=1793720700.0
+  US astatc-atp-alemic-jirleh-2026-10-31-es-2-0 | props | Michelsen wins 2-0 | long=Yes short=No start=1793720700.0
+  US astatc-atp-alemic-jirleh-2026-10-31-es-2-1 | props | Michelsen wins 2-1 | long=Yes short=No start=1793720700.0
+  US astatc-atp-alemic-jirleh-2026-10-31-es-1-2 | props | Lehecka wins 2-1 | long=Yes short=No start=1793720700.0
+  US astatc-atp-alemic-jirleh-2026-10-31-es-0-2 | props | Lehecka wins 2-0 | long=Yes short=No start=1793720700.0
+  US astatc-atp-alemic-jirleh-2026-10-31-sw1 | props | Will Alex Michelsen win set 1 against Jiri Lehecka? | long=Yes short=No start=1793720700.0
+  US astatc-atp-alemic-jirleh-2026-10-31-sw2 | props | Will Alex Michelsen win set 2 against Jiri Lehecka? | long=Yes short=No start=1793720700.0
+  US aec-wta-antruz-alicha-2026-11-01 | moneyline | Who will win in the upcoming wta event Antonia Ruzic vs Alina Charaeva | long=Antonia Ruzic short=Alina Charaeva start=1793772000.0
+  US aec-wta-leyfer-sofken-2026-11-01 | moneyline | Who will win in the upcoming wta event Leylah Fernandez vs Sofia Kenin | long=Leylah Fernandez short=Sofia Kenin start=1793772000.0
+  US aec-atp-harmay-petbir-2026-11-01 | moneyline | Who will win in the upcoming atp event Harold Mayot vs Petr Bar Biryuk | long=Harold Mayot short=Petr Bar Biryukov start=1793757600.0
+  US aec-atp-yardem-alemul-2026-11-01 | moneyline | Who will win in the upcoming atp event Yaroslav Demin vs Alexandre Mul | long=Yaroslav Demin short=Alexandre Muller start=1793761800.0
+  US aec-atp-chabro-liabro-2026-11-01 | moneyline | Who will win in the upcoming atp event Charles Broom vs Liam Broady sc | long=Charles Broom short=Liam Broady start=1793757600.0
+  US aec-atp-carove-chutse-2026-11-01 | moneyline | Who will win in the upcoming atp event Carl Emil Overbeck vs Chun Hsin | long=Carl Overbeck short=Chun-Hsin Tseng start=1793761800.0
+US: 72257 open markets, 51111 game/spread/total/prop slugs, 299 verified pairs
 
 age                    long side              short side  listed, outcome names     not on Polymarket US  copyable
-<3h                           64                      12                       0                      76       50%
-3-12h                         17                      16                       0                     989        3%
-12-48h                         9                       5                       0                    2245        1%
-older                          2                       0                       0                    2565        0%
+<3h                           18                     104                       0                     409       23%
+3-12h                          1                       7                       0                     624        1%
+12-48h                         8                      12                       0                    2328        1%
+older                          2                       0                       0                    2487        0%
 
 by league (all ages): copyable / total
-  nba              0 / 836
-  futures          3 / 822
-  nfl              0 / 656
-  cs2             12 / 567
-  epl              0 / 346
-  atp             84 / 256
-  dota2            0 / 246
-  sea              0 / 216
-  acle             0 / 201
-  wta              2 / 185
-  cfb              0 / 164
+  futures          3 / 935
+  nba              0 / 756
+  nfl              0 / 536
+  cs2              0 / 423
+  acle             0 / 401
+  epl              0 / 312
+  atp              3 / 262
+  dota2            0 / 247
+  ucl            125 / 216
+  sea              0 / 193
+  wta              0 / 169
+  cfb              0 / 162
   mls              0 / 142
   fifwc            0 / 140
   val              0 / 137
+  nhl             21 / 94
   ere              0 / 94
-  lal              0 / 92
-  lol              0 / 90
-  nhl             21 / 88
-  ucl              3 / 80
   por              0 / 73
+  lol              0 / 70
+  lal              0 / 70
 
 recent trades not on Polymarket US (international slug | outcome | US lists for the same matchup):
+  200  acle-est-shm-2026-11-03-first-half-total-0pt5 | Over | acle-est-shm-2026-11-03-draw, acle-est-shm-2026-11-03-est, acle-est-shm-2026-11-03-shm
   122  acle-nuj-shp-2026-11-03-shp | No | -
-   92  nba-mil-min-2026-11-02-spread-home-11pt5 | Bucks | -
-   74  2026-balance-of-power-r-senate-r-house-537 | No | -
-   56  nfl-chi-sea-2026-11-03-spread-home-3pt5 | Bears | -
-   47   |  | -
+  119   |  | -
+   86  atp-djokovi-vachero-2026-11-02 | Novak Djokovic | -
+   59  2026-balance-of-power-r-senate-r-house-537 | No | -
+   40  2026-balance-of-power-d-senate-r-house-692 | Yes | -
    40  acle-rey-daj-2026-11-03-rey | No | -
-   38  2026-balance-of-power-d-senate-r-house-692 | Yes | -
-   36  cs2-mouz-bb3-2026-11-02 | BetBoom Team | -
-   33  cs2-aur1-g2-2026-11-03 | Aurora Gaming | -
-   29  nfl-chi-sea-2026-11-03-spread-home-2pt5 | Bears | -
-   28  cs2-faze-fal2-2026-11-03 | Team Falcons | -
    24  acle-nuj-shp-2026-11-03-total-3pt5 | Under | -
-   23  cs2-tl1-prv-2026-11-03-game2 | Liquid | -
-   23  nba-nop-mem-2026-11-02-spread-home-5pt5 | Grizzlies | -
-   20  will-the-democrats-win-the-texas-governor-race-in-2026 | Yes | -
-   19  cs2-tyloo-9z-2026-11-02 | TYLOO | -
-   18  cs2-faze-fal2-2026-11-03 | FaZe | -
-   16  2026-senate-map-r-ks | Yes | -
+   23  2026-senate-map-r-ia-me | Yes | -
+   20  wta-sawangk-hontama-2026-11-01 | Mai Hontama | -
+   20  cs2-furia-navi-2026-11-03 | Natus Vincere | -
+   17  2026-senate-map-r-ia | Yes | -
    16  cs2-faze-fal2-2026-11-03-game2 | FaZe | -
-   15  nba-mia-lal-2026-11-02-spread-home-1pt5 | Lakers | -
-   15  nba-tor-lac-2026-11-02 | Clippers | -
-   14  will-karen-bass-win-the-2026-los-angeles-mayoral-election | Yes | -
-   14  nba-nop-mem-2026-11-02-spread-home-6pt5 | Grizzlies | -
-   13  will-the-republicans-win-the-texas-senate-race-in-2026 | No | -
+   14  billionaire-one-time-wealth-tax-passes-in-california-election-2026 | No | -
+   13  will-the-republicans-win-the-florida-governor-race-in-2026 | Yes | -
    13  cs2-mouz-bb3-2026-11-02-game2 | BetBoom Team | -
+   12  us-x-iran-ceasefire-continues-through-november-3 | No | -
+   12  cs2-furia-navi-2026-11-03-game1 | Natus Vincere | -
+   10  cs2-faze-fal2-2026-11-03-game2 | Team Falcons | -
+    9  2026-senate-map-r-ak-ia-mi-oh-tx | Yes | -
+    8  will-karen-bass-win-the-2026-los-angeles-mayoral-election | Yes | -
+    8  will-the-democrats-win-the-texas-governor-race-in-2026 | Yes | -
+    8  ucl-shd-spo-2026-11-03-draw | No | -
+    7  dota2-nemiga-ch1-2026-11-03 | CyberHero | -
+    7  dota2-xe-pckcp-2026-11-03 | Xipto Esports | -

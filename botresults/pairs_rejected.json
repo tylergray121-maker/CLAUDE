@@ -1,111 +1,12 @@
 [
  {
-  "us_slug": "tac-oscars-03-14-2027-bestpic-odysse",
-  "intl_token": "105353743221009464233231181779127246178814227973844219527214103381012036800913",
-  "score": 0.611,
-  "us_label": "Oscar Winner: Best Picture: The Odyssey",
-  "intl_label": "Will The Odyssey win Best Production Design at the 99th Academy Awards? [The Odyssey]",
-  "tick": 0.01,
-  "price_gap": 0.11
- },
- {
-  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-werwul",
-  "intl_token": "995411110266788864943033657020214875929226782511807294962933374446520476543",
-  "score": 0.614,
-  "us_label": "Oscar Nominees: Best Picture: Werwulf",
-  "intl_label": "Will \"Werwulf\" be nominated for Best Production Design at the 99th Academy Awards? [Werwulf]",
-  "tick": 0.01,
-  "price_gap": 0.295
- },
- {
-  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-michae",
-  "intl_token": "1181674321989891436893492240543840253634294929402145550018482252987709862432",
+  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-obsess",
+  "intl_token": "115511885196898555311418914544233279906273223705509714662084041677991564269660",
   "score": 0.619,
-  "us_label": "Oscar Nominees: Best Picture: Michael",
-  "intl_label": "Will \"Michael\" be nominated for Best Sound at the 99th Academy Awards? [Michael]",
+  "us_label": "Oscar Nominees: Best Picture: Obsession",
+  "intl_label": "Will \"Obsession\" be nominated for Best Cinematography at the 99th Academy Awards? [Obsession]",
   "tick": 0.01,
-  "price_gap": 0.085
- },
- {
-  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-sensen",
-  "intl_token": "104311529042872422821140994632902381432715430840121255963993178937031097621615",
-  "score": 0.614,
-  "us_label": "Oscar Nominees: Best Picture: Sense and Sensibility",
-  "intl_label": "Will \"Sense and Sensibility\" be nominated for Best Production Design at the 99th Academy Awards? [Sense and Sensibility]",
-  "tick": 0.01,
-  "price_gap": 0.48
- },
- {
-  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-cliboo",
-  "intl_token": "98874989153231595849267766784363253223293551828941347263664035024788491574749",
-  "score": 0.514,
-  "us_label": "Oscar Nominees: Best Picture: The Adventures of Cliff Booth",
-  "intl_label": "Will \"The Further Mis-Adventures of Cliff Booth\" be nominated for Best Production Design at the 99th Academy Awards? [The Further Mis-Adventures of Cliff Booth]",
-  "tick": 0.01,
-  "price_gap": 0.21
- },
- {
-  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-clukid",
-  "intl_token": "9949711821403257581239922642283199002935942842970466524956745866208922495527",
-  "score": 0.614,
-  "us_label": "Oscar Nominees: Best Picture: Club Kid",
-  "intl_label": "Will \"Club Kid\" be nominated for Best Film Editing at the 99th Academy Awards? [Club Kid]",
-  "tick": 0.01,
-  "price_gap": 0.135
- },
- {
-  "us_slug": "arankc-epl-2027-05-30-top4-mnc",
-  "intl_token": "66246873360386540727410173097506703117796369734861797987972590215695021598704",
-  "score": 0.618,
-  "us_label": "English Premier League Top 4 Finisher: Manchester City",
-  "intl_label": "Will Manchester City finish in the top 6 of the 2026-27 English Premier League season? [Manchester City]",
-  "tick": 0.01,
-  "price_gap": 0.195
- },
- {
-  "us_slug": "arankc-epl-2027-05-30-top5-mnc",
-  "intl_token": "66246873360386540727410173097506703117796369734861797987972590215695021598704",
-  "score": 0.656,
-  "us_label": "English Premier League Top 5 Finishers: Manchester City",
-  "intl_label": "Will Manchester City finish in the top 6 of the 2026-27 English Premier League season? [Manchester City]",
-  "tick": 0.01,
-  "price_gap": 0.135
- },
- {
-  "us_slug": "arankc-epl-2027-05-30-top6-mnc",
-  "intl_token": "66246873360386540727410173097506703117796369734861797987972590215695021598704",
-  "score": 0.656,
-  "us_label": "English Premier League Top 6 Finishers: Manchester City",
-  "intl_label": "Will Manchester City finish in the top 6 of the 2026-27 English Premier League season? [Manchester City]",
-  "tick": 0.01,
-  "price_gap": 0.145
- },
- {
-  "us_slug": "arankc-epl-2027-05-30-top10-mnc",
-  "intl_token": "66246873360386540727410173097506703117796369734861797987972590215695021598704",
-  "score": 0.647,
-  "us_label": "English Premier League Top 10 Finishers: Manchester City",
-  "intl_label": "Will Manchester City finish in the top 6 of the 2026-27 English Premier League season? [Manchester City]",
-  "tick": 0.01,
-  "price_gap": 0.244
- },
- {
-  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-behemo",
-  "intl_token": "91594360199959247410412605326255786665493323629041552000386837259184347680958",
-  "score": 0.614,
-  "us_label": "Oscar Nominees: Best Picture: Behemoth",
-  "intl_label": "Will \"Behemoth!\" be nominated for Best Original Score at the 99th Academy Awards? [Behemoth!]",
-  "tick": 0.01,
-  "price_gap": 0.15
- },
- {
-  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-digger",
-  "intl_token": "54357421105140568192253212493819595093860495415332105841215997048840594174894",
-  "score": 0.614,
-  "us_label": "Oscar Nominees: Best Picture: Digger",
-  "intl_label": "Will \"Digger\" be nominated for Best Original Screenplay at the 99th Academy Awards? [Digger]",
-  "tick": 0.01,
-  "price_gap": 0.09
+  "price_gap": 0.245
  },
  {
   "us_slug": "tac-oscars-nom-2027-01-31-bestpic-fjord",
@@ -114,123 +15,105 @@
   "us_label": "Oscar Nominees: Best Picture: Fjord",
   "intl_label": "Will \"Fjord\" be nominated for Best International Feature Film at the 99th Academy Awards? [Fjord]",
   "tick": 0.01,
-  "price_gap": 0.51
+  "price_gap": 0.535
  },
  {
   "us_slug": "tac-oscars-nom-2027-01-31-bestpic-odysse",
-  "intl_token": "51657571063839405880001074342991574962905677312274737937519269683053996435667",
+  "intl_token": "72953879738541030120729737007723921210308722897281168551063555646503741810462",
   "score": 0.614,
   "us_label": "Oscar Nominees: Best Picture: The Odyssey",
-  "intl_label": "Will \"The Odyssey\" be nominated for Best Costume Design at the 99th Academy Awards? [The Odyssey]",
+  "intl_label": "Will \"The Odyssey\" be nominated for Best Production Design at the 99th Academy Awards? [The Odyssey]",
   "tick": 0.01,
-  "price_gap": 0.13
+  "price_gap": 0.104
  },
  {
-  "us_slug": "tac-oscars-03-14-2027-bestorigscr-odysse",
-  "intl_token": "105353743221009464233231181779127246178814227973844219527214103381012036800913",
+  "us_slug": "tac-oscars-nom-bstmakeup-2027-01-21-odysse",
+  "intl_token": "72953879738541030120729737007723921210308722897281168551063555646503741810462",
+  "score": 0.604,
+  "us_label": "Oscar Nominees: Best Makeup and Hairstyling: The Odyssey",
+  "intl_label": "Will \"The Odyssey\" be nominated for Best Production Design at the 99th Academy Awards? [The Odyssey]",
+  "tick": 0.01,
+  "price_gap": 0.175
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstanim-2027-01-21-iroboy",
+  "intl_token": "83403874672632149731050333698938834015126435699280376605410456048563098622170",
+  "score": 0.674,
+  "us_label": "Oscar Nominees: Best Animated Feature Film: Iron Boy",
+  "intl_label": "Will \"Iron Boy\" be nominated for Best Animated Feature Film at the 99th Academy Awards? [Iron Boy]",
+  "tick": 0.01,
+  "price_gap": 0.105
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstvfx-2027-01-21-odysse",
+  "intl_token": "72953879738541030120729737007723921210308722897281168551063555646503741810462",
+  "score": 0.604,
+  "us_label": "Oscar Nominees: Best Visual Effects: The Odyssey",
+  "intl_label": "Will \"The Odyssey\" be nominated for Best Production Design at the 99th Academy Awards? [The Odyssey]",
+  "tick": 0.01,
+  "price_gap": 0.146
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstorigscr-2027-01-21-fjord",
+  "intl_token": "9195167346712773414705644823775271777573852397051185497067681933964488364977",
   "score": 0.6,
-  "us_label": "Oscar Winner: Best Original Screenplay: The Odyssey",
-  "intl_label": "Will The Odyssey win Best Production Design at the 99th Academy Awards? [The Odyssey]",
+  "us_label": "Oscar Nominees: Best Original Screenplay: Fjord",
+  "intl_label": "Will \"Fjord\" be nominated for Best International Feature Film at the 99th Academy Awards? [Fjord]",
   "tick": 0.01,
   "price_gap": 0.355
  },
  {
-  "us_slug": "tac-oscars-03-14-2027-bestmakeup-odysse",
-  "intl_token": "105353743221009464233231181779127246178814227973844219527214103381012036800913",
-  "score": 0.6,
-  "us_label": "Oscar Winner: Best Makeup and Hairstyling: The Odyssey",
-  "intl_label": "Will The Odyssey win Best Production Design at the 99th Academy Awards? [The Odyssey]",
-  "tick": 0.01,
-  "price_gap": 0.555
- },
- {
-  "us_slug": "tac-oscars-nom-bstmakeup-2027-01-21-odysse",
-  "intl_token": "51657571063839405880001074342991574962905677312274737937519269683053996435667",
-  "score": 0.604,
-  "us_label": "Oscar Nominees: Best Makeup and Hairstyling: The Odyssey",
-  "intl_label": "Will \"The Odyssey\" be nominated for Best Costume Design at the 99th Academy Awards? [The Odyssey]",
+  "us_slug": "tac-oscars-nom-bstorigscr-2027-01-21-drama",
+  "intl_token": "39293371860934823194664233128536421990815989681656026622362476135182978156696",
+  "score": 0.659,
+  "us_label": "Oscar Nominees: Best Original Screenplay: The Drama",
+  "intl_label": "Will \"The Drama\" be nominated for Best Original Screenplay at the 99th Academy Awards? [The Drama]",
   "tick": 0.01,
   "price_gap": 0.085
  },
  {
-  "us_slug": "tac-oscars-nom-bstmakeup-2027-01-21-dunpar",
-  "intl_token": "33508968301114917043627837708650494565434367154755045581059300801362728248070",
-  "score": 0.636,
-  "us_label": "Oscar Nominees: Best Makeup and Hairstyling: Dune: Part Three",
-  "intl_label": "Will \"Dune: Part Three\" be nominated for Best Picture at the 99th Academy Awards? [Dune: Part Three]",
+  "us_slug": "tac-oscars-nom-bstorigscr-2027-01-21-forisl",
+  "intl_token": "108164351835222772209474501779337895876205275236155783068065040189021496165825",
+  "score": 0.6,
+  "us_label": "Oscar Nominees: Best Original Screenplay: Forgotten Island",
+  "intl_label": "Will \"Forgotten Island\" be nominated for Best Animated Feature Film at the 99th Academy Awards? [Forgotten Island]",
   "tick": 0.01,
   "price_gap": 0.31
  },
  {
-  "us_slug": "tac-oscars-nom-bstvfx-2027-01-21-dunpar",
-  "intl_token": "33508968301114917043627837708650494565434367154755045581059300801362728248070",
-  "score": 0.636,
-  "us_label": "Oscar Nominees: Best Visual Effects: Dune: Part Three",
-  "intl_label": "Will \"Dune: Part Three\" be nominated for Best Picture at the 99th Academy Awards? [Dune: Part Three]",
+  "us_slug": "tac-oscars-nom-bstorigscr-2027-01-21-odysse",
+  "intl_token": "72953879738541030120729737007723921210308722897281168551063555646503741810462",
+  "score": 0.604,
+  "us_label": "Oscar Nominees: Best Original Screenplay: The Odyssey",
+  "intl_label": "Will \"The Odyssey\" be nominated for Best Production Design at the 99th Academy Awards? [The Odyssey]",
   "tick": 0.01,
-  "price_gap": 0.085
+  "price_gap": 0.781
  },
  {
-  "us_slug": "tac-oscars-nom-bstvfx-2027-01-21-godmin",
-  "intl_token": "64861749090769919140314092001091104741034052758024837741921086228649272805240",
-  "score": 0.659,
-  "us_label": "Oscar Nominees: Best Visual Effects: Godzilla Minus Zero",
-  "intl_label": "Will \"Godzilla Minus Zero\" be nominated for Best Visual Effects at the 99th Academy Awards? [Godzilla Minus Zero]",
-  "tick": 0.01,
-  "price_gap": 0.202
- },
- {
-  "us_slug": "tac-oscars-03-14-2027-bestsong-whei",
-  "intl_token": "105353743221009464233231181779127246178814227973844219527214103381012036800913",
-  "score": 0.5,
-  "us_label": "Oscar Winner: Best Original Song: When I'm Home - The Odyssey",
-  "intl_label": "Will The Odyssey win Best Production Design at the 99th Academy Awards? [The Odyssey]",
-  "tick": 0.01,
-  "price_gap": 0.42
- },
- {
-  "us_slug": "tac-oscars-nom-bstcine-2027-01-21-joseph",
-  "intl_token": "71427678366552279951080926720961332595608950726598226908134659532487255201886",
-  "score": 0.643,
-  "us_label": "Oscar Nominees: Best Cinematography: Josephine",
-  "intl_label": "Will \"Josephine\" be nominated for Best Cinematography at the 99th Academy Awards? [Josephine]",
+  "us_slug": "tac-oscars-nom-bstscore-2027-01-21-behemo",
+  "intl_token": "48055326936482951477879170585772096671141030397408308728783934107523571889462",
+  "score": 0.63,
+  "us_label": "Oscar Nominees: Best Original Score: Behemoth!",
+  "intl_label": "Will \"Behemoth!\" be nominated for Best Original Screenplay at the 99th Academy Awards? [Behemoth!]",
   "tick": 0.01,
   "price_gap": 0.135
  },
  {
-  "us_slug": "tac-oscars-nom-bstscore-2027-01-21-odysse",
-  "intl_token": "51657571063839405880001074342991574962905677312274737937519269683053996435667",
+  "us_slug": "tac-oscars-nom-bstcast-2027-01-21-obsess",
+  "intl_token": "115511885196898555311418914544233279906273223705509714662084041677991564269660",
+  "score": 0.614,
+  "us_label": "Oscar Nominees: Best Casting: Obsession",
+  "intl_label": "Will \"Obsession\" be nominated for Best Cinematography at the 99th Academy Awards? [Obsession]",
+  "tick": 0.01,
+  "price_gap": 0.185
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstcast-2027-01-21-fjord",
+  "intl_token": "9195167346712773414705644823775271777573852397051185497067681933964488364977",
   "score": 0.604,
-  "us_label": "Oscar Nominees: Best Original Score: The Odyssey",
-  "intl_label": "Will \"The Odyssey\" be nominated for Best Costume Design at the 99th Academy Awards? [The Odyssey]",
+  "us_label": "Oscar Nominees: Best Casting: Fjord",
+  "intl_label": "Will \"Fjord\" be nominated for Best International Feature Film at the 99th Academy Awards? [Fjord]",
   "tick": 0.01,
-  "price_gap": 0.195
- },
- {
-  "us_slug": "tac-oscars-nom-bstscore-2027-01-21-dunpar",
-  "intl_token": "33508968301114917043627837708650494565434367154755045581059300801362728248070",
-  "score": 0.636,
-  "us_label": "Oscar Nominees: Best Original Score: Dune: Part Three",
-  "intl_label": "Will \"Dune: Part Three\" be nominated for Best Picture at the 99th Academy Awards? [Dune: Part Three]",
-  "tick": 0.01,
-  "price_gap": 0.295
- },
- {
-  "us_slug": "tac-oscars-nom-bstcast-2027-01-21-digger",
-  "intl_token": "54357421105140568192253212493819595093860495415332105841215997048840594174894",
-  "score": 0.609,
-  "us_label": "Oscar Nominees: Best Casting: Digger",
-  "intl_label": "Will \"Digger\" be nominated for Best Original Screenplay at the 99th Academy Awards? [Digger]",
-  "tick": 0.01,
-  "price_gap": 0.085
- },
- {
-  "us_slug": "tac-oscars-nom-bstedit-2027-01-21-dunpar",
-  "intl_token": "33508968301114917043627837708650494565434367154755045581059300801362728248070",
-  "score": 0.636,
-  "us_label": "Oscar Nominees: Best Film Editing: Dune: Part Three",
-  "intl_label": "Will \"Dune: Part Three\" be nominated for Best Picture at the 99th Academy Awards? [Dune: Part Three]",
-  "tick": 0.01,
-  "price_gap": 0.63
+  "price_gap": 0.555
  }
 ]
