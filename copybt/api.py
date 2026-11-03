@@ -46,7 +46,9 @@ def _prune(data, keep: tuple[str, ...]):
 # fields in snake_case, pages by cursor only (an `offset` is a 400), filters a
 # market with `condition` instead of `market`, and sorts the leaderboard with
 # `sort_by` (PNL or VOLUME). The client translates v1-style calls, so callers
-# keep v1 paths, params and field names.
+# keep v1 paths, params and field names. v2 answers are cached by CloudFront
+# for up to 5 minutes per URL, so a call that skips our cache (the copier's
+# polls) adds a unique `_` param to get fresh rows.
 _V2_PATHS = {"/trades": "/v2/trades", "/activity": "/v2/activity",
              "/positions": "/v2/positions", "/v1/leaderboard": "/v2/leaderboard"}
 _V1_NAMES = {"token_id": "asset", "user_id": "proxyWallet", "volume": "vol",
@@ -149,7 +151,7 @@ class Client:
             return data
 
         if base == DATA_API and path in _V2_PATHS and not isinstance(params, list):
-            data = self._get_v2(path, params or {})
+            data = self._get_v2(path, params or {}, fresh=not use_cache)
         else:
             data = self._fetch(url, cpath)
         if keep:
@@ -158,7 +160,7 @@ class Client:
             self._write(cpath, data)
         return data
 
-    def _get_v2(self, path: str, params: dict) -> list:
+    def _get_v2(self, path: str, params: dict, fresh: bool = False) -> list:
         """One v1-style page from Data API v2: rows with v1 field names. A v1
         offset is reached by following v2 cursors, remembered per query so
         sequential pages cost one request each."""
@@ -172,7 +174,9 @@ class Client:
         while True:
             if cursor is None:  # past the last page
                 return []
-            q = {**p, "cursor": cursor} if cursor else p
+            q = {**p, "cursor": cursor} if cursor else dict(p)
+            if fresh:  # past CloudFront's 5-minute cache
+                q["_"] = f"{time.time_ns():x}"
             body = self._fetch(f"{v2path}?{urllib.parse.urlencode(q, doseq=True)}", None)
             data = body.get("data") if isinstance(body, dict) else body
             rows = [data] if isinstance(data, dict) else list(data or [])

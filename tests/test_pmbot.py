@@ -50,6 +50,7 @@ class DataApiV2Test(unittest.TestCase):
         got = c.get(DATA_API, "/trades", {"market": "0xc", "limit": 50,
                                           "takerOnly": "false"}, use_cache=False)
         self.assertIn("/v2/trades?", calls[0])
+        self.assertIn("&_=", calls[0])  # uncached calls get past the CDN cache
         self.assertIn("condition=0xc", calls[0])
         self.assertNotIn("market=", calls[0])
         self.assertEqual((got[0]["proxyWallet"], got[0]["conditionId"], got[0]["asset"],
