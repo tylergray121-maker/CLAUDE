@@ -78,10 +78,14 @@ jobs:
           python -u -m pmbot paper --resume --out-dir live --minutes 345 $(cat paper-b.args) \
             > live/run.log 2>&1 &
           BOT=$!
+          # Check every minute, publish every 10: a 10-minute sleep could
+          # outlast the bot by up to 10 minutes and push the step past its
+          # 352-minute limit (segments 1-2 of run 41636448845 were marked
+          # failed that way, killed just after their final publish).
+          n=0
           while kill -0 $BOT 2>/dev/null; do
-            sleep 600
-            publish
-            grep -v " paper " live/run.log | tail -3 || true
+            sleep 60; n=$((n + 1))
+            if [ $((n % 10)) -eq 0 ]; then publish; grep -v " paper " live/run.log | tail -3 || true; fi
           done
           STATUS=0
           wait $BOT || STATUS=$?   # under bash -e a bare failing wait would skip the publish
