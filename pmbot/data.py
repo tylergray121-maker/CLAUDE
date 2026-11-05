@@ -112,7 +112,12 @@ def _side_label(m: dict, long: bool) -> str:
                  if isinstance(sd, dict) and sd.get("long") is long), "")
 
 
-def us_markets(client: Client, page: int = 100, max_pages: int = 1000) -> list[USMarket]:
+def us_markets(client: Client, page: int = 100, max_pages: int = 1000,
+               strict: bool = False) -> list[USMarket]:
+    """Every open Polymarket US market. A page that fails ends the list there;
+    with ``strict`` it raises instead, so a caller holding a complete list
+    keeps it rather than swap in a cut-short one (on 2026-11-05 a failing page
+    during an exchange outage cut the live list from ~72k markets to 10,655)."""
     out, seen = [], set()
     offset = 0
     for _ in range(max_pages):
@@ -122,6 +127,8 @@ def us_markets(client: Client, page: int = 100, max_pages: int = 1000) -> list[U
                 "offset": offset}, use_cache=False) or {}).get("markets", [])
         except FETCH_ERRORS as e:
             log.warning("US markets at offset %d: %s", offset, e)
+            if strict:
+                raise
             break
         new = 0
         for r in rows:

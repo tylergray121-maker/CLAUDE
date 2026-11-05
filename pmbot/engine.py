@@ -132,10 +132,11 @@ class Engine:
     def refresh_pairs(self) -> None:
         self._apply_pairs(self._build_pairs(self.client))
 
-    def _build_pairs(self, client) -> dict:
+    def _build_pairs(self, client, strict: bool = False) -> dict:
         """Fetch the US market list and map it, without touching the engine's
-        state (so it can run in a background thread while trading goes on)."""
-        us = data.us_markets(client)
+        state (so it can run in a background thread while trading goes on).
+        ``strict`` refreshes fail on a missing page, keeping the previous maps."""
+        us = data.us_markets(client, strict=strict)
         markets = {m.slug: m for m in us}
         # Game, spread, total and prop markets: the US slug is the international
         # one plus a venue prefix. Ambiguous ones (two US markets) are dropped.
@@ -247,7 +248,7 @@ class Engine:
                         # Later ones run beside trading (paging ~80k US markets
                         # takes minutes), on their own client and request budget.
                         refresh = pool.submit(self._build_pairs, Client(
-                            cache_dir=None, max_rps=3, retries=2, timeout=15))
+                            cache_dir=None, max_rps=3, retries=4, timeout=15), True)
                     next_remap = t0 + self.ecfg.remap_minutes * 60
                 try:
                     self.cycle()

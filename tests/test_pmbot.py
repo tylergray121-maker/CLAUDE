@@ -28,6 +28,21 @@ def quote(bid, ask, last=None, traded=0.0, ts=None, qty=100):
     return Quote(bid, ask, qty, qty, last, traded, ts if ts is not None else time.time() + 1)
 
 
+class USMarketsStrictTest(unittest.TestCase):
+    def test_strict_raises_on_a_missing_page_lenient_keeps_what_it_has(self):
+        from copybt.api import HTTPError
+        row = {"slug": "aec-nba-a-b-2026-11-05", "active": True, "closed": False}
+
+        class Flaky:
+            def get(self, base, path, params=None, **kw):
+                if params["offset"] >= 1:
+                    raise HTTPError(500, "u", "boom")
+                return {"markets": [row]}
+        self.assertLessEqual(len(data.us_markets(Flaky(), page=1)), 1)
+        with self.assertRaises(HTTPError):
+            data.us_markets(Flaky(), page=1, strict=True)
+
+
 class DataApiV2Test(unittest.TestCase):
     """Data API v1 is retired (HTTP 410): the client maps v1-style calls onto v2."""
 
