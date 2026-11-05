@@ -1,1490 +1,818 @@
 [
  {
-  "us_slug": "aec-nba-phi-det-2026-11-04",
-  "intl_token": "83436244700810646352179480698884311904711499403044596253436523006108354464964",
+  "us_slug": "aec-nba-bos-cha-2026-11-06",
+  "intl_token": "59145210211796902454304506755449548061570989948176297683876243678234497494792",
   "score": 1.0,
-  "us_label": "76ers vs. Pistons: 76ers",
-  "intl_label": "76ers vs. Pistons [76ers]",
+  "us_label": "Celtics vs. Hornets: Celtics",
+  "intl_label": "Celtics vs. Hornets [Celtics]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-nba-phi-det-2026-11-04:short",
-  "intl_token": "7968480321049249725658534269718257216832038071045380879111081101402357475797",
+  "us_slug": "aec-nba-bos-cha-2026-11-06:short",
+  "intl_token": "88748097104063656759359831424492973842084193947673059075649724045807449207667",
   "score": 1.0,
-  "us_label": "76ers vs. Pistons: Pistons",
-  "intl_label": "76ers vs. Pistons [Pistons]",
+  "us_label": "Celtics vs. Hornets: Hornets",
+  "intl_label": "Celtics vs. Hornets [Hornets]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-nba-atl-was-2026-11-04",
-  "intl_token": "6047234062165900217539830837728281097954840938663134342333674115099735148600",
+  "us_slug": "aec-nba-was-atl-2026-11-06",
+  "intl_token": "108589617052802074806981326576641328372149941641851732485434879148485081033908",
   "score": 1.0,
-  "us_label": "Hawks vs. Wizards: Hawks",
-  "intl_label": "Hawks vs. Wizards [Hawks]",
+  "us_label": "Wizards vs. Hawks: Wizards",
+  "intl_label": "Wizards vs. Hawks [Wizards]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-nba-atl-was-2026-11-04:short",
-  "intl_token": "80030264709436811015170765095201246483563901149756066672456627231871946281678",
+  "us_slug": "aec-nba-was-atl-2026-11-06:short",
+  "intl_token": "32207961643912237005721009733678708801866453101256449902624170578128750571094",
   "score": 1.0,
-  "us_label": "Hawks vs. Wizards: Wizards",
-  "intl_label": "Hawks vs. Wizards [Wizards]",
+  "us_label": "Wizards vs. Hawks: Hawks",
+  "intl_label": "Wizards vs. Hawks [Hawks]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-nba-mil-bos-2026-11-04",
-  "intl_token": "5091006934930200038187948867780775986799547855663506401427306293295866484315",
+  "us_slug": "aec-nba-phi-cle-2026-11-06",
+  "intl_token": "40302147054745701195189519397838486679169203281580816778233772209990338854211",
   "score": 1.0,
-  "us_label": "Bucks vs. Celtics: Bucks",
-  "intl_label": "Bucks vs. Celtics [Bucks]",
+  "us_label": "76ers vs. Cavaliers: 76ers",
+  "intl_label": "76ers vs. Cavaliers [76ers]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-nba-mil-bos-2026-11-04:short",
-  "intl_token": "21749700987186629264851706373900724880080443712784907725578406169707034632727",
+  "us_slug": "aec-nba-phi-cle-2026-11-06:short",
+  "intl_token": "79836373447126786725259472729134397310978654848635733152228588761006367109569",
   "score": 1.0,
-  "us_label": "Bucks vs. Celtics: Celtics",
-  "intl_label": "Bucks vs. Celtics [Celtics]",
+  "us_label": "76ers vs. Cavaliers: Cavaliers",
+  "intl_label": "76ers vs. Cavaliers [Cavaliers]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-nba-cha-bkn-2026-11-04",
-  "intl_token": "98615893786261546194112226668411462993744755737413789888380961434249362713883",
+  "us_slug": "aec-nba-uta-dal-2026-11-06",
+  "intl_token": "8239243344027833096135791922952142033229331191747031519936724261047612783125",
   "score": 1.0,
-  "us_label": "Hornets vs. Nets: Hornets",
-  "intl_label": "Hornets vs. Nets [Hornets]",
+  "us_label": "Jazz vs. Mavericks: Jazz",
+  "intl_label": "Jazz vs. Mavericks [Jazz]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-nba-cha-bkn-2026-11-04:short",
-  "intl_token": "60311970406753118939805438206098403299081744333230681742186874125789272737775",
+  "us_slug": "aec-nba-uta-dal-2026-11-06:short",
+  "intl_token": "6679714125251848049414858827663610182711567651694533930986593342250527587663",
   "score": 1.0,
-  "us_label": "Hornets vs. Nets: Nets",
-  "intl_label": "Hornets vs. Nets [Nets]",
+  "us_label": "Jazz vs. Mavericks: Mavericks",
+  "intl_label": "Jazz vs. Mavericks [Mavericks]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-nba-cle-okc-2026-11-04",
-  "intl_token": "108807623401998070701069252959229689694204473189150385556544222823135918822747",
+  "us_slug": "aec-nba-tor-mil-2026-11-06",
+  "intl_token": "5208603064872669914786872520222279893911770322037527296779362136690780967795",
   "score": 1.0,
-  "us_label": "Cavaliers vs. Thunder: Cavaliers",
-  "intl_label": "Cavaliers vs. Thunder [Cavaliers]",
+  "us_label": "Raptors vs. Bucks: Raptors",
+  "intl_label": "Raptors vs. Bucks [Raptors]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-nba-cle-okc-2026-11-04:short",
-  "intl_token": "44961408886134358014132326859317445170455093192466220944157432689412681956402",
+  "us_slug": "aec-nba-tor-mil-2026-11-06:short",
+  "intl_token": "100774961222554041412633792531640567596158577345275773406377291017014144156253",
   "score": 1.0,
-  "us_label": "Cavaliers vs. Thunder: Thunder",
-  "intl_label": "Cavaliers vs. Thunder [Thunder]",
+  "us_label": "Raptors vs. Bucks: Bucks",
+  "intl_label": "Raptors vs. Bucks [Bucks]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-nba-ind-mem-2026-11-04",
-  "intl_token": "994322204900992613357199215349402898912598679811295948345813059961621709518",
+  "us_slug": "aec-nba-okc-mem-2026-11-06",
+  "intl_token": "17738982004398511179681739795672463001490109109158945924609690414196729397366",
   "score": 1.0,
-  "us_label": "Pacers vs. Grizzlies: Pacers",
-  "intl_label": "Pacers vs. Grizzlies [Pacers]",
+  "us_label": "Thunder vs. Grizzlies: Thunder",
+  "intl_label": "Thunder vs. Grizzlies [Thunder]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-nba-ind-mem-2026-11-04:short",
-  "intl_token": "110496103362155044103866255581565450787193434213629600188692832925562693998834",
+  "us_slug": "aec-nba-okc-mem-2026-11-06:short",
+  "intl_token": "80401371682636927630334301862061391344083951447705598856535083437208900415870",
   "score": 1.0,
-  "us_label": "Pacers vs. Grizzlies: Grizzlies",
-  "intl_label": "Pacers vs. Grizzlies [Grizzlies]",
+  "us_label": "Thunder vs. Grizzlies: Grizzlies",
+  "intl_label": "Thunder vs. Grizzlies [Grizzlies]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-nba-min-hou-2026-11-04",
-  "intl_token": "75502307478173036411660084576117798499902912383273508455377291191317027583046",
+  "us_slug": "aec-nba-por-lal-2026-11-06",
+  "intl_token": "22161318039139420227205292336308561837196878482697740344466538423771283511418",
   "score": 1.0,
-  "us_label": "Timberwolves vs. Rockets: Timberwolves",
-  "intl_label": "Timberwolves vs. Rockets [Timberwolves]",
+  "us_label": "Trail Blazers vs. Lakers: Trail Blazers",
+  "intl_label": "Trail Blazers vs. Lakers [Trail Blazers]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-nba-min-hou-2026-11-04:short",
-  "intl_token": "27844161208471474910690246957329826920702301536627268568968901335715488023779",
+  "us_slug": "aec-nba-por-lal-2026-11-06:short",
+  "intl_token": "59639862336453614309669840207606832389566018404104566380719412909043877136377",
   "score": 1.0,
-  "us_label": "Timberwolves vs. Rockets: Rockets",
-  "intl_label": "Timberwolves vs. Rockets [Rockets]",
+  "us_label": "Trail Blazers vs. Lakers: Lakers",
+  "intl_label": "Trail Blazers vs. Lakers [Lakers]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-nba-tor-den-2026-11-04",
-  "intl_token": "53146979092751874534354245932556932851200054359489126002194153697093354502036",
+  "us_slug": "atc-uel-spp-bou-2026-11-05-spp",
+  "intl_token": "12669304484606826119749833319327112501853683922603063256708562040139452162551",
   "score": 1.0,
-  "us_label": "Raptors vs. Nuggets: Raptors",
-  "intl_label": "Raptors vs. Nuggets [Raptors]",
+  "us_label": "Will AC Sparta Praha win on 2026-11-05?: Yes",
+  "intl_label": "Will AC Sparta Praha win on 2026-11-05? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-nba-tor-den-2026-11-04:short",
-  "intl_token": "105922257062035711722017083356689548543059287669110124998318311471227392838760",
+  "us_slug": "atc-uel-spp-bou-2026-11-05-spp:short",
+  "intl_token": "5737962495386977534378171842898288942058900264439209807018834080864382394911",
   "score": 1.0,
-  "us_label": "Raptors vs. Nuggets: Nuggets",
-  "intl_label": "Raptors vs. Nuggets [Nuggets]",
+  "us_label": "Will AC Sparta Praha win on 2026-11-05?: No",
+  "intl_label": "Will AC Sparta Praha win on 2026-11-05? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-nba-lal-sac-2026-11-04",
-  "intl_token": "27185802706652618209294679210075908566885642182704800412259990481042682284876",
+  "us_slug": "atc-uel-spp-bou-2026-11-05-draw",
+  "intl_token": "100085223784717955912529421663366907612923046037858959849719392865848394176415",
   "score": 1.0,
-  "us_label": "Lakers vs. Kings: Lakers",
-  "intl_label": "Lakers vs. Kings [Lakers]",
+  "us_label": "Will AC Sparta Praha vs. AFC Bournemouth end in a draw?: Yes",
+  "intl_label": "Will AC Sparta Praha vs. AFC Bournemouth end in a draw? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-nba-lal-sac-2026-11-04:short",
-  "intl_token": "96052843305962273711534843656776630713357019384395838203604666158366387932352",
+  "us_slug": "atc-uel-spp-bou-2026-11-05-draw:short",
+  "intl_token": "68413918197141532938436480168113892293549507619665650999569253307129958518717",
   "score": 1.0,
-  "us_label": "Lakers vs. Kings: Kings",
-  "intl_label": "Lakers vs. Kings [Kings]",
+  "us_label": "Will AC Sparta Praha vs. AFC Bournemouth end in a draw?: No",
+  "intl_label": "Will AC Sparta Praha vs. AFC Bournemouth end in a draw? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-nba-mia-lac-2026-11-04",
-  "intl_token": "112979751389901461247655733277710710675447360400627257096583545923141680646468",
+  "us_slug": "atc-uel-spp-bou-2026-11-05-bou",
+  "intl_token": "100131727415826928119174243102601134161538322812855699360532027178816288290234",
   "score": 1.0,
-  "us_label": "Heat vs. Clippers: Heat",
-  "intl_label": "Heat vs. Clippers [Heat]",
+  "us_label": "Will AFC Bournemouth win on 2026-11-05?: Yes",
+  "intl_label": "Will AFC Bournemouth win on 2026-11-05? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-nba-mia-lac-2026-11-04:short",
-  "intl_token": "6790046999204214398180162995750443554328402080751763293704094699233143222738",
+  "us_slug": "atc-uel-spp-bou-2026-11-05-bou:short",
+  "intl_token": "42506148661683943541979337517222758216686649928064404489628407344344901012834",
   "score": 1.0,
-  "us_label": "Heat vs. Clippers: Clippers",
-  "intl_label": "Heat vs. Clippers [Clippers]",
+  "us_label": "Will AFC Bournemouth win on 2026-11-05?: No",
+  "intl_label": "Will AFC Bournemouth win on 2026-11-05? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-gal-stu-2026-11-03-gal",
-  "intl_token": "46655643559396284378719765595767389540891494352333979712427241001693346341313",
+  "us_slug": "atc-uel-and-rbs-2026-11-05-and",
+  "intl_token": "42547222245826938010594624361797694713217891095842312956389922799949839411888",
   "score": 1.0,
-  "us_label": "Will Galatasaray SK win on 2026-11-03?: Yes",
-  "intl_label": "Will Galatasaray SK win on 2026-11-03? [Yes]",
+  "us_label": "Will RSC Anderlecht win on 2026-11-05?: Yes",
+  "intl_label": "Will RSC Anderlecht win on 2026-11-05? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-gal-stu-2026-11-03-gal:short",
-  "intl_token": "48709083258657382291963062646466641312514482199759150826409346731242345324252",
+  "us_slug": "atc-uel-and-rbs-2026-11-05-and:short",
+  "intl_token": "114573673799646240222936730520980669837386624922177079118550313773558862007261",
   "score": 1.0,
-  "us_label": "Will Galatasaray SK win on 2026-11-03?: No",
-  "intl_label": "Will Galatasaray SK win on 2026-11-03? [No]",
+  "us_label": "Will RSC Anderlecht win on 2026-11-05?: No",
+  "intl_label": "Will RSC Anderlecht win on 2026-11-05? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-gal-stu-2026-11-03-draw",
-  "intl_token": "67969427266008703482282452366255453548992265461323349200611903747654150213861",
+  "us_slug": "atc-uel-and-rbs-2026-11-05-draw",
+  "intl_token": "26144447020247554748914480590199305432189108752455237697075909393157100394540",
   "score": 1.0,
-  "us_label": "Will Galatasaray SK vs. VfB Stuttgart end in a draw?: Yes",
-  "intl_label": "Will Galatasaray SK vs. VfB Stuttgart end in a draw? [Yes]",
+  "us_label": "Will RSC Anderlecht vs. FC Red Bull Salzburg end in a draw?: Yes",
+  "intl_label": "Will RSC Anderlecht vs. FC Red Bull Salzburg end in a draw? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-gal-stu-2026-11-03-draw:short",
-  "intl_token": "33415759665113220398166872692438121598880595965445362573844412215211392591077",
+  "us_slug": "atc-uel-and-rbs-2026-11-05-draw:short",
+  "intl_token": "3980932374488470424619822880384662109532662003755826824925403489914010104413",
   "score": 1.0,
-  "us_label": "Will Galatasaray SK vs. VfB Stuttgart end in a draw?: No",
-  "intl_label": "Will Galatasaray SK vs. VfB Stuttgart end in a draw? [No]",
+  "us_label": "Will RSC Anderlecht vs. FC Red Bull Salzburg end in a draw?: No",
+  "intl_label": "Will RSC Anderlecht vs. FC Red Bull Salzburg end in a draw? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-gal-stu-2026-11-03-stu",
-  "intl_token": "31462617959206990639707338314338699996360947782665155636168423845077004147104",
+  "us_slug": "atc-uel-and-rbs-2026-11-05-rbs",
+  "intl_token": "109429440965354405719036991624699102220153401342390750422965485619033032908354",
   "score": 1.0,
-  "us_label": "Will VfB Stuttgart win on 2026-11-03?: Yes",
-  "intl_label": "Will VfB Stuttgart win on 2026-11-03? [Yes]",
+  "us_label": "Will FC Red Bull Salzburg win on 2026-11-05?: Yes",
+  "intl_label": "Will FC Red Bull Salzburg win on 2026-11-05? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-gal-stu-2026-11-03-stu:short",
-  "intl_token": "43294830848794350756818503715536281457027058747252675241667936253402089596669",
+  "us_slug": "atc-uel-and-rbs-2026-11-05-rbs:short",
+  "intl_token": "94629608093381889109301230395528282892002599704191734362131993853118884404576",
   "score": 1.0,
-  "us_label": "Will VfB Stuttgart win on 2026-11-03?: No",
-  "intl_label": "Will VfB Stuttgart win on 2026-11-03? [No]",
+  "us_label": "Will FC Red Bull Salzburg win on 2026-11-05?: No",
+  "intl_label": "Will FC Red Bull Salzburg win on 2026-11-05? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-atm-bay-2026-11-03-atm",
-  "intl_token": "47116775807582356826876070496300973789459665167222875881636112278095375414297",
+  "us_slug": "atc-uel-ben-lep-2026-11-05-ben",
+  "intl_token": "1340290379012269538066780508580562742036260831797632410369074769879516712276",
   "score": 1.0,
-  "us_label": "Will Club Atl\u00e9tico de Madrid win on 2026-11-03?: Yes",
-  "intl_label": "Will Club Atl\u00e9tico de Madrid win on 2026-11-03? [Yes]",
+  "us_label": "Will Sport Lisboa e Benfica win on 2026-11-05?: Yes",
+  "intl_label": "Will Sport Lisboa e Benfica win on 2026-11-05? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-atm-bay-2026-11-03-atm:short",
-  "intl_token": "52010539253798803832783652040250092819807160651384207773729678171768609551925",
+  "us_slug": "atc-uel-ben-lep-2026-11-05-ben:short",
+  "intl_token": "22571009708675851709359264598794670445414320206642986542219947755604133914330",
   "score": 1.0,
-  "us_label": "Will Club Atl\u00e9tico de Madrid win on 2026-11-03?: No",
-  "intl_label": "Will Club Atl\u00e9tico de Madrid win on 2026-11-03? [No]",
+  "us_label": "Will Sport Lisboa e Benfica win on 2026-11-05?: No",
+  "intl_label": "Will Sport Lisboa e Benfica win on 2026-11-05? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-atm-bay-2026-11-03-draw",
-  "intl_token": "98285806318676790642340739896540919439050165206314151744564033493779631245558",
+  "us_slug": "atc-uel-ben-lep-2026-11-05-draw",
+  "intl_token": "27617443038574063918412595264177967354981547036016427008647557284766732117966",
   "score": 1.0,
-  "us_label": "Will Club Atl\u00e9tico de Madrid vs. FC Bayern M\u00fcnchen end in a draw?: Yes",
-  "intl_label": "Will Club Atl\u00e9tico de Madrid vs. FC Bayern M\u00fcnchen end in a draw? [Yes]",
+  "us_label": "Will Sport Lisboa e Benfica vs. KKS Lech Pozna\u0144 end in a draw?: Yes",
+  "intl_label": "Will Sport Lisboa e Benfica vs. KKS Lech Pozna\u0144 end in a draw? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-atm-bay-2026-11-03-draw:short",
-  "intl_token": "15527668732332473728611266298143077309811604206208398746901785490476322753795",
+  "us_slug": "atc-uel-ben-lep-2026-11-05-draw:short",
+  "intl_token": "105052651097019806111859213020291327281161607656378159762428749044903126120582",
   "score": 1.0,
-  "us_label": "Will Club Atl\u00e9tico de Madrid vs. FC Bayern M\u00fcnchen end in a draw?: No",
-  "intl_label": "Will Club Atl\u00e9tico de Madrid vs. FC Bayern M\u00fcnchen end in a draw? [No]",
+  "us_label": "Will Sport Lisboa e Benfica vs. KKS Lech Pozna\u0144 end in a draw?: No",
+  "intl_label": "Will Sport Lisboa e Benfica vs. KKS Lech Pozna\u0144 end in a draw? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-atm-bay-2026-11-03-bay",
-  "intl_token": "76208488171135342894743862874291209250681104697696082909222562025889106111891",
+  "us_slug": "atc-uel-ben-lep-2026-11-05-lep",
+  "intl_token": "18181189714682035862165483736231329666074000229434038069115598611008128272970",
   "score": 1.0,
-  "us_label": "Will FC Bayern M\u00fcnchen win on 2026-11-03?: Yes",
-  "intl_label": "Will FC Bayern M\u00fcnchen win on 2026-11-03? [Yes]",
+  "us_label": "Will KKS Lech Pozna\u0144 win on 2026-11-05?: Yes",
+  "intl_label": "Will KKS Lech Pozna\u0144 win on 2026-11-05? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-atm-bay-2026-11-03-bay:short",
-  "intl_token": "59946536809743553577422871103833058835912102778393630093741653355621713578938",
+  "us_slug": "atc-uel-ben-lep-2026-11-05-lep:short",
+  "intl_token": "110633435325023649365055233563919409556644043954946557761687842522230044739762",
   "score": 1.0,
-  "us_label": "Will FC Bayern M\u00fcnchen win on 2026-11-03?: No",
-  "intl_label": "Will FC Bayern M\u00fcnchen win on 2026-11-03? [No]",
+  "us_label": "Will KKS Lech Pozna\u0144 win on 2026-11-05?: No",
+  "intl_label": "Will KKS Lech Pozna\u0144 win on 2026-11-05? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-fcb-ast-2026-11-03-fcb",
-  "intl_token": "107338065422855095176778690023031502487482315667546311650042740095308199924196",
+  "us_slug": "atc-uel-sun-din-2026-11-05-sun",
+  "intl_token": "81306626223771171157269797877937856867139302926854241675036658274026357841476",
   "score": 1.0,
-  "us_label": "Will FC Barcelona win on 2026-11-03?: Yes",
-  "intl_label": "Will FC Barcelona win on 2026-11-03? [Yes]",
+  "us_label": "Will Sunderland AFC win on 2026-11-05?: Yes",
+  "intl_label": "Will Sunderland AFC win on 2026-11-05? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-fcb-ast-2026-11-03-fcb:short",
-  "intl_token": "41897411197636106274753152189835907388552433150525053185535598889058564530366",
+  "us_slug": "atc-uel-sun-din-2026-11-05-sun:short",
+  "intl_token": "55842222024550713495971600736604880962266203551600624775125520102254623753289",
   "score": 1.0,
-  "us_label": "Will FC Barcelona win on 2026-11-03?: No",
-  "intl_label": "Will FC Barcelona win on 2026-11-03? [No]",
+  "us_label": "Will Sunderland AFC win on 2026-11-05?: No",
+  "intl_label": "Will Sunderland AFC win on 2026-11-05? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-fcb-ast-2026-11-03-draw",
-  "intl_token": "88423269609501126685516271532012389568728069902947325328851643716933403763220",
+  "us_slug": "atc-uel-sun-din-2026-11-05-draw",
+  "intl_token": "56302512735575435656427622254939514247275479343241473018516218925605971144286",
   "score": 1.0,
-  "us_label": "Will FC Barcelona vs. Aston Villa FC end in a draw?: Yes",
-  "intl_label": "Will FC Barcelona vs. Aston Villa FC end in a draw? [Yes]",
+  "us_label": "Will Sunderland AFC vs. GNK Dinamo Zagreb end in a draw?: Yes",
+  "intl_label": "Will Sunderland AFC vs. GNK Dinamo Zagreb end in a draw? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-fcb-ast-2026-11-03-draw:short",
-  "intl_token": "24256766389335717646980599003488077870871388236389050984749176411472622221019",
+  "us_slug": "atc-uel-sun-din-2026-11-05-draw:short",
+  "intl_token": "53746433484422283726064244792759042246661940328235988464151713470707856468480",
   "score": 1.0,
-  "us_label": "Will FC Barcelona vs. Aston Villa FC end in a draw?: No",
-  "intl_label": "Will FC Barcelona vs. Aston Villa FC end in a draw? [No]",
+  "us_label": "Will Sunderland AFC vs. GNK Dinamo Zagreb end in a draw?: No",
+  "intl_label": "Will Sunderland AFC vs. GNK Dinamo Zagreb end in a draw? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-fcb-ast-2026-11-03-ast",
-  "intl_token": "568241110544749301994186386979075142519620832162168089887635985786960089837",
+  "us_slug": "atc-uel-sun-din-2026-11-05-din",
+  "intl_token": "84745601125668050218746770564747046773380503899942387631052630997693864534530",
   "score": 1.0,
-  "us_label": "Will Aston Villa FC win on 2026-11-03?: Yes",
-  "intl_label": "Will Aston Villa FC win on 2026-11-03? [Yes]",
+  "us_label": "Will GNK Dinamo Zagreb win on 2026-11-05?: Yes",
+  "intl_label": "Will GNK Dinamo Zagreb win on 2026-11-05? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-fcb-ast-2026-11-03-ast:short",
-  "intl_token": "83484465568096938963665215294642234362215676037942848784415403740871227092915",
+  "us_slug": "atc-uel-sun-din-2026-11-05-din:short",
+  "intl_token": "94708708159161987338267249762512038016122139178405338607151389694077705652458",
   "score": 1.0,
-  "us_label": "Will Aston Villa FC win on 2026-11-03?: No",
-  "intl_label": "Will Aston Villa FC win on 2026-11-03? [No]",
+  "us_label": "Will GNK Dinamo Zagreb win on 2026-11-05?: No",
+  "intl_label": "Will GNK Dinamo Zagreb win on 2026-11-05? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-fey-int-2026-11-03-fey",
-  "intl_token": "21246325953553868981863940644422315524052374442330587277200948903165799862099",
+  "us_slug": "atc-lal-sev-ala-2026-11-06-sev",
+  "intl_token": "72533816440205264842711066923530227717626221285810030376362808462133153408078",
   "score": 1.0,
-  "us_label": "Will Feyenoord Rotterdam win on 2026-11-03?: Yes",
-  "intl_label": "Will Feyenoord Rotterdam win on 2026-11-03? [Yes]",
+  "us_label": "Will Sevilla FC win on 2026-11-06?: Yes",
+  "intl_label": "Will Sevilla FC win on 2026-11-06? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-fey-int-2026-11-03-fey:short",
-  "intl_token": "72359111712149298613430031701004761219196024136362054012465086364411233658358",
+  "us_slug": "atc-lal-sev-ala-2026-11-06-sev:short",
+  "intl_token": "87951535232364926257837443775370816628198202984917423210364521518437777383958",
   "score": 1.0,
-  "us_label": "Will Feyenoord Rotterdam win on 2026-11-03?: No",
-  "intl_label": "Will Feyenoord Rotterdam win on 2026-11-03? [No]",
+  "us_label": "Will Sevilla FC win on 2026-11-06?: No",
+  "intl_label": "Will Sevilla FC win on 2026-11-06? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-fey-int-2026-11-03-draw",
-  "intl_token": "77111818247164079660344484847523670997218274996908445014161738747362493354149",
+  "us_slug": "atc-lal-sev-ala-2026-11-06-draw",
+  "intl_token": "42725776225384176902455120625776123302564685889015584491862820410311508811165",
   "score": 1.0,
-  "us_label": "Will Feyenoord Rotterdam vs. FC Internazionale Milano end in a draw?: Yes",
-  "intl_label": "Will Feyenoord Rotterdam vs. FC Internazionale Milano end in a draw? [Yes]",
+  "us_label": "Will Sevilla FC vs. Deportivo Alav\u00e9s end in a draw?: Yes",
+  "intl_label": "Will Sevilla FC vs. Deportivo Alav\u00e9s end in a draw? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-fey-int-2026-11-03-draw:short",
-  "intl_token": "1593876793595657821371458874129674566466817446044863765645265960175529562957",
+  "us_slug": "atc-lal-sev-ala-2026-11-06-draw:short",
+  "intl_token": "43830316852027962445212447107634630227045598316821077459784809881868012581145",
   "score": 1.0,
-  "us_label": "Will Feyenoord Rotterdam vs. FC Internazionale Milano end in a draw?: No",
-  "intl_label": "Will Feyenoord Rotterdam vs. FC Internazionale Milano end in a draw? [No]",
+  "us_label": "Will Sevilla FC vs. Deportivo Alav\u00e9s end in a draw?: No",
+  "intl_label": "Will Sevilla FC vs. Deportivo Alav\u00e9s end in a draw? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-fey-int-2026-11-03-int",
-  "intl_token": "55268442253705074285487033025733352596084914077768751968402385048495329909163",
+  "us_slug": "atc-lal-sev-ala-2026-11-06-ala",
+  "intl_token": "36615665661406046800807783770636573183717677893076773741380199200596741340864",
   "score": 1.0,
-  "us_label": "Will FC Internazionale Milano win on 2026-11-03?: Yes",
-  "intl_label": "Will FC Internazionale Milano win on 2026-11-03? [Yes]",
+  "us_label": "Will Deportivo Alav\u00e9s win on 2026-11-06?: Yes",
+  "intl_label": "Will Deportivo Alav\u00e9s win on 2026-11-06? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-fey-int-2026-11-03-int:short",
-  "intl_token": "92054599230524300033805483331587169386604641648263948678799684760482760941919",
+  "us_slug": "atc-lal-sev-ala-2026-11-06-ala:short",
+  "intl_token": "45040160878625992367562455704273236654250750053910887633362809369052745857032",
   "score": 1.0,
-  "us_label": "Will FC Internazionale Milano win on 2026-11-03?: No",
-  "intl_label": "Will FC Internazionale Milano win on 2026-11-03? [No]",
+  "us_label": "Will Deportivo Alav\u00e9s win on 2026-11-06?: No",
+  "intl_label": "Will Deportivo Alav\u00e9s win on 2026-11-06? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-bog-lil-2026-11-03-bog",
-  "intl_token": "72585348602197610812505598463675627865460278034105687043216798627876409265983",
+  "us_slug": "atc-epl-eve-cov-2026-11-06-eve",
+  "intl_token": "29531824066074194149998938590029671965552648330773044931180192434004798763619",
   "score": 1.0,
-  "us_label": "Will FK Bod\u00f8/Glimt win on 2026-11-03?: Yes",
-  "intl_label": "Will FK Bod\u00f8/Glimt win on 2026-11-03? [Yes]",
+  "us_label": "Will Everton FC win on 2026-11-06?: Yes",
+  "intl_label": "Will Everton FC win on 2026-11-06? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-bog-lil-2026-11-03-bog:short",
-  "intl_token": "60743250806089268884535283830995047482273788472806592634440695126702399715575",
+  "us_slug": "atc-epl-eve-cov-2026-11-06-eve:short",
+  "intl_token": "17829489240876488479755550640343081551992396251843879929105813203005979038226",
   "score": 1.0,
-  "us_label": "Will FK Bod\u00f8/Glimt win on 2026-11-03?: No",
-  "intl_label": "Will FK Bod\u00f8/Glimt win on 2026-11-03? [No]",
+  "us_label": "Will Everton FC win on 2026-11-06?: No",
+  "intl_label": "Will Everton FC win on 2026-11-06? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-bog-lil-2026-11-03-draw",
-  "intl_token": "109731485403555146621955907130810405764938422876219587512656805830497441006131",
+  "us_slug": "atc-epl-eve-cov-2026-11-06-draw",
+  "intl_token": "8952830109776824569218062656394899508518655780295763374101431118411605194935",
   "score": 1.0,
-  "us_label": "Will FK Bod\u00f8/Glimt vs. Lille OSC end in a draw?: Yes",
-  "intl_label": "Will FK Bod\u00f8/Glimt vs. Lille OSC end in a draw? [Yes]",
+  "us_label": "Will Everton FC vs. Coventry City FC end in a draw?: Yes",
+  "intl_label": "Will Everton FC vs. Coventry City FC end in a draw? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-bog-lil-2026-11-03-draw:short",
-  "intl_token": "15280479431474322683286980202599037308702536870994838289111587119766557260712",
+  "us_slug": "atc-epl-eve-cov-2026-11-06-draw:short",
+  "intl_token": "62228697347678213219615004455991896317371517566428376552365877463442161081202",
   "score": 1.0,
-  "us_label": "Will FK Bod\u00f8/Glimt vs. Lille OSC end in a draw?: No",
-  "intl_label": "Will FK Bod\u00f8/Glimt vs. Lille OSC end in a draw? [No]",
+  "us_label": "Will Everton FC vs. Coventry City FC end in a draw?: No",
+  "intl_label": "Will Everton FC vs. Coventry City FC end in a draw? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-bog-lil-2026-11-03-lil",
-  "intl_token": "107692632124885702654736912851029182595533424924752466681566233262336035200846",
+  "us_slug": "atc-epl-eve-cov-2026-11-06-cov",
+  "intl_token": "92671093574490520777607045880342565287241568806837400283049198094182720500314",
   "score": 1.0,
-  "us_label": "Will Lille OSC win on 2026-11-03?: Yes",
-  "intl_label": "Will Lille OSC win on 2026-11-03? [Yes]",
+  "us_label": "Will Coventry City FC win on 2026-11-06?: Yes",
+  "intl_label": "Will Coventry City FC win on 2026-11-06? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-bog-lil-2026-11-03-lil:short",
-  "intl_token": "26094008230993663590019805999786001469417168922803139115147636801544989472610",
+  "us_slug": "atc-epl-eve-cov-2026-11-06-cov:short",
+  "intl_token": "61550951901551332719545826804990000034361308187733228728880239488094370533753",
   "score": 1.0,
-  "us_label": "Will Lille OSC win on 2026-11-03?: No",
-  "intl_label": "Will Lille OSC win on 2026-11-03? [No]",
+  "us_label": "Will Coventry City FC win on 2026-11-06?: No",
+  "intl_label": "Will Coventry City FC win on 2026-11-06? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-mnu-rom-2026-11-03-mnu",
-  "intl_token": "101722043515542151041428410570190865846655142831481824237372990543840326555841",
+  "us_slug": "atc-sea-ven-udi-2026-11-06-ven",
+  "intl_token": "68626371214639187230033863741936444965982404184257208495352191253488599546518",
   "score": 1.0,
-  "us_label": "Will Manchester United FC win on 2026-11-03?: Yes",
-  "intl_label": "Will Manchester United FC win on 2026-11-03? [Yes]",
+  "us_label": "Will Venezia FC win on 2026-11-06?: Yes",
+  "intl_label": "Will Venezia FC win on 2026-11-06? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-mnu-rom-2026-11-03-mnu:short",
-  "intl_token": "115164308442960514497001323456188089744471738904366986139714384307684498204661",
+  "us_slug": "atc-sea-ven-udi-2026-11-06-ven:short",
+  "intl_token": "90760236808516051521812806094183050210647295987088425775568113429692198793948",
   "score": 1.0,
-  "us_label": "Will Manchester United FC win on 2026-11-03?: No",
-  "intl_label": "Will Manchester United FC win on 2026-11-03? [No]",
+  "us_label": "Will Venezia FC win on 2026-11-06?: No",
+  "intl_label": "Will Venezia FC win on 2026-11-06? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-mnu-rom-2026-11-03-draw",
-  "intl_token": "14636753976033988250288938467880873412523296528851958149050867810356760252182",
+  "us_slug": "atc-sea-ven-udi-2026-11-06-draw",
+  "intl_token": "95712578233141329442949973370610138025658781926922480490462076687577957285120",
   "score": 1.0,
-  "us_label": "Will Manchester United FC vs. AS Roma end in a draw?: Yes",
-  "intl_label": "Will Manchester United FC vs. AS Roma end in a draw? [Yes]",
+  "us_label": "Will Venezia FC vs. Udinese Calcio end in a draw?: Yes",
+  "intl_label": "Will Venezia FC vs. Udinese Calcio end in a draw? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-mnu-rom-2026-11-03-draw:short",
-  "intl_token": "19704712208943714279048816246185397346894554418163387130607578206559981296189",
+  "us_slug": "atc-sea-ven-udi-2026-11-06-draw:short",
+  "intl_token": "106554563096631490012831016349668833180785977165773437358188420082489965832473",
   "score": 1.0,
-  "us_label": "Will Manchester United FC vs. AS Roma end in a draw?: No",
-  "intl_label": "Will Manchester United FC vs. AS Roma end in a draw? [No]",
+  "us_label": "Will Venezia FC vs. Udinese Calcio end in a draw?: No",
+  "intl_label": "Will Venezia FC vs. Udinese Calcio end in a draw? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-mnu-rom-2026-11-03-rom",
-  "intl_token": "103021291192595229881185484696607012551387263345385715335270456713012758637241",
+  "us_slug": "atc-sea-ven-udi-2026-11-06-udi",
+  "intl_token": "37392779839101083370941254154648644961428169742590991532195614511174946460243",
   "score": 1.0,
-  "us_label": "Will AS Roma win on 2026-11-03?: Yes",
-  "intl_label": "Will AS Roma win on 2026-11-03? [Yes]",
+  "us_label": "Will Udinese Calcio win on 2026-11-06?: Yes",
+  "intl_label": "Will Udinese Calcio win on 2026-11-06? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-mnu-rom-2026-11-03-rom:short",
-  "intl_token": "82988253533705560235593192314795133916342000096408940814978429768419024571585",
+  "us_slug": "atc-sea-ven-udi-2026-11-06-udi:short",
+  "intl_token": "31927007971958676266629269755121744634745047340811611569891884833580386187742",
   "score": 1.0,
-  "us_label": "Will AS Roma win on 2026-11-03?: No",
-  "intl_label": "Will AS Roma win on 2026-11-03? [No]",
+  "us_label": "Will Udinese Calcio win on 2026-11-06?: No",
+  "intl_label": "Will Udinese Calcio win on 2026-11-06? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-vil-psg-2026-11-03-vil",
-  "intl_token": "107763598817272133349388566222726687923205704209288379631501478029298972751022",
+  "us_slug": "atc-uzb1-bun-xor-2026-11-05-bun",
+  "intl_token": "67136037825524647873539337082943646645176419792740097205644114074670557517682",
   "score": 1.0,
-  "us_label": "Will Villarreal CF win on 2026-11-03?: Yes",
-  "intl_label": "Will Villarreal CF win on 2026-11-03? [Yes]",
+  "us_label": "Will FC Bunyodkor win on 2026-11-05?: Yes",
+  "intl_label": "Will FC Bunyodkor win on 2026-11-05? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-vil-psg-2026-11-03-vil:short",
-  "intl_token": "33326337646650143803257994355339027408506860217120954231654902058134867744524",
+  "us_slug": "atc-uzb1-bun-xor-2026-11-05-bun:short",
+  "intl_token": "112821588456452226947630437724858167991957317291375199402182502996281740827980",
   "score": 1.0,
-  "us_label": "Will Villarreal CF win on 2026-11-03?: No",
-  "intl_label": "Will Villarreal CF win on 2026-11-03? [No]",
+  "us_label": "Will FC Bunyodkor win on 2026-11-05?: No",
+  "intl_label": "Will FC Bunyodkor win on 2026-11-05? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-vil-psg-2026-11-03-draw",
-  "intl_token": "13455126618393495293687188113771738805816526451064920680390733658726568519892",
+  "us_slug": "atc-uzb1-bun-xor-2026-11-05-draw",
+  "intl_token": "67600941576223120763984855415152211077999529456776139436022587767972024571312",
   "score": 1.0,
-  "us_label": "Will Villarreal CF vs. Paris Saint-Germain FC end in a draw?: Yes",
-  "intl_label": "Will Villarreal CF vs. Paris Saint-Germain FC end in a draw? [Yes]",
+  "us_label": "Will FC Bunyodkor vs. Xorazm Fk Urganch end in a draw?: Yes",
+  "intl_label": "Will FC Bunyodkor vs. Xorazm Fk Urganch end in a draw? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-vil-psg-2026-11-03-draw:short",
-  "intl_token": "43298205370598917401763616517555577885983719289793398289976266078981932619328",
+  "us_slug": "atc-uzb1-bun-xor-2026-11-05-draw:short",
+  "intl_token": "247339400129736011565198580145278929553313571707505502417933728300908630510",
   "score": 1.0,
-  "us_label": "Will Villarreal CF vs. Paris Saint-Germain FC end in a draw?: No",
-  "intl_label": "Will Villarreal CF vs. Paris Saint-Germain FC end in a draw? [No]",
+  "us_label": "Will FC Bunyodkor vs. Xorazm Fk Urganch end in a draw?: No",
+  "intl_label": "Will FC Bunyodkor vs. Xorazm Fk Urganch end in a draw? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-vil-psg-2026-11-03-psg",
-  "intl_token": "50234235839840778865449147440291284525343432143971279697700230596963018144668",
+  "us_slug": "atc-uzb1-bun-xor-2026-11-05-xor",
+  "intl_token": "2125533897678920370663024205128932397526557172598728500467483463255667558801",
   "score": 1.0,
-  "us_label": "Will Paris Saint-Germain FC win on 2026-11-03?: Yes",
-  "intl_label": "Will Paris Saint-Germain FC win on 2026-11-03? [Yes]",
+  "us_label": "Will Xorazm Fk Urganch win on 2026-11-05?: Yes",
+  "intl_label": "Will Xorazm Fk Urganch win on 2026-11-05? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-vil-psg-2026-11-03-psg:short",
-  "intl_token": "1432871681164881146941579092139590389398552065037857134254882824490514154511",
+  "us_slug": "atc-uzb1-bun-xor-2026-11-05-xor:short",
+  "intl_token": "16123708538478961496966418623947187662659665366057529076530719726744422306067",
   "score": 1.0,
-  "us_label": "Will Paris Saint-Germain FC win on 2026-11-03?: No",
-  "intl_label": "Will Paris Saint-Germain FC win on 2026-11-03? [No]",
+  "us_label": "Will Xorazm Fk Urganch win on 2026-11-05?: No",
+  "intl_label": "Will Xorazm Fk Urganch win on 2026-11-05? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-aek1-rma-2026-11-04-aek1",
-  "intl_token": "106777711314668536375213333774224943218460456889313536158654065973760832135255",
+  "us_slug": "atc-epl-lee-tot-2026-11-07-lee",
+  "intl_token": "113197748720145703411113482755976973191876574626447707384855198243986467261748",
   "score": 1.0,
-  "us_label": "Will AEK win on 2026-11-04?: Yes",
-  "intl_label": "Will AEK win on 2026-11-04? [Yes]",
+  "us_label": "Will Leeds United FC win on 2026-11-07?: Yes",
+  "intl_label": "Will Leeds United FC win on 2026-11-07? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-aek1-rma-2026-11-04-aek1:short",
-  "intl_token": "18565816573750516247993416744571703982273002423492861786783760304425525609512",
+  "us_slug": "atc-epl-lee-tot-2026-11-07-lee:short",
+  "intl_token": "69431818949794022251186638641896170472084194239711630951553933373116038849907",
   "score": 1.0,
-  "us_label": "Will AEK win on 2026-11-04?: No",
-  "intl_label": "Will AEK win on 2026-11-04? [No]",
+  "us_label": "Will Leeds United FC win on 2026-11-07?: No",
+  "intl_label": "Will Leeds United FC win on 2026-11-07? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-aek1-rma-2026-11-04-draw",
-  "intl_token": "83114878841488615553443807302147385000301178231384246893749554236662902169336",
+  "us_slug": "atc-epl-lee-tot-2026-11-07-draw",
+  "intl_token": "76923242936520444902479707025746996881333738098858855845910229695394618697215",
   "score": 1.0,
-  "us_label": "Will AEK vs. Real Madrid CF end in a draw?: Yes",
-  "intl_label": "Will AEK vs. Real Madrid CF end in a draw? [Yes]",
+  "us_label": "Will Leeds United FC vs. Tottenham Hotspur FC end in a draw?: Yes",
+  "intl_label": "Will Leeds United FC vs. Tottenham Hotspur FC end in a draw? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-aek1-rma-2026-11-04-draw:short",
-  "intl_token": "2549341440066951852545106745466195616985805850727741967075260397927218656006",
+  "us_slug": "atc-epl-lee-tot-2026-11-07-draw:short",
+  "intl_token": "71682190909542756767378069819539980967775103638767058410319070979723337461747",
   "score": 1.0,
-  "us_label": "Will AEK vs. Real Madrid CF end in a draw?: No",
-  "intl_label": "Will AEK vs. Real Madrid CF end in a draw? [No]",
+  "us_label": "Will Leeds United FC vs. Tottenham Hotspur FC end in a draw?: No",
+  "intl_label": "Will Leeds United FC vs. Tottenham Hotspur FC end in a draw? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-aek1-rma-2026-11-04-rma",
-  "intl_token": "39515423851331707664526519001996875757487006788622502797081364834883774387767",
+  "us_slug": "atc-epl-lee-tot-2026-11-07-tot",
+  "intl_token": "55606399206087402633704097463692607415938890283850416796664127383843090978319",
   "score": 1.0,
-  "us_label": "Will Real Madrid CF win on 2026-11-04?: Yes",
-  "intl_label": "Will Real Madrid CF win on 2026-11-04? [Yes]",
+  "us_label": "Will Tottenham Hotspur FC win on 2026-11-07?: Yes",
+  "intl_label": "Will Tottenham Hotspur FC win on 2026-11-07? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-aek1-rma-2026-11-04-rma:short",
-  "intl_token": "3771084942539439798998256191956824579778203065651547449472385427482459623087",
+  "us_slug": "atc-epl-lee-tot-2026-11-07-tot:short",
+  "intl_token": "48505832245883385323926437964011687244468951304565190643227027715511274665501",
   "score": 1.0,
-  "us_label": "Will Real Madrid CF win on 2026-11-04?: No",
-  "intl_label": "Will Real Madrid CF win on 2026-11-04? [No]",
+  "us_label": "Will Tottenham Hotspur FC win on 2026-11-07?: No",
+  "intl_label": "Will Tottenham Hotspur FC win on 2026-11-07? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-fen-liv-2026-11-04-fen",
-  "intl_token": "24615673083763053658647600432633538832483609809130691534441111901673468093384",
+  "us_slug": "atc-bel1-sta-bev-2026-11-06-sta",
+  "intl_token": "13863212070487524785216151140617237267350703810859105405181201646997847811294",
   "score": 1.0,
-  "us_label": "Will Fenerbah\u00e7e SK win on 2026-11-04?: Yes",
-  "intl_label": "Will Fenerbah\u00e7e SK win on 2026-11-04? [Yes]",
+  "us_label": "Will Standard Liege win on 2026-11-06?: Yes",
+  "intl_label": "Will Standard Liege win on 2026-11-06? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-fen-liv-2026-11-04-fen:short",
-  "intl_token": "97621627444282591340005307133933871209757039579632930597012587973726535349360",
+  "us_slug": "atc-bel1-sta-bev-2026-11-06-sta:short",
+  "intl_token": "54889314201247071324512045740027371077831514272581289240115784466091281661300",
   "score": 1.0,
-  "us_label": "Will Fenerbah\u00e7e SK win on 2026-11-04?: No",
-  "intl_label": "Will Fenerbah\u00e7e SK win on 2026-11-04? [No]",
+  "us_label": "Will Standard Liege win on 2026-11-06?: No",
+  "intl_label": "Will Standard Liege win on 2026-11-06? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-fen-liv-2026-11-04-draw",
-  "intl_token": "98734746373643813236732622664218264402322412835165483750841169885534641130143",
+  "us_slug": "atc-bel1-sta-bev-2026-11-06-draw",
+  "intl_token": "539792615433568231594808620126353538915526066340048073490584355535795552850",
   "score": 1.0,
-  "us_label": "Will Fenerbah\u00e7e SK vs. Liverpool FC end in a draw?: Yes",
-  "intl_label": "Will Fenerbah\u00e7e SK vs. Liverpool FC end in a draw? [Yes]",
+  "us_label": "Will Standard Liege vs. SK Beveren end in a draw?: Yes",
+  "intl_label": "Will Standard Liege vs. SK Beveren end in a draw? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-fen-liv-2026-11-04-draw:short",
-  "intl_token": "41022441900723710814614580342609139628677737752643955565885662619393600981109",
+  "us_slug": "atc-bel1-sta-bev-2026-11-06-draw:short",
+  "intl_token": "36339290040213237170235627615833053100590182145517568658724491078055705870494",
   "score": 1.0,
-  "us_label": "Will Fenerbah\u00e7e SK vs. Liverpool FC end in a draw?: No",
-  "intl_label": "Will Fenerbah\u00e7e SK vs. Liverpool FC end in a draw? [No]",
+  "us_label": "Will Standard Liege vs. SK Beveren end in a draw?: No",
+  "intl_label": "Will Standard Liege vs. SK Beveren end in a draw? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-fen-liv-2026-11-04-liv",
-  "intl_token": "71109910402771072761135789176496163912889401488520795969085578888189938669463",
+  "us_slug": "atc-bel1-sta-bev-2026-11-06-bev",
+  "intl_token": "89736567441359786206762305382846475225592385634794281387869031923099298609257",
   "score": 1.0,
-  "us_label": "Will Liverpool FC win on 2026-11-04?: Yes",
-  "intl_label": "Will Liverpool FC win on 2026-11-04? [Yes]",
+  "us_label": "Will SK Beveren win on 2026-11-06?: Yes",
+  "intl_label": "Will SK Beveren win on 2026-11-06? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-fen-liv-2026-11-04-liv:short",
-  "intl_token": "57142808983372017242616597869752431650076710697638739605214610508521409700645",
+  "us_slug": "atc-bel1-sta-bev-2026-11-06-bev:short",
+  "intl_token": "19260103468713892473990394200643063752465400926485015053784698769553347673790",
   "score": 1.0,
-  "us_label": "Will Liverpool FC win on 2026-11-04?: No",
-  "intl_label": "Will Liverpool FC win on 2026-11-04? [No]",
+  "us_label": "Will SK Beveren win on 2026-11-06?: No",
+  "intl_label": "Will SK Beveren win on 2026-11-06? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-por-nap-2026-11-04-por",
-  "intl_token": "42070034096760800039074195917226194363617691291864142891438765429598544441732",
+  "us_slug": "atc-wsl-mci-whu-2026-11-07-mci",
+  "intl_token": "28823931146884392572061875964513548806441071104208189470502391885038763975028",
   "score": 1.0,
-  "us_label": "Will FC Porto win on 2026-11-04?: Yes",
-  "intl_label": "Will FC Porto win on 2026-11-04? [Yes]",
+  "us_label": "Will Manchester City WFC win on 2026-11-07?: Yes",
+  "intl_label": "Will Manchester City WFC win on 2026-11-07? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-por-nap-2026-11-04-por:short",
-  "intl_token": "113334141963816902806725862047710486351538284781469387611792727562381118035162",
+  "us_slug": "atc-wsl-mci-whu-2026-11-07-mci:short",
+  "intl_token": "48998869541050621840227539921277455666949415961101650544959197478217977774041",
   "score": 1.0,
-  "us_label": "Will FC Porto win on 2026-11-04?: No",
-  "intl_label": "Will FC Porto win on 2026-11-04? [No]",
+  "us_label": "Will Manchester City WFC win on 2026-11-07?: No",
+  "intl_label": "Will Manchester City WFC win on 2026-11-07? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-por-nap-2026-11-04-draw",
-  "intl_token": "72450654737548513780269912528953082916464058545713635221954351437993645783039",
+  "us_slug": "atc-wsl-mci-whu-2026-11-07-draw",
+  "intl_token": "95934386650373127324755246887415893152847006960097080241987975150739570412027",
   "score": 1.0,
-  "us_label": "Will FC Porto vs. SSC Napoli end in a draw?: Yes",
-  "intl_label": "Will FC Porto vs. SSC Napoli end in a draw? [Yes]",
+  "us_label": "Will Manchester City WFC vs. West Ham United FC end in a draw?: Yes",
+  "intl_label": "Will Manchester City WFC vs. West Ham United FC end in a draw? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-por-nap-2026-11-04-draw:short",
-  "intl_token": "23084496243810268136322103588675955710789767371494227464438297917979215300721",
+  "us_slug": "atc-wsl-mci-whu-2026-11-07-draw:short",
+  "intl_token": "114672140066576230024391974747436863940527700102140152139096889568481632310243",
   "score": 1.0,
-  "us_label": "Will FC Porto vs. SSC Napoli end in a draw?: No",
-  "intl_label": "Will FC Porto vs. SSC Napoli end in a draw? [No]",
+  "us_label": "Will Manchester City WFC vs. West Ham United FC end in a draw?: No",
+  "intl_label": "Will Manchester City WFC vs. West Ham United FC end in a draw? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-por-nap-2026-11-04-nap",
-  "intl_token": "22483676073215094431331039126310750786412516589357555352493843352325767989441",
+  "us_slug": "atc-wsl-mci-whu-2026-11-07-whu",
+  "intl_token": "80787631228683455111204786471283148319224675892747403840408131895837691503410",
   "score": 1.0,
-  "us_label": "Will SSC Napoli win on 2026-11-04?: Yes",
-  "intl_label": "Will SSC Napoli win on 2026-11-04? [Yes]",
+  "us_label": "Will West Ham United FC win on 2026-11-07?: Yes",
+  "intl_label": "Will West Ham United FC win on 2026-11-07? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-por-nap-2026-11-04-nap:short",
-  "intl_token": "69662658875402247887108854025459314575164850957728015911885648242651001251753",
+  "us_slug": "atc-wsl-mci-whu-2026-11-07-whu:short",
+  "intl_token": "25193212474436680300825172104543751788686072913531194530822692240509872639143",
   "score": 1.0,
-  "us_label": "Will SSC Napoli win on 2026-11-04?: No",
-  "intl_label": "Will SSC Napoli win on 2026-11-04? [No]",
+  "us_label": "Will West Ham United FC win on 2026-11-07?: No",
+  "intl_label": "Will West Ham United FC win on 2026-11-07? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-psv-bru-2026-11-04-psv",
-  "intl_token": "82565410135678951138192465450213574509789706938680324913486337609195024486783",
+  "us_slug": "atc-wsl-cfc-eve-2026-11-07-cfc",
+  "intl_token": "28260760190859828337542095279089181673289045900166213490788996909892302711741",
   "score": 1.0,
-  "us_label": "Will PSV win on 2026-11-04?: Yes",
-  "intl_label": "Will PSV win on 2026-11-04? [Yes]",
+  "us_label": "Will Chelsea FC win on 2026-11-07?: Yes",
+  "intl_label": "Will Chelsea FC win on 2026-11-07? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-psv-bru-2026-11-04-psv:short",
-  "intl_token": "89405583402492946340240274569574418264036259677960612079753442608201075032503",
+  "us_slug": "atc-wsl-cfc-eve-2026-11-07-cfc:short",
+  "intl_token": "38937236593698508477827556451480012499355943991907255938827479553692740270850",
   "score": 1.0,
-  "us_label": "Will PSV win on 2026-11-04?: No",
-  "intl_label": "Will PSV win on 2026-11-04? [No]",
+  "us_label": "Will Chelsea FC win on 2026-11-07?: No",
+  "intl_label": "Will Chelsea FC win on 2026-11-07? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-psv-bru-2026-11-04-draw",
-  "intl_token": "111054016900439102492865197253797493615912766604477222422415499515787742252647",
+  "us_slug": "atc-wsl-cfc-eve-2026-11-07-draw",
+  "intl_token": "9526800614780651320689459843907935116383576112567212885820443621921903268690",
   "score": 1.0,
-  "us_label": "Will PSV vs. Club Brugge KV end in a draw?: Yes",
-  "intl_label": "Will PSV vs. Club Brugge KV end in a draw? [Yes]",
+  "us_label": "Will Chelsea FC vs. Everton FC end in a draw?: Yes",
+  "intl_label": "Will Chelsea FC vs. Everton FC end in a draw? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-psv-bru-2026-11-04-draw:short",
-  "intl_token": "82642459006005768149213823733380012585869167813924799472251357041012012887043",
+  "us_slug": "atc-wsl-cfc-eve-2026-11-07-draw:short",
+  "intl_token": "115229900553035954488841035234422310313924870047491554280550157272192806591530",
   "score": 1.0,
-  "us_label": "Will PSV vs. Club Brugge KV end in a draw?: No",
-  "intl_label": "Will PSV vs. Club Brugge KV end in a draw? [No]",
+  "us_label": "Will Chelsea FC vs. Everton FC end in a draw?: No",
+  "intl_label": "Will Chelsea FC vs. Everton FC end in a draw? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-psv-bru-2026-11-04-bru",
-  "intl_token": "7764628003922149159042542240228440348309364928506755067502683607268386640671",
+  "us_slug": "atc-wsl-cfc-eve-2026-11-07-eve",
+  "intl_token": "84140850320323662100765179401417800551341851448256884515054708899419651992250",
   "score": 1.0,
-  "us_label": "Will Club Brugge KV win on 2026-11-04?: Yes",
-  "intl_label": "Will Club Brugge KV win on 2026-11-04? [Yes]",
+  "us_label": "Will Everton FC win on 2026-11-07?: Yes",
+  "intl_label": "Will Everton FC win on 2026-11-07? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-psv-bru-2026-11-04-bru:short",
-  "intl_token": "97721927785050392158011458071077918628362451484395963293861253363389742745328",
+  "us_slug": "atc-wsl-cfc-eve-2026-11-07-eve:short",
+  "intl_token": "88019754860628989435277897913867428577585985283813338832600329915001590519295",
   "score": 1.0,
-  "us_label": "Will Club Brugge KV win on 2026-11-04?: No",
-  "intl_label": "Will Club Brugge KV win on 2026-11-04? [No]",
+  "us_label": "Will Everton FC win on 2026-11-07?: No",
+  "intl_label": "Will Everton FC win on 2026-11-07? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-rbl-mnc-2026-11-04-rbl",
-  "intl_token": "78303992152149551258957004598730280826150746788044929202526009183593202512580",
+  "us_slug": "aec-nhl-stl-nj-2026-11-05",
+  "intl_token": "53593404614094065339995815263320713355468826946715705984542751708279853993164",
   "score": 1.0,
-  "us_label": "Will RB Leipzig win on 2026-11-04?: Yes",
-  "intl_label": "Will RB Leipzig win on 2026-11-04? [Yes]",
+  "us_label": "Blues vs. Devils: Blues",
+  "intl_label": "Blues vs. Devils [Blues]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-rbl-mnc-2026-11-04-rbl:short",
-  "intl_token": "9871209417423948187729745356957481474039218928436243020206418546313582583948",
+  "us_slug": "aec-nhl-stl-nj-2026-11-05:short",
+  "intl_token": "112706538425009004350080957636832017599306978884021708632321259968973337224787",
   "score": 1.0,
-  "us_label": "Will RB Leipzig win on 2026-11-04?: No",
-  "intl_label": "Will RB Leipzig win on 2026-11-04? [No]",
+  "us_label": "Blues vs. Devils: Devils",
+  "intl_label": "Blues vs. Devils [Devils]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-rbl-mnc-2026-11-04-draw",
-  "intl_token": "11017256156847478621807265952950326114217707718473357285491835328831505380078",
+  "us_slug": "aec-nhl-bos-pit-2026-11-05",
+  "intl_token": "79637413709744729780145052681496699725345566501298050837656909675421280785276",
   "score": 1.0,
-  "us_label": "Will RB Leipzig vs. Manchester City FC end in a draw?: Yes",
-  "intl_label": "Will RB Leipzig vs. Manchester City FC end in a draw? [Yes]",
+  "us_label": "Bruins vs. Penguins: Bruins",
+  "intl_label": "Bruins vs. Penguins [Bruins]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-rbl-mnc-2026-11-04-draw:short",
-  "intl_token": "112702670464057288722574638422967769941454716826679112693970037765822773057868",
+  "us_slug": "aec-nhl-bos-pit-2026-11-05:short",
+  "intl_token": "37967657496120253889228013151468784482565538202775913303280353641946713223819",
   "score": 1.0,
-  "us_label": "Will RB Leipzig vs. Manchester City FC end in a draw?: No",
-  "intl_label": "Will RB Leipzig vs. Manchester City FC end in a draw? [No]",
+  "us_label": "Bruins vs. Penguins: Penguins",
+  "intl_label": "Bruins vs. Penguins [Penguins]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-rbl-mnc-2026-11-04-mnc",
-  "intl_token": "69846446576051246534485563230050510581392465814880505637095088602642888133741",
+  "us_slug": "aec-nhl-phi-nyr-2026-11-05",
+  "intl_token": "46739304758229676640483453964737973193916798405592312094834094907532197756035",
   "score": 1.0,
-  "us_label": "Will Manchester City FC win on 2026-11-04?: Yes",
-  "intl_label": "Will Manchester City FC win on 2026-11-04? [Yes]",
+  "us_label": "Flyers vs. Rangers: Flyers",
+  "intl_label": "Flyers vs. Rangers [Flyers]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-rbl-mnc-2026-11-04-mnc:short",
-  "intl_token": "68191460120307234820230851508259474756868972101008883830805562769304197352014",
+  "us_slug": "aec-nhl-phi-nyr-2026-11-05:short",
+  "intl_token": "33203179480627512658529765349253184432945047613596846267680231570494028094191",
   "score": 1.0,
-  "us_label": "Will Manchester City FC win on 2026-11-04?: No",
-  "intl_label": "Will Manchester City FC win on 2026-11-04? [No]",
+  "us_label": "Flyers vs. Rangers: Rangers",
+  "intl_label": "Flyers vs. Rangers [Rangers]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-rcl-com-2026-11-04-rcl",
-  "intl_token": "18231528150211295541986395253137057035983121953356990294225433349865792521242",
+  "us_slug": "aec-nhl-car-nyi-2026-11-05",
+  "intl_token": "21328478753009634434219009529489172047276916076566408880497619656278045783605",
   "score": 1.0,
-  "us_label": "Will Racing Club de Lens win on 2026-11-04?: Yes",
-  "intl_label": "Will Racing Club de Lens win on 2026-11-04? [Yes]",
+  "us_label": "Hurricanes vs. Islanders: Hurricanes",
+  "intl_label": "Hurricanes vs. Islanders [Hurricanes]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-rcl-com-2026-11-04-rcl:short",
-  "intl_token": "63316200314474873902722644938998324945279259791690838698577150092499785043420",
+  "us_slug": "aec-nhl-car-nyi-2026-11-05:short",
+  "intl_token": "72906816975480907993719946184263511175138262287223411834884589762246482151158",
   "score": 1.0,
-  "us_label": "Will Racing Club de Lens win on 2026-11-04?: No",
-  "intl_label": "Will Racing Club de Lens win on 2026-11-04? [No]",
+  "us_label": "Hurricanes vs. Islanders: Islanders",
+  "intl_label": "Hurricanes vs. Islanders [Islanders]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-rcl-com-2026-11-04-draw",
-  "intl_token": "107101241315720684810505763160633391193818159617965186181443073980920711834896",
+  "us_slug": "aec-nhl-van-wpg-2026-11-05",
+  "intl_token": "69197427044831424916942532096802984852242406855500948877241836618013800270469",
   "score": 1.0,
-  "us_label": "Will Racing Club de Lens vs. Como 1907 end in a draw?: Yes",
-  "intl_label": "Will Racing Club de Lens vs. Como 1907 end in a draw? [Yes]",
+  "us_label": "Canucks vs. Jets: Canucks",
+  "intl_label": "Canucks vs. Jets [Canucks]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-rcl-com-2026-11-04-draw:short",
-  "intl_token": "85846090607389072987161193708621423235775676591155583553183049327037159662163",
+  "us_slug": "aec-nhl-van-wpg-2026-11-05:short",
+  "intl_token": "36347810982100186682827004818569231801806360228471487510164515275097656302896",
   "score": 1.0,
-  "us_label": "Will Racing Club de Lens vs. Como 1907 end in a draw?: No",
-  "intl_label": "Will Racing Club de Lens vs. Como 1907 end in a draw? [No]",
+  "us_label": "Canucks vs. Jets: Jets",
+  "intl_label": "Canucks vs. Jets [Jets]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-rcl-com-2026-11-04-com",
-  "intl_token": "14903798477955737870650418628329212720837191169387396830475380445543887385415",
+  "us_slug": "aec-nhl-dal-cbj-2026-11-05",
+  "intl_token": "78994554754910562522301076148454637182749233584649705661943460058227891996875",
   "score": 1.0,
-  "us_label": "Will Como 1907 win on 2026-11-04?: Yes",
-  "intl_label": "Will Como 1907 win on 2026-11-04? [Yes]",
+  "us_label": "Stars vs. Blue Jackets: Stars",
+  "intl_label": "Stars vs. Blue Jackets [Stars]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-rcl-com-2026-11-04-com:short",
-  "intl_token": "3051829253858727018136284902816798732851770543552026002293923173670580440341",
+  "us_slug": "aec-nhl-dal-cbj-2026-11-05:short",
+  "intl_token": "61684684151620072745336652929869586212354581457262155710531486365167978220297",
   "score": 1.0,
-  "us_label": "Will Como 1907 win on 2026-11-04?: No",
-  "intl_label": "Will Como 1907 win on 2026-11-04? [No]",
+  "us_label": "Stars vs. Blue Jackets: Blue Jackets",
+  "intl_label": "Stars vs. Blue Jackets [Blue Jackets]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-slp-ars-2026-11-04-slp",
-  "intl_token": "47966066986714938441291325221079365457196593128238803366734694975615762333170",
+  "us_slug": "aec-nhl-chi-tb-2026-11-05",
+  "intl_token": "9333490780268510219842024675728016044494539634097011135627643411611679019078",
   "score": 1.0,
-  "us_label": "Will SK Slavia Praha win on 2026-11-04?: Yes",
-  "intl_label": "Will SK Slavia Praha win on 2026-11-04? [Yes]",
+  "us_label": "Blackhawks vs. Lightning: Blackhawks",
+  "intl_label": "Blackhawks vs. Lightning [Blackhawks]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-slp-ars-2026-11-04-slp:short",
-  "intl_token": "89148236279380675079183001746367885331427589437167068071607496438236119924256",
+  "us_slug": "aec-nhl-chi-tb-2026-11-05:short",
+  "intl_token": "66160529204742322504761709367981020501774442929082598061099511159120299956370",
   "score": 1.0,
-  "us_label": "Will SK Slavia Praha win on 2026-11-04?: No",
-  "intl_label": "Will SK Slavia Praha win on 2026-11-04? [No]",
+  "us_label": "Blackhawks vs. Lightning: Lightning",
+  "intl_label": "Blackhawks vs. Lightning [Lightning]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-slp-ars-2026-11-04-draw",
-  "intl_token": "65286528532023376695156808928051013895301797591714433051633056475443196250931",
+  "us_slug": "aec-nhl-ana-edm-2026-11-05",
+  "intl_token": "11074718903456854413808097078551226167001565795243439118051254900373730843968",
   "score": 1.0,
-  "us_label": "Will SK Slavia Praha vs. Arsenal FC end in a draw?: Yes",
-  "intl_label": "Will SK Slavia Praha vs. Arsenal FC end in a draw? [Yes]",
+  "us_label": "Ducks vs. Oilers: Ducks",
+  "intl_label": "Ducks vs. Oilers [Ducks]",
   "tick": 0.01
  },
  {
-  "us_slug": "atc-ucl-slp-ars-2026-11-04-draw:short",
-  "intl_token": "72733582478030042545694205116828426485732402769600021926647107034526433707283",
+  "us_slug": "aec-nhl-ana-edm-2026-11-05:short",
+  "intl_token": "62555285551340382690293924744476342166248009059973226064044071405457899136089",
   "score": 1.0,
-  "us_label": "Will SK Slavia Praha vs. Arsenal FC end in a draw?: No",
-  "intl_label": "Will SK Slavia Praha vs. Arsenal FC end in a draw? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-ucl-slp-ars-2026-11-04-ars",
-  "intl_token": "100913283705193578858886401879221750828791501585884544215624568196336778632583",
-  "score": 1.0,
-  "us_label": "Will Arsenal FC win on 2026-11-04?: Yes",
-  "intl_label": "Will Arsenal FC win on 2026-11-04? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-ucl-slp-ars-2026-11-04-ars:short",
-  "intl_token": "84907647600633092270396251949176802811975917431447052322731235120597697436965",
-  "score": 1.0,
-  "us_label": "Will Arsenal FC win on 2026-11-04?: No",
-  "intl_label": "Will Arsenal FC win on 2026-11-04? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-est-shm-2026-11-03-est",
-  "intl_token": "62385534505788392194740468436697467070162163847722553241359731484431155789565",
-  "score": 1.0,
-  "us_label": "Will Esteghlal FC Tehran win on 2026-11-03?: Yes",
-  "intl_label": "Will Esteghlal FC Tehran win on 2026-11-03? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-est-shm-2026-11-03-est:short",
-  "intl_token": "3544831856663206979007527236468765184467302481918908939278602784172350507608",
-  "score": 1.0,
-  "us_label": "Will Esteghlal FC Tehran win on 2026-11-03?: No",
-  "intl_label": "Will Esteghlal FC Tehran win on 2026-11-03? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-est-shm-2026-11-03-draw",
-  "intl_token": "60619773050793853343890019590176351434083833997065747595046737318440175547321",
-  "score": 1.0,
-  "us_label": "Will Esteghlal FC Tehran vs. Al-Shamal end in a draw?: Yes",
-  "intl_label": "Will Esteghlal FC Tehran vs. Al-Shamal end in a draw? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-est-shm-2026-11-03-draw:short",
-  "intl_token": "22405941339508315054237482162316117778361017475936745334442655642986891405483",
-  "score": 1.0,
-  "us_label": "Will Esteghlal FC Tehran vs. Al-Shamal end in a draw?: No",
-  "intl_label": "Will Esteghlal FC Tehran vs. Al-Shamal end in a draw? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-est-shm-2026-11-03-shm",
-  "intl_token": "45386188154489628459669120922598978348799008315682303875299397397250345390424",
-  "score": 1.0,
-  "us_label": "Will Al-Shamal win on 2026-11-03?: Yes",
-  "intl_label": "Will Al-Shamal win on 2026-11-03? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-est-shm-2026-11-03-shm:short",
-  "intl_token": "80619863872907382368545517144001831790750363854187349502106000351119083940206",
-  "score": 1.0,
-  "us_label": "Will Al-Shamal win on 2026-11-03?: No",
-  "intl_label": "Will Al-Shamal win on 2026-11-03? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-hil-sah-2026-11-03-hil",
-  "intl_token": "81289246923434405134110262756563965226659960385520084859349113377232162913846",
-  "score": 1.0,
-  "us_label": "Will Al Hilal SFC win on 2026-11-03?: Yes",
-  "intl_label": "Will Al Hilal SFC win on 2026-11-03? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-hil-sah-2026-11-03-hil:short",
-  "intl_token": "46898983683093721663515246496252142646102213953116527579263905458945554293710",
-  "score": 1.0,
-  "us_label": "Will Al Hilal SFC win on 2026-11-03?: No",
-  "intl_label": "Will Al Hilal SFC win on 2026-11-03? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-hil-sah-2026-11-03-draw",
-  "intl_token": "13944634006979811206486718895964420678902902837768109054309262737663500099296",
-  "score": 1.0,
-  "us_label": "Will Al Hilal SFC vs. Shabab Al Ahli Dubai end in a draw?: Yes",
-  "intl_label": "Will Al Hilal SFC vs. Shabab Al Ahli Dubai end in a draw? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-hil-sah-2026-11-03-draw:short",
-  "intl_token": "38322384353178274721985726254063655928139647522546759689912696141492514129975",
-  "score": 1.0,
-  "us_label": "Will Al Hilal SFC vs. Shabab Al Ahli Dubai end in a draw?: No",
-  "intl_label": "Will Al Hilal SFC vs. Shabab Al Ahli Dubai end in a draw? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-hil-sah-2026-11-03-sah",
-  "intl_token": "29136110278442593409261777292080040212154519452581943494557642075600528130291",
-  "score": 1.0,
-  "us_label": "Will Shabab Al Ahli Dubai win on 2026-11-03?: Yes",
-  "intl_label": "Will Shabab Al Ahli Dubai win on 2026-11-03? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-hil-sah-2026-11-03-sah:short",
-  "intl_token": "94681984112025291241240943676432760466574252975354590423855236452527895690204",
-  "score": 1.0,
-  "us_label": "Will Shabab Al Ahli Dubai win on 2026-11-03?: No",
-  "intl_label": "Will Shabab Al Ahli Dubai win on 2026-11-03? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-poh-gam-2026-11-04-poh",
-  "intl_token": "2771197841940790950259624254679587712437874165830180702100873870255999572983",
-  "score": 1.0,
-  "us_label": "Will FC Pohang Steelers win on 2026-11-04?: Yes",
-  "intl_label": "Will FC Pohang Steelers win on 2026-11-04? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-poh-gam-2026-11-04-poh:short",
-  "intl_token": "21433779196580572248524355004704491862935026811575070753376824926541951349655",
-  "score": 1.0,
-  "us_label": "Will FC Pohang Steelers win on 2026-11-04?: No",
-  "intl_label": "Will FC Pohang Steelers win on 2026-11-04? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-poh-gam-2026-11-04-draw",
-  "intl_token": "38544457880612793553867834029597949794922385915896074871525437672234728772276",
-  "score": 1.0,
-  "us_label": "Will FC Pohang Steelers vs. Gamba Osaka end in a draw?: Yes",
-  "intl_label": "Will FC Pohang Steelers vs. Gamba Osaka end in a draw? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-poh-gam-2026-11-04-draw:short",
-  "intl_token": "52922388766079243065261816891022007207231170380908614593267064318709851592751",
-  "score": 1.0,
-  "us_label": "Will FC Pohang Steelers vs. Gamba Osaka end in a draw?: No",
-  "intl_label": "Will FC Pohang Steelers vs. Gamba Osaka end in a draw? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-poh-gam-2026-11-04-gam",
-  "intl_token": "92753573200510103669164283682513614611936427570437057387918501529978776566283",
-  "score": 1.0,
-  "us_label": "Will Gamba Osaka win on 2026-11-04?: Yes",
-  "intl_label": "Will Gamba Osaka win on 2026-11-04? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-poh-gam-2026-11-04-gam:short",
-  "intl_token": "72013985313396233275544753606608129715139485124629600424705344598163258556346",
-  "score": 1.0,
-  "us_label": "Will Gamba Osaka win on 2026-11-04?: No",
-  "intl_label": "Will Gamba Osaka win on 2026-11-04? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-bur-kas-2026-11-04-bur",
-  "intl_token": "74635526031981148420476118577366320764659629753797979763341114240126953960470",
-  "score": 1.0,
-  "us_label": "Will Buriram United win on 2026-11-04?: Yes",
-  "intl_label": "Will Buriram United win on 2026-11-04? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-bur-kas-2026-11-04-bur:short",
-  "intl_token": "103333113804227279732266724653097924624992831699419104650907429711427521047663",
-  "score": 1.0,
-  "us_label": "Will Buriram United win on 2026-11-04?: No",
-  "intl_label": "Will Buriram United win on 2026-11-04? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-bur-kas-2026-11-04-draw",
-  "intl_token": "88352639887261658029092510986634877519157270952834135255649262634129117624672",
-  "score": 1.0,
-  "us_label": "Will Buriram United vs. Kashima Antlers end in a draw?: Yes",
-  "intl_label": "Will Buriram United vs. Kashima Antlers end in a draw? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-bur-kas-2026-11-04-draw:short",
-  "intl_token": "25559381887093706223073987118034564357487765841674902472833277906710478770668",
-  "score": 1.0,
-  "us_label": "Will Buriram United vs. Kashima Antlers end in a draw?: No",
-  "intl_label": "Will Buriram United vs. Kashima Antlers end in a draw? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-bur-kas-2026-11-04-kas",
-  "intl_token": "110848645796874976827458454072942826305681103473593058961317001475166102349286",
-  "score": 1.0,
-  "us_label": "Will Kashima Antlers win on 2026-11-04?: Yes",
-  "intl_label": "Will Kashima Antlers win on 2026-11-04? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-acle-bur-kas-2026-11-04-kas:short",
-  "intl_token": "110057799471041305525271789192868857128237783950069141474068429769971640854652",
-  "score": 1.0,
-  "us_label": "Will Kashima Antlers win on 2026-11-04?: No",
-  "intl_label": "Will Kashima Antlers win on 2026-11-04? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nhl-min-phi-2026-11-03",
-  "intl_token": "1550452597167256562732799698587922495849039584946275849930241592551695371853",
-  "score": 1.0,
-  "us_label": "Wild vs. Flyers: Wild",
-  "intl_label": "Wild vs. Flyers [Wild]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nhl-min-phi-2026-11-03:short",
-  "intl_token": "95450662982295001478429266427836400708350036094542812926230868755572951795336",
-  "score": 1.0,
-  "us_label": "Wild vs. Flyers: Flyers",
-  "intl_label": "Wild vs. Flyers [Flyers]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nhl-wpg-mon-2026-11-03",
-  "intl_token": "23454303375301036821048841782275959500293891391532160703114215811729227309591",
-  "score": 1.0,
-  "us_label": "Jets vs. Canadiens: Jets",
-  "intl_label": "Jets vs. Canadiens [Jets]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nhl-wpg-mon-2026-11-03:short",
-  "intl_token": "83782021257564377898174091761872379788617831601057041011543950033996694033931",
-  "score": 1.0,
-  "us_label": "Jets vs. Canadiens: Canadiens",
-  "intl_label": "Jets vs. Canadiens [Canadiens]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nhl-det-tb-2026-11-03",
-  "intl_token": "28068939286817262143831144199043501331400898239733698921275464772325144849588",
-  "score": 1.0,
-  "us_label": "Red Wings vs. Lightning: Red Wings",
-  "intl_label": "Red Wings vs. Lightning [Red Wings]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nhl-det-tb-2026-11-03:short",
-  "intl_token": "97119333245535644868922068511582124144527391271850182002371877910638385589732",
-  "score": 1.0,
-  "us_label": "Red Wings vs. Lightning: Lightning",
-  "intl_label": "Red Wings vs. Lightning [Lightning]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nhl-col-cbj-2026-11-03",
-  "intl_token": "102102215168308120094954261218553903999189506362565452106853759240775113582335",
-  "score": 1.0,
-  "us_label": "Avalanche vs. Blue Jackets: Avalanche",
-  "intl_label": "Avalanche vs. Blue Jackets [Avalanche]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nhl-col-cbj-2026-11-03:short",
-  "intl_token": "24671823954730787546942895861049362096957827704628279575366388699579002954532",
-  "score": 1.0,
-  "us_label": "Avalanche vs. Blue Jackets: Blue Jackets",
-  "intl_label": "Avalanche vs. Blue Jackets [Blue Jackets]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nhl-stl-nyr-2026-11-03",
-  "intl_token": "15261239087154198118861657904816280396918676902002010392378182152825760441818",
-  "score": 1.0,
-  "us_label": "Blues vs. Rangers: Blues",
-  "intl_label": "Blues vs. Rangers [Blues]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nhl-stl-nyr-2026-11-03:short",
-  "intl_token": "81259394378101896892463537159188572383771152357580466962303792702383351414019",
-  "score": 1.0,
-  "us_label": "Blues vs. Rangers: Rangers",
-  "intl_label": "Blues vs. Rangers [Rangers]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nhl-edm-nj-2026-11-03",
-  "intl_token": "78045201731746428357140692401042780250492000701208332267293240412532994852742",
-  "score": 1.0,
-  "us_label": "Oilers vs. Devils: Oilers",
-  "intl_label": "Oilers vs. Devils [Oilers]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nhl-edm-nj-2026-11-03:short",
-  "intl_token": "60236692610659745695046483736433907956471994283299969710564494911187028611296",
-  "score": 1.0,
-  "us_label": "Oilers vs. Devils: Devils",
-  "intl_label": "Oilers vs. Devils [Devils]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nhl-ana-van-2026-11-03",
-  "intl_token": "46593936486907968049111782252366201704755576600902642918901174006361963625284",
-  "score": 1.0,
-  "us_label": "Ducks vs. Canucks: Ducks",
-  "intl_label": "Ducks vs. Canucks [Ducks]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nhl-ana-van-2026-11-03:short",
-  "intl_token": "35901525511652998552537012684752009096182828591192395240329367275596364152687",
-  "score": 1.0,
-  "us_label": "Ducks vs. Canucks: Canucks",
-  "intl_label": "Ducks vs. Canucks [Canucks]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-cha-mir-2026-11-03-cha",
-  "intl_token": "10856911105410319972293732225471950010839470157315140846481640261471564318304",
-  "score": 1.0,
-  "us_label": "Will Associa\u00e7\u00e3o Chapecoense de Futebol win on 2026-11-03?: Yes",
-  "intl_label": "Will Associa\u00e7\u00e3o Chapecoense de Futebol win on 2026-11-03? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-cha-mir-2026-11-03-cha:short",
-  "intl_token": "14429604695238412038653623735600901562375766593982006304228626082474001981083",
-  "score": 1.0,
-  "us_label": "Will Associa\u00e7\u00e3o Chapecoense de Futebol win on 2026-11-03?: No",
-  "intl_label": "Will Associa\u00e7\u00e3o Chapecoense de Futebol win on 2026-11-03? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-cha-mir-2026-11-03-draw",
-  "intl_token": "14127411768006777093907623960303907472957733119687572468307642985133671959139",
-  "score": 1.0,
-  "us_label": "Will Associa\u00e7\u00e3o Chapecoense de Futebol vs. Mirassol FC end in a draw?: Yes",
-  "intl_label": "Will Associa\u00e7\u00e3o Chapecoense de Futebol vs. Mirassol FC end in a draw? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-cha-mir-2026-11-03-draw:short",
-  "intl_token": "21721467201162617465938846522140396445569649765576793682435177875138488696314",
-  "score": 1.0,
-  "us_label": "Will Associa\u00e7\u00e3o Chapecoense de Futebol vs. Mirassol FC end in a draw?: No",
-  "intl_label": "Will Associa\u00e7\u00e3o Chapecoense de Futebol vs. Mirassol FC end in a draw? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-cha-mir-2026-11-03-mir",
-  "intl_token": "81856695140273144675671551584247538949880757002154314309836909606474226949513",
-  "score": 1.0,
-  "us_label": "Will Mirassol FC win on 2026-11-03?: Yes",
-  "intl_label": "Will Mirassol FC win on 2026-11-03? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-cha-mir-2026-11-03-mir:short",
-  "intl_token": "1582675261787013253471643860151301113470074290607366071679362778637478456014",
-  "score": 1.0,
-  "us_label": "Will Mirassol FC win on 2026-11-03?: No",
-  "intl_label": "Will Mirassol FC win on 2026-11-03? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-int-cor-2026-11-03-int",
-  "intl_token": "36524720509832387142451443947578734607396350854886276404809663432729757949313",
-  "score": 1.0,
-  "us_label": "Will SC Internacional win on 2026-11-03?: Yes",
-  "intl_label": "Will SC Internacional win on 2026-11-03? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-int-cor-2026-11-03-int:short",
-  "intl_token": "6226226963021735176253531591850852563533098601300752522249436210709112038048",
-  "score": 1.0,
-  "us_label": "Will SC Internacional win on 2026-11-03?: No",
-  "intl_label": "Will SC Internacional win on 2026-11-03? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-int-cor-2026-11-03-draw",
-  "intl_token": "10618273899980728409699435013078937984841524050540910228475051836656296758480",
-  "score": 1.0,
-  "us_label": "Will SC Internacional vs. Coritiba FBC end in a draw?: Yes",
-  "intl_label": "Will SC Internacional vs. Coritiba FBC end in a draw? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-int-cor-2026-11-03-draw:short",
-  "intl_token": "99557496348827657596614131187564162493133409647824153057913861371368643815891",
-  "score": 1.0,
-  "us_label": "Will SC Internacional vs. Coritiba FBC end in a draw?: No",
-  "intl_label": "Will SC Internacional vs. Coritiba FBC end in a draw? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-int-cor-2026-11-03-cor",
-  "intl_token": "89237175115546942896240840920935600859812370181994379299205921732418103488870",
-  "score": 1.0,
-  "us_label": "Will Coritiba FBC win on 2026-11-03?: Yes",
-  "intl_label": "Will Coritiba FBC win on 2026-11-03? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-int-cor-2026-11-03-cor:short",
-  "intl_token": "114154113001450353958814512590338788279822937465271152098447432835978479714723",
-  "score": 1.0,
-  "us_label": "Will Coritiba FBC win on 2026-11-03?: No",
-  "intl_label": "Will Coritiba FBC win on 2026-11-03? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nhl-ott-buf-2026-11-04",
-  "intl_token": "34151770356184409775477600151838527270261454854223910174240028898666669551955",
-  "score": 1.0,
-  "us_label": "Senators vs. Sabres: Senators",
-  "intl_label": "Senators vs. Sabres [Senators]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nhl-ott-buf-2026-11-04:short",
-  "intl_token": "114326837513014850153509286690359404355381250806348169261901708327547621052031",
-  "score": 1.0,
-  "us_label": "Senators vs. Sabres: Sabres",
-  "intl_label": "Senators vs. Sabres [Sabres]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nhl-chi-fla-2026-11-04",
-  "intl_token": "33707334109460184565708703285645779554270710538952237793314014001327115063126",
-  "score": 1.0,
-  "us_label": "Blackhawks vs. Panthers: Blackhawks",
-  "intl_label": "Blackhawks vs. Panthers [Blackhawks]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-nhl-chi-fla-2026-11-04:short",
-  "intl_token": "48185662320857868855923096191048965382902046987863231539507788049025261668611",
-  "score": 1.0,
-  "us_label": "Blackhawks vs. Panthers: Panthers",
-  "intl_label": "Blackhawks vs. Panthers [Panthers]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-cap-vas-2026-11-04-cap",
-  "intl_token": "15641066528549055330452045453602902481996293510064554262449135764884986767436",
-  "score": 1.0,
-  "us_label": "Will CA Paranaense win on 2026-11-04?: Yes",
-  "intl_label": "Will CA Paranaense win on 2026-11-04? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-cap-vas-2026-11-04-cap:short",
-  "intl_token": "89663909991526082331855536452679529366626919282062415872556910690401116114333",
-  "score": 1.0,
-  "us_label": "Will CA Paranaense win on 2026-11-04?: No",
-  "intl_label": "Will CA Paranaense win on 2026-11-04? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-cap-vas-2026-11-04-draw",
-  "intl_token": "95409920241378475924159588038740929176004047262981028579975840022349439651601",
-  "score": 1.0,
-  "us_label": "Will CA Paranaense vs. CR Vasco da Gama end in a draw?: Yes",
-  "intl_label": "Will CA Paranaense vs. CR Vasco da Gama end in a draw? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-cap-vas-2026-11-04-draw:short",
-  "intl_token": "110690652164346454155939856606248666224351124867253266349977968479271623021184",
-  "score": 1.0,
-  "us_label": "Will CA Paranaense vs. CR Vasco da Gama end in a draw?: No",
-  "intl_label": "Will CA Paranaense vs. CR Vasco da Gama end in a draw? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-cap-vas-2026-11-04-vas",
-  "intl_token": "96816250497350620302248517829694270108066249643940609547158704546671768492017",
-  "score": 1.0,
-  "us_label": "Will CR Vasco da Gama win on 2026-11-04?: Yes",
-  "intl_label": "Will CR Vasco da Gama win on 2026-11-04? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-cap-vas-2026-11-04-vas:short",
-  "intl_token": "71689211841342443054061000532048108369458253680673491552195100248307442478959",
-  "score": 1.0,
-  "us_label": "Will CR Vasco da Gama win on 2026-11-04?: No",
-  "intl_label": "Will CR Vasco da Gama win on 2026-11-04? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-fla-gre-2026-11-04-fla",
-  "intl_token": "75396968569552339531421674938368338687376139136589893938692315712355007893994",
-  "score": 1.0,
-  "us_label": "Will CR Flamengo win on 2026-11-04?: Yes",
-  "intl_label": "Will CR Flamengo win on 2026-11-04? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-fla-gre-2026-11-04-fla:short",
-  "intl_token": "83243286309027348532364830211225682251069597461467123027155371090073665898685",
-  "score": 1.0,
-  "us_label": "Will CR Flamengo win on 2026-11-04?: No",
-  "intl_label": "Will CR Flamengo win on 2026-11-04? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-fla-gre-2026-11-04-draw",
-  "intl_token": "81842450075167307426567765966601812448535306406194561481237217515168183568902",
-  "score": 1.0,
-  "us_label": "Will CR Flamengo vs. Gr\u00eamio FBPA end in a draw?: Yes",
-  "intl_label": "Will CR Flamengo vs. Gr\u00eamio FBPA end in a draw? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-fla-gre-2026-11-04-draw:short",
-  "intl_token": "29828829047379418721484657926945203309416706249048902368996675194935883792701",
-  "score": 1.0,
-  "us_label": "Will CR Flamengo vs. Gr\u00eamio FBPA end in a draw?: No",
-  "intl_label": "Will CR Flamengo vs. Gr\u00eamio FBPA end in a draw? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-fla-gre-2026-11-04-gre",
-  "intl_token": "96377501074982879777993233388786948364287014670076201751548647420625047965742",
-  "score": 1.0,
-  "us_label": "Will Gr\u00eamio FBPA win on 2026-11-04?: Yes",
-  "intl_label": "Will Gr\u00eamio FBPA win on 2026-11-04? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-fla-gre-2026-11-04-gre:short",
-  "intl_token": "83302841480693948215829029166459386263484028860226022922514519984824345216591",
-  "score": 1.0,
-  "us_label": "Will Gr\u00eamio FBPA win on 2026-11-04?: No",
-  "intl_label": "Will Gr\u00eamio FBPA win on 2026-11-04? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-bot-cam-2026-11-04-bot",
-  "intl_token": "95503528466362654003150119307712820158012359858157094536548722801669764285197",
-  "score": 1.0,
-  "us_label": "Will Botafogo FR win on 2026-11-04?: Yes",
-  "intl_label": "Will Botafogo FR win on 2026-11-04? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-bot-cam-2026-11-04-bot:short",
-  "intl_token": "8294904719484155897812184618926699995797116232748516234471382666427189105582",
-  "score": 1.0,
-  "us_label": "Will Botafogo FR win on 2026-11-04?: No",
-  "intl_label": "Will Botafogo FR win on 2026-11-04? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-bot-cam-2026-11-04-draw",
-  "intl_token": "35813281988583128019951801857386707559872567162726525322161464127617112055224",
-  "score": 1.0,
-  "us_label": "Will Botafogo FR vs. CA Mineiro end in a draw?: Yes",
-  "intl_label": "Will Botafogo FR vs. CA Mineiro end in a draw? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-bot-cam-2026-11-04-draw:short",
-  "intl_token": "96589706646489111814964116410389126142426850473849687168957243192167636207431",
-  "score": 1.0,
-  "us_label": "Will Botafogo FR vs. CA Mineiro end in a draw?: No",
-  "intl_label": "Will Botafogo FR vs. CA Mineiro end in a draw? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-bot-cam-2026-11-04-cam",
-  "intl_token": "48879707766053611929065185043789935640445658046953032560841604533408033665302",
-  "score": 1.0,
-  "us_label": "Will CA Mineiro win on 2026-11-04?: Yes",
-  "intl_label": "Will CA Mineiro win on 2026-11-04? [Yes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "atc-bra-bot-cam-2026-11-04-cam:short",
-  "intl_token": "24527879762250845390846463706251984905254995337845178393418719367107902352154",
-  "score": 1.0,
-  "us_label": "Will CA Mineiro win on 2026-11-04?: No",
-  "intl_label": "Will CA Mineiro win on 2026-11-04? [No]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-khl-adm-ska-2026-11-04",
-  "intl_token": "89812815356665804779243020063106085709518649983520080629986128870302072905441",
-  "score": 1.0,
-  "us_label": "KHL: Admiral Vladivostok vs. SKA St. Petersburg: Admiral Vladivostok",
-  "intl_label": "KHL: Admiral Vladivostok vs. SKA St. Petersburg [Admiral Vladivostok]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-khl-adm-ska-2026-11-04:short",
-  "intl_token": "109711950458208189829739507694752645934963336320725561511814774492417357950526",
-  "score": 1.0,
-  "us_label": "KHL: Admiral Vladivostok vs. SKA St. Petersburg: SKA St. Petersburg",
-  "intl_label": "KHL: Admiral Vladivostok vs. SKA St. Petersburg [SKA St. Petersburg]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-khl-sib-akb-2026-11-04",
-  "intl_token": "50105119086437017070947176512253853278533562789570244083078137830603634118370",
-  "score": 1.0,
-  "us_label": "KHL: Sibir Novosibirsk vs. Ak Bars Kazan: Sibir Novosibirsk",
-  "intl_label": "KHL: Sibir Novosibirsk vs. Ak Bars Kazan [Sibir Novosibirsk]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-khl-sib-akb-2026-11-04:short",
-  "intl_token": "80231747552508172825110542373799107589553632728786405019320710786051022212439",
-  "score": 1.0,
-  "us_label": "KHL: Sibir Novosibirsk vs. Ak Bars Kazan: Ak Bars Kazan",
-  "intl_label": "KHL: Sibir Novosibirsk vs. Ak Bars Kazan [Ak Bars Kazan]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-khl-sal-lad-2026-11-04",
-  "intl_token": "43733001139078716039141937182040337289290130987617390481585408662554127579403",
-  "score": 1.0,
-  "us_label": "KHL: Salavat Yulaev Ufa vs. Lada Togliatti: Salavat Yulaev Ufa",
-  "intl_label": "KHL: Salavat Yulaev Ufa vs. Lada Togliatti [Salavat Yulaev Ufa]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-khl-sal-lad-2026-11-04:short",
-  "intl_token": "50756922887953233492919367120935285830020433839169678151459936131119238025257",
-  "score": 1.0,
-  "us_label": "KHL: Salavat Yulaev Ufa vs. Lada Togliatti: Lada Togliatti",
-  "intl_label": "KHL: Salavat Yulaev Ufa vs. Lada Togliatti [Lada Togliatti]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-ow-ch-tgg-2026-11-04",
-  "intl_token": "97183754839838980576043918946704792264614566941853227748312842194563700426319",
-  "score": 1.0,
-  "us_label": "Overwatch: CantHear vs The Gatos Guapos (BO5) - OCS Pacific Stage 3 Group Stage: CantHear",
-  "intl_label": "Overwatch: CantHear vs The Gatos Guapos (BO5) - OCS Pacific Stage 3 Group Stage [CantHear]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-ow-ch-tgg-2026-11-04:short",
-  "intl_token": "23562395180622084853502762547098368442315577089587952087184843614165714379824",
-  "score": 1.0,
-  "us_label": "Overwatch: CantHear vs The Gatos Guapos (BO5) - OCS Pacific Stage 3 Group Stage: The Gatos Guapos",
-  "intl_label": "Overwatch: CantHear vs The Gatos Guapos (BO5) - OCS Pacific Stage 3 Group Stage [The Gatos Guapos]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-ow-sjk-ben-2026-11-04",
-  "intl_token": "85319294350445874654411910402924994563134292689252768676096335116154763133790",
-  "score": 1.0,
-  "us_label": "Overwatch: SeijiKING vs Team Benxxn (BO5) - OCS Pacific Stage 3 Group Stage: SeijiKING",
-  "intl_label": "Overwatch: SeijiKING vs Team Benxxn (BO5) - OCS Pacific Stage 3 Group Stage [SeijiKING]",
-  "tick": 0.01
- },
- {
-  "us_slug": "aec-ow-sjk-ben-2026-11-04:short",
-  "intl_token": "15272510961342498903990656697966156525716983885796778070174712852273152783879",
-  "score": 1.0,
-  "us_label": "Overwatch: SeijiKING vs Team Benxxn (BO5) - OCS Pacific Stage 3 Group Stage: Team Benxxn",
-  "intl_label": "Overwatch: SeijiKING vs Team Benxxn (BO5) - OCS Pacific Stage 3 Group Stage [Team Benxxn]",
+  "us_label": "Ducks vs. Oilers: Oilers",
+  "intl_label": "Ducks vs. Oilers [Oilers]",
   "tick": 0.01
  },
  {
@@ -1632,59 +960,419 @@
   "tick": 0.01
  },
  {
-  "us_slug": "aec-cs2-quin-reda-2026-11-03",
-  "intl_token": "12535393665323595983355411049163418716443509054831098404414682681344586927805",
+  "us_slug": "atc-bra-pal-cre-2026-11-05-pal",
+  "intl_token": "31021223518889038940843399773152217530280191694460689733945478637289757865478",
   "score": 1.0,
-  "us_label": "Counter-Strike: QUINTESS\u00caNCIA vs RED Canids Academy (BO3) - CCT South America Group Stage: QUINTESS\u00caNCIA",
-  "intl_label": "Counter-Strike: QUINTESS\u00caNCIA vs RED Canids Academy (BO3) - CCT South America Group Stage [QUINTESS\u00caNCIA]",
+  "us_label": "Will SE Palmeiras win on 2026-11-05?: Yes",
+  "intl_label": "Will SE Palmeiras win on 2026-11-05? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-cs2-quin-reda-2026-11-03:short",
-  "intl_token": "72060243833553288802031294716775531068470308043611405722284469914502496667909",
+  "us_slug": "atc-bra-pal-cre-2026-11-05-pal:short",
+  "intl_token": "75286575688635838994576117661662005862752696063253002025631988769358655191553",
   "score": 1.0,
-  "us_label": "Counter-Strike: QUINTESS\u00caNCIA vs RED Canids Academy (BO3) - CCT South America Group Stage: RED Canids Academy",
-  "intl_label": "Counter-Strike: QUINTESS\u00caNCIA vs RED Canids Academy (BO3) - CCT South America Group Stage [RED Canids Academy]",
+  "us_label": "Will SE Palmeiras win on 2026-11-05?: No",
+  "intl_label": "Will SE Palmeiras win on 2026-11-05? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-dota2-navi-gl-2026-11-03",
-  "intl_token": "44079055181296158770587682928530479224368089715808295894806721457482386611966",
+  "us_slug": "atc-bra-pal-cre-2026-11-05-draw",
+  "intl_token": "30163654405404609717527672076769167227731663489523963735172196864011782446562",
   "score": 1.0,
-  "us_label": "Dota 2: Natus Vincere vs GamerLegion (BO3) - EPL Masters Playoffs: Natus Vincere",
-  "intl_label": "Dota 2: Natus Vincere vs GamerLegion (BO3) - EPL Masters Playoffs [Natus Vincere]",
+  "us_label": "Will SE Palmeiras vs. Clube do Remo end in a draw?: Yes",
+  "intl_label": "Will SE Palmeiras vs. Clube do Remo end in a draw? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-dota2-navi-gl-2026-11-03:short",
-  "intl_token": "2457491830647143676170164458932167127010225088383397959539743338648944631061",
+  "us_slug": "atc-bra-pal-cre-2026-11-05-draw:short",
+  "intl_token": "80421762845803761164489202602327777450036244701095095853618984461704067244354",
   "score": 1.0,
-  "us_label": "Dota 2: Natus Vincere vs GamerLegion (BO3) - EPL Masters Playoffs: GamerLegion",
-  "intl_label": "Dota 2: Natus Vincere vs GamerLegion (BO3) - EPL Masters Playoffs [GamerLegion]",
+  "us_label": "Will SE Palmeiras vs. Clube do Remo end in a draw?: No",
+  "intl_label": "Will SE Palmeiras vs. Clube do Remo end in a draw? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-cs2-sinqu-pre-2026-11-03",
-  "intl_token": "72532162329398390536914366590363550241264882117005598058598079447601925252708",
+  "us_slug": "atc-bra-pal-cre-2026-11-05-cre",
+  "intl_token": "110195149487724646285923744368673507730634793956060814765203902091126488094868",
   "score": 1.0,
-  "us_label": "Counter-Strike: SINQU vs Prestige (BO3) - Elisa Open Suomi Group Stage: SINQU",
-  "intl_label": "Counter-Strike: SINQU vs Prestige (BO3) - Elisa Open Suomi Group Stage [SINQU]",
+  "us_label": "Will Clube do Remo win on 2026-11-05?: Yes",
+  "intl_label": "Will Clube do Remo win on 2026-11-05? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-cs2-sinqu-pre-2026-11-03:short",
-  "intl_token": "101906514374130151437064376047587952184440322891753248825439966657827962678617",
+  "us_slug": "atc-bra-pal-cre-2026-11-05-cre:short",
+  "intl_token": "15616760538719335186146293461163247969766469701475326241935963923471376456329",
   "score": 1.0,
-  "us_label": "Counter-Strike: SINQU vs Prestige (BO3) - Elisa Open Suomi Group Stage: Prestige",
-  "intl_label": "Counter-Strike: SINQU vs Prestige (BO3) - Elisa Open Suomi Group Stage [Prestige]",
+  "us_label": "Will Clube do Remo win on 2026-11-05?: No",
+  "intl_label": "Will Clube do Remo win on 2026-11-05? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-cs2-havu-rgg-2026-11-04",
-  "intl_token": "49780165974978487270314878433764851161579253492826721332877717151151626172990",
+  "us_slug": "atc-bra-cru-bah-2026-11-05-cru",
+  "intl_token": "89352440693390345536181133436028749041883945391277547781298794617352850382515",
   "score": 1.0,
-  "us_label": "Counter-Strike: HAVU vs RoundsGG (BO3) - Elisa Open Suomi Group Stage: HAVU",
-  "intl_label": "Counter-Strike: HAVU vs RoundsGG (BO3) - Elisa Open Suomi Group Stage [HAVU]",
+  "us_label": "Will Cruzeiro EC win on 2026-11-05?: Yes",
+  "intl_label": "Will Cruzeiro EC win on 2026-11-05? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-bra-cru-bah-2026-11-05-cru:short",
+  "intl_token": "80920229703304072271589770339534714508930028301493439637009717180106180016457",
+  "score": 1.0,
+  "us_label": "Will Cruzeiro EC win on 2026-11-05?: No",
+  "intl_label": "Will Cruzeiro EC win on 2026-11-05? [No]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-bra-cru-bah-2026-11-05-draw",
+  "intl_token": "19684795008135208179304799343558369898618341690756664856162688535049522662991",
+  "score": 1.0,
+  "us_label": "Will Cruzeiro EC vs. EC Bahia end in a draw?: Yes",
+  "intl_label": "Will Cruzeiro EC vs. EC Bahia end in a draw? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-bra-cru-bah-2026-11-05-draw:short",
+  "intl_token": "50296429516490839335514648723888699883107767729265877281510783213038958172319",
+  "score": 1.0,
+  "us_label": "Will Cruzeiro EC vs. EC Bahia end in a draw?: No",
+  "intl_label": "Will Cruzeiro EC vs. EC Bahia end in a draw? [No]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-bra-cru-bah-2026-11-05-bah",
+  "intl_token": "14689287800033398270767707537950382717291020487470934648047859947325171906179",
+  "score": 1.0,
+  "us_label": "Will EC Bahia win on 2026-11-05?: Yes",
+  "intl_label": "Will EC Bahia win on 2026-11-05? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-bra-cru-bah-2026-11-05-bah:short",
+  "intl_token": "52594979607403201638972678418312102954758161118642603000545849596675904016654",
+  "score": 1.0,
+  "us_label": "Will EC Bahia win on 2026-11-05?: No",
+  "intl_label": "Will EC Bahia win on 2026-11-05? [No]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-nhl-cbj-buf-2026-11-06",
+  "intl_token": "110302197485412405903969475454507792742745626881954201713692716066785871086340",
+  "score": 1.0,
+  "us_label": "Blue Jackets vs. Sabres: Blue Jackets",
+  "intl_label": "Blue Jackets vs. Sabres [Blue Jackets]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-nhl-cbj-buf-2026-11-06:short",
+  "intl_token": "81067466251706074403297729844778774917211466266558786153624593848330964244988",
+  "score": 1.0,
+  "us_label": "Blue Jackets vs. Sabres: Sabres",
+  "intl_label": "Blue Jackets vs. Sabres [Sabres]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-nhl-sj-min-2026-11-06",
+  "intl_token": "3856733922049889934395321595064176125047758113585112884636522903027355253524",
+  "score": 1.0,
+  "us_label": "Sharks vs. Wild: Sharks",
+  "intl_label": "Sharks vs. Wild [Sharks]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-nhl-sj-min-2026-11-06:short",
+  "intl_token": "79731901973682446537368876217811717121090256268131456110302585648653362576324",
+  "score": 1.0,
+  "us_label": "Sharks vs. Wild: Wild",
+  "intl_label": "Sharks vs. Wild [Wild]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-ow-cb-fal-2026-11-05",
+  "intl_token": "94513959494419044984931377646880438482501828738873928902329124148831197793493",
+  "score": 1.0,
+  "us_label": "Overwatch: Cheeseburger vs Falcons (BO7) - OCS Korea Stage 3 Regional Playoffs: Cheeseburger",
+  "intl_label": "Overwatch: Cheeseburger vs Falcons (BO7) - OCS Korea Stage 3 Regional Playoffs [Cheeseburger]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-ow-cb-fal-2026-11-05:short",
+  "intl_token": "53606729778152259167973779099570785758356922530534305523864163131507411829898",
+  "score": 1.0,
+  "us_label": "Overwatch: Cheeseburger vs Falcons (BO7) - OCS Korea Stage 3 Regional Playoffs: Falcons",
+  "intl_label": "Overwatch: Cheeseburger vs Falcons (BO7) - OCS Korea Stage 3 Regional Playoffs [Falcons]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-ow-t1-zsg-2026-11-05",
+  "intl_token": "42187444574037358073622921849454638646204432599350238436817748182752681944544",
+  "score": 1.0,
+  "us_label": "Overwatch: T1 vs ZANSIDE GAMING (BO7) - OCS Korea Stage 3 Regional Playoffs: T1",
+  "intl_label": "Overwatch: T1 vs ZANSIDE GAMING (BO7) - OCS Korea Stage 3 Regional Playoffs [T1]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-ow-t1-zsg-2026-11-05:short",
+  "intl_token": "66658729993635111959156784049808716019469844791458635422894206888149121629142",
+  "score": 1.0,
+  "us_label": "Overwatch: T1 vs ZANSIDE GAMING (BO7) - OCS Korea Stage 3 Regional Playoffs: ZANSIDE GAMING",
+  "intl_label": "Overwatch: T1 vs ZANSIDE GAMING (BO7) - OCS Korea Stage 3 Regional Playoffs [ZANSIDE GAMING]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-fat-riy-2026-11-06-fat",
+  "intl_token": "50620772721640640931223326053249467226017606385089312865503706693639052362865",
+  "score": 1.0,
+  "us_label": "Will Al Fateh Saudi Club win on 2026-11-06?: Yes",
+  "intl_label": "Will Al Fateh Saudi Club win on 2026-11-06? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-fat-riy-2026-11-06-fat:short",
+  "intl_token": "51212427616904159104897400790947322668778838526516875700410569245494276135675",
+  "score": 1.0,
+  "us_label": "Will Al Fateh Saudi Club win on 2026-11-06?: No",
+  "intl_label": "Will Al Fateh Saudi Club win on 2026-11-06? [No]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-fat-riy-2026-11-06-draw",
+  "intl_token": "104885014631953867340460742450726564144534986898939416263628123646897653083265",
+  "score": 1.0,
+  "us_label": "Will Al Fateh Saudi Club vs. Al Riyadh Saudi Club end in a draw?: Yes",
+  "intl_label": "Will Al Fateh Saudi Club vs. Al Riyadh Saudi Club end in a draw? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-fat-riy-2026-11-06-draw:short",
+  "intl_token": "63419459147969507801040905073360917661918241225174612533711515830403787004611",
+  "score": 1.0,
+  "us_label": "Will Al Fateh Saudi Club vs. Al Riyadh Saudi Club end in a draw?: No",
+  "intl_label": "Will Al Fateh Saudi Club vs. Al Riyadh Saudi Club end in a draw? [No]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-fat-riy-2026-11-06-riy",
+  "intl_token": "71314196517031039426080476514717865530277243902757023769010417159594942153809",
+  "score": 1.0,
+  "us_label": "Will Al Riyadh Saudi Club win on 2026-11-06?: Yes",
+  "intl_label": "Will Al Riyadh Saudi Club win on 2026-11-06? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-fat-riy-2026-11-06-riy:short",
+  "intl_token": "35851688034905069132981622260363726667125050919733197929559793378903786438261",
+  "score": 1.0,
+  "us_label": "Will Al Riyadh Saudi Club win on 2026-11-06?: No",
+  "intl_label": "Will Al Riyadh Saudi Club win on 2026-11-06? [No]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-haz-nsr-2026-11-06-haz",
+  "intl_token": "41873857062033882623249626489943693016410934483873996126034308909589874949874",
+  "score": 1.0,
+  "us_label": "Will Al Hazem SC win on 2026-11-06?: Yes",
+  "intl_label": "Will Al Hazem SC win on 2026-11-06? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-haz-nsr-2026-11-06-haz:short",
+  "intl_token": "2466342580814663805892406215584774217568796199734201510090519280714786319835",
+  "score": 1.0,
+  "us_label": "Will Al Hazem SC win on 2026-11-06?: No",
+  "intl_label": "Will Al Hazem SC win on 2026-11-06? [No]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-haz-nsr-2026-11-06-draw",
+  "intl_token": "92696012591293666555196194309446382935331914054297599343437080312514148514220",
+  "score": 1.0,
+  "us_label": "Will Al Hazem SC vs. Al Nassr Saudi Club end in a draw?: Yes",
+  "intl_label": "Will Al Hazem SC vs. Al Nassr Saudi Club end in a draw? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-haz-nsr-2026-11-06-draw:short",
+  "intl_token": "56483824224976218116797643412635266525192572977309777269504874186490677091",
+  "score": 1.0,
+  "us_label": "Will Al Hazem SC vs. Al Nassr Saudi Club end in a draw?: No",
+  "intl_label": "Will Al Hazem SC vs. Al Nassr Saudi Club end in a draw? [No]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-haz-nsr-2026-11-06-nsr",
+  "intl_token": "77175711906750391463390538416608025251242188075602194262952212954786451927733",
+  "score": 1.0,
+  "us_label": "Will Al Nassr Saudi Club win on 2026-11-06?: Yes",
+  "intl_label": "Will Al Nassr Saudi Club win on 2026-11-06? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-haz-nsr-2026-11-06-nsr:short",
+  "intl_token": "51813782413093870360945676787709991580104678576723849573329710990751482365913",
+  "score": 1.0,
+  "us_label": "Will Al Nassr Saudi Club win on 2026-11-06?: No",
+  "intl_label": "Will Al Nassr Saudi Club win on 2026-11-06? [No]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-dota2-xe-z10-2026-11-05",
+  "intl_token": "11899568436651367415795577619956732032674497974068744298231610427883618155280",
+  "score": 1.0,
+  "us_label": "Dota 2: Xipto Esports vs Zero Tenacity (BO3) - Asgard Championship Group A: Xipto Esports",
+  "intl_label": "Dota 2: Xipto Esports vs Zero Tenacity (BO3) - Asgard Championship Group A [Xipto Esports]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-dota2-xe-z10-2026-11-05:short",
+  "intl_token": "683970915150437987238789974977812375800169638567889179581006364779904488584",
+  "score": 1.0,
+  "us_label": "Dota 2: Xipto Esports vs Zero Tenacity (BO3) - Asgard Championship Group A: Zero Tenacity",
+  "intl_label": "Dota 2: Xipto Esports vs Zero Tenacity (BO3) - Asgard Championship Group A [Zero Tenacity]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-ith-neo-2026-11-06-ith",
+  "intl_token": "67635299732143302028142490840829772177846579237169616515540377567159828324969",
+  "score": 1.0,
+  "us_label": "Will Al Ittihad Saudi Club win on 2026-11-06?: Yes",
+  "intl_label": "Will Al Ittihad Saudi Club win on 2026-11-06? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-ith-neo-2026-11-06-ith:short",
+  "intl_token": "101373408368354197595627219788494882135227142230645004439377506969816501512479",
+  "score": 1.0,
+  "us_label": "Will Al Ittihad Saudi Club win on 2026-11-06?: No",
+  "intl_label": "Will Al Ittihad Saudi Club win on 2026-11-06? [No]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-ith-neo-2026-11-06-draw",
+  "intl_token": "20358699644914273064768281849489620329034543693101900637803664923394501606194",
+  "score": 1.0,
+  "us_label": "Will Al Ittihad Saudi Club vs. NEOM SC end in a draw?: Yes",
+  "intl_label": "Will Al Ittihad Saudi Club vs. NEOM SC end in a draw? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-ith-neo-2026-11-06-draw:short",
+  "intl_token": "113055017237043704275848017943967696744968051711135477632072293227407512932685",
+  "score": 1.0,
+  "us_label": "Will Al Ittihad Saudi Club vs. NEOM SC end in a draw?: No",
+  "intl_label": "Will Al Ittihad Saudi Club vs. NEOM SC end in a draw? [No]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-ith-neo-2026-11-06-neo",
+  "intl_token": "29217463053231477914728419144360571910046228014212083043674024360434467697097",
+  "score": 1.0,
+  "us_label": "Will NEOM SC win on 2026-11-06?: Yes",
+  "intl_label": "Will NEOM SC win on 2026-11-06? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-spl-ith-neo-2026-11-06-neo:short",
+  "intl_token": "65438144057800337560607606627420269971319687000841915578448391978954180833",
+  "score": 1.0,
+  "us_label": "Will NEOM SC win on 2026-11-06?: No",
+  "intl_label": "Will NEOM SC win on 2026-11-06? [No]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-ere-wii-zwo-2026-11-06-wii",
+  "intl_token": "105269586017435918761659394850479558041508444851388455308408978633799372065063",
+  "score": 1.0,
+  "us_label": "Will Willem II Tilburg win on 2026-11-06?: Yes",
+  "intl_label": "Will Willem II Tilburg win on 2026-11-06? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-ere-wii-zwo-2026-11-06-wii:short",
+  "intl_token": "52724392676403222145425405749041100914785202963283029927075313574204207405793",
+  "score": 1.0,
+  "us_label": "Will Willem II Tilburg win on 2026-11-06?: No",
+  "intl_label": "Will Willem II Tilburg win on 2026-11-06? [No]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-ere-wii-zwo-2026-11-06-draw",
+  "intl_token": "99084057423759256951525638346992143949712887029139329349302576528771754859172",
+  "score": 1.0,
+  "us_label": "Will Willem II Tilburg vs. PEC Zwolle end in a draw?: Yes",
+  "intl_label": "Will Willem II Tilburg vs. PEC Zwolle end in a draw? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-ere-wii-zwo-2026-11-06-draw:short",
+  "intl_token": "90630872348137598427257708490653965788512210844570535329078070926233048235525",
+  "score": 1.0,
+  "us_label": "Will Willem II Tilburg vs. PEC Zwolle end in a draw?: No",
+  "intl_label": "Will Willem II Tilburg vs. PEC Zwolle end in a draw? [No]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-ere-wii-zwo-2026-11-06-zwo",
+  "intl_token": "93585358781836642970014031713946717479908027397129361373993725056276195362140",
+  "score": 1.0,
+  "us_label": "Will PEC Zwolle win on 2026-11-06?: Yes",
+  "intl_label": "Will PEC Zwolle win on 2026-11-06? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-ere-wii-zwo-2026-11-06-zwo:short",
+  "intl_token": "48389278836519944467617181673438472555771717634917810080148162111604326379073",
+  "score": 1.0,
+  "us_label": "Will PEC Zwolle win on 2026-11-06?: No",
+  "intl_label": "Will PEC Zwolle win on 2026-11-06? [No]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-bra-vit-flu-2026-11-06-vit",
+  "intl_token": "31685683375600195105781645874876970890127594886897551651577263042841326929598",
+  "score": 1.0,
+  "us_label": "Will EC Vit\u00f3ria win on 2026-11-06?: Yes",
+  "intl_label": "Will EC Vit\u00f3ria win on 2026-11-06? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-bra-vit-flu-2026-11-06-vit:short",
+  "intl_token": "32143140177699145698256165038150999294212387629093204618166204087217488403480",
+  "score": 1.0,
+  "us_label": "Will EC Vit\u00f3ria win on 2026-11-06?: No",
+  "intl_label": "Will EC Vit\u00f3ria win on 2026-11-06? [No]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-bra-vit-flu-2026-11-06-draw",
+  "intl_token": "64568163238980905037202267409572597186501704832492451626371205265949611401289",
+  "score": 1.0,
+  "us_label": "Will EC Vit\u00f3ria vs. Fluminense FC end in a draw?: Yes",
+  "intl_label": "Will EC Vit\u00f3ria vs. Fluminense FC end in a draw? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-bra-vit-flu-2026-11-06-draw:short",
+  "intl_token": "63024646141320080650513077180178457300613919877327045621564702173628048600437",
+  "score": 1.0,
+  "us_label": "Will EC Vit\u00f3ria vs. Fluminense FC end in a draw?: No",
+  "intl_label": "Will EC Vit\u00f3ria vs. Fluminense FC end in a draw? [No]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-bra-vit-flu-2026-11-06-flu",
+  "intl_token": "97077668430908097748334921728327397892265556870146592817018516095938032569468",
+  "score": 1.0,
+  "us_label": "Will Fluminense FC win on 2026-11-06?: Yes",
+  "intl_label": "Will Fluminense FC win on 2026-11-06? [Yes]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "atc-bra-vit-flu-2026-11-06-flu:short",
+  "intl_token": "8791850886652594109618843159048024789085416112564894248773641907542777829571",
+  "score": 1.0,
+  "us_label": "Will Fluminense FC win on 2026-11-06?: No",
+  "intl_label": "Will Fluminense FC win on 2026-11-06? [No]",
   "tick": 0.01
  },
  {
@@ -1704,99 +1392,307 @@
   "tick": 0.01
  },
  {
-  "us_slug": "aec-cs2-frt-xi-2026-11-03",
-  "intl_token": "14511162066677965072982247120266092514972121695321291645987038212491194490663",
+  "us_slug": "atc-nwsl-wav-roy-2026-11-06-wav",
+  "intl_token": "109514093325708284267864671430067584941029885633234719825192729898137833090204",
   "score": 1.0,
-  "us_label": "Counter-Strike: Fraternity vs XI Esport (BO1) - ESEA Advanced Europe Regular Season: Fraternity",
-  "intl_label": "Counter-Strike: Fraternity vs XI Esport (BO1) - ESEA Advanced Europe Regular Season [Fraternity]",
+  "us_label": "Will San Diego Wave FC win on 2026-11-06?: Yes",
+  "intl_label": "Will San Diego Wave FC win on 2026-11-06? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-cs2-frt-xi-2026-11-03:short",
-  "intl_token": "8041052206726814876042384256201824659617310054958569229666988020212481889013",
+  "us_slug": "atc-nwsl-wav-roy-2026-11-06-wav:short",
+  "intl_token": "63571030411514161954719044332926629129629331260535192117354421409407010723053",
   "score": 1.0,
-  "us_label": "Counter-Strike: Fraternity vs XI Esport (BO1) - ESEA Advanced Europe Regular Season: XI Esport",
-  "intl_label": "Counter-Strike: Fraternity vs XI Esport (BO1) - ESEA Advanced Europe Regular Season [XI Esport]",
+  "us_label": "Will San Diego Wave FC win on 2026-11-06?: No",
+  "intl_label": "Will San Diego Wave FC win on 2026-11-06? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-cs2-pre-maybe-2026-11-04",
-  "intl_token": "68551815450307631054393503287740503456764023415247101316704123263095978342902",
+  "us_slug": "atc-nwsl-wav-roy-2026-11-06-draw",
+  "intl_token": "19306125058229193869526113250587592566734476028269026383603124561685783530668",
   "score": 1.0,
-  "us_label": "Counter-Strike: Prestige vs maybe (BO3) - CCT Europe Closed Qualifier: Series Group B: Prestige",
-  "intl_label": "Counter-Strike: Prestige vs maybe (BO3) - CCT Europe Closed Qualifier: Series Group B [Prestige]",
+  "us_label": "Will San Diego Wave FC vs. Utah Royals FC end in a draw?: Yes",
+  "intl_label": "Will San Diego Wave FC vs. Utah Royals FC end in a draw? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-cs2-pre-maybe-2026-11-04:short",
-  "intl_token": "91777336853518925640467357958765262875334277972818879571124963465668426298197",
+  "us_slug": "atc-nwsl-wav-roy-2026-11-06-draw:short",
+  "intl_token": "29179114162705418959382718596017178757995203187360651375978436501886345448999",
   "score": 1.0,
-  "us_label": "Counter-Strike: Prestige vs maybe (BO3) - CCT Europe Closed Qualifier: Series Group B: maybe",
-  "intl_label": "Counter-Strike: Prestige vs maybe (BO3) - CCT Europe Closed Qualifier: Series Group B [maybe]",
+  "us_label": "Will San Diego Wave FC vs. Utah Royals FC end in a draw?: No",
+  "intl_label": "Will San Diego Wave FC vs. Utah Royals FC end in a draw? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-cs2-eac-eye-2026-11-04",
-  "intl_token": "106341291515074820808739451548419250113689027857071451864577784451256542735819",
+  "us_slug": "atc-nwsl-wav-roy-2026-11-06-roy",
+  "intl_token": "20045382296523881909273899376628549301080049761178944512623767380132102945135",
   "score": 1.0,
-  "us_label": "Counter-Strike: Esport Academy Copenhagen vs EYEBALLERS (BO3) - United21 Group B: Esport Academy Copenhagen",
-  "intl_label": "Counter-Strike: Esport Academy Copenhagen vs EYEBALLERS (BO3) - United21 Group B [Esport Academy Copenhagen]",
+  "us_label": "Will Utah Royals FC win on 2026-11-06?: Yes",
+  "intl_label": "Will Utah Royals FC win on 2026-11-06? [Yes]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-cs2-eac-eye-2026-11-04:short",
-  "intl_token": "65943454567125880258311501440953845775723014541015747621144491255926616898761",
+  "us_slug": "atc-nwsl-wav-roy-2026-11-06-roy:short",
+  "intl_token": "8975463186382936226339473488265858574194551422862066691288297780190823772157",
   "score": 1.0,
-  "us_label": "Counter-Strike: Esport Academy Copenhagen vs EYEBALLERS (BO3) - United21 Group B: EYEBALLERS",
-  "intl_label": "Counter-Strike: Esport Academy Copenhagen vs EYEBALLERS (BO3) - United21 Group B [EYEBALLERS]",
+  "us_label": "Will Utah Royals FC win on 2026-11-06?: No",
+  "intl_label": "Will Utah Royals FC win on 2026-11-06? [No]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-cs2-mouz-prv-2026-11-04",
-  "intl_token": "111212021236123425595826183429238550467730639676778526738775077693955081947879",
+  "us_slug": "aec-cs2-tcf-bbv-2026-11-06",
+  "intl_token": "110149338380685448972933807991797877715265552605776289947861793434889892154639",
   "score": 1.0,
-  "us_label": "Counter-Strike: MOUZ vs PARIVISION (BO3) - IEM Beijing Group B: MOUZ",
-  "intl_label": "Counter-Strike: MOUZ vs PARIVISION (BO3) - IEM Beijing Group B [MOUZ]",
+  "us_label": "Counter-Strike: The Chosen Few vs Bad Beavers (BO3) - United21 Group D: The Chosen Few",
+  "intl_label": "Counter-Strike: The Chosen Few vs Bad Beavers (BO3) - United21 Group D [The Chosen Few]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-cs2-mouz-prv-2026-11-04:short",
-  "intl_token": "87595249921377407549428258164426070469000050687067202875143976808057757027472",
+  "us_slug": "aec-cs2-tcf-bbv-2026-11-06:short",
+  "intl_token": "24112216961818331425675271160817570451974063988995778111606306260913031487821",
   "score": 1.0,
-  "us_label": "Counter-Strike: MOUZ vs PARIVISION (BO3) - IEM Beijing Group B: PARIVISION",
-  "intl_label": "Counter-Strike: MOUZ vs PARIVISION (BO3) - IEM Beijing Group B [PARIVISION]",
+  "us_label": "Counter-Strike: The Chosen Few vs Bad Beavers (BO3) - United21 Group D: Bad Beavers",
+  "intl_label": "Counter-Strike: The Chosen Few vs Bad Beavers (BO3) - United21 Group D [Bad Beavers]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-cs2-mglz-furia-2026-11-04",
-  "intl_token": "81667941138221752819071601638842217014531680371749600135962703717679068604678",
+  "us_slug": "aec-khl-adm-bar-2026-11-06",
+  "intl_token": "66572007617366449160434888265631142494502578050542245280101500212940548808110",
   "score": 1.0,
-  "us_label": "Counter-Strike: TheMongolz vs FURIA (BO3) - IEM Beijing Group A: TheMongolz",
-  "intl_label": "Counter-Strike: TheMongolz vs FURIA (BO3) - IEM Beijing Group A [TheMongolz]",
+  "us_label": "KHL: Admiral Vladivostok vs. Barys Astana: Admiral Vladivostok",
+  "intl_label": "KHL: Admiral Vladivostok vs. Barys Astana [Admiral Vladivostok]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-cs2-mglz-furia-2026-11-04:short",
-  "intl_token": "64257645548688351586609242814982993587164578885904985477525401804527628896698",
+  "us_slug": "aec-khl-adm-bar-2026-11-06:short",
+  "intl_token": "41715587878563486899336084336402409329349613339243600589017602201731561476104",
   "score": 1.0,
-  "us_label": "Counter-Strike: TheMongolz vs FURIA (BO3) - IEM Beijing Group A: FURIA",
-  "intl_label": "Counter-Strike: TheMongolz vs FURIA (BO3) - IEM Beijing Group A [FURIA]",
+  "us_label": "KHL: Admiral Vladivostok vs. Barys Astana: Barys Astana",
+  "intl_label": "KHL: Admiral Vladivostok vs. Barys Astana [Barys Astana]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-cs2-baks-drama-2026-11-03",
-  "intl_token": "90271002340506344526907927408424382199626136367323710191588700881954494425296",
+  "us_slug": "aec-khl-sal-avt-2026-11-06",
+  "intl_token": "42667255056918636635175883689089969531892805423995095629139502757729924865287",
   "score": 1.0,
-  "us_label": "Counter-Strike: BakS eSports vs Drama eSports (BO3) - ESL Challenger League Europe Cup #10 Group B: BakS eSports",
-  "intl_label": "Counter-Strike: BakS eSports vs Drama eSports (BO3) - ESL Challenger League Europe Cup #10 Group B [BakS eSports]",
+  "us_label": "KHL: Salavat Yulaev Ufa vs. Avtomobilist Yekaterinburg: Salavat Yulaev Ufa",
+  "intl_label": "KHL: Salavat Yulaev Ufa vs. Avtomobilist Yekaterinburg [Salavat Yulaev Ufa]",
   "tick": 0.01
  },
  {
-  "us_slug": "aec-cs2-baks-drama-2026-11-03:short",
-  "intl_token": "114675901510997143894349338530839545709129642423532399065502594400750397864567",
+  "us_slug": "aec-khl-sal-avt-2026-11-06:short",
+  "intl_token": "83089796147239334269327135511258509894256843182795330569499312747251221941758",
   "score": 1.0,
-  "us_label": "Counter-Strike: BakS eSports vs Drama eSports (BO3) - ESL Challenger League Europe Cup #10 Group B: Drama eSports",
-  "intl_label": "Counter-Strike: BakS eSports vs Drama eSports (BO3) - ESL Challenger League Europe Cup #10 Group B [Drama eSports]",
+  "us_label": "KHL: Salavat Yulaev Ufa vs. Avtomobilist Yekaterinburg: Avtomobilist Yekaterinburg",
+  "intl_label": "KHL: Salavat Yulaev Ufa vs. Avtomobilist Yekaterinburg [Avtomobilist Yekaterinburg]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-drama-ryvex-2026-11-06",
+  "intl_token": "92571408833828525488832420384712037979036445181251183623951130027587283019958",
+  "score": 1.0,
+  "us_label": "Counter-Strike: Drama eSports vs Ryvex (BO3) - CCT Europe Closed Qualifier: Series Group D: Drama eSports",
+  "intl_label": "Counter-Strike: Drama eSports vs Ryvex (BO3) - CCT Europe Closed Qualifier: Series Group D [Drama eSports]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-drama-ryvex-2026-11-06:short",
+  "intl_token": "43057480524439964559651782090426741281121517766317035671632257247184946697457",
+  "score": 1.0,
+  "us_label": "Counter-Strike: Drama eSports vs Ryvex (BO3) - CCT Europe Closed Qualifier: Series Group D: Ryvex",
+  "intl_label": "Counter-Strike: Drama eSports vs Ryvex (BO3) - CCT Europe Closed Qualifier: Series Group D [Ryvex]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-khl-lad-lok-2026-11-06",
+  "intl_token": "28535875766216610738885168359478231364207095405842558324164568297319767593362",
+  "score": 1.0,
+  "us_label": "KHL: Lada Togliatti vs. Lokomotiv Yaroslavl: Lada Togliatti",
+  "intl_label": "KHL: Lada Togliatti vs. Lokomotiv Yaroslavl [Lada Togliatti]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-khl-lad-lok-2026-11-06:short",
+  "intl_token": "66981205639980792509316943535443736994159729092704468219172931250366972932322",
+  "score": 1.0,
+  "us_label": "KHL: Lada Togliatti vs. Lokomotiv Yaroslavl: Lokomotiv Yaroslavl",
+  "intl_label": "KHL: Lada Togliatti vs. Lokomotiv Yaroslavl [Lokomotiv Yaroslavl]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-forzer-g2a-2026-11-05",
+  "intl_token": "36786214287296761534454851323617911540640879821465515716904387788911518103152",
+  "score": 1.0,
+  "us_label": "Counter-Strike: FORZE Reload vs G2 Ares (BO3) - CCT Europe Group Stage: FORZE Reload",
+  "intl_label": "Counter-Strike: FORZE Reload vs G2 Ares (BO3) - CCT Europe Group Stage [FORZE Reload]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-forzer-g2a-2026-11-05:short",
+  "intl_token": "41453195034104661110427001879075601178266871704562306279636254727416150022705",
+  "score": 1.0,
+  "us_label": "Counter-Strike: FORZE Reload vs G2 Ares (BO3) - CCT Europe Group Stage: G2 Ares",
+  "intl_label": "Counter-Strike: FORZE Reload vs G2 Ares (BO3) - CCT Europe Group Stage [G2 Ares]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-g2a-ssins-2026-11-07",
+  "intl_token": "86226484703969320863235984884186086667234095326219417268302075434884864750856",
+  "score": 1.0,
+  "us_label": "Counter-Strike: G2 Ares vs Saint Sinners (BO3) - European Pro League Group D: G2 Ares",
+  "intl_label": "Counter-Strike: G2 Ares vs Saint Sinners (BO3) - European Pro League Group D [G2 Ares]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-g2a-ssins-2026-11-07:short",
+  "intl_token": "4898040781136641441021053373305524509155941091730567102316470540379151617027",
+  "score": 1.0,
+  "us_label": "Counter-Strike: G2 Ares vs Saint Sinners (BO3) - European Pro League Group D: Saint Sinners",
+  "intl_label": "Counter-Strike: G2 Ares vs Saint Sinners (BO3) - European Pro League Group D [Saint Sinners]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-ow-oug-hun-2026-11-07",
+  "intl_token": "87880633858857962536477237015038306445037931592016709920920651329474143855852",
+  "score": 1.0,
+  "us_label": "Overwatch: OU Gaming vs HUNENG (BO5) - OCS China Stage 3 Regional Playoffs: OU Gaming",
+  "intl_label": "Overwatch: OU Gaming vs HUNENG (BO5) - OCS China Stage 3 Regional Playoffs [OU Gaming]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-ow-oug-hun-2026-11-07:short",
+  "intl_token": "45478404505514582487540046864492378897962971794648766870516997350025362651940",
+  "score": 1.0,
+  "us_label": "Overwatch: OU Gaming vs HUNENG (BO5) - OCS China Stage 3 Regional Playoffs: HUNENG",
+  "intl_label": "Overwatch: OU Gaming vs HUNENG (BO5) - OCS China Stage 3 Regional Playoffs [HUNENG]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-ow-ag-wbg-2026-11-07",
+  "intl_token": "36325705333469345470235881574722265361274434402924525930953692679293839196836",
+  "score": 1.0,
+  "us_label": "Overwatch: All Gamers vs Weibo Gaming (BO5) - OCS China Stage 3 Regional Playoffs: All Gamers",
+  "intl_label": "Overwatch: All Gamers vs Weibo Gaming (BO5) - OCS China Stage 3 Regional Playoffs [All Gamers]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-ow-ag-wbg-2026-11-07:short",
+  "intl_token": "33041831773439475322375331937952652429725216045993454096875483487819004698807",
+  "score": 1.0,
+  "us_label": "Overwatch: All Gamers vs Weibo Gaming (BO5) - OCS China Stage 3 Regional Playoffs: Weibo Gaming",
+  "intl_label": "Overwatch: All Gamers vs Weibo Gaming (BO5) - OCS China Stage 3 Regional Playoffs [Weibo Gaming]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-lt-maybe-2026-11-07",
+  "intl_token": "39862646882068834579155390343700962767853152255437281689315152124901620794064",
+  "score": 1.0,
+  "us_label": "Counter-Strike: Lunacy Team vs maybe (BO3) - European Pro League Group D: Lunacy Team",
+  "intl_label": "Counter-Strike: Lunacy Team vs maybe (BO3) - European Pro League Group D [Lunacy Team]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-lt-maybe-2026-11-07:short",
+  "intl_token": "15876196080136795562918974834512266923398627420789882687404692769089120203228",
+  "score": 1.0,
+  "us_label": "Counter-Strike: Lunacy Team vs maybe (BO3) - European Pro League Group D: maybe",
+  "intl_label": "Counter-Strike: Lunacy Team vs maybe (BO3) - European Pro League Group D [maybe]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-ttbs-xi-2026-11-07",
+  "intl_token": "106005280799303251539959236422592899288097243290719071270590135505460289442758",
+  "score": 1.0,
+  "us_label": "Counter-Strike: Teletubisie vs XI Esport (BO3) - United21 Group A: Teletubisie",
+  "intl_label": "Counter-Strike: Teletubisie vs XI Esport (BO3) - United21 Group A [Teletubisie]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-ttbs-xi-2026-11-07:short",
+  "intl_token": "18614990428961442623943261700664409984360750754979419903196413145173063234852",
+  "score": 1.0,
+  "us_label": "Counter-Strike: Teletubisie vs XI Esport (BO3) - United21 Group A: XI Esport",
+  "intl_label": "Counter-Strike: Teletubisie vs XI Esport (BO3) - United21 Group A [XI Esport]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-prv-navi-2026-11-06",
+  "intl_token": "53074900940347469437926563698638990521296944474603016416365056816868268952572",
+  "score": 1.0,
+  "us_label": "Counter-Strike: PARIVISION vs Natus Vincere (BO3) - IEM Beijing Playoffs: PARIVISION",
+  "intl_label": "Counter-Strike: PARIVISION vs Natus Vincere (BO3) - IEM Beijing Playoffs [PARIVISION]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-prv-navi-2026-11-06:short",
+  "intl_token": "107157641296911498592890920947053829105931739511040760439170568486187692171415",
+  "score": 1.0,
+  "us_label": "Counter-Strike: PARIVISION vs Natus Vincere (BO3) - IEM Beijing Playoffs: Natus Vincere",
+  "intl_label": "Counter-Strike: PARIVISION vs Natus Vincere (BO3) - IEM Beijing Playoffs [Natus Vincere]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-dota2-iac-z10-2026-11-06",
+  "intl_token": "73086849765818012986046999326811250240188175504946190133525458831478838333071",
+  "score": 1.0,
+  "us_label": "Dota 2: InterActive Philippines vs Zero Tenacity (BO3) - DreamLeague Division 2 Group B: InterActive Philippines",
+  "intl_label": "Dota 2: InterActive Philippines vs Zero Tenacity (BO3) - DreamLeague Division 2 Group B [InterActive Philippines]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-dota2-iac-z10-2026-11-06:short",
+  "intl_token": "69051004845371281044888377782569358581198592791281455132179921134362444677253",
+  "score": 1.0,
+  "us_label": "Dota 2: InterActive Philippines vs Zero Tenacity (BO3) - DreamLeague Division 2 Group B: Zero Tenacity",
+  "intl_label": "Dota 2: InterActive Philippines vs Zero Tenacity (BO3) - DreamLeague Division 2 Group B [Zero Tenacity]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-ksm-maybe-2026-11-05",
+  "intl_token": "107406177807053870666670570279048933855389110179146165755064424717591700708140",
+  "score": 1.0,
+  "us_label": "Counter-Strike: KUUSAMO.gg vs maybe (BO3) - CCT Europe Closed Qualifier: Series Group B: KUUSAMO.gg",
+  "intl_label": "Counter-Strike: KUUSAMO.gg vs maybe (BO3) - CCT Europe Closed Qualifier: Series Group B [KUUSAMO.gg]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-ksm-maybe-2026-11-05:short",
+  "intl_token": "98197752248937666058793368279602693167607315731820661160556121078935011790022",
+  "score": 1.0,
+  "us_label": "Counter-Strike: KUUSAMO.gg vs maybe (BO3) - CCT Europe Closed Qualifier: Series Group B: maybe",
+  "intl_label": "Counter-Strike: KUUSAMO.gg vs maybe (BO3) - CCT Europe Closed Qualifier: Series Group B [maybe]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-dota2-yes-gl-2026-11-05",
+  "intl_token": "77698625313106036598259867216194369327411850418153911160155049077434297127472",
+  "score": 1.0,
+  "us_label": "Dota 2: Yellow Submarine vs GamerLegion (BO3) - EPL Masters Playoffs: Yellow Submarine",
+  "intl_label": "Dota 2: Yellow Submarine vs GamerLegion (BO3) - EPL Masters Playoffs [Yellow Submarine]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-dota2-yes-gl-2026-11-05:short",
+  "intl_token": "54600362612009177706382552658815542546091539808952047173686616994422900346000",
+  "score": 1.0,
+  "us_label": "Dota 2: Yellow Submarine vs GamerLegion (BO3) - EPL Masters Playoffs: GamerLegion",
+  "intl_label": "Dota 2: Yellow Submarine vs GamerLegion (BO3) - EPL Masters Playoffs [GamerLegion]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-esb-zotix-2026-11-05",
+  "intl_token": "39205252930239737163626219309439360265943909776994982068369034487931587209977",
+  "score": 1.0,
+  "us_label": "Counter-Strike: eSuba vs ZOTIX (BO1) - ESEA Advanced Europe Regular Season: eSuba",
+  "intl_label": "Counter-Strike: eSuba vs ZOTIX (BO1) - ESEA Advanced Europe Regular Season [eSuba]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aec-cs2-esb-zotix-2026-11-05:short",
+  "intl_token": "64567979598559076130521867367612940479055526434449989400587467951354528583759",
+  "score": 1.0,
+  "us_label": "Counter-Strike: eSuba vs ZOTIX (BO1) - ESEA Advanced Europe Regular Season: ZOTIX",
+  "intl_label": "Counter-Strike: eSuba vs ZOTIX (BO1) - ESEA Advanced Europe Regular Season [ZOTIX]",
   "tick": 0.01
  },
  {
@@ -1816,91 +1712,11 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nba-champ-2027-06-18-w-por",
-  "intl_token": "79620428735680913350265023427447805792163805641954526434518305561708056954117",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Portland Trail Blazers",
-  "intl_label": "Will Portland Trail Blazers win the 2027 NBA Finals? [Portland Trail Blazers]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-ucl-final-2026-06-05-w-stu",
-  "intl_token": "22319423712664250000966446349436436521608203218255612444397107110591820588150",
-  "score": 0.6,
-  "us_label": "UEFA Champions League Winner: VfB Stuttgart",
-  "intl_label": "Will VfB Stuttgart win the 2026-27 UEFA Champions League Championship? [VfB Stuttgart]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-mia",
-  "intl_token": "1002605241037566897075427941760276379638292422424020000466947342214004056028",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Miami Heat",
-  "intl_label": "Will Miami Heat win the 2027 NBA Finals? [Miami Heat]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-den",
-  "intl_token": "338436322259062069756479235974559743523378455152932470985493948167186891368",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Denver Nuggets",
-  "intl_label": "Will Denver Nuggets win the 2027 NBA Finals? [Denver Nuggets]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-tor",
-  "intl_token": "60150478766427655464939988524322736170735963119451703309436561797949171579582",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Toronto Raptors",
-  "intl_label": "Will Toronto Raptors win the 2027 NBA Finals? [Toronto Raptors]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nhl-champ-2027-06-18-w-cgy",
-  "intl_token": "64046321602101495877602060497756783123422573922748935304554904644552521563234",
-  "score": 0.667,
-  "us_label": "2027 Stanley Cup Champion: Calgary Flames",
-  "intl_label": "Will the Calgary Flames be named the 2026-27 NHL Stanley Cup Champion? [Calgary Flames]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-hou",
-  "intl_token": "54389136151618785952849043856295459748131034150210702007482093675046699037784",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Houston Rockets",
-  "intl_label": "Will Houston Rockets win the 2027 NBA Finals? [Houston Rockets]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nhl-champ-2027-06-18-w-det",
-  "intl_token": "46538005032135831463193938924979562555279133240679011948396862049734270407546",
-  "score": 0.667,
-  "us_label": "2027 Stanley Cup Champion: Detroit Red Wings",
-  "intl_label": "Will the Detroit Red Wings be named the 2026-27 NHL Stanley Cup Champion? [Detroit Red Wings]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-pho",
-  "intl_token": "56511509919728347181497845289403940666044398339205720854450061222431419409255",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Phoenix Suns",
-  "intl_label": "Will Phoenix Suns win the 2027 NBA Finals? [Phoenix Suns]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-nyk",
-  "intl_token": "96579693508177199966070611400410853026298967531032544674689952043367008918098",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: New York Knicks",
-  "intl_label": "Will New York Knicks win the 2027 NBA Finals? [New York Knicks]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-ind",
-  "intl_token": "33980098202566160742933998883875104660267284431086844431645851751245806675098",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Indiana Pacers",
-  "intl_label": "Will Indiana Pacers win the 2027 NBA Finals? [Indiana Pacers]",
+  "us_slug": "tec-ucl-final-2026-06-05-w-por",
+  "intl_token": "32497984693549591537443927130974395826708445848901982435855158355666016896406",
+  "score": 0.5,
+  "us_label": "UEFA Champions League Winner: FC Porto",
+  "intl_label": "Will Porto win the 2026-27 UEFA Champions League Championship? [Porto]",
   "tick": 0.01
  },
  {
@@ -1912,283 +1728,11 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nba-champ-2027-06-18-w-was",
-  "intl_token": "18698383041475028586441882955848696846459130548949943300472083017789362131208",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Washington Wizards",
-  "intl_label": "Will Washington Wizards win the 2027 NBA Finals? [Washington Wizards]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-03-14-2027-bestanim-wildwo",
-  "intl_token": "89597655531530433138423269731684179266399316402878477493927466923100816390022",
-  "score": 0.684,
-  "us_label": "Oscar Winner: Best Animated Feature Film: Wildwood",
-  "intl_label": "Will Wildwood win Best Animated Feature Film at the 99th Academy Awards? [Wildwood]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-ucl-final-2026-06-05-w-bog",
-  "intl_token": "113565046539594615041447428525881640706571978077687360683724924262092204991483",
+  "us_slug": "tec-ucl-final-2026-06-05-w-bvb",
+  "intl_token": "69844945401965968137843459827213978335475795917124102723974229169126962183486",
   "score": 0.5,
-  "us_label": "UEFA Champions League Winner: FK Bod\u00f8/Glimt",
-  "intl_label": "Will Bod\u00f8/Glimt win the 2026-27 UEFA Champions League Championship? [Bod\u00f8/Glimt]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nhl-champ-2027-06-18-w-sea",
-  "intl_token": "111436967388195221482739449833526184975968313262829269640335411449218879233733",
-  "score": 0.667,
-  "us_label": "2027 Stanley Cup Champion: Seattle Kraken",
-  "intl_label": "Will the Seattle Kraken be named the 2026-27 NHL Stanley Cup Champion? [Seattle Kraken]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-epl-title-2027-05-30-w-tot",
-  "intl_token": "77697374688933463558435808435207573631234398437151747716737073005939751357574",
-  "score": 0.533,
-  "us_label": "English Premier League Champion: Tottenham Hotspur",
-  "intl_label": "Will Tottenham win the 2026-27 English Premier League (EPL) Championship? [Tottenham]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-mem",
-  "intl_token": "71113005321543345953148982401714344852983979956921740107184770476905149747949",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Memphis Grizzlies",
-  "intl_label": "Will Memphis Grizzlies win the 2027 NBA Finals? [Memphis Grizzlies]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstorigscr-2027-01-21-obsess",
-  "intl_token": "12183668204267168294981260553236893899937951945398691543637204594105695244721",
-  "score": 0.659,
-  "us_label": "Oscar Nominees: Best Original Screenplay: Obsession",
-  "intl_label": "Will \"Obsession\" be nominated for Best Original Screenplay at the 99th Academy Awards? [Obsession]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-lal",
-  "intl_token": "26571480884168216649675719735797492426851959149575524589012193881222415382420",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Los Angeles Lakers",
-  "intl_label": "Will Los Angeles Lakers win the 2027 NBA Finals? [Los Angeles Lakers]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-det",
-  "intl_token": "22589862545502642463701340320964032988974740564891659118937148977135855914254",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Detroit Pistons",
-  "intl_label": "Will Detroit Pistons win the 2027 NBA Finals? [Detroit Pistons]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-atl",
-  "intl_token": "66978283296201729156011778181685232128845704002364165961550702560777069065938",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Atlanta Hawks",
-  "intl_label": "Will Atlanta Hawks win the 2027 NBA Finals? [Atlanta Hawks]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-orl",
-  "intl_token": "14149364091939747141050835064176645591010128057901149232938423620327933135956",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Orlando Magic",
-  "intl_label": "Will Orlando Magic win the 2027 NBA Finals? [Orlando Magic]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-cle",
-  "intl_token": "7103927316928557651756293615464760318461267087970415244972136093676271405674",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Cleveland Cavaliers",
-  "intl_label": "Will Cleveland Cavaliers win the 2027 NBA Finals? [Cleveland Cavaliers]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-cha",
-  "intl_token": "104764677445041735405004295087562978678692922058505365615073838332507558341437",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Charlotte Hornets",
-  "intl_label": "Will Charlotte Hornets win the 2027 NBA Finals? [Charlotte Hornets]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-bos",
-  "intl_token": "26581349382054409189680640260022986621270538404458754938164475396816106860966",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Boston Celtics",
-  "intl_label": "Will Boston Celtics win the 2027 NBA Finals? [Boston Celtics]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstanim-2027-01-21-forisl",
-  "intl_token": "108164351835222772209474501779337895876205275236155783068065040189021496165825",
-  "score": 0.674,
-  "us_label": "Oscar Nominees: Best Animated Feature Film: Forgotten Island",
-  "intl_label": "Will \"Forgotten Island\" be nominated for Best Animated Feature Film at the 99th Academy Awards? [Forgotten Island]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-mlb-nl-2026-11-27-roy-salste",
-  "intl_token": "34595319601871051200521419037063314223672424700989678968114337775641662517824",
-  "score": 0.65,
-  "us_label": "National League Rookie of the Year: Sal Stewart",
-  "intl_label": "Will Sal Stewart win the 2026 NL Rookie of the Year award? [Sal Stewart]",
-  "tick": 0.001
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-min",
-  "intl_token": "70393266426571575127884261634092459667577738304718921911204715531748407428131",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Minnesota Timberwolves",
-  "intl_label": "Will Minnesota Timberwolves win the 2027 NBA Finals? [Minnesota Timberwolves]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nhl-champ-2027-06-18-w-fla",
-  "intl_token": "44723686212901253687769241346895882936331252841442896939584299526300918738843",
-  "score": 0.667,
-  "us_label": "2027 Stanley Cup Champion: Florida Panthers",
-  "intl_label": "Will the Florida Panthers be named the 2026-27 NHL Stanley Cup Champion? [Florida Panthers]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-nop",
-  "intl_token": "38556205473470072936293737937663401559968429300207925799805811020804034073896",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: New Orleans Pelicans",
-  "intl_label": "Will New Orleans Pelicans win the 2027 NBA Finals? [New Orleans Pelicans]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-epl-title-2027-05-30-w-mnc",
-  "intl_token": "19864216715488298679276291756659013279877343825699353033505020208765688353462",
-  "score": 0.633,
-  "us_label": "English Premier League Champion: Manchester City",
-  "intl_label": "Will Manchester City win the 2026-27 English Premier League (EPL) Championship? [Manchester City]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-dal",
-  "intl_token": "4349233229896137644074586999216265233007467186235435871733698369103355405028",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Dallas Mavericks",
-  "intl_label": "Will Dallas Mavericks win the 2027 NBA Finals? [Dallas Mavericks]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-uta",
-  "intl_token": "54923277874826862014634962138109909033857317405603301955984300475658750663515",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Utah Jazz",
-  "intl_label": "Will Utah Jazz win the 2027 NBA Finals? [Utah Jazz]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-phi",
-  "intl_token": "111481751847805384192597309215435329884811365994609357629578026422941929496916",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: Philadelphia 76ers",
-  "intl_label": "Will Philadelphia 76ers win the 2027 NBA Finals? [Philadelphia 76ers]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstintl-2027-01-21-fjord",
-  "intl_token": "9195167346712773414705644823775271777573852397051185497067681933964488364977",
-  "score": 0.674,
-  "us_label": "Oscar Nominees: Best International Feature Film: Fjord",
-  "intl_label": "Will \"Fjord\" be nominated for Best International Feature Film at the 99th Academy Awards? [Fjord]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstedit-2027-01-21-fjord",
-  "intl_token": "9195167346712773414705644823775271777573852397051185497067681933964488364977",
-  "score": 0.625,
-  "us_label": "Oscar Nominees: Best Film Editing: Fjord",
-  "intl_label": "Will \"Fjord\" be nominated for Best International Feature Film at the 99th Academy Awards? [Fjord]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-cma-naoty-2026-11-18-stewil",
-  "intl_token": "39005867485233585777717226723199632933427969276045640259956714220252118216404",
-  "score": 0.625,
-  "us_label": "CMA Winner: New Artist of the Year: Stephen Wilson Jr.",
-  "intl_label": "Will Stephen Wilson Jr. win New Artist of the Year at the 2026 CMA Awards? [Stephen Wilson Jr.]",
-  "tick": 0.01
- },
- {
-  "us_slug": "rtc-dwts-s35-1-2026-11-17-conwoo",
-  "intl_token": "72540658670905172181341624659603024114375634670959021587083307460196760506860",
-  "score": 0.619,
-  "us_label": "Dancing With The Stars S35 Winner: Connor Wood",
-  "intl_label": "Will Connor Wood win Dancing With the Stars: Season 35? [Connor Wood]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nhl-champ-2027-06-18-w-mon",
-  "intl_token": "101075383399790518260771222164963904576747335934335904011626511256957817201781",
-  "score": 0.667,
-  "us_label": "2027 Stanley Cup Champion: Montreal Canadiens",
-  "intl_label": "Will the Montreal Canadiens be named the 2026-27 NHL Stanley Cup Champion? [Montreal Canadiens]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-sas",
-  "intl_token": "47942880964158617614279118228047750547985543191564455484169740327839925876869",
-  "score": 0.625,
-  "us_label": "2027 NBA Champion: San Antonio Spurs",
-  "intl_label": "Will San Antonio Spurs win the 2027 NBA Finals? [San Antonio Spurs]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstcine-2027-01-21-obsess",
-  "intl_token": "115511885196898555311418914544233279906273223705509714662084041677991564269660",
-  "score": 0.643,
-  "us_label": "Oscar Nominees: Best Cinematography: Obsession",
-  "intl_label": "Will \"Obsession\" be nominated for Best Cinematography at the 99th Academy Awards? [Obsession]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-behemo",
-  "intl_token": "48055326936482951477879170585772096671141030397408308728783934107523571889462",
-  "score": 0.614,
-  "us_label": "Oscar Nominees: Best Picture: Behemoth",
-  "intl_label": "Will \"Behemoth!\" be nominated for Best Original Screenplay at the 99th Academy Awards? [Behemoth!]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstorigscr-2027-01-21-behemo",
-  "intl_token": "48055326936482951477879170585772096671141030397408308728783934107523571889462",
-  "score": 0.659,
-  "us_label": "Oscar Nominees: Best Original Screenplay: Behemoth!",
-  "intl_label": "Will \"Behemoth!\" be nominated for Best Original Screenplay at the 99th Academy Awards? [Behemoth!]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstsound-2027-01-21-behemo",
-  "intl_token": "48055326936482951477879170585772096671141030397408308728783934107523571889462",
-  "score": 0.609,
-  "us_label": "Oscar Nominees: Best Sound: Behemoth!",
-  "intl_label": "Will \"Behemoth!\" be nominated for Best Original Screenplay at the 99th Academy Awards? [Behemoth!]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstsong-2027-01-21-yougod",
-  "intl_token": "48055326936482951477879170585772096671141030397408308728783934107523571889462",
-  "score": 0.53,
-  "us_label": "Oscar Nominees: Best Original Song: Your God is Sleeping - Behemoth!",
-  "intl_label": "Will \"Behemoth!\" be nominated for Best Original Screenplay at the 99th Academy Awards? [Behemoth!]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-epl-title-2027-05-30-w-mnu",
-  "intl_token": "73050236093508473398082398966067213274195424600650056280148681977814431775527",
-  "score": 0.633,
-  "us_label": "English Premier League Champion: Manchester United",
-  "intl_label": "Will Manchester United win the 2026-27 English Premier League (EPL) Championship? [Manchester United]",
+  "us_label": "UEFA Champions League Winner: BV Borussia 09 Dortmund",
+  "intl_label": "Will Borussia Dortmund win the 2026-27 UEFA Champions League Championship? [Borussia Dortmund]",
   "tick": 0.01
  },
  {
@@ -2200,19 +1744,675 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nba-mvp-2027-05-17-w-denavd",
-  "intl_token": "78303964171736421142253900134516059800601638235717235543017775497675957771782",
-  "score": 0.615,
-  "us_label": "NBA MVP: Deni Avdija",
-  "intl_label": "Will Deni Avdija win the 2026-27 NBA MVP? [Deni Avdija]",
-  "tick": 0.01
- },
- {
   "us_slug": "tec-ucl-final-2026-06-05-w-gal",
   "intl_token": "37235274069643596212861925289800974015038229343057468524186718238198125063603",
   "score": 0.5,
   "us_label": "UEFA Champions League Winner: Galatasaray SK",
   "intl_label": "Will Galatasaray win the 2026-27 UEFA Champions League Championship? [Galatasaray]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-ind",
+  "intl_token": "33980098202566160742933998883875104660267284431086844431645851751245806675098",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Indiana Pacers",
+  "intl_label": "Will Indiana Pacers win the 2027 NBA Finals? [Indiana Pacers]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-dal",
+  "intl_token": "4349233229896137644074586999216265233007467186235435871733698369103355405028",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Dallas Mavericks",
+  "intl_label": "Will Dallas Mavericks win the 2027 NBA Finals? [Dallas Mavericks]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-epl-title-2027-05-30-w-ast",
+  "intl_token": "95126052608609363478306594089235169822133598679009177544767568245943920599687",
+  "score": 0.633,
+  "us_label": "English Premier League Champion: Aston Villa",
+  "intl_label": "Will Aston Villa win the 2026-27 English Premier League (EPL) Championship? [Aston Villa]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-phi",
+  "intl_token": "111481751847805384192597309215435329884811365994609357629578026422941929496916",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Philadelphia 76ers",
+  "intl_label": "Will Philadelphia 76ers win the 2027 NBA Finals? [Philadelphia 76ers]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-ucl-final-2026-06-05-w-nap",
+  "intl_token": "93045961894175676546838541868635025573328846663951470971342071027086180788730",
+  "score": 0.5,
+  "us_label": "UEFA Champions League Winner: SSC Napoli",
+  "intl_label": "Will Napoli win the 2026-27 UEFA Champions League Championship? [Napoli]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-ucl-final-2026-06-05-w-bru",
+  "intl_token": "42934023876900744469315825151054686737366748717421206370305908868326441586868",
+  "score": 0.5,
+  "us_label": "UEFA Champions League Winner: Club Brugge KV",
+  "intl_label": "Will Club Brugge win the 2026-27 UEFA Champions League Championship? [Club Brugge]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-orl",
+  "intl_token": "14149364091939747141050835064176645591010128057901149232938423620327933135956",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Orlando Magic",
+  "intl_label": "Will Orlando Magic win the 2027 NBA Finals? [Orlando Magic]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-cha",
+  "intl_token": "104764677445041735405004295087562978678692922058505365615073838332507558341437",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Charlotte Hornets",
+  "intl_label": "Will Charlotte Hornets win the 2027 NBA Finals? [Charlotte Hornets]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-ucl-final-2026-06-05-w-stu",
+  "intl_token": "22319423712664250000966446349436436521608203218255612444397107110591820588150",
+  "score": 0.6,
+  "us_label": "UEFA Champions League Winner: VfB Stuttgart",
+  "intl_label": "Will VfB Stuttgart win the 2026-27 UEFA Champions League Championship? [VfB Stuttgart]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-ucl-final-2026-06-05-w-bog",
+  "intl_token": "113565046539594615041447428525881640706571978077687360683724924262092204991483",
+  "score": 0.5,
+  "us_label": "UEFA Champions League Winner: FK Bod\u00f8/Glimt",
+  "intl_label": "Will Bod\u00f8/Glimt win the 2026-27 UEFA Champions League Championship? [Bod\u00f8/Glimt]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-por",
+  "intl_token": "79620428735680913350265023427447805792163805641954526434518305561708056954117",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Portland Trail Blazers",
+  "intl_label": "Will Portland Trail Blazers win the 2027 NBA Finals? [Portland Trail Blazers]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-mem",
+  "intl_token": "71113005321543345953148982401714344852983979956921740107184770476905149747949",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Memphis Grizzlies",
+  "intl_label": "Will Memphis Grizzlies win the 2027 NBA Finals? [Memphis Grizzlies]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-epl-title-2027-05-30-w-tot",
+  "intl_token": "77697374688933463558435808435207573631234398437151747716737073005939751357574",
+  "score": 0.533,
+  "us_label": "English Premier League Champion: Tottenham Hotspur",
+  "intl_label": "Will Tottenham win the 2026-27 English Premier League (EPL) Championship? [Tottenham]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-mlb-nl-2026-11-27-roy-salste",
+  "intl_token": "34595319601871051200521419037063314223672424700989678968114337775641662517824",
+  "score": 0.65,
+  "us_label": "National League Rookie of the Year: Sal Stewart",
+  "intl_label": "Will Sal Stewart win the 2026 NL Rookie of the Year award? [Sal Stewart]",
+  "tick": 0.001
+ },
+ {
+  "us_slug": "tec-ucl-final-2026-06-05-w-rbl",
+  "intl_token": "56584291017439645675667293303671937246996096878333102029851075339825093630056",
+  "score": 0.6,
+  "us_label": "UEFA Champions League Winner: RB Leipzig",
+  "intl_label": "Will RB Leipzig win the 2026-27 UEFA Champions League Championship? [RB Leipzig]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-hou",
+  "intl_token": "54389136151618785952849043856295459748131034150210702007482093675046699037784",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Houston Rockets",
+  "intl_label": "Will Houston Rockets win the 2027 NBA Finals? [Houston Rockets]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-mlb-nl-2026-11-27-roy-carben",
+  "intl_token": "67498977603465604605636591756411878299831093614189236290648629696539506920775",
+  "score": 0.65,
+  "us_label": "National League Rookie of the Year: Carson Benge",
+  "intl_label": "Will Carson Benge win the 2026 NL Rookie of the Year award? [Carson Benge]",
+  "tick": 0.001
+ },
+ {
+  "us_slug": "tec-ucl-final-2026-06-05-w-spo",
+  "intl_token": "51852859144588408353883434057387376016222865952172946996183559003223391693129",
+  "score": 0.6,
+  "us_label": "UEFA Champions League Winner: Sporting CP",
+  "intl_label": "Will Sporting CP win the 2026-27 UEFA Champions League Championship? [Sporting CP]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-sas",
+  "intl_token": "47942880964158617614279118228047750547985543191564455484169740327839925876869",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: San Antonio Spurs",
+  "intl_label": "Will San Antonio Spurs win the 2027 NBA Finals? [San Antonio Spurs]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-lal",
+  "intl_token": "26571480884168216649675719735797492426851959149575524589012193881222415382420",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Los Angeles Lakers",
+  "intl_label": "Will Los Angeles Lakers win the 2027 NBA Finals? [Los Angeles Lakers]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-mia",
+  "intl_token": "1002605241037566897075427941760276379638292422424020000466947342214004056028",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Miami Heat",
+  "intl_label": "Will Miami Heat win the 2027 NBA Finals? [Miami Heat]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-epl-title-2027-05-30-w-mnc",
+  "intl_token": "19864216715488298679276291756659013279877343825699353033505020208765688353462",
+  "score": 0.633,
+  "us_label": "English Premier League Champion: Manchester City",
+  "intl_label": "Will Manchester City win the 2026-27 English Premier League (EPL) Championship? [Manchester City]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-nyk",
+  "intl_token": "96579693508177199966070611400410853026298967531032544674689952043367008918098",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: New York Knicks",
+  "intl_label": "Will New York Knicks win the 2027 NBA Finals? [New York Knicks]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstorigscr-2027-01-21-wilhor",
+  "intl_token": "16787048908168327033495760522797903120366636520715316704326166596118694951195",
+  "score": 0.604,
+  "us_label": "Oscar Nominees: Best Original Screenplay: Wild Horse Nine",
+  "intl_label": "Will \"Wild Horse Nine\" be nominated for Best Costume Design at the 99th Academy Awards? [Wild Horse Nine]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstscore-2027-01-21-wilhor",
+  "intl_token": "16787048908168327033495760522797903120366636520715316704326166596118694951195",
+  "score": 0.604,
+  "us_label": "Oscar Nominees: Best Original Score: Wild Horse Nine",
+  "intl_label": "Will \"Wild Horse Nine\" be nominated for Best Costume Design at the 99th Academy Awards? [Wild Horse Nine]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstcast-2027-01-21-wilhor",
+  "intl_token": "16787048908168327033495760522797903120366636520715316704326166596118694951195",
+  "score": 0.609,
+  "us_label": "Oscar Nominees: Best Casting: Wild Horse Nine",
+  "intl_label": "Will \"Wild Horse Nine\" be nominated for Best Costume Design at the 99th Academy Awards? [Wild Horse Nine]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstcostume-2027-01-21-wilhor",
+  "intl_token": "16787048908168327033495760522797903120366636520715316704326166596118694951195",
+  "score": 0.659,
+  "us_label": "Oscar Nominees: Best Costume Design: Wild Horse Nine",
+  "intl_label": "Will \"Wild Horse Nine\" be nominated for Best Costume Design at the 99th Academy Awards? [Wild Horse Nine]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstedit-2027-01-21-wilhor",
+  "intl_token": "16787048908168327033495760522797903120366636520715316704326166596118694951195",
+  "score": 0.604,
+  "us_label": "Oscar Nominees: Best Film Editing: Wild Horse Nine",
+  "intl_label": "Will \"Wild Horse Nine\" be nominated for Best Costume Design at the 99th Academy Awards? [Wild Horse Nine]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstlashort-2027-01-21-magfar",
+  "intl_token": "106275410328675521388600759401750528011427557505521383833315851749192947532907",
+  "score": 0.688,
+  "us_label": "Oscar Nominees: Best Live Action Short Film: Magan's Fare",
+  "intl_label": "Will \"Magan's Fare\" be nominated for Best Live Action Short Film at the 99th Academy Awards? [Magan's Fare]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstsupact-2027-01-21-micfas",
+  "intl_token": "49771832779730941491344901757315596981320484892422176790719472025295183418930",
+  "score": 0.504,
+  "us_label": "Oscar Nominees: Best Supporting Actor: Michael Fassbender",
+  "intl_label": "Will \"Michael\" be nominated for Best Costume Design at the 99th Academy Awards? [Michael]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstmakeup-2027-01-21-michae",
+  "intl_token": "49771832779730941491344901757315596981320484892422176790719472025295183418930",
+  "score": 0.604,
+  "us_label": "Oscar Nominees: Best Makeup and Hairstyling: Michael",
+  "intl_label": "Will \"Michael\" be nominated for Best Costume Design at the 99th Academy Awards? [Michael]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstcast-2027-01-21-michae",
+  "intl_token": "49771832779730941491344901757315596981320484892422176790719472025295183418930",
+  "score": 0.609,
+  "us_label": "Oscar Nominees: Best Casting: Michael",
+  "intl_label": "Will \"Michael\" be nominated for Best Costume Design at the 99th Academy Awards? [Michael]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstsound-2027-01-21-michae",
+  "intl_token": "49771832779730941491344901757315596981320484892422176790719472025295183418930",
+  "score": 0.609,
+  "us_label": "Oscar Nominees: Best Sound: Michael",
+  "intl_label": "Will \"Michael\" be nominated for Best Costume Design at the 99th Academy Awards? [Michael]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstcostume-2027-01-21-michae",
+  "intl_token": "49771832779730941491344901757315596981320484892422176790719472025295183418930",
+  "score": 0.659,
+  "us_label": "Oscar Nominees: Best Costume Design: Michael",
+  "intl_label": "Will \"Michael\" be nominated for Best Costume Design at the 99th Academy Awards? [Michael]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-mvp-2027-05-17-w-nikjok",
+  "intl_token": "51726897065489373419180564864823913468011384272680289055581120729749248586409",
+  "score": 0.615,
+  "us_label": "NBA MVP: Nikola Jokic",
+  "intl_label": "Will Nikola Jokic win the 2026-27 NBA MVP? [Nikola Jokic]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nhl-champ-2027-06-18-w-la",
+  "intl_token": "23578642277798740437108407063649051750798469022660797720269240949644808935575",
+  "score": 0.667,
+  "us_label": "2027 Stanley Cup Champion: Los Angeles Kings",
+  "intl_label": "Will the Los Angeles Kings be named the 2026-27 NHL Stanley Cup Champion? [Los Angeles Kings]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aaagaspc-txgas-month-2026-11-30-gt4pt1000",
+  "intl_token": "59754545919205158391435289289190710195135354616162224074051120467129175661313",
+  "score": 0.507,
+  "us_label": "Texas Gas Prices This Month: Above $4.1000",
+  "intl_label": "Will the US national average gas price be less than $4.1000 on November 5? [<$4.1000]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "aaagaspc-njgas-week-2026-11-09-gt4pt1000",
+  "intl_token": "59754545919205158391435289289190710195135354616162224074051120467129175661313",
+  "score": 0.507,
+  "us_label": "New Jersey Gas Prices This Week: Above $4.1000",
+  "intl_label": "Will the US national average gas price be less than $4.1000 on November 5? [<$4.1000]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-cle",
+  "intl_token": "7103927316928557651756293615464760318461267087970415244972136093676271405674",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Cleveland Cavaliers",
+  "intl_label": "Will Cleveland Cavaliers win the 2027 NBA Finals? [Cleveland Cavaliers]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstact-2027-01-21-tomcru",
+  "intl_token": "35620085221980666597937203091181120415912377687516199173175361920233376093694",
+  "score": 0.643,
+  "us_label": "Oscar Nominees: Best Actor: Tom Cruise",
+  "intl_label": "Will Tom Cruise be nominated for Best Actor at the 99th Academy Awards? [Tom Cruise]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "ccrc-bilbrd-1song-2026-11-14-houwif",
+  "intl_token": "41157180624228371840046302189779734740053077875262187076004943023635876727155",
+  "score": 0.603,
+  "us_label": "Billboard #1 Song Week of November 14?: Housewife - Tate McRae",
+  "intl_label": "Will \"Housewife - Tate McRae\" be the Billboard Hot 100 #2 song for the week of November 14? [Housewife - Tate McRae]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-mlb-nl-2026-11-27-roy-jjwet",
+  "intl_token": "70164718669886691151391899886797776316156289335003224973099251655417582622082",
+  "score": 0.65,
+  "us_label": "National League Rookie of the Year: JJ Wetherholt",
+  "intl_label": "Will JJ Wetherholt win the 2026 NL Rookie of the Year award? [JJ Wetherholt]",
+  "tick": 0.001
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestpic-wilnin",
+  "intl_token": "1222050920236092287210685347092331796262599753558651437864561287602855769263",
+  "score": 0.656,
+  "us_label": "Oscar Winner: Best Picture: Wild Horse Nine",
+  "intl_label": "Will Wild Horse Nine win Best Picture at the 99th Academy Awards? [Wild Horse Nine]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestorigscr-wilhor",
+  "intl_token": "1222050920236092287210685347092331796262599753558651437864561287602855769263",
+  "score": 0.639,
+  "us_label": "Oscar Winner: Best Original Screenplay: Wild Horse Nine",
+  "intl_label": "Will Wild Horse Nine win Best Picture at the 99th Academy Awards? [Wild Horse Nine]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestcast-wilhor",
+  "intl_token": "1222050920236092287210685347092331796262599753558651437864561287602855769263",
+  "score": 0.647,
+  "us_label": "Oscar Winner: Best Casting: Wild Horse Nine",
+  "intl_label": "Will Wild Horse Nine win Best Picture at the 99th Academy Awards? [Wild Horse Nine]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestcostume-wilhor",
+  "intl_token": "1222050920236092287210685347092331796262599753558651437864561287602855769263",
+  "score": 0.639,
+  "us_label": "Oscar Winner: Best Costume Design: Wild Horse Nine",
+  "intl_label": "Will Wild Horse Nine win Best Picture at the 99th Academy Awards? [Wild Horse Nine]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestedit-wilhor",
+  "intl_token": "1222050920236092287210685347092331796262599753558651437864561287602855769263",
+  "score": 0.639,
+  "us_label": "Oscar Winner: Best Film Editing: Wild Horse Nine",
+  "intl_label": "Will Wild Horse Nine win Best Picture at the 99th Academy Awards? [Wild Horse Nine]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestscore-wilhor",
+  "intl_token": "1222050920236092287210685347092331796262599753558651437864561287602855769263",
+  "score": 0.639,
+  "us_label": "Oscar Winner: Best Original Score: Wild Horse Nine",
+  "intl_label": "Will Wild Horse Nine win Best Picture at the 99th Academy Awards? [Wild Horse Nine]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "rtc-dwts-s35-1-2026-11-17-ambgle",
+  "intl_token": "72243273097834195304540571813820307658188657979129986084421446015844497307531",
+  "score": 0.604,
+  "us_label": "Dancing With The Stars S35 Winner: Amber Glenn",
+  "intl_label": "Will Amber Glenn be eliminated in week 9 of Dancing With The Stars: Season 35? [Amber Glenn]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-was",
+  "intl_token": "18698383041475028586441882955848696846459130548949943300472083017789362131208",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Washington Wizards",
+  "intl_label": "Will Washington Wizards win the 2027 NBA Finals? [Washington Wizards]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestpic-dunthr",
+  "intl_token": "43674325341217495599095278148622412266171753951219805121207270556817201390695",
+  "score": 0.656,
+  "us_label": "Oscar Winner: Best Picture: Dune: Part Three",
+  "intl_label": "Will Dune: Part Three win Best Picture at the 99th Academy Awards? [Dune: Part Three]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestvfx-dunpar",
+  "intl_token": "43674325341217495599095278148622412266171753951219805121207270556817201390695",
+  "score": 0.639,
+  "us_label": "Oscar Winner: Best Visual Effects: Dune: Part Three",
+  "intl_label": "Will Dune: Part Three win Best Picture at the 99th Academy Awards? [Dune: Part Three]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestmakeup-dunpar",
+  "intl_token": "43674325341217495599095278148622412266171753951219805121207270556817201390695",
+  "score": 0.639,
+  "us_label": "Oscar Winner: Best Makeup and Hairstyling: Dune: Part Three",
+  "intl_label": "Will Dune: Part Three win Best Picture at the 99th Academy Awards? [Dune: Part Three]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestcast-dunpar",
+  "intl_token": "43674325341217495599095278148622412266171753951219805121207270556817201390695",
+  "score": 0.647,
+  "us_label": "Oscar Winner: Best Casting: Dune: Part Three",
+  "intl_label": "Will Dune: Part Three win Best Picture at the 99th Academy Awards? [Dune: Part Three]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestcostume-dunpar",
+  "intl_token": "43674325341217495599095278148622412266171753951219805121207270556817201390695",
+  "score": 0.639,
+  "us_label": "Oscar Winner: Best Costume Design: Dune: Part Three",
+  "intl_label": "Will Dune: Part Three win Best Picture at the 99th Academy Awards? [Dune: Part Three]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestedit-dunpar",
+  "intl_token": "43674325341217495599095278148622412266171753951219805121207270556817201390695",
+  "score": 0.639,
+  "us_label": "Oscar Winner: Best Film Editing: Dune: Part Three",
+  "intl_label": "Will Dune: Part Three win Best Picture at the 99th Academy Awards? [Dune: Part Three]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestprod-dunpar",
+  "intl_token": "43674325341217495599095278148622412266171753951219805121207270556817201390695",
+  "score": 0.639,
+  "us_label": "Oscar Winner: Best Production Design: Dune: Part Three",
+  "intl_label": "Will Dune: Part Three win Best Picture at the 99th Academy Awards? [Dune: Part Three]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestscore-dunpar",
+  "intl_token": "43674325341217495599095278148622412266171753951219805121207270556817201390695",
+  "score": 0.639,
+  "us_label": "Oscar Winner: Best Original Score: Dune: Part Three",
+  "intl_label": "Will Dune: Part Three win Best Picture at the 99th Academy Awards? [Dune: Part Three]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestsound-dunpar",
+  "intl_token": "43674325341217495599095278148622412266171753951219805121207270556817201390695",
+  "score": 0.647,
+  "us_label": "Oscar Winner: Best Sound: Dune: Part Three",
+  "intl_label": "Will Dune: Part Three win Best Picture at the 99th Academy Awards? [Dune: Part Three]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestcine-dunpar",
+  "intl_token": "43674325341217495599095278148622412266171753951219805121207270556817201390695",
+  "score": 0.647,
+  "us_label": "Oscar Winner: Best Cinematography: Dune: Part Three",
+  "intl_label": "Will Dune: Part Three win Best Picture at the 99th Academy Awards? [Dune: Part Three]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstanim-2027-01-21-forisl",
+  "intl_token": "108164351835222772209474501779337895876205275236155783068065040189021496165825",
+  "score": 0.674,
+  "us_label": "Oscar Nominees: Best Animated Feature Film: Forgotten Island",
+  "intl_label": "Will \"Forgotten Island\" be nominated for Best Animated Feature Film at the 99th Academy Awards? [Forgotten Island]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstorigscr-2027-01-21-forisl",
+  "intl_token": "108164351835222772209474501779337895876205275236155783068065040189021496165825",
+  "score": 0.6,
+  "us_label": "Oscar Nominees: Best Original Screenplay: Forgotten Island",
+  "intl_label": "Will \"Forgotten Island\" be nominated for Best Animated Feature Film at the 99th Academy Awards? [Forgotten Island]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstdoc-2027-01-21-nuibea",
+  "intl_token": "31180440700291338592861810453178539768891173796169139689169486961974604917594",
+  "score": 0.674,
+  "us_label": "Oscar Nominees: Best Documentary Feature Film: Nuisance Bear",
+  "intl_label": "Will \"Nuisance Bear\" be nominated for Best Documentary Feature Film at the 99th Academy Awards? [Nuisance Bear]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-bun-title-2027-05-22-w-scf",
+  "intl_token": "22175333496127081469990198415425480769050614407477193039195458572751419549061",
+  "score": 0.6,
+  "us_label": "Bundesliga Champion: SC Freiburg",
+  "intl_label": "Will SC Freiburg be the 2026-27 Bundesliga champion? [SC Freiburg]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-min",
+  "intl_token": "70393266426571575127884261634092459667577738304718921911204715531748407428131",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Minnesota Timberwolves",
+  "intl_label": "Will Minnesota Timberwolves win the 2027 NBA Finals? [Minnesota Timberwolves]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-det",
+  "intl_token": "22589862545502642463701340320964032988974740564891659118937148977135855914254",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Detroit Pistons",
+  "intl_label": "Will Detroit Pistons win the 2027 NBA Finals? [Detroit Pistons]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-blabal",
+  "intl_token": "10244085162353434111444170001034068369190548395858450633852818340997025448251",
+  "score": 0.614,
+  "us_label": "Oscar Nominees: Best Picture: The Black Ball",
+  "intl_label": "Will \"The Black Ball\" be nominated for Best Adapted Screenplay at the 99th Academy Awards? [The Black Ball]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstsound-2027-01-21-blabal",
+  "intl_token": "10244085162353434111444170001034068369190548395858450633852818340997025448251",
+  "score": 0.609,
+  "us_label": "Oscar Nominees: Best Sound: The Black Ball",
+  "intl_label": "Will \"The Black Ball\" be nominated for Best Adapted Screenplay at the 99th Academy Awards? [The Black Ball]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstcostume-2027-01-21-blabal",
+  "intl_token": "10244085162353434111444170001034068369190548395858450633852818340997025448251",
+  "score": 0.604,
+  "us_label": "Oscar Nominees: Best Costume Design: The Black Ball",
+  "intl_label": "Will \"The Black Ball\" be nominated for Best Adapted Screenplay at the 99th Academy Awards? [The Black Ball]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstprod-2027-01-21-blabal",
+  "intl_token": "10244085162353434111444170001034068369190548395858450633852818340997025448251",
+  "score": 0.604,
+  "us_label": "Oscar Nominees: Best Production Design: The Black Ball",
+  "intl_label": "Will \"The Black Ball\" be nominated for Best Adapted Screenplay at the 99th Academy Awards? [The Black Ball]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstedit-2027-01-21-blabal",
+  "intl_token": "10244085162353434111444170001034068369190548395858450633852818340997025448251",
+  "score": 0.604,
+  "us_label": "Oscar Nominees: Best Film Editing: The Black Ball",
+  "intl_label": "Will \"The Black Ball\" be nominated for Best Adapted Screenplay at the 99th Academy Awards? [The Black Ball]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstsong-2027-01-21-lanie",
+  "intl_token": "10244085162353434111444170001034068369190548395858450633852818340997025448251",
+  "score": 0.504,
+  "us_label": "Oscar Nominees: Best Original Song: La Nieve - The Black Ball",
+  "intl_label": "Will \"The Black Ball\" be nominated for Best Adapted Screenplay at the 99th Academy Awards? [The Black Ball]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-promar",
+  "intl_token": "4827851551226117927576431099515128026855330934764040950865520796232818976341",
+  "score": 0.614,
+  "us_label": "Oscar Nominees: Best Picture: Project Hail Mary",
+  "intl_label": "Will \"Project Hail Mary\" be nominated for Best Adapted Screenplay at the 99th Academy Awards? [Project Hail Mary]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstvfx-2027-01-21-prohai",
+  "intl_token": "4827851551226117927576431099515128026855330934764040950865520796232818976341",
+  "score": 0.604,
+  "us_label": "Oscar Nominees: Best Visual Effects: Project Hail Mary",
+  "intl_label": "Will \"Project Hail Mary\" be nominated for Best Adapted Screenplay at the 99th Academy Awards? [Project Hail Mary]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstcine-2027-01-21-prohai",
+  "intl_token": "4827851551226117927576431099515128026855330934764040950865520796232818976341",
+  "score": 0.609,
+  "us_label": "Oscar Nominees: Best Cinematography: Project Hail Mary",
+  "intl_label": "Will \"Project Hail Mary\" be nominated for Best Adapted Screenplay at the 99th Academy Awards? [Project Hail Mary]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstscore-2027-01-21-prohai",
+  "intl_token": "4827851551226117927576431099515128026855330934764040950865520796232818976341",
+  "score": 0.604,
+  "us_label": "Oscar Nominees: Best Original Score: Project Hail Mary",
+  "intl_label": "Will \"Project Hail Mary\" be nominated for Best Adapted Screenplay at the 99th Academy Awards? [Project Hail Mary]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstadascr-2027-01-21-prohai",
+  "intl_token": "4827851551226117927576431099515128026855330934764040950865520796232818976341",
+  "score": 0.659,
+  "us_label": "Oscar Nominees: Best Adapted Screenplay: Project Hail Mary",
+  "intl_label": "Will \"Project Hail Mary\" be nominated for Best Adapted Screenplay at the 99th Academy Awards? [Project Hail Mary]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstcast-2027-01-21-prohai",
+  "intl_token": "4827851551226117927576431099515128026855330934764040950865520796232818976341",
+  "score": 0.609,
+  "us_label": "Oscar Nominees: Best Casting: Project Hail Mary",
+  "intl_label": "Will \"Project Hail Mary\" be nominated for Best Adapted Screenplay at the 99th Academy Awards? [Project Hail Mary]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstsound-2027-01-21-prohai",
+  "intl_token": "4827851551226117927576431099515128026855330934764040950865520796232818976341",
+  "score": 0.609,
+  "us_label": "Oscar Nominees: Best Sound: Project Hail Mary",
+  "intl_label": "Will \"Project Hail Mary\" be nominated for Best Adapted Screenplay at the 99th Academy Awards? [Project Hail Mary]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstprod-2027-01-21-prohai",
+  "intl_token": "4827851551226117927576431099515128026855330934764040950865520796232818976341",
+  "score": 0.604,
+  "us_label": "Oscar Nominees: Best Production Design: Project Hail Mary",
+  "intl_label": "Will \"Project Hail Mary\" be nominated for Best Adapted Screenplay at the 99th Academy Awards? [Project Hail Mary]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tac-oscars-nom-bstedit-2027-01-21-prohai",
+  "intl_token": "4827851551226117927576431099515128026855330934764040950865520796232818976341",
+  "score": 0.604,
+  "us_label": "Oscar Nominees: Best Film Editing: Project Hail Mary",
+  "intl_label": "Will \"Project Hail Mary\" be nominated for Best Adapted Screenplay at the 99th Academy Awards? [Project Hail Mary]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-mvp-2027-05-17-w-antdav",
+  "intl_token": "96417163399843922808048533267416358875195366852246048978728891586293512658666",
+  "score": 0.615,
+  "us_label": "NBA MVP: Anthony Davis",
+  "intl_label": "Will Anthony Davis win the 2026-27 NBA MVP? [Anthony Davis]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-bun-title-2027-05-22-w-bvb",
+  "intl_token": "71505643993753772241028585420023787018058707557413087432629400348265668860690",
+  "score": 0.5,
+  "us_label": "Bundesliga Champion: BV Borussia 09 Dortmund",
+  "intl_label": "Will Borussia Dortmund be the 2026-27 Bundesliga champion? [Borussia Dortmund]",
   "tick": 0.01
  },
  {
@@ -2224,219 +2424,59 @@
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nhl-champ-2027-06-18-w-tor",
-  "intl_token": "46508043123782944529826321768335000732818290307137256432200064397942767638900",
-  "score": 0.667,
-  "us_label": "2027 Stanley Cup Champion: Toronto Maple Leafs",
-  "intl_label": "Will the Toronto Maple Leafs be named the 2026-27 NHL Stanley Cup Champion? [Toronto Maple Leafs]",
-  "tick": 0.01
- },
- {
-  "us_slug": "astatc-nfl-passyds-ou-2027-01-10-lamjac",
-  "intl_token": "112428901686561997787523339868735949204799624448913679668083342120974285899591",
-  "score": 0.515,
-  "us_label": "Regular Season Passing Yards O/U: Lamar Jackson 3249.5+",
-  "intl_label": "Will Lamar Jackson have 3,500+ passing yards in the 2026-27 NFL regular season? [Lamar Jackson]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nhl-champ-2027-06-18-w-car",
-  "intl_token": "48664334366250755164783539973896690108199470876714198017870348234565467836230",
-  "score": 0.667,
-  "us_label": "2027 Stanley Cup Champion: Carolina Hurricanes",
-  "intl_label": "Will the Carolina Hurricanes be named the 2026-27 NHL Stanley Cup Champion? [Carolina Hurricanes]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-eastconf-2027-05-19-w-det",
-  "intl_token": "37190925500734133591372125086662484747858448008017000085004977132457389667033",
+  "us_slug": "tac-oscars-nom-bstact-2027-01-21-johmal",
+  "intl_token": "33273167705718001130608124647465919290198484900091074697910990485236380780740",
   "score": 0.643,
-  "us_label": "NBA Eastern Conference Champion: Detroit Pistons",
-  "intl_label": "Will the Detroit Pistons be the 2027 NBA Eastern Conference Champion? [Detroit Pistons]",
+  "us_label": "Oscar Nominees: Best Actor: John Malkovich",
+  "intl_label": "Will John Malkovich be nominated for Best Actor at the 99th Academy Awards? [John Malkovich]",
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nba-mvp-2027-05-17-w-lukdon",
-  "intl_token": "21002840256154000445893744603116595643475563803150507135218876495810242691521",
+  "us_slug": "tec-nba-mvp-2027-05-17-w-tyrmax",
+  "intl_token": "3180023385600382647887913953519313538706235389992220644678206064634282488940",
   "score": 0.615,
-  "us_label": "NBA MVP: Luka Doncic",
-  "intl_label": "Will Luka Doncic win the 2026-27 NBA MVP? [Luka Doncic]",
+  "us_label": "NBA MVP: Tyrese Maxey",
+  "intl_label": "Will Tyrese Maxey win the 2026-27 NBA MVP? [Tyrese Maxey]",
   "tick": 0.01
  },
  {
-  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-drama",
-  "intl_token": "39293371860934823194664233128536421990815989681656026622362476135182978156696",
-  "score": 0.614,
-  "us_label": "Oscar Nominees: Best Picture: The Drama",
-  "intl_label": "Will \"The Drama\" be nominated for Best Original Screenplay at the 99th Academy Awards? [The Drama]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstscore-2027-01-21-drama",
-  "intl_token": "39293371860934823194664233128536421990815989681656026622362476135182978156696",
-  "score": 0.63,
-  "us_label": "Oscar Nominees: Best Original Score: The Drama",
-  "intl_label": "Will \"The Drama\" be nominated for Best Original Screenplay at the 99th Academy Awards? [The Drama]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-mvp-2027-05-17-w-vicwem",
-  "intl_token": "94118022390118520716499238181620724402901200477266307706953149277611622566722",
-  "score": 0.615,
-  "us_label": "NBA MVP: Victor Wembanyama",
-  "intl_label": "Will Victor Wembanyama win the 2026-27 NBA MVP? [Victor Wembanyama]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-champ-2027-06-18-w-lac",
-  "intl_token": "76232322569898589749413822670406290301746839185124132406151011054116796849360",
+  "us_slug": "tec-nba-champ-2027-06-18-w-atl",
+  "intl_token": "66978283296201729156011778181685232128845704002364165961550702560777069065938",
   "score": 0.625,
-  "us_label": "2027 NBA Champion: Los Angeles Clippers",
-  "intl_label": "Will Los Angeles Clippers win the 2027 NBA Finals? [Los Angeles Clippers]",
+  "us_label": "2027 NBA Champion: Atlanta Hawks",
+  "intl_label": "Will Atlanta Hawks win the 2027 NBA Finals? [Atlanta Hawks]",
   "tick": 0.01
  },
  {
-  "us_slug": "tec-nhl-champ-2027-06-18-w-was",
-  "intl_token": "28967218375755427572278903402346803587314279261082442433078301146307343677899",
-  "score": 0.667,
-  "us_label": "2027 Stanley Cup Champion: Washington Capitals",
-  "intl_label": "Will the Washington Capitals be named the 2026-27 NHL Stanley Cup Champion? [Washington Capitals]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-mvp-2027-05-17-w-jalbru",
-  "intl_token": "47237178182965509242359541808899552095929750499679343378500468163755157372575",
+  "us_slug": "tec-nba-mvp-2027-05-17-w-coofla",
+  "intl_token": "15520196613700954322902865728211403261370217511783714430468166913469335654266",
   "score": 0.615,
-  "us_label": "NBA MVP: Jalen Brunson",
-  "intl_label": "Will Jalen Brunson win the 2026-27 NBA MVP? [Jalen Brunson]",
+  "us_label": "NBA MVP: Cooper Flagg",
+  "intl_label": "Will Cooper Flagg win the 2026-27 NBA MVP? [Cooper Flagg]",
   "tick": 0.01
  },
  {
-  "us_slug": "tac-oscars-nom-bstcine-2027-01-21-odysse",
-  "intl_token": "72953879738541030120729737007723921210308722897281168551063555646503741810462",
-  "score": 0.609,
-  "us_label": "Oscar Nominees: Best Cinematography: The Odyssey",
-  "intl_label": "Will \"The Odyssey\" be nominated for Best Production Design at the 99th Academy Awards? [The Odyssey]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstscore-2027-01-21-odysse",
-  "intl_token": "72953879738541030120729737007723921210308722897281168551063555646503741810462",
-  "score": 0.604,
-  "us_label": "Oscar Nominees: Best Original Score: The Odyssey",
-  "intl_label": "Will \"The Odyssey\" be nominated for Best Production Design at the 99th Academy Awards? [The Odyssey]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstadascr-2027-01-21-odysse",
-  "intl_token": "72953879738541030120729737007723921210308722897281168551063555646503741810462",
-  "score": 0.604,
-  "us_label": "Oscar Nominees: Best Adapted Screenplay: The Odyssey",
-  "intl_label": "Will \"The Odyssey\" be nominated for Best Production Design at the 99th Academy Awards? [The Odyssey]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstcast-2027-01-21-odysse",
-  "intl_token": "72953879738541030120729737007723921210308722897281168551063555646503741810462",
-  "score": 0.609,
-  "us_label": "Oscar Nominees: Best Casting: The Odyssey",
-  "intl_label": "Will \"The Odyssey\" be nominated for Best Production Design at the 99th Academy Awards? [The Odyssey]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstsound-2027-01-21-odysse",
-  "intl_token": "72953879738541030120729737007723921210308722897281168551063555646503741810462",
-  "score": 0.609,
-  "us_label": "Oscar Nominees: Best Sound: The Odyssey",
-  "intl_label": "Will \"The Odyssey\" be nominated for Best Production Design at the 99th Academy Awards? [The Odyssey]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstcostume-2027-01-21-odysse",
-  "intl_token": "72953879738541030120729737007723921210308722897281168551063555646503741810462",
-  "score": 0.63,
-  "us_label": "Oscar Nominees: Best Costume Design: The Odyssey",
-  "intl_label": "Will \"The Odyssey\" be nominated for Best Production Design at the 99th Academy Awards? [The Odyssey]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstprod-2027-01-21-odysse",
-  "intl_token": "72953879738541030120729737007723921210308722897281168551063555646503741810462",
-  "score": 0.659,
-  "us_label": "Oscar Nominees: Best Production Design: The Odyssey",
-  "intl_label": "Will \"The Odyssey\" be nominated for Best Production Design at the 99th Academy Awards? [The Odyssey]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstedit-2027-01-21-odysse",
-  "intl_token": "72953879738541030120729737007723921210308722897281168551063555646503741810462",
-  "score": 0.604,
-  "us_label": "Oscar Nominees: Best Film Editing: The Odyssey",
-  "intl_label": "Will \"The Odyssey\" be nominated for Best Production Design at the 99th Academy Awards? [The Odyssey]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstsong-2027-01-21-wheim",
-  "intl_token": "72953879738541030120729737007723921210308722897281168551063555646503741810462",
-  "score": 0.504,
-  "us_label": "Oscar Nominees: Best Original Song: When I'm Home - The Odyssey",
-  "intl_label": "Will \"The Odyssey\" be nominated for Best Production Design at the 99th Academy Awards? [The Odyssey]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nba-mvp-2027-05-17-w-stecur",
-  "intl_token": "58704524057791623709259021536741198849141360692457216340995174215593954591284",
-  "score": 0.615,
-  "us_label": "NBA MVP: Stephen Curry",
-  "intl_label": "Will Stephen Curry win the 2026-27 NBA MVP? [Stephen Curry]",
-  "tick": 0.01
- },
- {
-  "us_slug": "rtc-dwts-s35-1-2026-11-17-ezrfre",
-  "intl_token": "27655427333696032650642694463650923031195279558056605394593015148420087142616",
-  "score": 0.619,
-  "us_label": "Dancing With The Stars S35 Winner: Ezra Frech",
-  "intl_label": "Will Ezra Frech win Dancing With the Stars: Season 35? [Ezra Frech]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-nhl-champ-2027-06-18-w-veg",
-  "intl_token": "91274072014544240810088388480737773272299053720966072408183603477147259368027",
-  "score": 0.667,
-  "us_label": "2027 Stanley Cup Champion: Vegas Golden Knights",
-  "intl_label": "Will the Vegas Golden Knights be named the 2026-27 NHL Stanley Cup Champion? [Vegas Golden Knights]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tec-ucl-final-2026-06-05-w-bvb",
-  "intl_token": "69844945401965968137843459827213978335475795917124102723974229169126962183486",
-  "score": 0.5,
-  "us_label": "UEFA Champions League Winner: BV Borussia 09 Dortmund",
-  "intl_label": "Will Borussia Dortmund win the 2026-27 UEFA Champions League Championship? [Borussia Dortmund]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstmakeup-2027-01-21-wicker",
-  "intl_token": "82197334940713195387995791708477385936215574413454172080401450943199183350390",
-  "score": 0.659,
-  "us_label": "Oscar Nominees: Best Makeup and Hairstyling: Wicker",
-  "intl_label": "Will \"Wicker\" be nominated for Best Makeup and Hairstyling at the 99th Academy Awards? [Wicker]",
-  "tick": 0.01
- },
- {
-  "us_slug": "tac-oscars-nom-bstdocshort-2027-01-21-tuners",
-  "intl_token": "16472943829759380902365316601394573274215470270584889943116119734261817288668",
+  "us_slug": "tac-oscars-nom-bstanim-2027-01-21-iroboy",
+  "intl_token": "83403874672632149731050333698938834015126435699280376605410456048563098622170",
   "score": 0.674,
-  "us_label": "Oscar Nominees: Best Documentary Short Film: The Tuners",
-  "intl_label": "Will \"The Tuners\" be nominated for Best Documentary Short Film at the 99th Academy Awards? [The Tuners]",
+  "us_label": "Oscar Nominees: Best Animated Feature Film: Iron Boy",
+  "intl_label": "Will \"Iron Boy\" be nominated for Best Animated Feature Film at the 99th Academy Awards? [Iron Boy]",
   "tick": 0.01
  },
  {
-  "us_slug": "tac-oscars-03-14-2027-bestdocshort-tuners",
-  "intl_token": "31831139088864127543335858759785007747846997144149512029930219428035377643846",
-  "score": 0.684,
-  "us_label": "Oscar Winner: Best Documentary Short Film: The Tuners",
-  "intl_label": "Will The Tuners win Best Documentary Short Film at the 99th Academy Awards? [The Tuners]",
+  "us_slug": "arankc-ucl-2027-01-27-9to24-psg",
+  "intl_token": "85158083954959796766812188892373720498279667307690193184015683156633458364631",
+  "score": 0.505,
+  "us_label": "Champions League League Phase 9-24 Place Finishers: Paris Saint-Germain FC",
+  "intl_label": "Will Paris Saint-Germain finish first in UCL league phase? [Paris Saint-Germain]",
+  "tick": 0.01
+ },
+ {
+  "us_slug": "tec-nba-champ-2027-06-18-w-pho",
+  "intl_token": "56511509919728347181497845289403940666044398339205720854450061222431419409255",
+  "score": 0.625,
+  "us_label": "2027 NBA Champion: Phoenix Suns",
+  "intl_label": "Will Phoenix Suns win the 2027 NBA Finals? [Phoenix Suns]",
   "tick": 0.01
  }
 ]

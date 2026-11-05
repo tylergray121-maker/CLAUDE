@@ -1,22 +1,17 @@
 {
- "ts": 1793727478.9051075,
+ "ts": 1793887343.9632435,
  "mode": "paper",
  "pairs": 20,
- "equity": 199.76,
- "cash": 195.08,
- "positions": {
-  "tsc-ucl-gal-stu-2026-11-03-3pt5:short": {
-   "qty": 11,
-   "cost": 4.92
-  }
- },
+ "equity": 200.0,
+ "cash": 200.0,
+ "positions": {},
  "open_orders": 0,
- "fills": 1,
- "fees_paid": 0.19,
+ "fills": 0,
+ "fees_paid": 0.0,
  "rebates": 0.0,
  "halted": "",
  "scan": {
-  "observations": 460,
+  "observations": 280,
   "buy_opps": 0,
   "sell_opps": 0
  }

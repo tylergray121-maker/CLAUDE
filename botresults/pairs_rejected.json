@@ -1,119 +1,38 @@
 [
  {
-  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-obsess",
-  "intl_token": "115511885196898555311418914544233279906273223705509714662084041677991564269660",
-  "score": 0.619,
-  "us_label": "Oscar Nominees: Best Picture: Obsession",
-  "intl_label": "Will \"Obsession\" be nominated for Best Cinematography at the 99th Academy Awards? [Obsession]",
-  "tick": 0.01,
-  "price_gap": 0.245
- },
- {
-  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-fjord",
-  "intl_token": "9195167346712773414705644823775271777573852397051185497067681933964488364977",
-  "score": 0.609,
-  "us_label": "Oscar Nominees: Best Picture: Fjord",
-  "intl_label": "Will \"Fjord\" be nominated for Best International Feature Film at the 99th Academy Awards? [Fjord]",
-  "tick": 0.01,
-  "price_gap": 0.535
- },
- {
-  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-odysse",
-  "intl_token": "72953879738541030120729737007723921210308722897281168551063555646503741810462",
+  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-michae",
+  "intl_token": "49771832779730941491344901757315596981320484892422176790719472025295183418930",
   "score": 0.614,
-  "us_label": "Oscar Nominees: Best Picture: The Odyssey",
-  "intl_label": "Will \"The Odyssey\" be nominated for Best Production Design at the 99th Academy Awards? [The Odyssey]",
+  "us_label": "Oscar Nominees: Best Picture: Michael",
+  "intl_label": "Will \"Michael\" be nominated for Best Costume Design at the 99th Academy Awards? [Michael]",
   "tick": 0.01,
-  "price_gap": 0.104
+  "price_gap": 0.142
  },
  {
-  "us_slug": "tac-oscars-nom-bstmakeup-2027-01-21-odysse",
-  "intl_token": "72953879738541030120729737007723921210308722897281168551063555646503741810462",
-  "score": 0.604,
-  "us_label": "Oscar Nominees: Best Makeup and Hairstyling: The Odyssey",
-  "intl_label": "Will \"The Odyssey\" be nominated for Best Production Design at the 99th Academy Awards? [The Odyssey]",
-  "tick": 0.01,
-  "price_gap": 0.175
- },
- {
-  "us_slug": "tac-oscars-nom-bstanim-2027-01-21-iroboy",
-  "intl_token": "83403874672632149731050333698938834015126435699280376605410456048563098622170",
-  "score": 0.674,
-  "us_label": "Oscar Nominees: Best Animated Feature Film: Iron Boy",
-  "intl_label": "Will \"Iron Boy\" be nominated for Best Animated Feature Film at the 99th Academy Awards? [Iron Boy]",
-  "tick": 0.01,
-  "price_gap": 0.105
- },
- {
-  "us_slug": "tac-oscars-nom-bstvfx-2027-01-21-odysse",
-  "intl_token": "72953879738541030120729737007723921210308722897281168551063555646503741810462",
-  "score": 0.604,
-  "us_label": "Oscar Nominees: Best Visual Effects: The Odyssey",
-  "intl_label": "Will \"The Odyssey\" be nominated for Best Production Design at the 99th Academy Awards? [The Odyssey]",
-  "tick": 0.01,
-  "price_gap": 0.146
- },
- {
-  "us_slug": "tac-oscars-nom-bstorigscr-2027-01-21-fjord",
-  "intl_token": "9195167346712773414705644823775271777573852397051185497067681933964488364977",
-  "score": 0.6,
-  "us_label": "Oscar Nominees: Best Original Screenplay: Fjord",
-  "intl_label": "Will \"Fjord\" be nominated for Best International Feature Film at the 99th Academy Awards? [Fjord]",
-  "tick": 0.01,
-  "price_gap": 0.355
- },
- {
-  "us_slug": "tac-oscars-nom-bstorigscr-2027-01-21-drama",
-  "intl_token": "39293371860934823194664233128536421990815989681656026622362476135182978156696",
-  "score": 0.659,
-  "us_label": "Oscar Nominees: Best Original Screenplay: The Drama",
-  "intl_label": "Will \"The Drama\" be nominated for Best Original Screenplay at the 99th Academy Awards? [The Drama]",
-  "tick": 0.01,
-  "price_gap": 0.085
- },
- {
-  "us_slug": "tac-oscars-nom-bstorigscr-2027-01-21-forisl",
-  "intl_token": "108164351835222772209474501779337895876205275236155783068065040189021496165825",
-  "score": 0.6,
-  "us_label": "Oscar Nominees: Best Original Screenplay: Forgotten Island",
-  "intl_label": "Will \"Forgotten Island\" be nominated for Best Animated Feature Film at the 99th Academy Awards? [Forgotten Island]",
-  "tick": 0.01,
-  "price_gap": 0.31
- },
- {
-  "us_slug": "tac-oscars-nom-bstorigscr-2027-01-21-odysse",
-  "intl_token": "72953879738541030120729737007723921210308722897281168551063555646503741810462",
-  "score": 0.604,
-  "us_label": "Oscar Nominees: Best Original Screenplay: The Odyssey",
-  "intl_label": "Will \"The Odyssey\" be nominated for Best Production Design at the 99th Academy Awards? [The Odyssey]",
-  "tick": 0.01,
-  "price_gap": 0.781
- },
- {
-  "us_slug": "tac-oscars-nom-bstscore-2027-01-21-behemo",
-  "intl_token": "48055326936482951477879170585772096671141030397408308728783934107523571889462",
-  "score": 0.63,
-  "us_label": "Oscar Nominees: Best Original Score: Behemoth!",
-  "intl_label": "Will \"Behemoth!\" be nominated for Best Original Screenplay at the 99th Academy Awards? [Behemoth!]",
-  "tick": 0.01,
-  "price_gap": 0.135
- },
- {
-  "us_slug": "tac-oscars-nom-bstcast-2027-01-21-obsess",
-  "intl_token": "115511885196898555311418914544233279906273223705509714662084041677991564269660",
+  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-wilnin",
+  "intl_token": "16787048908168327033495760522797903120366636520715316704326166596118694951195",
   "score": 0.614,
-  "us_label": "Oscar Nominees: Best Casting: Obsession",
-  "intl_label": "Will \"Obsession\" be nominated for Best Cinematography at the 99th Academy Awards? [Obsession]",
+  "us_label": "Oscar Nominees: Best Picture: Wild Horse Nine",
+  "intl_label": "Will \"Wild Horse Nine\" be nominated for Best Costume Design at the 99th Academy Awards? [Wild Horse Nine]",
   "tick": 0.01,
-  "price_gap": 0.185
+  "price_gap": 0.66
  },
  {
-  "us_slug": "tac-oscars-nom-bstcast-2027-01-21-fjord",
-  "intl_token": "9195167346712773414705644823775271777573852397051185497067681933964488364977",
-  "score": 0.604,
-  "us_label": "Oscar Nominees: Best Casting: Fjord",
-  "intl_label": "Will \"Fjord\" be nominated for Best International Feature Film at the 99th Academy Awards? [Fjord]",
+  "us_slug": "aaagaspc-usgas-lowm-2026-11-30-lt4pt1000",
+  "intl_token": "59754545919205158391435289289190710195135354616162224074051120467129175661313",
+  "score": 0.505,
+  "us_label": "How Low Will US Gas Prices Get This Month?: Below $4.1000",
+  "intl_label": "Will the US national average gas price be less than $4.1000 on November 5? [<$4.1000]",
   "tick": 0.01,
-  "price_gap": 0.555
+  "price_gap": 0.827
+ },
+ {
+  "us_slug": "aaagaspc-usgas-loww-2026-11-08-lt4pt1000",
+  "intl_token": "59754545919205158391435289289190710195135354616162224074051120467129175661313",
+  "score": 0.507,
+  "us_label": "How Low Will US Gas Prices Get This Week?: Below $4.1000",
+  "intl_label": "Will the US national average gas price be less than $4.1000 on November 5? [<$4.1000]",
+  "tick": 0.01,
+  "price_gap": 0.892
  }
 ]

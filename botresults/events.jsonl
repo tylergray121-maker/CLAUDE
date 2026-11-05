@@ -5939,3 +5939,18 @@
 {"ts": 1793727461.971, "kind": "copy_signal", "slug": "tsc-ucl-gal-stu-2026-11-03-3pt5:short", "side": "BUY", "leader": "yabanci", "price": 0.4200000078, "leader_usd": 7.57, "market": "Galatasaray SK vs. VfB Stuttgart: O/U 3.5"}
 {"ts": 1793727476.143, "kind": "order", "slug": "tsc-ucl-gal-stu-2026-11-03-3pt5:short", "side": "BUY", "price": 0.43, "qty": 11, "post_only": false, "fair": null, "strategy": "copytop", "id": null}
 {"ts": 1793727478.905, "kind": "cancel_all", "reason": "shutdown"}
+{"ts": 1793887206.783, "kind": "leader_status", "leader": "Kkunn", "wallet": "0xe7870d0e1bfc65a23e3d66caf00ca1b9129e5034", "status": "cooling", "was": "copying", "why": "\u2212$145,368 on Polymarket this week"}
+{"ts": 1793887206.783, "kind": "leader_status", "leader": "PEYZ-BIGGEST-FAN", "wallet": "0xdaef2be2a19ad331737d06545f85615b094554e9", "status": "cooling", "was": "copying", "why": "\u2212$23,187 on Polymarket this week"}
+{"ts": 1793887206.783, "kind": "leader_status", "leader": "theowalcott", "wallet": "0x7ad71d79a3bb90d0a87a06500fa0fe11663842aa", "status": "cooling", "was": "copying", "why": "\u2212$310,625 on Polymarket this week"}
+{"ts": 1793887206.783, "kind": "leader_status", "leader": "BreakTheBank", "wallet": "0xf0318c32136c2db7fec88b84869aee6a1106c80c", "status": "cooling", "was": "copying", "why": "\u2212$932,520 on Polymarket this week"}
+{"ts": 1793887206.784, "kind": "leader_status", "leader": "Diabolical-Prize", "wallet": "0x7c37b52eb226bcb9411375ec48b0169663fb6aeb", "status": "cooling", "was": "copying", "why": "\u2212$0 on Polymarket this week"}
+{"ts": 1793887206.784, "kind": "leader_status", "leader": "Talvez10", "wallet": "0xa71093cafc0c099b4ccab24c3cb8018d817923c4", "status": "benched", "was": "copying", "why": "losing on Polymarket: \u2212$181,924 this week, \u2212$441,825 this month"}
+{"ts": 1793887206.784, "kind": "leader_status", "leader": "0x16bb9951a36fce71e2ef57890b786145e0ba8492", "wallet": "0x16bb9951a36fce71e2ef57890b786145e0ba8492", "status": "cooling", "was": "copying", "why": "\u2212$66,938 on Polymarket this week"}
+{"ts": 1793887206.784, "kind": "leader_status", "leader": "plonker2026", "wallet": "0x0a39b3b29ab3b7dd753aa96fde4ecab3f2dbb0b9", "status": "benched", "was": "copying", "why": "losing on Polymarket: \u2212$113,514 this week, \u2212$295,551 this month"}
+{"ts": 1793887206.784, "kind": "leader_status", "leader": "xxyx0xx", "wallet": "0x56d8d5f6585716a1a900282192dd21a4261e1cce", "status": "cooling", "was": "copying", "why": "\u2212$8,779 on Polymarket this week"}
+{"ts": 1793887206.784, "kind": "leader_status", "leader": "THEHIGHLIFE", "wallet": "0x8c0b024c17831a0dde038547b7e791ae6a0d7aa5", "status": "cooling", "was": "copying", "why": "\u2212$5,407 on Polymarket this week"}
+{"ts": 1793887206.784, "kind": "leader_status", "leader": "AmericaFirst1", "wallet": "0x154ca10dfee317dcfb9337788db7da858cba658e", "status": "cooling", "was": "copying", "why": "\u2212$1,290 on Polymarket this week"}
+{"ts": 1793887206.784, "kind": "leader_status", "leader": "UNEB3154s4f251", "wallet": "0x04641b57f332c15ecaa497799c55026d521967da", "status": "cooling", "was": "copying", "why": "\u2212$2,589 on Polymarket this week"}
+{"ts": 1793887307.082, "kind": "copy_unmapped", "leader": "plonker2026", "market": "Will Getafe CF win on 2026-11-05?", "intl_slug": "col-get-bha-2026-11-05-get", "outcome": "Yes"}
+{"ts": 1793887337.071, "kind": "copy_unmapped", "leader": "plonker2026", "market": "Will Brighton & Hove Albion FC win on 2026-11-05?", "intl_slug": "col-get-bha-2026-11-05-bha", "outcome": "No"}
+{"ts": 1793887343.963, "kind": "cancel_all", "reason": "shutdown"}
