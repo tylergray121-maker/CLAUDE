@@ -1,0 +1,75 @@
+{
+ "ts": 1794066569.1443162,
+ "mode": "paper",
+ "pairs": 0,
+ "equity": 159.69,
+ "cash": 58.67,
+ "positions": {
+  "tsc-nfl-cin-atl-2026-11-08-total-52pt5:short": {
+   "qty": 18,
+   "cost": 9.629999999999999
+  },
+  "aec-cfb-iowa-nw-2026-11-07:short": {
+   "qty": 32,
+   "cost": 15.57
+  },
+  "tsc-cfb-rutger-wisc-2026-11-07-total-45pt5:short": {
+   "qty": 10,
+   "cost": 5.18
+  },
+  "tsc-cfb-clmsn-syra-2026-11-07-total-47pt5:short": {
+   "qty": 11,
+   "cost": 4.92
+  },
+  "aec-cbb-frest-ucsd-2026-11-07": {
+   "qty": 69,
+   "cost": 12.200000000000001
+  },
+  "aec-cbb-pacfc-bradly-2026-11-07:short": {
+   "qty": 8,
+   "cost": 4.22
+  },
+  "aec-cbb-niowa-furman-2026-11-07": {
+   "qty": 23,
+   "cost": 8.419999999999998
+  },
+  "tsc-cfb-cin-hou-2026-11-07-total-63pt5:short": {
+   "qty": 11,
+   "cost": 6.35
+  },
+  "atc-epl-ful-new-2026-11-07-new:short": {
+   "qty": 15,
+   "cost": 11.16
+  },
+  "atc-epl-ars-hul-2026-11-07-ars": {
+   "qty": 12,
+   "cost": 10.56
+  },
+  "aec-cbb-ncat-ohio-2026-11-07": {
+   "qty": 73,
+   "cost": 8.54
+  },
+  "tsc-cfb-mst-mich-2026-11-07-total-41pt5:short": {
+   "qty": 7,
+   "cost": 4.109999999999999
+  },
+  "tsc-cfb-librty-nmxst-2026-11-07-total-47pt5": {
+   "qty": 8,
+   "cost": 4.06
+  },
+  "aec-cbb-ncw-ecar-2026-11-07:short": {
+   "qty": 11,
+   "cost": 4.14
+  }
+ },
+ "open_orders": 0,
+ "fills": 569,
+ "fees_paid": 90.52,
+ "rebates": 0.0,
+ "halted": "",
+ "scan": {
+  "observations": 0,
+  "buy_opps": 0,
+  "sell_opps": 0
+ }
+}
