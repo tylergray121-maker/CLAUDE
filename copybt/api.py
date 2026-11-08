@@ -28,6 +28,16 @@ class HTTPError(Exception):
         self.url = url
 
 
+def _touch(path: str) -> None:
+    """Mark a cache file as used by this run. The search workflow deletes the
+    files a successful run did not touch, so the cache holds only the working
+    set instead of growing every day past GitHub's 10 GB cache limit."""
+    try:
+        os.utime(path)
+    except OSError:
+        pass
+
+
 def _prune(data, keep: tuple[str, ...]):
     if isinstance(data, list):
         return [{k: r[k] for k in keep if k in r} if isinstance(r, dict) else r
@@ -124,6 +134,7 @@ class Client:
         path = self._cache_path("blob:" + key)[:-5] + ".json.gz"
         if not os.path.exists(path):
             return None
+        _touch(path)
         with gzip.open(path, "rt") as f:
             return json.load(f)
 
@@ -144,6 +155,7 @@ class Client:
         url = f"{base}{path}" + (f"?{query}" if query else "")
         cpath = self._cache_path(url) if use_cache else None
         if cpath and os.path.exists(cpath):
+            _touch(cpath)
             with open(cpath) as f:
                 data = json.load(f)
             if isinstance(data, dict) and "__http_error__" in data:

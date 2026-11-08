@@ -28,6 +28,27 @@ def quote(bid, ask, last=None, traded=0.0, ts=None, qty=100):
     return Quote(bid, ask, qty, qty, last, traded, ts if ts is not None else time.time() + 1)
 
 
+class CacheTouchTest(unittest.TestCase):
+    """A cache hit marks its file as used, so the search can drop the rest."""
+
+    def test_hits_refresh_mtime(self):
+        from copybt.api import Client
+        with tempfile.TemporaryDirectory() as d:
+            c = Client(cache_dir=d, max_rps=0)
+            url = "https://example.invalid/x"
+            cpath = c._cache_path(url)
+            c._write(cpath, {"ok": 1})
+            c.save_blob("k", {"v": 2})
+            bpath = c._cache_path("blob:k")[:-5] + ".json.gz"
+            old = time.time() - 3 * 86400
+            for p in (cpath, bpath):
+                os.utime(p, (old, old))
+            self.assertEqual(c.get("https://example.invalid", "/x"), {"ok": 1})
+            self.assertEqual(c.load_blob("k"), {"v": 2})
+            for p in (cpath, bpath):
+                self.assertGreater(os.path.getmtime(p), time.time() - 60)
+
+
 class USMarketsStrictTest(unittest.TestCase):
     def test_strict_raises_on_a_missing_page_lenient_keeps_what_it_has(self):
         from copybt.api import HTTPError

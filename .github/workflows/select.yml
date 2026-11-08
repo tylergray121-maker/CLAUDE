@@ -37,17 +37,33 @@ jobs:
         run: python -m unittest tests.test_pmbot
 
       - name: Backtest copytop on every candidate wallet
+        id: search
         timeout-minutes: 335
         shell: bash -o pipefail {0}
         run: |
-          mkdir -p selectresults
+          mkdir -p selectresults .cache-select
           du -sh .cache-select 2>/dev/null || echo "no cache restored"
+          touch .cache-select/.run-start
           # Stop the search ourselves before the step's limit: a search killed
           # by the limit keeps writing to the cache while it is saved, the save
           # fails, and the next run starts cold (~8 h of fetching) and times out
           # too. Stopped here, whatever it fetched is saved for the next run.
           timeout --signal=INT --kill-after=2m 320m \
             python -u -m pmbot.select $(cat select.args 2>/dev/null) 2>&1 | tee selectresults/run.log | tail -150
+
+      - name: Drop cache files this run did not use
+        # Every cache hit refreshes its file's mtime, so after a complete
+        # search the files older than .run-start are stale (old windows,
+        # dropped wallets). Without this the cache grew every day until it
+        # passed GitHub's 10 GB limit (10.8 GB on 2026-11-07), was evicted,
+        # and the next search started cold and timed out. Only after a
+        # success: a stopped search has not touched everything it needs.
+        if: steps.search.outcome == 'success'
+        run: |
+          before=$(du -sh .cache-select | cut -f1)
+          find .cache-select -type f ! -newer .cache-select/.run-start ! -name .run-start -delete
+          find .cache-select -type d -empty -delete
+          echo "cache $before -> $(du -sh .cache-select | cut -f1)"
 
       - name: Cache size
         if: always()
