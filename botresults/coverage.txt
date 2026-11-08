@@ -1,85 +1,85 @@
 profile 'Tiger105': ah-cop-tiger105 0x8d6064a7f8b67988a4073ac1b051356fc8cebd76
 profile 'Tiger105': tiger105050 0x185031bb4a1763496d706e0c07339a690e00b57f
 
-US markets in ['atp', 'itf', 'wta'] (not futures): 1050
-  US aec-wta-sorcir-marsto-2026-11-05 | moneyline | Who will win in the upcoming wta event Sorana Cirstea vs Mary Stoiana  | long=Sorana Cirstea short=Mary Stoiana start=1793884500.0
-  US aec-atp-phihen-carcan-2026-11-04 | moneyline | Who will win in the upcoming atp event Philip Henning vs Carlo Alberto | long=Philip Henning short=Carlo Alberto Caniato start=1793887200.0
-  US aec-wta-anazak-vaiadk-2026-11-04 | moneyline | Who will win in the upcoming wta event Anastasia Zakharova vs Vaishnav | long=Anastasia Zakharova short=Vaishnavi Adkar start=1793884800.0
-  US asc-atp-phihen-carcan-2026-11-04-gs-neg-1pt5 | spreads | Will the Philip Henning cover -1.5 vs the Carlo Alberto Caniato in Phi | long=-1.50 short=+1.50 start=1793887200.0
-  US asc-atp-phihen-carcan-2026-11-04-gs-pos-1pt5 | spreads | Will the Philip Henning cover 1.5 vs the Carlo Alberto Caniato in Phil | long=+1.50 short=-1.50 start=1793887200.0
-  US asc-atp-phihen-carcan-2026-11-04-gs-neg-4pt5 | spreads | Will the Philip Henning cover -4.5 vs the Carlo Alberto Caniato in Phi | long=-4.50 short=+4.50 start=1793887200.0
-  US asc-atp-phihen-carcan-2026-11-04-gs-pos-4pt5 | spreads | Will the Philip Henning cover 4.5 vs the Carlo Alberto Caniato in Phil | long=+4.50 short=-4.50 start=1793887200.0
-  US asc-atp-phihen-carcan-2026-11-04-gs-neg-7pt5 | spreads | Will the Philip Henning cover -7.5 vs the Carlo Alberto Caniato in Phi | long=-7.50 short=+7.50 start=1793887200.0
-  US asc-atp-phihen-carcan-2026-11-04-gs-pos-7pt5 | spreads | Will the Philip Henning cover 7.5 vs the Carlo Alberto Caniato in Phil | long=+7.50 short=-7.50 start=1793887200.0
-  US asc-atp-phihen-carcan-2026-11-04-ss-neg-1pt5 | spreads | Will the Philip Henning cover -1.5 vs the Carlo Alberto Caniato in Phi | long=-1.50 short=+1.50 start=1793887200.0
-  US asc-atp-phihen-carcan-2026-11-04-ss-pos-1pt5 | spreads | Will the Philip Henning cover 1.5 vs the Carlo Alberto Caniato in Phil | long=+1.50 short=-1.50 start=1793887200.0
-  US tsc-atp-phihen-carcan-2026-11-04-tg-17pt5 | totals | Will the total in Philip Henning vs. Carlo Alberto Caniato be more tha | long=Over short=Under start=1793887200.0
-  US tsc-atp-phihen-carcan-2026-11-04-tg-22pt5 | totals | Will the total in Philip Henning vs. Carlo Alberto Caniato be more tha | long=Over short=Under start=1793887200.0
-  US tsc-atp-phihen-carcan-2026-11-04-tg-27pt5 | totals | Will the total in Philip Henning vs. Carlo Alberto Caniato be more tha | long=Over short=Under start=1793887200.0
-  US tsc-atp-phihen-carcan-2026-11-04-st-2pt5 | totals | Will the total in Philip Henning vs. Carlo Alberto Caniato be more tha | long=Over short=Under start=1793887200.0
-  US astatc-atp-phihen-carcan-2026-11-04-es-2-0 | props | Henning wins 2-0 | long=Yes short=No start=1793887200.0
-  US astatc-atp-phihen-carcan-2026-11-04-es-2-1 | props | Henning wins 2-1 | long=Yes short=No start=1793887200.0
-  US astatc-atp-phihen-carcan-2026-11-04-es-1-2 | props | Caniato wins 2-1 | long=Yes short=No start=1793887200.0
-  US astatc-atp-phihen-carcan-2026-11-04-es-0-2 | props | Caniato wins 2-0 | long=Yes short=No start=1793887200.0
-  US astatc-atp-phihen-carcan-2026-11-04-sw1 | props | Will Philip Henning win set 1 against Carlo Alberto Caniato? | long=Yes short=No start=1793887200.0
-  US astatc-atp-phihen-carcan-2026-11-04-sw2 | props | Will Philip Henning win set 2 against Carlo Alberto Caniato? | long=Yes short=No start=1793887200.0
-  US asc-wta-anazak-vaiadk-2026-11-04-gs-neg-1pt5 | spreads | Will the Anastasia Zakharova cover -1.5 vs the Vaishnavi Adkar in Anas | long=-1.50 short=+1.50 start=1793884800.0
-  US asc-wta-anazak-vaiadk-2026-11-04-gs-pos-1pt5 | spreads | Will the Anastasia Zakharova cover 1.5 vs the Vaishnavi Adkar in Anast | long=+1.50 short=-1.50 start=1793884800.0
-  US asc-wta-anazak-vaiadk-2026-11-04-gs-neg-4pt5 | spreads | Will the Anastasia Zakharova cover -4.5 vs the Vaishnavi Adkar in Anas | long=-4.50 short=+4.50 start=1793884800.0
-  US asc-wta-anazak-vaiadk-2026-11-04-gs-pos-4pt5 | spreads | Will the Anastasia Zakharova cover 4.5 vs the Vaishnavi Adkar in Anast | long=+4.50 short=-4.50 start=1793884800.0
-US: 76987 open markets, 58252 game/spread/total/prop slugs, 306 verified pairs
+US markets in ['atp', 'itf', 'wta'] (not futures): 2798
+  US aec-wta-cocgau-jespeg-2026-11-08 | moneyline | Who will win in the upcoming wta event Coco Gauff vs Jessica Pegula sc | long=Coco Gauff short=Jessica Pegula start=1794172200.0
+  US aec-wta-arysab-karmuc-2026-11-09 | moneyline | Who will win in the upcoming wta event Aryna Sabalenka vs Karolina Muc | long=Aryna Sabalenka short=Karolina Muchova start=1794254400.0
+  US aec-wta-mirand-elisvi-2026-11-09 | moneyline | Who will win in the upcoming wta event Mirra Andreeva vs Elina Svitoli | long=Mirra Andreeva short=Elina Svitolina start=1794258600.0
+  US asc-wta-cocgau-jespeg-2026-11-08-gs-neg-1pt5 | spreads | Will the Coco Gauff cover -1.5 vs the Jessica Pegula in Coco Gauff vs. | long=-1.50 short=+1.50 start=1794172200.0
+  US asc-wta-cocgau-jespeg-2026-11-08-gs-pos-1pt5 | spreads | Will the Coco Gauff cover 1.5 vs the Jessica Pegula in Coco Gauff vs.  | long=+1.50 short=-1.50 start=1794172200.0
+  US asc-wta-cocgau-jespeg-2026-11-08-gs-neg-4pt5 | spreads | Will the Coco Gauff cover -4.5 vs the Jessica Pegula in Coco Gauff vs. | long=-4.50 short=+4.50 start=1794172200.0
+  US asc-wta-cocgau-jespeg-2026-11-08-gs-pos-4pt5 | spreads | Will the Coco Gauff cover 4.5 vs the Jessica Pegula in Coco Gauff vs.  | long=+4.50 short=-4.50 start=1794172200.0
+  US asc-wta-cocgau-jespeg-2026-11-08-gs-neg-7pt5 | spreads | Will the Coco Gauff cover -7.5 vs the Jessica Pegula in Coco Gauff vs. | long=-7.50 short=+7.50 start=1794172200.0
+  US asc-wta-cocgau-jespeg-2026-11-08-gs-pos-7pt5 | spreads | Will the Coco Gauff cover 7.5 vs the Jessica Pegula in Coco Gauff vs.  | long=+7.50 short=-7.50 start=1794172200.0
+  US asc-wta-cocgau-jespeg-2026-11-08-ss-neg-1pt5 | spreads | Will the Coco Gauff cover -1.5 vs the Jessica Pegula in Coco Gauff vs. | long=-1.50 short=+1.50 start=1794172200.0
+  US asc-wta-cocgau-jespeg-2026-11-08-ss-pos-1pt5 | spreads | Will the Coco Gauff cover 1.5 vs the Jessica Pegula in Coco Gauff vs.  | long=+1.50 short=-1.50 start=1794172200.0
+  US tsc-wta-cocgau-jespeg-2026-11-08-tg-17pt5 | totals | Will the total in Coco Gauff vs. Jessica Pegula be more than 17.5? | long=Over short=Under start=1794172200.0
+  US tsc-wta-cocgau-jespeg-2026-11-08-tg-22pt5 | totals | Will the total in Coco Gauff vs. Jessica Pegula be more than 22.5? | long=Over short=Under start=1794172200.0
+  US tsc-wta-cocgau-jespeg-2026-11-08-tg-27pt5 | totals | Will the total in Coco Gauff vs. Jessica Pegula be more than 27.5? | long=Over short=Under start=1794172200.0
+  US tsc-wta-cocgau-jespeg-2026-11-08-st-2pt5 | totals | Will the total in Coco Gauff vs. Jessica Pegula be more than 2.5? | long=Over short=Under start=1794172200.0
+  US astatc-wta-cocgau-jespeg-2026-11-08-es-2-0 | props | Gauff wins 2-0 | long=Yes short=No start=1794172200.0
+  US astatc-wta-cocgau-jespeg-2026-11-08-es-2-1 | props | Gauff wins 2-1 | long=Yes short=No start=1794172200.0
+  US astatc-wta-cocgau-jespeg-2026-11-08-es-1-2 | props | Pegula wins 2-1 | long=Yes short=No start=1794172200.0
+  US astatc-wta-cocgau-jespeg-2026-11-08-es-0-2 | props | Pegula wins 2-0 | long=Yes short=No start=1794172200.0
+  US astatc-wta-cocgau-jespeg-2026-11-08-sw1 | props | Will Coco Gauff win set 1 against Jessica Pegula? | long=Yes short=No start=1794172200.0
+  US astatc-wta-cocgau-jespeg-2026-11-08-sw2 | props | Will Coco Gauff win set 2 against Jessica Pegula? | long=Yes short=No start=1794172200.0
+  US aec-atp-aughol-phisek-2026-11-08 | moneyline | Who will win in the upcoming atp event August Holmgren vs Philip Sekul | long=August Holmgren short=Philip Sekulic start=1794268800.0
+  US aec-atp-omajas-dhasur-2026-11-08 | moneyline | Who will win in the upcoming atp event Omar Jasika vs Dhakshineswar Su | long=Omar Jasika short=Dhakshineswar Suresh start=1794268800.0
+  US aec-atp-bertom-blaell-2026-11-08 | moneyline | Who will win in the upcoming atp event Bernard Tomic vs Blake Ellis sc | long=Bernard Tomic short=Blake Ellis start=1794190800.0
+  US aec-atp-alaaye-edwwin-2026-11-08 | moneyline | Who will win in the upcoming atp event Alafia Ayeni vs Edward Winter s | long=Alafia Ayeni short=Edward Winter start=1794190800.0
+US: 70855 open markets, 52214 game/spread/total/prop slugs, 311 verified pairs
 
 age                    long side              short side  listed, outcome names     not on Polymarket US  copyable
-<3h                           14                       0                       0                     106       12%
-3-12h                          4                       0                       0                     329        1%
-12-48h                        29                       0                       0                    2890        1%
-older                          2                       0                       0                    2626        0%
+<3h                           72                     152                       0                     509       31%
+3-12h                        106                      10                       0                     814       12%
+12-48h                        20                       0                       0                    1518        1%
+older                          2                       0                       0                    2797        0%
 
 by league (all ages): copyable / total
-  nba              0 / 956
-  futures          6 / 834
-  ucl              0 / 826
-  cfb              0 / 386
-  atp              0 / 328
-  dota2            0 / 292
-  cs2              6 / 222
-  acle             0 / 221
-  nfl             29 / 197
-  lol              0 / 173
-  bra              0 / 163
-  wta              0 / 156
+  epl             45 / 738
+  nba             32 / 645
+  cfb              0 / 565
+  nfl            148 / 498
+  futures         27 / 464
+  ucl              0 / 335
+  atp              1 / 308
+  wta              0 / 231
+  lol              0 / 224
+  dota2            0 / 219
+  mls              0 / 143
   fifwc            0 / 140
+  cs2              1 / 138
   val              0 / 137
-  mls              0 / 110
-  itf              0 / 89
-  elc              0 / 77
-  por              0 / 73
-  col              0 / 64
-  mlb              0 / 62
+  sea              1 / 129
+  itf              0 / 105
+  lal             58 / 102
+  tur              0 / 100
+  por              0 / 72
+  ere             49 / 64
 
 recent trades not on Polymarket US (international slug | outcome | US lists for the same matchup):
-   54  cfb-ballst-umass-2026-11-04-total-43pt5 | Over | -
-   45  nba-uta-nop-2026-11-04 | Pelicans | -
-   43  nba-por-phx-2026-11-04 | Trail Blazers | -
-   37   |  | -
-   30  col-get-bha-2026-11-05-bha | No | -
-   27  col-get-bha-2026-11-05-get | Yes | -
-   25  wta-valento-eala-2026-11-05 | Alexandra Eala | -
-   23  nba-uta-nop-2026-11-04 | Jazz | -
-   15  cfb-ballst-umass-2026-11-04-spread-home-6pt5 | Ball State | -
-   14  cfb-ballst-umass-2026-11-04-total-51pt5 | Over | -
-   10  will-the-democrats-win-the-mississippi-senate-race-in-2026 | Yes | -
-    8  cfb-ballst-umass-2026-11-04 | UMass | -
-    8  nba-min-hou-2026-11-04 | Timberwolves | -
-    6  cfb-ballst-umass-2026-11-04 | Ball State | -
-    6  dota2-lynx-tts1-2026-11-05-game1 | Team Lynx | -
-    6  col-get-bha-2026-11-05-spread-away-1pt5 | Getafe CF | -
-    6  nba-por-phx-2026-11-04 | Suns | -
-    4  cfb-ballst-umass-2026-11-04-spread-away-2pt5 | UMass | -
-    4  cfb-toledo-sacst-2026-11-04-total-37pt5 | Under | -
-    4  wta-pridank-shublad-2026-11-05 | Elena Pridankina | -
-    4  nfl-nyj-kc-2026-11-08-spread-home-9pt5 | Chiefs | nfl-nyj-kc-2026-11-08, nfl-nyj-kc-2026-11-08-1h-14pt5, nfl-nyj-kc-2026-11-08-1h-16pt5, nfl-nyj-kc-2026-11-08-1h-18pt5
-    4  cs2-g1-maybe-2026-11-05 | GenOne | -
-    3  cfb-ballst-umass-2026-11-04-total-49pt5 | Over | -
-    3  cfb-cmich-emich-2026-11-04-total-37pt5 | Under | -
-    3  cfb-toledo-sacst-2026-11-04-total-43pt5 | Under | -
+  176  nfl-cin-atl-2026-11-08-spread-away-3pt5 | Falcons | nfl-cin-atl-2026-11-08, nfl-cin-atl-2026-11-08-1h-18pt5, nfl-cin-atl-2026-11-08-1h-20pt5, nfl-cin-atl-2026-11-08-1h-22pt5
+  121  epl-sun-che-2026-11-08-che | No | -
+   96  epl-sun-che-2026-11-08-che | Yes | -
+   71  tur-cf-fen-2026-11-08-fen | No | -
+   69   |  | -
+   48  wta-liu-eala-2026-11-08 | Claire Liu | -
+   47  cs2-mglz-mouz-2026-11-08-game3 | TheMongolz | -
+   38  epl-sun-che-2026-11-08-sun | Yes | -
+   32  epl-sun-che-2026-11-08-total-2pt5 | Under | -
+   26  cfb-wvir-txtech-2026-11-07 | West Virginia | -
+   22  nfl-den-car-2026-11-08-spread-away-2pt5 | Broncos | nfl-den-car-2026-11-08, nfl-den-car-2026-11-08-1h-13pt5, nfl-den-car-2026-11-08-1h-15pt5, nfl-den-car-2026-11-08-1h-17pt5
+   22  nfl-buf-min-2026-11-10 | Bills | -
+   21  nfl-det-mia-2026-11-08-spread-away-6pt5 | Dolphins | nfl-det-mia-2026-11-08, nfl-det-mia-2026-11-08-1h-16pt5, nfl-det-mia-2026-11-08-1h-18pt5, nfl-det-mia-2026-11-08-1h-20pt5
+   19  sea-nap-laz-2026-11-08-total-3pt5 | Under | -
+   18  den-ran-nor-2026-11-08-nor | Yes | -
+   15  f1-brazilian-grand-prix-winner-verstappen-2026-11-08 | No | -
+   15  swe-bro-mja-2026-11-08-bro | Yes | -
+   15  tur-cf-fen-2026-11-08-cf | Yes | -
+   15  nfl-la-was-2026-11-08 | Commanders | -
+   14  cs2-mglz-mouz-2026-11-08 | MOUZ | -
+   14  epl-ips-bou-2026-11-08-ips | No | -
+   13  cfb-wvir-txtech-2026-11-07-spread-away-3pt5 | Texas Tech | -
+   13  epl-cry-liv-2026-11-08-total-0pt5 | Over | epl-cry-liv-2026-11-08-1pt5, epl-cry-liv-2026-11-08-2pt5, epl-cry-liv-2026-11-08-3pt5, epl-cry-liv-2026-11-08-4pt5
+   13  sea-nap-laz-2026-11-08-nap | No | -
+   12  ere-az-gro-2026-11-08-spread-home-1pt5 | FC Groningen | ere-az-gro-2026-11-08-0pt5, ere-az-gro-2026-11-08-1pt5, ere-az-gro-2026-11-08-2pt5, ere-az-gro-2026-11-08-3pt5

@@ -1,31 +1,38 @@
-13:59:26 INFO Polymarket US: 77012 open markets
-13:59:35 INFO international: 2411 active outcome tokens
-13:59:54 INFO games: 1878 US game markets in the next 48h, 216 international matches, 212 pairs
-13:59:54 INFO pairs: 310 kept, 4 rejected on price
-14:00:06 INFO leader Kkunn: copying -> cooling (−$145,368 on Polymarket this week)
-14:00:06 INFO leader PEYZ-BIGGEST-FAN: copying -> cooling (−$23,187 on Polymarket this week)
-14:00:06 INFO leader theowalcott: copying -> cooling (−$310,625 on Polymarket this week)
-14:00:06 INFO leader BreakTheBank: copying -> cooling (−$932,520 on Polymarket this week)
-14:00:06 INFO leader Diabolical-Prize: copying -> cooling (−$0 on Polymarket this week)
-14:00:06 INFO leader Talvez10: copying -> benched (losing on Polymarket: −$181,924 this week, −$441,825 this month)
-14:00:06 INFO leader 0x16bb9951a36fce71e2ef57890b786145e0ba8492: copying -> cooling (−$66,938 on Polymarket this week)
-14:00:06 INFO leader plonker2026: copying -> benched (losing on Polymarket: −$113,514 this week, −$295,551 this month)
-14:00:06 INFO leader xxyx0xx: copying -> cooling (−$8,779 on Polymarket this week)
-14:00:06 INFO leader THEHIGHLIFE: copying -> cooling (−$5,407 on Polymarket this week)
-14:00:06 INFO leader AmericaFirst1: copying -> cooling (−$1,290 on Polymarket this week)
-14:00:06 INFO leader UNEB3154s4f251: copying -> cooling (−$2,589 on Polymarket this week)
+15:23:41 INFO Polymarket US: 70855 open markets
+15:23:44 INFO international: 2676 active outcome tokens
+15:23:53 INFO games: 1925 US game markets in the next 48h, 191 international matches, 252 pairs
+15:23:53 INFO pairs: 305 kept, 1 rejected on price
+15:24:03 INFO leader KaneAnalytics: copying -> cooling (−$110,355 on Polymarket this week)
+15:24:03 INFO leader Kkunn: copying -> cooling (−$156,543 on Polymarket this week)
+15:24:03 INFO leader PEYZ-BIGGEST-FAN: copying -> cooling (−$92,124 on Polymarket this week)
+15:24:03 INFO leader theowalcott: copying -> cooling (−$117,873 on Polymarket this week)
+15:24:03 INFO leader BreakTheBank: copying -> cooling (−$107,802 on Polymarket this week)
+15:24:03 INFO leader Diabolical-Prize: copying -> cooling (−$0 on Polymarket this week)
+15:24:03 INFO leader 0010001000001100: copying -> cooling (−$760 on Polymarket this week)
+15:24:03 INFO leader 1l2ihj34li12u34: copying -> cooling (−$477,215 on Polymarket this week)
+15:24:03 INFO leader 0x20D6436849F930584892730C7F96eBB2Ac763856-1768642056357: copying -> cooling (−$133 on Polymarket this week)
+15:24:03 INFO leader 0x16bb9951a36fce71e2ef57890b786145e0ba8492: copying -> cooling (−$42,624 on Polymarket this week)
+15:24:03 INFO leader plonker2026: copying -> benched (losing on Polymarket: −$147,839 this week, −$320,772 this month)
+15:24:03 INFO leader xxyx0xx: copying -> cooling (−$21,401 on Polymarket this week)
+15:24:03 INFO leader THEHIGHLIFE: copying -> cooling (−$18,875 on Polymarket this week)
+15:24:03 INFO leader AmericaFirst1: copying -> cooling (−$4,217 on Polymarket this week)
+15:24:48 INFO paper BUY tsc-nfl-nyg-phi-2026-11-08-total-38pt5:short 9 @ 0.525 (taker, fee +0.16)
+15:24:58 INFO paper BUY aec-nfl-den-car-2026-11-08 8 @ 0.580 (taker, fee +0.14)
+15:27:38 INFO paper BUY tsc-nfl-cin-atl-2026-11-08-total-58pt5:short 14 @ 0.350 (taker, fee +0.23)
+15:27:48 INFO paper BUY aec-nfl-cin-atl-2026-11-08 6 @ 0.795 (taker, fee +0.07)
+15:27:48 INFO paper BUY tsc-nfl-cin-atl-2026-11-08-total-64pt5:short 9 @ 0.550 (taker, fee +0.16)
 # Polymarket US bot — paper run
 
-Mapping: 77012 open US markets, 2411 international outcomes, 310 pairs (20 tracked after live price checks); observations with a trustworthy reference price: 280.
+Mapping: 70855 open US markets, 2676 international outcomes, 305 pairs (20 tracked after live price checks); observations with a trustworthy reference price: 580.
 
 ## Is there an edge to take?
 
-US mid vs international mid, absolute gap: median 0.00¢, 90th pct 1.00¢, 99th pct 1.00¢.
+US mid vs international mid, absolute gap: median 0.00¢, 90th pct 0.87¢, 99th pct 1.12¢.
 Times a US price was through fair value by ≥ 3¢ after the taker fee: 0 to buy, 0 to sell (see `events.jsonl`, kind=opportunity).
 
 ## Trading
 
-Equity $200.00 from $200.00 (+0.00), cash $200.00; 0 fills; taker fees $0.00; maker rebates $0.00; open positions 0.
+Equity $199.38 from $200.00 (-0.62), cash $175.25; 5 fills; taker fees $0.76; maker rebates $0.00; open positions 5.
 Halted: no.
 
 

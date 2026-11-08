@@ -1,38 +1,11 @@
 [
  {
-  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-michae",
-  "intl_token": "49771832779730941491344901757315596981320484892422176790719472025295183418930",
-  "score": 0.614,
-  "us_label": "Oscar Nominees: Best Picture: Michael",
-  "intl_label": "Will \"Michael\" be nominated for Best Costume Design at the 99th Academy Awards? [Michael]",
+  "us_slug": "astatc-nfl-recyds-ou-2027-01-10-garrwil",
+  "intl_token": "27733978061299543743280163052426141344679192216175629548993304427691070469989",
+  "score": 0.515,
+  "us_label": "Regular Season Receiving Yards O/U: Garrett Wilson 999.5+",
+  "intl_label": "Will Garrett Wilson have 1,000+ receiving yards in the 2026-27 NFL regular season? [Garrett Wilson]",
   "tick": 0.01,
-  "price_gap": 0.142
- },
- {
-  "us_slug": "tac-oscars-nom-2027-01-31-bestpic-wilnin",
-  "intl_token": "16787048908168327033495760522797903120366636520715316704326166596118694951195",
-  "score": 0.614,
-  "us_label": "Oscar Nominees: Best Picture: Wild Horse Nine",
-  "intl_label": "Will \"Wild Horse Nine\" be nominated for Best Costume Design at the 99th Academy Awards? [Wild Horse Nine]",
-  "tick": 0.01,
-  "price_gap": 0.66
- },
- {
-  "us_slug": "aaagaspc-usgas-lowm-2026-11-30-lt4pt1000",
-  "intl_token": "59754545919205158391435289289190710195135354616162224074051120467129175661313",
-  "score": 0.505,
-  "us_label": "How Low Will US Gas Prices Get This Month?: Below $4.1000",
-  "intl_label": "Will the US national average gas price be less than $4.1000 on November 5? [<$4.1000]",
-  "tick": 0.01,
-  "price_gap": 0.827
- },
- {
-  "us_slug": "aaagaspc-usgas-loww-2026-11-08-lt4pt1000",
-  "intl_token": "59754545919205158391435289289190710195135354616162224074051120467129175661313",
-  "score": 0.507,
-  "us_label": "How Low Will US Gas Prices Get This Week?: Below $4.1000",
-  "intl_label": "Will the US national average gas price be less than $4.1000 on November 5? [<$4.1000]",
-  "tick": 0.01,
-  "price_gap": 0.892
+  "price_gap": 0.1
  }
 ]

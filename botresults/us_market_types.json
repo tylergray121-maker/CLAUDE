@@ -1,22 +1,21 @@
 {
  "counts": {
-  "props/sports": 23265,
-  "totals/sports": 16367,
-  "spreads/sports": 12006,
-  "futures/sports": 11076,
-  "futures/politics": 5050,
-  "moneyline/sports": 3234,
-  "drawable_outcome/sports": 1839,
-  "futures/culture": 1633,
-  "/crypto": 1572,
-  "futures/macro": 541,
+  "props/sports": 21875,
+  "totals/sports": 14015,
+  "futures/sports": 10981,
+  "spreads/sports": 10543,
+  "futures/politics": 4990,
+  "moneyline/sports": 3354,
+  "futures/culture": 1690,
+  "/crypto": 1407,
+  "drawable_outcome/sports": 1026,
+  "futures/macro": 507,
   "futures/climate": 173,
-  "futures/technology": 102,
-  "futures/crypto": 57,
-  "futures/finance": 54,
+  "futures/technology": 134,
+  "futures/finance": 67,
+  "futures/crypto": 56,
   "futures/geopolitics": 27,
-  "futures/science": 10,
-  "/finance": 6
+  "futures/science": 10
  },
  "samples": {
   "props/sports": [
@@ -30,130 +29,130 @@
     "ask": null
    },
    {
-    "slug": "atc-nfl-jax-bal-2026-11-05-winner-1h-jax",
-    "question": "Will Jacksonville Jaguars win the first half?",
-    "title": "Jacksonville Jaguars",
-    "game_start": 1793927700.0,
-    "end": 1795155300.0,
+    "slug": "atc-nfl-cin-atl-2026-11-08-winner-1h-cin",
+    "question": "Will Cincinnati Bengals win the first half?",
+    "title": "Cincinnati Bengals",
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
     "bid": 0.69,
-    "ask": 0.71
+    "ask": 0.7
    },
    {
-    "slug": "atc-nfl-jax-bal-2026-11-05-winner-1h-draw",
+    "slug": "atc-nfl-cin-atl-2026-11-08-winner-1h-draw",
     "question": "Will the first half end tied?",
     "title": "Tie",
-    "game_start": 1793927700.0,
-    "end": 1795155300.0,
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
+    "bid": 0.06,
+    "ask": 0.07
+   },
+   {
+    "slug": "atc-nfl-cin-atl-2026-11-08-winner-1h-atl",
+    "question": "Will Atlanta Falcons win the first half?",
+    "title": "Atlanta Falcons",
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
+    "bid": 0.24,
+    "ask": 0.25
+   },
+   {
+    "slug": "atc-nfl-cin-atl-2026-11-08-winner-2h-cin",
+    "question": "Will Cincinnati Bengals win the second half?",
+    "title": "Cincinnati Bengals",
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
+    "bid": 0.58,
+    "ask": 0.59
+   },
+   {
+    "slug": "atc-nfl-cin-atl-2026-11-08-winner-2h-draw",
+    "question": "Will the second half end tied?",
+    "title": "Tie",
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
+    "bid": 0.06,
+    "ask": 0.07
+   },
+   {
+    "slug": "atc-nfl-cin-atl-2026-11-08-winner-2h-atl",
+    "question": "Will Atlanta Falcons win the second half?",
+    "title": "Atlanta Falcons",
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
+    "bid": 0.36,
+    "ask": 0.37
+   },
+   {
+    "slug": "atc-nfl-cin-atl-2026-11-08-winner-2q-cin",
+    "question": "Will Cincinnati Bengals win the second quarter?",
+    "title": "Cincinnati Bengals",
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
+    "bid": 0.78,
+    "ask": 0.79
+   },
+   {
+    "slug": "atc-nfl-cin-atl-2026-11-08-winner-2q-draw",
+    "question": "Will the second quarter end tied?",
+    "title": "Tie",
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
     "bid": 0.08,
     "ask": 0.09
    },
    {
-    "slug": "atc-nfl-jax-bal-2026-11-05-winner-1h-bal",
-    "question": "Will Baltimore Ravens win the first half?",
-    "title": "Baltimore Ravens",
-    "game_start": 1793927700.0,
-    "end": 1795155300.0,
-    "bid": 0.22,
-    "ask": 0.23
+    "slug": "atc-nfl-cin-atl-2026-11-08-winner-2q-atl",
+    "question": "Will Atlanta Falcons win the second quarter?",
+    "title": "Atlanta Falcons",
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
+    "bid": 0.11,
+    "ask": 0.12
    },
    {
-    "slug": "atc-nfl-jax-bal-2026-11-05-winner-2h-jax",
-    "question": "Will Jacksonville Jaguars win the second half?",
-    "title": "Jacksonville Jaguars",
-    "game_start": 1793927700.0,
-    "end": 1795155300.0,
-    "bid": 0.65,
-    "ask": 0.67
+    "slug": "atc-nfl-cin-atl-2026-11-08-winner-3q-cin",
+    "question": "Will Cincinnati Bengals win the third quarter?",
+    "title": "Cincinnati Bengals",
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
+    "bid": 0.53,
+    "ask": 0.54
    },
    {
-    "slug": "atc-nfl-jax-bal-2026-11-05-winner-2h-draw",
-    "question": "Will the second half end tied?",
-    "title": "Tie",
-    "game_start": 1793927700.0,
-    "end": 1795155300.0,
-    "bid": 0.07,
-    "ask": 0.1
-   },
-   {
-    "slug": "atc-nfl-jax-bal-2026-11-05-winner-2h-bal",
-    "question": "Will Baltimore Ravens win the second half?",
-    "title": "Baltimore Ravens",
-    "game_start": 1793927700.0,
-    "end": 1795155300.0,
-    "bid": 0.24,
-    "ask": 0.26
-   },
-   {
-    "slug": "atc-nfl-jax-bal-2026-11-05-winner-1q-jax",
-    "question": "Will Jacksonville Jaguars win the first quarter?",
-    "title": "Jacksonville Jaguars",
-    "game_start": 1793927700.0,
-    "end": 1795155300.0,
-    "bid": 0.57,
-    "ask": 0.59
-   },
-   {
-    "slug": "atc-nfl-jax-bal-2026-11-05-winner-1q-draw",
-    "question": "Will the first quarter end tied?",
-    "title": "Tie",
-    "game_start": 1793927700.0,
-    "end": 1795155300.0,
-    "bid": 0.2,
-    "ask": 0.21
-   },
-   {
-    "slug": "atc-nfl-jax-bal-2026-11-05-winner-1q-bal",
-    "question": "Will Baltimore Ravens win the first quarter?",
-    "title": "Baltimore Ravens",
-    "game_start": 1793927700.0,
-    "end": 1795155300.0,
-    "bid": 0.24,
-    "ask": 0.25
-   },
-   {
-    "slug": "atc-nfl-jax-bal-2026-11-05-winner-2q-jax",
-    "question": "Will Jacksonville Jaguars win the second quarter?",
-    "title": "Jacksonville Jaguars",
-    "game_start": 1793927700.0,
-    "end": 1795155300.0,
-    "bid": 0.6,
-    "ask": 0.62
-   },
-   {
-    "slug": "atc-nfl-jax-bal-2026-11-05-winner-2q-draw",
-    "question": "Will the second quarter end tied?",
-    "title": "Tie",
-    "game_start": 1793927700.0,
-    "end": 1795155300.0,
-    "bid": 0.12,
-    "ask": 0.13
-   },
-   {
-    "slug": "atc-nfl-jax-bal-2026-11-05-winner-2q-bal",
-    "question": "Will Baltimore Ravens win the second quarter?",
-    "title": "Baltimore Ravens",
-    "game_start": 1793927700.0,
-    "end": 1795155300.0,
-    "bid": 0.24,
-    "ask": 0.25
-   },
-   {
-    "slug": "atc-nfl-jax-bal-2026-11-05-winner-3q-jax",
-    "question": "Will Jacksonville Jaguars win the third quarter?",
-    "title": "Jacksonville Jaguars",
-    "game_start": 1793927700.0,
-    "end": 1795155300.0,
-    "bid": 0.55,
-    "ask": 0.56
-   },
-   {
-    "slug": "atc-nfl-jax-bal-2026-11-05-winner-3q-draw",
+    "slug": "atc-nfl-cin-atl-2026-11-08-winner-3q-draw",
     "question": "Will the third quarter end tied?",
     "title": "Tie",
-    "game_start": 1793927700.0,
-    "end": 1795155300.0,
-    "bid": 0.19,
-    "ask": 0.21
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
+    "bid": 0.18,
+    "ask": 0.19
+   },
+   {
+    "slug": "atc-nfl-cin-atl-2026-11-08-winner-3q-atl",
+    "question": "Will Atlanta Falcons win the third quarter?",
+    "title": "Atlanta Falcons",
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
+    "bid": 0.27,
+    "ask": 0.28
+   },
+   {
+    "slug": "atc-nfl-cin-atl-2026-11-08-winner-4q-cin",
+    "question": "Will Cincinnati Bengals win the fourth quarter?",
+    "title": "Cincinnati Bengals",
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
+    "bid": 0.45,
+    "ask": 0.46
+   },
+   {
+    "slug": "atc-nfl-cin-atl-2026-11-08-winner-4q-draw",
+    "question": "Will the fourth quarter end tied?",
+    "title": "Tie",
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
+    "bid": 0.12,
+    "ask": 0.13
    }
   ],
   "spreads/sports": [
@@ -230,67 +229,67 @@
     "ask": null
    },
    {
-    "slug": "asc-cfb-mia-nd-2026-11-07-neg-23pt5",
-    "question": "Will the Miami (FL) cover -23.5 vs the Notre Dame in Miami (FL) vs. Notre Dame?",
+    "slug": "asc-nfl-cin-atl-2026-11-08-neg-35pt5",
+    "question": "Will the Cincinnati Bengals cover -35.5 vs the Atlanta Falcons in CIN Bengals vs. ATL Falcons?",
     "title": "",
-    "game_start": 1794097800.0,
-    "end": 1795325400.0,
-    "bid": 0.01,
-    "ask": 0.07
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
+    "bid": 0.005,
+    "ask": 0.01
    },
    {
-    "slug": "asc-cfb-mia-nd-2026-11-07-neg-21pt5",
-    "question": "Will the Miami (FL) cover -21.5 vs the Notre Dame in Miami (FL) vs. Notre Dame?",
+    "slug": "asc-nfl-cin-atl-2026-11-08-neg-33pt5",
+    "question": "Will the Cincinnati Bengals cover -33.5 vs the Atlanta Falcons in CIN Bengals vs. ATL Falcons?",
     "title": "",
-    "game_start": 1794097800.0,
-    "end": 1795325400.0,
-    "bid": 0.01,
-    "ask": 0.06
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
+    "bid": 0.005,
+    "ask": 0.01
    },
    {
-    "slug": "asc-cfb-mia-nd-2026-11-07-neg-20pt5",
-    "question": "Will the Miami (FL) cover -20.5 vs the Notre Dame in Miami (FL) vs. Notre Dame?",
+    "slug": "asc-nfl-cin-atl-2026-11-08-neg-30pt5",
+    "question": "Will the Cincinnati Bengals cover -30.5 vs the Atlanta Falcons in CIN Bengals vs. ATL Falcons?",
     "title": "",
-    "game_start": 1794097800.0,
-    "end": 1795325400.0,
-    "bid": 0.01,
-    "ask": 0.06
-   },
-   {
-    "slug": "asc-cfb-mia-nd-2026-11-07-neg-19pt5",
-    "question": "Will the Miami (FL) cover -19.5 vs the Notre Dame in Miami (FL) vs. Notre Dame?",
-    "title": "",
-    "game_start": 1794097800.0,
-    "end": 1795325400.0,
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
     "bid": 0.015,
-    "ask": 0.06
+    "ask": 0.02
    },
    {
-    "slug": "asc-cfb-mia-nd-2026-11-07-neg-17pt5",
-    "question": "Will the Miami (FL) cover -17.5 vs the Notre Dame in Miami (FL) vs. Notre Dame?",
+    "slug": "asc-nfl-cin-atl-2026-11-08-neg-28pt5",
+    "question": "Will the Cincinnati Bengals cover -28.5 vs the Atlanta Falcons in CIN Bengals vs. ATL Falcons?",
     "title": "",
-    "game_start": 1794097800.0,
-    "end": 1795325400.0,
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
     "bid": 0.02,
-    "ask": 0.06
+    "ask": 0.025
    },
    {
-    "slug": "asc-cfb-mia-nd-2026-11-07-neg-16pt5",
-    "question": "Will the Miami (FL) cover -16.5 vs the Notre Dame in Miami (FL) vs. Notre Dame?",
+    "slug": "asc-nfl-cin-atl-2026-11-08-neg-27pt5",
+    "question": "Will the Cincinnati Bengals cover -27.5 vs the Atlanta Falcons in CIN Bengals vs. ATL Falcons?",
     "title": "",
-    "game_start": 1794097800.0,
-    "end": 1795325400.0,
-    "bid": 0.025,
-    "ask": 0.065
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
+    "bid": 0.02,
+    "ask": 0.025
    },
    {
-    "slug": "asc-cfb-mia-nd-2026-11-07-neg-14pt5",
-    "question": "Will the Miami (FL) cover -14.5 vs the Notre Dame in Miami (FL) vs. Notre Dame?",
+    "slug": "asc-nfl-cin-atl-2026-11-08-neg-23pt5",
+    "question": "Will the Cincinnati Bengals cover -23.5 vs the Atlanta Falcons in CIN Bengals vs. ATL Falcons?",
     "title": "",
-    "game_start": 1794097800.0,
-    "end": 1795325400.0,
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
     "bid": 0.035,
-    "ask": 0.085
+    "ask": 0.04
+   },
+   {
+    "slug": "asc-nfl-cin-atl-2026-11-08-neg-21pt5",
+    "question": "Will the Cincinnati Bengals cover -21.5 vs the Atlanta Falcons in CIN Bengals vs. ATL Falcons?",
+    "title": "",
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
+    "bid": 0.035,
+    "ask": 0.04
    }
   ],
   "totals/sports": [
@@ -385,516 +384,460 @@
     "ask": null
    },
    {
-    "slug": "tsc-cfb-mia-nd-2026-11-07-total-28pt5",
-    "question": "Will the total in Miami (FL) vs. Notre Dame be more than 28.5?",
+    "slug": "tsc-nfl-cin-atl-2026-11-08-total-22pt5",
+    "question": "Will the total in CIN Bengals vs. ATL Falcons be more than 22.5?",
     "title": "",
-    "game_start": 1794097800.0,
-    "end": 1795325400.0,
-    "bid": 0.92,
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
+    "bid": 0.995,
+    "ask": null
+   },
+   {
+    "slug": "tsc-nfl-cin-atl-2026-11-08-total-25pt5",
+    "question": "Will the total in CIN Bengals vs. ATL Falcons be more than 25.5?",
+    "title": "",
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
+    "bid": 0.995,
+    "ask": null
+   },
+   {
+    "slug": "tsc-nfl-cin-atl-2026-11-08-total-28pt5",
+    "question": "Will the total in CIN Bengals vs. ATL Falcons be more than 28.5?",
+    "title": "",
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
+    "bid": 0.995,
+    "ask": null
+   },
+   {
+    "slug": "tsc-nfl-cin-atl-2026-11-08-total-31pt5",
+    "question": "Will the total in CIN Bengals vs. ATL Falcons be more than 31.5?",
+    "title": "",
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
+    "bid": 0.995,
+    "ask": null
+   },
+   {
+    "slug": "tsc-nfl-cin-atl-2026-11-08-total-34pt5",
+    "question": "Will the total in CIN Bengals vs. ATL Falcons be more than 34.5?",
+    "title": "",
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
+    "bid": 0.985,
     "ask": 0.99
-   },
-   {
-    "slug": "tsc-cfb-mia-nd-2026-11-07-total-35pt5",
-    "question": "Will the total in Miami (FL) vs. Notre Dame be more than 35.5?",
-    "title": "",
-    "game_start": 1794097800.0,
-    "end": 1795325400.0,
-    "bid": 0.88,
-    "ask": 0.93
-   },
-   {
-    "slug": "tsc-cfb-mia-nd-2026-11-07-total-39pt5",
-    "question": "Will the total in Miami (FL) vs. Notre Dame be more than 39.5?",
-    "title": "",
-    "game_start": 1794097800.0,
-    "end": 1795325400.0,
-    "bid": 0.82,
-    "ask": 0.87
-   },
-   {
-    "slug": "tsc-cfb-mia-nd-2026-11-07-total-42pt5",
-    "question": "Will the total in Miami (FL) vs. Notre Dame be more than 42.5?",
-    "title": "",
-    "game_start": 1794097800.0,
-    "end": 1795325400.0,
-    "bid": 0.77,
-    "ask": 0.82
-   },
-   {
-    "slug": "tsc-cfb-mia-nd-2026-11-07-total-46pt5",
-    "question": "Will the total in Miami (FL) vs. Notre Dame be more than 46.5?",
-    "title": "",
-    "game_start": 1794097800.0,
-    "end": 1795325400.0,
-    "bid": 0.69,
-    "ask": 0.74
    }
   ],
   "moneyline/sports": [
    {
-    "slug": "aec-nba-orl-pho-2026-11-05",
-    "question": "Who will win in the upcoming basketball event ORL Magic vs PHO Suns scheduled for November 6, 2026 at 2:00 AM UTC?",
+    "slug": "aec-nba-phi-chi-2026-11-08",
+    "question": "Who will win in the upcoming basketball event PHI 76ers vs CHI Bulls scheduled for November 8, 2026 at 8:30 PM UTC?",
     "title": "",
-    "game_start": 1793930400.0,
-    "end": 1795140000.0,
-    "bid": 0.49,
-    "ask": 0.5
-   },
-   {
-    "slug": "aec-nba-mia-gs-2026-11-05",
-    "question": "Who will win in the upcoming basketball event MIA Heat vs GS Warriors scheduled for November 6, 2026 at 3:00 AM UTC?",
-    "title": "",
-    "game_start": 1793934000.0,
-    "end": 1795143600.0,
-    "bid": 0.28,
-    "ask": 0.29
-   },
-   {
-    "slug": "aec-nfl-jax-bal-2026-11-05",
-    "question": "Who will win in the upcoming football event Jacksonville Jaguars vs Baltimore Ravens scheduled for November 6, 2026 at 1:15 AM UTC?",
-    "title": "",
-    "game_start": 1793927700.0,
-    "end": 1795155300.0,
-    "bid": 0.8125,
-    "ask": 0.815
-   },
-   {
-    "slug": "aec-nba-bos-cha-2026-11-06",
-    "question": "Who will win in the upcoming basketball event BOS Celtics vs CHA Hornets scheduled for November 7, 2026 at 12:00 AM UTC?",
-    "title": "",
-    "game_start": 1794009600.0,
-    "end": 1795219200.0,
+    "game_start": 1794169800.0,
+    "end": 1795379400.0,
     "bid": 0.78,
     "ask": 0.79
    },
    {
-    "slug": "aec-nba-was-atl-2026-11-06",
-    "question": "Who will win in the upcoming basketball event WAS Wizards vs ATL Hawks scheduled for November 7, 2026 at 12:00 AM UTC?",
+    "slug": "aec-nba-lal-det-2026-11-08",
+    "question": "Who will win in the upcoming basketball event LA Lakers vs DET Pistons scheduled for November 8, 2026 at 11:00 PM UTC?",
     "title": "",
-    "game_start": 1794009600.0,
-    "end": 1795219200.0,
-    "bid": 0.3,
-    "ask": 0.31
+    "game_start": 1794178800.0,
+    "end": 1795388400.0,
+    "bid": 0.37,
+    "ask": 0.38
    },
    {
-    "slug": "aec-nba-phi-cle-2026-11-06",
-    "question": "Who will win in the upcoming basketball event PHI 76ers vs CLE Cavaliers scheduled for November 7, 2026 at 12:30 AM UTC?",
+    "slug": "aec-nba-uta-min-2026-11-08",
+    "question": "Who will win in the upcoming basketball event UTA Jazz vs MIN Timberwolves scheduled for November 9, 2026 at 12:00 AM UTC?",
     "title": "",
-    "game_start": 1794011400.0,
-    "end": 1795221000.0,
-    "bid": 0.65,
-    "ask": 0.67
-   },
-   {
-    "slug": "aec-nba-uta-dal-2026-11-06",
-    "question": "Who will win in the upcoming basketball event UTA Jazz vs DAL Mavericks scheduled for November 7, 2026 at 1:00 AM UTC?",
-    "title": "",
-    "game_start": 1794013200.0,
-    "end": 1795222800.0,
-    "bid": 0.3,
-    "ask": 0.31
-   },
-   {
-    "slug": "aec-nba-tor-mil-2026-11-06",
-    "question": "Who will win in the upcoming basketball event TOR Raptors vs MIL Bucks scheduled for November 7, 2026 at 1:00 AM UTC?",
-    "title": "",
-    "game_start": 1794013200.0,
-    "end": 1795222800.0,
-    "bid": 0.71,
-    "ask": 0.72
-   },
-   {
-    "slug": "aec-nba-min-no-2026-11-06",
-    "question": "Who will win in the upcoming basketball event MIN Timberwolves vs NO Pelicans scheduled for November 7, 2026 at 1:00 AM UTC?",
-    "title": "",
-    "game_start": 1794013200.0,
-    "end": 1795222800.0,
-    "bid": 0.63,
-    "ask": 0.64
-   },
-   {
-    "slug": "aec-nba-okc-mem-2026-11-06",
-    "question": "Who will win in the upcoming basketball event OKC Thunder vs MEM Grizzlies scheduled for November 7, 2026 at 1:00 AM UTC?",
-    "title": "",
-    "game_start": 1794013200.0,
-    "end": 1795222800.0,
-    "bid": 0.65,
-    "ask": 0.66
-   },
-   {
-    "slug": "aec-nba-sa-sac-2026-11-06",
-    "question": "Who will win in the upcoming basketball event SA Spurs vs SAC Kings scheduled for November 7, 2026 at 3:00 AM UTC?",
-    "title": "",
-    "game_start": 1794020400.0,
-    "end": 1795230000.0,
-    "bid": 0.86,
-    "ask": 0.87
-   },
-   {
-    "slug": "aec-nba-por-lal-2026-11-06",
-    "question": "Who will win in the upcoming basketball event POR Trail Blazers vs LA Lakers scheduled for November 7, 2026 at 3:00 AM UTC?",
-    "title": "",
-    "game_start": 1794020400.0,
-    "end": 1795230000.0,
-    "bid": 0.42,
-    "ask": 0.43
-   },
-   {
-    "slug": "aec-cfb-scarst-howrd-2026-11-05",
-    "question": "Who will win in the upcoming football event South Carolina State vs Howard scheduled for November 5, 2026 at 10:00 PM UTC?",
-    "title": "",
-    "game_start": 1793916000.0,
-    "end": 1795143600.0,
-    "bid": 0.85,
-    "ask": 0.86
-   },
-   {
-    "slug": "aec-cfb-utsa-flatl-2026-11-05",
-    "question": "Who will win in the upcoming football event UTSA vs Florida Atlantic scheduled for November 6, 2026 at 1:00 AM UTC?",
-    "title": "",
-    "game_start": 1793925000.0,
-    "end": 1795152600.0,
-    "bid": 0.695,
-    "ask": 0.7
-   },
-   {
-    "slug": "aec-cfb-jmad-soumis-2026-11-05",
-    "question": "Who will win in the upcoming football event James Madison vs Southern Miss scheduled for November 6, 2026 at 1:00 AM UTC?",
-    "title": "",
-    "game_start": 1793926800.0,
-    "end": 1795154400.0,
-    "bid": 0.835,
-    "ask": 0.84
-   }
-  ],
-  "drawable_outcome/sports": [
-   {
-    "slug": "atc-uel-amc-ftc-2026-11-05-amc",
-    "question": "Will AC Milan win against Ferencvarosi TC in the UEL match scheduled for Nov 5, 2026?",
-    "title": "",
-    "game_start": 1793900700.0,
-    "end": 1795128300.0,
-    "bid": 0.74,
-    "ask": 0.75
-   },
-   {
-    "slug": "atc-uel-amc-ftc-2026-11-05-draw",
-    "question": "Will the UEL match AC Milan vs Ferencvarosi TC scheduled for Nov 5, 2026 end in a draw?",
-    "title": "",
-    "game_start": 1793900700.0,
-    "end": 1795128300.0,
+    "game_start": 1794182400.0,
+    "end": 1795392000.0,
     "bid": 0.16,
     "ask": 0.17
    },
    {
-    "slug": "atc-uel-amc-ftc-2026-11-05-ftc",
-    "question": "Will Ferencvarosi TC win against AC Milan in the UEL match scheduled for Nov 5, 2026?",
+    "slug": "aec-nba-bkn-dal-2026-11-08",
+    "question": "Who will win in the upcoming basketball event BKN Nets vs DAL Mavericks scheduled for November 9, 2026 at 12:30 AM UTC?",
     "title": "",
-    "game_start": 1793900700.0,
-    "end": 1795128300.0,
-    "bid": 0.09,
-    "ask": 0.1
+    "game_start": 1794184200.0,
+    "end": 1795393800.0,
+    "bid": 0.25,
+    "ask": 0.26
    },
    {
-    "slug": "atc-uel-spp-bou-2026-11-05-spp",
-    "question": "Will Sparta Prague win against AFC Bournemouth in the UEL match scheduled for Nov 5, 2026?",
+    "slug": "aec-nba-bos-mil-2026-11-08",
+    "question": "Who will win in the upcoming basketball event BOS Celtics vs MIL Bucks scheduled for November 9, 2026 at 1:00 AM UTC?",
     "title": "",
-    "game_start": 1793900700.0,
-    "end": 1795128300.0,
-    "bid": 0.12,
-    "ask": 0.13
+    "game_start": 1794186000.0,
+    "end": 1795395600.0,
+    "bid": 0.86,
+    "ask": 0.87
    },
    {
-    "slug": "atc-uel-spp-bou-2026-11-05-draw",
-    "question": "Will the UEL match Sparta Prague vs AFC Bournemouth scheduled for Nov 5, 2026 end in a draw?",
+    "slug": "aec-nba-mia-sac-2026-11-08",
+    "question": "Who will win in the upcoming basketball event MIA Heat vs SAC Kings scheduled for November 9, 2026 at 2:00 AM UTC?",
     "title": "",
-    "game_start": 1793900700.0,
-    "end": 1795128300.0,
-    "bid": 0.18,
-    "ask": 0.19
+    "game_start": 1794189600.0,
+    "end": 1795399200.0,
+    "bid": 0.78,
+    "ask": 0.79
    },
    {
-    "slug": "atc-uel-spp-bou-2026-11-05-bou",
-    "question": "Will AFC Bournemouth win against Sparta Prague in the UEL match scheduled for Nov 5, 2026?",
+    "slug": "aec-nba-no-lac-2026-11-08",
+    "question": "Who will win in the upcoming basketball event NO Pelicans vs LA Clippers scheduled for November 9, 2026 at 2:00 AM UTC?",
     "title": "",
-    "game_start": 1793900700.0,
-    "end": 1795128300.0,
-    "bid": 0.69,
-    "ask": 0.7
-   },
-   {
-    "slug": "atc-uel-cpr-tsg-2026-11-05-cpr",
-    "question": "Will Crystal Palace win against TSG Hoffenheim in the UEL match scheduled for Nov 5, 2026?",
-    "title": "",
-    "game_start": 1793900700.0,
-    "end": 1795128300.0,
+    "game_start": 1794189600.0,
+    "end": 1795399200.0,
     "bid": 0.52,
     "ask": 0.53
    },
    {
-    "slug": "atc-uel-cpr-tsg-2026-11-05-draw",
-    "question": "Will the UEL match Crystal Palace vs TSG Hoffenheim scheduled for Nov 5, 2026 end in a draw?",
+    "slug": "aec-nfl-cin-atl-2026-11-08",
+    "question": "Who will win in the upcoming football event Cincinnati Bengals vs Atlanta Falcons scheduled for November 8, 2026 at 2:30 PM UTC?",
     "title": "",
-    "game_start": 1793900700.0,
-    "end": 1795128300.0,
-    "bid": 0.23,
-    "ask": 0.24
+    "game_start": 1794148200.0,
+    "end": 1795375800.0,
+    "bid": 0.7275,
+    "ask": 0.73
    },
    {
-    "slug": "atc-uel-cpr-tsg-2026-11-05-tsg",
-    "question": "Will TSG Hoffenheim win against Crystal Palace in the UEL match scheduled for Nov 5, 2026?",
+    "slug": "aec-nfl-dal-ind-2026-11-08",
+    "question": "Who will win in the upcoming football event Dallas Cowboys vs Indianapolis Colts scheduled for November 8, 2026 at 6:00 PM UTC?",
     "title": "",
-    "game_start": 1793900700.0,
-    "end": 1795128300.0,
-    "bid": 0.24,
-    "ask": 0.25
+    "game_start": 1794160800.0,
+    "end": 1795388400.0,
+    "bid": 0.675,
+    "ask": 0.6775
    },
    {
-    "slug": "atc-uel-lms-plz-2026-11-05-lms",
-    "question": "Will Lillestrom SK win against FC Viktoria Plzen in the UEL match scheduled for Nov 5, 2026?",
+    "slug": "aec-nfl-lar-was-2026-11-08",
+    "question": "Who will win in the upcoming football event Los Angeles Rams vs Washington Commanders scheduled for November 8, 2026 at 6:00 PM UTC?",
     "title": "",
-    "game_start": 1793900700.0,
-    "end": 1795128300.0,
+    "game_start": 1794160800.0,
+    "end": 1795388400.0,
+    "bid": 0.665,
+    "ask": 0.6675
+   },
+   {
+    "slug": "aec-nfl-cle-no-2026-11-08",
+    "question": "Who will win in the upcoming football event Cleveland Browns vs New Orleans Saints scheduled for November 8, 2026 at 6:00 PM UTC?",
+    "title": "",
+    "game_start": 1794160800.0,
+    "end": 1795388400.0,
+    "bid": 0.38,
+    "ask": 0.3825
+   },
+   {
+    "slug": "aec-nfl-nyj-kc-2026-11-08",
+    "question": "Who will win in the upcoming football event New York Jets vs Kansas City Chiefs scheduled for November 8, 2026 at 6:00 PM UTC?",
+    "title": "",
+    "game_start": 1794160800.0,
+    "end": 1795388400.0,
+    "bid": 0.1925,
+    "ask": 0.195
+   },
+   {
+    "slug": "aec-nfl-det-mia-2026-11-08",
+    "question": "Who will win in the upcoming football event Detroit Lions vs Miami Dolphins scheduled for November 8, 2026 at 6:00 PM UTC?",
+    "title": "",
+    "game_start": 1794160800.0,
+    "end": 1795388400.0,
+    "bid": 0.735,
+    "ask": 0.7375
+   },
+   {
+    "slug": "aec-nfl-den-car-2026-11-08",
+    "question": "Who will win in the upcoming football event Denver Broncos vs Carolina Panthers scheduled for November 8, 2026 at 6:00 PM UTC?",
+    "title": "",
+    "game_start": 1794160800.0,
+    "end": 1795388400.0,
+    "bid": 0.5775,
+    "ask": 0.58
+   },
+   {
+    "slug": "aec-nfl-nyg-phi-2026-11-08",
+    "question": "Who will win in the upcoming football event New York Giants vs Philadelphia Eagles scheduled for November 8, 2026 at 6:00 PM UTC?",
+    "title": "",
+    "game_start": 1794160800.0,
+    "end": 1795388400.0,
+    "bid": 0.6,
+    "ask": 0.6025
+   }
+  ],
+  "drawable_outcome/sports": [
+   {
+    "slug": "atc-ligpor-cdn-acv-2026-11-07-cdn",
+    "question": "Will Nacional da Madeira win against Academico de Viseu FC in the Liga Portugal match scheduled for Nov 7, 2026?",
+    "title": "",
+    "game_start": 1794151800.0,
+    "end": 1795293000.0,
     "bid": 0.32,
     "ask": 0.33
    },
    {
-    "slug": "atc-uel-lms-plz-2026-11-05-draw",
-    "question": "Will the UEL match Lillestrom SK vs FC Viktoria Plzen scheduled for Nov 5, 2026 end in a draw?",
+    "slug": "atc-ligpor-cdn-acv-2026-11-07-draw",
+    "question": "Will the Liga Portugal match Nacional da Madeira vs Academico de Viseu FC scheduled for Nov 7, 2026 end in a draw?",
     "title": "",
-    "game_start": 1793900700.0,
-    "end": 1795128300.0,
-    "bid": 0.24,
-    "ask": 0.25
+    "game_start": 1794151800.0,
+    "end": 1795293000.0,
+    "bid": 0.29,
+    "ask": 0.3
    },
    {
-    "slug": "atc-uel-lms-plz-2026-11-05-plz",
-    "question": "Will FC Viktoria Plzen win against Lillestrom SK in the UEL match scheduled for Nov 5, 2026?",
+    "slug": "atc-ligpor-cdn-acv-2026-11-07-acv",
+    "question": "Will Academico de Viseu FC win against Nacional da Madeira in the Liga Portugal match scheduled for Nov 7, 2026?",
     "title": "",
-    "game_start": 1793900700.0,
-    "end": 1795128300.0,
-    "bid": 0.43,
-    "ask": 0.44
+    "game_start": 1794151800.0,
+    "end": 1795293000.0,
+    "bid": 0.37,
+    "ask": 0.38
    },
    {
-    "slug": "atc-uel-nij-aon-2026-11-05-nij",
-    "question": "Will NEC Nijmegen win against AC Omonia Nicosia in the UEL match scheduled for Nov 5, 2026?",
+    "slug": "atc-lg1-ren-lil-2026-11-08-ren",
+    "question": "Will Stade Rennais FC 1901 win against Lille OSC in the Ligue 1 match scheduled for Nov 8, 2026?",
     "title": "",
-    "game_start": 1793900700.0,
-    "end": 1795128300.0,
-    "bid": 0.55,
-    "ask": 0.56
+    "game_start": 1794146400.0,
+    "end": 1795374000.0,
+    "bid": 0.32,
+    "ask": 0.33
    },
    {
-    "slug": "atc-uel-nij-aon-2026-11-05-draw",
-    "question": "Will the UEL match NEC Nijmegen vs AC Omonia Nicosia scheduled for Nov 5, 2026 end in a draw?",
+    "slug": "atc-lg1-ren-lil-2026-11-08-draw",
+    "question": "Will the Ligue 1 match Stade Rennais FC 1901 vs Lille OSC scheduled for Nov 8, 2026 end in a draw?",
     "title": "",
-    "game_start": 1793900700.0,
-    "end": 1795128300.0,
-    "bid": 0.23,
-    "ask": 0.24
+    "game_start": 1794146400.0,
+    "end": 1795374000.0,
+    "bid": 0.46,
+    "ask": 0.47
    },
    {
-    "slug": "atc-uel-nij-aon-2026-11-05-aon",
-    "question": "Will AC Omonia Nicosia win against NEC Nijmegen in the UEL match scheduled for Nov 5, 2026?",
+    "slug": "atc-lg1-ren-lil-2026-11-08-lil",
+    "question": "Will Lille OSC win against Stade Rennais FC 1901 in the Ligue 1 match scheduled for Nov 8, 2026?",
     "title": "",
-    "game_start": 1793900700.0,
-    "end": 1795128300.0,
+    "game_start": 1794146400.0,
+    "end": 1795374000.0,
     "bid": 0.21,
     "ask": 0.22
+   },
+   {
+    "slug": "atc-epl-bha-bre-2026-11-08-bha",
+    "question": "Will Brighton & Hove Albion FC win against Brentford FC in the Premier League match scheduled for Nov 8, 2026?",
+    "title": "",
+    "game_start": 1794146400.0,
+    "end": 1795374000.0,
+    "bid": 0.99,
+    "ask": null
+   },
+   {
+    "slug": "atc-epl-bha-bre-2026-11-08-draw",
+    "question": "Will the Premier League match Brighton & Hove Albion FC vs Brentford FC scheduled for Nov 8, 2026 end in a draw?",
+    "title": "",
+    "game_start": 1794146400.0,
+    "end": 1795374000.0,
+    "bid": 0.01,
+    "ask": 0.02
+   },
+   {
+    "slug": "atc-epl-bha-bre-2026-11-08-bre",
+    "question": "Will Brentford FC win against Brighton & Hove Albion FC in the Premier League match scheduled for Nov 8, 2026?",
+    "title": "",
+    "game_start": 1794146400.0,
+    "end": 1795374000.0,
+    "bid": null,
+    "ask": 0.01
+   },
+   {
+    "slug": "atc-epl-cry-liv-2026-11-08-cry",
+    "question": "Will Crystal Palace FC win against Liverpool FC in the Premier League match scheduled for Nov 8, 2026?",
+    "title": "",
+    "game_start": 1794146400.0,
+    "end": 1795374000.0,
+    "bid": null,
+    "ask": 0.01
+   },
+   {
+    "slug": "atc-epl-cry-liv-2026-11-08-draw",
+    "question": "Will the Premier League match Crystal Palace FC vs Liverpool FC scheduled for Nov 8, 2026 end in a draw?",
+    "title": "",
+    "game_start": 1794146400.0,
+    "end": 1795374000.0,
+    "bid": 0.04,
+    "ask": 0.05
+   },
+   {
+    "slug": "atc-epl-cry-liv-2026-11-08-liv",
+    "question": "Will Liverpool FC win against Crystal Palace FC in the Premier League match scheduled for Nov 8, 2026?",
+    "title": "",
+    "game_start": 1794146400.0,
+    "end": 1795374000.0,
+    "bid": 0.94,
+    "ask": 0.95
+   },
+   {
+    "slug": "atc-epl-ips-bor-2026-11-08-ips",
+    "question": "Will Ipswich Town FC win against AFC Bournemouth in the Premier League match scheduled for Nov 8, 2026?",
+    "title": "",
+    "game_start": 1794146400.0,
+    "end": 1795374000.0,
+    "bid": null,
+    "ask": 0.01
+   },
+   {
+    "slug": "atc-epl-ips-bor-2026-11-08-draw",
+    "question": "Will the Premier League match Ipswich Town FC vs AFC Bournemouth scheduled for Nov 8, 2026 end in a draw?",
+    "title": "",
+    "game_start": 1794146400.0,
+    "end": 1795374000.0,
+    "bid": 0.04,
+    "ask": 0.05
+   },
+   {
+    "slug": "atc-epl-ips-bor-2026-11-08-bor",
+    "question": "Will AFC Bournemouth win against Ipswich Town FC in the Premier League match scheduled for Nov 8, 2026?",
+    "title": "",
+    "game_start": 1794146400.0,
+    "end": 1795374000.0,
+    "bid": 0.94,
+    "ask": 0.95
    }
   ],
   "/crypto": [
    {
-    "slug": "cpc-btc-hit-h-w-2026-11-06-82500",
-    "question": "How high will BTC get by 5:00PM ET on Fri, Nov 6?",
+    "slug": "cpc-btc-hit-h-m-2026-11-82500",
+    "question": "How high will BTC get in November?",
     "title": "Reaches $82,500",
-    "game_start": 1793394000.0,
-    "end": 1794004200.0,
-    "bid": 0.07,
+    "game_start": 1793505600.0,
+    "end": 1796103000.0,
+    "bid": 0.32,
+    "ask": 0.4
+   },
+   {
+    "slug": "cpc-btc-hit-h-m-2026-11-85000",
+    "question": "How high will BTC get in November?",
+    "title": "Reaches $85,000",
+    "game_start": 1793505600.0,
+    "end": 1796103000.0,
+    "bid": 0.19,
+    "ask": 0.24
+   },
+   {
+    "slug": "cpc-btc-hit-h-m-2026-11-87500",
+    "question": "How high will BTC get in November?",
+    "title": "Reaches $87,500",
+    "game_start": 1793505600.0,
+    "end": 1796103000.0,
+    "bid": 0.11,
+    "ask": 0.16
+   },
+   {
+    "slug": "cpc-btc-hit-h-m-2026-11-90000",
+    "question": "How high will BTC get in November?",
+    "title": "Reaches $90,000",
+    "game_start": 1793505600.0,
+    "end": 1796103000.0,
+    "bid": 0.05,
+    "ask": 0.11
+   },
+   {
+    "slug": "cpc-btc-hit-h-m-2026-11-92500",
+    "question": "How high will BTC get in November?",
+    "title": "Reaches $92,500",
+    "game_start": 1793505600.0,
+    "end": 1796103000.0,
+    "bid": 0.02,
+    "ask": 0.09
+   },
+   {
+    "slug": "cpc-btc-hit-h-m-2026-11-95000",
+    "question": "How high will BTC get in November?",
+    "title": "Reaches $95,000",
+    "game_start": 1793505600.0,
+    "end": 1796103000.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "cpc-btc-hit-h-m-2026-11-97500",
+    "question": "How high will BTC get in November?",
+    "title": "Reaches $97,500",
+    "game_start": 1793505600.0,
+    "end": 1796103000.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "cpc-btc-hit-h-m-2026-11-100000",
+    "question": "How high will BTC get in November?",
+    "title": "Reaches $100,000",
+    "game_start": 1793505600.0,
+    "end": 1796103000.0,
+    "bid": null,
+    "ask": null
+   },
+   {
+    "slug": "cpc-btc-hit-l-m-2026-11-57500",
+    "question": "How low will BTC get in November?",
+    "title": "Dips to $57,500",
+    "game_start": 1793505600.0,
+    "end": 1796103000.0,
+    "bid": 0.03,
+    "ask": 0.09
+   },
+   {
+    "slug": "cpc-btc-hit-l-m-2026-11-60000",
+    "question": "How low will BTC get in November?",
+    "title": "Dips to $60,000",
+    "game_start": 1793505600.0,
+    "end": 1796103000.0,
+    "bid": 0.03,
+    "ask": 0.06
+   },
+   {
+    "slug": "cpc-btc-hit-l-m-2026-11-62500",
+    "question": "How low will BTC get in November?",
+    "title": "Dips to $62,500",
+    "game_start": 1793505600.0,
+    "end": 1796103000.0,
+    "bid": 0.06,
     "ask": 0.15
    },
    {
-    "slug": "cpc-btc-hit-h-w-2026-11-06-85000",
-    "question": "How high will BTC get by 5:00PM ET on Fri, Nov 6?",
-    "title": "Reaches $85,000",
-    "game_start": 1793394000.0,
-    "end": 1794004200.0,
-    "bid": null,
-    "ask": null
-   },
-   {
-    "slug": "cpc-btc-hit-h-w-2026-11-06-87500",
-    "question": "How high will BTC get by 5:00PM ET on Fri, Nov 6?",
-    "title": "Reaches $87,500",
-    "game_start": 1793394000.0,
-    "end": 1794004200.0,
-    "bid": null,
-    "ask": null
-   },
-   {
-    "slug": "cpc-btc-hit-h-w-2026-11-06-90000",
-    "question": "How high will BTC get by 5:00PM ET on Fri, Nov 6?",
-    "title": "Reaches $90,000",
-    "game_start": 1793394000.0,
-    "end": 1794004200.0,
-    "bid": null,
-    "ask": null
-   },
-   {
-    "slug": "cpc-btc-hit-h-w-2026-11-06-92500",
-    "question": "How high will BTC get by 5:00PM ET on Fri, Nov 6?",
-    "title": "Reaches $92,500",
-    "game_start": 1793394000.0,
-    "end": 1794004200.0,
-    "bid": null,
-    "ask": null
-   },
-   {
-    "slug": "cpc-btc-hit-h-w-2026-11-06-95000",
-    "question": "How high will BTC get by 5:00PM ET on Fri, Nov 6?",
-    "title": "Reaches $95,000",
-    "game_start": 1793394000.0,
-    "end": 1794004200.0,
-    "bid": null,
-    "ask": null
-   },
-   {
-    "slug": "cpc-btc-hit-h-w-2026-11-06-97500",
-    "question": "How high will BTC get by 5:00PM ET on Fri, Nov 6?",
-    "title": "Reaches $97,500",
-    "game_start": 1793394000.0,
-    "end": 1794004200.0,
-    "bid": null,
-    "ask": null
-   },
-   {
-    "slug": "cpc-btc-hit-l-w-2026-11-06-55000",
-    "question": "How low will BTC get by 5:00PM ET on Fri, Nov 6?",
-    "title": "Dips to $55,000",
-    "game_start": 1793394000.0,
-    "end": 1794004200.0,
-    "bid": null,
-    "ask": null
-   },
-   {
-    "slug": "cpc-btc-hit-l-w-2026-11-06-57500",
-    "question": "How low will BTC get by 5:00PM ET on Fri, Nov 6?",
-    "title": "Dips to $57,500",
-    "game_start": 1793394000.0,
-    "end": 1794004200.0,
-    "bid": null,
-    "ask": null
-   },
-   {
-    "slug": "cpc-btc-hit-l-w-2026-11-06-60000",
-    "question": "How low will BTC get by 5:00PM ET on Fri, Nov 6?",
-    "title": "Dips to $60,000",
-    "game_start": 1793394000.0,
-    "end": 1794004200.0,
-    "bid": null,
-    "ask": null
-   },
-   {
-    "slug": "cpc-btc-hit-l-w-2026-11-06-62500",
-    "question": "How low will BTC get by 5:00PM ET on Fri, Nov 6?",
-    "title": "Dips to $62,500",
-    "game_start": 1793394000.0,
-    "end": 1794004200.0,
-    "bid": null,
-    "ask": null
-   },
-   {
-    "slug": "cpc-btc-hit-l-w-2026-11-06-65000",
-    "question": "How low will BTC get by 5:00PM ET on Fri, Nov 6?",
+    "slug": "cpc-btc-hit-l-m-2026-11-65000",
+    "question": "How low will BTC get in November?",
     "title": "Dips to $65,000",
-    "game_start": 1793394000.0,
-    "end": 1794004200.0,
-    "bid": null,
-    "ask": null
+    "game_start": 1793505600.0,
+    "end": 1796103000.0,
+    "bid": 0.12,
+    "ask": 0.18
    },
    {
-    "slug": "cpc-btc-hit-l-w-2026-11-06-67500",
-    "question": "How low will BTC get by 5:00PM ET on Fri, Nov 6?",
+    "slug": "cpc-btc-hit-l-m-2026-11-67500",
+    "question": "How low will BTC get in November?",
     "title": "Dips to $67,500",
-    "game_start": 1793394000.0,
-    "end": 1794004200.0,
-    "bid": null,
-    "ask": null
+    "game_start": 1793505600.0,
+    "end": 1796103000.0,
+    "bid": 0.22,
+    "ask": 0.29
    },
    {
-    "slug": "cpc-btc-hit-l-w-2026-11-06-70000",
-    "question": "How low will BTC get by 5:00PM ET on Fri, Nov 6?",
+    "slug": "cpc-btc-hit-l-m-2026-11-70000",
+    "question": "How low will BTC get in November?",
     "title": "Dips to $70,000",
-    "game_start": 1793394000.0,
-    "end": 1794004200.0,
-    "bid": null,
-    "ask": null
+    "game_start": 1793505600.0,
+    "end": 1796103000.0,
+    "bid": 0.36,
+    "ask": 0.42
    },
    {
-    "slug": "cpc-btc-hit-l-w-2026-11-06-72500",
-    "question": "How low will BTC get by 5:00PM ET on Fri, Nov 6?",
+    "slug": "cpc-btc-hit-l-m-2026-11-72500",
+    "question": "How low will BTC get in November?",
     "title": "Dips to $72,500",
-    "game_start": 1793394000.0,
-    "end": 1794004200.0,
-    "bid": null,
-    "ask": null
-   }
-  ],
-  "/finance": [
-   {
-    "slug": "cpausp-gold-updown-1d-2026-11-04-2315z",
-    "question": "Gold Up or Down Daily",
-    "title": "Gold Up or Down Daily",
-    "game_start": 1793834100.0,
-    "end": 1793917800.0,
-    "bid": null,
-    "ask": null
-   },
-   {
-    "slug": "cpagsp-silver-updown-1d-2026-11-04-2315z",
-    "question": "Silver Up or Down Daily",
-    "title": "Silver Up or Down Daily",
-    "game_start": 1793834100.0,
-    "end": 1793917800.0,
-    "bid": null,
-    "ask": null
-   },
-   {
-    "slug": "cpagsp-silver-updown-1h-2026-11-05-1300z",
-    "question": "Silver Up or Down Hourly",
-    "title": "Silver Up or Down Hourly",
-    "game_start": 1793883600.0,
-    "end": 1793889000.0,
-    "bid": 0.99,
-    "ask": null
-   },
-   {
-    "slug": "cpausp-gold-updown-1h-2026-11-05-1300z",
-    "question": "Gold Up or Down Hourly",
-    "title": "Gold Up or Down Hourly",
-    "game_start": 1793883600.0,
-    "end": 1793889000.0,
-    "bid": 0.99,
-    "ask": null
-   },
-   {
-    "slug": "cpausp-gold-updown-15m-2026-11-05-1345z",
-    "question": "Gold Up or Down 15m",
-    "title": "Gold Up or Down 15m",
-    "game_start": 1793886300.0,
-    "end": 1793889000.0,
-    "bid": 0.99,
-    "ask": null
-   },
-   {
-    "slug": "cpagsp-silver-updown-15m-2026-11-05-1345z",
-    "question": "Silver Up or Down 15m",
-    "title": "Silver Up or Down 15m",
-    "game_start": 1793886300.0,
-    "end": 1793889000.0,
-    "bid": 0.97,
-    "ask": null
+    "game_start": 1793505600.0,
+    "end": 1796103000.0,
+    "bid": 0.63,
+    "ask": 0.64
    }
   ]
  }
