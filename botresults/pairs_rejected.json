@@ -1,11 +1,29 @@
 [
  {
-  "us_slug": "astatc-nfl-recyds-ou-2027-01-10-garrwil",
-  "intl_token": "27733978061299543743280163052426141344679192216175629548993304427691070469989",
-  "score": 0.515,
-  "us_label": "Regular Season Receiving Yards O/U: Garrett Wilson 999.5+",
-  "intl_label": "Will Garrett Wilson have 1,000+ receiving yards in the 2026-27 NFL regular season? [Garrett Wilson]",
+  "us_slug": "rotc-t-thehun-2026-11-23-gte85",
+  "intl_token": "3984175869240278849939037700049170981604982546685667328255886005729522672850",
+  "score": 0.674,
+  "us_label": "The Hunger Games: Sunrise on the Reaping Rotten Tomatoes Score?: 85+",
+  "intl_label": "Will \"The Hunger Games: Sunrise on the Reaping\" score at least 85 on the Rotten Tomatoes Tomatometer? [85+]",
   "tick": 0.01,
-  "price_gap": 0.1
+  "price_gap": 0.09
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestcast-labol",
+  "intl_token": "76951896977240988489336954198625669116666489838524168843025614326492677682884",
+  "score": 0.647,
+  "us_label": "Oscar Winner: Best Casting: La Bola Negra",
+  "intl_label": "Will La Bola Negra win Best Picture at the 99th Academy Awards? [La Bola Negra]",
+  "tick": 0.01,
+  "price_gap": 0.24
+ },
+ {
+  "us_slug": "tac-oscars-03-14-2027-bestprod-blabal",
+  "intl_token": "76951896977240988489336954198625669116666489838524168843025614326492677682884",
+  "score": 0.625,
+  "us_label": "Oscar Winner: Best Production Design: La Bola Negra",
+  "intl_label": "Will La Bola Negra win Best Picture at the 99th Academy Awards? [La Bola Negra]",
+  "tick": 0.01,
+  "price_gap": 0.05
  }
 ]

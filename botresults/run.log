@@ -1,38 +1,30 @@
-15:23:41 INFO Polymarket US: 70855 open markets
-15:23:44 INFO international: 2676 active outcome tokens
-15:23:53 INFO games: 1925 US game markets in the next 48h, 191 international matches, 252 pairs
-15:23:53 INFO pairs: 305 kept, 1 rejected on price
-15:24:03 INFO leader KaneAnalytics: copying -> cooling (−$110,355 on Polymarket this week)
-15:24:03 INFO leader Kkunn: copying -> cooling (−$156,543 on Polymarket this week)
-15:24:03 INFO leader PEYZ-BIGGEST-FAN: copying -> cooling (−$92,124 on Polymarket this week)
-15:24:03 INFO leader theowalcott: copying -> cooling (−$117,873 on Polymarket this week)
-15:24:03 INFO leader BreakTheBank: copying -> cooling (−$107,802 on Polymarket this week)
-15:24:03 INFO leader Diabolical-Prize: copying -> cooling (−$0 on Polymarket this week)
-15:24:03 INFO leader 0010001000001100: copying -> cooling (−$760 on Polymarket this week)
-15:24:03 INFO leader 1l2ihj34li12u34: copying -> cooling (−$477,215 on Polymarket this week)
-15:24:03 INFO leader 0x20D6436849F930584892730C7F96eBB2Ac763856-1768642056357: copying -> cooling (−$133 on Polymarket this week)
-15:24:03 INFO leader 0x16bb9951a36fce71e2ef57890b786145e0ba8492: copying -> cooling (−$42,624 on Polymarket this week)
-15:24:03 INFO leader plonker2026: copying -> benched (losing on Polymarket: −$147,839 this week, −$320,772 this month)
-15:24:03 INFO leader xxyx0xx: copying -> cooling (−$21,401 on Polymarket this week)
-15:24:03 INFO leader THEHIGHLIFE: copying -> cooling (−$18,875 on Polymarket this week)
-15:24:03 INFO leader AmericaFirst1: copying -> cooling (−$4,217 on Polymarket this week)
-15:24:48 INFO paper BUY tsc-nfl-nyg-phi-2026-11-08-total-38pt5:short 9 @ 0.525 (taker, fee +0.16)
-15:24:58 INFO paper BUY aec-nfl-den-car-2026-11-08 8 @ 0.580 (taker, fee +0.14)
-15:27:38 INFO paper BUY tsc-nfl-cin-atl-2026-11-08-total-58pt5:short 14 @ 0.350 (taker, fee +0.23)
-15:27:48 INFO paper BUY aec-nfl-cin-atl-2026-11-08 6 @ 0.795 (taker, fee +0.07)
-15:27:48 INFO paper BUY tsc-nfl-cin-atl-2026-11-08-total-64pt5:short 9 @ 0.550 (taker, fee +0.16)
+21:33:04 INFO Polymarket US: 78024 open markets
+21:33:08 INFO international: 2760 active outcome tokens
+21:33:26 INFO games: 2144 US game markets in the next 48h, 280 international matches, 223 pairs
+21:33:26 INFO pairs: 266 kept, 3 rejected on price
+21:33:38 INFO leader EdZachary: copying -> cooling (−$211,756 on Polymarket this week)
+21:33:38 INFO leader KaneAnalytics: copying -> cooling (−$3,627 on Polymarket this week)
+21:33:38 INFO leader Jsram: copying -> cooling (−$9,543 on Polymarket this week)
+21:33:38 INFO leader Kkunn: copying -> cooling (−$19,596 on Polymarket this week)
+21:33:38 INFO leader PEYZ-BIGGEST-FAN: copying -> benched (losing on Polymarket: −$54,319 this week, −$94,798 this month)
+21:33:38 INFO leader totoro3miyazaki: copying -> benched (losing on Polymarket: −$1,096,158 this week, −$1,401,192 this month)
+21:33:38 INFO leader 0x20D6436849F930584892730C7F96eBB2Ac763856-1768642056357: copying -> cooling (−$95 on Polymarket this week)
+21:33:38 INFO leader 0x16bb9951a36fce71e2ef57890b786145e0ba8492: copying -> cooling (−$36,388 on Polymarket this week)
+21:33:38 INFO leader GamblingOdyssey: copying -> benched (losing on Polymarket: −$6,001 this week, −$27,708 this month)
+21:33:38 INFO leader THEHIGHLIFE: copying -> benched (losing on Polymarket: −$26,294 this week, −$16,936 this month)
+21:34:13 INFO paper BUY tsc-cfb-mich-ore-2026-11-14-total-51pt5 2 @ 0.600 (taker, fee +0.04)
 # Polymarket US bot — paper run
 
-Mapping: 70855 open US markets, 2676 international outcomes, 305 pairs (20 tracked after live price checks); observations with a trustworthy reference price: 580.
+Mapping: 78024 open US markets, 2760 international outcomes, 266 pairs (20 tracked after live price checks); observations with a trustworthy reference price: 440.
 
 ## Is there an edge to take?
 
-US mid vs international mid, absolute gap: median 0.00¢, 90th pct 0.87¢, 99th pct 1.12¢.
+US mid vs international mid, absolute gap: median 0.50¢, 90th pct 1.50¢, 99th pct 3.00¢.
 Times a US price was through fair value by ≥ 3¢ after the taker fee: 0 to buy, 0 to sell (see `events.jsonl`, kind=opportunity).
 
 ## Trading
 
-Equity $199.38 from $200.00 (-0.62), cash $175.25; 5 fills; taker fees $0.76; maker rebates $0.00; open positions 5.
+Equity $199.97 from $200.00 (-0.03), cash $198.76; 1 fills; taker fees $0.04; maker rebates $0.00; open positions 1.
 Halted: no.
 
 

@@ -1,85 +1,85 @@
 profile 'Tiger105': ah-cop-tiger105 0x8d6064a7f8b67988a4073ac1b051356fc8cebd76
 profile 'Tiger105': tiger105050 0x185031bb4a1763496d706e0c07339a690e00b57f
 
-US markets in ['atp', 'itf', 'wta'] (not futures): 2798
-  US aec-wta-cocgau-jespeg-2026-11-08 | moneyline | Who will win in the upcoming wta event Coco Gauff vs Jessica Pegula sc | long=Coco Gauff short=Jessica Pegula start=1794172200.0
-  US aec-wta-arysab-karmuc-2026-11-09 | moneyline | Who will win in the upcoming wta event Aryna Sabalenka vs Karolina Muc | long=Aryna Sabalenka short=Karolina Muchova start=1794254400.0
-  US aec-wta-mirand-elisvi-2026-11-09 | moneyline | Who will win in the upcoming wta event Mirra Andreeva vs Elina Svitoli | long=Mirra Andreeva short=Elina Svitolina start=1794258600.0
-  US asc-wta-cocgau-jespeg-2026-11-08-gs-neg-1pt5 | spreads | Will the Coco Gauff cover -1.5 vs the Jessica Pegula in Coco Gauff vs. | long=-1.50 short=+1.50 start=1794172200.0
-  US asc-wta-cocgau-jespeg-2026-11-08-gs-pos-1pt5 | spreads | Will the Coco Gauff cover 1.5 vs the Jessica Pegula in Coco Gauff vs.  | long=+1.50 short=-1.50 start=1794172200.0
-  US asc-wta-cocgau-jespeg-2026-11-08-gs-neg-4pt5 | spreads | Will the Coco Gauff cover -4.5 vs the Jessica Pegula in Coco Gauff vs. | long=-4.50 short=+4.50 start=1794172200.0
-  US asc-wta-cocgau-jespeg-2026-11-08-gs-pos-4pt5 | spreads | Will the Coco Gauff cover 4.5 vs the Jessica Pegula in Coco Gauff vs.  | long=+4.50 short=-4.50 start=1794172200.0
-  US asc-wta-cocgau-jespeg-2026-11-08-gs-neg-7pt5 | spreads | Will the Coco Gauff cover -7.5 vs the Jessica Pegula in Coco Gauff vs. | long=-7.50 short=+7.50 start=1794172200.0
-  US asc-wta-cocgau-jespeg-2026-11-08-gs-pos-7pt5 | spreads | Will the Coco Gauff cover 7.5 vs the Jessica Pegula in Coco Gauff vs.  | long=+7.50 short=-7.50 start=1794172200.0
-  US asc-wta-cocgau-jespeg-2026-11-08-ss-neg-1pt5 | spreads | Will the Coco Gauff cover -1.5 vs the Jessica Pegula in Coco Gauff vs. | long=-1.50 short=+1.50 start=1794172200.0
-  US asc-wta-cocgau-jespeg-2026-11-08-ss-pos-1pt5 | spreads | Will the Coco Gauff cover 1.5 vs the Jessica Pegula in Coco Gauff vs.  | long=+1.50 short=-1.50 start=1794172200.0
-  US tsc-wta-cocgau-jespeg-2026-11-08-tg-17pt5 | totals | Will the total in Coco Gauff vs. Jessica Pegula be more than 17.5? | long=Over short=Under start=1794172200.0
-  US tsc-wta-cocgau-jespeg-2026-11-08-tg-22pt5 | totals | Will the total in Coco Gauff vs. Jessica Pegula be more than 22.5? | long=Over short=Under start=1794172200.0
-  US tsc-wta-cocgau-jespeg-2026-11-08-tg-27pt5 | totals | Will the total in Coco Gauff vs. Jessica Pegula be more than 27.5? | long=Over short=Under start=1794172200.0
-  US tsc-wta-cocgau-jespeg-2026-11-08-st-2pt5 | totals | Will the total in Coco Gauff vs. Jessica Pegula be more than 2.5? | long=Over short=Under start=1794172200.0
-  US astatc-wta-cocgau-jespeg-2026-11-08-es-2-0 | props | Gauff wins 2-0 | long=Yes short=No start=1794172200.0
-  US astatc-wta-cocgau-jespeg-2026-11-08-es-2-1 | props | Gauff wins 2-1 | long=Yes short=No start=1794172200.0
-  US astatc-wta-cocgau-jespeg-2026-11-08-es-1-2 | props | Pegula wins 2-1 | long=Yes short=No start=1794172200.0
-  US astatc-wta-cocgau-jespeg-2026-11-08-es-0-2 | props | Pegula wins 2-0 | long=Yes short=No start=1794172200.0
-  US astatc-wta-cocgau-jespeg-2026-11-08-sw1 | props | Will Coco Gauff win set 1 against Jessica Pegula? | long=Yes short=No start=1794172200.0
-  US astatc-wta-cocgau-jespeg-2026-11-08-sw2 | props | Will Coco Gauff win set 2 against Jessica Pegula? | long=Yes short=No start=1794172200.0
-  US aec-atp-aughol-phisek-2026-11-08 | moneyline | Who will win in the upcoming atp event August Holmgren vs Philip Sekul | long=August Holmgren short=Philip Sekulic start=1794268800.0
-  US aec-atp-omajas-dhasur-2026-11-08 | moneyline | Who will win in the upcoming atp event Omar Jasika vs Dhakshineswar Su | long=Omar Jasika short=Dhakshineswar Suresh start=1794268800.0
-  US aec-atp-bertom-blaell-2026-11-08 | moneyline | Who will win in the upcoming atp event Bernard Tomic vs Blake Ellis sc | long=Bernard Tomic short=Blake Ellis start=1794190800.0
-  US aec-atp-alaaye-edwwin-2026-11-08 | moneyline | Who will win in the upcoming atp event Alafia Ayeni vs Edward Winter s | long=Alafia Ayeni short=Edward Winter start=1794190800.0
-US: 70855 open markets, 52214 game/spread/total/prop slugs, 311 verified pairs
+US markets in ['atp', 'itf', 'wta'] (not futures): 182
+  US aec-atp-alezve-benshe-2026-11-15 | moneyline | Who will win in the upcoming atp event Alexander Zverev vs Ben Shelton | long=Alexander Zverev short=Ben Shelton start=1794911400.0
+  US aec-atp-caralc-fratia-2026-11-15 | moneyline | Who will win in the upcoming atp event Carlos Alcaraz vs Frances Tiafo | long=Carlos Alcaraz short=Frances Tiafoe start=1794834000.0
+  US aec-atp-danmed-flacob-2026-11-15 | moneyline | Who will win in the upcoming atp event Daniil Medvedev vs Flavio Cobol | long=Daniil Medvedev short=Flavio Cobolli start=1794857400.0
+  US aec-atp-flacob-fratia-2026-11-15 | moneyline | Who will win in the upcoming atp event Flavio Cobolli vs Frances Tiafo | long=Flavio Cobolli short=Frances Tiafoe start=1794911400.0
+  US aec-atp-caralc-danmed-2026-11-15 | moneyline | Who will win in the upcoming atp event Carlos Alcaraz vs Daniil Medved | long=Carlos Alcaraz short=Daniil Medvedev start=1794911400.0
+  US aec-atp-benshe-artfil-2026-11-15 | moneyline | Who will win in the upcoming atp event Ben Shelton vs Arthur Fils sche | long=Ben Shelton short=Arthur Fils start=1794771000.0
+  US aec-atp-benshe-rafjod-2026-11-15 | moneyline | Who will win in the upcoming atp event Ben Shelton vs Rafael Jodar sch | long=Ben Shelton short=Rafael Jodar start=1794911400.0
+  US aec-atp-artfil-rafjod-2026-11-15 | moneyline | Who will win in the upcoming atp event Arthur Fils vs Rafael Jodar sch | long=Arthur Fils short=Rafael Jodar start=1794911400.0
+  US aec-atp-alezve-rafjod-2026-11-15 | moneyline | Who will win in the upcoming atp event Alexander Zverev vs Rafael Joda | long=Alexander Zverev short=Rafael Jodar start=1794747600.0
+  US aec-atp-alezve-artfil-2026-11-15 | moneyline | Who will win in the upcoming atp event Alexander Zverev vs Arthur Fils | long=Alexander Zverev short=Arthur Fils start=1794911400.0
+  US aec-atp-caralc-flacob-2026-11-15 | moneyline | Who will win in the upcoming atp event Carlos Alcaraz vs Flavio Coboll | long=Carlos Alcaraz short=Flavio Cobolli start=1794911400.0
+  US aec-atp-danmed-fratia-2026-11-15 | moneyline | Who will win in the upcoming atp event Daniil Medvedev vs Frances Tiaf | long=Daniil Medvedev short=Frances Tiafoe start=1794911400.0
+  US aec-wta-jespeg-mirand-2026-11-14 | moneyline | Who will win in the upcoming wta event Jessica Pegula vs Mirra Andreev | long=Jessica Pegula short=Mirra Andreeva start=1794687000.0
+  US asc-wta-jespeg-mirand-2026-11-14-gs-neg-1pt5 | spreads | Will the Jessica Pegula cover -1.5 vs the Mirra Andreeva in Jessica Pe | long=-1.50 short=+1.50 start=1794687000.0
+  US asc-wta-jespeg-mirand-2026-11-14-gs-pos-1pt5 | spreads | Will the Jessica Pegula cover 1.5 vs the Mirra Andreeva in Jessica Peg | long=+1.50 short=-1.50 start=1794687000.0
+  US asc-wta-jespeg-mirand-2026-11-14-gs-neg-4pt5 | spreads | Will the Jessica Pegula cover -4.5 vs the Mirra Andreeva in Jessica Pe | long=-4.50 short=+4.50 start=1794687000.0
+  US asc-wta-jespeg-mirand-2026-11-14-gs-pos-4pt5 | spreads | Will the Jessica Pegula cover 4.5 vs the Mirra Andreeva in Jessica Peg | long=+4.50 short=-4.50 start=1794687000.0
+  US asc-wta-jespeg-mirand-2026-11-14-gs-neg-7pt5 | spreads | Will the Jessica Pegula cover -7.5 vs the Mirra Andreeva in Jessica Pe | long=-7.50 short=+7.50 start=1794687000.0
+  US asc-wta-jespeg-mirand-2026-11-14-gs-pos-7pt5 | spreads | Will the Jessica Pegula cover 7.5 vs the Mirra Andreeva in Jessica Peg | long=+7.50 short=-7.50 start=1794687000.0
+  US asc-wta-jespeg-mirand-2026-11-14-ss-neg-1pt5 | spreads | Will the Jessica Pegula cover -1.5 vs the Mirra Andreeva in Jessica Pe | long=-1.50 short=+1.50 start=1794687000.0
+  US asc-wta-jespeg-mirand-2026-11-14-ss-pos-1pt5 | spreads | Will the Jessica Pegula cover 1.5 vs the Mirra Andreeva in Jessica Peg | long=+1.50 short=-1.50 start=1794687000.0
+  US tsc-wta-jespeg-mirand-2026-11-14-tg-17pt5 | totals | Will the total in Jessica Pegula vs. Mirra Andreeva be more than 17.5? | long=Over short=Under start=1794687000.0
+  US tsc-wta-jespeg-mirand-2026-11-14-tg-22pt5 | totals | Will the total in Jessica Pegula vs. Mirra Andreeva be more than 22.5? | long=Over short=Under start=1794687000.0
+  US tsc-wta-jespeg-mirand-2026-11-14-tg-27pt5 | totals | Will the total in Jessica Pegula vs. Mirra Andreeva be more than 27.5? | long=Over short=Under start=1794687000.0
+  US tsc-wta-jespeg-mirand-2026-11-14-st-2pt5 | totals | Will the total in Jessica Pegula vs. Mirra Andreeva be more than 2.5? | long=Over short=Under start=1794687000.0
+US: 78288 open markets, 58965 game/spread/total/prop slugs, 266 verified pairs
 
 age                    long side              short side  listed, outcome names     not on Polymarket US  copyable
-<3h                           72                     152                       0                     509       31%
-3-12h                        106                      10                       0                     814       12%
-12-48h                        20                       0                       0                    1518        1%
-older                          2                       0                       0                    2797        0%
+<3h                           69                      24                     276                     763        8%
+3-12h                          1                      75                      30                     635       10%
+12-48h                         8                       6                      12                     752        2%
+older                          2                       0                       0                    3347        0%
 
 by league (all ages): copyable / total
-  epl             45 / 738
-  nba             32 / 645
-  cfb              0 / 565
-  nfl            148 / 498
-  futures         27 / 464
-  ucl              0 / 335
-  atp              1 / 308
-  wta              0 / 231
-  lol              0 / 224
-  dota2            0 / 219
-  mls              0 / 143
-  fifwc            0 / 140
-  cs2              1 / 138
+  cfb             50 / 797
+  nba             31 / 650
+  futures          2 / 596
+  lol              0 / 533
+  unl              3 / 432
+  atp              0 / 316
+  epl              0 / 312
+  cs2              0 / 303
+  wta             76 / 250
+  nfl             22 / 200
+  dota2            0 / 200
+  ucl              0 / 161
+  fifwc            0 / 138
   val              0 / 137
-  sea              1 / 129
-  itf              0 / 105
-  lal             58 / 102
-  tur              0 / 100
-  por              0 / 72
-  ere             49 / 64
+  lal              0 / 129
+  mls              0 / 110
+  por              0 / 70
+  nhl              1 / 60
+  cbb              0 / 59
+  chi1             0 / 54
 
 recent trades not on Polymarket US (international slug | outcome | US lists for the same matchup):
-  176  nfl-cin-atl-2026-11-08-spread-away-3pt5 | Falcons | nfl-cin-atl-2026-11-08, nfl-cin-atl-2026-11-08-1h-18pt5, nfl-cin-atl-2026-11-08-1h-20pt5, nfl-cin-atl-2026-11-08-1h-22pt5
-  121  epl-sun-che-2026-11-08-che | No | -
-   96  epl-sun-che-2026-11-08-che | Yes | -
-   71  tur-cf-fen-2026-11-08-fen | No | -
-   69   |  | -
-   48  wta-liu-eala-2026-11-08 | Claire Liu | -
-   47  cs2-mglz-mouz-2026-11-08-game3 | TheMongolz | -
-   38  epl-sun-che-2026-11-08-sun | Yes | -
-   32  epl-sun-che-2026-11-08-total-2pt5 | Under | -
-   26  cfb-wvir-txtech-2026-11-07 | West Virginia | -
-   22  nfl-den-car-2026-11-08-spread-away-2pt5 | Broncos | nfl-den-car-2026-11-08, nfl-den-car-2026-11-08-1h-13pt5, nfl-den-car-2026-11-08-1h-15pt5, nfl-den-car-2026-11-08-1h-17pt5
-   22  nfl-buf-min-2026-11-10 | Bills | -
-   21  nfl-det-mia-2026-11-08-spread-away-6pt5 | Dolphins | nfl-det-mia-2026-11-08, nfl-det-mia-2026-11-08-1h-16pt5, nfl-det-mia-2026-11-08-1h-18pt5, nfl-det-mia-2026-11-08-1h-20pt5
-   19  sea-nap-laz-2026-11-08-total-3pt5 | Under | -
-   18  den-ran-nor-2026-11-08-nor | Yes | -
-   15  f1-brazilian-grand-prix-winner-verstappen-2026-11-08 | No | -
-   15  swe-bro-mja-2026-11-08-bro | Yes | -
-   15  tur-cf-fen-2026-11-08-cf | Yes | -
-   15  nfl-la-was-2026-11-08 | Commanders | -
-   14  cs2-mglz-mouz-2026-11-08 | MOUZ | -
-   14  epl-ips-bou-2026-11-08-ips | No | -
-   13  cfb-wvir-txtech-2026-11-07-spread-away-3pt5 | Texas Tech | -
-   13  epl-cry-liv-2026-11-08-total-0pt5 | Over | epl-cry-liv-2026-11-08-1pt5, epl-cry-liv-2026-11-08-2pt5, epl-cry-liv-2026-11-08-3pt5, epl-cry-liv-2026-11-08-4pt5
-   13  sea-nap-laz-2026-11-08-nap | No | -
-   12  ere-az-gro-2026-11-08-spread-home-1pt5 | FC Groningen | ere-az-gro-2026-11-08-0pt5, ere-az-gro-2026-11-08-1pt5, ere-az-gro-2026-11-08-2pt5, ere-az-gro-2026-11-08-3pt5
+  126  unl-rom-pol-2026-11-14-pol | No | -
+  126  cs2-ts7-furia-2026-11-15 | FURIA | -
+  120   |  | -
+   97  unl-prt-den-2026-11-14-prt | Yes | -
+   84  lol-blg-gen-2026-11-14-game1 | Bilibili Gaming | lol-blg-gen-2026-11-14, lol-blg-gen-2026-11-14-g2-k-bin-gte3, lol-blg-gen-2026-11-14-g2-k-canyon-gte3, lol-blg-gen-2026-11-14-g2-k-canyon-gte4
+   72  lol-blg-gen-2026-11-14-game1 | Gen.G | lol-blg-gen-2026-11-14, lol-blg-gen-2026-11-14-g2-k-bin-gte3, lol-blg-gen-2026-11-14-g2-k-canyon-gte3, lol-blg-gen-2026-11-14-g2-k-canyon-gte4
+   71  unl-nor-wal-2026-11-14-nor | No | -
+   49  cbb-uwg-chsou-2026-11-14-spread-home-4pt5 | West Georgia Wolves | cbb-uwg-chsou-2026-11-14, cbb-uwg-chsou-2026-11-14-123pt5, cbb-uwg-chsou-2026-11-14-126pt5, cbb-uwg-chsou-2026-11-14-129pt5
+   23  el1-wim-bla-2026-11-14-wim | No | -
+   20  lol-blg-gen-2026-11-14-total-games-3pt5 | Under | lol-blg-gen-2026-11-14, lol-blg-gen-2026-11-14-g2-k-bin-gte3, lol-blg-gen-2026-11-14-g2-k-canyon-gte3, lol-blg-gen-2026-11-14-g2-k-canyon-gte4
+   18  cfb-nebr-rutger-2026-11-14-total-45pt5 | Under | cfb-nebr-rutger-2026-11-14-2pc-0pt5, cfb-nebr-rutger-2026-11-14-dstd-0pt5, cfb-nebr-rutger-2026-11-14-fg-a-0pt5, cfb-nebr-rutger-2026-11-14-fg-a-1pt5
+   17  unl-swe-bih-2026-11-14-total-2pt5 | Over | unl-swe-bih-2026-11-14-5pt5, unl-swe-bih-2026-11-14-bih, unl-swe-bih-2026-11-14-cor-all-gt10pt5, unl-swe-bih-2026-11-14-cor-all-gt11pt5
+   16  es2-alm-and-2026-11-14-total-2pt5 | Over | -
+   14  cfb-gtech-clmsn-2026-11-14-spread-away-3pt5 | Georgia Tech | cfb-gtech-clmsn-2026-11-14-2pc-0pt5, cfb-gtech-clmsn-2026-11-14-dstd-0pt5, cfb-gtech-clmsn-2026-11-14-fg-a-0pt5, cfb-gtech-clmsn-2026-11-14-fg-a-1pt5
+   14  cfb-gtech-clmsn-2026-11-14 | Georgia Tech | cfb-gtech-clmsn-2026-11-14-2pc-0pt5, cfb-gtech-clmsn-2026-11-14-dstd-0pt5, cfb-gtech-clmsn-2026-11-14-fg-a-0pt5, cfb-gtech-clmsn-2026-11-14-fg-a-1pt5
+   14  cfb-gtech-clmsn-2026-11-14-total-45pt5 | Under | cfb-gtech-clmsn-2026-11-14-2pc-0pt5, cfb-gtech-clmsn-2026-11-14-dstd-0pt5, cfb-gtech-clmsn-2026-11-14-fg-a-0pt5, cfb-gtech-clmsn-2026-11-14-fg-a-1pt5
+   13  unl-nor-wal-2026-11-14-wal | No | -
+   12  ned2-gra-oss-2026-11-14-gra | Yes | -
+   11  cfb-gtech-clmsn-2026-11-14-spread-away-5pt5 | Georgia Tech | cfb-gtech-clmsn-2026-11-14-2pc-0pt5, cfb-gtech-clmsn-2026-11-14-dstd-0pt5, cfb-gtech-clmsn-2026-11-14-fg-a-0pt5, cfb-gtech-clmsn-2026-11-14-fg-a-1pt5
+   11  cfb-gtech-clmsn-2026-11-14-spread-home-2pt5 | Georgia Tech | cfb-gtech-clmsn-2026-11-14-2pc-0pt5, cfb-gtech-clmsn-2026-11-14-dstd-0pt5, cfb-gtech-clmsn-2026-11-14-fg-a-0pt5, cfb-gtech-clmsn-2026-11-14-fg-a-1pt5
+   10  cfb-nebr-rutger-2026-11-14-total-39pt5 | Under | cfb-nebr-rutger-2026-11-14-2pc-0pt5, cfb-nebr-rutger-2026-11-14-dstd-0pt5, cfb-nebr-rutger-2026-11-14-fg-a-0pt5, cfb-nebr-rutger-2026-11-14-fg-a-1pt5
+   10  cfb-gtech-clmsn-2026-11-14-spread-away-2pt5 | Georgia Tech | cfb-gtech-clmsn-2026-11-14-2pc-0pt5, cfb-gtech-clmsn-2026-11-14-dstd-0pt5, cfb-gtech-clmsn-2026-11-14-fg-a-0pt5, cfb-gtech-clmsn-2026-11-14-fg-a-1pt5
+   10  cfb-gtech-clmsn-2026-11-14-spread-home-1pt5 | Georgia Tech | cfb-gtech-clmsn-2026-11-14-2pc-0pt5, cfb-gtech-clmsn-2026-11-14-dstd-0pt5, cfb-gtech-clmsn-2026-11-14-fg-a-0pt5, cfb-gtech-clmsn-2026-11-14-fg-a-1pt5
+    9  cfb-gtech-clmsn-2026-11-14-spread-away-1pt5 | Georgia Tech | cfb-gtech-clmsn-2026-11-14-2pc-0pt5, cfb-gtech-clmsn-2026-11-14-dstd-0pt5, cfb-gtech-clmsn-2026-11-14-fg-a-0pt5, cfb-gtech-clmsn-2026-11-14-fg-a-1pt5
+    9  dota2-lgd-legion1-2026-11-12-game2 | LGD Gaming | -
