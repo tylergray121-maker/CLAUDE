@@ -1,0 +1,62 @@
+LIVE trading on Polymarket US with real money. Limits: $50 total, $3 per game, no daily stop. Sized on at most $300 of the account.
+07:53:43 INFO balance fields: {'currentBalance': 0.015918, 'buyingPower': 0.015918, 'assetNotional': 0, 'assetAvailable': 0, 'pendingCredit': 0, 'openOrders': 0, 'unsettledFunds': 0, 'marginRequirement': 0, 'balanceReservation': 0.002632, 'depositReservation': 0, 'bonusReservation': 0.002632, 'displayedBonus': 0.002632, 'displayedAvailableSoon': 0, 'displayedCash': 0.013286, 'availableToWithdraw': 0.01, 'bonusHold': 0.002632}
+07:53:43 INFO resumed paper account: cash $0.02, 0 positions, 362 fills, started 2026-10-21 23:25
+07:56:10 INFO Polymarket US: 76498 open markets
+07:56:17 INFO international: 2454 active outcome tokens
+07:56:29 INFO games: 1847 US game markets in the next 48h, 344 international matches, 261 pairs
+07:56:29 INFO pairs: 323 kept, 7 rejected on price
+07:56:40 INFO leader EdZachary: benched -> cooling (−$212,042 on Polymarket this week)
+08:57:39 WARNING US markets at offset 60700: IncompleteRead(64306 bytes read)
+08:57:44 ERROR market refresh failed; keeping the previous maps
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/http/client.py", line 627, in _read_chunked
+    value.append(self._safe_read(chunk_left))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/http/client.py", line 671, in _safe_read
+    raise IncompleteRead(data, amt - len(data))
+http.client.IncompleteRead: IncompleteRead(4223 bytes read, 61176 more expected)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/work/CLAUDE/CLAUDE/pmbot/engine.py", line 240, in run
+    self._apply_pairs(refresh.result())
+                      ^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/CLAUDE/CLAUDE/pmbot/engine.py", line 139, in _build_pairs
+    us = data.us_markets(client, strict=strict)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/CLAUDE/CLAUDE/pmbot/data.py", line 125, in us_markets
+    rows = (client.get(US_GATEWAY, "/v1/markets", {
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/CLAUDE/CLAUDE/copybt/api.py", line 168, in get
+    data = self._fetch(url, cpath)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/CLAUDE/CLAUDE/copybt/api.py", line 221, in _fetch
+    data = json.loads(resp.read().decode())
+                      ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/http/client.py", line 488, in read
+    return self._read_chunked(amt)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/http/client.py", line 633, in _read_chunked
+    raise IncompleteRead(b''.join(value)) from exc
+http.client.IncompleteRead: IncompleteRead(64306 bytes read)
+09:58:11 INFO Polymarket US: 76936 open markets
+09:58:19 INFO international: 2462 active outcome tokens
+09:58:39 INFO games: 1887 US game markets in the next 48h, 346 international matches, 265 pairs
+09:58:39 INFO pairs: 327 kept, 3 rejected on price
+10:58:26 INFO Polymarket US: 76995 open markets
+10:58:34 INFO international: 2473 active outcome tokens
+10:58:54 INFO games: 1961 US game markets in the next 48h, 346 international matches, 265 pairs
+10:58:54 INFO pairs: 326 kept, 3 rejected on price
+11:58:37 INFO Polymarket US: 77117 open markets
+11:58:45 INFO international: 2501 active outcome tokens
+11:59:05 INFO games: 1920 US game markets in the next 48h, 346 international matches, 265 pairs
+11:59:05 INFO pairs: 326 kept, 3 rejected on price
