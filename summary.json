@@ -1,0 +1,59 @@
+{
+ "ts": 1794659181.362079,
+ "mode": "paper",
+ "pairs": 0,
+ "equity": 69.99,
+ "cash": 32.01,
+ "positions": {
+  "aec-cfb-prnce-yale-2026-11-14": {
+   "qty": 12,
+   "cost": 5.390000000000001
+  },
+  "aec-cfb-txs-alaam-2026-11-14": {
+   "qty": 30,
+   "cost": 5.450000000000001
+  },
+  "aec-cfb-stan-vtech-2026-11-14": {
+   "qty": 36,
+   "cost": 4.98
+  },
+  "tsc-cfb-cin-iowast-2026-11-14-total-59pt5:short": {
+   "qty": 3,
+   "cost": 1.6800000000000002
+  },
+  "tsc-cfb-uab-templ-2026-11-14-total-51pt5:short": {
+   "qty": 2,
+   "cost": 1.22
+  },
+  "tsc-cfb-wake-smu-2026-11-14-total-59pt5:short": {
+   "qty": 3,
+   "cost": 1.5
+  },
+  "aec-cfb-miss-okl-2026-11-14": {
+   "qty": 11,
+   "cost": 4.985
+  },
+  "aec-cfb-minnst-pennst-2026-11-14": {
+   "qty": 24,
+   "cost": 5.42
+  },
+  "aec-cbb-bradly-gmsn-2026-11-14": {
+   "qty": 43,
+   "cost": 5.32
+  },
+  "aec-cfb-aubrn-mspst-2026-11-14:short": {
+   "qty": 11,
+   "cost": 4.93
+  }
+ },
+ "open_orders": 0,
+ "fills": 753,
+ "fees_paid": 104.53,
+ "rebates": 0.0,
+ "halted": "",
+ "scan": {
+  "observations": 0,
+  "buy_opps": 0,
+  "sell_opps": 0
+ }
+}
