@@ -548,9 +548,22 @@ class PreviewChecker:
         self.stats = {"accepted": 0, "rejected": 0, "unchecked": 0, "errors": 0}
         self.last_reject = ""
 
-    def verify_keys(self) -> None:
-        """Fails fast if the keys don't authenticate (reads balances, shows nothing)."""
-        self.client.account.balances()
+    def verify_keys(self, attempts: int = 3, wait: float = 30.0, sleep=time.sleep) -> None:
+        """Fails if the keys don't authenticate (reads balances, shows nothing).
+
+        Tries a few times first: Polymarket US once answered a single
+        PermissionDeniedError with good keys (paper run 43550944325, segment
+        2, 2026-11-14 09:05; the next segment authenticated 3 minutes later),
+        and failing on it cost the paper desk a 5 h 45 min segment.
+        """
+        for i in range(attempts):
+            try:
+                self.client.account.balances()
+                return
+            except Exception:
+                if i == attempts - 1:
+                    raise
+                sleep(wait)
 
     def check(self, slug: str, order: Order) -> tuple[bool, str]:
         now = time.monotonic()

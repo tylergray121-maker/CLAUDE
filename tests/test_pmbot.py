@@ -882,6 +882,34 @@ class PreviewCheckerTest(unittest.TestCase):
             self.assertIsNotNone(b.place("m", Order("BUY", 0.48, 10, True)))
             self.assertEqual(c.stats["errors"], 1)
 
+    def key_checker(self, failures):
+        from pmbot.broker import PreviewChecker
+        calls = []
+
+        class Account:
+            def balances(self):
+                calls.append(1)
+                if len(calls) <= failures:
+                    raise PermissionError("denied")
+                return {}
+
+        class Client:
+            account = Account()
+        return PreviewChecker("k", "s", client=Client()), calls
+
+    def test_key_check_survives_a_one_off_denial(self):
+        c, calls = self.key_checker(failures=1)
+        waits = []
+        c.verify_keys(sleep=waits.append)
+        self.assertEqual((len(calls), waits), (2, [30.0]))
+
+    def test_key_check_gives_up_on_keys_that_keep_failing(self):
+        c, calls = self.key_checker(failures=99)
+        waits = []
+        with self.assertRaises(PermissionError):
+            c.verify_keys(sleep=waits.append)
+        self.assertEqual((len(calls), len(waits)), (3, 2))
+
     def test_rate_cap(self):
         c = self.checker(lambda p: {"order": {"state": "ORDER_STATE_NEW"}}, per_minute=2)
         for _ in range(3):
