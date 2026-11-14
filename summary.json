@@ -1,0 +1,71 @@
+{
+ "ts": 1794659472.073076,
+ "mode": "paper",
+ "pairs": 0,
+ "equity": 441.03,
+ "cash": 278.99,
+ "positions": {
+  "tsc-cfb-duke-mia-2026-11-14-total-57pt5:short": {
+   "qty": 19,
+   "cost": 10.97
+  },
+  "tsc-cfb-jmad-uconn-2026-11-14-total-55pt5": {
+   "qty": 21,
+   "cost": 11.92
+  },
+  "aec-nfl-min-gb-2026-11-15:short": {
+   "qty": 54,
+   "cost": 33.39
+  },
+  "tsc-cfb-mich-ore-2026-11-14-total-39pt5:short": {
+   "qty": 20,
+   "cost": 10.950000000000001
+  },
+  "tsc-nfl-mia-ind-2026-11-15-total-38pt5:short": {
+   "qty": 1,
+   "cost": 0.545
+  },
+  "tsc-cfb-arkst-coast-2026-11-14-total-53pt5:short": {
+   "qty": 3,
+   "cost": 1.7100000000000002
+  },
+  "tsc-cfb-flatl-tulsa-2026-11-14-total-75pt5:short": {
+   "qty": 15,
+   "cost": 8.360000000000001
+  },
+  "aec-nfl-ne-det-2026-11-15:short": {
+   "qty": 38,
+   "cost": 22.889999999999997
+  },
+  "tsc-cfb-cin-iowast-2026-11-14-total-59pt5:short": {
+   "qty": 42,
+   "cost": 23.419999999999998
+  },
+  "tsc-cfb-uab-templ-2026-11-14-total-51pt5:short": {
+   "qty": 19,
+   "cost": 11.53
+  },
+  "tsc-cfb-aubrn-mspst-2026-11-14-total-49pt5": {
+   "qty": 21,
+   "cost": 11.709999999999999
+  },
+  "aec-nba-dal-cle-2026-11-14:short": {
+   "qty": 20,
+   "cost": 11.15
+  },
+  "atc-unl-nor-wal-2026-11-14-nor": {
+   "qty": 13,
+   "cost": 10.42
+  }
+ },
+ "open_orders": 0,
+ "fills": 1275,
+ "fees_paid": 168.32,
+ "rebates": 0.0,
+ "halted": "",
+ "scan": {
+  "observations": 0,
+  "buy_opps": 0,
+  "sell_opps": 0
+ }
+}
