@@ -1,0 +1,35 @@
+{
+ "ts": 1795265808.340631,
+ "mode": "paper",
+ "pairs": 0,
+ "equity": 92.88,
+ "cash": 81.53,
+ "positions": {
+  "tsc-cfb-hou-wvir-2026-11-21-total-71pt5": {
+   "qty": 5,
+   "cost": 2.54
+  },
+  "tsc-cfb-msrst-jaxst-2026-11-21-total-51pt5": {
+   "qty": 5,
+   "cost": 2.69
+  },
+  "tsc-cfb-msrst-jaxst-2026-11-21-total-53pt5": {
+   "qty": 5,
+   "cost": 2.4399999999999995
+  },
+  "tsc-cfb-txtech-bayl-2026-11-21-total-57pt5": {
+   "qty": 8,
+   "cost": 4.02
+  }
+ },
+ "open_orders": 0,
+ "fills": 941,
+ "fees_paid": 115.83,
+ "rebates": 0.0,
+ "halted": "",
+ "scan": {
+  "observations": 0,
+  "buy_opps": 0,
+  "sell_opps": 0
+ }
+}
