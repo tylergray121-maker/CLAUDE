@@ -1,0 +1,7 @@
+LIVE trading on Polymarket US with real money. Limits: $50 total, $3 per game, no daily stop. Sized on at most $300 of the account.
+12:50:19 INFO balance fields: {'currentBalance': 0.015918, 'buyingPower': 0.015918, 'assetNotional': 0, 'assetAvailable': 0, 'pendingCredit': 0, 'openOrders': 0, 'unsettledFunds': 0, 'marginRequirement': 0, 'balanceReservation': 0.002632, 'depositReservation': 0, 'bonusReservation': 0.002632, 'displayedBonus': 0.002632, 'displayedAvailableSoon': 0, 'displayedCash': 0.013286, 'availableToWithdraw': 0.01, 'bonusHold': 0.002632}
+12:50:20 INFO resumed paper account: cash $0.02, 0 positions, 362 fills, started 2026-10-21 23:25
+12:55:23 INFO Polymarket US: 83928 open markets
+12:55:36 INFO international: 2595 active outcome tokens
+12:55:58 INFO games: 2592 US game markets in the next 48h, 436 international matches, 504 pairs
+12:55:58 INFO pairs: 578 kept, 11 rejected on price
