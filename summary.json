@@ -1,0 +1,63 @@
+{
+ "ts": 1795265691.290641,
+ "mode": "paper",
+ "pairs": 0,
+ "equity": 419.51,
+ "cash": 276.82,
+ "positions": {
+  "tsc-cfb-hou-wvir-2026-11-21-total-71pt5:short": {
+   "qty": 27,
+   "cost": 14.510000000000002
+  },
+  "tsc-cfb-mphs-navy-2026-11-21-total-67pt5:short": {
+   "qty": 27,
+   "cost": 14.780000000000001
+  },
+  "tsc-nfl-ari-kc-2026-11-22-total-40pt5": {
+   "qty": 2,
+   "cost": 1.08
+  },
+  "tsc-cfb-wkent-librty-2026-11-21-total-51pt5": {
+   "qty": 23,
+   "cost": 13.05
+  },
+  "tsc-cfb-msrst-jaxst-2026-11-21-total-51pt5": {
+   "qty": 25,
+   "cost": 13.44
+  },
+  "atc-epl-tot-ips-2026-11-21-tot": {
+   "qty": 48,
+   "cost": 31.31
+  },
+  "tsc-cfb-ark-tx-2026-11-21-total-49pt5:short": {
+   "qty": 19,
+   "cost": 11.159999999999998
+  },
+  "tsc-cfb-washst-txst-2026-11-21-total-67pt5:short": {
+   "qty": 18,
+   "cost": 11.280000000000001
+  },
+  "tsc-cfb-colst-frest-2026-11-21-total-65pt5": {
+   "qty": 8,
+   "cost": 4.54
+  },
+  "tsc-cfb-mary-usc-2026-11-21-total-55pt5": {
+   "qty": 20,
+   "cost": 11.35
+  },
+  "tsc-nba-lac-dal-2026-11-21-230pt5:short": {
+   "qty": 38,
+   "cost": 21.180000000000003
+  }
+ },
+ "open_orders": 0,
+ "fills": 1483,
+ "fees_paid": 208.37,
+ "rebates": 0.0,
+ "halted": "",
+ "scan": {
+  "observations": 0,
+  "buy_opps": 0,
+  "sell_opps": 0
+ }
+}
