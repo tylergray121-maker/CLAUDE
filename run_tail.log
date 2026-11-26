@@ -1,0 +1,43 @@
+LIVE trading on Polymarket US with real money. Limits: $50 total, $3 per game, no daily stop. Sized on at most $300 of the account.
+15:54:11 INFO balance fields: {'currentBalance': 0.015918, 'buyingPower': 0.015918, 'assetNotional': 0, 'assetAvailable': 0, 'pendingCredit': 0, 'openOrders': 0, 'unsettledFunds': 0, 'marginRequirement': 0, 'balanceReservation': 0.002632, 'depositReservation': 0, 'bonusReservation': 0.002632, 'displayedBonus': 0.002632, 'displayedAvailableSoon': 0, 'displayedCash': 0.013286, 'availableToWithdraw': 0.01, 'bonusHold': 0.002632}
+15:54:11 INFO resumed paper account: cash $0.02, 0 positions, 362 fills, started 2026-10-21 23:25
+15:57:11 INFO Polymarket US: 70220 open markets
+15:57:21 INFO international: 2442 active outcome tokens
+15:57:36 INFO games: 1699 US game markets in the next 48h, 173 international matches, 228 pairs
+15:57:36 INFO pairs: 287 kept, 11 rejected on price
+16:58:39 INFO Polymarket US: 70219 open markets
+16:58:49 INFO international: 2452 active outcome tokens
+16:59:12 INFO games: 1746 US game markets in the next 48h, 177 international matches, 236 pairs
+16:59:12 INFO pairs: 296 kept, 12 rejected on price
+17:58:18 INFO Polymarket US: 70348 open markets
+17:58:28 INFO international: 2506 active outcome tokens
+17:58:50 INFO games: 1757 US game markets in the next 48h, 206 international matches, 262 pairs
+17:58:50 INFO pairs: 319 kept, 12 rejected on price
+18:58:23 INFO Polymarket US: 69734 open markets
+18:58:32 INFO international: 2572 active outcome tokens
+18:58:56 INFO games: 1810 US game markets in the next 48h, 216 international matches, 262 pairs
+18:58:56 INFO pairs: 318 kept, 10 rejected on price
+19:57:49 INFO leader EdZachary: copying -> cooling (−$62,218 on Polymarket this week)
+19:58:24 INFO Polymarket US: 69429 open markets
+19:58:35 INFO international: 2607 active outcome tokens
+19:58:59 INFO games: 1868 US game markets in the next 48h, 247 international matches, 280 pairs
+19:58:59 INFO pairs: 335 kept, 9 rejected on price
+20:58:18 INFO Polymarket US: 70795 open markets
+20:58:28 INFO international: 2635 active outcome tokens
+20:58:55 INFO games: 2064 US game markets in the next 48h, 276 international matches, 292 pairs
+20:58:55 INFO pairs: 336 kept, 3 rejected on price
+# Polymarket US bot — live run
+
+Mapping: 70795 open US markets, 2635 international outcomes, 336 pairs (0 tracked after live price checks); observations with a trustworthy reference price: 6560.
+
+## Is there an edge to take?
+
+US mid vs international mid, absolute gap: median 1.00¢, 90th pct 2.00¢, 99th pct 5.00¢.
+Times a US price was through fair value by ≥ 3¢ after the taker fee: 16 to buy, 18 to sell (see `events.jsonl`, kind=opportunity).
+
+## Trading
+
+Equity $0.02 from $200.00 (-199.98), cash $0.02; 362 fills; taker fees $15.69; maker rebates $0.00; open positions 0.
+Halted: no.
+
+
