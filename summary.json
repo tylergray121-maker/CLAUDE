@@ -1,0 +1,43 @@
+{
+ "ts": 1795713747.5106719,
+ "mode": "paper",
+ "pairs": 0,
+ "equity": 555.65,
+ "cash": 470.29,
+ "positions": {
+  "tsc-nfl-den-pit-2026-11-27-total-38pt5:short": {
+   "qty": 28,
+   "cost": 15.47
+  },
+  "tsc-nfl-phi-dal-2026-11-26-total-48pt5:short": {
+   "qty": 26,
+   "cost": 14.36
+  },
+  "tsc-nfl-den-pit-2026-11-27-total-34pt5": {
+   "qty": 25,
+   "cost": 14.554999999999998
+  },
+  "tsc-uel-plz-ben-2026-11-26-3pt5:short": {
+   "qty": 25,
+   "cost": 14.190000000000001
+  },
+  "tsc-nfl-chi-det-2026-11-26-total-56pt5:short": {
+   "qty": 27,
+   "cost": 14.24
+  },
+  "aec-nfl-chi-det-2026-11-26": {
+   "qty": 27,
+   "cost": 14.3075
+  }
+ },
+ "open_orders": 0,
+ "fills": 1627,
+ "fees_paid": 238.8,
+ "rebates": 0.0,
+ "halted": "",
+ "scan": {
+  "observations": 0,
+  "buy_opps": 0,
+  "sell_opps": 0
+ }
+}
